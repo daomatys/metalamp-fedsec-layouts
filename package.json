@@ -1,0 +1,31 @@
+{
+  "name": "metalamp-fedsec-layouts",
+  "version": "1.0.0",
+  "description": "frontend",
+  "main": "index.js",
+  "dependencies": {
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daomatys/metalamp-fedsec-layouts.git"
+  },
+  "keywords": [
+    "frontend",
+    "javascript",
+    "pug",
+    "scss",
+    "webpack"
+  ],
+  "author": "Maxim Dejnew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daomatys/metalamp-fedsec-layouts/issues"
+  },
+  "homepage": "https://github.com/daomatys/metalamp-fedsec-layouts#readme"
+}
