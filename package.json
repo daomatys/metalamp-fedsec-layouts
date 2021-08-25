@@ -4,10 +4,13 @@
   "description": "frontend",
   "main": "index.js",
   "dependencies": {
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
