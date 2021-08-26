@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "frontend",
   "main": "index.js",
-  "dependencies": {
-    "pug": "^3.0.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "pug": "^3.0.2",
+    "pug-loader": "^2.4.0",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0"
   },
