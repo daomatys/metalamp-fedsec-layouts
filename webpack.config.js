@@ -1,7 +1,9 @@
 const fs = require('fs');
 const path = require('path');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const miniCss = require('mini-css-extract-plugin');
 
 const PATHS = {
   src: path.join(__dirname, './src'),
@@ -30,6 +32,14 @@ module.exports = {
         options: {
           pretty: true
         }
+      },
+      {
+        test:/\.(s*)css$/,
+        use: [
+          miniCss.loader,
+          'css-loader',
+          'sass-loader'
+        ]
       }
     ]
   },
@@ -38,6 +48,9 @@ module.exports = {
       template: `${PAGES_DIR}/${page}`,
       filename: `./[name].[contenthash].${page.replace(/\.pug/,'.html')}`
     })),
+    new miniCss({
+      filename: 'style.css',
+    }),
     new CleanWebpackPlugin()
   ]
 }
