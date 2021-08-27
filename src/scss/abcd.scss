@@ -3,3 +3,44 @@ $font-color: #452365;
 .col {
     color: $font-color;
 }
+
+.color-sample {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 150px;
+    top: 145px;
+    border-radius: 6px;
+}
+
+.background-color__valhalla {
+    background: #1F2041;
+}
+
+.background-color__perfume {
+    background: #BC9CFF;
+}
+
+.background-color__silver-tree {
+    background: #6FCF97;
+}
+
+.opaque-100 {
+    opacity: 1;
+}
+
+.opaque-75 {
+    opacity: .75;
+}
+
+.opaque-50 {
+    opacity: .5;
+}
+
+.opaque-25 {
+    opacity: .25;
+}
+
+.opaque-5 {
+    opacity: .05;
+}
