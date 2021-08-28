@@ -7,7 +7,6 @@ $color-list: (
 .color-items__holder {
     display: grid;
     grid-row: 7;
-    grid-column: 2;
     grid-gap: 20px;
     width: 282px;
     height: 100px;
@@ -21,14 +20,19 @@ $color-list: (
     height: 100%;
 }
 
-.color-item__sample {
+.color__sample {
     width: 70px;
     height: 70px;
     border-radius: 6px;
 }
 
-.color-item__description {
+.color__description {
+    width: 100px;
     height: 70px;
+}
+
+.color__name {
+    font-weight: 700;
 }
 
 .background-color__valhalla {
