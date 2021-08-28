@@ -1,28 +1,38 @@
 $font-color: #452365;
+$color-list: (
+    valhalla: #1F2041,
+    perfume: #BC9CFF,
+    silvertree: #6FCF97
+);
 
 .col {
     color: $font-color;
 }
 
+.color-sample__holder {
+    display: grid;
+    grid-row: 7;
+    grid-gap: 20px;
+    width: 100%;
+    height: 100%;
+}
+
 .color-sample {
-    position: absolute;
     width: 70px;
     height: 70px;
-    left: 150px;
-    top: 145px;
     border-radius: 6px;
 }
 
 .background-color__valhalla {
-    background: #1F2041;
+    background: map-get($color-list, valhalla);
 }
 
 .background-color__perfume {
-    background: #BC9CFF;
+    background: map-get($color-list, perfume);
 }
 
-.background-color__silver-tree {
-    background: #6FCF97;
+.background-color__silvertree {
+    background: map-get($color-list, silvertree);
 }
 
 .opaque-100 {
