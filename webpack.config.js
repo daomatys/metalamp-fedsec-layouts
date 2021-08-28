@@ -21,7 +21,7 @@ module.exports = {
     app: PATHS.src,
   },
   output: {
-    filename: '[name].[contenthash].js',
+    filename: '[name].js',
     path: PATHS.dist,
   },
   module: {
@@ -46,10 +46,10 @@ module.exports = {
   plugins: [
     ...PAGES.map(page => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
-      filename: `./[name].[contenthash].${page.replace(/\.pug/,'.html')}`
+      filename: `./[name].${page.replace(/\.pug/,'.html')}`
     })),
     new miniCss({
-      filename: 'style.css',
+      filename: '[name].css',
     }),
     new CleanWebpackPlugin()
   ]
