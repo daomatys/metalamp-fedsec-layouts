@@ -2,10 +2,9 @@ mixin colorItems(colors=[])
   .color-items__holder
     each color in colors
       .color-item
-        .color__sample&attributes({
-          class: [color.opaque, "background-color__" + color.name]
+        .color-item__sample&attributes({
+          class: [color.opaque, "background-color_" + color.name]
         })
-        .color__description
-          p.color__pseudoname #{color.pseudoname}
-          p.color__hex-code #{color.hexcode}
-
+        .color-item__description
+          p.color-item__description__pseudoname #{color.pseudoname}
+          p.color-item__description__hex-code #{color.hexcode}
