@@ -1,9 +1,6 @@
 include colors.pug
 include types.pug
 
-block variables
- - const title = "Colors & Types"
-
 block content
   body
     main
@@ -15,4 +12,10 @@ block content
         {hexcode: "#1F2041", opaque: "opaque_5", name: "valhalla", pseudoname: "Dark Shade 5%"},
         {hexcode: "#BC9CFF", opaque: "opaque_100", name: "perfume", pseudoname: "Purple"},
         {hexcode: "#6FCF97", opaque: "opaque_100", name: "silver-tree", pseudoname: "Green"},
+      ])
+      +typeItems([
+        {tagname: "H1", note: "This one is the sub-section or widget title"},
+        {tagname: "H2", note: "Next one is the item title inside widgets"},
+        {tagname: "H3", note: "This is a label or CTA text"},
+        {tagname: "Body", note: "This is the body text which is used for most of the design, like paragraphs, lists, etc."},
       ])
