@@ -1,17 +1,11 @@
-include index.pug
 
-block variables
- - const title = "Colors & Types"
-
-block content
-  body
-    main
-      +colorItems([
-        {hexcode: "#1F2041", opaque: "opaque_100", name: "valhalla", pseudoname: "Dark Shade 100%"},
-        {hexcode: "#1F2041", opaque: "opaque_75", name: "valhalla", pseudoname: "Dark Shade 75%"},
-        {hexcode: "#1F2041", opaque: "opaque_50", name: "valhalla", pseudoname: "Dark Shade 50%"},
-        {hexcode: "#1F2041", opaque: "opaque_25", name: "valhalla", pseudoname: "Dark Shade 25%"},
-        {hexcode: "#1F2041", opaque: "opaque_5", name: "valhalla", pseudoname: "Dark Shade 5%"},
-        {hexcode: "#BC9CFF", opaque: "opaque_100", name: "perfume", pseudoname: "Purple"},
-        {hexcode: "#6FCF97", opaque: "opaque_100", name: "silver-tree", pseudoname: "Green"},
-      ])
+mixin colorItems(colors=[])
+  .color-items__holder
+    each color in colors
+      .color-item
+        .color-item__sample&attributes({
+          class: [color.opaque, "background-color_" + color.name]
+        })
+        .color-item__description
+          p.color-item__description__pseudoname #{color.pseudoname}
+          p.color-item__description__hex-code #{color.hexcode}
