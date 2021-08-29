@@ -1,0 +1,17 @@
+include index.pug
+
+block variables
+ - const title = "Colors & Types"
+
+block content
+  body
+    main
+      +colorItems([
+        {hexcode: "#1F2041", opaque: "opaque-100", name: "valhalla", pseudoname: "Dark Shade 100%"},
+        {hexcode: "#1F2041", opaque: "opaque-75", name: "valhalla", pseudoname: "Dark Shade 75%"},
+        {hexcode: "#1F2041", opaque: "opaque-50", name: "valhalla", pseudoname: "Dark Shade 50%"},
+        {hexcode: "#1F2041", opaque: "opaque-25", name: "valhalla", pseudoname: "Dark Shade 25%"},
+        {hexcode: "#1F2041", opaque: "opaque-5", name: "valhalla", pseudoname: "Dark Shade 5%"},
+        {hexcode: "#BC9CFF", opaque: "opaque-100", name: "perfume", pseudoname: "Purple"},
+        {hexcode: "#6FCF97", opaque: "opaque-100", name: "silver-tree", pseudoname: "Green"},
+      ])
