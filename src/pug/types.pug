@@ -1,6 +1,7 @@
 mixin typeItems(types=[])
   .type-items__holder
     each type in types
-      .type-item 
-        p.type-item__tagname #{type.tagname}
-        p.type-item__note #{type.note}
+      .type-item
+        - var chosenTag = type.tagname === "Body" ? "p" : type.tagname
+          #{chosenTag}.type-item__tagname #{type.tagname}
+          #{chosenTag}.type-item__note #{type.note}
