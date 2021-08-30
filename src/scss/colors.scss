@@ -1,8 +1,4 @@
-$color-list: (
-  valhalla: #1F2041,
-  perfume: #BC9CFF,
-  silver-tree: #6FCF97
-);
+@import "../variables/variables.scss";
 
 .color-items__holder {
   display: grid;
@@ -44,15 +40,15 @@ $color-list: (
 
 .background-color {
   &_valhalla {
-    background: map-get($color-list, valhalla);
+    background: $valhalla;
   }
 
   &_perfume {
-    background: map-get($color-list, perfume);
+    background:$perfume;
   }
   
   &_silver-tree {
-    background: map-get($color-list, silver-tree);
+    background: $silver-tree;
   }
 }
 

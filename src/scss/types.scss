@@ -1,3 +1,5 @@
+@import "../variables/variables.scss";
+
 .type-items__holder {
   position: absolute;
   display: grid;
@@ -17,6 +19,8 @@
 
   &__tagname {
     margin: 0;
+    color: $valhalla;
+    opacity: .25;
   }
 
   &__note {
