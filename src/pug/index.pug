@@ -1,8 +1,11 @@
 include colors.pug
 include types.pug
+include logo.pug
 
 block content
   body
+    header
+      +logotype
     main
       +colorItems([
         {hexcode: "#1F2041", opaque: "opaque_100", name: "valhalla", pseudoname: "Dark Shade 100%"},

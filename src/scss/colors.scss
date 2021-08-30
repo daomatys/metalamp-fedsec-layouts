@@ -1,11 +1,13 @@
 @import "../variables/variables.scss";
 
 .color-items__holder {
+  position: absolute;
+  left: 150px;
   display: grid;
   grid-row: 7;
   grid-gap: 20px;
   width: 282px;
-  height: 100px;
+  margin: 0 0 0 0;
 }
 
 .color-item {
