@@ -1,11 +1,11 @@
 @import "../variables/variables.scss";
 
 .type-items__holder {
-  position: absolute;
-  right: 158px;
   display: grid;
   grid-row: 7;
   grid-gap: 51px;
+  width: 496px;
+  height: 321px;
 }
 
 .type-item {
