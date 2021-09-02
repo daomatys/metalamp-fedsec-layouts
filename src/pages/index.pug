@@ -1,11 +1,10 @@
 include ../components/ui-kit/colors/colors.pug
 include ../components/ui-kit/types/types.pug
-include ../components/logo/logo.pug
+include ../components/ui-kit/header/header.pug
 
 block content
   body
-    header
-      +logotype({wh: 48, opacity: .25, color: "#1F2041"})
+    +headerItem()
     main
       +colorItems([
         {hexcode: "#1F2041", opaque: "opaque_100", name: "valhalla", pseudoname: "Dark Shade 100%"},
@@ -22,4 +21,3 @@ block content
         {tagname: "H3", note: "THIS IS A LABEL OR CTA TEXT"},
         {tagname: "Body", note: "This is the body text which is used for most of the design, like paragraphs, lists, etc."},
       ])
-    footer
