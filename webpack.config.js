@@ -52,5 +52,10 @@ module.exports = {
       filename: '[name].css',
     }),
     new CleanWebpackPlugin()
-  ]
+  ],
+  resolve: {
+    alias: {
+      '@variables': path.resolve(__dirname, 'src/variables/variables.scss')
+    }
+  }
 }
