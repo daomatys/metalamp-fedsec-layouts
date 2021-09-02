@@ -1,6 +1,3 @@
-import './scss/colors.scss'
-import './scss/types.scss'
-import './scss/ui-kit-colors.scss'
-import './variables/variables.scss'
+const omniImport = resolve => resolve.keys().forEach(resolve);
 
-const x = 1;
+omniImport( require.context('../src/', true, /\.js$|\.scss$/) );
