@@ -1,0 +1,7 @@
+mixin typeItems(types=[])
+  .type-items__holder
+    each type in types
+      .type-item
+        - var chosenTag = type.tagname === "Body" ? "p" : type.tagname.toLowerCase()
+          #{chosenTag}.type-item__tagname #{type.tagname}
+          #{chosenTag}.type-item__note #{type.note}
