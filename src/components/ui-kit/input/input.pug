@@ -3,6 +3,7 @@ mixin inputItems(inputs=[])
     .input
       .input__textbar
         p.input__textbar_title #{input.title}
-        p.input__textbar_state #{input.state}
+        if input.state 
+          p.input__textbar_state #{input.state}
       .input__frame
         input(type=input.type placeholder=input.placeholder)

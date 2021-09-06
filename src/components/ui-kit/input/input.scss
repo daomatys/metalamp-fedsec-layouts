@@ -23,15 +23,21 @@
 
   &__frame input {
     border-color: $valhalla;
+    border-width: 1px;
     border-radius: 4px;
     opacity: .25;
     width: 320px;
     height: 44px;
     padding-left: 13px;
+    outline: none;
 
     &:hover,
     &:focus-within {
       opacity: .5;
+
+      ::placeholder {
+        opacity: .75;
+      }
     }
   }
 }
