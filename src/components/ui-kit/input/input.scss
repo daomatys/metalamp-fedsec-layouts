@@ -1,9 +1,21 @@
 @import "@variables";
 
 .input {
-  &__frame {
+  &__textbar{
+    &_title {
+      color: $valhalla;
+    }
+    &_state {
+      color: $valhalla;
+      opacity: .5;
+    }
+  }
+
+  &__frame input {
     border-color: $valhalla;
     opacity: .25;
+    width: 320px;
+    height: 44px;
 
     &:hover,
     &:focus-within {
