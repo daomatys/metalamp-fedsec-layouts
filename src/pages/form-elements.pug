@@ -1,5 +1,12 @@
 include ../components/ui-kit/header/header.pug
+include ../components/ui-kit/input/input.pug
 
 block content
   body
     +headerItem()
+    main
+      +inputItems([
+        {type:"email", placeholder:"Email", title: "AAA", state: "SSS"},
+        {type:"date", placeholder:"ДД.ММ.ГГГГ", title: "AAA", state: "SSS"},
+      ])
+      

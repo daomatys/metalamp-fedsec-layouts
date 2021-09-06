@@ -1,0 +1,13 @@
+@import "@variables";
+
+.input {
+  &__frame {
+    border-color: $valhalla;
+    opacity: .25;
+
+    &:hover,
+    &:focus-within {
+      opacity: .5;
+    }
+  }
+}
