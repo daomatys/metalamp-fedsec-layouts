@@ -1,0 +1,8 @@
+mixin dropdownItems( items=[] )
+  each item in items
+    .input
+      .input__textbar
+        p.input__textbar_title #{item.title}
+        if item.state 
+          p.input__textbar_state #{item.state}
+      select.input__frame( type=item.type placeholder=item.placeholder )
