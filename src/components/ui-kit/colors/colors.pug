@@ -1,10 +1,10 @@
-mixin colorItems(colors=[])
+mixin colorItems(items=[])
   .color-items__holder
-    each color in colors
+    each item in items
       .color-item
         .color-item__sample&attributes({
-          class: [color.opaque, "background-color_" + color.name]
+          class: [item.opaque, "background-color_" + item.name]
         })
         .color-item__description
-          p.color-item__description__pseudoname #{color.pseudoname}
-          p.color-item__description__hex-code #{color.hexcode}
+          p.color-item__description__pseudoname #{item.pseudoname}
+          p.color-item__description__hex-code #{item.hexcode}

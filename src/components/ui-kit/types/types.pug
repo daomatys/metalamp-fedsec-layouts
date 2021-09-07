@@ -1,7 +1,7 @@
-mixin typeItems(types=[])
+mixin typeItems(items=[])
   .type-items__holder
-    each type in types
+    each item in items
       .type-item
-        - var chosenTag = type.tagname === "Body" ? "p" : type.tagname.toLowerCase()
-          #{chosenTag}.type-item__tagname #{type.tagname}
-          #{chosenTag}.type-item__note #{type.note}
+        - var chosenTag = item.tagname === "Body" ? "p" : item.tagname.toLowerCase()
+          #{chosenTag}.type-item__tagname #{item.tagname}
+          #{chosenTag}.type-item__note #{item.note}

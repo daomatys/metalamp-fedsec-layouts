@@ -1,5 +1,6 @@
 include ../components/ui-kit/header/header.pug
 include ../components/ui-kit/input/input.pug
+include ../components/ui-kit/dropdown/dropdown.pug
 
 block content
   body
@@ -20,6 +21,14 @@ block content
         {
           title: "masked text field",
           placeholder: "ДД.ММ.ГГГГ"
+        }
+      ])
+      +dropdownItems([
+        {
+          title: "text field",
+          state: "default",
+          type: "email",
+          placeholder: "Email"
         }
       ])
       

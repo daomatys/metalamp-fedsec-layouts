@@ -1,9 +1,9 @@
-mixin inputItems(inputs=[])
-  each input in inputs
+mixin inputItems(items=[])
+  each item in items
     .input
       .input__textbar
-        p.input__textbar_title #{input.title}
-        if input.state 
-          p.input__textbar_state #{input.state}
+        p.input__textbar_title #{item.title}
+        if item.state 
+          p.input__textbar_state #{item.state}
       .input__frame
-        input(type=input.type placeholder=input.placeholder)
+        input(type=item.type placeholder=item.placeholder)
