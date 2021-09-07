@@ -22,14 +22,14 @@
     }
   }
 
-  &__frame input{
+  &__frame {
     border-color: $valhalla;
     border-width: 1px;
     border-radius: 4px;
     opacity: .25;
     width: 320px;
     height: 44px;
-    padding-left: 13px;
+    padding: 0 13px 0 13px;
     outline: none;
 
     &:hover,
@@ -37,7 +37,7 @@
       opacity: .5;
 
       ::placeholder {
-        opacity: .75;
+        opacity: 1;
       }
     }
   }
