@@ -23,21 +23,23 @@
   }
 
   &__frame {
-    border-color: $valhalla;
-    border-width: 1px;
+    border: 1px solid $valhalla;
     border-radius: 4px;
+    box-sizing: border-box;
     opacity: .25;
-    width: 320px;
     height: 44px;
-    padding: 0 13px 0 13px;
+    padding: 0px 15px 0px 15px;
     outline: none;
+    appearance: none;
 
     &:hover,
     &:focus-within {
-      opacity: .5;
+      &:placeholder-shown {
+        opacity: .5;
+      }
 
-      ::placeholder {
-        opacity: 1;
+      &::placeholder {
+        opacity: .75;
       }
     }
   }
