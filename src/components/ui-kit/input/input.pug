@@ -1,3 +1,5 @@
+include ../dropdown/dropdown.pug
+
 mixin inputItems( items=[] )
   each item in items
     .input
@@ -6,3 +8,5 @@ mixin inputItems( items=[] )
         if item.state 
           p.input__textbar_state #{item.state}
       input.input__frame( class=`form-element-width_${item.width ? item.width : 100}` type=item.type placeholder=item.placeholder )
+      if item.dropdown
+        +dropdownItem( item.dropdown )

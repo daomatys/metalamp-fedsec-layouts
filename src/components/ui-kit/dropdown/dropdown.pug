@@ -1,0 +1,7 @@
+mixin dropdownItem( item )
+  .dropdown 
+    each option in item.options
+      p.dropdown__option #{option}
+      .dropdown__button_inc 
+      p.dropdown__counter 
+      .dropdown__button_dec
