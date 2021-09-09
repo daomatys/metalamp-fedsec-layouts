@@ -1,7 +1,8 @@
 mixin dropdownItem( item )
   .dropdown 
     each option in item.options
-      p.dropdown__option #{option}
-      .dropdown__button_inc 
-      p.dropdown__counter 
-      .dropdown__button_dec
+      .dropdown__option
+        p.dropdown__option_name #{option}
+        .dropdown__button_inc 
+        p.dropdown__counter 
+        .dropdown__button_dec

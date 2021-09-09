@@ -1,13 +1,19 @@
-.form-element-width {
-  &_100 {
-    width: 320px
-  }
+@import "@variables";
 
-  &_75 {
-    width: 266px;
-  }
+.dropdown {
+  border: 1px solid $valhalla;
+  border-radius: 0px 0px 4px 4px;
+  box-sizing: border-box;
+  opacity: .25;
+  padding: 0px 15px 0px 15px;
+  outline: none;
+  appearance: none;
+  width: inherit;
 
-  &_50 {
-    width: 150px
+  &__option {
+  
+    &_name {
+      text-transform: uppercase;
+    }
   }
 }

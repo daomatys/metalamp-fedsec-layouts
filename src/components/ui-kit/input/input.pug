@@ -2,11 +2,11 @@ include ../dropdown/dropdown.pug
 
 mixin inputItems( items=[] )
   each item in items
-    .input
+    .input( class=`form-element-width_${item.width ? item.width : 100}` )
       .input__textbar
         p.input__textbar_title #{item.title}
         if item.state 
           p.input__textbar_state #{item.state}
-      input.input__frame( class=`form-element-width_${item.width ? item.width : 100}` type=item.type placeholder=item.placeholder )
+      input.input__frame( type=item.type placeholder=item.placeholder disabled=item.dropdown ? true : false )
       if item.dropdown
         +dropdownItem( item.dropdown )
