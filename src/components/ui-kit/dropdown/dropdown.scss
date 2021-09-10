@@ -1,9 +1,8 @@
 @import "@variables";
 
 .dropdown {
-  position: relative;
-  top: -1px;
   border-radius: 0px 0px 4px 4px;
+  border-top: 0;
   padding: 0px 15px 0px 15px;
   width: inherit;
 
