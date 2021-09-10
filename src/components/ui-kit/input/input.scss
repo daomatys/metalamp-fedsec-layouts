@@ -15,6 +15,7 @@
     &_title {
       font-weight: 700;
     }
+    
     &_state {
       font-weight: 400;
       color: $valhalla;
@@ -23,6 +24,7 @@
   }
 
   &__frame {
+    border-radius: 4px;
     opacity: .25;
     height: 44px;
     padding: 0px 15px 0px 15px;
@@ -44,6 +46,14 @@
 }
 
 .elem {
+  &__border {
+    border-color: rgba(31, 32, 65, .5);
+    border-width: 1px;
+    border-style: solid;
+    box-sizing: border-box;
+    outline: none;
+  }
+
   &__width {
     &_100 {
       width: 320px
@@ -56,15 +66,6 @@
     &_50 {
       width: 150px
     }
-  }
-
-  &__border {
-    border-color: rgba(31, 32, 65, .5);
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 4px;
-    box-sizing: border-box;
-    outline: none;
   }
 }
 
