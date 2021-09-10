@@ -23,15 +23,11 @@
   }
 
   &__frame {
-    border: 1px solid $valhalla;
-    border-radius: 4px;
-    box-sizing: border-box;
     opacity: .25;
     height: 44px;
     padding: 0px 15px 0px 15px;
-    outline: none;
-    appearance: none;
     width: inherit;
+    background-color: transparent;
 
     &:hover,
     &:focus-within {
@@ -47,16 +43,28 @@
   }
 }
 
-.form-element-width {
-  &_100 {
-    width: 320px
+.elem {
+  &__width {
+    &_100 {
+      width: 320px
+    }
+
+    &_75 {
+      width: 266px;
+    }
+
+    &_50 {
+      width: 150px
+    }
   }
 
-  &_75 {
-    width: 266px;
-  }
-
-  &_50 {
-    width: 150px
+  &__border {
+    border-color: rgba(31, 32, 65, .5);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
   }
 }
+
