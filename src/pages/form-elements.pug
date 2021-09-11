@@ -2,6 +2,10 @@ include ../components/ui-kit/header/header.pug
 include ../components/ui-kit/input/input.pug
 include ../components/ui-kit/dropdown/dropdown.pug
 
+head
+  block scripts
+    script(src='../src/components/ui-kit/dropdown/dropdown.js')   
+
 block content
   body
     +headerItem()
@@ -35,4 +39,3 @@ block content
           }
         }
       ])
-      
