@@ -14,10 +14,10 @@
   height: 100%;
   flex-direction: row;
   justify-content: flex-end;
+  color: $valhalla;
 
   &__tagname {
     margin: 0;
-    color: $valhalla;
     opacity: .25;
   }
 
@@ -25,5 +25,9 @@
     display: inherit;
     margin: 0 0 0 30px;
     width: 369px;
+  }
+
+  p.type-item__note {
+    opacity: 0.75;
   }
 }
