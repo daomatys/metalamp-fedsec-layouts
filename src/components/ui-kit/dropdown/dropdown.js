@@ -1,7 +1,7 @@
 class Dropdown {
 
   constructor() {
-    this.elems = document.querySelectorAll('input.dropdown-closed');
+    this.elems = document.querySelectorAll('input.dropdown-is-closed');
 
     this.eventListeners();
   }
@@ -14,8 +14,8 @@ class Dropdown {
 
   onClickEvent({target}) {
     const dropdownElem = target.parentElement.querySelector('.dropdown');
-    const classOne = 'dropdown-closed';
-    const classTwo = 'dropdown-opened';
+    const classOne = 'dropdown-is-closed';
+    const classTwo = 'dropdown-is-opened';
     const classThree = 'dropdown-ejected';
 
     const switchClass = (aim, arg) => aim.classList.toggle( arg );

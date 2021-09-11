@@ -7,6 +7,6 @@ mixin inputItems( items=[] )
         p.input__textbar_title #{item.title}
         if item.state 
           p.input__textbar_state #{item.state}
-      input.input__frame.elem__border( class=`${item.dropdown ? 'dropdown-closed' : ''}` readonly=item.dropdown ? true : false type=item.type placeholder=item.placeholder )
+      input.input__frame.elem__border( class=`${item.dropdown ? 'dropdown-is-closed' : ''}` readonly=item.dropdown ? true : false type=item.type placeholder=item.placeholder )
       if item.dropdown
         +dropdownItem( item.dropdown )
