@@ -13,14 +13,12 @@ class Dropdown {
   }
 
   onClickEvent({target}) {
-    const dropdownElem = target.parentElement.lastElementChild;
+    const dropdownElem = target.parentElement.querySelector('.dropdown');
     const classOne = 'dropdown-closed';
     const classTwo = 'dropdown-opened';
-    const classThree = 'dropdown-shown';
+    const classThree = 'dropdown-ejected';
 
     const switchClass = (aim, arg) => aim.classList.toggle( arg );
-
-    console.log(dropdownElem)
 
     switchClass(target, classOne);
     switchClass(target, classTwo);
@@ -28,8 +26,8 @@ class Dropdown {
   }
 }
 
-function main() {
+function dropdownEjection() {
   const dropdown = new Dropdown();
 }
 
-main();
+dropdownEjection();
