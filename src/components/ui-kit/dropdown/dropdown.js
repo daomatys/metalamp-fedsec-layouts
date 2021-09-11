@@ -1,19 +1,20 @@
 class Dropdown {
 
   constructor() {
-    this.elems = document.querySelectorAll('input.dropdown-is-closed');
-
     this.eventListeners();
   }
 
   eventListeners() {
-    for (let elem of this.elems) {
-      elem.addEventListener('click', this.onClickEvent);
+    const items = document.querySelectorAll('input.dropdown-is-closed');
+
+    for (let item of items) {
+      item.addEventListener('click', this.onClickEvent);
     }
   }
 
   onClickEvent({target}) {
-    const dropdownElem = target.parentElement.querySelector('.dropdown');
+    const dropdown = target.closest('.input').querySelector('.dropdown');
+
     const classOne = 'dropdown-is-closed';
     const classTwo = 'dropdown-is-opened';
     const classThree = 'dropdown-ejected';
@@ -22,12 +23,14 @@ class Dropdown {
 
     switchClass(target, classOne);
     switchClass(target, classTwo);
-    switchClass(dropdownElem, classThree);
+    switchClass(dropdown, classThree);
+
+    console.log(dropdown)
   }
 }
 
 function dropdownEjection() {
-  const dropdown = new Dropdown();
+  const dropdownInit = new Dropdown();
 }
 
 dropdownEjection();
