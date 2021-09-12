@@ -3,11 +3,12 @@ include ../dropdown/dropdown.pug
 mixin inputItems( items=[] )
   each item in items
     .input( class=`elem__width_${item.width ? item.width : 100}` )
-      .input__textbar
-        p.input__textbar_title #{item.title}
+      .input__text-bar
+        span.input__text-bar_title #{item.title}
         if item.state 
-          p.input__textbar_state #{item.state}
-      input.input__frame.elem__border( class=`${item.dropdown ? 'dropdown-is-closed' : ''}` readonly=item.dropdown ? true : false type=item.type placeholder=item.placeholder )
-      if item.dropdown
-        span.material-icons-outlined.icon-location expand_more
-        +dropdownItem( item.dropdown )
+          span.input__text-bar_state #{item.state}
+      .input__data-bar
+        input.input__frame.elem__border( class=`${item.dropdown ? 'dropdown-marker dropdown-is-closed' : ''}` readonly=item.dropdown ? true : false type=item.type placeholder=item.placeholder )
+        if item.dropdown
+          span.material-icons-outlined.icon-location expand_more
+          +dropdownItem( item.dropdown )
