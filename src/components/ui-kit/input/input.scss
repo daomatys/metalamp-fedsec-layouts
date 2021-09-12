@@ -1,8 +1,6 @@
 @import "@variables";
 
 .input {
-  position: relative;
-
   &__text-bar{
     display: flex;
     justify-content: space-between;
@@ -27,6 +25,7 @@
 
   &__data-bar {
     width: inherit;
+    position: relative;
   }
 
   &__frame {
@@ -98,6 +97,7 @@
   position: absolute;
   bottom: 10px;
   right: 10px;
-  color: $valhalla;
   z-index: -1;
+  color: $valhalla;
+  opacity: .75;
 }
