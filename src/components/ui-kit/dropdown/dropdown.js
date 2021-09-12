@@ -8,16 +8,11 @@ class Dropdown {
     const items = document.querySelectorAll('input.dropdown-is-closed');
 
     for (let item of items) {
-      item.addEventListener(
-        'click',
-        ({target}) => target.closest('.input') ? this.onClickEvent(target) : null
-      );
+      item.addEventListener('click', this.onClickEvent);
     }
   }
 
-  onClickEvent(target) {
-    console.log(target);
-
+  onClickEvent({target}) {
     const dropdown = target.closest('.input').querySelector('.dropdown');
 
     const classOne = 'dropdown-is-closed';

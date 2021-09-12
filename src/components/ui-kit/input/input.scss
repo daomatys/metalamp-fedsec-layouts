@@ -25,6 +25,10 @@
     }
   }
 
+  &__data-bar {
+    width: inherit;
+  }
+
   &__frame {
     border-radius: 4px;
     border-color: rgba(31, 32, 65, .25);
@@ -94,8 +98,6 @@
   position: absolute;
   bottom: 10px;
   right: 10px;
-  background-color: #fff;
   color: $valhalla;
-  user-select: none;
-  cursor: pointer;
+  z-index: -1;
 }
