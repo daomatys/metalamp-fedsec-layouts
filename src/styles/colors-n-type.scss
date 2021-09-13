@@ -1,0 +1,19 @@
+.ui-kit {
+  &__body {
+    margin: auto;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  &__main {
+    display: grid;
+    padding: 0px 158px 0px 150px; 
+    justify-content: space-between;
+  }
+  
+  &__footer {
+    height: 145px;
+  }
+}
+
+
+

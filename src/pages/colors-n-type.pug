@@ -3,9 +3,9 @@ include ../components/ui-kit/types/types.pug
 include ../components/ui-kit/header/header.pug
 
 block content
-  body
+  body.ui-kit__body
     +headerItem()
-    main
+    main.ui-kit__main
       +colorItems([
         {hexcode: "#1F2041", opaque: "opaque_100", name: "valhalla", pseudoname: "Dark Shade 100%"},
         {hexcode: "#1F2041", opaque: "opaque_75", name: "valhalla", pseudoname: "Dark Shade 75%"},
@@ -21,3 +21,4 @@ block content
         {tagname: "H3", note: "THIS IS A LABEL OR CTA TEXT"},
         {tagname: "Body", note: "This is the body text which is used for most of the design, like paragraphs, lists, etc."},
       ])
+    footer.ui-kit__footer

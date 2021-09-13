@@ -7,9 +7,9 @@ head
     script(src='../src/components/ui-kit/dropdown/dropdown.js')   
 
 block content
-  body
+  body.ui-kit__body
     +headerItem()
-    main
+    main.ui-kit__main
       +inputItems([
         {
           title: "text field",
@@ -72,3 +72,4 @@ block content
           }
         }
       ])
+    footer.ui-kit__footer
