@@ -10,74 +10,103 @@ block content
   body.ui-kit__body
     +headerItem()
     main.ui-kit__main
-      .indentation_single
-        +inputItems([
-          {
-            title: "text field",
-            state: "default",
-            type: "email",
-            placeholder: "Email",
-            widthkey: 100
-          },
-          {
-            title: "text field",
-            state: "hover / focus",
-            placeholder: "This is pretty awesome",
-            widthkey: 100
-          },
-          {
-            title: "dropdown",
-            placeholder: "Сколько гостей",
-            widthkey: 100,
-            dropdown: {
-              options: [
-                "взрослые",
-                "дети",
-                "младенцы"
-              ]
+      .indentation_wrap.form-elements-wrap_top
+        .indentation_single
+          +inputItems([
+            {
+              title: "text field",
+              state: "default",
+              type: "email",
+              placeholder: "Email",
+              widthkey: 100
+            },
+            {
+              title: "text field",
+              state: "hover / focus",
+              placeholder: "This is pretty awesome",
+              widthkey: 100
+            },
+            {
+              title: "dropdown",
+              placeholder: "Сколько гостей",
+              widthkey: 100,
+              dropdown: {
+                options: [
+                  "взрослые",
+                  "дети",
+                  "младенцы"
+                ]
+              }
+            },
+            {
+              title: "masked text field",
+              placeholder: "ДД.ММ.ГГГГ",
+              widthkey: 100
             }
-          },
-          {
-            title: "masked text field",
-            placeholder: "ДД.ММ.ГГГГ",
-            widthkey: 100
-          }
-        ])
-      .indentation_double.pseudo-twins-line
-        +inputItems([
-          {
-            title: "date dropdown",
-            placeholder: "ДД.ММ.ГГГГ",
-            widthkey: 50,
-            dropdown: {
-              options: [
-                ""
-              ]
+          ])
+        .indentation_double.pseudo-twins-line
+          +inputItems([
+            {
+              title: "date dropdown",
+              placeholder: "ДД.ММ.ГГГГ",
+              widthkey: 50,
+              dropdown: {
+                options: [
+                  ""
+                ]
+              }
+            },
+            {
+              title: "date dropdown",
+              placeholder: "19.08.2019",
+              widthkey: 50,
+              dropdown: {
+                options: [
+                  ""
+                ]
+              }
             }
-          },
-          {
-            title: "date dropdown",
-            placeholder: "19.08.2019",
-            widthkey: 50,
-            dropdown: {
-              options: [
-                ""
-              ]
+          ])
+        .indentation_double
+          +inputItems([
+            {
+              title: "filter date dropdown",
+              placeholder: "19 авг - 23 авг",
+              widthkey: 75,
+              dropdown: {
+                options: [
+                  ""
+                ]
+              }
             }
-          }
-        ])
-      .indentation_double
-        +inputItems([
-          {
-            title: "filter date dropdown",
-            placeholder: "19 авг - 23 авг",
-            widthkey: 75,
-            dropdown: {
-              options: [
-                ""
-              ]
+          ])
+        .indentation_double
+      .indentation_wrap.form-elements-wrap_middle
+          +inputItems([
+            {
+              title: "dropdown",
+              state: "default",
+              placeholder: "2 спальни, 2 кровати...",
+              widthkey: 75,
+              dropdown: {
+                options: [
+                  ""
+                ]
+              }
+            },
+            {
+              title: "dropdown",
+              state: "expanded",
+              placeholder: "2 спальни, 2 кровати...",
+              widthkey: 75,
+              dropdown: {
+                options: [
+                  "спальни",
+                  "кровати",
+                  "ванные комнаты"
+                ]
+              }
             }
-          }
-        ])
-      .indentation_double
+          ])
+      .indentation_wrap.form-elements-wrap_bottom
     footer.ui-kit__footer
