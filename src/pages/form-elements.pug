@@ -10,7 +10,7 @@ block content
   body.ui-kit__body
     +headerItem()
     main.ui-kit__main
-      .section_single-indent
+      .indentation_single
         +inputItems([
           {
             title: "text field",
@@ -43,7 +43,7 @@ block content
             widthkey: 100
           }
         ])
-      .section_double-indent
+      .indentation_double.pseudo-twins-line
         +inputItems([
           {
             title: "date dropdown",
@@ -66,7 +66,7 @@ block content
             }
           }
         ])
-      .section_double-indent
+      .indentation_double
         +inputItems([
           {
             title: "filter date dropdown",
@@ -79,5 +79,5 @@ block content
             }
           }
         ])
-      .section_double-indent
+      .indentation_double
     footer.ui-kit__footer

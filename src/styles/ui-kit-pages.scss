@@ -15,8 +15,13 @@
   }
 }
 
-.section {
-  &_double-indent {
+.indentation {
+  &_double {
     margin-top: 20px;
   }
+}
+
+.pseudo-twins-line {
+  display: flex;
+  justify-content: space-between;
 }
