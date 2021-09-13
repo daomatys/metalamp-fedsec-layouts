@@ -13,13 +13,11 @@
     }
 
     &_title {
-      font-family: 'Montserrat-Bold', sans-serif;
       font-weight: bold;
     }
     
     &_state {
-      font-weight: 400;
-      color: $valhalla;
+      font-weight: normal;
       opacity: .5;
     }
   }
