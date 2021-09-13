@@ -46,7 +46,7 @@
       & + span {
         opacity: .75;
       }
-      
+
       &::placeholder {
         color: rgba(31, 32, 65, .75);
       }
@@ -98,11 +98,11 @@
   }
 }
 
-.icon-location {
+.icon-state {
   position: absolute;
   bottom: 10px;
   right: 10px;
   z-index: -1;
-  color: $valhalla;
   opacity: .5;
+  color: $valhalla;
 }

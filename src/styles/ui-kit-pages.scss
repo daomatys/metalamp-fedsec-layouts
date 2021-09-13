@@ -14,3 +14,9 @@
     height: 145px;
   }
 }
+
+.section {
+  &_double-indent {
+    margin-top: 20px;
+  }
+}

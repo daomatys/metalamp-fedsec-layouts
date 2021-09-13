@@ -10,66 +10,74 @@ block content
   body.ui-kit__body
     +headerItem()
     main.ui-kit__main
-      +inputItems([
-        {
-          title: "text field",
-          state: "default",
-          type: "email",
-          placeholder: "Email",
-          widthkey: 100
-        },
-        {
-          title: "text field",
-          state: "hover / focus",
-          placeholder: "This is pretty awesome",
-          widthkey: 100
-        },
-        {
-          title: "dropdown",
-          placeholder: "Сколько гостей",
-          widthkey: 100,
-          dropdown: {
-            options: [
-              "взрослые",
-              "дети",
-              "младенцы"
-            ]
+      .section_single-indent
+        +inputItems([
+          {
+            title: "text field",
+            state: "default",
+            type: "email",
+            placeholder: "Email",
+            widthkey: 100
+          },
+          {
+            title: "text field",
+            state: "hover / focus",
+            placeholder: "This is pretty awesome",
+            widthkey: 100
+          },
+          {
+            title: "dropdown",
+            placeholder: "Сколько гостей",
+            widthkey: 100,
+            dropdown: {
+              options: [
+                "взрослые",
+                "дети",
+                "младенцы"
+              ]
+            }
+          },
+          {
+            title: "masked text field",
+            placeholder: "ДД.ММ.ГГГГ",
+            widthkey: 100
           }
-        },
-        {
-          title: "masked text field",
-          placeholder: "ДД.ММ.ГГГГ",
-          widthkey: 100
-        },
-        {
-          title: "date dropdown",
-          placeholder: "ДД.ММ.ГГГГ",
-          widthkey: 50,
-          dropdown: {
-            options: [
-              ""
-            ]
+        ])
+      .section_double-indent
+        +inputItems([
+          {
+            title: "date dropdown",
+            placeholder: "ДД.ММ.ГГГГ",
+            widthkey: 50,
+            dropdown: {
+              options: [
+                ""
+              ]
+            }
+          },
+          {
+            title: "date dropdown",
+            placeholder: "19.08.2019",
+            widthkey: 50,
+            dropdown: {
+              options: [
+                ""
+              ]
+            }
           }
-        },
-        {
-          title: "date dropdown",
-          placeholder: "19.08.2019",
-          widthkey: 50,
-          dropdown: {
-            options: [
-              ""
-            ]
+        ])
+      .section_double-indent
+        +inputItems([
+          {
+            title: "filter date dropdown",
+            placeholder: "19 авг - 23 авг",
+            widthkey: 75,
+            dropdown: {
+              options: [
+                ""
+              ]
+            }
           }
-        },
-        {
-          title: "filter date dropdown",
-          placeholder: "19 авг - 23 авг",
-          widthkey: 75,
-          dropdown: {
-            options: [
-              ""
-            ]
-          }
-        }
-      ])
+        ])
+      .section_double-indent
     footer.ui-kit__footer

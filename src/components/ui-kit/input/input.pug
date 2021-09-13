@@ -10,5 +10,5 @@ mixin inputItems( items=[] )
       .input__data-bar
         input.input__frame.elem__border( class=`${item.dropdown ? 'dropdown-marker dropdown-is-closed' : ''}` readonly=item.dropdown ? true : false type=item.type placeholder=item.placeholder )
         if item.dropdown
-          span.material-icons-outlined.icon-location expand_more
+          span.material-icons-outlined.icon-state expand_more
           +dropdownItem( item.dropdown )
