@@ -1,10 +1,10 @@
-mixin advantagesBlocks( items=[] )
+mixin advantageBars( items=[] )
   each item in items
     .adv-block
       .adv-block__icon-bar
-        span.material-icons-outlined.icon-state #{item.textcontent}
+        span.material-icons-outlined.icon-state #{item.icon}
       .adv-block__text-bar
-        span.adv-block__text-bar_title
-        span.adv-block__text-bar_brief
+        span.adv-block__text-bar_title #{item.title}
+        span.adv-block__text-bar_brief #{item.brief}
       .adv-block__line-bar
-        hr.adv-block__line-bar__elem
+        hr.adv-block__line-bar__elem( noshade=true size='1px' width='280px' )

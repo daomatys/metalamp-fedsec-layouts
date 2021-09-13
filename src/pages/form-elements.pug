@@ -1,6 +1,7 @@
 include ../components/ui-kit/header/header.pug
 include ../components/ui-kit/input/input.pug
 include ../components/ui-kit/dropdown/dropdown.pug
+include ../components/ui-kit/advantage-bar/advantage-bar.pug
 
 head
   block scripts
@@ -82,6 +83,7 @@ block content
           ])
         .indentation_double
       .indentation_wrap.form-elements-wrap_middle
+        .indentation_single
           +inputItems([
             {
               title: "dropdown",
@@ -109,4 +111,12 @@ block content
             }
           ])
       .indentation_wrap.form-elements-wrap_bottom
+        .indentation_single
+          +advantageBars([
+            {
+              icon: 'insert_emotion',
+              title: 'Комфорт',
+              brief: 'Шумопоглощающие стены',
+            }
+          ])
     footer.ui-kit__footer

@@ -1,21 +1,25 @@
 .adv-block {
-  &__icon-bar {
+  width: 280px;
+  height: 144px;
 
+  &__icon-bar {
+    width: 48px;
+    height: 48px;
   }
 
   &__text-bar {
     &_title {
-
+      font-weight: bold;
     }
 
     &_brief  {
-
+      font-weight: normal;
     }
   }
 
   &__line-bar {
     &_elem {
-      
+
     }
   }
 }
