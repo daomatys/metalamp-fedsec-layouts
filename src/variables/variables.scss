@@ -1,6 +1,8 @@
 $valhalla: #1F2041;
 $perfume: #BC9CFF;
+$portage: #8BA4F9;
 $silver-tree: #6FCF97;
+$turquoise-blue: #66D2EA;
 
-$primary-gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-$secondary-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+$primary-gradient: linear-gradient(180deg, $perfume 0%, $portage 100%);
+$secondary-gradient: linear-gradient(180deg, $silver-tree 0%, $turquoise-blue 100%);
