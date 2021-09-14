@@ -1,6 +1,6 @@
 include ../dropdown/dropdown.pug
 
-mixin inputItems( items=[] )
+mixin inputs( items=[] )
   each item in items
     .input( class=`elem__width_${item.widthkey}` )
       .input__text-bar
@@ -11,4 +11,4 @@ mixin inputItems( items=[] )
         input.input__frame.elem__border( class=`${item.dropdown ? 'dropdown-marker dropdown-is-closed' : ''}` readonly=item.dropdown ? true : false type=item.type placeholder=item.placeholder )
         if item.dropdown
           span.material-icons-outlined.icon-state expand_more
-          +dropdownItem( item.dropdown )
+          +dropdown( item.dropdown )
