@@ -1,10 +1,11 @@
-mixin advantageBars( items=[] )
+mixin advantages( items=[] )
   each item in items
-    .adv-block
-      .adv-block__icon-bar
-        span.material-icons-outlined.icon-state #{item.icon}
-      .adv-block__text-bar
-        span.adv-block__text-bar_title #{item.title}
-        span.adv-block__text-bar_brief #{item.brief}
-      .adv-block__line-bar
-        hr.adv-block__line-bar__elem( noshade=true size='1px' width='280px' )
+    .advantages-block
+      .advantages-block__text-bar
+        .advantages-block__icon
+          span.material-icons-outlined.icon-state #{item.icon}
+        .advantages-block__text
+          span.advantages-block__text__title #{item.title}
+          span.advantages-block__text__brief #{item.brief}
+      .advantages-block__line-bar
+        hr.advantages-block__line-bar__elem( noshade=true size='1px' width='280px' )
