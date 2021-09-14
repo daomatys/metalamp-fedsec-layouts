@@ -1,4 +1,4 @@
-mixin colorItems( items=[] )
+mixin colors( items=[] )
   .color-items__holder
     each item in items
       .color-item
@@ -6,5 +6,5 @@ mixin colorItems( items=[] )
           class: [item.opaque, "background-color_" + item.name]
         })
         .color-item__description
-          p.color-item__description__pseudoname #{item.pseudoname}
-          p.color-item__description__hex-code #{item.hexcode}
+          span.color-item__description__pseudoname #{item.pseudoname}
+          span.color-item__description__hex-code #{item.hexcode}
