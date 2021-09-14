@@ -2,21 +2,35 @@
 
 .advantages-block {
   width: 280px;
-  height: 144px;
 
   &__text-bar {
     display: flex;
+    margin-bottom: 17px;
+    margin-top: 20px;
   }
 
   &__icon {
     position: relative;
     width: 48px;
     height: 48px;
+    margin-right: 10px;
+
+    & > span {
+      font-size: 48px;
+      background: $primary-gradient;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color:transparent;
+    }
   }
 
   &__text {
     display: inherit;
     flex-direction: column;
+    opacity: .75;
+    font-size: 14px;
+    line-height: 24px;
 
     &__title {
       font-weight: bold;
@@ -30,6 +44,8 @@
   &__line-bar {
     &__elem {
       color: $valhalla;
+      opacity: .1;
+      margin: 0;
     }
   }
 }

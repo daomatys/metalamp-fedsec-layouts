@@ -2,7 +2,7 @@ include ../dropdown/dropdown.pug
 
 mixin inputs( items=[] )
   each item in items
-    .input( class=`elem__width_${item.widthkey}` )
+    .input( class=`elem__width_${item.widthkey ? item.widthkey : '100'}` )
       .input__text-bar
         span.input__text-bar_title #{item.title}
         if item.state 
