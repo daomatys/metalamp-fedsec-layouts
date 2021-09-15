@@ -1,4 +1,5 @@
 include ../dropdown/dropdown.pug
+include ../title-bar/title-bar.pug
 
 mixin inputs( items=[] )
   each item in items
@@ -9,11 +10,9 @@ mixin inputs( items=[] )
     block content
       .input( class=`elem__width_${keyWidth}` )
         .input__text-bar
-          span.input__text-bar_title #{item.title}
-          if item.state 
-            span.input__text-bar_state #{item.state}
+          +titlebar( item.title, item.state )
         .input__data-bar
-          input.input__frame.elem__border( class=keyDropdownClasses keyReadonly=keyReadOnly type=item.type placeholder=item.placeholder )
+          input.input__frame.elem__border( class=keyDropdownClasses readonly=keyReadOnly type=item.type placeholder=item.placeholder )
           if item.dropdown
             span.input-icons.icon-style_dropdown.material-icons-outlined expand_more
             +dropdown( item.dropdown )

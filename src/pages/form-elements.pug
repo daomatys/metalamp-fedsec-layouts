@@ -4,128 +4,125 @@ include ../components/ui-kit/dropdown/dropdown.pug
 include ../components/ui-kit/advantage-bar/advantage-bar.pug
 
 head
-  block scripts
-    script(src='../src/components/ui-kit/dropdown/dropdown.js')   
+  script(src='../src/components/ui-kit/dropdown/dropdown.js')   
 
-block content
-  body.ui-kit__body
-    +header()
-    main.ui-kit__main
-      .indention_wrap.form-elements-wrap_top
-        .indention_single
-          +inputs([
-            {
-              title: "text field",
-              state: "default",
-              placeholder: "Email"
-            },
-            {
-              title: "text field",
-              state: "hover / focus",
-              placeholder: "This is pretty awesome"
-            },
-            {
-              title: "dropdown",
-              placeholder: "Сколько гостей",
-              dropdown: {
-                options: [
-                  "взрослые",
-                  "дети",
-                  "младенцы"
-                ]
-              }
-            },
-            {
-              title: "masked text field",
-              placeholder: "ДД.ММ.ГГГГ"
+body.ui-kit__body
+  +header()
+  main.ui-kit__main
+    .indention_wrap.form-elements-wrap_top
+      .indention_single
+        +inputs([
+          {
+            title: "text field",
+            state: "default",
+            placeholder: "Email"
+          },
+          {
+            title: "text field",
+            state: "hover / focus",
+            placeholder: "This is pretty awesome"
+          },
+          {
+            title: "dropdown",
+            placeholder: "Сколько гостей",
+            dropdown: {
+              options: [
+                "взрослые",
+                "дети",
+                "младенцы"
+              ]
             }
-          ])
-        .indention_double.pseudo-twins-line
-          +inputs([
-            {
-              title: "date dropdown",
-              placeholder: "ДД.ММ.ГГГГ",
-              keywidth: 50,
-              dropdown: {
-                options: [
-                  ""
-                ]
-              }
-            },
-            {
-              title: "date dropdown",
-              placeholder: "19.08.2019",
-              keywidth: 50,
-              dropdown: {
-                options: [
-                  ""
-                ]
-              }
+          },
+          {
+            title: "masked text field",
+            placeholder: "ДД.ММ.ГГГГ"
+          }
+        ])
+      .indention_double.pseudo-twins-line
+        +inputs([
+          {
+            title: "date dropdown",
+            placeholder: "ДД.ММ.ГГГГ",
+            keywidth: 50,
+            dropdown: {
+              options: [
+                ""
+              ]
             }
-          ])
-        .indention_double
-          +inputs([
-            {
-              title: "filter date dropdown",
-              placeholder: "19 авг - 23 авг",
-              keywidth: 75,
-              dropdown: {
-                options: [
-                  ""
-                ]
-              }
+          },
+          {
+            title: "date dropdown",
+            placeholder: "19.08.2019",
+            keywidth: 50,
+            dropdown: {
+              options: [
+                ""
+              ]
             }
-          ])
-        .indention_double
-          +inputs([
-            {
-              title: "subscription text field",
-              placeholder: "Email",
-              type: "email",
-              subscription: true
+          }
+        ])
+      .indention_double
+        +inputs([
+          {
+            title: "filter date dropdown",
+            placeholder: "19 авг - 23 авг",
+            keywidth: 75,
+            dropdown: {
+              options: [
+                ""
+              ]
             }
-          ])
-      .indention_wrap.form-elements-wrap_middle
-        .indention_single
-          +inputs([
-            {
-              title: "dropdown",
-              state: "default",
-              placeholder: "2 спальни, 2 кровати...",
-              keywidth: 75,
-              dropdown: {
-                options: [
-                  ""
-                ]
-              }
-            },
-            {
-              title: "dropdown",
-              state: "expanded",
-              placeholder: "2 спальни, 2 кровати...",
-              keywidth: 75,
-              dropdown: {
-                options: [
-                  "спальни",
-                  "кровати",
-                  "ванные комнаты"
-                ]
-              }
+          }
+        ])
+      .indention_double
+        +inputs([
+          {
+            title: "subscription text field",
+            placeholder: "Email",
+            type: "email",
+            subscription: true
+          }
+        ])
+    .indention_wrap.form-elements-wrap_middle
+      .indention_single
+        +inputs([
+          {
+            title: "dropdown",
+            state: "default",
+            placeholder: "2 спальни, 2 кровати...",
+            keywidth: 75,
+            dropdown: {
+              options: [
+                ""
+              ]
             }
-          ])
-      .indention_wrap.form-elements-wrap_bottom
-        .indention_single
-          +advantages([
-            {
-              icon: 'insert_emoticon',
-              title: 'Комфорт',
-              brief: 'Шумопоглощающие стены'
-            },
-            {
-              icon: 'location_city',
-              title: 'Удобство',
-              brief: 'Окно в каждой из спален'
+          },
+          {
+            title: "dropdown",
+            state: "expanded",
+            placeholder: "2 спальни, 2 кровати...",
+            keywidth: 75,
+            dropdown: {
+              options: [
+                "спальни",
+                "кровати",
+                "ванные комнаты"
+              ]
             }
-          ])
-    footer.ui-kit__footer
-    
+          }
+        ])
+    .indention_wrap.form-elements-wrap_bottom
+      .indention_single
+        +advantages([
+          {
+            icon: 'insert_emoticon',
+            title: 'Комфорт',
+            brief: 'Шумопоглощающие стены'
+          },
+          {
+            icon: 'location_city',
+            title: 'Удобство',
+            brief: 'Окно в каждой из спален'
+          }
+        ])
+  footer.ui-kit__footer
