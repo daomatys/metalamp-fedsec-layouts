@@ -3,6 +3,7 @@ include ../components/ui-kit/input/input.pug
 include ../components/ui-kit/dropdown/dropdown.pug
 include ../components/ui-kit/advantage-bar/advantage-bar.pug
 include ../components/ui-kit/star-rate/star-rate.pug
+include ../components/ui-kit/title-bar/title-bar.pug
 
 head
   script(src='../src/components/ui-kit/dropdown/dropdown.js')   
@@ -84,6 +85,7 @@ body.ui-kit__body
             subscription: true
           }
         ])
+        +titlebar("rate button")
         +stars([4, 5])
     .indention_wrap.form-elements-wrap_middle
       .indention_single
