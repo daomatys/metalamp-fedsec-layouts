@@ -87,9 +87,10 @@ body.ui-kit__body
             }
           ])
       .form-elements__column.form-elements__column_center
-        +titlebar("rate button")
-        .twinline-gap_null
-          +stars([4, 5])
+        .star-rate-block
+          +titlebar("rate button")
+          .star-rate__elem.twinline-gap_null
+            +stars([4, 5])
       .form-elements__column.form-elements__column_right
     .form-elements__wrap_middle.indention_wrap
       .form-elements__column.form-elements__column_left
