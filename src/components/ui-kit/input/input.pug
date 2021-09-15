@@ -2,13 +2,19 @@ include ../dropdown/dropdown.pug
 
 mixin inputs( items=[] )
   each item in items
-    .input( class=`elem__width_${item.widthkey ? item.widthkey : '100'}` )
-      .input__text-bar
-        span.input__text-bar_title #{item.title}
-        if item.state 
-          span.input__text-bar_state #{item.state}
-      .input__data-bar
-        input.input__frame.elem__border( class=`${item.dropdown ? 'dropdown-marker dropdown-is-closed' : ''}` readonly=item.dropdown ? true : false type=item.type placeholder=item.placeholder )
-        if item.dropdown
-          span.material-icons-outlined.icon-state expand_more
-          +dropdown( item.dropdown )
+    block variables
+      - let dropdownClass = item.dropdown ? 'dropdown-marker dropdown-is-closed' : '' ;
+      - let readOnly = item.dropdown ? true : false ;
+    block content
+      .input( class=`elem__width_${item.widthkey ? item.widthkey : '100'}` )
+        .input__text-bar
+          span.input__text-bar_title #{item.title}
+          if item.state 
+            span.input__text-bar_state #{item.state}
+        .input__data-bar
+          input.input__frame.elem__border( class=dropdownClass readonly=ReadOnly type=item.type placeholder=item.placeholder )
+          if item.dropdown
+            span.input-icons.icon-style_dropdown.material-icons-outlined expand_more
+            +dropdown( item.dropdown )
+          else if item.subscription
+            span.input-icons.icon-style_subscription.material-icons-outlined arrow_forward

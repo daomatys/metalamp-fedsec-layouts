@@ -32,7 +32,7 @@
 
 .form-elements-wrap {
   &_top {
-    height: 600px;
+    height: 660px;
   }
 
   &_middle {
@@ -42,4 +42,8 @@
   &_bottom {
     height: 140px;
   }
+}
+
+.frozen {
+  pointer-events: none;
 }

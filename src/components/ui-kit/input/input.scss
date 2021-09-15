@@ -98,11 +98,24 @@
   }
 }
 
-.icon-state {
+.input-icons {
   position: absolute;
   bottom: 10px;
   right: 10px;
   z-index: -1;
-  opacity: .5;
-  color: $valhalla;
+}
+
+.icon-style {
+  &_dropdown {
+    color: $valhalla;
+    opacity: .5;
+  }
+
+  &_subscription {
+    background: $primary-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }

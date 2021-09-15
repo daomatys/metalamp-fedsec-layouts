@@ -17,8 +17,7 @@ block content
             {
               title: "text field",
               state: "default",
-              placeholder: "Email",
-              type: "email",
+              placeholder: "Email"
             },
             {
               title: "text field",
@@ -78,6 +77,14 @@ block content
             }
           ])
         .indention_double
+          +inputs([
+            {
+              title: "subscription text field",
+              placeholder: "Email",
+              type: "email",
+              subscription: true
+            }
+          ])
       .indention_wrap.form-elements-wrap_middle
         .indention_single
           +inputs([
