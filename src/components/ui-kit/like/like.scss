@@ -1,0 +1,16 @@
+@import "@variables";
+
+.like-btn {
+  height: 20px;
+  width: 40px;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $valhalla;
+  opacity: .25;
+
+  &_toggled {
+    opacity: 1;
+    border-color: $perfume;
+  }
+}
