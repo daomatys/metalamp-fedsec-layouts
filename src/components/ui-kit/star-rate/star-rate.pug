@@ -1,0 +1,11 @@
+mixin stars( ratings=[] )
+  each rating in ratings
+    block variables 
+      - let num = 0;
+    block content
+      .star-rate
+        while num < 5
+          if num++ < rating
+            span.material-icons-outlined star 
+          else 
+            span.material-icons-outlined star_border
