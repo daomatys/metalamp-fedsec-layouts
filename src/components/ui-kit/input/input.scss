@@ -1,8 +1,10 @@
 @import "@variables";
 
 .input {
+  padding-top: 20px;
+
   &__text-bar {
-    margin-block: 20px 5px;
+    margin-block-end: 5px;
   }
 
   &__data-bar {

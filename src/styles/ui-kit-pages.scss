@@ -17,11 +17,11 @@
 
 .indention {
   &_double {
-    margin-top: 20px;
+    margin-block-start: 20px;
   }
 
   &_wrap {
-    margin-bottom: 60px;
+    margin-block-end: 60px;
   }
 }
 
