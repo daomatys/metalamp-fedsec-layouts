@@ -95,12 +95,4 @@
     color: $valhalla;
     opacity: .5;
   }
-
-  &_subscription {
-    background: $primary-gradient;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
 }
