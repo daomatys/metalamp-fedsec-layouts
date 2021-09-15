@@ -11,83 +11,86 @@ head
 body.ui-kit__body
   +header()
   main.ui-kit__main
-    .indention_wrap.form-elements-wrap_top
-      .indention_single
-        +inputs([
-          {
-            title: "text field",
-            state: "default",
-            placeholder: "Email"
-          },
-          {
-            title: "text field",
-            state: "hover / focus",
-            placeholder: "This is pretty awesome"
-          },
-          {
-            title: "dropdown",
-            placeholder: "Сколько гостей",
-            dropdown: {
-              options: [
-                "взрослые",
-                "дети",
-                "младенцы"
-              ]
+    .indention_wrap.form-elements__wrap_top
+      .form-elements__column.form-elements__column_left
+        .indention_single
+          +inputs([
+            {
+              title: "text field",
+              state: "default",
+              placeholder: "Email"
+            },
+            {
+              title: "text field",
+              state: "hover / focus",
+              placeholder: "This is pretty awesome"
+            },
+            {
+              title: "dropdown",
+              placeholder: "Сколько гостей",
+              dropdown: {
+                options: [
+                  "взрослые",
+                  "дети",
+                  "младенцы"
+                ]
+              }
+            },
+            {
+              title: "masked text field",
+              placeholder: "ДД.ММ.ГГГГ"
             }
-          },
-          {
-            title: "masked text field",
-            placeholder: "ДД.ММ.ГГГГ"
-          }
-        ])
-      .indention_double.pseudo-twins-line
-        +inputs([
-          {
-            title: "date dropdown",
-            placeholder: "ДД.ММ.ГГГГ",
-            keywidth: 50,
-            dropdown: {
-              options: [
-                ""
-              ]
+          ])
+        .indention_double.pseudo-twins-line
+          +inputs([
+            {
+              title: "date dropdown",
+              placeholder: "ДД.ММ.ГГГГ",
+              keywidth: 50,
+              dropdown: {
+                options: [
+                  ""
+                ]
+              }
+            },
+            {
+              title: "date dropdown",
+              placeholder: "19.08.2019",
+              keywidth: 50,
+              dropdown: {
+                options: [
+                  ""
+                ]
+              }
             }
-          },
-          {
-            title: "date dropdown",
-            placeholder: "19.08.2019",
-            keywidth: 50,
-            dropdown: {
-              options: [
-                ""
-              ]
+          ])
+        .indention_double
+          +inputs([
+            {
+              title: "filter date dropdown",
+              placeholder: "19 авг - 23 авг",
+              keywidth: 75,
+              dropdown: {
+                options: [
+                  ""
+                ]
+              }
             }
-          }
-        ])
-      .indention_double
-        +inputs([
-          {
-            title: "filter date dropdown",
-            placeholder: "19 авг - 23 авг",
-            keywidth: 75,
-            dropdown: {
-              options: [
-                ""
-              ]
+          ])
+        .indention_double
+          +inputs([
+            {
+              title: "subscription text field",
+              placeholder: "Email",
+              type: "email",
+              subscription: true
             }
-          }
-        ])
-      .indention_double
-        +inputs([
-          {
-            title: "subscription text field",
-            placeholder: "Email",
-            type: "email",
-            subscription: true
-          }
-        ])
+          ])
+      .form-elements__column.form-elements__column_center
         +titlebar("rate button")
         +stars([4, 5])
-    .indention_wrap.form-elements-wrap_middle
+      .form-elements__column.form-elements__column_right
+    .indention_wrap.form-elements__wrap_middle
       .indention_single
         +inputs([
           {
@@ -115,7 +118,7 @@ body.ui-kit__body
             }
           }
         ])
-    .indention_wrap.form-elements-wrap_bottom
+    .indention_wrap.form-elements__wrap_bottom
       .indention_single
         +advantages([
           {
