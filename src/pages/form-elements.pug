@@ -11,7 +11,7 @@ head
 body.ui-kit__body
   +header()
   main.ui-kit__main
-    .indention_wrap.form-elements__wrap_top
+    .form-elements__wrap_top.indention_wrap
       .form-elements__column.form-elements__column_left
         .indention_single
           +inputs([
@@ -90,46 +90,52 @@ body.ui-kit__body
         +titlebar("rate button")
         +stars([4, 5])
       .form-elements__column.form-elements__column_right
-    .indention_wrap.form-elements__wrap_middle
-      .indention_single
-        +inputs([
-          {
-            title: "dropdown",
-            state: "default",
-            placeholder: "2 спальни, 2 кровати...",
-            keywidth: 75,
-            dropdown: {
-              options: [
-                ""
-              ]
+    .form-elements__wrap_middle.indention_wrap
+      .form-elements__column.form-elements__column_left
+        .indention_single
+          +inputs([
+            {
+              title: "dropdown",
+              state: "default",
+              placeholder: "2 спальни, 2 кровати...",
+              keywidth: 75,
+              dropdown: {
+                options: [
+                  ""
+                ]
+              }
+            },
+            {
+              title: "dropdown",
+              state: "expanded",
+              placeholder: "2 спальни, 2 кровати...",
+              keywidth: 75,
+              dropdown: {
+                options: [
+                  "спальни",
+                  "кровати",
+                  "ванные комнаты"
+                ]
+              }
             }
-          },
-          {
-            title: "dropdown",
-            state: "expanded",
-            placeholder: "2 спальни, 2 кровати...",
-            keywidth: 75,
-            dropdown: {
-              options: [
-                "спальни",
-                "кровати",
-                "ванные комнаты"
-              ]
+          ])
+      .form-elements__column.form-elements__column_center
+      .form-elements__column.form-elements__column_right
+    .form-elements__wrap_bottom.indention_wrap
+      .form-elements__column.form-elements__column_left
+        .indention_single
+          +advantages([
+            {
+              icon: 'insert_emoticon',
+              title: 'Комфорт',
+              brief: 'Шумопоглощающие стены'
+            },
+            {
+              icon: 'location_city',
+              title: 'Удобство',
+              brief: 'Окно в каждой из спален'
             }
-          }
-        ])
-    .indention_wrap.form-elements__wrap_bottom
-      .indention_single
-        +advantages([
-          {
-            icon: 'insert_emoticon',
-            title: 'Комфорт',
-            brief: 'Шумопоглощающие стены'
-          },
-          {
-            icon: 'location_city',
-            title: 'Удобство',
-            brief: 'Окно в каждой из спален'
-          }
-        ])
+          ])
+      .form-elements__column.form-elements__column_center
+      .form-elements__column.form-elements__column_right
   footer.ui-kit__footer
