@@ -1,3 +1,5 @@
+@import "@variables";
+
 .ui-kit {
   &__body {
     margin: auto;
@@ -46,4 +48,12 @@
 
 .frozen {
   pointer-events: none;
+}
+
+.gradient-fill {
+  background: $primary-gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color:transparent;
 }
