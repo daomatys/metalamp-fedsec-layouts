@@ -40,9 +40,16 @@
   }
 }
 
-.pseudo-twins-line {
-  display: flex;
-  justify-content: space-between;
+.twinline-gap {
+  &_null {
+    display: flex;
+  }
+
+  &_longest {
+    display: flex;
+    justify-content: space-between;
+  }
+
 }
 
 .frozen {
