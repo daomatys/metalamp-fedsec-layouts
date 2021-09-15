@@ -3,16 +3,17 @@ include ../dropdown/dropdown.pug
 mixin inputs( items=[] )
   each item in items
     block variables
-      - let dropdownClass = item.dropdown ? 'dropdown-marker dropdown-is-closed' : '' ;
-      - let readOnly = item.dropdown ? true : false ;
+      - let keyDropdownClasses = item.dropdown ? 'dropdown-marker dropdown-is-closed' : '' ;
+      - let keyReadOnly = item.dropdown ? true : false ;
+      - let keyWidth = item.keywidth ? item.keywidth : '100' ;
     block content
-      .input( class=`elem__width_${item.widthkey ? item.widthkey : '100'}` )
+      .input( class=`elem__width_${keyWidth}` )
         .input__text-bar
           span.input__text-bar_title #{item.title}
           if item.state 
             span.input__text-bar_state #{item.state}
         .input__data-bar
-          input.input__frame.elem__border( class=dropdownClass readonly=ReadOnly type=item.type placeholder=item.placeholder )
+          input.input__frame.elem__border( class=keyDropdownClasses keyReadonly=keyReadOnly type=item.type placeholder=item.placeholder )
           if item.dropdown
             span.input-icons.icon-style_dropdown.material-icons-outlined expand_more
             +dropdown( item.dropdown )
