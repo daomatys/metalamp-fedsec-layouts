@@ -10,7 +10,7 @@ mixin inputs( items=[] )
     block content
       .input( class=`elem__width_${keyWidth}` )
         .input__text-bar
-          +titlebar( item.title, item.state )
+          +titleBar( item.title, item.state )
         .input__data-bar
           input.input__frame.elem__border( class=keyDropdownClasses readonly=keyReadOnly type=item.type placeholder=item.placeholder )
           if item.dropdown

@@ -1,7 +1,7 @@
 include like/like.pug
 include toggle/toggle.pug
 
-mixin microButton( items=[] )
+mixin microButtons( items=[] )
   each item in items
     - const buttonTypeClass = item.type + '-mode';
     - const pressedButtonClass = item.pressed ? 'micro-button_pressed' : ''

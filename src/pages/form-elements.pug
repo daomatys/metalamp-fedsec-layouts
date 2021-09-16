@@ -91,14 +91,14 @@ body.ui-kit__body
       .form-elements__column.form-elements__column_center
         .indention_double
           .block__toggle-buttons
-            +titlebar("toggle button")
+            +titleBar("toggle button")
             .toggle-buttons__array
 
         .indention_double
           .block__like-buttons
-            +titlebar("like button")
+            +titleBar("like button")
             .like-buttons__array.twinline-gap_own.additional-padding
-              +microButton([
+              +microButtons([
                 {
                   type: "like",
                   likecount: 2,
@@ -112,7 +112,7 @@ body.ui-kit__body
               ])
         .indention_double
           .block__star-rate
-            +titlebar("rate button")
+            +titleBar("rate button")
             .star-rate__elem.twinline-gap_own.additional-padding
               +stars([4, 5])
       .form-elements__column.form-elements__column_right
