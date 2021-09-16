@@ -93,7 +93,16 @@ body.ui-kit__body
           .block__like-btn
             +titlebar("like button")
             .like-btn__elem.twinline-gap_own.additional-padding
-              +buttonLike([2, 12])
+              +buttonLike([
+                {
+                  likecount: 2,
+                  toggled: false
+                },
+                {
+                  likecount: 12,
+                  toggled: true
+                }
+              ])
         .indention_double
           .block__star-rate
             +titlebar("rate button")

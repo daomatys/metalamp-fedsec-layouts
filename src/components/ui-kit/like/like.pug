@@ -1,7 +1,7 @@
-mixin buttonLike( counts=[] )
-  each count in counts
-    .like-btn
+mixin buttonLike( items=[] )
+  each item in items
+    .like-btn(class=item.toggled ? 'like-btn_toggled' : '')
       .like-btn__icon
-        span.material-icons-outlined favorite_border
+        span.material-icons-outlined #{item.toggled ? 'favorite' : 'favorite_border'}
       .like-btn__counter
-        span #{count}
+        span #{item.likecount}
