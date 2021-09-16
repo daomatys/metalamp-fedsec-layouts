@@ -3,18 +3,17 @@ include ../title-bar/title-bar.pug
 
 mixin inputs( items=[] )
   each item in items
-    block variables
-      - let keyDropdownClasses = item.dropdown ? 'dropdown-marker dropdown-is-closed' : '' ;
-      - let keyReadOnly = item.dropdown ? true : false ;
-      - let keyWidth = item.keywidth ? item.keywidth : '100' ;
-    block content
-      .input( class=`elem__width_${keyWidth}` )
-        .input__text-bar
-          +titleBar( item.title, item.state )
-        .input__data-bar
-          input.input__frame.elem__border( class=keyDropdownClasses readonly=keyReadOnly type=item.type placeholder=item.placeholder )
-          if item.dropdown
-            span.input-icons.icon-style_dropdown.material-icons-outlined expand_more
-            +dropdown( item.dropdown )
-          else if item.subscription
-            span.input-icons.icon-style_subscription.material-icons-outlined.gradient-fill arrow_forward
+    - const keyDropdownClasses = item.dropdown ? 'dropdown-marker dropdown-is-closed' : '' ;
+    - const keyReadOnly = item.dropdown ? true : false ;
+    - const keyWidth = item.keywidth ? item.keywidth : '100' ;
+
+    .input( class=`elem__width_${keyWidth}` )
+      .input__text-bar
+        +titleBar( item.title, item.state )
+      .input__data-bar
+        input.input__frame.elem__border( class=keyDropdownClasses readonly=keyReadOnly type=item.type placeholder=item.placeholder )
+        if item.dropdown
+          span.input-icons.icon-style_dropdown.material-icons-outlined expand_more
+          +dropdown( item.dropdown )
+        else if item.subscription
+          span.input-icons.icon-style_subscription.material-icons-outlined.gradient-fill arrow_forward
