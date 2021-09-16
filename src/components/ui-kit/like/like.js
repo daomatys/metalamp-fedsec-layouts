@@ -12,6 +12,7 @@ function likeButtonToggling({target}) {
   const counter = aim.querySelector('.like-btn__counter').firstElementChild;
 
   aim.classList.toggle('like-btn_toggled');
+  icon.classList.toggle('gradient-fill');
 
   switch ( aim.classList.contains('like-btn_toggled') ) {
     case true: {
