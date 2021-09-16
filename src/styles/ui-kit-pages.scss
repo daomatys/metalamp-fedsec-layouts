@@ -41,7 +41,7 @@
 }
 
 .twinline-gap {
-  &_null {
+  &_own {
     display: flex;
   }
 
@@ -62,4 +62,8 @@
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color:transparent;
+}
+
+.additional-padding {
+  padding-top: 11px;
 }

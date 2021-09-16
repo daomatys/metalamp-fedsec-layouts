@@ -1,5 +1,5 @@
 function likeToggling() {
-  const aims = document.querySelectorAll('.like-btn__icon');
+  const aims = document.querySelectorAll('.like-btn');
 
   for (let aim in aims) {
     aim.onclick = () => {
