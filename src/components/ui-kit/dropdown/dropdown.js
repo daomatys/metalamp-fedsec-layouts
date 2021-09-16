@@ -2,11 +2,11 @@ function dropdownEventListeners() {
   const items = document.querySelectorAll('input.dropdown-is-closed');
 
   for (let item of items) {
-    item.addEventListener('click', onClickEvent);
+    item.addEventListener('click', dropdownEjection);
   }
 }
 
-function onClickEvent({target}) {
+function dropdownEjection({target}) {
   const dropdown = target.closest('.input').querySelector('.dropdown');
 
   const classOne = 'dropdown-is-closed';
