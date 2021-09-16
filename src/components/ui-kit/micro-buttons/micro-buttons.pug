@@ -3,7 +3,9 @@ include toggle/toggle.pug
 
 mixin microButton( items=[] )
   each item in items
-    .micro-button( class=`${item.type}-mode micro-button${item.pressed ? '_pressed' : ''}` )
+    - const buttonTypeClass = item.type + '-mode';
+    - const pressedButtonClass = item.pressed ? 'micro-button_pressed' : ''
+    .micro-button( class=`${buttonTypeClass} ${pressedButtonClass}` )
       case item.type
         when 'like'
           +likeMode(item)

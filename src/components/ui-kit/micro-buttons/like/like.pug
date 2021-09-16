@@ -1,5 +1,7 @@
 mixin likeMode( item )
+  - const iconSuffix = item.pressed ? '' : '_border'
+  - const iconAdditionalClass = item.pressed ? 'gradient-fill' : ''
   .like-mode__icon
-    span.material-icons-outlined( class=item.toggled ? 'gradient-fill' : '' ) favorite#{item.toggled ? '' : '_border'}
+    span.material-icons-outlined( class=iconAdditionalClass ) #{'favorite' + iconSuffix}
   .like-mode__counter
     span #{item.likecount}

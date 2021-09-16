@@ -7,8 +7,8 @@ include ../components/ui-kit/title-bar/title-bar.pug
 include ../components/ui-kit/micro-buttons/micro-buttons.pug
 
 head
-  script(src='../src/components/ui-kit/dropdown/dropdown.js')
-  script(src='../src/components/ui-kit/like/like.js')
+  script(src="../src/components/ui-kit/dropdown/dropdown.js")
+  script(src="../src/components/ui-kit/like/like.js")
 
 body.ui-kit__body
   +header()
@@ -90,19 +90,24 @@ body.ui-kit__body
           ])
       .form-elements__column.form-elements__column_center
         .indention_double
-          .block__like-btn
+          .block__toggle-buttons
+            +titlebar("toggle button")
+            .toggle-buttons__array
+
+        .indention_double
+          .block__like-buttons
             +titlebar("like button")
-            .like-btn__elem.twinline-gap_own.additional-padding
+            .like-buttons__array.twinline-gap_own.additional-padding
               +microButton([
                 {
-                  type: 'like',
+                  type: "like",
                   likecount: 2,
-                  toggled: false
+                  pressed: false
                 },
                 {
-                  type: 'like',
+                  type: "like",
                   likecount: 12,
-                  toggled: true
+                  pressed: true
                 }
               ])
         .indention_double
@@ -147,14 +152,14 @@ body.ui-kit__body
         .indention_single
           +advantages([
             {
-              icon: 'insert_emoticon',
-              title: 'Комфорт',
-              brief: 'Шумопоглощающие стены'
+              icon: "insert_emoticon",
+              title: "Комфорт",
+              brief: "Шумопоглощающие стены"
             },
             {
-              icon: 'location_city',
-              title: 'Удобство',
-              brief: 'Окно в каждой из спален'
+              icon: "location_city",
+              title: "Удобство",
+              brief: "Окно в каждой из спален"
             }
           ])
       .form-elements__column.form-elements__column_center
