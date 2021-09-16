@@ -1,0 +1,11 @@
+include like/like.pug
+include toggle/toggle.pug
+
+mixin microButton( items=[] )
+  each item in items
+    .micro-button( class=`${item.type}-mode micro-button${item.pressed ? '_pressed' : ''}` )
+      case item.type
+        when 'like'
+          +likeMode(item)
+        when 'toggle'
+          +toggleMode(item)

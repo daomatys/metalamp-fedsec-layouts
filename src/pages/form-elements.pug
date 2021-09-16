@@ -4,7 +4,7 @@ include ../components/ui-kit/dropdown/dropdown.pug
 include ../components/ui-kit/advantage-bar/advantage-bar.pug
 include ../components/ui-kit/star-rate/star-rate.pug
 include ../components/ui-kit/title-bar/title-bar.pug
-include ../components/ui-kit/like/like.pug
+include ../components/ui-kit/micro-buttons/micro-buttons.pug
 
 head
   script(src='../src/components/ui-kit/dropdown/dropdown.js')
@@ -93,12 +93,14 @@ body.ui-kit__body
           .block__like-btn
             +titlebar("like button")
             .like-btn__elem.twinline-gap_own.additional-padding
-              +buttonLike([
+              +microButton([
                 {
+                  type: 'like',
                   likecount: 2,
                   toggled: false
                 },
                 {
+                  type: 'like',
                   likecount: 12,
                   toggled: true
                 }

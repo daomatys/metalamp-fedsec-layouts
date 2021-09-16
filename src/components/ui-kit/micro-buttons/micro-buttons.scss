@@ -1,6 +1,6 @@
 @import "@variables";
 
-.like-btn {
+.micro-button {
   display: flex;
   height: 20px;
   width: 40px;
@@ -14,7 +14,7 @@
   box-sizing: border-box;
   cursor: pointer;
 
-  &_toggled {
+  &_pressed {
     border-color: $perfume;
     color: $perfume;
     opacity: 1;
@@ -23,23 +23,5 @@
   & span {
     font-size: 10px;
     user-select: none;
-  }
-
-  &__icon {
-    position: relative;
-    display: inherit;
-    justify-content: center;
-    align-items: center;
-    width: 20px;
-  }
-
-  &__counter {
-    display: inherit;
-    justify-content: flex-start;
-    align-items: center;
-
-    & + span {
-      line-height: 12px;
-    }
   }
 }
