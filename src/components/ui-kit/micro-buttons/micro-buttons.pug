@@ -5,10 +5,12 @@ mixin microButtons( items=[] )
   each item in items
     - const buttonTypeClass = item.type + '-mode';
     - const pressedButtonClass = item.pressed ? 'micro-button_pressed' : ''
-    
-    .micro-button( class=`${buttonTypeClass} ${pressedButtonClass}` )
-      case item.type
-        when 'like'
+
+    case item.type
+      when 'like'
+        .micro-button( class=`${buttonTypeClass} ${pressedButtonClass}` )
           +likeMode(item)
-        when 'toggle'
+      when 'toggle'
+        .micro-button( class=`${buttonTypeClass} ${pressedButtonClass}` )
           +toggleMode(item)
+        span.toggle-mode__text #{item.text}

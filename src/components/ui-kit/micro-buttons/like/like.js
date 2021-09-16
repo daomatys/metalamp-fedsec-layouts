@@ -2,11 +2,11 @@ function likeButtonEventListeners() {
   const items = document.querySelectorAll('.like-mode');
 
   for (let item of items) {
-    item.addEventListener('click', likeButtonToggling);
+    item.addEventListener('click', likeButtonPressing);
   }
 }
 
-function likeButtonToggling({target}) {
+function likeButtonPressing({target}) {
   const aim = target.closest('.like-mode'); 
   const icon = aim.querySelector('.like-mode__icon').firstElementChild;
   const counter = aim.querySelector('.like-mode__counter').firstElementChild;

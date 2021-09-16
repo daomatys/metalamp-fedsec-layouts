@@ -88,7 +88,18 @@ body.ui-kit__body
           .block__toggle-buttons
             +titleBar("toggle button")
             .toggle-buttons__array
-
+              +microButtons([
+                {
+                  type: "toggle",
+                  pressed: true,
+                  text: "Получать спецпредложения"
+                },
+                {
+                  type: "toggle",
+                  pressed: false,
+                  text: "Получать спецпредложения"
+                }
+              ])
         .indention_double
           .block__like-buttons
             +titleBar("like button")
