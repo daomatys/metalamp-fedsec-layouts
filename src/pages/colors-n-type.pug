@@ -1,12 +1,12 @@
 include ../components/ui-kit/color-sample/color-sample.pug
-include ../components/ui-kit/type/type.pug
+include ../components/ui-kit/type-sample/type-sample.pug
 include ../components/ui-kit/header/header.pug
 
 block content
   body.ui-kit__body
     +header()
     main.ui-kit__main
-      +colors([
+      +colorSamples([
         {hexcode: "#1F2041", opaque: "opaque_100", name: "valhalla", pseudoname: "Dark Shade 100%"},
         {hexcode: "#1F2041", opaque: "opaque_75", name: "valhalla", pseudoname: "Dark Shade 75%"},
         {hexcode: "#1F2041", opaque: "opaque_50", name: "valhalla", pseudoname: "Dark Shade 50%"},
@@ -15,7 +15,7 @@ block content
         {hexcode: "#BC9CFF", opaque: "opaque_100", name: "perfume", pseudoname: "Purple"},
         {hexcode: "#6FCF97", opaque: "opaque_100", name: "silver-tree", pseudoname: "Green"},
       ])
-      +type([
+      +typeSamples([
         {tagname: "H1", note: "This one is the sub-section or widget title"},
         {tagname: "H2", note: "Next one is the item title inside widgets"},
         {tagname: "H3", note: "THIS IS A LABEL OR CTA TEXT"},
