@@ -2,19 +2,23 @@
 
 .like-button {
   &__icon {
-    position: relative;
-    display: inherit;
-    justify-content: center;
-    align-items: center;
     width: 20px;
   }
 
   &__counter {
-    display: inherit;
-    justify-content: flex-start;
-    align-items: center;
+    width: 10px;
+  }
 
-    & + span {
+  & > div {
+    display: inherit;
+    position: relative;
+    left: -1px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    & > span {
+      font-size: 10px;
       line-height: 12px;
     }
   }
