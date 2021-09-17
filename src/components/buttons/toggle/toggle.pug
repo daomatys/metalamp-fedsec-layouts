@@ -1,7 +1,7 @@
 mixin toggleButtons( items=[] )
   each item in items
     - const iconAdditionalClass = item.pressed ? 'gradient-fill' : ''
-    - const buttonPressedClass = item.pressed ? 'like-button_pressed' : ''
+    - const buttonPressedClass = item.pressed ? 'toggle-button__elem_pressed' : ''
 
     .toggle-button 
       .toggle-button__elem( class=buttonPressedClass )
