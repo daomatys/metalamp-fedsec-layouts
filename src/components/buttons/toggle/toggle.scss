@@ -1,12 +1,28 @@
 @import "@variables";
 
-.toggle-mode {
-  &__icon {
-    position: relative;
+.toggle-button {
+  display: flex;
+
+  &__elem {
     display: inherit;
-    justify-content: center;
     align-items: center;
-    width: 20px;
-    fill: $valhalla;
+
+    & > .dot {
+      margin-inline: 3px;
+      display: inherit;
+      fill: $valhalla;
+    }
   }
+
+  &__label {
+    font-size: 14px;
+    line-height: 24px;
+    opacity: .75;
+  }
+}
+
+.toggle-buttons__array {
+  display: grid;
+  grid-row: 2;
+  grid-gap: 10px;
 }

@@ -1,2 +1,11 @@
-mixin toggleMode( item )
-  - const iconAdditionalClass = item.pressed ? 'gradient-fill' : ''
+mixin toggleButtons( items=[] )
+  each item in items
+    - const iconAdditionalClass = item.pressed ? 'gradient-fill' : ''
+    - const buttonPressedClass = item.pressed ? 'like-button_pressed' : ''
+
+    .toggle-button 
+      .toggle-button__elem 
+        span.dot
+      .toggle-button__label
+        label #{item.label}
+

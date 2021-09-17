@@ -1,6 +1,6 @@
 @import "@variables";
 
-.like-button, .toggle-button {
+.like-button, .toggle-button__elem {
   display: flex;
   height: 20px;
   width: 40px;
@@ -19,4 +19,11 @@
     color: $perfume;
     opacity: 1;
   }
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  background-color: $valhalla;
+  border-radius: 50%;
 }

@@ -89,19 +89,17 @@ body.ui-kit__body
           .block__toggle-buttons
             +titleBar("toggle button")
             .toggle-buttons__array.additional-padding
+              +toggleButtons([
+                { pressed: true, label: "Получать спецпредложения" },
+                { pressed: false, label: "Получать спецпредложения" }
+              ])
         .indention_double
           .block__like-buttons
             +titleBar("like button")
             .like-buttons__array.additional-padding.twinline-gap_own
               +likeButtons([
-                {
-                  likecount: 2,
-                  pressed: false
-                },
-                {
-                  likecount: 12,
-                  pressed: true
-                }
+                { pressed: false, likecount: 2 },
+                { pressed: true, likecount: 12 }
               ])
         .indention_double
           .block__star-rate
