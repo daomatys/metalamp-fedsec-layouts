@@ -1,8 +1,0 @@
-mixin likeMode( item )
-  - const iconCode = item.pressed ? 'favorite' : 'favorite_border'
-  - const iconAdditionalClass = item.pressed ? 'gradient-fill' : ''
-
-  .like-mode__icon
-    span.material-icons-outlined( class=iconAdditionalClass ) #{iconCode}
-  .like-mode__counter
-    span #{item.likecount}

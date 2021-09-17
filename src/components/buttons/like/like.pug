@@ -1,0 +1,11 @@
+mixin likeButtons( items=[] )
+  each item in items
+    - const iconCode = item.pressed ? 'favorite' : 'favorite_border'
+    - const iconAdditionalClass = item.pressed ? 'gradient-fill' : ''
+    - const buttonPressedClass = item.pressed ? 'micro-button_pressed' : ''
+
+    .like-button( class=buttonPressedClass )
+      .like-button__icon
+        span.material-icons-outlined( class=iconAdditionalClass ) #{iconCode}
+      .like-button__counter
+        span #{item.likecount}

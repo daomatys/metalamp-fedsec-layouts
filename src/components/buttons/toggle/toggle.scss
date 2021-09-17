@@ -1,0 +1,12 @@
+@import "@variables";
+
+.toggle-mode {
+  &__icon {
+    position: relative;
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    fill: $valhalla;
+  }
+}

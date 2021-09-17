@@ -1,9 +1,10 @@
-include ../components/ui-kit/header/header.pug
-include ../components/ui-kit/input/input.pug
-include ../components/ui-kit/advantage-bar/advantage-bar.pug
-include ../components/ui-kit/star-rate/star-rate.pug
-include ../components/ui-kit/title-bar/title-bar.pug
-include ../components/ui-kit/micro-buttons/micro-buttons.pug
+include ../components/header/header.pug
+include ../components/input/input.pug
+include ../components/advantage-bar/advantage-bar.pug
+include ../components/star-rate/star-rate.pug
+include ../components/title-bar/title-bar.pug
+include ../components/buttons/toggle/toggle.pug
+include ../components/buttons/like/like.pug
 
 body.ui-kit__body
   +header()
@@ -87,31 +88,17 @@ body.ui-kit__body
         .indention_double
           .block__toggle-buttons
             +titleBar("toggle button")
-            .toggle-buttons__array
-              +microButtons([
-                {
-                  type: "toggle",
-                  pressed: true,
-                  text: "Получать спецпредложения"
-                },
-                {
-                  type: "toggle",
-                  pressed: false,
-                  text: "Получать спецпредложения"
-                }
-              ])
+            .toggle-buttons__array.additional-padding
         .indention_double
           .block__like-buttons
             +titleBar("like button")
-            .like-buttons__array.twinline-gap_own.additional-padding
-              +microButtons([
+            .like-buttons__array.additional-padding.twinline-gap_own
+              +likeButtons([
                 {
-                  type: "like",
                   likecount: 2,
                   pressed: false
                 },
                 {
-                  type: "like",
                   likecount: 12,
                   pressed: true
                 }
@@ -119,7 +106,7 @@ body.ui-kit__body
         .indention_double
           .block__star-rate
             +titleBar("rate button")
-            .star-rate__elem.twinline-gap_own.additional-padding
+            .star-rate__elem.additional-padding.twinline-gap_own
               +stars([4, 5])
       .form-elements__column.form-elements__column_right
     .form-elements__wrap_middle.indention_wrap

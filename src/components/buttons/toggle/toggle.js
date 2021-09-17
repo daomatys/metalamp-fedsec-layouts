@@ -15,11 +15,11 @@ function toggleButtonPressing({target}) {
 
   switch ( aim.classList.contains('micro-button_pressed') ) {
     case true: {
-
+      icon.style.transform ='translateX(16px)';
       break;
     }
     case false: {
-      
+      icon.style.transform ='translateX(-16px)';
       break;
     }
   }
