@@ -10,12 +10,11 @@
   }
 
   & > div {
-    display: inherit;
     position: relative;
     left: -1px;
+    display: inherit;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
 
     & > span {
       font-size: 10px;
