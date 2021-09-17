@@ -4,8 +4,8 @@ mixin toggleButtons( items=[] )
     - const buttonPressedClass = item.pressed ? 'like-button_pressed' : ''
 
     .toggle-button 
-      .toggle-button__elem 
-        span.dot
+      .toggle-button__elem( class=buttonPressedClass )
+        span.material-icons.dot( class=iconAdditionalClass )
       .toggle-button__label
         label #{item.label}
 

@@ -8,9 +8,12 @@
     align-items: center;
 
     & > .dot {
-      margin-inline: 3px;
       display: inherit;
+      margin-inline: 3px;
+      font-size: 12px;
       fill: $valhalla;
+      -webkit-background-clip: unset;
+      background-clip: unset;
     }
   }
 
