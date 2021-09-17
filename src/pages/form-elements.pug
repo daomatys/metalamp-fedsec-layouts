@@ -11,7 +11,7 @@ body.ui-kit__body
   main.ui-kit__main
     .form-elements__wrap_top.indention_wrap
       .form-elements__column.form-elements__column_left
-        .indention_single
+        .block__inpuns_common.indention_single
           +inputs([
             {
               title: "text field",
@@ -39,7 +39,7 @@ body.ui-kit__body
               placeholder: "ДД.ММ.ГГГГ"
             }
           ])
-        .indention_double.twinline-gap_longest
+        .block__dropdowns_date-twins.indention_double.twinline-gap_longest
           +inputs([
             {
               title: "date dropdown",
@@ -62,7 +62,7 @@ body.ui-kit__body
               }
             }
           ])
-        .indention_double
+        .block__dropdowns_date-semi-wide.indention_double
           +inputs([
             {
               title: "filter date dropdown",
@@ -75,7 +75,7 @@ body.ui-kit__body
               }
             }
           ])
-        .indention_double
+        .block__inputs_subscribe.indention_double
           +inputs([
             {
               title: "subscription text field",
@@ -85,31 +85,32 @@ body.ui-kit__body
             }
           ])
       .form-elements__column.form-elements__column_center
-        .indention_double
-          .block__toggle-buttons
-            +titleBar("toggle")
-            .toggle-buttons__array.additional-padding
-              +toggleButtons([
-                { pressed: true, label: "Получать спецпредложения" },
-                { pressed: false, label: "Получать спецпредложения" }
-              ])
-        .indention_double
-          .block__like-buttons
-            +titleBar("like button")
-            .like-buttons__array.additional-padding.twinline-gap_own
-              +likeButtons([
-                { pressed: false, likecount: 2 },
-                { pressed: true, likecount: 12 }
-              ])
-        .indention_double
-          .block__star-rate
-            +titleBar("rate button")
-            .star-rate__elem.additional-padding.twinline-gap_own
-              +stars([4, 5])
+        .block__checkbox-buttons.indention_single
+          +titleBar("checkbox buttons")
+        .block__radio-buttons.indention_double
+          +titleBar("radio buttons")
+        .block__toggle-buttons.indention_double
+          +titleBar("toggle")
+          .toggle-buttons__array.additional-padding
+            +toggleButtons([
+              { pressed: true, label: "Получать спецпредложения" },
+              { pressed: false, label: "Получать спецпредложения" }
+            ])
+        .block__like-buttons.indention_double
+          +titleBar("like button")
+          .like-buttons__array.additional-padding.twinline-gap_own
+            +likeButtons([
+              { pressed: false, likecount: 2 },
+              { pressed: true, likecount: 12 }
+            ])
+        .block__star-rate.indention_double
+          +titleBar("rate button")
+          .star-rate__elem.additional-padding.twinline-gap_own
+            +stars([4, 5])
       .form-elements__column.form-elements__column_right
-    .form-elements__wrap_middle.indention_wrap
+    .form-elements__wrap_upper-middle.indention_wrap
       .form-elements__column.form-elements__column_left
-        .indention_single
+        .block__dropdowns_in-action.indention_single
           +inputs([
             {
               title: "dropdown",
@@ -138,9 +139,10 @@ body.ui-kit__body
           ])
       .form-elements__column.form-elements__column_center
       .form-elements__column.form-elements__column_right
+    .form-elements__wrap_lower-middle.indention_wrap
     .form-elements__wrap_bottom.indention_wrap
       .form-elements__column.form-elements__column_left
-        .indention_single
+        .block__advantage-bars.indention_single
           +advantageBars([
             {
               icon: "insert_emoticon",
