@@ -22,7 +22,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: PATHS.dist,
+    path: PATHS.dist
   },
   module: {
     rules: [
@@ -43,7 +43,10 @@ module.exports = {
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        type: 'asset/inline',
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/fonts/[name][ext][query]'
+        }
       }
     ]
   },
