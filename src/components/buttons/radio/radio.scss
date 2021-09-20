@@ -1,37 +1,49 @@
 @import "@variables";
 
 .radio-button {
-  display: flex;
+  display: grid;
+  grid-row: 2;
+  grid-gap: 10px;
   margin-right: 20px;
 
-  &__elem {
-    display: inherit;
-    
-    & input {
-      position: relative;
-      margin: 0;
-      width: 20px;
-      height: 20px;
-      appearance: none;
-      border: 1px solid $perfume;
-      border-radius: 50%;
+  & input {
+    display: flex;
+    margin: 0;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 50%;
+    border-color: $valhalla;
+    opacity: .25;
 
-      &:active,
-      &:checked {
-        display: inherit;
-        align-items: center;
-        justify-content: center;
+    &:checked {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+      border-color: $perfume;
 
-         &:after {
-          width: 12px;
-          height: 12px;
-          border-radius: 50%;
-          position: absolute;
-          background: $primary-gradient;
-          content: '';
-        }
+        &:after {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        position: absolute;
+        background: $primary-gradient;
+        content: '';
+      }
+
+      & + label {
+        opacity: .7
       }
     }
+  }
+
+  & label {
+    color: $valhalla;
+    opacity: .5;
   }
 }
 
