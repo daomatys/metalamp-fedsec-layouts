@@ -1,6 +1,40 @@
 @import "@variables";
 
 .radio-button {
+  display: flex;
+  margin-right: 20px;
+
   &__elem {
+    display: inherit;
+    
+    & input {
+      position: relative;
+      margin: 0;
+      width: 20px;
+      height: 20px;
+      appearance: none;
+      border: 1px solid $perfume;
+      border-radius: 50%;
+
+      &:active,
+      &:checked {
+        display: inherit;
+        align-items: center;
+        justify-content: center;
+
+         &:after {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          position: absolute;
+          background: $primary-gradient;
+          content: '';
+        }
+      }
+    }
   }
+}
+
+.radio-buttons__array {
+  display: flex;
 }
