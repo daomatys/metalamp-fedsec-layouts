@@ -4,12 +4,13 @@
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-gap: 10px;
+  align-items: center;
   margin-right: 20px;
 
   & input {
+    position: relative;
     display: flex;
     margin: 0;
-    position: relative;
     width: 20px;
     height: 20px;
     appearance: none;
@@ -20,28 +21,28 @@
     opacity: .25;
 
     &:checked {
-      display: flex;
       align-items: center;
       justify-content: center;
       opacity: 1;
       border-color: $perfume;
 
-        &:after {
+      &:after {
+        position: absolute;
         width: 12px;
         height: 12px;
         border-radius: 50%;
-        position: absolute;
         background: $primary-gradient;
         content: '';
       }
 
       & + label {
-        opacity: .7
+        opacity: .75
       }
     }
   }
 
   & label {
+    font-size: 14px;
     color: $valhalla;
     opacity: .5;
   }
