@@ -6,6 +6,7 @@ include ../components/title-bar/title-bar.pug
 include ../components/buttons/toggle/toggle.pug
 include ../components/buttons/like/like.pug
 include ../components/buttons/radio/radio.pug
+include ../components/buttons/checkbox/checkbox.pug
 
 body.ui-kit__body
   +header()
@@ -88,12 +89,18 @@ body.ui-kit__body
       .form-elements__column.form-elements__column_center
         .block__checkbox-buttons.indention_single
           +titleBar("checkbox buttons")
+          .checkbox-buttons__array.additional-padding
+            +checkboxButtons([
+              { pressed: false, label: "Можно курить" },
+              { pressed: true, label: "Можно с питомцами" },
+              { pressed: true, label: "Можно пригласить гостей (до 10 человек)" }
+            ])
         .block__radio-buttons.indention_double
           +titleBar("radio buttons")
           .radio-buttons__array.additional-padding 
             +radioButtons([
-              { id: "male", pressed: true, label: "Мужчина" },
-              { id: "female", pressed: false, label: "Женщина" }
+              { id: "male", label: "Мужчина", pressed: true },
+              { id: "female", label: "Женщина" }
             ])
         .block__toggle-buttons.indention_double
           +titleBar("toggle")
@@ -146,6 +153,9 @@ body.ui-kit__body
       .form-elements__column.form-elements__column_center
       .form-elements__column.form-elements__column_right
     .form-elements__wrap_lower-middle.indention_wrap
+      .form-elements__column.form-elements__column_left
+      .form-elements__column.form-elements__column_center
+      .form-elements__column.form-elements__column_right
     .form-elements__wrap_bottom.indention_wrap
       .form-elements__column.form-elements__column_left
         .block__advantage-bars.indention_single
