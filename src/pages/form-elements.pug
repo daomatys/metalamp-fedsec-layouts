@@ -11,9 +11,9 @@ include ../components/buttons/checkbox/checkbox.pug
 body.ui-kit__body
   +header()
   main.ui-kit__main
-    .form-elements__wrap_top.indention_wrap
+    .form-elements__wrap_top.indentation_wrap
       .form-elements-column
-        .block__inpuns_common.indention_single
+        .block__inpuns_common.indentation_single
           +inputs([
             {
               title: "text field",
@@ -41,7 +41,7 @@ body.ui-kit__body
               placeholder: "ДД.ММ.ГГГГ"
             }
           ])
-        .block__dropdowns_date-twins.indention_double.twinline-gap_longest
+        .block__dropdowns_date-twins.indentation_double.twinline-gap_longest
           +inputs([
             {
               title: "date dropdown",
@@ -64,7 +64,7 @@ body.ui-kit__body
               }
             }
           ])
-        .block__dropdowns_date-semi-wide.indention_double
+        .block__dropdowns_date-semi-wide.indentation_double
           +inputs([
             {
               title: "filter date dropdown",
@@ -77,7 +77,7 @@ body.ui-kit__body
               }
             }
           ])
-        .block__inputs_subscribe.indention_double
+        .block__inputs_subscribe.indentation_double
           +inputs([
             {
               title: "subscription text field",
@@ -87,7 +87,7 @@ body.ui-kit__body
             }
           ])
       .form-elements-column.column_center
-        .block__checkbox-buttons.indention_single
+        .block__checkbox-buttons.indentation_single
           +titleBar("checkbox buttons")
           .checkbox-buttons__array.additional-padding
             +checkboxButtons([
@@ -95,35 +95,35 @@ body.ui-kit__body
               { groupname: "allowbox", pressed: true, label: "Можно с питомцами" },
               { groupname: "allowbox", pressed: true, label: "Можно пригласить гостей (до 10 человек)" }
             ])
-        .block__radio-buttons.indention_double
+        .block__radio-buttons.indentation_double
           +titleBar("radio buttons")
           .radio-buttons__array.additional-padding 
             +radioButtons([
               { id: "radio_male", label: "Мужчина", pressed: true },
               { id: "radio_female", label: "Женщина" }
             ])
-        .block__toggle-buttons.indention_double
+        .block__toggle-buttons.indentation_double
           +titleBar("toggle")
           .toggle-buttons__array.additional-padding
             +toggleButtons([
               { pressed: true, label: "Получать спецпредложения" },
               { pressed: false, label: "Получать спецпредложения" }
             ])
-        .block__like-buttons.indention_double
+        .block__like-buttons.indentation_double
           +titleBar("like button")
           .like-buttons__array.additional-padding.twinline-gap_own
             +likeButtons([
               { pressed: false, likecount: 2 },
               { pressed: true, likecount: 12 }
             ])
-        .block__star-rate.indention_double
+        .block__star-rate.indentation_double
           +titleBar("rate button")
           .star-rate__elem.additional-padding.twinline-gap_own
             +stars([4, 5])
       .form-elements-column
-    .form-elements__wrap_upper-middle.indention_wrap
+    .form-elements__wrap_upper-middle.indentation_wrap
       .form-elements-column
-        .block__dropdowns_in-action.indention_single
+        .block__dropdowns_in-action.indentation_single
           +inputs([
             {
               title: "dropdown",
@@ -152,13 +152,13 @@ body.ui-kit__body
           ])
       .form-elements-column.column_center
       .form-elements-column
-    .form-elements__wrap_lower-middle.indention_wrap
+    .form-elements__wrap_lower-middle.indentation_wrap
       .form-elements-column
       .form-elements-column.column_center
       .form-elements-column
-    .form-elements__wrap_bottom.indention_wrap
+    .form-elements__wrap_bottom.indentation_wrap
       .form-elements-column
-        .block__advantage-bars.indention_single
+        .block__advantage-bars.indentation_single
           +advantageBars([
             {
               icon: "insert_emoticon",
