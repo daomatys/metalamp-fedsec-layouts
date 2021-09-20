@@ -1,0 +1,13 @@
+mixin radioButtons( items=[] )
+  each item in items
+    - const iconAdditionalClass = item.pressed ? 'gradient-fill' : ''
+    - const buttonPressedClass = item.pressed ? 'radio-button__elem_pressed' : ''
+    - const buttonChecked = item.pressed ? true : false
+
+    .radio-button 
+      .radio-button__elem( class=buttonPressedClass )
+        input( type='radio' name='sex' id=item.id checked=buttonChecked )
+        label( for=item.id )
+        span.dot( class=iconAdditionalClass )
+      .radio-button__label
+        label #{item.label}
