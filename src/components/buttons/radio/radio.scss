@@ -7,7 +7,7 @@
   align-items: center;
   margin-right: 20px;
 
-  & input {
+  &__elem {
     position: relative;
     display: flex;
     margin: 0;
@@ -41,7 +41,7 @@
     }
   }
 
-  & label {
+  &__label {
     font-size: 14px;
     color: $valhalla;
     opacity: .5;
