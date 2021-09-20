@@ -3,7 +3,7 @@ mixin checkboxButtons( items=[] )
 
   each item in items
     - const buttonChecked = item.pressed ? true : false
-    - const itemId = `checkbox_${++buttonsCount}`
+    - const itemId = item.groupname + '_' + ++buttonsCount
 
     .checkbox-button
         input.checkbox-button__elem( type='checkbox' id=itemId checked=buttonChecked )

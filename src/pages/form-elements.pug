@@ -12,7 +12,7 @@ body.ui-kit__body
   +header()
   main.ui-kit__main
     .form-elements__wrap_top.indention_wrap
-      .form-elements__column.form-elements__column_left
+      .form-elements-column
         .block__inpuns_common.indention_single
           +inputs([
             {
@@ -86,21 +86,21 @@ body.ui-kit__body
               subscription: true
             }
           ])
-      .form-elements__column.form-elements__column_center
+      .form-elements-column.column_center
         .block__checkbox-buttons.indention_single
           +titleBar("checkbox buttons")
           .checkbox-buttons__array.additional-padding
             +checkboxButtons([
-              { pressed: false, label: "Можно курить" },
-              { pressed: true, label: "Можно с питомцами" },
-              { pressed: true, label: "Можно пригласить гостей (до 10 человек)" }
+              { groupname: "allowbox", pressed: false, label: "Можно курить" },
+              { groupname: "allowbox", pressed: true, label: "Можно с питомцами" },
+              { groupname: "allowbox", pressed: true, label: "Можно пригласить гостей (до 10 человек)" }
             ])
         .block__radio-buttons.indention_double
           +titleBar("radio buttons")
           .radio-buttons__array.additional-padding 
             +radioButtons([
-              { id: "male", label: "Мужчина", pressed: true },
-              { id: "female", label: "Женщина" }
+              { id: "radio_male", label: "Мужчина", pressed: true },
+              { id: "radio_female", label: "Женщина" }
             ])
         .block__toggle-buttons.indention_double
           +titleBar("toggle")
@@ -120,9 +120,9 @@ body.ui-kit__body
           +titleBar("rate button")
           .star-rate__elem.additional-padding.twinline-gap_own
             +stars([4, 5])
-      .form-elements__column.form-elements__column_right
+      .form-elements-column
     .form-elements__wrap_upper-middle.indention_wrap
-      .form-elements__column.form-elements__column_left
+      .form-elements-column
         .block__dropdowns_in-action.indention_single
           +inputs([
             {
@@ -150,14 +150,14 @@ body.ui-kit__body
               }
             }
           ])
-      .form-elements__column.form-elements__column_center
-      .form-elements__column.form-elements__column_right
+      .form-elements-column.column_center
+      .form-elements-column
     .form-elements__wrap_lower-middle.indention_wrap
-      .form-elements__column.form-elements__column_left
-      .form-elements__column.form-elements__column_center
-      .form-elements__column.form-elements__column_right
+      .form-elements-column
+      .form-elements-column.column_center
+      .form-elements-column
     .form-elements__wrap_bottom.indention_wrap
-      .form-elements__column.form-elements__column_left
+      .form-elements-column
         .block__advantage-bars.indention_single
           +advantageBars([
             {
@@ -171,6 +171,6 @@ body.ui-kit__body
               brief: "Окно в каждой из спален"
             }
           ])
-      .form-elements__column.form-elements__column_center
-      .form-elements__column.form-elements__column_right
+      .form-elements-column.column_center
+      .form-elements-column
   footer.ui-kit__footer

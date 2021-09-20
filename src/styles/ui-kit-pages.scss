@@ -31,14 +31,12 @@
   }
 }
 
-.form-elements {
-  &__column {
+.form-elements-column {
     width: 320px;
+}
 
-    &_center {
-      padding-left: 44px;
-    }
-  }
+.column_center {
+  padding-left: 44px;
 }
 
 .twinline-gap {
