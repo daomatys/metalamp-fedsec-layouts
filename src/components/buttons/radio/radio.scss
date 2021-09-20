@@ -2,7 +2,7 @@
 
 .radio-button {
   display: grid;
-  grid-row: 2;
+  grid-template-columns: repeat(2, auto);
   grid-gap: 10px;
   margin-right: 20px;
 
