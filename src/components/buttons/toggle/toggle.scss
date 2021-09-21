@@ -5,14 +5,14 @@
   display: flex;
 
   &__elem {
-    @extend .button_frame;
+    @extend .oval-button_frame;
     display: inherit;
     align-items: center;
     appearance: none;
     
 
     &::after {
-      @extend .button_dot-marker;
+      @extend .oval-button_dot-marker;
       display: inherit;
       margin-inline: 3px;
       -webkit-transition: transform 0.3s ease;
