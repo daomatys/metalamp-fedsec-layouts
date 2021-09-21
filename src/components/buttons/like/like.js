@@ -8,23 +8,15 @@ function likeButtonEventListeners() {
 
 function likeButtonPressing({target}) {
   const aim = target.closest('.like-button'); 
-  const icon = aim.querySelector('.like-button__icon').firstElementChild;
-  const counter = aim.querySelector('.like-button__counter').firstElementChild;
+  const icon = aim.querySelector('.like-button__icon');
+  const counter = aim.querySelector('.like-button__counter');
 
-  aim.classList.toggle('like-button_pressed');
-  icon.classList.toggle('gradient-fill');
-
-  switch ( aim.classList.contains('like-button_pressed') ) {
-    case true: {
-      icon.textContent = 'favorite'
-      ++counter.textContent;
-      break;
-    }
-    case false: {
-      icon.textContent = 'favorite_border';
-      --counter.textContent;
-      break;
-    }
+  if ( aim.attributes.checked ) {
+    icon.textContent = 'favorite'
+    ++counter.textContent;
+  } else {
+    icon.textContent = 'favorite_border';
+    --counter.textContent;
   }
 }
 

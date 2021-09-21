@@ -13,6 +13,7 @@
     color: $valhalla;
     opacity: .25;
     cursor: pointer;
+    appearance: none;
 
     &:checked {
       border-color: $perfume;

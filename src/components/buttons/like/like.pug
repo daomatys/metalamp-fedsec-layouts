@@ -1,11 +1,9 @@
 mixin likeButtons( items=[] )
   each item in items
     - const iconCode = item.pressed ? 'favorite' : 'favorite_border'
-    - const iconAdditionalClass = item.pressed ? 'gradient-fill' : ''
-    - const buttonPressedClass = item.pressed ? 'like-button_pressed' : ''
+    - const buttonChecked = item.pressed ? true : false
 
-    .like-button( class=buttonPressedClass )
-      .like-button__icon
-        span.material-icons-outlined( class=iconAdditionalClass ) #{iconCode}
-      .like-button__counter
-        span #{item.likecount}
+    .like-button
+      input.like-button__elem( type='checkbox' checked=buttonChecked )
+      label.like-button__icon.material-icons-outlined #{iconCode}
+      label.like-button__counter #{item.likecount}

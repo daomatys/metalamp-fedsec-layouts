@@ -1,6 +1,13 @@
 @import "@variables";
+@import "../buttons.scss";
 
 .like-button {
+  display: flex;
+
+  &__elem {
+    @extend .oval-button_frame;
+  }
+
   &__icon {
     width: 20px;
   }
@@ -9,16 +16,13 @@
     width: 10px;
   }
 
-  & > div {
+  & > label {
     position: relative;
     left: -1px;
     display: inherit;
     justify-content: center;
     align-items: center;
-
-    & > span {
-      font-size: 10px;
-      line-height: 12px;
-    }
+    font-size: 10px;
+    line-height: 12px;
   }
 }
