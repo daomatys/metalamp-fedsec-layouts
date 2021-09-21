@@ -8,8 +8,6 @@
     @extend .oval-button_frame;
     display: inherit;
     align-items: center;
-    appearance: none;
-    
 
     &::after {
       @extend .oval-button_dot-marker;

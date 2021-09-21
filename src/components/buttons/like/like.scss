@@ -3,26 +3,34 @@
 
 .like-button {
   display: flex;
+  position: relative;
+  align-items: center;
 
   &__elem {
     @extend .oval-button_frame;
+    margin: 0 10px 0 0;
   }
 
-  &__icon {
-    width: 20px;
-  }
-
-  &__counter {
-    width: 10px;
-  }
-
-  & > label {
-    position: relative;
-    left: -1px;
+  &__text {
     display: inherit;
-    justify-content: center;
-    align-items: center;
-    font-size: 10px;
-    line-height: 12px;
+    position: absolute;
+    left: 1px;
+
+    &_icon {
+      width: 20px;
+    }
+  
+    &_counter {
+      width: 10px;
+    }
+
+    & > label {
+      position: relative;
+      display: inherit;
+      justify-content: center;
+      align-items: center;
+      font-size: 10px;
+      line-height: 12px;
+    }
   }
 }
