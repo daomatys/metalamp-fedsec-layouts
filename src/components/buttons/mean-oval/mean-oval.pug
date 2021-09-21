@@ -7,11 +7,11 @@ mixin meanOvalButtons( items=[] )
     .mean-oval-button( class=widthClass )
       case item.type 
         when 'contained'
-          button.mean-oval-button__elem.button-style_contained #{buttonText}
+          button.mean-oval-button__elem.button-style_contained( disabled=item.onhover ) #{buttonText}
           label.mean-oval-button__background
         when 'outlined'
-          button.mean-oval-button__elem.button-style_outlined #{buttonText}
+          button.mean-oval-button__elem.button-style_outlined( disabled=item.onhover ) #{buttonText}
           label.mean-oval-button__background
           label.mean-oval-button__thumb
         when 'text'
-          button.mean-oval-button__elem.button-style_text #{buttonText}
+          button.mean-oval-button__elem.button-style_text( disabled=item.onhover ) #{buttonText}
