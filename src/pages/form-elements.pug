@@ -14,7 +14,7 @@ body.ui-kit__body
   main.ui-kit__main
     .form-elements__wrap_top.indentation_wrap
       .form-elements-column
-        .block__inpuns_common.indentation_single
+        .block__inpuns_common
           +inputs([
             {
               title: "text field",
@@ -88,7 +88,7 @@ body.ui-kit__body
             }
           ])
       .form-elements-column.column_center
-        .block__checkbox-buttons.indentation_single
+        .block__checkbox-buttons
           +titleBar("checkbox buttons")
           .checkbox-buttons__array.additional-padding
             +checkboxButtons([
@@ -122,21 +122,25 @@ body.ui-kit__body
           .star-rate__elem.additional-padding.twinline-gap_own
             +stars([4, 5])
       .form-elements-column
+        .block__range-slider
+          +titleBar("range slider")
+          .range-slider__container.additional-padding 
+            
         .block__mean-oval-buttons.indentation_double
           +titleBar("buttons")
           .mean-oval-buttons__array.additional-padding 
             +meanOvalButtons([
               { type: "contained" },
-              { type: "contained", disabled: true },
+              { type: "contained", onhover: true },
               { type: "outlined" },
-              { type: "outlined", disabled: true },
+              { type: "outlined", onhover: true },
               { type: "text" },
-              { type: "text", disabled: true },
+              { type: "text", onhover: true },
               { type: "contained", text: "перейти к оплате", iconname: "arrow_forward", widthkey: "100" },
             ])
     .form-elements__wrap_upper-middle.indentation_wrap
       .form-elements-column
-        .block__dropdowns_in-action.indentation_single
+        .block__dropdowns_in-action
           +inputs([
             {
               title: "dropdown",
@@ -171,7 +175,7 @@ body.ui-kit__body
       .form-elements-column
     .form-elements__wrap_bottom.indentation_wrap
       .form-elements-column
-        .block__advantage-bars.indentation_single
+        .block__advantage-bars
           +advantageBars([
             {
               icon: "insert_emoticon",
