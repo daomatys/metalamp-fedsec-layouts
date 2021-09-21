@@ -1,30 +1,25 @@
 @import "@variables";
+@import "../buttons.scss";
 
 .toggle-button {
   display: flex;
 
   &__elem {
+    @extend .button_frame;
     display: inherit;
     align-items: center;
+    appearance: none;
 
-    & > .dot {
+    &::after {
+      @extend .button_dot-marker;
       display: inherit;
       margin-inline: 3px;
-      font-size: 12px;
-      -webkit-background-clip: unset;
-      background-clip: unset;
       -webkit-transition: transform 0.3s ease;
-      -moz-transition: transform 0.3s ease;
-      -ms-transition: transform 0.3s ease;
-      -o-transition: transform 0.3s ease;
       transition: transform 0.3s ease;
     }
 
-    & > .gradient-fill {
+    &:checked::after {
       -webkit-transform: translateX(20px);
-      -moz-transform: translateX(20px);
-      -ms-transform: translateX(20px);
-      -o-transform: translateX(20px);
       transform: translateX(20px);
     }
   }

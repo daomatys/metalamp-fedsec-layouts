@@ -91,9 +91,9 @@ body.ui-kit__body
           +titleBar("checkbox buttons")
           .checkbox-buttons__array.additional-padding
             +checkboxButtons([
-              { groupname: "allowbox", pressed: false, label: "Можно курить" },
-              { groupname: "allowbox", pressed: true, label: "Можно с питомцами" },
-              { groupname: "allowbox", pressed: true, label: "Можно пригласить гостей (до 10 человек)" }
+              { groupname: "uikit-allowed", pressed: false, label: "Можно курить" },
+              { groupname: "uikit-allowed", pressed: true, label: "Можно с питомцами" },
+              { groupname: "uikit-allowed", pressed: true, label: "Можно пригласить гостей (до 10 человек)" }
             ])
         .block__radio-buttons.indentation_double
           +titleBar("radio buttons")
@@ -106,8 +106,8 @@ body.ui-kit__body
           +titleBar("toggle")
           .toggle-buttons__array.additional-padding
             +toggleButtons([
-              { pressed: true, label: "Получать спецпредложения" },
-              { pressed: false, label: "Получать спецпредложения" }
+              { label: "Получать спецпредложения", pressed: true },
+              { label: "Получать спецпредложения", pressed: false }
             ])
         .block__like-buttons.indentation_double
           +titleBar("like button")

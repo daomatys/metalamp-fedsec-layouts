@@ -1,10 +1,7 @@
 mixin toggleButtons( items=[] )
   each item in items
-    - const iconAdditionalClass = item.pressed ? 'gradient-fill' : ''
-    - const buttonPressedClass = item.pressed ? 'toggle-button__elem_pressed' : ''
+    - const buttonChecked = item.pressed ? true : false
 
     .toggle-button 
-      .toggle-button__elem( class=buttonPressedClass )
-        span.dot( class=iconAdditionalClass )
-      .toggle-button__label
-        label #{item.label}
+      input.toggle-button__elem( type='checkbox' checked=buttonChecked )
+      label.toggle-button__label #{item.label}
