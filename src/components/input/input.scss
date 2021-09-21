@@ -37,27 +37,11 @@
   }
 }
 
-.elem {
-  &__border {
-    border-width: 1px;
-    border-style: solid;
-    box-sizing: border-box;
-    outline: none;
-  }
-
-  &__width {
-    &_100 {
-      width: 320px
-    }
-
-    &_75 {
-      width: 266px;
-    }
-
-    &_50 {
-      width: 150px
-    }
-  }
+.elem__border {
+  border-width: 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  outline: none;
 }
 
 .dropdown-marker {

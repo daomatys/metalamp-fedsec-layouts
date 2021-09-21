@@ -66,3 +66,21 @@
 .additional-padding {
   padding-top: 11px;
 }
+
+.elem__width {
+  &_100 {
+    width: 320px
+  }
+
+  &_75 {
+    width: 266px;
+  }
+
+  &_50 {
+    width: 150px
+  }
+
+  &_30 {
+    width: 99px;
+  }
+}
