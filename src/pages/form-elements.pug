@@ -91,23 +91,23 @@ body.ui-kit__body
           +titleBar("checkbox buttons")
           .checkbox-buttons__array.additional-padding
             +checkboxButtons([
-              { groupname: "uikit-allowed", pressed: false, label: "Можно курить" },
-              { groupname: "uikit-allowed", pressed: true, label: "Можно с питомцами" },
-              { groupname: "uikit-allowed", pressed: true, label: "Можно пригласить гостей (до 10 человек)" }
+              { groupname: "uik-fe_allows", pressed: false, label: "Можно курить" },
+              { groupname: "uik-fe_allows", pressed: true, label: "Можно с питомцами" },
+              { groupname: "uik-fe_allows", pressed: true, label: "Можно пригласить гостей (до 10 человек)" }
             ])
         .block__radio-buttons.indentation_double
           +titleBar("radio buttons")
           .radio-buttons__array.additional-padding 
             +radioButtons([
-              { id: "radio_male", label: "Мужчина", pressed: true },
-              { id: "radio_female", label: "Женщина" }
+              { id: "uik-fe_male", label: "Мужчина", pressed: true },
+              { id: "uik-fe_female", label: "Женщина" }
             ])
         .block__toggle-buttons.indentation_double
           +titleBar("toggle")
           .toggle-buttons__array.additional-padding
             +toggleButtons([
-              { label: "Получать спецпредложения", pressed: true },
-              { label: "Получать спецпредложения", pressed: false }
+              { groupname: "uik-fe_toggles", label: "Получать спецпредложения", pressed: true },
+              { groupname: "uik-fe_toggles", label: "Получать спецпредложения", pressed: false }
             ])
         .block__like-buttons.indentation_double
           +titleBar("like button")

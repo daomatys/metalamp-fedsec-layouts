@@ -1,5 +1,6 @@
 @import "@variables";
 @import "../buttons.scss";
+@import "../../../styles/ui-kit-pages.scss";
 
 .like-button {
   display: flex;
@@ -8,16 +9,30 @@
 
   &__elem {
     @extend .oval-button_frame;
-    margin: 0 10px 0 0;
+
+    &:checked + div {
+      opacity: 1;
+
+      & > label{
+        @extend .gradient-fill;
+        content: 'favorite';
+        
+        & + label {
+          color: $perfume;
+        }
+      }
+    }
   }
 
   &__text {
     display: inherit;
     position: absolute;
+    opacity: .25;
     left: 1px;
 
     &_icon {
       width: 20px;
+      content: 'favorite_border';
     }
   
     &_counter {
@@ -31,6 +46,7 @@
       align-items: center;
       font-size: 10px;
       line-height: 12px;
+      cursor: pointer;
     }
   }
 }
