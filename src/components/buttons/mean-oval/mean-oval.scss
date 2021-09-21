@@ -7,6 +7,9 @@
   align-items: center;
   height: 44px;
   padding-inline: 2px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  width: auto;
 
   &__background {
     position: absolute;
@@ -72,6 +75,6 @@
 }
 
 .mean-oval-buttons__array {
-  display: grid;
-  grid-gap: 20px;
+  display: inline-flex;
+  flex-flow: row wrap;
 }
