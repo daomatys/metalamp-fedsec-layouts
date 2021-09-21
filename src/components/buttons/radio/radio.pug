@@ -2,6 +2,6 @@ mixin radioButtons( items=[] )
   each item in items
     - const buttonChecked = item.pressed ? true : false
 
-    .radio-button
+    label.radio-button( for=item.id )
         input.radio-button__elem( type='radio' name='sex' id=item.id checked=buttonChecked )
         label.radio-button__label( for=item.id ) #{item.label}
