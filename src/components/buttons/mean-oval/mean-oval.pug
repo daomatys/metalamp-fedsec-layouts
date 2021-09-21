@@ -1,15 +1,16 @@
 mixin meanOvalButtons( items=[] )
   each item in items
-    - const buttonText = item.text ? item.text :"click me"
+    - const buttonText = item.text ? item.text : 'click me'
+    - const widthKey = item.widthkey ? item.widthkey : '100'
 
-    .mean-oval-button
+    .mean-oval-button( class =`elem-width_${widthKey}` )
       case item.type 
         when 'contained'
+          button.mean-oval-button__elem.button-style_contained( disabled=item.disabled ) #{buttonText}
           label.mean-oval-button__background
-          button.mean-oval-button__elem #{buttonText}
         when 'outlined'
+          button.mean-oval-button__elem.button-style_outlined( disabled=item.disabled ) #{buttonText}
           label.mean-oval-button__background
           label.mean-oval-button__thumb
-          button.mean-oval-button__elem.button-style_outlined #{buttonText}
         when 'text'
-          button.mean-oval-button__elem.button-style_text #{buttonText}
+          button.mean-oval-button__elem.button-style_text( disabled=item.disabled ) #{buttonText}

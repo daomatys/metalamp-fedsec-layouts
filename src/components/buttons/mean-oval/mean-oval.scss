@@ -1,19 +1,74 @@
+@import "@variables";
+
 .mean-oval-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+  padding-inline: 2px;
+
   &__background {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
     border-radius: 22px;
-    height: 44px;
+    height: inherit;
+    width: 100%;
+    background: $primary-gradient;
+    z-index: 1;
   }
 
   &__thumb {
+    position: relative;
     border-radius: 20px;
     height: 40px;
+    width: 100%;
+    box-sizing:border-box;
     background: #fff;
+    z-index: 2;
   }
 
   &__elem {
-    
+    position: absolute;
+    appearance: none;
+    border: none;
+    background: transparent;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    z-index: 3;
   }
+}
+
+.button-style {
+  &_contained {
+    &:disabled {
+      & + label {
+        opacity: .5;
+      }
+    }
+  }
+
+  &_outlined {
+    color: $perfume;
+
+    &:disabled {
+      & + label {
+        opacity: .5;
+      }
+    }
+  }
+
+  &_text {
+    color: $perfume;
+
+    &:disabled {
+      color: $valhalla;
+      opacity: .5;
+    }
+  }
+}
+
+.mean-oval-buttons__array {
+  display: grid;
+  grid-gap: 20px;
 }
