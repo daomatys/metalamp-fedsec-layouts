@@ -41,7 +41,7 @@
 
 .button-style {
   &_contained {
-    &:disabled {
+    &:hover {
       & + label {
         opacity: .5;
       }
@@ -51,7 +51,7 @@
   &_outlined {
     color: $perfume;
 
-    &:disabled {
+    &:hover {
       & + label {
         opacity: .5;
       }
@@ -61,7 +61,7 @@
   &_text {
     color: $perfume;
 
-    &:disabled {
+    &:hover {
       color: $valhalla;
       opacity: .5;
     }
