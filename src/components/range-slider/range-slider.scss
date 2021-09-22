@@ -1,0 +1,30 @@
+@import "@variables";
+
+.range-slider {
+  box-sizing: border-box;
+}
+
+.ui-slider-horizontal {
+  height: 6px;
+  background: #FFF;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default {
+  border: 2px solid #FFF;
+  background: $secondary-gradient;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  top: -6px;
+  appearance: none;
+  outline: none;
+}
+
+.ui-slider .ui-slider-range {
+  background: $secondary-gradient;
+  height: 6px;
+  top: -1px;
+}
