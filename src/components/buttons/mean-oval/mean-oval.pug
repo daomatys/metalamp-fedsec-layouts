@@ -3,12 +3,14 @@ mixin meanOvalButtons( items=[] )
     - const buttonText = item.text ? item.text : 'click me'
     - const widthKey = item.widthkey ? item.widthkey : '30'
     - const widthClass = item.type === 'text' ? '' : `elem__width_${widthKey}`
+    - const frozenClass = item.onhover ? 'frozen' : ''
 
-    .mean-oval-button( class=widthClass )
+    .mean-oval-button( class=[widthClass, frozenClass] )
       case item.type 
         when 'contained'
           button.mean-oval-button__elem.button-style_contained( disabled=item.onhover ) #{buttonText}
           label.mean-oval-button__background
+          #{item.iconname ? `label.mean-oval-button__icon ${item.iconname}` : null}
         when 'outlined'
           button.mean-oval-button__elem.button-style_outlined( disabled=item.onhover ) #{buttonText}
           label.mean-oval-button__background

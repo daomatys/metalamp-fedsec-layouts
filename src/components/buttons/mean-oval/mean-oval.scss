@@ -9,12 +9,16 @@
   padding-inline: 2px;
   margin-right: 20px;
   margin-bottom: 30px;
-  width: auto;
+  box-sizing: border-box;
+
+  &:hover > .mean-oval-button__background {
+    opacity: .5;
+  }
 
   &__background {
     position: absolute;
     border-radius: 22px;
-    height: inherit;
+    height: 44px;
     width: 100%;
     background: $primary-gradient;
     z-index: 1;
@@ -39,32 +43,26 @@
     font-weight: bold;
     color: #fff;
     z-index: 3;
+
+    &:disabled {
+      & + label {
+        opacity: .5;
+      }
+    }
   }
 }
 
 .button-style {
-  &_contained {
-    &:hover,
-    &:disabled {
-      & + label {
-        opacity: .5;
-      }
-    }
-  }
-
   &_outlined {
     color: $perfume;
-
-    &:hover,
-    &:disabled {
-      & + label {
-        opacity: .5;
-      }
-    }
   }
 
   &_text {
+    position: relative;
     color: $perfume;
+    width: max-content;
+    background-color: #fff;
+    padding: 0;
 
     &:hover,
     &:disabled {
@@ -75,6 +73,7 @@
 }
 
 .mean-oval-buttons__array {
+  width: 100%;
   display: inline-flex;
   flex-flow: row wrap;
 }
