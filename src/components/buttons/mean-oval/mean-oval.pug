@@ -8,12 +8,12 @@ mixin meanOvalButtons( items=[] )
     .mean-oval-button( class=[widthClass, frozenClass] )
       case item.type 
         when 'contained'
-          button.mean-oval-button__elem.button-style_contained( disabled=item.onhover ) #{buttonText}
-          label.mean-oval-button__background
+          button.mean-oval-button__elem.button-style_contained( id=item.id disabled=item.onhover ) #{buttonText}
+          label.mean-oval-button__background( for=item.id )
           #{item.iconname ? `label.mean-oval-button__icon ${item.iconname}` : null}
         when 'outlined'
-          button.mean-oval-button__elem.button-style_outlined( disabled=item.onhover ) #{buttonText}
-          label.mean-oval-button__background
-          label.mean-oval-button__thumb
+          button.mean-oval-button__elem.button-style_outlined( id=item.id disabled=item.onhover ) #{buttonText}
+          label.mean-oval-button__background( for=item.id )
+          label.mean-oval-button__thumb( for=item.id )
         when 'text'
-          button.mean-oval-button__elem.button-style_text( disabled=item.onhover ) #{buttonText}
+          button.mean-oval-button__elem.button-style_text( id=item.id disabled=item.onhover ) #{buttonText}
