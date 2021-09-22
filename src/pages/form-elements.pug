@@ -4,6 +4,7 @@ include ../components/advantage-bar/advantage-bar.pug
 include ../components/star-rate/star-rate.pug
 include ../components/title-bar/title-bar.pug
 include ../components/range-slider/range-slider.pug
+include ../components/pagination/pagination.pug
 include ../components/buttons/toggle/toggle.pug
 include ../components/buttons/like/like.pug
 include ../components/buttons/radio/radio.pug
@@ -139,6 +140,10 @@ body.ui-kit__body
               { type: "text", id:"uik-fe-mob_6", onhover: true },
               { type: "contained", id:"uik-fe-mob_7", text: "перейти к оплате", iconname: "arrow_forward", widthkey: "100" },
             ])
+        .block__pagination.indention_double 
+          +titleBar("pagination")
+          .pagination__elem.additional-padding
+            +paginationElem()
     .form-elements__wrap_upper-middle.indentation_wrap
       .form-elements-column
         .block__dropdowns_in-action
