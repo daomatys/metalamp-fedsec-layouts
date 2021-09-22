@@ -3,8 +3,8 @@ $(
     $( "#range-slider" ).slider({
       animate: "fast",
       range: true,
-      min: 1000,
-      max: 15000,
+      min: 2000,
+      max: 13000,
       step: 100,
       values: [ 5000, 10000 ],
       stop: function( event, ui ) {
