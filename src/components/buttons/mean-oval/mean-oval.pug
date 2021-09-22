@@ -10,7 +10,8 @@ mixin meanOvalButtons( items=[] )
         when 'contained'
           button.mean-oval-button__elem.button-style_contained( id=item.id disabled=item.onhover ) #{buttonText}
           label.mean-oval-button__background( for=item.id )
-          #{item.iconname ? `label.mean-oval-button__icon ${item.iconname}` : null}
+          if item.iconname 
+            label.mean-oval-button__icon.material-icons-outlined #{item.iconname}
         when 'outlined'
           button.mean-oval-button__elem.button-style_outlined( id=item.id disabled=item.onhover ) #{buttonText}
           label.mean-oval-button__background( for=item.id )
