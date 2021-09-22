@@ -15,13 +15,17 @@
     opacity: .5;
   }
 
+  & > * {
+    cursor: pointer;
+  }
+
   &__background {
     position: absolute;
     border-radius: 22px;
     height: 44px;
     width: 100%;
     background: $primary-gradient;
-    z-index: 1;
+    z-index: 11;
   }
 
   &__thumb {
@@ -31,7 +35,7 @@
     width: 100%;
     box-sizing:border-box;
     background: #fff;
-    z-index: 2;
+    z-index: 12;
   }
 
   &__elem {
@@ -44,9 +48,9 @@
     font-family: inherit;
     font-weight: bold;
     color: #fff;
-    z-index: 3;
+    z-index: 13;
 
-    &:active {
+    &:not(:active) {
       @extend .ripple;
     }
 
@@ -56,6 +60,24 @@
       }
     }
   }
+
+  &__icon {
+    position: absolute;
+    color: #fff;
+    right: 0px;
+    z-index: 13;
+    margin-right: 10px;
+  }
+}
+
+.ripple {
+  animation: pop 180ms ease forwards;
+}
+
+@keyframes pop {
+  0%   { transform: scale(1); }
+  66%  { transform: scale(0.94); }
+  100% { transform: scale(1); }
 }
 
 .button-style {
@@ -82,14 +104,4 @@
   width: 100%;
   display: inline-flex;
   flex-flow: row wrap;
-}
-
-.ripple {
-  animation: pop 300ms ease;
-}
-
-@keyframes pop {
-  0%   { transform: scale(1); }
-  66%  { transform: scale(0.9); }
-  100% { transform: scale(1); }
 }
