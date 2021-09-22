@@ -2,6 +2,6 @@ mixin titleBar( text, state, id )
   - const itemId = id ? id : ''
 
   .title-bar
-    span.title-bar__title( id=itemId ) #{text}
+    span.title-bar__title #{text}
     if state 
-      span.title-bar__state #{state}
+      span.title-bar__state( id=itemId ) #{state}
