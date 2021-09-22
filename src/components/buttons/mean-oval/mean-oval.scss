@@ -26,6 +26,7 @@
     width: 100%;
     background: $primary-gradient;
     z-index: 11;
+    transition: opacity 200ms ease;
   }
 
   &__thumb {
