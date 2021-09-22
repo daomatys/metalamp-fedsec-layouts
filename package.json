@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "frontend",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "jquery-ui": "^1.12.1",
+    "jsdom": "^17.0.0",
+    "webpack-jquery-ui": "^2.0.1"
+  },
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^6.2.0",

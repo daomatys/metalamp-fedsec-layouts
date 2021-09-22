@@ -3,6 +3,7 @@ include ../components/input/input.pug
 include ../components/advantage-bar/advantage-bar.pug
 include ../components/star-rate/star-rate.pug
 include ../components/title-bar/title-bar.pug
+include ../components/range-slider/range-slider.pug
 include ../components/buttons/toggle/toggle.pug
 include ../components/buttons/like/like.pug
 include ../components/buttons/radio/radio.pug
@@ -125,7 +126,7 @@ body.ui-kit__body
         .block__range-slider
           +titleBar("range slider")
           .range-slider__container.additional-padding 
-            
+            +rangeSlider()
         .block__mean-oval-buttons.indentation_double
           +titleBar("buttons")
           .mean-oval-buttons__array.additional-padding

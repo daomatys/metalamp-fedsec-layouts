@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -47,6 +48,13 @@ module.exports = {
         generator: {
           filename: 'static/fonts/[name][ext][query]'
         }
+      },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/images/[name][ext][query]'
+        }
       }
     ]
   },
@@ -58,7 +66,13 @@ module.exports = {
     new miniCss({
       filename: '[name].css',
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      "window.jQuery": "jquery'",
+      "window.$": "jquery"
+    }),
   ],
   resolve: {
     alias: {
