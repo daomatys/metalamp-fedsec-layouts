@@ -3,8 +3,8 @@ import 'paginationjs/dist/pagination.min';
 $(
   function() {
     $('#demo').pagination({
-      dataSource: generateDataByCount,
       className: 'custom-paginationjs',
+      dataSource: generateDataByCount,
       pageRange: 1,
       pageSize: 12,
       autoHidePrevious: true,
@@ -12,8 +12,8 @@ $(
       prevText: 'arrow_forward',
       nextText: 'arrow_forward',
       showNavigator: true,
-      formatNavigator: defineNavigatorText,
-      callback: activateTemplating,
+      formatNavigator: defineNavigatorText/*,
+      callback: activateTemplating*/
     });
   }
 );
