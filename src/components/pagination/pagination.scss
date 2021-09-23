@@ -1,21 +1,25 @@
 @import "@variables";
 @import "src/styles/material-icons.scss";
 
-$color_font: rgba($valhalla, .5);
-
 $bgGrad_active: $primary-gradient;
 $bgGrad_arrows: $secondary-gradient;
 
+$fontColor_default: rgba($valhalla, .5);
+$fontColor_nav: rgba($valhalla, .75);
 $bgColor_onHover: rgba($perfume, .25);
 
 $circleboxSize: 40px;
 
 .custom-paginationjs {
+  display: grid;
+  grid-gap: 10px;
+  justify-items: center;
+  font-size: 12px;
   float: left;
   margin: 0;
   padding: 0;
 
-  .paginationjs-pages{ 
+  .paginationjs-pages{
     float: inherit;
 
     & ul {
@@ -34,10 +38,9 @@ $circleboxSize: 40px;
           width: $circleboxSize;
           line-height: $circleboxSize;
           background: transparent;
-          color: $color_font;
+          color: $fontColor_default;
           text-decoration: none;
           text-align: center;
-          font-size: 12px;
           border-radius: 50%;
           transition: all .5s ease;
 
@@ -73,5 +76,9 @@ $circleboxSize: 40px;
         }
       }
     }
+  }
+
+  .paginationjs-nav {
+    color: $fontColor_nav;
   }
 }
