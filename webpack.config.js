@@ -43,15 +43,17 @@ module.exports = {
         ]
       },
       {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(ttf|woff|svg)$/i,
         type: 'asset/resource',
+        exclude: [/images/],
         generator: {
           filename: 'static/fonts/[name][ext][query]'
         }
       },
       {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+        include: [/images/],
         generator: {
           filename: 'static/images/[name][ext][query]'
         }
