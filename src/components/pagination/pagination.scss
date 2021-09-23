@@ -14,13 +14,13 @@ $circleboxSize: 40px;
   display: grid;
   grid-gap: 10px;
   justify-items: center;
-  font-size: 12px;
   float: left;
   margin: 0;
   padding: 0;
 
   .paginationjs-pages{
     float: inherit;
+    font-size: 12px;
 
     & ul {
       float: inherit;
@@ -80,5 +80,6 @@ $circleboxSize: 40px;
 
   .paginationjs-nav {
     color: $fontColor_nav;
+    font-size: 14px;
   }
 }
