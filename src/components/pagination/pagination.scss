@@ -1,13 +1,14 @@
 @import "@variables";
 @import "src/styles/material-icons.scss";
 
-$color_font: $valhalla;
+$color_font: rgba($valhalla, .5);
 
 $bgGrad_active: $primary-gradient;
 $bgGrad_arrows: $secondary-gradient;
-$bgColor_hover: rgba($perfume, .25);
 
-$liSize: 40px;
+$bgColor_onHover: rgba($perfume, .25);
+
+$circleboxSize: 40px;
 
 .custom-paginationjs {
   float: left;
@@ -28,20 +29,20 @@ $liSize: 40px;
         list-style: none;
 
         & > a {
-          background: transparent;
-          color: rgba($color_font, .5);
           display: block;
+          height: $circleboxSize;
+          width: $circleboxSize;
+          line-height: $circleboxSize;
+          background: transparent;
+          color: $color_font;
           text-decoration: none;
           text-align: center;
           font-size: 12px;
           border-radius: 50%;
-          height: $liSize;
-          width: $liSize;
-          line-height: $liSize;
           transition: all .5s ease;
 
           &:hover {
-            background: $bgColor_hover;
+            background: $bgColor_onHover;
           }
         }
 
@@ -55,9 +56,12 @@ $liSize: 40px;
             @extend .material-icons-outlined;
             background: $bgGrad_arrows;
             color: white;
+
+            &:hover {
+              opacity: .75;
+            }
           }
         }
-
 
         &.active > a {
           color: white;
