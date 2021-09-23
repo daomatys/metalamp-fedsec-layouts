@@ -5,8 +5,8 @@ $(
     $('#demo').pagination({
       dataSource: function(done){
         let result = [];
-        for (let i = 1; i < 180; i++) {
-            result.push(i);
+        for (let i = 0; i < 180; ++i) {
+          result.push(i);
         }
         done(result);
       },
@@ -15,7 +15,7 @@ $(
       autoHidePrevious: true,
       autoHideNext: true,
       callback: function(data, pagination) {
-        var html = simpleTemplating(data);
+        let html = simpleTemplating(data);
         $('#data-container').html(html);
       }
     });
@@ -23,7 +23,7 @@ $(
 );
 
 function simpleTemplating(data) {
-  var html = '<ul>';
+  let html = '<ul>';
   $.each(data, function(index, item){
       html += '<li>'+ item +'</li>';
   });
