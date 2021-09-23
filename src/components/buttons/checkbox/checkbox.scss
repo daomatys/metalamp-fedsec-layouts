@@ -32,9 +32,9 @@
 
       &:after {
         position: absolute;
-        width: 12px;
+        width: 10px;
         height: 12px;
-        background: $primary-gradient;
+        background-image: url("/src/assets/images/vector/checkmark_primary-gradient.svg");
         content: '';
       }
     }
