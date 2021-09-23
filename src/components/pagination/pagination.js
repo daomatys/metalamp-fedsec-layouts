@@ -15,6 +15,8 @@ $(
       pageSize: 12,
       autoHidePrevious: true,
       autoHideNext: true,
+      prevText: 'arrow_forward',
+      nextText: 'arrow_forward',
       callback: function(data, pagination) {
         let html = simpleTemplating(data);
         $('#data-container').html(html);

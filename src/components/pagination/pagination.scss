@@ -1,8 +1,10 @@
 @import "@variables";
+@import "src/styles/material-icons.scss";
 
 $color_font: $valhalla;
 
 $bgGrad_active: $primary-gradient;
+$bgGrad_arrows: $secondary-gradient;
 
 $bgColor_buttonHover: $perfume;
 $bgColor_hover: $perfume;
@@ -43,6 +45,20 @@ $liSize: 40px;
             background: $bgColor_hover;
           }
         }
+
+        &.paginationjs {
+          &-prev > a {
+            transform: scaleX(-1);
+          }
+
+          &-prev > a,
+          &-next > a{
+            @extend .material-icons-outlined;
+            background: $bgGrad_arrows;
+            color: white;
+          }
+        }
+
 
         &.active > a {
           color: white;
