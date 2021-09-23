@@ -69,10 +69,14 @@ module.exports = {
     new CleanWebpackPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
-      jQuery: 'jquery',
-      "window.jQuery": "jquery",
-      "window.$": "jquery"
+      jQuery: 'jquery'
     }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.$': 'jquery',
+      'window.jQuery': 'jquery'
+    })
   ],
   resolve: {
     alias: {

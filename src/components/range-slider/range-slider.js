@@ -1,3 +1,5 @@
+import 'jquery-ui/ui/widgets/slider';
+
 $( 
   function() {
     $( "#range-slider" ).slider({

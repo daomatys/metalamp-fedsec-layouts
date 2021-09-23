@@ -3,19 +3,16 @@
   "version": "1.0.0",
   "description": "frontend",
   "main": "index.js",
-  "dependencies": {
-    "jquery": "^3.6.0",
-    "jquery-ui": "^1.12.1",
-    "jsdom": "^17.0.0",
-    "paginationjs": "^2.1.5",
-    "webpack-jquery-ui": "^2.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
+    "jquery": "^3.6.0",
+    "jquery-ui": "^1.12.1",
     "mini-css-extract-plugin": "^2.2.0",
     "node-sass": "^6.0.1",
+    "paginationjs": "^2.1.5",
     "pug": "^3.0.2",
     "pug-loader": "^2.4.0",
     "sass-loader": "^12.1.0",
