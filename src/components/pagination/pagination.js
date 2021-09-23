@@ -1,13 +1,19 @@
 import 'paginationjs/dist/pagination.min';
 
-$( 
+$(
   function() {
     $('#demo').pagination({
-      className: 'paginationjs-theme-blue',
-      dataSource: [1, 2, 3, 4, 5, 6, 7],
-      pageSize: 3,
-      showPrevious: false,
-      showNext: false,
+      dataSource: function(done){
+        let result = [];
+        for (let i = 1; i < 180; i++) {
+            result.push(i);
+        }
+        done(result);
+      },
+      pageRange: 1,
+      pageSize: 12,
+      autoHidePrevious: true,
+      autoHideNext: true,
       callback: function(data, pagination) {
         var html = simpleTemplating(data);
         $('#data-container').html(html);
