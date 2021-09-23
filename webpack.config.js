@@ -11,7 +11,7 @@ const PATHS = {
   dist: path.join(__dirname, './dist')
 }
 const PAGES_DIR = `${PATHS.src}/pages/`;
-const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'));
+const PAGES = fs.readdirSync( PAGES_DIR ).filter( fileName => fileName.endsWith('.pug') );
 
 module.exports = {
   mode: 'development',
@@ -59,24 +59,20 @@ module.exports = {
     ]
   },
   plugins: [
-    ...PAGES.map(page => new HtmlWebpackPlugin({
+    ...PAGES.map( page => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
       filename: `./[name].${page.replace(/\.pug/,'.html')}`
     })),
     new miniCss({
       filename: '[name].css',
     }),
-    new CleanWebpackPlugin(),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery'
-    }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
       'window.$': 'jquery',
       'window.jQuery': 'jquery'
-    })
+    }),
+    new CleanWebpackPlugin()
   ],
   resolve: {
     alias: {

@@ -1,4 +1,4 @@
-require('paginationjs');
+import 'paginationjs/dist/pagination.min';
 
 $( 
   function() {
