@@ -7,19 +7,18 @@ $(
       range: true,
       min: 2000,
       max: 13000,
-      step: 100,
+      step: 50,
       values: [ 5000, 10000 ],
-      stop: function( event, ui ) {
-        $( "#range-slider-marker" ).text(
-          ui.values[ 0 ].toLocaleString("ru-RU") + "₽ - " +
-          ui.values[ 1 ].toLocaleString("ru-RU") + "₽"
-        );
-      }
+      stop: displaySliderChosenValues
     });
-
-    $( "#range-slider-marker" ).text(
-      $( "#range-slider" ).slider( "values", 0 ).toLocaleString("ru-RU") + "₽ - " + 
-      $( "#range-slider" ).slider( "values", 1 ).toLocaleString("ru-RU") + "₽"
-    );
+    
+    displaySliderChosenValues(); //initial displaying
   }
 );
+
+function displaySliderChosenValues() {
+  $( "#range-slider-marker" ).text(
+    $( "#range-slider" ).slider( "values", 0 ).toLocaleString("ru-RU") + "₽ - " + 
+    $( "#range-slider" ).slider( "values", 1 ).toLocaleString("ru-RU") + "₽"
+  );
+}

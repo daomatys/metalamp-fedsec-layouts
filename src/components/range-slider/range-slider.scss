@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-.ui-slider-horizontal {
+.ui-slider {
   height: 6px;
   background: #FFF;
   border: 1px solid rgba(31, 32, 65, 0.25);
@@ -13,7 +13,7 @@
   border-radius: 3px;
 }
 
-.ui-state-default, .ui-widget-content .ui-state-default {
+.ui-widget-content .ui-state-default {
   border: 2px solid #FFF;
   background: $secondary-gradient;
   border-radius: 50%;
