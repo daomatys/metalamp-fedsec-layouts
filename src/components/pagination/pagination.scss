@@ -5,9 +5,7 @@ $color_font: $valhalla;
 
 $bgGrad_active: $primary-gradient;
 $bgGrad_arrows: $secondary-gradient;
-
-$bgColor_buttonHover: $perfume;
-$bgColor_hover: $perfume;
+$bgColor_hover: rgba($perfume, .25);
 
 $liSize: 40px;
 
@@ -40,6 +38,7 @@ $liSize: 40px;
           height: $liSize;
           width: $liSize;
           line-height: $liSize;
+          transition: all .5s ease;
 
           &:hover {
             background: $bgColor_hover;
