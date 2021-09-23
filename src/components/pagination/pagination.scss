@@ -1,1 +1,58 @@
-@import 'paginationjs/dist/pagination';
+@import "@variables";
+
+$color_font: $valhalla;
+
+$bgGrad_active: $primary-gradient;
+
+$bgColor_buttonHover: $perfume;
+$bgColor_hover: $perfume;
+
+$liSize: 40px;
+
+.custom-paginationjs {
+  float: left;
+  margin: 0;
+  padding: 0;
+
+  .paginationjs-pages{ 
+    float: inherit;
+
+    & ul {
+      float: inherit;
+      margin: 0;
+      padding: 0;
+
+      li {
+        float: inherit;
+        border: none;
+        list-style: none;
+
+        & > a {
+          background: transparent;
+          color: rgba($color_font, .5);
+          display: block;
+          text-decoration: none;
+          text-align: center;
+          font-size: 12px;
+          border-radius: 50%;
+          height: $liSize;
+          width: $liSize;
+          line-height: $liSize;
+
+          &:hover {
+            background: $bgColor_hover;
+          }
+        }
+
+        &.active > a {
+          color: white;
+          background: $bgGrad_active;
+        }
+
+        &.disabled > a:hover {
+          background: none;
+        }
+      }
+    }
+  }
+}

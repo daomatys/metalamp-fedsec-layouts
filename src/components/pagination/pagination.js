@@ -10,6 +10,7 @@ $(
         }
         done(result);
       },
+      className: 'custom-paginationjs',
       pageRange: 1,
       pageSize: 12,
       autoHidePrevious: true,
