@@ -3,12 +3,15 @@ include ../../components/buttons/like/like.pug
 mixin commentBar( items=[] )
   each item in items
     .comment-bar
-      .comment-bar__photo
+      .comment-bar__avatar
+        img( src=`/src/assets/images/raster/avatars/${ item.avatarname }.png` )
       .comment-bar__title
         .comment-bar__title__name #{ item.name }
         .comment-bar__title__days-ago #{ item.daysago }
       .comment-bat__like-button-wrap
-        +likeButtons([
-          { groupname: item.likebtn.groupname, pressed: item.likebtn.pressed, likecount: item.likebtn.likecount }
-        ])
+        +likeButtons([{ 
+          groupname: item.likebtn.groupname,
+          pressed: item.likebtn.pressed,
+          likecount: item.likebtn.likecount
+        }])
       .comment-bar__text #{ item.text }
