@@ -5,6 +5,8 @@ include ../components/star-rate/star-rate.pug
 include ../components/title-bar/title-bar.pug
 include ../components/range-slider/range-slider.pug
 include ../components/pagination/pagination.pug
+include ../components/bullet-list/bullet-list.pug
+
 include ../components/buttons/toggle/toggle.pug
 include ../components/buttons/like/like.pug
 include ../components/buttons/radio/radio.pug
@@ -179,6 +181,14 @@ body.ui-kit__body
       .form-elements-column
       .form-elements-column.column_center
       .form-elements-column
+        .block__bullet-list
+          +titleBar("bullet list")
+          .bullet-list__elem.additional-padding
+            +bulletList([
+              "Нельзя с питомцами",
+              "Без вечеринок и мероприятий",
+              "Время прибытия — после 13:00, а выезд до 12:00"
+            ])
     .form-elements__wrap_bottom.indentation_wrap
       .form-elements-column
         .block__advantage-bars
@@ -195,5 +205,4 @@ body.ui-kit__body
             }
           ])
       .form-elements-column.column_center
-      .form-elements-column
   footer.ui-kit__footer

@@ -1,0 +1,6 @@
+include ../title-bar/title-bar.pug
+
+mixin bulletList( texts=[] )
+  .bullet-list 
+    each text in texts 
+      .bullet-list__row #{text}
