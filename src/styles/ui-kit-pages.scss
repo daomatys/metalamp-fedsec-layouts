@@ -25,9 +25,20 @@
 
   &_wrap {
     padding-bottom: 60px;
-    display: grid;
-    grid-template-columns: repeat(3, 320px);
+    display: grid; 
     grid-gap: 72px;
+  }
+}
+
+.form-elements__wrap {
+  &_top,
+  &_upper-middle,
+  &_lower-middle {
+    grid-template-columns: repeat(3, 320px);
+  }
+
+  &_bottom {
+    grid-template-columns: repeat(2, auto);
   }
 }
 

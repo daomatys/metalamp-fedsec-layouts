@@ -6,6 +6,7 @@ include ../components/title-bar/title-bar.pug
 include ../components/range-slider/range-slider.pug
 include ../components/pagination/pagination.pug
 include ../components/bullet-list/bullet-list.pug
+include ../components/comment-bar/comment-bar.pug
 
 include ../components/buttons/toggle/toggle.pug
 include ../components/buttons/like/like.pug
@@ -118,8 +119,8 @@ body.ui-kit__body
           +titleBar("like button")
           .like-buttons__array.additional-padding.twinline-gap_own
             +likeButtons([
-              { pressed: false, likecount: 2 },
-              { pressed: true, likecount: 12 }
+              { groupname: "uik-fe-like", pressed: false, likecount: 2 },
+              { groupname: "uik-fe-like", pressed: true, likecount: 12 }
             ])
         .block__star-rate.indentation_double
           +titleBar("rate button")
@@ -204,5 +205,19 @@ body.ui-kit__body
               brief: "Окно в каждой из спален"
             }
           ])
-      .form-elements-column.column_center
+      .column_center
+        .block__comment-bar
+          +commentBar([
+            {
+              name: "Мурад Сарафанов",
+              daysago: "5 дней назад",
+              photourl: "src/",
+              text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+              likebtn: {
+                groupname: "uik-fe-comment",
+                pressed: true,
+                likecount: 12
+              }
+            }
+          ]) 
   footer.ui-kit__footer
