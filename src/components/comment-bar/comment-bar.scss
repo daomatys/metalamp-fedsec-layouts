@@ -2,12 +2,14 @@
 
 .comment-bar {
   display: grid;
-  grid-template-columns: auto 653px;
+  grid-template-columns: 50px 653px;
   grid-gap: 10px;
   font-size: 14px;
 
   &__avatar {
-    filter: drop-shadow(0px 10px 20px rgba($valhalla, 0.1));
+    & > img {
+      filter: drop-shadow(0px 10px 20px rgba($valhalla, 0.1));
+    }
   }
 
   &__like-button-wrap {

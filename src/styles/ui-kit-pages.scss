@@ -31,12 +31,6 @@
 }
 
 .form-elements__wrap {
-  &_top,
-  &_upper-middle,
-  &_lower-middle {
-    grid-template-columns: 320px 374px 320px;
-  }
-
   &_upper-middle {
     height: 240px;
   }
@@ -45,8 +39,14 @@
     height: 320px;
   }
 
+  &_top,
+  &_upper-middle,
+  &_lower-middle {
+    grid-template-columns: 320px 374px 320px;
+  }
+
   &_bottom {
-    grid-template-columns: 320px auto;
+    grid-template-columns: 320px 712px;
   }
 }
 
