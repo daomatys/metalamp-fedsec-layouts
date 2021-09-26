@@ -22,6 +22,10 @@
   margin: 0;
   box-sizing: border-box;
 
+  & > * {
+    cursor: pointer;
+  }
+
   &:hover > .mean-oval-button__background {
     opacity: .5;
   }
@@ -67,10 +71,6 @@
       & + label {
         opacity: .5;
       }
-    }
-
-    & > * {
-      cursor: pointer;
     }
   }
 
