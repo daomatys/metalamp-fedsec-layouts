@@ -7,21 +7,21 @@
   font-size: 14px;
 
   &__avatar {
-
+    filter: drop-shadow(0px 10px 20px rgba($valhalla, 0.1));
   }
 
   &__like-button-wrap {
     display: inherit;
-    align-items: center;
+    align-items: start;
+    justify-content: center;
   }
 
   &__title {
+    display: inherit;
+    align-items: center;
+
     &__name {
       font-weight: bold;
-    }
-
-    &__days-ago {
-
     }
   }
 

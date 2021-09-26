@@ -8,7 +8,7 @@ mixin commentBar( items=[] )
       .comment-bar__title
         .comment-bar__title__name #{ item.name }
         .comment-bar__title__days-ago #{ item.daysago }
-      .comment-bat__like-button-wrap
+      .comment-bar__like-button-wrap
         +likeButtons([{ 
           groupname: item.likebtn.groupname,
           pressed: item.likebtn.pressed,
