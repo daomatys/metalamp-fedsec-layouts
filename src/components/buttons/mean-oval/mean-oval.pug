@@ -5,16 +5,20 @@ mixin meanOvalButtons( items=[] )
     - const widthClass = item.type === 'text' ? '' : `elem__width_${widthKey}`
     - const frozenClass = item.onhover ? 'frozen' : ''
 
-    .mean-oval-button( class=[widthClass, frozenClass] )
-      case item.type 
-        when 'contained'
-          button.mean-oval-button__elem.button-style_contained( id=item.id disabled=item.onhover ) #{buttonText}
+    case item.type 
+      when 'contained'
+        .mean-oval-button.button-style_contained( class=[widthClass, frozenClass] )
+          button.mean-oval-button__elem( id=item.id disabled=item.onhover ) #{buttonText}
           label.mean-oval-button__background( for=item.id )
           if item.iconname 
             label.mean-oval-button__icon.material-icons-outlined( for=item.id ) #{item.iconname}
-        when 'outlined'
-          button.mean-oval-button__elem.button-style_outlined( id=item.id disabled=item.onhover ) #{buttonText}
+
+      when 'outlined'
+        .mean-oval-button.button-style_outlined( class=[widthClass, frozenClass] )
+          button.mean-oval-button__elem( id=item.id disabled=item.onhover ) #{buttonText}
           label.mean-oval-button__background( for=item.id )
           label.mean-oval-button__thumb( for=item.id )
-        when 'text'
-          button.mean-oval-button__elem.button-style_text( id=item.id disabled=item.onhover ) #{buttonText}
+          
+      when 'text'
+        .mean-oval-button.button-style_text( class=[widthClass, frozenClass] )
+          button.mean-oval-button__elem( id=item.id disabled=item.onhover ) #{buttonText}

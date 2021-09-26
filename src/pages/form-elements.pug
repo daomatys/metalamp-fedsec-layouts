@@ -134,17 +134,24 @@ body.ui-kit__body
             +rangeSlider()
         .block__mean-oval-buttons.indentation_double
           +titleBar("buttons")
-          .mean-oval-buttons__array.additional-padding
-            +meanOvalButtons([
-              { type: "contained", id:"uik-fe-mob_1" },
-              { type: "contained", id:"uik-fe-mob_2", onhover: true },
-              { type: "outlined", id:"uik-fe-mob_3" },
-              { type: "outlined", id:"uik-fe-mob_4", onhover: true },
-              { type: "text", id:"uik-fe-mob_5" },
-              { type: "text", id:"uik-fe-mob_6", onhover: true },
-              { type: "contained", id:"uik-fe-mob_7", text: "перейти к оплате", iconname: "arrow_forward", widthkey: "100" },
-            ])
-        .block__pagination.indention_double 
+          .mean-oval-buttons.additional-padding
+            .mean-oval-buttons__array
+              +meanOvalButtons([
+                { type: "contained", id:"uik-fe-mob_1" },
+                { type: "contained", id:"uik-fe-mob_2", onhover: true },
+                { type: "outlined", id:"uik-fe-mob_3" },
+                { type: "outlined", id:"uik-fe-mob_4", onhover: true }
+              ])
+            .mean-oval-buttons__array
+              +meanOvalButtons([
+                { type: "text", id:"uik-fe-mob_5" },
+                { type: "text", id:"uik-fe-mob_6", onhover: true },
+              ])
+            .mean-oval-buttons__unit
+              +meanOvalButtons([
+                { type: "contained", id:"uik-fe-mob_7", text: "перейти к оплате", iconname: "arrow_forward", widthkey: "100" },
+              ])
+        .block__pagination.indentation_double 
           +titleBar("pagination")
           .pagination__elem.additional-padding
             +paginationElem()

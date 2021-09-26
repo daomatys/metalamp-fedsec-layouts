@@ -5,10 +5,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 44px;
-  padding-inline: 2px;
-  margin-right: 20px;
-  margin-bottom: 30px;
+  min-height: 15px;
+  min-width: 61px;
+  margin: 0;
   box-sizing: border-box;
 
   &:hover > .mean-oval-button__background {
@@ -31,10 +30,11 @@
 
   &__thumb {
     position: relative;
+    margin-inline: 2px;
     border-radius: 20px;
     height: 40px;
     width: 100%;
-    box-sizing:border-box;
+    box-sizing: border-box;
     background: #fff;
     z-index: 12;
   }
@@ -82,27 +82,40 @@
 }
 
 .button-style {
+  &_contained,
   &_outlined {
+    height: 44px;
+  }
+
+  &_outlined > button {
     color: $perfume;
   }
 
   &_text {
     position: relative;
-    color: $perfume;
-    width: max-content;
-    background-color: #fff;
-    padding: 0;
 
-    &:hover,
-    &:disabled {
-      color: $valhalla;
-      opacity: .5;
+    & > button {
+      color: $perfume;
+      background-color: #fff;
+      padding: 0;
+
+      &:hover,
+      &:disabled {
+        color: $valhalla;
+        opacity: .5;
+      }
     }
   }
 }
 
-.mean-oval-buttons__array {
-  width: 100%;
-  display: inline-flex;
-  flex-flow: row wrap;
+.mean-oval-buttons {
+  display: grid;
+  grid-gap: 30px;
+
+  &__array {
+    display: inherit;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 30px 20px;
+    justify-content: start;
+  }
 }
