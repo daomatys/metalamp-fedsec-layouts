@@ -24,7 +24,7 @@
   }
 
   &_wrap {
-    padding-bottom: 60px;
+    padding-bottom: 80px;
     display: grid; 
     grid-gap: 72px;
   }
@@ -37,6 +37,14 @@
     grid-template-columns: repeat(3, 320px);
   }
 
+  &_upper-middle {
+    height: 240px;
+  }
+
+  &_lower-middle {
+    height: 320px;
+  }
+
   &_bottom {
     grid-template-columns: 320px auto;
   }
@@ -47,7 +55,7 @@
 }
 
 .column_center {
-  padding-left: 44px;
+  padding-left: 54px;
 }
 
 .twinline-gap {
@@ -59,7 +67,6 @@
     display: flex;
     justify-content: space-between;
   }
-
 }
 
 .frozen {
