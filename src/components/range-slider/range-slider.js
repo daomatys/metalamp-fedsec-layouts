@@ -1,12 +1,15 @@
 import 'jquery-ui/ui/widgets/slider';
 
+const sliderId = "#" + document.querySelector(".range-slider__elem").id;
+const sliderMarkerId = sliderId + "_state";
+
 $( 
   function() {
-    $( "#range-slider" ).slider({
+    $( sliderId ).slider({
       animate: "fast",
       range: true,
-      min: 2000,
-      max: 13000,
+      min: 100,
+      max: 15500,
       step: 50,
       values: [ 5000, 10000 ],
       stop: displaySliderChosenValues
@@ -17,8 +20,8 @@ $(
 );
 
 function displaySliderChosenValues() {
-  $( "#range-slider-marker" ).text(
-    $( "#range-slider" ).slider( "values", 0 ).toLocaleString("ru-RU") + "₽ - " + 
-    $( "#range-slider" ).slider( "values", 1 ).toLocaleString("ru-RU") + "₽"
+  $( sliderMarkerId ).text(
+    $( sliderId ).slider( "values", 0 ).toLocaleString("ru-RU") + "₽ - " + 
+    $( sliderId ).slider( "values", 1 ).toLocaleString("ru-RU") + "₽"
   );
 }

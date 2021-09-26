@@ -129,9 +129,11 @@ body.ui-kit__body
             +stars([4, 5])
       .form-elements-column
         .block__range-slider
-          +titleBar("range slider", true, "range-slider-marker")
-          .range-slider__container.additional-padding 
-            +rangeSlider()
+          +rangeSlider({
+            title: "range slider",
+            id: "uik-fe-range-slider",
+            keywidth: 75,
+          })
         .block__mean-oval-buttons.indentation_double
           +titleBar("buttons")
           .mean-oval-buttons.additional-padding
