@@ -187,7 +187,35 @@ body.ui-kit__body
             }
           ])
       .form-elements__column_center
+        .block__dropdowns_no-guests
+          +inputs([
+            {
+              title: "dropdown",
+              placeholder: "Сколько гостей",
+              dropdown: {
+                options: [
+                  "взрослые",
+                  "дети",
+                  "младенцы"
+                ]
+              }
+            },
+          ])
       .form-elements__column_right
+        .block__dropdowns_guests
+          +inputs([
+            {
+              title: "dropdown",
+              placeholder: "3 гостя",
+              dropdown: {
+                options: [
+                  "взрослые",
+                  "дети",
+                  "младенцы"
+                ]
+              }
+            },
+          ])
     .form-elements__wrap_lower-middle.indentation_wrap
       .form-elements__column_left
       .form-elements__column_center
