@@ -6,7 +6,6 @@
   &__text-bar {
     display: flex;
     margin-bottom: 17px;
-    margin-top: 17px;
   }
 
   &__icon {
@@ -43,4 +42,9 @@
       margin: 0;
     }
   }
+}
+
+.block__advantage-bars {
+  display: grid;
+  grid-gap: 20px;
 }
