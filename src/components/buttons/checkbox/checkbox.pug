@@ -7,7 +7,7 @@ mixin checkboxButtons( items=[] )
 
     .checkbox-button
       input.checkbox-button__elem( type='checkbox' id=itemId checked=buttonChecked )
-      if item.rich
+      if item.richmode
         .checkbox-button__rich-label
           label.checkbox-button__rich-label_title( for=itemId ) #{item.label.title}
           label.checkbox-button__rich-label_info( for=itemId ) #{item.label.info}
