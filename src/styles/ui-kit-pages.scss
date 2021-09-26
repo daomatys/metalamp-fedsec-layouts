@@ -34,7 +34,7 @@
   &_top,
   &_upper-middle,
   &_lower-middle {
-    grid-template-columns: repeat(3, 320px);
+    grid-template-columns: 320px 374px 320px;
   }
 
   &_upper-middle {
@@ -50,14 +50,6 @@
   }
 }
 
-.form-elements-column {
-    width: 320px;
-}
-
-.column_center {
-  padding-left: 54px;
-}
-
 .twinline-gap {
   &_own {
     display: flex;
@@ -69,20 +61,12 @@
   }
 }
 
-.frozen {
-  pointer-events: none;
-}
-
 .gradient-fill {
   background: $primary-gradient;
   background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color:transparent;
-}
-
-.additional-padding {
-  padding-top: 11px;
 }
 
 .elem__width {
@@ -101,4 +85,12 @@
   &_30 {
     width: 99px;
   }
+}
+
+.additional-padding {
+  padding-top: 11px;
+}
+
+.frozen {
+  pointer-events: none;
 }
