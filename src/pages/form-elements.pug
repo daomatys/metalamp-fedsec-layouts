@@ -18,7 +18,7 @@ body.ui-kit__body
   +header()
   main.ui-kit__main
     .form-elements__wrap_top.indentation_wrap
-      .form-elements-column
+      .form-elements__column_left
         .block__inpuns_common
           +inputs([
             {
@@ -93,7 +93,7 @@ body.ui-kit__body
               subscription: true
             }
           ])
-      .form-elements-column
+      .form-elements__column_center
         .block__checkbox-buttons
           +titleBar("checkbox buttons")
           .checkbox-buttons__array.additional-padding
@@ -127,7 +127,7 @@ body.ui-kit__body
           +titleBar("rate button")
           .star-rate__elem.additional-padding.twinline-gap_own
             +stars([4, 5])
-      .form-elements-column
+      .form-elements__column_right
         .block__range-slider
           +rangeSlider({
             title: "range slider",
@@ -158,7 +158,7 @@ body.ui-kit__body
           .pagination__elem.additional-padding
             +paginationElem()
     .form-elements__wrap_upper-middle.indentation_wrap
-      .form-elements-column
+      .form-elements__column_left
         .block__dropdowns_in-action
           +inputs([
             {
@@ -186,12 +186,12 @@ body.ui-kit__body
               }
             }
           ])
-      .form-elements-column
-      .form-elements-column
+      .form-elements__column_center
+      .form-elements__column_right
     .form-elements__wrap_lower-middle.indentation_wrap
-      .form-elements-column
-      .form-elements-column
-      .form-elements-column
+      .form-elements__column_left
+      .form-elements__column_center
+      .form-elements__column_right
         .block__bullet-list
           +titleBar("bullet list")
           .bullet-list__elem.additional-padding
@@ -201,7 +201,7 @@ body.ui-kit__body
               "Время прибытия — после 13:00, а выезд до 12:00"
             ])
     .form-elements__wrap_bottom.indentation_wrap
-      .form-elements-column
+      .form-elements__column_left
         .block__advantage-bars
           +advantageBars([
             {
@@ -215,7 +215,7 @@ body.ui-kit__body
               brief: "Окно в каждой из спален"
             }
           ])
-      .form-elements-column
+      .form-elements__column_center-right
         .block__comment-bar
           +commentBar([
             {

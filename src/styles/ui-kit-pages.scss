@@ -30,23 +30,32 @@
   }
 }
 
-.form-elements__wrap {
-  &_upper-middle {
-    height: 240px;
+.form-elements {
+  &__wrap {
+    &_upper-middle {
+      height: 240px;
+    }
+
+    &_lower-middle {
+      height: 320px;
+    }
+
+    &_top,
+    &_upper-middle,
+    &_lower-middle {
+      grid-template-columns: 320px 374px 320px;
+    }
+
+    &_bottom {
+      grid-template-columns: 320px 712px;
+    }
   }
 
-  &_lower-middle {
-    height: 320px;
-  }
-
-  &_top,
-  &_upper-middle,
-  &_lower-middle {
-    grid-template-columns: 320px 374px 320px;
-  }
-
-  &_bottom {
-    grid-template-columns: 320px 712px;
+  &__column {
+    &_center,
+    &_center-right {
+      margin-left: 54px;
+    }
   }
 }
 
