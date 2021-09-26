@@ -47,3 +47,9 @@
     }
   }
 }
+
+.like-buttons__array {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 10px;
+}

@@ -8,6 +8,7 @@
     @extend .oval-button_frame;
     display: inherit;
     align-items: center;
+    margin-right: 10px;
 
     &::after {
       @extend .oval-button_dot-marker;
@@ -37,5 +38,4 @@
   display: grid;
   grid-row: 2;
   grid-gap: 14px;
-  margin-bottom: 5px;
 }
