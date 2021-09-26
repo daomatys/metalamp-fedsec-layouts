@@ -2,7 +2,7 @@
 
 .comment-bar {
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: auto 653px;
   grid-gap: 10px;
   font-size: 14px;
 
@@ -14,6 +14,8 @@
     display: inherit;
     align-items: start;
     justify-content: center;
+    position: relative;
+    top: 1px;
   }
 
   &__title {
@@ -28,10 +30,10 @@
   &__title,
   &__text {
     color: rgba($valhalla, .75);
+    user-select: text;
   }
 
   &__text {
-    width: 653px;
     line-height: 24px;
   }
 }
