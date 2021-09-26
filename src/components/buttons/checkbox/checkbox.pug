@@ -6,5 +6,10 @@ mixin checkboxButtons( items=[] )
     - const itemId = item.groupname + '_' + ++buttonsCount
 
     .checkbox-button
-        input.checkbox-button__elem( type='checkbox' id=itemId checked=buttonChecked )
-        label.checkbox-button__label( for=itemId ) #{item.label}
+      input.checkbox-button__elem( type='checkbox' id=itemId checked=buttonChecked )
+      if item.rich
+        .checkbox-button__rich-label
+          label.checkbox-button__rich-label_title( for=itemId ) #{item.label.title}
+          label.checkbox-button__rich-label_info( for=itemId ) #{item.label.info}
+      else
+        label.checkbox-button__common-label( for=itemId ) #{item.label}

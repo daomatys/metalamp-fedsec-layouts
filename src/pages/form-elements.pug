@@ -219,6 +219,29 @@ body.ui-kit__body
     .form-elements__wrap_lower-middle.indentation_wrap
       .form-elements__column_left
       .form-elements__column_center
+        .block__rich-checkbox-buttons
+          +titleBar("rich checkbox buttons")
+          .checkbox-buttons__array.additional-padding
+            +checkboxButtons([
+              {
+                rich: true,
+                groupname: "uik-fe_rich-cbb",
+                pressed: false,
+                label: {
+                  title: "Широкий коридор",
+                  info: "Ширина коридоров в номере не менее 91 см."
+                }
+              },
+              {
+                rich: true,
+                groupname: "uik-fe_rich-cbb",
+                pressed: false,
+                label: {
+                  title: "Помощник для инвалидов",
+                  info: "На 1 этаже вас встретит специалист  и проводит до номера."
+                }
+              }
+            ])
       .form-elements__column_right
         .block__bullet-list
           +titleBar("bullet list")
