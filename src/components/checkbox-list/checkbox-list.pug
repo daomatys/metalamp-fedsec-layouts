@@ -4,13 +4,14 @@ include ../material-icon-cell/material-icon-cell.pug
 
 mixin checkboxList( item )
   - const listInsertionClass = item.inserted ? 'checkbox-list_inserted' : ''
+  - const iconFlippedClass = item.inserted ? '' : 'icon-flipped'
 
   .checkbox-list
     .checkbox-list__title-button
       input.checkbox-list__title-button_hidden-input( type='checkbox' id=item.groupname )
       .checkbox-list__title-button_text
         +titleBar( item.title )
-      .checkbox-list__title-button_icon
+      .checkbox-list__title-button_icon( class=iconFlippedClass )
         +materialIcon('expand_more', item.groupname)
     .checkbox-list__checkboxes-array.additional-padding( class=listInsertionClass )
       +checkboxButtons({
