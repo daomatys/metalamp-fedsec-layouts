@@ -823,6 +823,10 @@ header.ui-kit__header {
 
 .range-slider {
   box-sizing: border-box; }
+  .range-slider__container {
+    display: grid;
+    align-items: end;
+    height: 14px; }
 
 .ui-slider {
   height: 6px;

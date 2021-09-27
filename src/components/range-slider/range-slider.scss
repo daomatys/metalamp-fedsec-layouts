@@ -3,6 +3,12 @@
 
 .range-slider {
   box-sizing: border-box;
+
+  &__container {
+    display: grid;
+    align-items: end;
+    height: 14px;
+  }
 }
 
 .ui-slider {
