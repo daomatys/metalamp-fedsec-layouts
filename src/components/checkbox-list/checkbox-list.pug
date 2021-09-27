@@ -8,7 +8,7 @@ mixin checkboxList( item )
 
   .checkbox-list
     .checkbox-list__title-button
-      input.checkbox-list__title-button_hidden-input( type='checkbox' id=item.groupname )
+      input.checkbox-list__title-button_hidden-input( type='checkbox' id=item.groupname disabled=item.disabled )
       .checkbox-list__title-button_text
         +titleBar( item.title )
       .checkbox-list__title-button_icon( class=iconFlippedClass )
