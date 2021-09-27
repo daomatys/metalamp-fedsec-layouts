@@ -1,0 +1,963 @@
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/fonts/Material-Icons/fonts.scss ***!
+  \*************************************************************************************************************************************/
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v99/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format("woff2"); }
+
+/*!*********************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/fonts/Montserrat/fonts.scss ***!
+  \*********************************************************************************************************************************/
+@charset "UTF-8";
+@font-face {
+  font-family: 'Montserrat';
+  src: local("☺"), url(static/fonts/Montserrat-Regular.woff) format("woff"), url(static/fonts/Montserrat-Regular.ttf) format("truetype"), url(static/fonts/Montserrat-Regular.svg) format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local("☺"), url(static/fonts/Montserrat-Bold.woff) format("woff"), url(static/fonts/Montserrat-Bold.ttf) format("truetype"), url(static/fonts/Montserrat-Bold.svg) format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
+/*!********************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/fonts/Quicksand/fonts.scss ***!
+  \********************************************************************************************************************************/
+@charset "UTF-8";
+@font-face {
+  font-family: 'Quicksand';
+  src: local("☺"), url(static/fonts/Quicksand-Regular.woff) format("woff"), url(static/fonts/Quicksand-Regular.ttf) format("truetype"), url(static/fonts/Quicksand-Regular.svg) format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Quicksand';
+  src: local("☺"), url(static/fonts/Quicksand-Bold.woff) format("woff"), url(static/fonts/Quicksand-Bold.ttf) format("truetype"), url(static/fonts/Quicksand-Bold.svg) format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
+/*!******************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/advantage-bar/advantage-bar.scss ***!
+  \******************************************************************************************************************************************/
+.advantages-block {
+  width: 280px; }
+  .advantages-block__text-bar {
+    display: flex;
+    margin-bottom: 17px; }
+  .advantages-block__icon {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    margin-right: 10px; }
+    .advantages-block__icon > span {
+      font-size: 48px; }
+  .advantages-block__text {
+    display: inherit;
+    flex-direction: column;
+    opacity: .75;
+    font-size: 14px;
+    line-height: 24px; }
+    .advantages-block__text__title {
+      font-weight: bold; }
+    .advantages-block__text__brief {
+      font-weight: normal; }
+  .advantages-block__line-bar__elem {
+    color: #1F2041;
+    opacity: .1;
+    margin: 0; }
+
+.block__advantage-bars {
+  display: grid;
+  grid-gap: 20px; }
+
+/*!**************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/bullet-list/bullet-list.scss ***!
+  \**************************************************************************************************************************************/
+.bullet-list {
+  margin: 0;
+  padding: 0; }
+  .bullet-list__row {
+    position: relative;
+    left: 20px;
+    width: 240px;
+    color: rgba(31, 32, 65, 0.75);
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 10px; }
+    .bullet-list__row::before {
+      position: absolute;
+      top: 7px;
+      left: -20px;
+      background: rgba(31, 32, 65, 0.25);
+      width: 10px;
+      height: 10px;
+      border: transparent;
+      border-radius: 50%;
+      content: ''; }
+
+/*!******************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/buttons/buttons.scss ***!
+  \******************************************************************************************************************************/
+.oval-button_frame {
+  height: 20px;
+  width: 40px;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #1F2041;
+  color: #1F2041;
+  opacity: .25;
+  cursor: pointer;
+  appearance: none; }
+  .oval-button_frame:checked {
+    border-color: #BC9CFF;
+    color: #BC9CFF;
+    opacity: 1; }
+
+.oval-button_dot-marker {
+  height: 12px;
+  width: 12px;
+  background-color: #1F2041;
+  border-radius: 50%; }
+
+.gradient-fill {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+/*!****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/buttons/checkbox/checkbox.scss ***!
+  \****************************************************************************************************************************************/
+.checkbox-buttons__container {
+  display: grid;
+  justify-items: start;
+  grid-template-rows: repeat(2, auto);
+  grid-gap: 10px; }
+
+.checkbox-button {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 10px;
+  align-items: start;
+  margin-right: 20px; }
+  .checkbox-button * {
+    cursor: pointer; }
+  .checkbox-button label {
+    color: #1F2041; }
+  .checkbox-button__elem {
+    position: relative;
+    display: flex;
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    border-color: rgba(31, 32, 65, 0.25); }
+    .checkbox-button__elem:checked {
+      align-items: center;
+      justify-content: center;
+      border-color: #BC9CFF; }
+      .checkbox-button__elem:checked:after {
+        position: absolute;
+        width: 10px;
+        height: 12px;
+        background-image: url(static/images/checkmark_primary-gradient.svg);
+        content: ''; }
+  .checkbox-button__common-label {
+    width: 195px;
+    font-size: 14px;
+    opacity: .5; }
+  .checkbox-button__rich-label {
+    display: flex;
+    flex-direction: column;
+    width: 230px; }
+    .checkbox-button__rich-label_title {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      opacity: .75; }
+    .checkbox-button__rich-label_info {
+      font-size: 12px;
+      opacity: .5;
+      white-space: pre-wrap; }
+
+/*!********************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/buttons/like/like.scss ***!
+  \********************************************************************************************************************************/
+.oval-button_frame, .like-button__elem {
+  height: 20px;
+  width: 40px;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #1F2041;
+  color: #1F2041;
+  opacity: .25;
+  cursor: pointer;
+  appearance: none; }
+  .oval-button_frame:checked, .like-button__elem:checked {
+    border-color: #BC9CFF;
+    color: #BC9CFF;
+    opacity: 1; }
+
+.oval-button_dot-marker {
+  height: 12px;
+  width: 12px;
+  background-color: #1F2041;
+  border-radius: 50%; }
+
+.gradient-fill, .like-button__elem:checked + .like-button__text > .like-button__text_icon > label {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+.like-button {
+  display: flex;
+  position: relative;
+  align-items: center; }
+  .like-button__elem:checked + .like-button__text {
+    opacity: 1; }
+    .like-button__elem:checked + .like-button__text > .like-button__text_counter > label {
+      color: #BC9CFF; }
+  .like-button__text {
+    display: inherit;
+    position: absolute;
+    opacity: .25;
+    left: 1px; }
+    .like-button__text_icon > label, .like-button__text_counter > label {
+      display: inherit;
+      justify-content: center;
+      align-items: center;
+      font-size: 10px;
+      line-height: 12px;
+      cursor: pointer; }
+    .like-button__text_icon {
+      display: inherit;
+      justify-content: center; }
+      .like-button__text_icon > label {
+        width: 20px; }
+
+.like-buttons__array {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 10px; }
+
+/*!******************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/buttons/mean-oval/mean-oval.scss ***!
+  \******************************************************************************************************************************************/
+.mean-oval-buttons {
+  display: grid;
+  grid-gap: 30px; }
+  .mean-oval-buttons__array {
+    display: inherit;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 30px 20px;
+    justify-content: start; }
+
+.mean-oval-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 15px;
+  min-width: 61px;
+  margin: 0;
+  box-sizing: border-box; }
+  .mean-oval-button > * {
+    cursor: pointer; }
+  .mean-oval-button:hover > .mean-oval-button__background {
+    opacity: .5; }
+  .mean-oval-button__background {
+    position: absolute;
+    border-radius: 22px;
+    height: 44px;
+    width: 100%;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    z-index: 11;
+    transition: opacity 200ms ease; }
+  .mean-oval-button__thumb {
+    position: relative;
+    margin-inline: 2px;
+    border-radius: 20px;
+    height: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    z-index: 12; }
+  .mean-oval-button__elem {
+    position: absolute;
+    appearance: none;
+    border: none;
+    background: transparent;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: inherit;
+    font-weight: bold;
+    color: #fff;
+    z-index: 13; }
+    .mean-oval-button__elem:disabled + label {
+      opacity: .5; }
+  .mean-oval-button__icon {
+    position: absolute;
+    color: #fff;
+    right: 0px;
+    z-index: 13;
+    margin-right: 10px; }
+
+.button-style_contained, .button-style_outlined {
+  height: 44px; }
+
+.button-style_outlined > button {
+  color: #BC9CFF; }
+
+.button-style_text {
+  position: relative; }
+  .button-style_text > button {
+    color: #BC9CFF;
+    background-color: #fff;
+    padding: 0; }
+    .button-style_text > button:hover, .button-style_text > button:disabled {
+      color: #1F2041;
+      opacity: .5; }
+
+.ripple, .mean-oval-button__elem:not(:active) {
+  animation: rippling 180ms ease forwards; }
+
+@keyframes rippling {
+  0% {
+    transform: scale(1); }
+  66% {
+    transform: scale(0.94); }
+  100% {
+    transform: scale(1); } }
+
+/*!**********************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/buttons/radio/radio.scss ***!
+  \**********************************************************************************************************************************/
+.radio-button {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 10px;
+  align-items: center;
+  margin-right: 20px; }
+  .radio-button * {
+    cursor: pointer; }
+  .radio-button__elem {
+    position: relative;
+    display: flex;
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 50%;
+    border-color: #1F2041;
+    opacity: .25; }
+    .radio-button__elem:checked {
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+      border-color: #BC9CFF; }
+      .radio-button__elem:checked:after {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        content: ''; }
+      .radio-button__elem:checked + label {
+        opacity: .75; }
+  .radio-button__label {
+    font-size: 14px;
+    color: #1F2041;
+    opacity: .5; }
+
+.radio-buttons__array {
+  display: flex; }
+
+/*!********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/buttons/rate-stars/rate-stars.scss ***!
+  \********************************************************************************************************************************************/
+.star-rate {
+  margin-right: 20px; }
+
+/*!************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/buttons/toggle/toggle.scss ***!
+  \************************************************************************************************************************************/
+.oval-button_frame, .toggle-button__elem {
+  height: 20px;
+  width: 40px;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #1F2041;
+  color: #1F2041;
+  opacity: .25;
+  cursor: pointer;
+  appearance: none; }
+  .oval-button_frame:checked, .toggle-button__elem:checked {
+    border-color: #BC9CFF;
+    color: #BC9CFF;
+    opacity: 1; }
+
+.oval-button_dot-marker, .toggle-button__elem::after {
+  height: 12px;
+  width: 12px;
+  background-color: #1F2041;
+  border-radius: 50%; }
+
+.gradient-fill {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+.toggle-button {
+  display: flex; }
+  .toggle-button__elem {
+    display: inherit;
+    align-items: center;
+    margin-right: 10px; }
+    .toggle-button__elem::after {
+      display: inherit;
+      margin-inline: 3px;
+      -webkit-transition: transform 0.3s ease;
+      transition: transform 0.3s ease;
+      content: ''; }
+    .toggle-button__elem:checked::after {
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      -webkit-transform: translateX(20px);
+      transform: translateX(20px); }
+  .toggle-button__label {
+    display: inherit;
+    align-items: flex-start;
+    font-size: 14px;
+    opacity: .75; }
+
+.toggle-buttons__array {
+  display: grid;
+  grid-row: 2;
+  grid-gap: 14px; }
+
+/*!******************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/checkbox-list/checkbox-list.scss ***!
+  \******************************************************************************************************************************************/
+.checkbox-list__title-button {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start; }
+  .checkbox-list__title-button_hidden-input {
+    position: absolute;
+    left: -10px;
+    bottom: -4px;
+    appearance: none;
+    width: 256px;
+    height: 28px;
+    cursor: pointer; }
+    .checkbox-list__title-button_hidden-input:checked {
+      transform: rotateX(0.5turn); }
+  .checkbox-list__title-button_icon {
+    position: relative;
+    margin-left: 30px;
+    opacity: .5; }
+    .checkbox-list__title-button_icon > label {
+      cursor: pointer; }
+
+.checkbox-list_inserted {
+  display: none; }
+
+.icon-flipped {
+  transform: scaleY(-1); }
+
+/*!****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/color-sample/color-sample.scss ***!
+  \****************************************************************************************************************************************/
+.color-items__holder {
+  display: grid;
+  grid-row: 7;
+  grid-gap: 20px;
+  width: 282px;
+  margin: 0 0 0 0; }
+
+.color-item {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  color: #1F2041; }
+  .color-item__sample {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px; }
+  .color-item__description {
+    display: inherit;
+    margin-left: 40px;
+    font-style: normal;
+    font-size: 19px;
+    line-height: 28px;
+    flex-direction: column;
+    justify-content: center; }
+    .color-item__description__pseudoname {
+      font-weight: 700; }
+    .color-item__description p {
+      margin: 0; }
+
+.background-color_valhalla {
+  background-color: #1F2041; }
+
+.background-color_perfume {
+  background-color: #BC9CFF; }
+
+.background-color_silver-tree {
+  background-color: #6FCF97; }
+
+.opaque_100 {
+  opacity: 1; }
+
+.opaque_75 {
+  opacity: .75; }
+
+.opaque_50 {
+  opacity: .5; }
+
+.opaque_25 {
+  opacity: .25; }
+
+.opaque_5 {
+  opacity: .05; }
+
+/*!**************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/comment-bar/comment-bar.scss ***!
+  \**************************************************************************************************************************************/
+.comment-bar {
+  display: grid;
+  grid-template-columns: 50px 653px;
+  grid-gap: 10px;
+  font-size: 14px; }
+  .comment-bar__avatar > img {
+    filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.1)); }
+  .comment-bar__like-button-wrap {
+    display: inherit;
+    align-items: start;
+    justify-content: center;
+    position: relative;
+    top: 1px; }
+  .comment-bar__title {
+    display: inherit;
+    align-items: center; }
+    .comment-bar__title__name {
+      font-weight: bold; }
+  .comment-bar__title, .comment-bar__text {
+    color: rgba(31, 32, 65, 0.75);
+    user-select: text; }
+  .comment-bar__text {
+    line-height: 24px; }
+
+/*!****************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/header/header.scss ***!
+  \****************************************************************************************************************************/
+header.ui-kit__header {
+  height: 85px;
+  width: 100%;
+  padding: 30px; }
+
+/*!**************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/input/dropdown/dropdown.scss ***!
+  \**************************************************************************************************************************************/
+.dropdown {
+  position: absolute;
+  top: 43px;
+  border-color: rgba(31, 32, 65, 0.5);
+  border-radius: 0px 0px 4px 4px;
+  padding: 7px 7px 7px 15px;
+  width: inherit;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  display: none;
+  background-color: #fff;
+  z-index: 10; }
+  .dropdown__option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px;
+    height: 30px; }
+    .dropdown__option_name {
+      color: #1F2041;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase; }
+
+.dropdown-ejected {
+  display: block; }
+
+/*!**************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/input/input.scss ***!
+  \**************************************************************************************************************************/
+.input__data-bar {
+  width: inherit;
+  position: relative; }
+
+.input__frame {
+  border-radius: 4px;
+  border-color: rgba(31, 32, 65, 0.25);
+  height: 44px;
+  padding: 0px 15px 0px 15px;
+  width: inherit;
+  background-color: transparent; }
+  .input__frame::placeholder {
+    color: rgba(31, 32, 65, 0.25);
+    font-size: 16px;
+    line-height: 18px; }
+  .input__frame:hover + span, .input__frame:focus-within + span {
+    opacity: .75; }
+  .input__frame:hover::placeholder, .input__frame:focus-within::placeholder {
+    color: rgba(31, 32, 65, 0.75); }
+  .input__frame:hover:placeholder-shown, .input__frame:focus-within:placeholder-shown {
+    border-color: rgba(31, 32, 65, 0.5); }
+
+.elem__border {
+  border-width: 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  outline: none; }
+
+.dropdown-marker {
+  cursor: pointer; }
+
+.dropdown-is-opened {
+  border-radius: 4px 4px 0px 0px !important;
+  border-bottom-color: transparent; }
+  .dropdown-is-opened::placeholder {
+    color: rgba(31, 32, 65, 0.75); }
+  .dropdown-is-opened:placeholder-shown {
+    border-color: rgba(31, 32, 65, 0.5); }
+
+.input-icons {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: -1; }
+
+.icon-style_dropdown {
+  color: #1F2041;
+  opacity: .5; }
+
+/*!****************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/material-icon-cell/material-icon-cell.scss ***!
+  \****************************************************************************************************************************************************/
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased; }
+
+/*!************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/pagination/pagination.scss ***!
+  \************************************************************************************************************************************/
+.material-icons, .custom-paginationjs .paginationjs-pages ul li.paginationjs-prev > a,
+.custom-paginationjs .paginationjs-pages ul li.paginationjs-next > a {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased; }
+
+.custom-paginationjs {
+  display: grid;
+  grid-gap: 10px;
+  justify-items: center;
+  float: left;
+  margin: 0;
+  padding: 0; }
+  .custom-paginationjs .paginationjs-pages {
+    float: inherit;
+    font-size: 12px; }
+    .custom-paginationjs .paginationjs-pages ul {
+      float: inherit;
+      margin: 0;
+      padding: 0; }
+      .custom-paginationjs .paginationjs-pages ul li {
+        float: inherit;
+        border: none;
+        list-style: none; }
+        .custom-paginationjs .paginationjs-pages ul li > a {
+          display: block;
+          height: 40px;
+          width: 40px;
+          line-height: 40px;
+          background: transparent;
+          color: rgba(31, 32, 65, 0.5);
+          text-decoration: none;
+          text-align: center;
+          border-radius: 50%;
+          transition: all .5s ease; }
+          .custom-paginationjs .paginationjs-pages ul li > a:hover {
+            background: rgba(188, 156, 255, 0.25); }
+        .custom-paginationjs .paginationjs-pages ul li.paginationjs-prev > a {
+          transform: scaleX(-1); }
+        .custom-paginationjs .paginationjs-pages ul li.paginationjs-prev > a,
+        .custom-paginationjs .paginationjs-pages ul li.paginationjs-next > a {
+          background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+          color: white; }
+          .custom-paginationjs .paginationjs-pages ul li.paginationjs-prev > a:hover,
+          .custom-paginationjs .paginationjs-pages ul li.paginationjs-next > a:hover {
+            opacity: .75; }
+        .custom-paginationjs .paginationjs-pages ul li.active > a {
+          color: white;
+          background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%); }
+        .custom-paginationjs .paginationjs-pages ul li.disabled > a:hover {
+          background: none; }
+  .custom-paginationjs .paginationjs-nav {
+    color: rgba(31, 32, 65, 0.75);
+    font-size: 14px; }
+
+/*!****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/range-slider/range-slider.scss ***!
+  \****************************************************************************************************************************************/
+/*!
+ * jQuery UI Slider 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/slider/#theming
+ */
+.ui-slider {
+  position: relative;
+  text-align: left; }
+
+.ui-slider .ui-slider-handle {
+  position: absolute;
+  z-index: 2;
+  width: 1.2em;
+  height: 1.2em;
+  cursor: default;
+  -ms-touch-action: none;
+  touch-action: none; }
+
+.ui-slider .ui-slider-range {
+  position: absolute;
+  z-index: 1;
+  font-size: .7em;
+  display: block;
+  border: 0;
+  background-position: 0 0; }
+
+/* support: IE8 - See #6727 */
+.ui-slider.ui-state-disabled .ui-slider-handle,
+.ui-slider.ui-state-disabled .ui-slider-range {
+  filter: inherit; }
+
+.ui-slider-horizontal {
+  height: .8em; }
+
+.ui-slider-horizontal .ui-slider-handle {
+  top: -.3em;
+  margin-left: -.6em; }
+
+.ui-slider-horizontal .ui-slider-range {
+  top: 0;
+  height: 100%; }
+
+.ui-slider-horizontal .ui-slider-range-min {
+  left: 0; }
+
+.ui-slider-horizontal .ui-slider-range-max {
+  right: 0; }
+
+.ui-slider-vertical {
+  width: .8em;
+  height: 100px; }
+
+.ui-slider-vertical .ui-slider-handle {
+  left: -.3em;
+  margin-left: 0;
+  margin-bottom: -.6em; }
+
+.ui-slider-vertical .ui-slider-range {
+  left: 0;
+  width: 100%; }
+
+.ui-slider-vertical .ui-slider-range-min {
+  bottom: 0; }
+
+.ui-slider-vertical .ui-slider-range-max {
+  top: 0; }
+
+.range-slider {
+  box-sizing: border-box; }
+
+.ui-slider {
+  height: 6px;
+  background: #FFF;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 3px; }
+
+.ui-widget-content .ui-state-default {
+  border: 2px solid #FFF;
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  top: -6px;
+  appearance: none;
+  outline: none; }
+
+.ui-slider .ui-slider-range {
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  height: 6px;
+  top: -1px; }
+
+/*!**********************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/title-bar/title-bar.scss ***!
+  \**********************************************************************************************************************************/
+.title-bar {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #1F2041;
+  margin-block: 20px 5px; }
+  .title-bar__title {
+    font-weight: bold; }
+  .title-bar__state {
+    font-weight: normal;
+    opacity: .5; }
+
+/*!**************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/type-sample/type-sample.scss ***!
+  \**************************************************************************************************************************************/
+.type-items__holder {
+  display: grid;
+  grid-row: 7;
+  grid-gap: 51px;
+  width: 496px;
+  height: 321px; }
+
+.type-item {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+  color: #1F2041; }
+  .type-item__tagname {
+    margin: 0;
+    opacity: .25; }
+  .type-item__note {
+    display: inherit;
+    margin: 0 0 0 30px;
+    width: 369px; }
+  .type-item p.type-item__note {
+    opacity: 0.75; }
+
+/*!***********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/ui-kit-pages.scss ***!
+  \***********************************************************************************************************************/
+.ui-kit__body {
+  margin: auto;
+  font-family: Montserrat, Quicksand, sans-serif;
+  user-select: none; }
+
+.ui-kit__main {
+  display: grid;
+  padding: 0px 158px 0px 150px;
+  justify-content: space-between; }
+
+.ui-kit__footer {
+  height: 145px; }
+
+.indentation_double {
+  padding-top: 20px; }
+
+.indentation_wrap {
+  padding-bottom: 80px;
+  display: grid;
+  grid-gap: 72px; }
+
+.form-elements__wrap_upper-middle {
+  height: 240px; }
+
+.form-elements__wrap_lower-middle {
+  height: 320px; }
+
+.form-elements__wrap_top, .form-elements__wrap_upper-middle, .form-elements__wrap_lower-middle {
+  grid-template-columns: 320px 374px 320px; }
+
+.form-elements__wrap_bottom {
+  grid-template-columns: 320px 712px; }
+
+.form-elements__column_center, .form-elements__column_center-right {
+  margin-left: 54px; }
+
+.twinline-gap_own {
+  display: flex; }
+
+.twinline-gap_longest {
+  display: flex;
+  justify-content: space-between; }
+
+.elem__width_100 {
+  width: 320px; }
+
+.elem__width_75 {
+  width: 266px; }
+
+.elem__width_50 {
+  width: 150px; }
+
+.elem__width_30 {
+  width: 99px; }
+
+.index-links {
+  display: grid;
+  grid-gap: 20px;
+  font-family: inherit;
+  margin-top: 80px; }
+
+.additional-padding {
+  padding-top: 11px; }
+
+.frozen {
+  pointer-events: none; }
+
+/*!***********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/variables/variables.scss ***!
+  \***********************************************************************************************************************/
+
