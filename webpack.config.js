@@ -22,7 +22,7 @@ module.exports = {
     app: PATHS.src,
   },
   output: {
-    filename: '[name].js',
+    filename: 'index.js',
     path: PATHS.dist
   },
   module: {
@@ -63,10 +63,10 @@ module.exports = {
   plugins: [
     ...PAGES.map( page => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
-      filename: `./[name].${page.replace(/\.pug/,'.html')}`
+      filename: `./${page.replace(/\.pug/,'.html')}`
     })),
     new miniCss({
-      filename: '[name].css',
+      filename: 'index.css',
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
