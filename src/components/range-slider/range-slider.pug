@@ -1,7 +1,8 @@
 mixin rangeSlider( item )
   - const stateId = item.id + '_state'
+  - const widthClass = `elem__width_${ item.widthbypercent }`
 
-  .range-slider__wrap( class=`elem__width_${ item.keywidth }`)
+  .range-slider__wrap( class=widthClass )
     +titleBar( item.title, true, stateId )
     .range-slider__wrap_container.additional-padding 
       .range-slider__elem( id=item.id )

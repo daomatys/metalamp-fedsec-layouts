@@ -6,9 +6,10 @@ mixin inputs( items=[] )
   each item in items
     - const keyDropdownClasses = item.dropdown ? 'dropdown-marker dropdown-is-closed' : ''
     - const keyReadOnly = item.dropdown ? true : false
-    - const keyWidth = item.keywidth ? item.keywidth : '100'
+    - const widthByPercent = item.widthbypercent ? item.widthbypercent : '100'
+    - const widthClass = `elem__width_${widthByPercent}`
 
-    .input( class=`elem__width_${keyWidth}` )
+    .input( class=widthClass )
       .input__text-bar
         +titleBar( item.title, item.state )
       .input__data-bar
