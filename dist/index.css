@@ -906,18 +906,21 @@ header.ui-kit__header {
   height: 145px; }
 
 .indentation_double {
-  padding-top: 20px; }
+  padding-top: 23px; }
 
 .indentation_wrap {
   padding-bottom: 80px;
   display: grid;
   grid-gap: 72px; }
 
+.form-elements__wrap_top {
+  height: 650px; }
+
 .form-elements__wrap_upper-middle {
   height: 240px; }
 
 .form-elements__wrap_lower-middle {
-  height: 320px; }
+  height: 312px; }
 
 .form-elements__wrap_top, .form-elements__wrap_upper-middle, .form-elements__wrap_lower-middle {
   grid-template-columns: 320px 374px 320px; }

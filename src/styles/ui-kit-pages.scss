@@ -20,7 +20,7 @@
 
 .indentation {
   &_double {
-    padding-top: 20px;
+    padding-top: 23px;
   }
 
   &_wrap {
@@ -32,12 +32,16 @@
 
 .form-elements {
   &__wrap {
+    &_top {
+      height: 650px;
+    }
+
     &_upper-middle {
       height: 240px;
     }
 
     &_lower-middle {
-      height: 320px;
+      height: 312px;
     }
 
     &_top,
