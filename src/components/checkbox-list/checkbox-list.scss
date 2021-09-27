@@ -1,0 +1,29 @@
+.checkbox-list {
+  &__title-button {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+
+    &_button {
+      position: absolute;
+      left: -10px;
+      bottom: -4px;
+      appearance: none;
+      width: 256px;
+      height: 28px;
+      transition: all .3s ease;
+      cursor: pointer;
+
+      &:checked ~ .checkbox-list__title-button_icon {
+        transform: rotateX(-0.5turn)
+      }
+    }
+
+    &_icon {
+      position: relative;
+      margin-left: 30px;
+      opacity: .5;
+    }
+  }
+}

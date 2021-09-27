@@ -5,11 +5,12 @@ include ../material-icon-cell/material-icon-cell.pug
 mixin checkboxList( item )
   .checkbox-list
     .checkbox-list__title-button
+      input.checkbox-list__title-button_button(type='checkbox' id=item.groupname)
       .checkbox-list__title-button_text
         +titleBar( item.title )
       .checkbox-list__title-button_icon
-        +materialIcon('expand_more')
-    .checkbox-list__checkbox-items-array
+        +materialIcon('expand_more', item.groupname)
+    .checkbox-list__checkbox-items-array.additional-padding
       +checkboxButtons({
         groupname: item.groupname,
         checkboxes: item.checkboxes

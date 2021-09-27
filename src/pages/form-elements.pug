@@ -175,7 +175,7 @@ body.ui-kit__body
               title: "dropdown",
               state: "default",
               placeholder: "2 спальни, 2 кровати...",
-              keywidth: 75,
+              widthbypercent: 75,
               dropdown: {
                 options: [
                   ""
@@ -186,7 +186,7 @@ body.ui-kit__body
               title: "dropdown",
               state: "expanded",
               placeholder: "2 спальни, 2 кровати...",
-              keywidth: 75,
+              widthbypercent: 75,
               dropdown: {
                 options: [
                   "спальни",
@@ -229,10 +229,9 @@ body.ui-kit__body
     .form-elements__wrap_lower-middle.indentation_wrap
       .form-elements__column_left
         .block__checkbox-list_default
-        .block__checkbox-list_ejected
           +checkboxList({
             title: "expandable checkbox list",
-            groupname: "uik-fe__checkbox-list-ejected",
+            groupname: "uik-fe__checkbox-list-default",
             checkboxes: [
               { pressed: false, label: "Завтрак" },
               { pressed: true,  label: "Письменный стол" },
@@ -242,6 +241,7 @@ body.ui-kit__body
               { pressed: false, label: "Шампунь" }
             ]
           })
+        .block__checkbox-list_ejected
       .form-elements__column_center
         .block__rich-checkbox-buttons
           +titleBar("rich checkbox buttons")
