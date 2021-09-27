@@ -13,4 +13,5 @@ mixin likeButtons( items=[] )
       .like-button__text
         .like-button__text_icon
           +materialIcon( iconCode, itemId )
-        label.like-button__text_counter( for=itemId ) #{item.likecount}
+        .like-button__text_counter
+          label.counter-elem( for=itemId ) #{item.likecount}

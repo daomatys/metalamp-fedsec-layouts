@@ -1,6 +1,5 @@
 @import "@variables";
 @import "../buttons.scss";
-@import "../../../styles/ui-kit-pages.scss";
 
 .like-button {
   display: flex;
@@ -10,15 +9,15 @@
   &__elem {
     @extend .oval-button_frame;
 
-    &:checked + div {
+    &:checked + .like-button__text {
       opacity: 1;
 
-      & > label{
+      & > .like-button__text_icon > label {
         @extend .gradient-fill;
-        
-        & + label {
-          color: $perfume;
-        }
+      }
+
+      & > .like-button__text_counter > label {
+        color: $perfume;
       }
     }
   }
@@ -29,21 +28,25 @@
     opacity: .25;
     left: 1px;
 
-    &_icon {
-      width: 20px;
-    }
-  
+    &_icon,
     &_counter {
-      width: 10px;
+      & > label {
+        display: inherit;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+        line-height: 12px;
+        cursor: pointer;
+      }
     }
 
-    & > label {
+    &_icon {
       display: inherit;
       justify-content: center;
-      align-items: center;
-      font-size: 10px;
-      line-height: 12px;
-      cursor: pointer;
+      
+      & > label {
+        width: 20px;
+      }
     }
   }
 }

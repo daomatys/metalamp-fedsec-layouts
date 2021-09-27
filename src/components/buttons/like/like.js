@@ -9,8 +9,8 @@ function likeButtonEventListeners() {
 function likeButtonPressing({target}) {
   const aim = target.closest('.like-button');
   const input = aim.firstElementChild;
-  const icon = aim.querySelector('.like-button__text_icon');
-  const counter = aim.querySelector('.like-button__text_counter');
+  const icon = aim.querySelector('.material-icons');
+  const counter = aim.querySelector('.counter-elem');
 
   if ( input.hasAttribute('checked') ) {
     icon.textContent = 'favorite_border';

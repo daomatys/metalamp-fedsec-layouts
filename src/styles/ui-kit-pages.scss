@@ -70,14 +70,6 @@
   }
 }
 
-.gradient-fill {
-  background: $primary-gradient;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color:transparent;
-}
-
 .elem__width {
   &_100 {
     width: 320px
