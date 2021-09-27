@@ -12,11 +12,14 @@
       appearance: none;
       width: 256px;
       height: 28px;
-      transition: all .3s ease;
       cursor: pointer;
 
       &:checked ~ .checkbox-list__title-button_icon {
-        transform: rotateX(-0.5turn)
+        animation: arrow-rotation 0.5s ease both;
+      }
+
+      &:not(:checked) ~ .checkbox-list__title-button_icon {
+        animation: arrow-rotation-back 0.5s ease both;
       }
     }
 
@@ -26,4 +29,14 @@
       opacity: .5;
     }
   }
+}
+
+@keyframes arrow-rotation {
+  0%   { transform: rotateX(0turn) }
+  100% { transform: rotateX(0.5turn) }
+}
+
+@keyframes arrow-rotation-back {
+  0%   { transform: rotateX(0.5turn) }
+  100% { transform: rotateX(1turn) }
 }
