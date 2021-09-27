@@ -2,17 +2,15 @@ include ../title-bar/title-bar.pug
 include ../buttons/checkbox/checkbox.pug
 include ../material-icon-cell/material-icon-cell.pug
 
-mixin checkboxButtonsList( items=[] )
+mixin checkboxList( item )
   .checkbox-list
     .checkbox-list__title-button
       .checkbox-list__title-button_text
-        +titleBar('expandable checkbox list')
+        +titleBar( item.title )
       .checkbox-list__title-button_icon
         +materialIcon('expand_more')
     .checkbox-list__checkbox-items-array
-      each item in items
-        +checkboxButtons({
-          groupname: item.groupname,
-          pressed: item.pressed,
-          label: item.label
-        })
+      +checkboxButtons({
+        groupname: item.groupname,
+        checkboxes: item.checkboxes
+      })

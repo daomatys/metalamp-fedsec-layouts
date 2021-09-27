@@ -98,11 +98,14 @@ body.ui-kit__body
         .block__checkbox-buttons
           +titleBar("checkbox buttons")
           .checkbox-buttons__array.additional-padding
-            +checkboxButtons([
-              { groupname: "uik-fe_allows", pressed: false, label: "Можно курить" },
-              { groupname: "uik-fe_allows", pressed: true, label: "Можно с питомцами" },
-              { groupname: "uik-fe_allows", pressed: true, label: "Можно пригласить гостей (до 10 человек)" }
-            ])
+            +checkboxButtons({
+              groupname: "uik-fe__checkbox-allows", 
+              checkboxes: [
+                { pressed: false, label: "Можно курить" },
+                { pressed: true,  label: "Можно с питомцами" },
+                { pressed: true,  label: "Можно пригласить гостей (до 10 человек)" }
+              ]
+            })
         .block__radio-buttons.indentation_double
           +titleBar("radio buttons")
           .radio-buttons__array.additional-padding 
@@ -225,30 +228,50 @@ body.ui-kit__body
           ])
     .form-elements__wrap_lower-middle.indentation_wrap
       .form-elements__column_left
+        .block__checkbox-list_default
+          +checkboxList({
+            title: "expandable checkbox list",
+            groupname: "uik-fe__checkbox-list-default",
+            checkboxes: [
+              { pressed: false, label: "Завтрак" },
+              { pressed: true,  label: "Письменный стол" },
+              { pressed: true,  label: "Стул для кормления" },
+              { pressed: true,  label: "Кроватка" },
+              { pressed: false, label: "Телевизор" },
+              { pressed: false, label: "Шампунь" }
+            ]
+          })
+        .block__checkbox-list_ejected
+          +checkboxList({
+            title: "expandable checkbox list",
+            groupname: "uik-fe__checkbox-list-ejected",
+            checkboxes: [
+              { pressed: false, label: "Завтрак" },
+              { pressed: true,  label: "Письменный стол" },
+              { pressed: true,  label: "Стул для кормления" },
+              { pressed: true,  label: "Кроватка" },
+              { pressed: false, label: "Телевизор" },
+              { pressed: false, label: "Шампунь" }
+            ]
+          })
       .form-elements__column_center
         .block__rich-checkbox-buttons
           +titleBar("rich checkbox buttons")
           .checkbox-buttons__array.additional-padding
-            +checkboxButtons([
-              {
-                richmode: true,
-                groupname: "uik-fe_rich-cbb",
-                pressed: false,
-                label: {
+            +checkboxButtons({
+              richmode: true,
+              groupname: "uik-fe_rich-cbb",
+              checkboxes: [
+                {
                   title: "Широкий коридор",
                   info: "Ширина коридоров в номере \nне менее 91 см."
-                }
-              },
-              {
-                richmode: true,
-                groupname: "uik-fe_rich-cbb",
-                pressed: false,
-                label: {
+                },
+                {
                   title: "Помощник для инвалидов",
                   info: "На 1 этаже вас встретит специалист  и проводит до номера."
                 }
-              }
-            ])
+              ]
+            })
       .form-elements__column_right
         .block__bullet-list
           +titleBar("bullet list")

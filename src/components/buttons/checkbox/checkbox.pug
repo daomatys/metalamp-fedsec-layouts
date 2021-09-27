@@ -1,15 +1,15 @@
-mixin checkboxButtons( items=[] )
+mixin checkboxButtons( item )
   - let buttonsCount = 0
 
-  each item in items
-    - const buttonChecked = item.pressed ? true : false
-    - const itemId = item.groupname + '_' + ++buttonsCount
+  each checkbox in item.checkboxes
+    - const buttonChecked = checkbox.pressed ? true : false
+    - const buttonId = item.groupname + '_' + ++buttonsCount
 
     .checkbox-button
-      input.checkbox-button__elem( type='checkbox' id=itemId checked=buttonChecked )
+      input.checkbox-button__elem( type='checkbox' id=buttonId checked=buttonChecked )
       if item.richmode
         .checkbox-button__rich-label
-          label.checkbox-button__rich-label_title( for=itemId ) #{item.label.title}
-          label.checkbox-button__rich-label_info( for=itemId ) #{item.label.info}
+          label.checkbox-button__rich-label_title( for=buttonId ) #{checkbox.title}
+          label.checkbox-button__rich-label_info( for=buttonId ) #{checkbox.info}
       else
-        label.checkbox-button__common-label( for=itemId ) #{item.label}
+        label.checkbox-button__common-label( for=buttonId ) #{checkbox.label}
