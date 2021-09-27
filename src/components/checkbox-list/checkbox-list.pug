@@ -3,14 +3,16 @@ include ../buttons/checkbox/checkbox.pug
 include ../material-icon-cell/material-icon-cell.pug
 
 mixin checkboxList( item )
+  - const listInsertionClass = item.inserted ? 'checkbox-list_inserted' : ''
+
   .checkbox-list
     .checkbox-list__title-button
-      input.checkbox-list__title-button_button(type='checkbox' id=item.groupname)
+      input.checkbox-list__title-button_hidden-input( type='checkbox' id=item.groupname )
       .checkbox-list__title-button_text
         +titleBar( item.title )
       .checkbox-list__title-button_icon
         +materialIcon('expand_more', item.groupname)
-    .checkbox-list__checkbox-items-array.additional-padding
+    .checkbox-list__checkboxes-array.additional-padding( class=listInsertionClass )
       +checkboxButtons({
         groupname: item.groupname,
         checkboxes: item.checkboxes
