@@ -1,2 +1,4 @@
-mixin materialIcon(code)
-  span.material-icons-outlined #{ code }
+mixin materialIcon( code, id )
+  - const itemId = id ? id : ''
+
+  span.material-icons( for=itemId ) #{ code }

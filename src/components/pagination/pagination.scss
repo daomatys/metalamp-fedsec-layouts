@@ -1,5 +1,5 @@
 @import "@variables";
-@import "src/styles/material-icons.scss";
+@import "../material-icon-cell/material-icon-cell.scss";
 
 $bgGrad_active: $primary-gradient;
 $bgGrad_arrows: $secondary-gradient;
@@ -56,7 +56,7 @@ $circleboxSize: 40px;
 
           &-prev > a,
           &-next > a{
-            @extend .material-icons-outlined;
+            @extend .material-icons;
             background: $bgGrad_arrows;
             color: white;
 

@@ -1,9 +1,11 @@
+include ../material-icon-cell/material-icon-cell.pug
+
 mixin advantageBars( items=[] )
   each item in items
     .advantages-block
       .advantages-block__text-bar
-        .advantages-block__icon
-          span.material-icons-outlined.gradient-fill #{item.iconname}
+        .advantages-block__icon.gradient-fill
+          +materialIcon( item.iconname )
         .advantages-block__text
           span.advantages-block__text__title #{item.title}
           span.advantages-block__text__brief #{item.brief}

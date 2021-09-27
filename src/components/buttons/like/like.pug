@@ -1,3 +1,5 @@
+include ../../material-icon-cell/material-icon-cell.pug
+
 mixin likeButtons( items=[] )
   - let buttonsCount = 0
 
@@ -9,5 +11,6 @@ mixin likeButtons( items=[] )
     .like-button
       input.like-button__elem( type='checkbox' checked=buttonChecked id=itemId )
       .like-button__text
-        label.like-button__text_icon.material-icons-outlined( for=itemId ) #{iconCode}
+        .like-button__text_icon
+          +materialIcon( iconCode, itemId )
         label.like-button__text_counter( for=itemId ) #{item.likecount}

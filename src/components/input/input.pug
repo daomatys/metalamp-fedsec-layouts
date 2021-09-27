@@ -1,19 +1,24 @@
 include dropdown/dropdown.pug
 include ../title-bar/title-bar.pug
+include ../material-icon-cell/material-icon-cell.pug
 
 mixin inputs( items=[] )
   each item in items
-    - const keyDropdownClasses = item.dropdown ? 'dropdown-marker dropdown-is-closed' : '' ;
-    - const keyReadOnly = item.dropdown ? true : false ;
-    - const keyWidth = item.keywidth ? item.keywidth : '100' ;
+    - const keyDropdownClasses = item.dropdown ? 'dropdown-marker dropdown-is-closed' : ''
+    - const keyReadOnly = item.dropdown ? true : false
+    - const keyWidth = item.keywidth ? item.keywidth : '100'
 
     .input( class=`elem__width_${keyWidth}` )
       .input__text-bar
         +titleBar( item.title, item.state )
       .input__data-bar
         input.input__frame.elem__border( class=keyDropdownClasses readonly=keyReadOnly type=item.type placeholder=item.placeholder )
+
         if item.dropdown
-          span.input-icons.icon-style_dropdown.material-icons-outlined expand_more
+          .input-icons.icon-style_dropdown
+            +materialIcon('expand_more')
           +dropdown( item.dropdown )
-        else if item.subscription
-          span.input-icons.icon-style_subscription.material-icons-outlined.gradient-fill arrow_forward
+
+        if item.subscription
+          .input-icons.icon-style_subscription.gradient-fill 
+            +materialIcon('arrow_forward')
