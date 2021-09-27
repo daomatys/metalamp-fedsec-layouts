@@ -1,0 +1,18 @@
+include ../components/title-bar/title-bar.pug
+include ../components/buttons/checkbox/checkbox.pug
+include ../components/material-icon-cell/material-icon-cell.pug
+
+mixin checkboxButtonsList( items=[] )
+  .checkbox-list
+    .checkbox-list__title-button
+      .checkbox-list__title-button_text
+        +titleBar('expandable checkbox list')
+      .checkbox-list__title-button_icon
+        +materialIcon('expand_more')
+    .checkbox-list__checkbox-items-array
+      each item in items
+        +checkboxButtons({
+          groupname: item.groupname,
+          pressed: item.pressed,
+          label: item.label
+        })
