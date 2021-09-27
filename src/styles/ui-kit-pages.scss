@@ -88,6 +88,13 @@
   }
 }
 
+.index-links {
+  display: grid;
+  grid-gap: 20px;
+  font-family: inherit;
+  margin-top: 80px;
+}
+
 .additional-padding {
   padding-top: 11px;
 }

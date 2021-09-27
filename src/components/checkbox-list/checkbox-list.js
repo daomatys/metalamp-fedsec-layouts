@@ -11,12 +11,11 @@ function checkboxListButtonPressing({target}) {
   const list = parent.querySelector('.checkbox-list__checkboxes-array');
   const icon = parent.querySelector('.material-icons');
 
-  list.classList.toggle('checkbox-list_inserted')
   iconAnimation(icon);
+  list.classList.toggle('checkbox-list_inserted')
 
   if ( target.hasAttribute('checked') ) {
     target.removeAttribute('checked')
-
   } else {
     target.setAttribute('checked', true)
   }
@@ -29,7 +28,7 @@ function iconAnimation(icon) {
     easing: 'ease',
     duration: 400,
     fill: 'both',
-    composite: 'accumulate'
+    composite: 'add'
   })
   animation.persist();
 }
