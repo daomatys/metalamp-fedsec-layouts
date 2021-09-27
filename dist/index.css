@@ -78,7 +78,7 @@
   \**************************************************************************************************************************************/
 .bullet-list {
   position: relative;
-  top: -3px;
+  top: -2px;
   margin: 0;
   padding: 0; }
   .bullet-list__row {
@@ -183,9 +183,9 @@
     flex-direction: column;
     width: 230px; }
     .checkbox-button__rich-label_title {
+      margin-block: 1px 7px;
       font-size: 14px;
       font-weight: bold;
-      margin-bottom: 5px;
       opacity: .75; }
     .checkbox-button__rich-label_info {
       font-size: 12px;
@@ -478,7 +478,7 @@
       transform: rotateX(0.5turn); }
   .checkbox-list__title-button_icon {
     position: relative;
-    margin-left: 30px;
+    margin-left: 40px;
     opacity: .5; }
     .checkbox-list__title-button_icon > label {
       cursor: pointer; }
@@ -914,7 +914,7 @@ header.ui-kit__header {
   grid-gap: 72px; }
 
 .form-elements__wrap_top {
-  height: 650px; }
+  height: 652px; }
 
 .form-elements__wrap_upper-middle {
   height: 240px; }
