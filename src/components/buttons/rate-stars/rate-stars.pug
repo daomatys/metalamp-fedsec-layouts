@@ -1,0 +1,12 @@
+include ../../material-icon-cell/material-icon-cell.pug
+
+mixin stars( ratings=[] )
+  each rating in ratings
+    - let num = 0
+    
+    .star-rate.gradient-fill
+      while num < 5
+        if ++num <= rating
+          +materialIcon('star')
+        else 
+          +materialIcon('star_border')
