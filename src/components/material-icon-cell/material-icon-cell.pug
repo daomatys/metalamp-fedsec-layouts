@@ -1,4 +1,5 @@
 mixin materialIcon( code, id )
-  - const itemId = id ? id : ''
-
-  span.material-icons( for=itemId ) #{ code }
+  if id
+    label.material-icons( for=id ) #{ code }
+  else
+    span.material-icons #{ code }
