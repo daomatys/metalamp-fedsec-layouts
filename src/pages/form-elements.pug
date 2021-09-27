@@ -151,13 +151,15 @@ body.ui-kit__body
                 { groupname: "uik-fe__mob-small", type: "text", disabled: true },
               ])
             .mean-oval-buttons__unit
-              +meanOvalButtons({
-                groupname: "uik-fe__mob-huge",
-                iconname: "arrow_forward",
-                widthbypercent: "100",
-                type: "contained",
-                text: "перейти к оплате",
-              })
+              +meanOvalButtons([
+                {
+                  groupname: "uik-fe__mob-huge",
+                  iconname: "arrow_forward",
+                  widthbypercent: "100",
+                  type: "contained",
+                  text: "перейти к оплате"
+                }
+              ])
         .block__pagination.indentation_double 
           +titleBar("pagination")
           .pagination__elem.additional-padding
