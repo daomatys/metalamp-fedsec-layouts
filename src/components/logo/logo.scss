@@ -1,0 +1,19 @@
+.logotype {
+  display: flex;
+
+  &__image {
+    &_monochrome {
+      position: fixed;
+      top: 30px;
+      left: 30px;
+    }
+
+    &_colorful {
+      display: flex;
+    }
+  }
+
+  &__text {
+    display: flex;
+  } 
+}

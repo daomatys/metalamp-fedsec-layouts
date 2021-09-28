@@ -593,11 +593,6 @@ header.ui-kit__header {
   height: 140px;
   width: 100%; }
 
-.logotype {
-  position: fixed;
-  top: 30px;
-  left: 30px; }
-
 /*!**************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/input/dropdown/dropdown.scss ***!
   \**************************************************************************************************************************************/
@@ -679,6 +674,20 @@ header.ui-kit__header {
 .icon-style_dropdown {
   color: #1F2041;
   opacity: .5; }
+
+/*!************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/logo/logo.scss ***!
+  \************************************************************************************************************************/
+.logotype {
+  display: flex; }
+  .logotype__image_monochrome {
+    position: fixed;
+    top: 30px;
+    left: 30px; }
+  .logotype__image_colorful {
+    display: flex; }
+  .logotype__text {
+    display: flex; }
 
 /*!****************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/material-icon-cell/material-icon-cell.scss ***!
@@ -911,30 +920,9 @@ header.ui-kit__header {
   .type-item p.type-item__note {
     opacity: 0.75; }
 
-/*!***********************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/ui-kit-pages.scss ***!
-  \***********************************************************************************************************************/
-.ui-kit__body {
-  margin: auto;
-  font-family: Montserrat, Quicksand, sans-serif;
-  user-select: none; }
-
-.ui-kit__main {
-  display: grid;
-  padding: 0px 158px 0px 150px;
-  justify-content: space-between; }
-
-.ui-kit__footer {
-  height: 145px; }
-
-.indentation_double {
-  padding-top: 23px; }
-
-.indentation_wrap {
-  padding-bottom: 80px;
-  display: grid;
-  grid-gap: 72px; }
-
+/*!************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/form-elements.scss ***!
+  \************************************************************************************************************************/
 .form-elements__wrap_top {
   height: 652px; }
 
@@ -960,6 +948,43 @@ header.ui-kit__header {
   display: flex;
   justify-content: space-between; }
 
+.indentation_double {
+  padding-top: 23px; }
+
+.indentation_wrap {
+  padding-bottom: 80px;
+  display: grid;
+  grid-gap: 72px; }
+
+/*!****************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/headers-n-footers.scss ***!
+  \****************************************************************************************************************************/
+
+/*!****************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/index.scss ***!
+  \****************************************************************************************************************/
+.index-links {
+  display: grid;
+  grid-gap: 20px;
+  font-family: inherit;
+  margin-top: 80px; }
+
+/*!***********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/ui-kit-pages.scss ***!
+  \***********************************************************************************************************************/
+.ui-kit__body {
+  margin: auto;
+  font-family: Montserrat, Quicksand, sans-serif;
+  user-select: none; }
+
+.ui-kit__main {
+  display: grid;
+  padding: 0px 158px 0px 150px;
+  justify-content: space-between; }
+
+.ui-kit__footer {
+  height: 145px; }
+
 .elem__width_100 {
   width: 320px; }
 
@@ -971,12 +996,6 @@ header.ui-kit__header {
 
 .elem__width_30 {
   width: 99px; }
-
-.index-links {
-  display: grid;
-  grid-gap: 20px;
-  font-family: inherit;
-  margin-top: 80px; }
 
 .additional-padding {
   padding-top: 11px; }
