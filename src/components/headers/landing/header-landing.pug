@@ -1,0 +1,12 @@
+include ../../logo/logo.pug
+
+mixin headerLanding( item )
+  .landing-header
+    .landing-header__logo
+      +logotype('colorful')
+    .landing-header__nav
+    case authorized 
+      when true
+        .landing-header__user
+      when false 
+        .landing-header__authorization-buttons

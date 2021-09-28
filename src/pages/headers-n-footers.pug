@@ -1,10 +1,14 @@
-include ../components/headers/ui-kit/header.pug
+include ../components/headers/ui-kit/header-ui.pug
+include ../components/headers/landing/header-landing.pug
 
 body.ui-kit__body
   header.ui-kit__header
-    +header()
+    +headerUI()
   main.ui-kit__main
     .headers-n-footers
+      +headerLanding({ authorized: false })
+      +headerLanding({ authorized: true })
+
 
   footer.ui-kit__footer
     
