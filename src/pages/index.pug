@@ -1,9 +1,12 @@
+include ../components/headers/ui-kit/header.pug
+
 body.ui-kit__body
   header
-  main.ui-kit__main 
+    +header()
+  main.ui-kit__main
     .index-links
-      a cards 
+      a cards
       a(href="colors-n-type.html") colors & type
-      a(href="form-elements.html") form elements 
-      a headers & footers 
+      a(href="form-elements.html") form elements
+      a headers & footers
   footer

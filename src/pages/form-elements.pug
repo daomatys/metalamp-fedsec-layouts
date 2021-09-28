@@ -1,4 +1,4 @@
-include ../components/header/ui-kit/header.pug
+include ../components/headers/ui-kit/header.pug
 include ../components/input/input.pug
 include ../components/advantage-bar/advantage-bar.pug
 include ../components/title-bar/title-bar.pug
@@ -16,7 +16,8 @@ include ../components/buttons/checkbox/checkbox.pug
 include ../components/buttons/mean-oval/mean-oval.pug
 
 body.ui-kit__body
-  +header()
+  header.ui-kit__header
+    +header()
   main.ui-kit__main
     .form-elements__wrap_top.indentation_wrap
       .form-elements__column_left
