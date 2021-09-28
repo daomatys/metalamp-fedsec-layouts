@@ -1,12 +1,27 @@
 include ../../logo/logo.pug
+include ../../buttons/mean-oval/mean-oval.pug
 
 mixin headerLanding( item )
   .landing-header
     .landing-header__logo
       +logotype('colorful')
     .landing-header__nav
-    case authorized 
+    case item.authorized 
       when true
-        .landing-header__user
+        .landing-header__user-bar
+          span Юлий Цезарь
       when false 
         .landing-header__authorization-buttons
+          +meanOvalButtons([
+            {
+              groupname: "landing-header__login-button",
+              type: "outlined",
+              text: "войти"
+            },
+            {
+              groupname: "landing-header__register-button",
+              type: "contained",
+              text: "зарегестрироваться",
+              widthbypercent: 75
+            }
+          ])
