@@ -1,5 +1,15 @@
+/*!***********************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/fonts/Font Awesome/fonts.scss ***!
+  \***********************************************************************************************************************************/
+@charset "UTF-8";
+@font-face {
+  font-family: 'fa-brands';
+  src: local("☺"), url(static/fonts/fa-brands.woff) format("woff"), url(static/fonts/fa-brands.ttf) format("truetype"), url(static/fonts/fa-brands.svg) format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 /*!*************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/fonts/Material-Icons/fonts.scss ***!
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/fonts/Material Icons/fonts.scss ***!
   \*************************************************************************************************************************************/
 @font-face {
   font-family: 'Material Icons';
@@ -576,9 +586,13 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/header/header.scss ***!
   \****************************************************************************************************************************/
 header.ui-kit__header {
-  height: 85px;
-  width: 100%;
-  padding: 30px; }
+  height: 140px;
+  width: 100%; }
+
+.logotype {
+  position: fixed;
+  top: 30px;
+  left: 30px; }
 
 /*!**************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/input/dropdown/dropdown.scss ***!
