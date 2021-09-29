@@ -737,13 +737,21 @@ header.ui-kit__header {
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/navigation-links/link/link.scss ***!
   \*****************************************************************************************************************************************/
 .link {
-  display: flex; }
+  display: flex;
+  color: rgba(31, 32, 65, 0.5); }
+  .link__elem {
+    text-decoration: none;
+    color: inherit; }
+    .link__elem_bold {
+      font-weight: bold;
+      color: rgba(31, 32, 65, 0.75); }
 
 /*!************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/navigation-links/navigation-links.scss ***!
   \************************************************************************************************************************************************/
 .navigation-links {
-  display: grid; }
+  font-size: 14px;
+  line-height: 14px; }
 
 .links-array_vertical, .links-array_horizontal {
   display: grid;

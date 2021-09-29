@@ -1,9 +1,16 @@
+@import "@variables";
+
 .link {
   display: flex;
-  
-  &__elem {
-    &_bold {
+  color: rgba($valhalla, .5);
 
+  &__elem {
+    text-decoration: none;
+    color: inherit;
+
+    &_bold {
+      font-weight: bold;
+      color: rgba($valhalla, .75);
     }
   }
 
