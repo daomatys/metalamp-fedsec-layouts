@@ -1,0 +1,14 @@
+include ../title-bar/title-bar.pug
+include link/link.pug
+
+mixin navigationLinks( item )
+  - const orientationSuffix = item.vertical ? 'vertical' : 'horizontal'
+  - const orientationClass = '.navigation-links_' + orientationSuffix
+
+  .navigation-links( class=orientationClass )
+    if item.vertical
+      .navigation-links__title-bar
+        +titleBar( item.title )
+    nav.navigation-links__links-array
+      each link in item.links
+        a.navigation-links__link( href=link.href ) link.name
