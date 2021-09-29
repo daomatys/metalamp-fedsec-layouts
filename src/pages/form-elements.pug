@@ -98,7 +98,7 @@ body.ui-kit__body
       .form-elements__column_center
         .block__checkbox-buttons
           +titleBar("checkbox buttons")
-          .checkbox-buttons__array.additional-padding
+          .checkbox-buttons__array.additional_padding
             +checkboxButtons({
               groupname: "uik-fe__checkbox-allows", 
               checkboxes: [
@@ -109,28 +109,28 @@ body.ui-kit__body
             })
         .block__radio-buttons.indentation_double
           +titleBar("radio buttons")
-          .radio-buttons__array.additional-padding 
+          .radio-buttons__array.additional_padding 
             +radioButtons([
               { id: "uik-fe_male", label: "Мужчина", pressed: true },
               { id: "uik-fe_female", label: "Женщина" }
             ])
         .block__toggle-buttons.indentation_double
           +titleBar("toggle")
-          .toggle-buttons__array.additional-padding
+          .toggle-buttons__array.additional_padding
             +toggleButtons([
               { groupname: "uik-fe_toggles", label: "Получать спецпредложения", pressed: true },
               { groupname: "uik-fe_toggles", label: "Получать спецпредложения", pressed: false }
             ])
         .block__like-buttons.indentation_double
           +titleBar("like button")
-          .like-buttons__array.additional-padding.twinline-gap_own
+          .like-buttons__array.additional_padding.twinline-gap_own
             +likeButtons([
               { groupname: "uik-fe-like", pressed: false, likecount: 2 },
               { groupname: "uik-fe-like", pressed: true, likecount: 12 }
             ])
         .block__star-rate.indentation_double
           +titleBar("rate button")
-          .star-rate__elem.additional-padding.twinline-gap_own
+          .star-rate__elem.additional_padding.twinline-gap_own
             +stars([4, 5])
       .form-elements__column_right
         .block__range-slider
@@ -141,7 +141,7 @@ body.ui-kit__body
           })
         .block__mean-oval-buttons.indentation_double
           +titleBar("buttons")
-          .mean-oval-buttons.additional-padding
+          .mean-oval-buttons.additional_padding
             .mean-oval-buttons__array
               +meanOvalButtons([
                 { groupname: "uik-fe__mob-mid", type: "contained" },
@@ -166,7 +166,7 @@ body.ui-kit__body
               ])
         .block__pagination.indentation_double 
           +titleBar("pagination")
-          .pagination__elem.additional-padding
+          .pagination__elem.additional_padding
             +paginationElem()
     .form-elements__wrap_upper-middle.indentation_wrap
       .form-elements__column_left
@@ -261,7 +261,7 @@ body.ui-kit__body
       .form-elements__column_center
         .block__rich-checkbox-buttons
           +titleBar("rich checkbox buttons")
-          .checkbox-buttons__array.additional-padding
+          .checkbox-buttons__array.additional_padding
             +checkboxButtons({
               richmode: true,
               groupname: "uik-fe_rich-cbb",
@@ -279,7 +279,7 @@ body.ui-kit__body
       .form-elements__column_right
         .block__bullet-list
           +titleBar("bullet list")
-          .bullet-list__elem.additional-padding
+          .bullet-list__elem.additional_padding
             +bulletList([
               "Нельзя с питомцами",
               "Без вечеринок и мероприятий",

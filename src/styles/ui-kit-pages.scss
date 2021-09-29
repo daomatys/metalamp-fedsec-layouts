@@ -40,8 +40,14 @@
   background-color: $whisper;
 }
 
-.additional-padding {
-  padding-top: 11px;
+.additional {
+  &_padding {
+    padding-top: 11px;
+  }
+
+  &_shadow {
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  }
 }
 
 .frozen {

@@ -2,7 +2,7 @@ include ../../logo/logo.pug
 include ../../buttons/mean-oval/mean-oval.pug
 
 mixin headerLanding( item )
-  .header-landing
+  .header-landing.additional_shadow
     .header-landing__sections_left
       .header-landing__logo
         +logotype('colorful')
@@ -11,7 +11,7 @@ mixin headerLanding( item )
       case item.authorized 
         when true
           .header-landing__user-bar
-            span Юлий Цезарь   
+            span.header-landing__user-bar_full-name Юлий Цезарь   
         when false 
           .header-landing__authorization-buttons
             +meanOvalButtons([
