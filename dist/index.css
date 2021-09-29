@@ -593,9 +593,14 @@
   height: 70px;
   padding-inline: 140px;
   background-color: white; }
-  .header-landing__user-bar {
+  .header-landing__sections_right, .header-landing__user-bar {
     display: flex;
-    align-items: center;
+    align-items: center; }
+  .header-landing__sections_right {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, auto); }
+  .header-landing__user-bar {
     height: 30px;
     border-left: 1px solid rgba(31, 32, 65, 0.1);
     padding-left: 20px; }
@@ -731,10 +736,24 @@ header.ui-kit__header {
 /*!*****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/navigation-links/link/link.scss ***!
   \*****************************************************************************************************************************************/
+.link {
+  display: flex; }
 
 /*!************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/navigation-links/navigation-links.scss ***!
   \************************************************************************************************************************************************/
+.navigation-links {
+  display: grid; }
+
+.links-array_vertical, .links-array_horizontal {
+  display: grid;
+  grid-gap: 20px; }
+
+.links-array_vertical {
+  grid-template-rows: repeat(5, auto); }
+
+.links-array_horizontal {
+  grid-template-columns: repeat(5, auto); }
 
 /*!************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/pagination/pagination.scss ***!

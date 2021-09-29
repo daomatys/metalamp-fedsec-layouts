@@ -18,10 +18,12 @@ mixin headerLanding( item )
             { href: "", name: "Соглашения", icon: true },
           ]
         })
-      case item.authorized 
+      case item.authorized
+
         when true
           .header-landing__user-bar
-            span.header-landing__user-bar_full-name Юлий Цезарь   
+            span.header-landing__user-bar_full-name Юлий Цезарь
+
         when false 
           .header-landing__authorization-buttons
             +meanOvalButtons([

@@ -9,17 +9,19 @@
   padding-inline: 140px;
   background-color: white;
 
-  &__logo {
-    
-  }
-
-  &__nav {
-
-  }
-
+  &__sections_right,
   &__user-bar {
     display: flex;
     align-items: center;
+  }
+
+  &__sections_right {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, auto);
+  }
+
+  &__user-bar {
     height: 30px;
     border-left: 1px solid rgba($valhalla, .1);
     padding-left: 20px;
@@ -34,6 +36,5 @@
     grid-template-columns: repeat(2, auto);
     gap: 20px;
     align-items: center;
-
   }
 }
