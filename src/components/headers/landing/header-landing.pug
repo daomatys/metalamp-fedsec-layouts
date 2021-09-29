@@ -9,6 +9,15 @@ mixin headerLanding( item )
         +logotype('colorful')
     .header-landing__sections_right
       .header-landing__nav
+        +navigationLinks({
+          links: [
+            { href: "", name: "О нас", bold: true },
+            { href: "", name: "Услуги", icon: true },
+            { href: "", name: "Вакансии" },
+            { href: "", name: "Новости" },
+            { href: "", name: "Соглашения", icon: true },
+          ]
+        })
       case item.authorized 
         when true
           .header-landing__user-bar

@@ -11,4 +11,4 @@ mixin navigationLinks( item )
         +titleBar( item.title )
     nav.navigation-links__links-array
       each link in item.links
-        a.navigation-links__link( href=link.href ) link.name
+        +link( link )

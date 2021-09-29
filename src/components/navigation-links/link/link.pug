@@ -1,0 +1,11 @@
+include ../../material-icon-cell/material-icon-cell.pug
+
+mixin link( item )
+  - const styleClass = item.bold ? 'link__elem_bold' : ''
+
+  .link
+    a.link__elem( class=styleClass href=item.href ) #{item.name}
+    if item.iconname
+      .link__icon
+        +materialIcon( item.iconname )
+      
