@@ -19,7 +19,7 @@ body.ui-kit__body
   header.ui-kit__header
     +headerUI()
   main.ui-kit__main
-    .form-elements__wrap_top.indentation_wrap
+    .form-elements__wrap.wrap_top
       .form-elements__column.column_left
         .form-elements__block.block__inpuns_common
           +inputs([
@@ -177,7 +177,7 @@ body.ui-kit__body
             +titleBar("pagination")
             .pagination__elem.additional_padding
               +paginationElem()
-    .form-elements__wrap_upper-middle.indentation_wrap
+    .form-elements__wrap.wrap_upper-middle
       .form-elements__column.column_left
         .form-elements__block.block__dropdowns_in-action
           +inputs([
@@ -236,7 +236,7 @@ body.ui-kit__body
               }
             },
           ])
-    .form-elements__wrap_lower-middle.indentation_wrap
+    .form-elements__wrap.wrap_lower-middle
       .form-elements__column.column_left
         .form-elements__block.block__checkbox-list_default
           +checkboxList({
@@ -296,7 +296,7 @@ body.ui-kit__body
                 "Без вечеринок и мероприятий",
                 "Время прибытия — после 13:00, а выезд до 12:00"
               ])
-    .form-elements__wrap_bottom.indentation_wrap
+    .form-elements__wrap.wrap_bottom
       .form-elements__column.column_left
         .form-elements__block.block__advantage-bars
           +advantageBars([
