@@ -493,6 +493,9 @@
     .checkbox-list__title-button_icon > label {
       cursor: pointer; }
 
+.checkbox-list__checkboxes-array {
+  margin-top: 18px; }
+
 .checkbox-list_inserted {
   display: none; }
 

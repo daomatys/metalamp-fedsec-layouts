@@ -15,12 +15,10 @@ mixin inputs( items=[] )
           +titleBar( item.title, item.state )
       .input__data-bar
         input.input__frame.elem__border( class=keyDropdownClasses readonly=keyReadOnly type=item.type placeholder=item.placeholder )
-
         if item.dropdown
           .input-icons.icon-style_dropdown
             +materialIcon('expand_more')
           +dropdown( item.dropdown )
-
         if item.subscription
           .input-icons.icon-style_subscription.gradient-fill 
             +materialIcon('arrow_forward')

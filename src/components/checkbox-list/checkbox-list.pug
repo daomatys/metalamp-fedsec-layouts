@@ -14,7 +14,7 @@ mixin checkboxList( item )
         +titleBar( item.title )
       .checkbox-list__title-button_icon( class=iconFlippedClass )
         +materialIcon('expand_more', item.groupname)
-    .checkbox-list__checkboxes-array.additional-padding( class=listInsertionClass )
+    .checkbox-list__checkboxes-array( class=listInsertionClass )
       +checkboxButtons({
         groupname: item.groupname,
         checkboxes: item.checkboxes
