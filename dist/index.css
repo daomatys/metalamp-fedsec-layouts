@@ -778,18 +778,14 @@ header.ui-kit__header {
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/navigation-links/navigation-links.scss ***!
   \************************************************************************************************************************************************/
 .navigation-links {
+  display: grid;
+  grid-gap: 20px;
   font-size: 14px;
   line-height: 14px; }
-
-.links-array_vertical, .links-array_horizontal {
-  display: grid;
-  grid-gap: 20px; }
-
-.links-array_vertical {
-  grid-template-rows: repeat(5, auto); }
-
-.links-array_horizontal {
-  grid-template-columns: repeat(5, auto); }
+  .navigation-links_vertical {
+    grid-template-rows: repeat(5, auto); }
+  .navigation-links_horizontal {
+    grid-template-columns: repeat(5, auto); }
 
 /*!************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/pagination/pagination.scss ***!
@@ -1007,9 +1003,6 @@ header.ui-kit__header {
 /*!***********************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/form-elements.scss ***!
   \***********************************************************************************************************************/
-.form-elements__wrap_top {
-  height: 652px; }
-
 .form-elements__wrap_upper-middle {
   height: 240px; }
 
@@ -1022,13 +1015,19 @@ header.ui-kit__header {
 .form-elements__wrap_bottom {
   grid-template-columns: 320px 712px; }
 
-.form-elements__column {
+.form-elements__column, .form-elements__block {
   display: grid;
+  overflow: hidden; }
+
+.form-elements__column {
   grid-gap: 40px; }
 
 .form-elements__block {
-  display: grid;
   grid-gap: 20px; }
+
+.form-elements__element {
+  min-width: 0;
+  min-height: 0; }
 
 .column_center, .column_center-right {
   margin-left: 54px; }

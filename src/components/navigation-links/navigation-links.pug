@@ -3,12 +3,10 @@ include link/link.pug
 
 mixin navigationLinks( item )
   - const orientationSuffix = item.vertical ? 'vertical' : 'horizontal'
-  - const orientationClass = 'links-array_' + orientationSuffix
+  - const orientationClass = 'navigation-links_' + orientationSuffix
 
-  .navigation-links
+  nav.navigation-links( class=orientationClass )
     if item.vertical
-      .navigation-links__title-bar
-        +titleBar( item.title )
-    nav.navigation-links__links-array( class=orientationClass )
-      each link in item.links
-        +link( link )
+      +titleBar( item.title )
+    each link in item.links
+      +link( link )
