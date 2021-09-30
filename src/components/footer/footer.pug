@@ -1,0 +1,43 @@
+include ../navigation-links/navigation-links.pug
+
+mixin footer()
+  .footer
+    .footer__upper-section
+      .footer__upper-section_content
+        .footer__content-container
+        .footer__content-container
+          +navigationLinks({
+            vertical: true,
+            title: "навигация",
+            links: [
+              { href: "", name: "О нас" },
+              { href: "", name: "Новости" },
+              { href: "", name: "Служба поддержки" },
+              { href: "", name: "Услуги" }
+            ]
+          })
+        .footer__content-container
+          +navigationLinks({
+            vertical: true,
+            title: "О нас",
+            links: [
+              { href: "", name: "О сервисе" },
+              { href: "", name: "Наша команда" },
+              { href: "", name: "Вакансии" },
+              { href: "", name: "Инвесторы" }
+            ]
+          })
+        .footer__content-container
+          +navigationLinks({
+            vertical: true,
+            title: "Служба поддержки",
+            links: [
+              { href: "", name: "Соглашения" },
+              { href: "", name: "Сообщества" },
+              { href: "", name: "Связь с нами" }
+            ]
+          })
+        .footer__content-container
+    .footer__lower-section
+      .footer__lower-section_left
+      .footer__lower-section_right
