@@ -698,6 +698,9 @@ header.ui-kit__header {
 /*!**************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/input/input.scss ***!
   \**************************************************************************************************************************/
+.input__text-bar {
+  margin-bottom: 5px; }
+
 .input__data-bar {
   width: inherit;
   position: relative; }
@@ -952,7 +955,8 @@ header.ui-kit__header {
   .range-slider__container {
     display: grid;
     align-items: end;
-    height: 14px; }
+    height: 6px;
+    margin-top: 23px; }
 
 .ui-slider {
   height: 6px;

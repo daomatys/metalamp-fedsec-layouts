@@ -1,6 +1,10 @@
 @import "@variables";
 
 .input {
+  &__text-bar {
+    margin-bottom: 5px;
+  }
+
   &__data-bar {
     width: inherit;
     position: relative;

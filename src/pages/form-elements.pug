@@ -100,7 +100,7 @@ body.ui-kit__body
         .form-elements__block.block__checkbox-buttons
           .form-elements__element
             +titleBar("checkbox buttons")
-            .checkbox-buttons__array.additional_padding
+            .checkbox-buttons__array
               +checkboxButtons({
                 groupname: "uik-fe__checkbox-allows", 
                 checkboxes: [
@@ -112,7 +112,7 @@ body.ui-kit__body
         .form-elements__block.block__radio-buttons
           .form-elements__element
             +titleBar("radio buttons")
-            .radio-buttons__array.additional_padding 
+            .radio-buttons__array 
               +radioButtons([
                 { id: "uik-fe_male", label: "Мужчина", pressed: true },
                 { id: "uik-fe_female", label: "Женщина" }
@@ -120,7 +120,7 @@ body.ui-kit__body
         .form-elements__block.block__toggle-buttons
           .form-elements__element
             +titleBar("toggle")
-            .toggle-buttons__array.additional_padding
+            .toggle-buttons__array
               +toggleButtons([
                 { groupname: "uik-fe_toggles", label: "Получать спецпредложения", pressed: true },
                 { groupname: "uik-fe_toggles", label: "Получать спецпредложения", pressed: false }
@@ -128,7 +128,7 @@ body.ui-kit__body
         .form-elements__block.block__like-buttons
           .form-elements__element
             +titleBar("like button")
-            .like-buttons__array.additional_padding.twinline-gap_own
+            .like-buttons__array.twinline-gap_own
               +likeButtons([
                 { groupname: "uik-fe-like", pressed: false, likecount: 2 },
                 { groupname: "uik-fe-like", pressed: true, likecount: 12 }
@@ -136,20 +136,19 @@ body.ui-kit__body
         .form-elements__block.block__star-rate
           .form-elements__element
             +titleBar("rate button")
-            .star-rate__elem.additional_padding.twinline-gap_own
+            .star-rate__elem.twinline-gap_own
               +stars([4, 5])
       .form-elements__column.column_right
         .form-elements__block.block__range-slider
-          .form-elements__element
-            +rangeSlider({
-              title: "range slider",
-              id: "uik-fe-range-slider",
-              widthbypercent: 75,
-            })
+          +rangeSlider({
+            title: "range slider",
+            id: "uik-fe-range-slider",
+            widthbypercent: 75,
+          })
         .form-elements__block.block__mean-oval-buttons
           .form-elements__element
             +titleBar("buttons")
-            .mean-oval-buttons.additional_padding
+            .mean-oval-buttons
               .mean-oval-buttons__array
                 +meanOvalButtons([
                   { groupname: "uik-fe__mob-mid", type: "contained" },
@@ -157,25 +156,25 @@ body.ui-kit__body
                   { groupname: "uik-fe__mob-mid", type: "outlined" },
                   { groupname: "uik-fe__mob-mid", type: "outlined", disabled: true }
                 ])
-            .mean-oval-buttons__array
-              +meanOvalButtons([
-                { groupname: "uik-fe__mob-small", type: "text" },
-                { groupname: "uik-fe__mob-small", type: "text", disabled: true },
-              ])
-            .mean-oval-buttons__unit
-              +meanOvalButtons([
-                {
-                  groupname: "uik-fe__mob-huge",
-                  iconname: "arrow_forward",
-                  widthbypercent: "100",
-                  type: "contained",
-                  text: "перейти к оплате"
-                }
-              ])
+              .mean-oval-buttons__array
+                +meanOvalButtons([
+                  { groupname: "uik-fe__mob-small", type: "text" },
+                  { groupname: "uik-fe__mob-small", type: "text", disabled: true },
+                ])
+              .mean-oval-buttons__unit
+                +meanOvalButtons([
+                  {
+                    groupname: "uik-fe__mob-huge",
+                    iconname: "arrow_forward",
+                    widthbypercent: "100",
+                    type: "contained",
+                    text: "перейти к оплате"
+                  }
+                ])
         .form-elements__block.block__pagination
           .form-elements__element
             +titleBar("pagination")
-            .pagination__elem.additional_padding
+            .pagination__elem
               +paginationElem()
     .form-elements__wrap.wrap_upper-middle
       .form-elements__column.column_left
@@ -271,7 +270,7 @@ body.ui-kit__body
         .form-elements__block.block__rich-checkbox-buttons
           .form-elements__element
             +titleBar("rich checkbox buttons")
-            .checkbox-buttons__array.additional_padding
+            .checkbox-buttons__array
               +checkboxButtons({
                 richmode: true,
                 groupname: "uik-fe_rich-cbb",
@@ -290,7 +289,7 @@ body.ui-kit__body
         .form-elements__block.block__bullet-list
           .form-elements__element
             +titleBar("bullet list")
-            .bullet-list__elem.additional_padding
+            .bullet-list__elem
               +bulletList([
                 "Нельзя с питомцами",
                 "Без вечеринок и мероприятий",
