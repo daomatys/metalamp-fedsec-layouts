@@ -1,5 +1,7 @@
 include ../navigation-links/navigation-links.pug
+include ../input/input.pug
 include ../logo/logo.pug
+include ../title-bar/title-bar.pug
 
 mixin footer()
   .footer
@@ -43,6 +45,16 @@ mixin footer()
             ]
           })
         .footer__content-container
+          +titleBar("подписка")
+          span.footer__common-text Получайте специальные предложения и новости сервиса
+          +inputs([
+            {
+              placeholder: "Email",
+              type: "email",
+              widthbypercent: 75,
+              subscription: true
+            }
+          ])
     .footer__lower-section
       .footer__lower-section_left
       .footer__lower-section_right
