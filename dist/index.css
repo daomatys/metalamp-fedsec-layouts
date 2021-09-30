@@ -1004,9 +1004,9 @@ header.ui-kit__header {
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/form-elements.scss ***!
   \***********************************************************************************************************************/
 .form-elements__wrap {
-  padding-bottom: 80px;
   display: flex;
-  align-items: flex-start; }
+  align-items: flex-start;
+  padding-bottom: 80px; }
 
 .form-elements__column, .form-elements__block, .form-elements__element {
   display: grid; }
@@ -1033,11 +1033,10 @@ header.ui-kit__header {
 .column_center {
   margin-right: 72px; }
 
-.twinline-gap_own {
+.twinline-gap_own, .twinline-gap_longest {
   display: flex; }
 
 .twinline-gap_longest {
-  display: flex;
   justify-content: space-between; }
 
 /*!***************************************************************************************************************************!*\

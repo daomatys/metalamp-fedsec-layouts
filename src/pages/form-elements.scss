@@ -1,8 +1,8 @@
 .form-elements {
   &__wrap {
-    padding-bottom: 80px;
     display: flex;
     align-items: flex-start;
+    padding-bottom: 80px;
   }
 
   &__column,
@@ -47,12 +47,12 @@
 }
 
 .twinline-gap {
-  &_own {
+  &_own,
+  &_longest {
     display: flex;
   }
 
   &_longest {
-    display: flex;
     justify-content: space-between;
   }
 }
