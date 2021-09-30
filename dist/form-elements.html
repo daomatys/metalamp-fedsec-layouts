@@ -6,8 +6,8 @@
   </header>
   <main class="ui-kit__main">
     <div class="form-elements__wrap_top indentation_wrap">
-      <div class="form-elements__column_left">
-        <div class="block__inpuns_common">
+      <div class="form-elements__column column_left">
+        <div class="form-elements__block block__inpuns_common">
           <div class="input elem__width_100">
             <div class="input__text-bar">
               <div class="title-bar"><span class="title-bar__title">text field</span><span class="title-bar__state" id="">default</span>
@@ -61,43 +61,45 @@
             </div>
           </div>
         </div>
-        <div class="block__dropdowns_date-twins indentation_double twinline-gap_longest">
-          <div class="input elem__width_50">
-            <div class="input__text-bar">
-              <div class="title-bar"><span class="title-bar__title">date dropdown</span>
+        <div class="form-elements__block block__dropdowns_date-twins">
+          <div class="form-elements__element twinline-gap_longest">
+            <div class="input elem__width_50">
+              <div class="input__text-bar">
+                <div class="title-bar"><span class="title-bar__title">date dropdown</span>
+                </div>
               </div>
-            </div>
-            <div class="input__data-bar">
-              <input class="input__frame elem__border dropdown-marker dropdown-is-closed" readonly placeholder="ДД.ММ.ГГГГ">
-              <div class="input-icons icon-style_dropdown"><span class="material-icons">expand_more</span>
-              </div>
-              <div class="dropdown elem__border">
-                <div class="dropdown__option"><span class="dropdown__option_name"></span>
-                  <div class="dropdown__button_inc"> </div><span class="dropdown__counter"> </span>
-                  <div class="dropdown__button_dec"></div>
+              <div class="input__data-bar">
+                <input class="input__frame elem__border dropdown-marker dropdown-is-closed" readonly placeholder="ДД.ММ.ГГГГ">
+                <div class="input-icons icon-style_dropdown"><span class="material-icons">expand_more</span>
+                </div>
+                <div class="dropdown elem__border">
+                  <div class="dropdown__option"><span class="dropdown__option_name"></span>
+                    <div class="dropdown__button_inc"> </div><span class="dropdown__counter"> </span>
+                    <div class="dropdown__button_dec"></div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="input elem__width_50">
-            <div class="input__text-bar">
-              <div class="title-bar"><span class="title-bar__title">date dropdown</span>
+            <div class="input elem__width_50">
+              <div class="input__text-bar">
+                <div class="title-bar"><span class="title-bar__title">date dropdown</span>
+                </div>
               </div>
-            </div>
-            <div class="input__data-bar">
-              <input class="input__frame elem__border dropdown-marker dropdown-is-closed" readonly placeholder="19.08.2019">
-              <div class="input-icons icon-style_dropdown"><span class="material-icons">expand_more</span>
-              </div>
-              <div class="dropdown elem__border">
-                <div class="dropdown__option"><span class="dropdown__option_name"></span>
-                  <div class="dropdown__button_inc"> </div><span class="dropdown__counter"> </span>
-                  <div class="dropdown__button_dec"></div>
+              <div class="input__data-bar">
+                <input class="input__frame elem__border dropdown-marker dropdown-is-closed" readonly placeholder="19.08.2019">
+                <div class="input-icons icon-style_dropdown"><span class="material-icons">expand_more</span>
+                </div>
+                <div class="dropdown elem__border">
+                  <div class="dropdown__option"><span class="dropdown__option_name"></span>
+                    <div class="dropdown__button_inc"> </div><span class="dropdown__counter"> </span>
+                    <div class="dropdown__button_dec"></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="block__dropdowns_date-semi-wide indentation_double">
+        <div class="form-elements__block block__dropdowns_date-semi-wide">
           <div class="input elem__width_75">
             <div class="input__text-bar">
               <div class="title-bar"><span class="title-bar__title">filter date dropdown</span>
@@ -116,7 +118,7 @@
             </div>
           </div>
         </div>
-        <div class="block__inputs_subscribe indentation_double">
+        <div class="form-elements__block block__inputs_subscribe">
           <div class="input elem__width_75">
             <div class="input__text-bar">
               <div class="title-bar"><span class="title-bar__title">subscription text field</span>
@@ -130,126 +132,140 @@
           </div>
         </div>
       </div>
-      <div class="form-elements__column_center">
-        <div class="block__checkbox-buttons">
-          <div class="title-bar"><span class="title-bar__title">checkbox buttons</span>
-          </div>
-          <div class="checkbox-buttons__array additional_padding">
-            <div class="checkbox-buttons__container">
-              <div class="checkbox-button">
-                <input class="checkbox-button__elem" type="checkbox" id="uik-fe__checkbox-allows_1">
-                <label class="checkbox-button__common-label" for="uik-fe__checkbox-allows_1">Можно курить</label>
-              </div>
-              <div class="checkbox-button">
-                <input class="checkbox-button__elem" type="checkbox" id="uik-fe__checkbox-allows_2" checked>
-                <label class="checkbox-button__common-label" for="uik-fe__checkbox-allows_2">Можно с питомцами</label>
-              </div>
-              <div class="checkbox-button">
-                <input class="checkbox-button__elem" type="checkbox" id="uik-fe__checkbox-allows_3" checked>
-                <label class="checkbox-button__common-label" for="uik-fe__checkbox-allows_3">Можно пригласить гостей (до 10 человек)</label>
-              </div>
+      <div class="form-elements__column column_center">
+        <div class="form-elements__block block__checkbox-buttons">
+          <div class="form-elements__element">
+            <div class="title-bar"><span class="title-bar__title">checkbox buttons</span>
             </div>
-          </div>
-        </div>
-        <div class="block__radio-buttons indentation_double">
-          <div class="title-bar"><span class="title-bar__title">radio buttons</span>
-          </div>
-          <div class="radio-buttons__array additional_padding"> 
-            <label class="radio-button" for="uik-fe_male">
-              <input class="radio-button__elem" type="radio" name="sex" id="uik-fe_male" checked>
-              <label class="radio-button__label" for="uik-fe_male">Мужчина</label>
-            </label>
-            <label class="radio-button" for="uik-fe_female">
-              <input class="radio-button__elem" type="radio" name="sex" id="uik-fe_female">
-              <label class="radio-button__label" for="uik-fe_female">Женщина</label>
-            </label>
-          </div>
-        </div>
-        <div class="block__toggle-buttons indentation_double">
-          <div class="title-bar"><span class="title-bar__title">toggle</span>
-          </div>
-          <div class="toggle-buttons__array additional_padding">
-            <div class="toggle-button"> 
-              <input class="toggle-button__elem" type="checkbox" checked>
-              <label class="toggle-button__label">Получать спецпредложения</label>
-            </div>
-            <div class="toggle-button"> 
-              <input class="toggle-button__elem" type="checkbox">
-              <label class="toggle-button__label">Получать спецпредложения</label>
-            </div>
-          </div>
-        </div>
-        <div class="block__like-buttons indentation_double">
-          <div class="title-bar"><span class="title-bar__title">like button</span>
-          </div>
-          <div class="like-buttons__array additional_padding twinline-gap_own">
-            <div class="like-button">
-              <input class="like-button__elem" type="checkbox" id="uik-fe-like_1">
-              <div class="like-button__text">
-                <div class="like-button__text_icon">
-                  <label class="material-icons" for="uik-fe-like_1">favorite_border</label>
+            <div class="checkbox-buttons__array additional_padding">
+              <div class="checkbox-buttons__container">
+                <div class="checkbox-button">
+                  <input class="checkbox-button__elem" type="checkbox" id="uik-fe__checkbox-allows_1">
+                  <label class="checkbox-button__common-label" for="uik-fe__checkbox-allows_1">Можно курить</label>
                 </div>
-                <div class="like-button__text_counter">
-                  <label class="counter-elem" for="uik-fe-like_1">2</label>
+                <div class="checkbox-button">
+                  <input class="checkbox-button__elem" type="checkbox" id="uik-fe__checkbox-allows_2" checked>
+                  <label class="checkbox-button__common-label" for="uik-fe__checkbox-allows_2">Можно с питомцами</label>
                 </div>
-              </div>
-            </div>
-            <div class="like-button">
-              <input class="like-button__elem" type="checkbox" checked id="uik-fe-like_2">
-              <div class="like-button__text">
-                <div class="like-button__text_icon">
-                  <label class="material-icons" for="uik-fe-like_2">favorite</label>
-                </div>
-                <div class="like-button__text_counter">
-                  <label class="counter-elem" for="uik-fe-like_2">12</label>
+                <div class="checkbox-button">
+                  <input class="checkbox-button__elem" type="checkbox" id="uik-fe__checkbox-allows_3" checked>
+                  <label class="checkbox-button__common-label" for="uik-fe__checkbox-allows_3">Можно пригласить гостей (до 10 человек)</label>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="block__star-rate indentation_double">
-          <div class="title-bar"><span class="title-bar__title">rate button</span>
-          </div>
-          <div class="star-rate__elem additional_padding twinline-gap_own">
-            <div class="star-rate gradient-fill"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span>
+        <div class="form-elements__block block__radio-buttons">
+          <div class="form-elements__element">
+            <div class="title-bar"><span class="title-bar__title">radio buttons</span>
             </div>
-            <div class="star-rate gradient-fill"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+            <div class="radio-buttons__array additional_padding"> 
+              <label class="radio-button" for="uik-fe_male">
+                <input class="radio-button__elem" type="radio" name="sex" id="uik-fe_male" checked>
+                <label class="radio-button__label" for="uik-fe_male">Мужчина</label>
+              </label>
+              <label class="radio-button" for="uik-fe_female">
+                <input class="radio-button__elem" type="radio" name="sex" id="uik-fe_female">
+                <label class="radio-button__label" for="uik-fe_female">Женщина</label>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-elements__block block__toggle-buttons">
+          <div class="form-elements__element">
+            <div class="title-bar"><span class="title-bar__title">toggle</span>
+            </div>
+            <div class="toggle-buttons__array additional_padding">
+              <div class="toggle-button"> 
+                <input class="toggle-button__elem" type="checkbox" checked>
+                <label class="toggle-button__label">Получать спецпредложения</label>
+              </div>
+              <div class="toggle-button"> 
+                <input class="toggle-button__elem" type="checkbox">
+                <label class="toggle-button__label">Получать спецпредложения</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-elements__block block__like-buttons">
+          <div class="form-elements__element">
+            <div class="title-bar"><span class="title-bar__title">like button</span>
+            </div>
+            <div class="like-buttons__array additional_padding twinline-gap_own">
+              <div class="like-button">
+                <input class="like-button__elem" type="checkbox" id="uik-fe-like_1">
+                <div class="like-button__text">
+                  <div class="like-button__text_icon">
+                    <label class="material-icons" for="uik-fe-like_1">favorite_border</label>
+                  </div>
+                  <div class="like-button__text_counter">
+                    <label class="counter-elem" for="uik-fe-like_1">2</label>
+                  </div>
+                </div>
+              </div>
+              <div class="like-button">
+                <input class="like-button__elem" type="checkbox" checked id="uik-fe-like_2">
+                <div class="like-button__text">
+                  <div class="like-button__text_icon">
+                    <label class="material-icons" for="uik-fe-like_2">favorite</label>
+                  </div>
+                  <div class="like-button__text_counter">
+                    <label class="counter-elem" for="uik-fe-like_2">12</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-elements__block block__star-rate">
+          <div class="form-elements__element">
+            <div class="title-bar"><span class="title-bar__title">rate button</span>
+            </div>
+            <div class="star-rate__elem additional_padding twinline-gap_own">
+              <div class="star-rate gradient-fill"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span>
+              </div>
+              <div class="star-rate gradient-fill"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="form-elements__column_right">
-        <div class="block__range-slider">
-          <div class="range-slider__wrap elem__width_75">
-            <div class="title-bar"><span class="title-bar__title">range slider</span><span class="title-bar__state" id="uik-fe-range-slider_state"></span>
-            </div>
-            <div class="range-slider__container additional-padding"> 
-              <div class="range-slider__elem" id="uik-fe-range-slider"></div>
+      <div class="form-elements__column column_right">
+        <div class="form-elements__block block__range-slider">
+          <div class="form-elements__element">
+            <div class="range-slider__wrap elem__width_75">
+              <div class="title-bar"><span class="title-bar__title">range slider</span><span class="title-bar__state" id="uik-fe-range-slider_state"></span>
+              </div>
+              <div class="range-slider__container additional-padding"> 
+                <div class="range-slider__elem" id="uik-fe-range-slider"></div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="block__mean-oval-buttons indentation_double">
-          <div class="title-bar"><span class="title-bar__title">buttons</span>
-          </div>
-          <div class="mean-oval-buttons additional_padding">
-            <div class="mean-oval-buttons__array">
-              <div class="mean-oval-button button-style_contained elem__width_30">
-                <button class="mean-oval-button__elem" id="uik-fe__mob-mid_1">click me</button>
-                <label class="mean-oval-button__background" for="uik-fe__mob-mid_1"></label>
-              </div>
-              <div class="mean-oval-button button-style_contained elem__width_30 frozen">
-                <button class="mean-oval-button__elem" id="uik-fe__mob-mid_2" disabled>click me</button>
-                <label class="mean-oval-button__background" for="uik-fe__mob-mid_2"></label>
-              </div>
-              <div class="mean-oval-button button-style_outlined elem__width_30">
-                <button class="mean-oval-button__elem" id="uik-fe__mob-mid_3">click me</button>
-                <label class="mean-oval-button__background" for="uik-fe__mob-mid_3"></label>
-                <label class="mean-oval-button__thumb" for="uik-fe__mob-mid_3"></label>
-              </div>
-              <div class="mean-oval-button button-style_outlined elem__width_30 frozen">
-                <button class="mean-oval-button__elem" id="uik-fe__mob-mid_4" disabled>click me</button>
-                <label class="mean-oval-button__background" for="uik-fe__mob-mid_4"></label>
-                <label class="mean-oval-button__thumb" for="uik-fe__mob-mid_4"></label>
+        <div class="form-elements__block block__mean-oval-buttons">
+          <div class="form-elements__element">
+            <div class="title-bar"><span class="title-bar__title">buttons</span>
+            </div>
+            <div class="mean-oval-buttons additional_padding">
+              <div class="mean-oval-buttons__array">
+                <div class="mean-oval-button button-style_contained elem__width_30">
+                  <button class="mean-oval-button__elem" id="uik-fe__mob-mid_1">click me</button>
+                  <label class="mean-oval-button__background" for="uik-fe__mob-mid_1"></label>
+                </div>
+                <div class="mean-oval-button button-style_contained elem__width_30 frozen">
+                  <button class="mean-oval-button__elem" id="uik-fe__mob-mid_2" disabled>click me</button>
+                  <label class="mean-oval-button__background" for="uik-fe__mob-mid_2"></label>
+                </div>
+                <div class="mean-oval-button button-style_outlined elem__width_30">
+                  <button class="mean-oval-button__elem" id="uik-fe__mob-mid_3">click me</button>
+                  <label class="mean-oval-button__background" for="uik-fe__mob-mid_3"></label>
+                  <label class="mean-oval-button__thumb" for="uik-fe__mob-mid_3"></label>
+                </div>
+                <div class="mean-oval-button button-style_outlined elem__width_30 frozen">
+                  <button class="mean-oval-button__elem" id="uik-fe__mob-mid_4" disabled>click me</button>
+                  <label class="mean-oval-button__background" for="uik-fe__mob-mid_4"></label>
+                  <label class="mean-oval-button__thumb" for="uik-fe__mob-mid_4"></label>
+                </div>
               </div>
             </div>
             <div class="mean-oval-buttons__array">
@@ -271,18 +287,20 @@
             </div>
           </div>
         </div>
-        <div class="block__pagination indentation_double"> 
-          <div class="title-bar"><span class="title-bar__title">pagination</span>
-          </div>
-          <div class="pagination__elem additional_padding">
-            <div id="pagination"></div>
+        <div class="form-elements__block block__pagination">
+          <div class="form-elements__element">
+            <div class="title-bar"><span class="title-bar__title">pagination</span>
+            </div>
+            <div class="pagination__elem additional_padding">
+              <div id="pagination"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="form-elements__wrap_upper-middle indentation_wrap">
-      <div class="form-elements__column_left">
-        <div class="block__dropdowns_in-action">
+      <div class="form-elements__column column_left">
+        <div class="form-elements__block block__dropdowns_in-action">
           <div class="input elem__width_75">
             <div class="input__text-bar">
               <div class="title-bar"><span class="title-bar__title">dropdown</span><span class="title-bar__state" id="">default</span>
@@ -327,8 +345,8 @@
           </div>
         </div>
       </div>
-      <div class="form-elements__column_center">
-        <div class="block__dropdowns_no-guests">
+      <div class="form-elements__column column_center">
+        <div class="form-elements__block block__dropdowns_no-guests">
           <div class="input elem__width_100">
             <div class="input__text-bar">
               <div class="title-bar"><span class="title-bar__title">dropdown</span>
@@ -356,8 +374,8 @@
           </div>
         </div>
       </div>
-      <div class="form-elements__column_right">
-        <div class="block__dropdowns_guests">
+      <div class="form-elements__column column_right">
+        <div class="form-elements__block block__dropdowns_guests">
           <div class="input elem__width_100">
             <div class="input__text-bar">
               <div class="title-bar"><span class="title-bar__title">dropdown</span>
@@ -387,8 +405,8 @@
       </div>
     </div>
     <div class="form-elements__wrap_lower-middle indentation_wrap">
-      <div class="form-elements__column_left">
-        <div class="block__checkbox-list_default">
+      <div class="form-elements__column column_left">
+        <div class="form-elements__block block__checkbox-list_default">
           <div class="checkbox-list">
             <div class="checkbox-list__title-button">
               <div class="checkbox-list__title-button_text">
@@ -429,7 +447,7 @@
             </div>
           </div>
         </div>
-        <div class="block__checkbox-list_ejected indentation_double">
+        <div class="form-elements__block block__checkbox-list_ejected">
           <div class="checkbox-list">
             <div class="checkbox-list__title-button">
               <input class="checkbox-list__title-button_hidden-input" type="checkbox" id="uik-fe__checkbox-list_ejected">
@@ -472,48 +490,52 @@
           </div>
         </div>
       </div>
-      <div class="form-elements__column_center">
-        <div class="block__rich-checkbox-buttons">
-          <div class="title-bar"><span class="title-bar__title">rich checkbox buttons</span>
-          </div>
-          <div class="checkbox-buttons__array additional_padding">
-            <div class="checkbox-buttons__container">
-              <div class="checkbox-button">
-                <input class="checkbox-button__elem" type="checkbox" id="uik-fe_rich-cbb_1">
-                <div class="checkbox-button__rich-label">
-                  <label class="checkbox-button__rich-label_title" for="uik-fe_rich-cbb_1">Широкий коридор</label>
-                  <label class="checkbox-button__rich-label_info" for="uik-fe_rich-cbb_1">Ширина коридоров в номере 
+      <div class="form-elements__column column_center">
+        <div class="form-elements__block block__rich-checkbox-buttons">
+          <div class="form-elements__element">
+            <div class="title-bar"><span class="title-bar__title">rich checkbox buttons</span>
+            </div>
+            <div class="checkbox-buttons__array additional_padding">
+              <div class="checkbox-buttons__container">
+                <div class="checkbox-button">
+                  <input class="checkbox-button__elem" type="checkbox" id="uik-fe_rich-cbb_1">
+                  <div class="checkbox-button__rich-label">
+                    <label class="checkbox-button__rich-label_title" for="uik-fe_rich-cbb_1">Широкий коридор</label>
+                    <label class="checkbox-button__rich-label_info" for="uik-fe_rich-cbb_1">Ширина коридоров в номере 
 не менее 91 см.</label>
+                  </div>
                 </div>
-              </div>
-              <div class="checkbox-button">
-                <input class="checkbox-button__elem" type="checkbox" id="uik-fe_rich-cbb_2">
-                <div class="checkbox-button__rich-label">
-                  <label class="checkbox-button__rich-label_title" for="uik-fe_rich-cbb_2">Помощник для инвалидов</label>
-                  <label class="checkbox-button__rich-label_info" for="uik-fe_rich-cbb_2">На 1 этаже вас встретит специалист  и проводит до номера.</label>
+                <div class="checkbox-button">
+                  <input class="checkbox-button__elem" type="checkbox" id="uik-fe_rich-cbb_2">
+                  <div class="checkbox-button__rich-label">
+                    <label class="checkbox-button__rich-label_title" for="uik-fe_rich-cbb_2">Помощник для инвалидов</label>
+                    <label class="checkbox-button__rich-label_info" for="uik-fe_rich-cbb_2">На 1 этаже вас встретит специалист  и проводит до номера.</label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="form-elements__column_right">
-        <div class="block__bullet-list">
-          <div class="title-bar"><span class="title-bar__title">bullet list</span>
-          </div>
-          <div class="bullet-list__elem additional_padding">
-            <div class="bullet-list"> 
-              <div class="bullet-list__row">Нельзя с питомцами</div>
-              <div class="bullet-list__row">Без вечеринок и мероприятий</div>
-              <div class="bullet-list__row">Время прибытия — после 13:00, а выезд до 12:00</div>
+      <div class="form-elements__column column_right">
+        <div class="form-elements__block block__bullet-list">
+          <div class="form-elements__element">
+            <div class="title-bar"><span class="title-bar__title">bullet list</span>
+            </div>
+            <div class="bullet-list__elem additional_padding">
+              <div class="bullet-list"> 
+                <div class="bullet-list__row">Нельзя с питомцами</div>
+                <div class="bullet-list__row">Без вечеринок и мероприятий</div>
+                <div class="bullet-list__row">Время прибытия — после 13:00, а выезд до 12:00</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="form-elements__wrap_bottom indentation_wrap">
-      <div class="form-elements__column_left">
-        <div class="block__advantage-bars">
+      <div class="form-elements__column column_left">
+        <div class="form-elements__block block__advantage-bars">
           <div class="advantages-block">
             <div class="advantages-block__text-bar">
               <div class="advantages-block__icon gradient-fill"><span class="material-icons">insert_emoticon</span>
@@ -536,8 +558,8 @@
           </div>
         </div>
       </div>
-      <div class="form-elements__column_center-right">
-        <div class="block__comment-bar">
+      <div class="form-elements__column column_center-right">
+        <div class="form-elements__block block__comment-bar">
           <div class="comment-bar">
             <div class="comment-bar__avatar"><img src="/src/assets/images/raster/avatars/murad.png"></div>
             <div class="comment-bar__title">

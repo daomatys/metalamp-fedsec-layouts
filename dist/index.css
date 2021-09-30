@@ -970,8 +970,7 @@ header.ui-kit__header {
   justify-content: space-between;
   text-transform: uppercase;
   font-size: 12px;
-  color: #1F2041;
-  margin-block: 20px 5px; }
+  color: #1F2041; }
   .title-bar__title {
     font-weight: bold; }
   .title-bar__state {
@@ -1023,7 +1022,15 @@ header.ui-kit__header {
 .form-elements__wrap_bottom {
   grid-template-columns: 320px 712px; }
 
-.form-elements__column_center, .form-elements__column_center-right {
+.form-elements__column {
+  display: grid;
+  grid-gap: 40px; }
+
+.form-elements__block {
+  display: grid;
+  grid-gap: 20px; }
+
+.column_center, .column_center-right {
   margin-left: 54px; }
 
 .twinline-gap_own {
@@ -1032,9 +1039,6 @@ header.ui-kit__header {
 .twinline-gap_longest {
   display: flex;
   justify-content: space-between; }
-
-.indentation_double {
-  padding-top: 23px; }
 
 .indentation_wrap {
   padding-bottom: 80px;
@@ -1089,9 +1093,6 @@ header.ui-kit__header {
 
 .bgcolor_whisper {
   background-color: #E5E5E5; }
-
-.additional_padding {
-  padding-top: 11px; }
 
 .additional_shadow {
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05); }

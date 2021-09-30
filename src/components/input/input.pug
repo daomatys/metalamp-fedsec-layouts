@@ -10,8 +10,9 @@ mixin inputs( items=[] )
     - const widthClass = `elem__width_${widthByPercent}`
 
     .input( class=widthClass )
-      .input__text-bar
-        +titleBar( item.title, item.state )
+      if item.title
+        .input__text-bar
+          +titleBar( item.title, item.state )
       .input__data-bar
         input.input__frame.elem__border( class=keyDropdownClasses readonly=keyReadOnly type=item.type placeholder=item.placeholder )
 

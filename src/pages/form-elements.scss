@@ -24,10 +24,20 @@
   }
 
   &__column {
-    &_center,
-    &_center-right {
-      margin-left: 54px;
-    }
+    display: grid;
+    grid-gap: 40px;
+  }
+
+  &__block {
+    display: grid;
+    grid-gap: 20px;
+  }
+}
+
+.column {
+  &_center,
+  &_center-right {
+    margin-left: 54px;
   }
 }
 
@@ -43,10 +53,6 @@
 }
 
 .indentation {
-  &_double {
-    padding-top: 23px;
-  }
-
   &_wrap {
     padding-bottom: 80px;
     display: grid; 

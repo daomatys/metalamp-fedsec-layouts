@@ -20,8 +20,8 @@ body.ui-kit__body
     +headerUI()
   main.ui-kit__main
     .form-elements__wrap_top.indentation_wrap
-      .form-elements__column_left
-        .block__inpuns_common
+      .form-elements__column.column_left
+        .form-elements__block.block__inpuns_common
           +inputs([
             {
               title: "text field",
@@ -49,30 +49,31 @@ body.ui-kit__body
               placeholder: "ДД.ММ.ГГГГ"
             }
           ])
-        .block__dropdowns_date-twins.indentation_double.twinline-gap_longest
-          +inputs([
-            {
-              title: "date dropdown",
-              placeholder: "ДД.ММ.ГГГГ",
-              widthbypercent: 50,
-              dropdown: {
-                options: [
-                  ""
-                ]
+        .form-elements__block.block__dropdowns_date-twins
+          .form-elements__element.twinline-gap_longest
+            +inputs([
+              {
+                title: "date dropdown",
+                placeholder: "ДД.ММ.ГГГГ",
+                widthbypercent: 50,
+                dropdown: {
+                  options: [
+                    ""
+                  ]
+                }
+              },
+              {
+                title: "date dropdown",
+                placeholder: "19.08.2019",
+                widthbypercent: 50,
+                dropdown: {
+                  options: [
+                    ""
+                  ]
+                }
               }
-            },
-            {
-              title: "date dropdown",
-              placeholder: "19.08.2019",
-              widthbypercent: 50,
-              dropdown: {
-                options: [
-                  ""
-                ]
-              }
-            }
-          ])
-        .block__dropdowns_date-semi-wide.indentation_double
+            ])
+        .form-elements__block.block__dropdowns_date-semi-wide
           +inputs([
             {
               title: "filter date dropdown",
@@ -85,7 +86,7 @@ body.ui-kit__body
               }
             }
           ])
-        .block__inputs_subscribe.indentation_double
+        .form-elements__block.block__inputs_subscribe
           +inputs([
             {
               title: "subscription text field",
@@ -95,60 +96,67 @@ body.ui-kit__body
               subscription: true
             }
           ])
-      .form-elements__column_center
-        .block__checkbox-buttons
-          +titleBar("checkbox buttons")
-          .checkbox-buttons__array.additional_padding
-            +checkboxButtons({
-              groupname: "uik-fe__checkbox-allows", 
-              checkboxes: [
-                { pressed: false, label: "Можно курить" },
-                { pressed: true,  label: "Можно с питомцами" },
-                { pressed: true,  label: "Можно пригласить гостей (до 10 человек)" }
-              ]
-            })
-        .block__radio-buttons.indentation_double
-          +titleBar("radio buttons")
-          .radio-buttons__array.additional_padding 
-            +radioButtons([
-              { id: "uik-fe_male", label: "Мужчина", pressed: true },
-              { id: "uik-fe_female", label: "Женщина" }
-            ])
-        .block__toggle-buttons.indentation_double
-          +titleBar("toggle")
-          .toggle-buttons__array.additional_padding
-            +toggleButtons([
-              { groupname: "uik-fe_toggles", label: "Получать спецпредложения", pressed: true },
-              { groupname: "uik-fe_toggles", label: "Получать спецпредложения", pressed: false }
-            ])
-        .block__like-buttons.indentation_double
-          +titleBar("like button")
-          .like-buttons__array.additional_padding.twinline-gap_own
-            +likeButtons([
-              { groupname: "uik-fe-like", pressed: false, likecount: 2 },
-              { groupname: "uik-fe-like", pressed: true, likecount: 12 }
-            ])
-        .block__star-rate.indentation_double
-          +titleBar("rate button")
-          .star-rate__elem.additional_padding.twinline-gap_own
-            +stars([4, 5])
-      .form-elements__column_right
-        .block__range-slider
-          +rangeSlider({
-            title: "range slider",
-            id: "uik-fe-range-slider",
-            widthbypercent: 75,
-          })
-        .block__mean-oval-buttons.indentation_double
-          +titleBar("buttons")
-          .mean-oval-buttons.additional_padding
-            .mean-oval-buttons__array
-              +meanOvalButtons([
-                { groupname: "uik-fe__mob-mid", type: "contained" },
-                { groupname: "uik-fe__mob-mid", type: "contained", disabled: true },
-                { groupname: "uik-fe__mob-mid", type: "outlined" },
-                { groupname: "uik-fe__mob-mid", type: "outlined", disabled: true }
+      .form-elements__column.column_center
+        .form-elements__block.block__checkbox-buttons
+          .form-elements__element
+            +titleBar("checkbox buttons")
+            .checkbox-buttons__array.additional_padding
+              +checkboxButtons({
+                groupname: "uik-fe__checkbox-allows", 
+                checkboxes: [
+                  { pressed: false, label: "Можно курить" },
+                  { pressed: true,  label: "Можно с питомцами" },
+                  { pressed: true,  label: "Можно пригласить гостей (до 10 человек)" }
+                ]
+              })
+        .form-elements__block.block__radio-buttons
+          .form-elements__element
+            +titleBar("radio buttons")
+            .radio-buttons__array.additional_padding 
+              +radioButtons([
+                { id: "uik-fe_male", label: "Мужчина", pressed: true },
+                { id: "uik-fe_female", label: "Женщина" }
               ])
+        .form-elements__block.block__toggle-buttons
+          .form-elements__element
+            +titleBar("toggle")
+            .toggle-buttons__array.additional_padding
+              +toggleButtons([
+                { groupname: "uik-fe_toggles", label: "Получать спецпредложения", pressed: true },
+                { groupname: "uik-fe_toggles", label: "Получать спецпредложения", pressed: false }
+              ])
+        .form-elements__block.block__like-buttons
+          .form-elements__element
+            +titleBar("like button")
+            .like-buttons__array.additional_padding.twinline-gap_own
+              +likeButtons([
+                { groupname: "uik-fe-like", pressed: false, likecount: 2 },
+                { groupname: "uik-fe-like", pressed: true, likecount: 12 }
+              ])
+        .form-elements__block.block__star-rate
+          .form-elements__element
+            +titleBar("rate button")
+            .star-rate__elem.additional_padding.twinline-gap_own
+              +stars([4, 5])
+      .form-elements__column.column_right
+        .form-elements__block.block__range-slider
+          .form-elements__element
+            +rangeSlider({
+              title: "range slider",
+              id: "uik-fe-range-slider",
+              widthbypercent: 75,
+            })
+        .form-elements__block.block__mean-oval-buttons
+          .form-elements__element
+            +titleBar("buttons")
+            .mean-oval-buttons.additional_padding
+              .mean-oval-buttons__array
+                +meanOvalButtons([
+                  { groupname: "uik-fe__mob-mid", type: "contained" },
+                  { groupname: "uik-fe__mob-mid", type: "contained", disabled: true },
+                  { groupname: "uik-fe__mob-mid", type: "outlined" },
+                  { groupname: "uik-fe__mob-mid", type: "outlined", disabled: true }
+                ])
             .mean-oval-buttons__array
               +meanOvalButtons([
                 { groupname: "uik-fe__mob-small", type: "text" },
@@ -164,13 +172,14 @@ body.ui-kit__body
                   text: "перейти к оплате"
                 }
               ])
-        .block__pagination.indentation_double 
-          +titleBar("pagination")
-          .pagination__elem.additional_padding
-            +paginationElem()
+        .form-elements__block.block__pagination
+          .form-elements__element
+            +titleBar("pagination")
+            .pagination__elem.additional_padding
+              +paginationElem()
     .form-elements__wrap_upper-middle.indentation_wrap
-      .form-elements__column_left
-        .block__dropdowns_in-action
+      .form-elements__column.column_left
+        .form-elements__block.block__dropdowns_in-action
           +inputs([
             {
               title: "dropdown",
@@ -197,8 +206,8 @@ body.ui-kit__body
               }
             }
           ])
-      .form-elements__column_center
-        .block__dropdowns_no-guests
+      .form-elements__column.column_center
+        .form-elements__block.block__dropdowns_no-guests
           +inputs([
             {
               title: "dropdown",
@@ -212,8 +221,8 @@ body.ui-kit__body
               }
             },
           ])
-      .form-elements__column_right
-        .block__dropdowns_guests
+      .form-elements__column.column_right
+        .form-elements__block.block__dropdowns_guests
           +inputs([
             {
               title: "dropdown",
@@ -228,8 +237,8 @@ body.ui-kit__body
             },
           ])
     .form-elements__wrap_lower-middle.indentation_wrap
-      .form-elements__column_left
-        .block__checkbox-list_default
+      .form-elements__column.column_left
+        .form-elements__block.block__checkbox-list_default
           +checkboxList({
             title: "expandable checkbox list",
             groupname: "uik-fe__checkbox-list_default",
@@ -244,7 +253,7 @@ body.ui-kit__body
               { pressed: false, label: "Шампунь" }
             ]
           })
-        .block__checkbox-list_ejected.indentation_double
+        .form-elements__block.block__checkbox-list_ejected
           +checkboxList({
             title: "expandable checkbox list",
             groupname: "uik-fe__checkbox-list_ejected",
@@ -258,36 +267,38 @@ body.ui-kit__body
               { pressed: false, label: "Шампунь" }
             ]
           })
-      .form-elements__column_center
-        .block__rich-checkbox-buttons
-          +titleBar("rich checkbox buttons")
-          .checkbox-buttons__array.additional_padding
-            +checkboxButtons({
-              richmode: true,
-              groupname: "uik-fe_rich-cbb",
-              checkboxes: [
-                {
-                  title: "Широкий коридор",
-                  info: "Ширина коридоров в номере \nне менее 91 см."
-                },
-                {
-                  title: "Помощник для инвалидов",
-                  info: "На 1 этаже вас встретит специалист  и проводит до номера."
-                }
-              ]
-            })
-      .form-elements__column_right
-        .block__bullet-list
-          +titleBar("bullet list")
-          .bullet-list__elem.additional_padding
-            +bulletList([
-              "Нельзя с питомцами",
-              "Без вечеринок и мероприятий",
-              "Время прибытия — после 13:00, а выезд до 12:00"
-            ])
+      .form-elements__column.column_center
+        .form-elements__block.block__rich-checkbox-buttons
+          .form-elements__element
+            +titleBar("rich checkbox buttons")
+            .checkbox-buttons__array.additional_padding
+              +checkboxButtons({
+                richmode: true,
+                groupname: "uik-fe_rich-cbb",
+                checkboxes: [
+                  {
+                    title: "Широкий коридор",
+                    info: "Ширина коридоров в номере \nне менее 91 см."
+                  },
+                  {
+                    title: "Помощник для инвалидов",
+                    info: "На 1 этаже вас встретит специалист  и проводит до номера."
+                  }
+                ]
+              })
+      .form-elements__column.column_right
+        .form-elements__block.block__bullet-list
+          .form-elements__element
+            +titleBar("bullet list")
+            .bullet-list__elem.additional_padding
+              +bulletList([
+                "Нельзя с питомцами",
+                "Без вечеринок и мероприятий",
+                "Время прибытия — после 13:00, а выезд до 12:00"
+              ])
     .form-elements__wrap_bottom.indentation_wrap
-      .form-elements__column_left
-        .block__advantage-bars
+      .form-elements__column.column_left
+        .form-elements__block.block__advantage-bars
           +advantageBars([
             {
               iconname: "insert_emoticon",
@@ -300,8 +311,8 @@ body.ui-kit__body
               brief: "Окно в каждой из спален"
             }
           ])
-      .form-elements__column_center-right
-        .block__comment-bar
+      .form-elements__column.column_center-right
+        .form-elements__block.block__comment-bar
           +commentBar([
             {
               name: "Мурад Сарафанов",
