@@ -7,12 +7,12 @@ mixin footer()
   .footer
     .footer__upper-section
       .footer__upper-section_content
-        .footer__content-container
+        .footer__content_start-end
           .footer__logotype
             +logotype("colorful")
           .footer__awards-text
             span.footer__common-text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-        .footer__content-container
+        .footer__content
           +navigationLinks({
             vertical: true,
             title: "навигация",
@@ -23,7 +23,7 @@ mixin footer()
               { href: "", name: "Услуги" }
             ]
           })
-        .footer__content-container
+        .footer__content
           +navigationLinks({
             vertical: true,
             title: "О нас",
@@ -34,7 +34,7 @@ mixin footer()
               { href: "", name: "Инвесторы" }
             ]
           })
-        .footer__content-container
+        .footer__content
           +navigationLinks({
             vertical: true,
             title: "Служба поддержки",
@@ -44,7 +44,7 @@ mixin footer()
               { href: "", name: "Связь с нами" }
             ]
           })
-        .footer__content-container
+        .footer__content_start-end
           +titleBar("подписка")
           span.footer__common-text Получайте специальные предложения и новости сервиса
           +inputs([
