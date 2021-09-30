@@ -1,3 +1,28 @@
+@import "@variables";
+
 .footer {
-  padding-inline: 140px;
+  width: 100%;
+  background-color: white;
+
+  &__upper-section,
+  &__lower-section {
+    padding-inline: 140px;
+  }
+  &__upper-section {
+    display: grid;
+    align-items: center;
+    height: 372px;
+    border-bottom: 1px solid rgba($valhalla, .25);
+
+    &_content {
+      display: grid;
+      grid-template-columns: repeat(5, 150px);
+      grid-gap: 50px;
+      height: 170px;
+    }
+  }
+
+  &__lower-section {
+    height: 70px;
+  }
 }

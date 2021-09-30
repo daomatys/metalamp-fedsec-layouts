@@ -586,7 +586,22 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/footer/footer.scss ***!
   \****************************************************************************************************************************/
 .footer {
-  padding-inline: 140px; }
+  width: 100%;
+  background-color: white; }
+  .footer__upper-section, .footer__lower-section {
+    padding-inline: 140px; }
+  .footer__upper-section {
+    display: grid;
+    align-items: center;
+    height: 372px;
+    border-bottom: 1px solid rgba(31, 32, 65, 0.25); }
+    .footer__upper-section_content {
+      display: grid;
+      grid-template-columns: repeat(5, 150px);
+      grid-gap: 50px;
+      height: 170px; }
+  .footer__lower-section {
+    height: 70px; }
 
 /*!*********************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/headers/landing/header-landing.scss ***!
