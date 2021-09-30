@@ -605,7 +605,11 @@
       grid-gap: 40px;
       height: 170px; }
   .footer__lower-section {
-    height: 70px; }
+    display: flex;
+    height: 70px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; }
   .footer__central-section {
     display: flex;
     justify-content: center;
