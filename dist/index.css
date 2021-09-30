@@ -620,7 +620,8 @@
   width: 100%;
   height: 70px;
   padding-inline: 140px;
-  background-color: white; }
+  background-color: white;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05); }
   .header-landing__sections_right, .header-landing__user-bar {
     display: flex;
     align-items: center; }
@@ -1045,6 +1046,8 @@ header.ui-kit__header {
 .headers-n-footers {
   display: grid;
   grid-gap: 40px; }
+  .headers-n-footers > .footer {
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05); }
 
 /*!***************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/index.scss ***!
@@ -1087,9 +1090,6 @@ header.ui-kit__header {
 
 .bgcolor_whisper {
   background-color: #E5E5E5; }
-
-.additional_shadow {
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05); }
 
 .frozen {
   pointer-events: none; }
