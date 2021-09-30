@@ -582,6 +582,10 @@
   .comment-bar__text {
     line-height: 24px; }
 
+/*!****************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/footer/footer.scss ***!
+  \****************************************************************************************************************************/
+
 /*!*********************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/headers/landing/header-landing.scss ***!
   \*********************************************************************************************************************************************/
@@ -590,7 +594,6 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 1440px;
   height: 70px;
   padding-inline: 140px;
   background-color: white; }
@@ -1036,6 +1039,7 @@ header.ui-kit__header {
   \***********************************************************************************************************************/
 .ui-kit__body {
   margin: auto;
+  width: 1440px;
   font-family: Montserrat, Quicksand, sans-serif;
   user-select: none; }
 

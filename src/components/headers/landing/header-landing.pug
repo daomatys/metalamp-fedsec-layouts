@@ -19,21 +19,19 @@ mixin headerLanding( item )
           ]
         })
       case item.authorized
-
         when true
           .header-landing__user-bar
             span.header-landing__user-bar_full-name Юлий Цезарь
-
         when false 
           .header-landing__authorization-buttons
             +meanOvalButtons([
               {
-                groupname: "header-landing__login-button",
+                groupname: "header-landing__login-btn",
                 type: "outlined",
                 text: "войти"
               },
               {
-                groupname: "header-landing__register-button",
+                groupname: "header-landing__registration-btn",
                 type: "contained",
                 text: "зарегестрироваться",
                 widthbypercent: 75
