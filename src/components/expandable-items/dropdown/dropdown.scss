@@ -25,16 +25,4 @@
       text-transform: uppercase;
     }
   }
-
-  &_ejected {
-    border-top-color: transparent;
-
-    &::placeholder {
-      color: rgba($valhalla, .75);
-    }
-
-    &:placeholder-shown {
-      border-color: rgba($valhalla, .5);
-    }
-  }
 }

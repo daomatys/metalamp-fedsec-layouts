@@ -7,9 +7,11 @@ mixin inputs( items=[] )
     - const widthByPercent = item.widthbypercent ? item.widthbypercent : '100'
     - const readonlyState = item.dropdown ? true : false
     - const expanderClass = item.dropdown ? 'expander' : ''
+    - const expanderParentClass = item.dropdown ? 'expander__parent' : ''
     - const widthClass = `elem__width_${widthByPercent}`
+    - const iconFlippedClass = item.expanded ? 'icon_flipped' : ''
 
-    .input.expander__parent( class=widthClass )
+    .input( class=[widthClass, expanderParentClass] )
       if item.title
         .input__title
           +titleBar( item.title, item.state )
@@ -22,5 +24,5 @@ mixin inputs( items=[] )
           +dropdown( item.dropdown )
 
         if item.subscription
-          .input__icon_subscription
+          .input__icon_subscription( class=iconFlippedClass )
             +materialIcon('arrow_forward')

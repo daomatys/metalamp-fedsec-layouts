@@ -13,10 +13,6 @@
       width: 256px;
       height: 28px;
       cursor: pointer;
-
-      &:checked {
-        transform: rotateX(0.5turn);
-      }
     }
 
     &_icon {
@@ -34,8 +30,4 @@
     display: none;
     margin-top: 18px;
   }
-}
-
-.icon-flipped {
-  transform: scaleY(-1);
 }

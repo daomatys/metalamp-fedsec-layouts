@@ -3,8 +3,8 @@ include ../../buttons/checkbox/checkbox.pug
 include ../../material-icon-cell/material-icon-cell.pug
 
 mixin checkboxList( item )
-  - const listInsertionClass = item.inserted ? 'checkbox-list_inserted' : ''
-  - const iconFlippedClass = item.inserted ? '' : 'icon-flipped'
+  - const iconFlippedClass = item.expanded ? 'icon_flipped' : ''
+  - const expanderActiveClass = item.expanded ? 'expander_active' : ''
 
   .checkbox-list.expander__parent
     .checkbox-list__title
@@ -14,7 +14,7 @@ mixin checkboxList( item )
         +titleBar( item.title )
       .checkbox-list__title_icon( class=iconFlippedClass )
         +materialIcon('expand_more', item.groupname)
-    .checkbox-list__items.expander__aim( class=listInsertionClass )
+    .checkbox-list__items.expander__aim( class=expanderActiveClass )
       +checkboxButtons({
         groupname: item.groupname,
         checkboxes: item.checkboxes

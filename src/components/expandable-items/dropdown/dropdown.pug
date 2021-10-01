@@ -1,7 +1,7 @@
 mixin dropdown( item )
-  - const dropdownEjectedClass = item.ejected ? 'dropdown_ejected' : 'dropdiwn_injected'
+  - const expanderActiveClass = item.expanded ? 'expander_active' : ''
 
-  .dropdown.expander__aim( class=dropdownEjectedClass )
+  .dropdown.expander__aim( class=expanderActiveClass )
     each option in item.options
       .dropdown__option
         span.dropdown__option_name #{option}

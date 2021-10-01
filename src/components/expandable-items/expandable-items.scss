@@ -1,3 +1,7 @@
 .expander_active {
   display: table;
 }
+
+.icon_flipped {
+  transform: scaleY(-1);
+}
