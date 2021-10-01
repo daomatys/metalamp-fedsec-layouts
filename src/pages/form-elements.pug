@@ -6,7 +6,7 @@ include ../components/range-slider/range-slider.pug
 include ../components/pagination/pagination.pug
 include ../components/bullet-list/bullet-list.pug
 include ../components/comment-bar/comment-bar.pug
-include ../components/checkbox-list/checkbox-list.pug
+include ../components/expandable-items/checkbox-list/checkbox-list.pug
 
 include ../components/buttons/toggle/toggle.pug
 include ../components/buttons/like/like.pug
@@ -31,12 +31,14 @@ body.ui-kit__body
             {
               title: "text field",
               state: "hover / focus",
-              placeholder: "This is pretty awesome"
+              placeholder: "This is pretty awesome",
+              disabled: true
             },
             {
               title: "dropdown",
               placeholder: "Сколько гостей",
               dropdown: {
+                expanded: true,
                 options: [
                   "взрослые",
                   "дети",

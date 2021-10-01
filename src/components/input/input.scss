@@ -2,13 +2,13 @@
 @import "../../styles/gradient-fill-entities.scss";
 
 .input {
-  &__text-bar {
+  &__title {
     margin-bottom: 5px;
   }
 
-  &__data-bar {
-    width: inherit;
+  &__element {
     position: relative;
+    width: inherit;
   }
 
   &__frame {
@@ -26,11 +26,8 @@
     }
 
     &:hover,
-    &:focus-within {
-      & + span {
-        opacity: .75;
-      }
-
+    &:focus,
+    &:disabled {
       &::placeholder {
         color: rgba($valhalla, .75);
       }
@@ -40,45 +37,30 @@
       }
     }
   }
+
+  &__icon {
+    &_dropdown {
+      color: $valhalla;
+      opacity: .5;
+    }
+  
+    &_subscription {
+      @extend .gradient-fill;
+    }
+  
+    &_dropdown,
+    &_subscription {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+  }
 }
 
-.elem__border {
+.dropdown,
+.input__frame {
   border-width: 1px;
   border-style: solid;
   box-sizing: border-box;
   outline: none;
-}
-
-.dropdown-marker {
-  cursor: pointer;
-}
-
-.dropdown-is-opened {
-  border-radius: 4px 4px 0px 0px !important;
-  border-bottom-color: transparent;
-
-  &::placeholder {
-    color: rgba($valhalla, .75);
-  }
-
-  &:placeholder-shown {
-    border-color: rgba($valhalla, .5);
-  }
-}
-
-.input-icons {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-}
-
-.icon-style {
-  &_dropdown {
-    color: $valhalla;
-    opacity: .5;
-  }
-
-  &_subscription {
-    @extend .gradient-fill;
-  }
 }

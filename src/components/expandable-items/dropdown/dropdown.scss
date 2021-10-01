@@ -2,15 +2,14 @@
 
 .dropdown {
   position: absolute;
-  top: 43px;
-  border-color: rgba(31, 32, 65, .5);
+  border-color: rgba($valhalla, .5);
   border-radius: 0px 0px 4px 4px;
   padding: 7px 7px 7px 15px;
   width: inherit;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  display: none;
+  box-shadow: 0px 10px 20px rgba($valhalla, 0.05);
   background-color: #fff;
   z-index: 10;
+  display: none;
 
   &__option {
     display: flex;
@@ -20,15 +19,22 @@
   
     &_name {
       color: $valhalla;
-      font-style: normal;
       font-weight: bold;
       font-size: 12px;
       line-height: 15px;
       text-transform: uppercase;
     }
   }
-}
 
-.dropdown-ejected {
-  display: block;
+  &_ejected {
+    border-top-color: transparent;
+
+    &::placeholder {
+      color: rgba($valhalla, .75);
+    }
+
+    &:placeholder-shown {
+      border-color: rgba($valhalla, .5);
+    }
+  }
 }

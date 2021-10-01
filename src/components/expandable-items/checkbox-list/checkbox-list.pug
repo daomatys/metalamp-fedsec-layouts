@@ -1,0 +1,21 @@
+include ../../title-bar/title-bar.pug
+include ../../buttons/checkbox/checkbox.pug
+include ../../material-icon-cell/material-icon-cell.pug
+
+mixin checkboxList( item )
+  - const listInsertionClass = item.inserted ? 'checkbox-list_inserted' : ''
+  - const iconFlippedClass = item.inserted ? '' : 'icon-flipped'
+
+  .checkbox-list.expander__parent
+    .checkbox-list__title
+      if !(item.disabled)
+        input.checkbox-list__title_button.expander( type='checkbox' id=item.groupname )
+      .checkbox-list__title_text
+        +titleBar( item.title )
+      .checkbox-list__title_icon( class=iconFlippedClass )
+        +materialIcon('expand_more', item.groupname)
+    .checkbox-list__items.expander__aim( class=listInsertionClass )
+      +checkboxButtons({
+        groupname: item.groupname,
+        checkboxes: item.checkboxes
+      })

@@ -1,24 +1,26 @@
-include dropdown/dropdown.pug
+include ../expandable-items/dropdown/dropdown.pug
 include ../title-bar/title-bar.pug
 include ../material-icon-cell/material-icon-cell.pug
 
 mixin inputs( items=[] )
   each item in items
-    - const keyDropdownClasses = item.dropdown ? 'dropdown-marker dropdown-is-closed' : ''
-    - const keyReadOnly = item.dropdown ? true : false
     - const widthByPercent = item.widthbypercent ? item.widthbypercent : '100'
+    - const readonlyState = item.dropdown ? true : false
+    - const expanderClass = item.dropdown ? 'expander' : ''
     - const widthClass = `elem__width_${widthByPercent}`
 
-    .input( class=widthClass )
+    .input.expander__parent( class=widthClass )
       if item.title
-        .input__text-bar
+        .input__title
           +titleBar( item.title, item.state )
-      .input__data-bar
-        input.input__frame.elem__border( class=keyDropdownClasses readonly=keyReadOnly type=item.type placeholder=item.placeholder )
+      .input__element
+        input.input__frame( class=expanderClass readonly=readonlyState type=item.type placeholder=item.placeholder disabled=item.disabled ) 
+
         if item.dropdown
-          .input-icons.icon-style_dropdown
+          .input__icon_dropdown
             +materialIcon('expand_more')
           +dropdown( item.dropdown )
+
         if item.subscription
-          .input-icons.icon-style_subscription
+          .input__icon_subscription
             +materialIcon('arrow_forward')

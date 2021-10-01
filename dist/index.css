@@ -468,40 +468,6 @@
   grid-row: 2;
   grid-gap: 14px; }
 
-/*!******************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/checkbox-list/checkbox-list.scss ***!
-  \******************************************************************************************************************************************/
-.checkbox-list__title-button {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start; }
-  .checkbox-list__title-button_hidden-input {
-    position: absolute;
-    left: -10px;
-    bottom: -4px;
-    appearance: none;
-    width: 256px;
-    height: 28px;
-    cursor: pointer; }
-    .checkbox-list__title-button_hidden-input:checked {
-      transform: rotateX(0.5turn); }
-  .checkbox-list__title-button_icon {
-    position: relative;
-    margin-left: 40px;
-    opacity: .5; }
-    .checkbox-list__title-button_icon > label {
-      cursor: pointer; }
-
-.checkbox-list__checkboxes-array {
-  margin-top: 18px; }
-
-.checkbox-list_inserted {
-  display: none; }
-
-.icon-flipped {
-  transform: scaleY(-1); }
-
 /*!****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/color-sample/color-sample.scss ***!
   \****************************************************************************************************************************************/
@@ -584,6 +550,75 @@
     user-select: text; }
   .comment-bar__comment-text {
     line-height: 24px; }
+
+/*!***********************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/expandable-items/checkbox-list/checkbox-list.scss ***!
+  \***********************************************************************************************************************************************************/
+.checkbox-list__title {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start; }
+  .checkbox-list__title_button {
+    position: absolute;
+    left: -10px;
+    bottom: -4px;
+    appearance: none;
+    width: 256px;
+    height: 28px;
+    cursor: pointer; }
+    .checkbox-list__title_button:checked {
+      transform: rotateX(0.5turn); }
+  .checkbox-list__title_icon {
+    position: relative;
+    margin-left: 40px;
+    opacity: .5; }
+    .checkbox-list__title_icon > label {
+      cursor: pointer; }
+
+.checkbox-list__items {
+  display: none;
+  margin-top: 18px; }
+
+.icon-flipped {
+  transform: scaleY(-1); }
+
+/*!*************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/expandable-items/dropdown/dropdown.scss ***!
+  \*************************************************************************************************************************************************/
+.dropdown {
+  position: absolute;
+  border-color: rgba(31, 32, 65, 0.5);
+  border-radius: 0px 0px 4px 4px;
+  padding: 7px 7px 7px 15px;
+  width: inherit;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  background-color: #fff;
+  z-index: 10;
+  display: none; }
+  .dropdown__option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px;
+    height: 30px; }
+    .dropdown__option_name {
+      color: #1F2041;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase; }
+  .dropdown_ejected {
+    border-top-color: transparent; }
+    .dropdown_ejected::placeholder {
+      color: rgba(31, 32, 65, 0.75); }
+    .dropdown_ejected:placeholder-shown {
+      border-color: rgba(31, 32, 65, 0.5); }
+
+/*!************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/expandable-items/expandable-items.scss ***!
+  \************************************************************************************************************************************************/
+.expander_active {
+  display: table; }
 
 /*!****************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/footer/footer.scss ***!
@@ -668,52 +703,22 @@ header.ui-kit__header {
   height: 140px;
   width: 100%; }
 
-/*!**************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/input/dropdown/dropdown.scss ***!
-  \**************************************************************************************************************************************/
-.dropdown {
-  position: absolute;
-  top: 43px;
-  border-color: rgba(31, 32, 65, 0.5);
-  border-radius: 0px 0px 4px 4px;
-  padding: 7px 7px 7px 15px;
-  width: inherit;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  display: none;
-  background-color: #fff;
-  z-index: 10; }
-  .dropdown__option {
-    display: flex;
-    align-items: center;
-    margin-bottom: 7px;
-    height: 30px; }
-    .dropdown__option_name {
-      color: #1F2041;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 12px;
-      line-height: 15px;
-      text-transform: uppercase; }
-
-.dropdown-ejected {
-  display: block; }
-
 /*!**************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/input/input.scss ***!
   \**************************************************************************************************************************/
-.gradient-fill, .icon-style_subscription {
+.gradient-fill, .input__icon_subscription {
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent; }
 
-.input__text-bar {
+.input__title {
   margin-bottom: 5px; }
 
-.input__data-bar {
-  width: inherit;
-  position: relative; }
+.input__element {
+  position: relative;
+  width: inherit; }
 
 .input__frame {
   border-radius: 4px;
@@ -726,38 +731,26 @@ header.ui-kit__header {
     color: rgba(31, 32, 65, 0.25);
     font-size: 16px;
     line-height: 18px; }
-  .input__frame:hover + span, .input__frame:focus-within + span {
-    opacity: .75; }
-  .input__frame:hover::placeholder, .input__frame:focus-within::placeholder {
+  .input__frame:hover::placeholder, .input__frame:focus::placeholder, .input__frame:disabled::placeholder {
     color: rgba(31, 32, 65, 0.75); }
-  .input__frame:hover:placeholder-shown, .input__frame:focus-within:placeholder-shown {
+  .input__frame:hover:placeholder-shown, .input__frame:focus:placeholder-shown, .input__frame:disabled:placeholder-shown {
     border-color: rgba(31, 32, 65, 0.5); }
 
-.elem__border {
-  border-width: 1px;
-  border-style: solid;
-  box-sizing: border-box;
-  outline: none; }
+.input__icon_dropdown {
+  color: #1F2041;
+  opacity: .5; }
 
-.dropdown-marker {
-  cursor: pointer; }
-
-.dropdown-is-opened {
-  border-radius: 4px 4px 0px 0px !important;
-  border-bottom-color: transparent; }
-  .dropdown-is-opened::placeholder {
-    color: rgba(31, 32, 65, 0.75); }
-  .dropdown-is-opened:placeholder-shown {
-    border-color: rgba(31, 32, 65, 0.5); }
-
-.input-icons {
+.input__icon_dropdown, .input__icon_subscription {
   position: absolute;
   bottom: 10px;
   right: 10px; }
 
-.icon-style_dropdown {
-  color: #1F2041;
-  opacity: .5; }
+.dropdown,
+.input__frame {
+  border-width: 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  outline: none; }
 
 /*!************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/logo/logo.scss ***!
