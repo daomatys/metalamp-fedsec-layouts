@@ -4,7 +4,7 @@ mixin stars( ratings=[] )
   each rating in ratings
     - let num = 0
     
-    .star-rate.gradient-fill
+    .star-rate
       while num < 5
         if ++num <= rating
           +materialIcon('star')

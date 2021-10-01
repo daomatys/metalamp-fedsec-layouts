@@ -6,12 +6,12 @@ mixin commentBar( items=[] )
       .comment-bar__avatar
         img( src=require(`/src/assets/images/raster/avatars/${ item.avatarname }.png`) )
       .comment-bar__title
-        .comment-bar__title__name #{ item.name }
-        .comment-bar__title__days-ago #{ item.daysago }
+        .comment-bar__title_name #{ item.name }
+        .comment-bar__title_days-ago #{ item.daysago }
       .comment-bar__like-button-wrap
-        +likeButtons([{ 
+        +likeButtons([{
           groupname: item.likebtn.groupname,
           pressed: item.likebtn.pressed,
           likecount: item.likebtn.likecount
         }])
-      .comment-bar__text #{ item.text }
+      .comment-bar__comment-text #{ item.text }

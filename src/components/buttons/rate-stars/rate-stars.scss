@@ -1,5 +1,7 @@
 @import "@variables";
+@import "../../../styles/gradient-fill-entities.scss";
 
 .star-rate {
+  @extend .gradient-fill;
   margin-right: 20px;
 }

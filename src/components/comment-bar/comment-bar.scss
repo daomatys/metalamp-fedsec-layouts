@@ -24,18 +24,18 @@
     display: inherit;
     align-items: center;
 
-    &__name {
+    &_name {
       font-weight: bold;
     }
   }
 
   &__title,
-  &__text {
+  &__comment-text {
     color: rgba($valhalla, .75);
     user-select: text;
   }
 
-  &__text {
+  &__comment-text {
     line-height: 24px;
   }
 }

@@ -52,6 +52,13 @@
 /*!******************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/advantage-bar/advantage-bar.scss ***!
   \******************************************************************************************************************************************/
+.gradient-fill, .advantages-block__icon {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
 .advantages-block {
   width: 280px; }
   .advantages-block__text-bar {
@@ -136,13 +143,6 @@
   width: 12px;
   background-color: #1F2041;
   border-radius: 50%; }
-
-.gradient-fill {
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent; }
 
 /*!****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/buttons/checkbox/checkbox.scss ***!
@@ -404,6 +404,13 @@
 /*!********************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/buttons/rate-stars/rate-stars.scss ***!
   \********************************************************************************************************************************************/
+.gradient-fill, .star-rate {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
 .star-rate {
   margin-right: 20px; }
 
@@ -433,13 +440,6 @@
   width: 12px;
   background-color: #1F2041;
   border-radius: 50%; }
-
-.gradient-fill {
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent; }
 
 .toggle-button {
   display: flex; }
@@ -577,12 +577,12 @@
   .comment-bar__title {
     display: inherit;
     align-items: center; }
-    .comment-bar__title__name {
+    .comment-bar__title_name {
       font-weight: bold; }
-  .comment-bar__title, .comment-bar__text {
+  .comment-bar__title, .comment-bar__comment-text {
     color: rgba(31, 32, 65, 0.75);
     user-select: text; }
-  .comment-bar__text {
+  .comment-bar__comment-text {
     line-height: 24px; }
 
 /*!****************************************************************************************************************************!*\
@@ -701,6 +701,13 @@ header.ui-kit__header {
 /*!**************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/input/input.scss ***!
   \**************************************************************************************************************************/
+.gradient-fill, .icon-style_subscription {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
 .input__text-bar {
   margin-bottom: 5px; }
 
@@ -1084,6 +1091,16 @@ header.ui-kit__header {
   font-family: inherit;
   margin-top: 80px;
   margin-left: 80px; }
+
+/*!*********************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/gradient-fill-entities.scss ***!
+  \*********************************************************************************************************************************/
+.gradient-fill {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; }
 
 /*!***********************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/ui-kit-pages.scss ***!
