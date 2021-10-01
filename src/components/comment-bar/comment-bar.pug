@@ -4,7 +4,7 @@ mixin commentBar( items=[] )
   each item in items
     .comment-bar
       .comment-bar__avatar
-        img( src=`/src/assets/images/raster/avatars/${ item.avatarname }.png` )
+        img( src=require(`/src/assets/images/raster/avatars/${ item.avatarname }.png`) )
       .comment-bar__title
         .comment-bar__title__name #{ item.name }
         .comment-bar__title__days-ago #{ item.daysago }

@@ -2,8 +2,11 @@ mixin logotype( type )
   .logotype
     case type 
       when 'monochrome'
-        img.logotype__image_monochrome( src="/src/assets/images/vector/logo-monochrome-s48.svg" )
+        .logotype__image_monochrome
+          img( src=require("../assets/images/vector/logo-monochrome-s48.svg") )
       when 'colorful'
-        img.logotype__image_colorful( src="/src/assets/images/vector/logo-colorful-s40.svg" )
-        img.logotype__text( src="/src/assets/images/vector/logo-text-part.svg" )
+        .logotype__image_colorful
+          img( src=require("../assets/images/vector/logo-colorful-s40.svg") )
+        .logotype__text
+          img( src=require("../assets/images/vector/logo-text-part.svg") )
         
