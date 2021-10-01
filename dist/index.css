@@ -753,8 +753,7 @@ header.ui-kit__header {
 .input-icons {
   position: absolute;
   bottom: 10px;
-  right: 10px;
-  z-index: -1; }
+  right: 10px; }
 
 .icon-style_dropdown {
   color: #1F2041;
@@ -764,16 +763,31 @@ header.ui-kit__header {
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/logo/logo.scss ***!
   \************************************************************************************************************************/
 .logotype {
-  display: flex; }
-  .logotype__image_monochrome {
+  position: relative;
+  display: flex;
+  margin: 0; }
+  .logotype__button {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer; }
+  .logotype_monochrome {
     position: fixed;
     top: 30px;
-    left: 30px; }
-  .logotype__image_colorful {
-    display: flex; }
-  .logotype__text {
-    margin-left: 13px;
-    display: flex; }
+    left: 30px;
+    width: 48px;
+    height: 48px; }
+    .logotype_monochrome > .logotype__button {
+      box-sizing: border-box;
+      border-radius: 50%;
+      width: inherit;
+      height: inherit; }
+  .logotype_colorful {
+    width: 107px; }
+    .logotype_colorful > .logotype__button {
+      width: 100%;
+      height: 100%; }
+      .logotype_colorful > .logotype__button + .logotype__image {
+        margin-right: 13px; }
 
 /*!****************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/material-icon-cell/material-icon-cell.scss ***!

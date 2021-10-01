@@ -1,12 +1,12 @@
 mixin logotype( type )
-  .logotype
-    case type 
-      when 'monochrome'
-        .logotype__image_monochrome
-          img( src=require("../assets/images/vector/logo-monochrome-s48.svg") )
-      when 'colorful'
-        .logotype__image_colorful
-          img( src=require("../assets/images/vector/logo-colorful-s40.svg") )
-        .logotype__text
-          img( src=require("../assets/images/vector/logo-text-part.svg") )
+  case type 
+    when 'monochrome'
+      form.logotype.logotype_monochrome( action="index.html" )
+        input.logotype__button( type="submit" )
+        img.logotype__image( src=require("../assets/images/vector/logo-monochrome-s48.svg") )
+    when 'colorful'
+      form.logotype.logotype_colorful( action="" )
+        input.logotype__button( type="submit" )
+        img.logotype__image( src=require("../assets/images/vector/logo-colorful-s40.svg") )
+        img.logotype__image( src=require("../assets/images/vector/logo-text-part.svg") )
         

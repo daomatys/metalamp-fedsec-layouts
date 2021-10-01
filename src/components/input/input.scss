@@ -13,14 +13,14 @@
 
   &__frame {
     border-radius: 4px;
-    border-color: rgba(31, 32, 65, .25);
+    border-color: rgba($valhalla, .25);
     height: 44px;
     padding: 0px 15px 0px 15px;
     width: inherit;
     background-color: transparent;
 
     &::placeholder {
-      color: rgba(31, 32, 65, .25);
+      color: rgba($valhalla, .25);
       font-size: 16px;
       line-height: 18px;
     }
@@ -32,11 +32,11 @@
       }
 
       &::placeholder {
-        color: rgba(31, 32, 65, .75);
+        color: rgba($valhalla, .75);
       }
 
       &:placeholder-shown {
-        border-color: rgba(31, 32, 65, .5);
+        border-color: rgba($valhalla, .5);
       }
     }
   }
@@ -58,11 +58,11 @@
   border-bottom-color: transparent;
 
   &::placeholder {
-    color: rgba(31, 32, 65, .75);
+    color: rgba($valhalla, .75);
   }
 
   &:placeholder-shown {
-    border-color: rgba(31, 32, 65, .5);
+    border-color: rgba($valhalla, .5);
   }
 }
 
@@ -70,7 +70,6 @@
   position: absolute;
   bottom: 10px;
   right: 10px;
-  z-index: -1;
 }
 
 .icon-style {

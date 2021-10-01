@@ -1,20 +1,39 @@
 .logotype {
+  position: relative;
   display: flex;
+  margin: 0;
 
-  &__image {
-    &_monochrome {
-      position: fixed;
-      top: 30px;
-      left: 30px;
-    }
+  &__button {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
 
-    &_colorful {
-      display: flex;
+  &_monochrome {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    width: 48px;
+    height: 48px;
+
+    & > .logotype__button {
+      box-sizing: border-box;
+      border-radius: 50%;
+      width: inherit;
+      height: inherit;
     }
   }
 
-  &__text {
-    margin-left: 13px;
-    display: flex;
-  } 
+  &_colorful {
+    width: 107px;
+
+    & > .logotype__button {
+      width: 100%;
+      height: 100%;
+
+      & + .logotype__image {
+        margin-right: 13px;
+      }
+    }
+  }
 }
