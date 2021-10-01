@@ -59,7 +59,15 @@
       position: absolute;
       bottom: 10px;
       right: 10px;
+      
+      & > .material-icons {
+        cursor: pointer;
+      }
     }
+  }
+
+  &__frame.expander {
+    cursor: pointer;
   }
 }
 

@@ -5,25 +5,24 @@ include ../material-icon-cell/material-icon-cell.pug
 mixin inputs( items=[] )
   each item in items
     - const widthByPercent = item.widthbypercent ? item.widthbypercent : '100'
-    - const readonlyState = item.dropdown ? true : false
-    - const expanderClass = item.dropdown ? 'expander' : ''
-    - const expanderParentClass = item.dropdown ? 'expander__parent' : ''
     - const widthClass = `elem__width_${widthByPercent}`
+    - const expanderDefinitionClass = item.dropdown ? 'expander' : ''
+    - const expanderReadOnlyState = item.dropdown ? true : false
+    - const expanderParentClass = item.dropdown ? 'expander__parent' : ''
     - const iconFlippedClass = item.expanded ? 'icon_flipped' : ''
-    - const checked = item.expanded ? true : false
 
     .input( class=[widthClass, expanderParentClass] )
       if item.title
         .input__title
           +titleBar( item.title, item.state )
       .input__element
-        input.input__frame( class=expanderClass readonly=readonlyState type=item.type placeholder=item.placeholder disabled=item.disabled checked=item.expanded ) 
+        input.input__frame( class=expanderDefinitionClass id=item.id type=item.type placeholder=item.placeholder disabled=item.disabled readonly=expanderReadOnlyState checked=item.expanded ) 
 
         if item.dropdown
-          .input__icon_dropdown
-            +materialIcon('expand_more')
-          +dropdown( item.dropdown, item.expanded )
+          .input__icon_dropdown( class=iconFlippedClass )
+            +materialIcon('expand_more', item.id )
+          +dropdownElem( item.dropdown, item.expanded )
 
         if item.subscription
-          .input__icon_subscription( class=iconFlippedClass )
-            +materialIcon('arrow_forward')
+          .input__icon_subscription
+            +materialIcon('arrow_forward', item.id)

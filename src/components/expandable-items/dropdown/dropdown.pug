@@ -1,8 +1,8 @@
-mixin dropdown( item, expanded )
+mixin dropdownElem( dropdown, expanded )
   - const expanderActiveClass = expanded ? 'expander_active' : ''
 
   .dropdown.expander__aim( class=expanderActiveClass )
-    each option in item.options
+    each option in dropdown.options
       .dropdown__option
         span.dropdown__option_name #{option}
         .dropdown__button_inc 

@@ -2,13 +2,13 @@
   &__title {
     position: relative;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: flex-start;
 
     &_button {
       position: absolute;
-      left: -10px;
-      bottom: -4px;
+      left: -6px;
+      bottom: -5px;
       appearance: none;
       width: 256px;
       height: 28px;
