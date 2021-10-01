@@ -725,11 +725,11 @@ header.ui-kit__header {
     color: rgba(31, 32, 65, 0.25);
     font-size: 16px;
     line-height: 18px; }
-  .input__frame:hover::placeholder, .input__frame:disabled::placeholder, .input__frame:focus-within::placeholder, .input__frame[checked="true"]::placeholder {
+  .input__frame:hover::placeholder, .input__frame:disabled::placeholder, .input__frame:focus-within::placeholder, .input__frame[checked]::placeholder {
     color: rgba(31, 32, 65, 0.75); }
-  .input__frame:hover:placeholder-shown, .input__frame:disabled:placeholder-shown, .input__frame:focus-within:placeholder-shown, .input__frame[checked="true"]:placeholder-shown {
+  .input__frame:hover:placeholder-shown, .input__frame:disabled:placeholder-shown, .input__frame:focus-within:placeholder-shown, .input__frame[checked]:placeholder-shown {
     border-color: rgba(31, 32, 65, 0.5); }
-  .input__frame.expander[checked="true"] {
+  .input__frame.expander[checked] {
     border-radius: 4px 4px 0px 0px; }
 
 .input__icon_dropdown {

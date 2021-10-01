@@ -13,7 +13,7 @@ function expanderActivation({target}) {
 
   target.hasAttribute('checked') 
     ? target.removeAttribute('checked') 
-    : target.setAttribute('checked', true);
+    : target.setAttribute('checked', '');
 
   iconAnimation(icon);
   aim.classList.toggle('expander_active');

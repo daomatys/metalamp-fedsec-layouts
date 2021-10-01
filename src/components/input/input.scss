@@ -29,7 +29,7 @@
     &:hover,
     &:disabled,
     &:focus-within,
-    &[checked="true"] {
+    &[checked] {
       &::placeholder {
         color: rgba($valhalla, .75);
       }
@@ -39,7 +39,7 @@
       }
     }
 
-    &.expander[checked="true"] {
+    &.expander[checked] {
       border-radius:4px 4px 0px 0px;
     }
   }
