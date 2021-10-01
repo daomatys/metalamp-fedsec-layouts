@@ -11,8 +11,12 @@ function expanderActivation({target}) {
   const aim = parent.querySelector('.expander__aim');
   const icon = parent.querySelector('.material-icons');
 
-  aim.classList.toggle('expander_active');
+  target.hasAttribute('checked') 
+    ? target.removeAttribute('checked') 
+    : target.setAttribute('checked', true);
+
   iconAnimation(icon);
+  aim.classList.toggle('expander_active');
 }
 
 function iconAnimation(icon) {

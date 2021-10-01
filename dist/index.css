@@ -583,14 +583,15 @@
   \*************************************************************************************************************************************************/
 .dropdown {
   position: absolute;
-  border-color: rgba(31, 32, 65, 0.5);
-  border-radius: 0px 0px 4px 4px;
+  display: none;
+  top: 43px;
   padding: 7px 7px 7px 15px;
   width: inherit;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  background-color: #fff;
   z-index: 10;
-  display: none; }
+  background-color: #fff;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border-color: rgba(31, 32, 65, 0.5);
+  border-radius: 0px 0px 4px 4px; }
   .dropdown__option {
     display: flex;
     align-items: center;
@@ -713,6 +714,7 @@ header.ui-kit__header {
   width: inherit; }
 
 .input__frame {
+  margin: 0;
   border-radius: 4px;
   border-color: rgba(31, 32, 65, 0.25);
   height: 44px;
@@ -723,10 +725,12 @@ header.ui-kit__header {
     color: rgba(31, 32, 65, 0.25);
     font-size: 16px;
     line-height: 18px; }
-  .input__frame:hover::placeholder, .input__frame:focus-within::placeholder, .input__frame:disabled::placeholder {
+  .input__frame:hover::placeholder, .input__frame:disabled::placeholder, .input__frame:focus-within::placeholder, .input__frame[checked="true"]::placeholder {
     color: rgba(31, 32, 65, 0.75); }
-  .input__frame:hover:placeholder-shown, .input__frame:focus-within:placeholder-shown, .input__frame:disabled:placeholder-shown {
+  .input__frame:hover:placeholder-shown, .input__frame:disabled:placeholder-shown, .input__frame:focus-within:placeholder-shown, .input__frame[checked="true"]:placeholder-shown {
     border-color: rgba(31, 32, 65, 0.5); }
+  .input__frame.expander[checked="true"] {
+    border-radius: 4px 4px 0px 0px; }
 
 .input__icon_dropdown {
   color: #1F2041;

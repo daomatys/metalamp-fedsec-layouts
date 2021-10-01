@@ -12,6 +12,7 @@
   }
 
   &__frame {
+    margin: 0;
     border-radius: 4px;
     border-color: rgba($valhalla, .25);
     height: 44px;
@@ -26,8 +27,9 @@
     }
 
     &:hover,
+    &:disabled,
     &:focus-within,
-    &:disabled {
+    &[checked="true"] {
       &::placeholder {
         color: rgba($valhalla, .75);
       }
@@ -35,6 +37,10 @@
       &:placeholder-shown {
         border-color: rgba($valhalla, .5);
       }
+    }
+
+    &.expander[checked="true"] {
+      border-radius:4px 4px 0px 0px;
     }
   }
 
