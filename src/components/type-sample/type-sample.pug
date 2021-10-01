@@ -1,7 +1,8 @@
 mixin typeSamples(items=[])
   .type-items__holder
     each item in items
-      .type-item
-        - var chosenTag = item.tagname === "Body" ? "p" : item.tagname.toLowerCase()
-          #{chosenTag}.type-item__tagname #{item.tagname}
-          #{chosenTag}.type-item__note #{item.note}
+      - const tagName = item.tagname.toLowerCase();
+
+      .type-item( class=`font-size_${tagName}` )
+        span.type-item__tagname #{item.tagname}
+        span.type-item__note #{item.note}
