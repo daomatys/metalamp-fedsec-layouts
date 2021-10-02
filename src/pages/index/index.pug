@@ -1,12 +1,18 @@
 include ../../components/header/__ui-kit/header__ui-kit.pug
+include ../../components/navigation-bar/navigation-bar.pug
 
 body.ui-kit__body
   header.ui-kit__header
     +headerUI()
   main.ui-kit__main
-    .index-links
-      a(href="cards.html") cards
-      a(href="colors-n-type.html") colors & type
-      a(href="form-elements.html") form elements
-      a(href="headers-n-footers.html") headers & footers
+    +navigationBar({
+      vertical: true,
+      title: "ui kit pages",
+      links: [
+        { href: "ui-kit__cards.html", name: "cards" },
+        { href: "ui-kit__colors-n-type.html", name: "colors & type" },
+        { href: "ui-kit__form-elements.html", name: "form elements" },
+        { href: "ui-kit__headers-n-footers.html", name: "headers & footers" }
+      ]
+    })
   footer.ui-kit__footer

@@ -1059,9 +1059,6 @@ header.ui-kit__header {
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/index/index.scss ***!
   \*********************************************************************************************************************/
 .index-links {
-  display: grid;
-  grid-gap: 20px;
-  font-family: inherit;
   margin-top: 80px;
   margin-left: 80px; }
 
