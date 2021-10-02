@@ -2,9 +2,10 @@ include ../../material-icon-cell/material-icon-cell.pug
 
 mixin link( item )
   - const styleClass = item.bold ? 'link__elem_bold' : ''
+  - const linkHref = item.href ? item.href : '404.html'
 
   .link
-    a.link__elem( class=styleClass href=item.href ) #{item.name}
+    a.link__elem( class=styleClass href=linkHref ) #{item.name}
     if item.icon
       .link__icon
         +materialIcon('expand_more')
