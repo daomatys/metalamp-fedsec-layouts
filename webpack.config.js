@@ -13,6 +13,7 @@ const PATHS = {
 
 const PAGES_ROOT = PATHS.src + '/pages/';
 const PAGES_DIRNAMES = [
+  '404/',
   'index/',
   'ui-kit/__cards/',
   'ui-kit/__colors-n-type/',

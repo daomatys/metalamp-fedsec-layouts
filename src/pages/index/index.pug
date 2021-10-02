@@ -5,14 +5,15 @@ body.ui-kit__body
   header.ui-kit__header
     +headerUI()
   main.ui-kit__main
-    +navigationBar({
-      vertical: true,
-      title: "ui kit pages",
-      links: [
-        { href: "ui-kit__cards.html", name: "cards" },
-        { href: "ui-kit__colors-n-type.html", name: "colors & type" },
-        { href: "ui-kit__form-elements.html", name: "form elements" },
-        { href: "ui-kit__headers-n-footers.html", name: "headers & footers" }
-      ]
-    })
+    .index-links 
+      +navigationBar({
+        vertical: true,
+        title: "ui kit pages",
+        links: [
+          { name: "cards",             href: "ui-kit__cards.html" },
+          { name: "colors & type",     href: "ui-kit__colors-n-type.html" },
+          { name: "form elements",     href: "ui-kit__form-elements.html" },
+          { name: "headers & footers", href: "ui-kit__headers-n-footers.html" }
+        ]
+      })
   footer.ui-kit__footer
