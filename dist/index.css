@@ -1116,18 +1116,8 @@ header.ui-kit__header {
   .headers-n-footers > .footer {
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05); }
 
-/*!*********************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/gradient-fill-entities.scss ***!
-  \*********************************************************************************************************************************/
-.gradient-fill {
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent; }
-
 /*!***********************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/ui-kit-pages.scss ***!
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/ui-kit/ui-kit.scss ***!
   \***********************************************************************************************************************/
 .ui-kit__body {
   margin: auto;
@@ -1160,6 +1150,16 @@ header.ui-kit__header {
 
 .frozen {
   pointer-events: none; }
+
+/*!*********************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/gradient-fill-entities.scss ***!
+  \*********************************************************************************************************************************/
+.gradient-fill {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; }
 
 /*!***********************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/variables/variables.scss ***!
