@@ -7,6 +7,10 @@
     position: absolute;
     opacity: 0;
     cursor: pointer;
+
+    &:disabled {
+      cursor: auto;
+    }
   }
 
   &_monochrome {

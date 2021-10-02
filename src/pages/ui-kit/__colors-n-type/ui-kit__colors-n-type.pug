@@ -1,10 +1,10 @@
-include ../../../components/header/__ui-kit/header__ui-kit.pug
+include ../../../components/logo/logo.pug
 include ../../../components/color-sample/color-sample.pug
 include ../../../components/type-sample/type-sample.pug
 
 body.ui-kit__body
   header.ui-kit__header
-    +headerUI()
+    +logo({ type: "monochrome" })
   main.ui-kit__main
     +colorSamples([
       { hexcolor: "#1F2041", opacity: 100, title: "Dark Shade 100%" },

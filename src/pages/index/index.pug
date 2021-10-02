@@ -1,9 +1,9 @@
-include ../../components/header/__ui-kit/header__ui-kit.pug
+include ../../components/logo/logo.pug
 include ../../components/navigation-bar/navigation-bar.pug
 
 body.ui-kit__body
   header.ui-kit__header
-    +headerUI()
+    +logo({ type: "monochrome", disabled: true })
   main.ui-kit__main
     .index-links 
       +navigationBar({

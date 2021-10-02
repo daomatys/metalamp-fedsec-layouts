@@ -16,7 +16,15 @@ mixin inputs( items=[] )
         .input__title
           +titleBar( item.title, item.state )
       .input__element
-        input.input__frame( class=expanderDefinitionClass id=item.id type=item.type placeholder=item.placeholder disabled=item.disabled readonly=expanderReadOnlyState checked=item.expanded ) 
+        input.input__frame(
+          class=expanderDefinitionClass
+          id=item.id
+          type=item.type
+          disabled=item.disabled
+          placeholder=item.placeholder
+          readonly=expanderReadOnlyState
+          checked=item.expanded
+        ) 
 
         if item.dropdown
           .input__icon_dropdown( class=iconFlippedClass )

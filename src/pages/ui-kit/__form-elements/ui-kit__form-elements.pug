@@ -1,4 +1,4 @@
-include ../../../components/header/__ui-kit/header__ui-kit.pug
+include ../../../components/logo/logo.pug
 include ../../../components/input/input.pug
 include ../../../components/advantage-bar/advantage-bar.pug
 include ../../../components/title-bar/title-bar.pug
@@ -17,7 +17,7 @@ include ../../../components/button/__mean-oval/button__mean-oval.pug
 
 body.ui-kit__body
   header.ui-kit__header
-    +headerUI()
+    +logo({ type: "monochrome" })
   main.ui-kit__main
     .form-elements__wrap.wrap_top
       .form-elements__column.column_left

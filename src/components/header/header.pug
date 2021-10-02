@@ -1,14 +1,14 @@
-include ../../logo/logo.pug
-include ../../button/__mean-oval/button__mean-oval.pug
-include ../../navigation-bar/navigation-bar.pug
+include ../logo/logo.pug
+include ../navigation-bar/navigation-bar.pug
+include ../button/__mean-oval/button__mean-oval.pug
 
-mixin headerLanding( item )
-  .header-landing
-    .header-landing__sections_left
-      .header-landing__logo
-        +logotype('colorful')
-    .header-landing__sections_right
-      .header-landing__nav
+mixin header( item )
+  .header
+    .header__sections_left
+      .header__logo
+        +logo({ type: "colorful" })
+    .header__sections_right
+      .header__nav
         +navigationBar({
           links: [
             { name: "О нас", bold: true },
@@ -20,18 +20,18 @@ mixin headerLanding( item )
         })
       case item.authorized
         when true
-          .header-landing__user-bar
-            span.header-landing__user-bar_full-name Юлий Цезарь
+          .header__user-bar
+            span.header__user-bar_full-name Юлий Цезарь
         when false 
-          .header-landing__authorization-buttons
+          .header__authorization-buttons
             +meanOvalButtons([
               {
-                groupname: "header-landing__login-btn",
+                groupname: "header__login-btn",
                 type: "outlined",
                 text: "войти"
               },
               {
-                groupname: "header-landing__registration-btn",
+                groupname: "header__registration-btn",
                 type: "contained",
                 text: "зарегестрироваться",
                 widthbypercent: 75
