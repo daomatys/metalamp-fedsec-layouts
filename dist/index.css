@@ -1055,9 +1055,19 @@ header.ui-kit__header {
   .font-size_body > .type-item__note {
     opacity: 0.75; }
 
-/*!***********************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/form-elements.scss ***!
-  \***********************************************************************************************************************/
+/*!*********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/index/index.scss ***!
+  \*********************************************************************************************************************/
+.index-links {
+  display: grid;
+  grid-gap: 20px;
+  font-family: inherit;
+  margin-top: 80px;
+  margin-left: 80px; }
+
+/*!********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/ui-kit/form-elements/form-elements.scss ***!
+  \********************************************************************************************************************************************/
 .form-elements__wrap {
   display: flex;
   align-items: flex-start;
@@ -1095,9 +1105,9 @@ header.ui-kit__header {
 .twinline-gap_longest {
   justify-content: space-between; }
 
-/*!***************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/headers-n-footers.scss ***!
-  \***************************************************************************************************************************/
+/*!****************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/ui-kit/headers-n-footers/headers-n-footers.scss ***!
+  \****************************************************************************************************************************************************/
 .headers-n-footers {
   display: flex;
   gap: 40px;
@@ -1105,16 +1115,6 @@ header.ui-kit__header {
   align-items: center; }
   .headers-n-footers > .footer {
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05); }
-
-/*!***************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/index.scss ***!
-  \***************************************************************************************************************/
-.index-links {
-  display: grid;
-  grid-gap: 20px;
-  font-family: inherit;
-  margin-top: 80px;
-  margin-left: 80px; }
 
 /*!*********************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/gradient-fill-entities.scss ***!

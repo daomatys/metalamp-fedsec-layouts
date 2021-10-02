@@ -9,9 +9,19 @@ const miniCss = require('mini-css-extract-plugin');
 const PATHS = {
   src: path.join(__dirname, './src'),
   dist: path.join(__dirname, './dist')
-}
-const PAGES_DIR = `${PATHS.src}/pages/`;
-const PAGES = fs.readdirSync( PAGES_DIR ).filter( fileName => fileName.endsWith('.pug') );
+};
+
+const PAGES_ROOT = PATHS.src + '/pages/';
+const PAGES_DIRNAMES = [
+  'index/',
+  'ui-kit/cards/',
+  'ui-kit/colors-n-type/',
+  'ui-kit/form-elements/',
+  'ui-kit/headers-n-footers/'
+];
+
+const PAGES_DIR = PAGES_DIRNAMES.map( dirName => PAGES_ROOT + dirName );
+const PAGES = PAGES_DIR.map( dir => fs.readdirSync( dir ).find( fileName => fileName.endsWith('.pug') ) );
 
 module.exports = {
   mode: 'development',
@@ -61,8 +71,8 @@ module.exports = {
     ]
   },
   plugins: [
-    ...PAGES.map( page => new HtmlWebpackPlugin({
-      template: `${PAGES_DIR}/${page}`,
+    ...PAGES.map( (page, index) => new HtmlWebpackPlugin({
+      template: `${PAGES_DIR[index]}/${page}`,
       filename: `./${page.replace(/\.pug/,'.html')}`
     })),
     new miniCss({
@@ -78,7 +88,8 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      '@variables': path.resolve(__dirname, 'src/variables/variables.scss')
+      '@variables': path.resolve(__dirname, 'src/variables/variables.scss'),
+      '@images': path.resolve(__dirname, 'src/assets/images/')
     }
   }
 }
