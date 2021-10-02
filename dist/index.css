@@ -52,36 +52,36 @@
 /*!******************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/advantage-bar/advantage-bar.scss ***!
   \******************************************************************************************************************************************/
-.gradient-fill, .advantages-block__icon {
+.gradient-fill, .advantages-bar__icon {
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent; }
 
-.advantages-block {
+.advantages-bar {
   width: 280px; }
-  .advantages-block__text-bar {
+  .advantages-bar__content {
     display: flex;
     margin-bottom: 17px; }
-  .advantages-block__icon {
+  .advantages-bar__icon {
     position: relative;
     width: 48px;
     height: 48px;
     margin-right: 10px; }
-    .advantages-block__icon > span {
+    .advantages-bar__icon > span {
       font-size: 48px; }
-  .advantages-block__text {
+  .advantages-bar__text {
     display: inherit;
     flex-direction: column;
     opacity: .75;
     font-size: 14px;
     line-height: 24px; }
-    .advantages-block__text__title {
-      font-weight: bold; }
-    .advantages-block__text__brief {
-      font-weight: normal; }
-  .advantages-block__line-bar__elem {
+  .advantages-bar__title {
+    font-weight: bold; }
+  .advantages-bar__brief {
+    font-weight: normal; }
+  .advantages-bar__line {
     color: #1F2041;
     opacity: .1;
     margin: 0; }

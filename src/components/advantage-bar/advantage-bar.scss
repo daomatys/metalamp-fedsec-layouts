@@ -1,10 +1,10 @@
 @import "@variables";
 @import "../../styles/gradient-fill-entities.scss";
 
-.advantages-block {
+.advantages-bar {
   width: 280px;
 
-  &__text-bar {
+  &__content {
     display: flex;
     margin-bottom: 17px;
   }
@@ -27,22 +27,20 @@
     opacity: .75;
     font-size: 14px;
     line-height: 24px;
+  }
 
-    &__title {
-      font-weight: bold;
-    }
+  &__title {
+    font-weight: bold;
+  }
 
-    &__brief  {
-      font-weight: normal;
-    }
+  &__brief  {
+    font-weight: normal;
   }
   
-  &__line-bar {
-    &__elem {
-      color: $valhalla;
-      opacity: .1;
-      margin: 0;
-    }
+  &__line {
+    color: $valhalla;
+    opacity: .1;
+    margin: 0;
   }
 }
 
