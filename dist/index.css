@@ -476,7 +476,7 @@
   grid-row: 7;
   grid-gap: 20px;
   width: 282px;
-  margin: 0 0 0 0; }
+  margin: 0; }
 
 .color-item {
   display: flex;
@@ -495,34 +495,8 @@
     line-height: 28px;
     flex-direction: column;
     justify-content: center; }
-    .color-item__description__pseudoname {
-      font-weight: 700; }
-    .color-item__description p {
-      margin: 0; }
-
-.background-color_valhalla {
-  background-color: #1F2041; }
-
-.background-color_perfume {
-  background-color: #BC9CFF; }
-
-.background-color_silver-tree {
-  background-color: #6FCF97; }
-
-.opaque_100 {
-  opacity: 1; }
-
-.opaque_75 {
-  opacity: .75; }
-
-.opaque_50 {
-  opacity: .5; }
-
-.opaque_25 {
-  opacity: .25; }
-
-.opaque_5 {
-  opacity: .05; }
+  .color-item__title {
+    font-weight: bold; }
 
 /*!**************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/comment-bar/comment-bar.scss ***!

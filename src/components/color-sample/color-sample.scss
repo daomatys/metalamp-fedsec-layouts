@@ -5,7 +5,7 @@
   grid-row: 7;
   grid-gap: 20px;
   width: 282px;
-  margin: 0 0 0 0;
+  margin: 0;
 }
 
 .color-item {
@@ -28,49 +28,9 @@
     line-height: 28px;
     flex-direction: column;
     justify-content: center;
-
-    &__pseudoname {
-      font-weight: 700;
-    }
-
-    p {
-      margin: 0;
-    }
-  }
-}
-
-.background-color {
-  &_valhalla {
-    background-color: $valhalla;
   }
 
-  &_perfume {
-    background-color: $perfume;
-  }
-  
-  &_silver-tree {
-    background-color: $silver-tree;
-  }
-}
-
-.opaque {
-  &_100 {
-    opacity: 1;
-  }
-
-  &_75 {
-    opacity: .75;
-  }
-
-  &_50 {
-    opacity: .5;
-  }
-
-  &_25 {
-    opacity: .25;
-  }
-
-  &_5 {
-    opacity: .05;
+  &__title {
+    font-weight: bold;
   }
 }

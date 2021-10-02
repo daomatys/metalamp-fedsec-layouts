@@ -2,7 +2,7 @@ mixin colorSamples( items=[] )
   .color-items__holder
     each item in items
       .color-item
-        .color-item__sample( class=`${item.opaque} background-color_${item.name}` )
+        .color-item__sample( style=`background-color: ${item.hexcolor}; opacity: ${item.opacity}%;` )
         .color-item__description
-          span.color-item__description__pseudoname #{item.pseudoname}
-          span.color-item__description__hex-code #{item.hexcode}
+          span.color-item__title #{item.title}
+          span.color-item__hex-color #{item.hexcolor}
