@@ -1,6 +1,6 @@
 include ../../logo/logo.pug
-include ../../buttons/mean-oval/mean-oval.pug
-include ../../navigation-links/navigation-links.pug
+include ../../button/__mean-oval/button__mean-oval.pug
+include ../../navigation-bar/navigation-bar.pug
 
 mixin headerLanding( item )
   .header-landing
@@ -9,7 +9,7 @@ mixin headerLanding( item )
         +logotype('colorful')
     .header-landing__sections_right
       .header-landing__nav
-        +navigationLinks({
+        +navigationBar({
           links: [
             { href: "", name: "О нас", bold: true },
             { href: "", name: "Услуги", icon: true },

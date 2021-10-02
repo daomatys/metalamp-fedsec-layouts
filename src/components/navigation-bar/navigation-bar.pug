@@ -1,11 +1,11 @@
 include ../title-bar/title-bar.pug
-include link/link.pug
+include __link/navigation-bar__link.pug
 
-mixin navigationLinks( item )
+mixin navigationBar( item )
   - const orientationSuffix = item.vertical ? 'vertical' : 'horizontal'
-  - const orientationClass = 'navigation-links_' + orientationSuffix
+  - const orientationClass = 'navigation-bar_' + orientationSuffix
 
-  nav.navigation-links( class=orientationClass )
+  nav.navigation-bar( class=orientationClass )
     if item.vertical
       +titleBar( item.title )
     each link in item.links

@@ -117,36 +117,9 @@
       border-radius: 50%;
       content: ''; }
 
-/*!******************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/buttons/buttons.scss ***!
-  \******************************************************************************************************************************/
-.oval-button_frame {
-  height: 20px;
-  width: 40px;
-  margin: 0;
-  box-sizing: border-box;
-  border-radius: 10px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #1F2041;
-  color: #1F2041;
-  opacity: .25;
-  cursor: pointer;
-  appearance: none; }
-  .oval-button_frame:checked {
-    border-color: #BC9CFF;
-    color: #BC9CFF;
-    opacity: 1; }
-
-.oval-button_dot-marker {
-  height: 12px;
-  width: 12px;
-  background-color: #1F2041;
-  border-radius: 50%; }
-
-/*!****************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/buttons/checkbox/checkbox.scss ***!
-  \****************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/button/__checkbox/button__checkbox.scss ***!
+  \*************************************************************************************************************************************************/
 .checkbox-buttons__container {
   display: grid;
   justify-items: start;
@@ -202,9 +175,9 @@
       opacity: .5;
       white-space: pre-wrap; }
 
-/*!********************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/buttons/like/like.scss ***!
-  \********************************************************************************************************************************/
+/*!*****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/button/__like/button__like.scss ***!
+  \*****************************************************************************************************************************************/
 .oval-button_frame, .like-button__elem {
   height: 20px;
   width: 40px;
@@ -267,9 +240,9 @@
   grid-template-columns: repeat(2, auto);
   grid-gap: 10px; }
 
-/*!******************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/buttons/mean-oval/mean-oval.scss ***!
-  \******************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/button/__mean-oval/button__mean-oval.scss ***!
+  \***************************************************************************************************************************************************/
 .mean-oval-buttons {
   display: grid;
   grid-gap: 30px; }
@@ -356,9 +329,9 @@
   100% {
     transform: scale(1); } }
 
-/*!**********************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/buttons/radio/radio.scss ***!
-  \**********************************************************************************************************************************/
+/*!*******************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/button/__radio/button__radio.scss ***!
+  \*******************************************************************************************************************************************/
 .radio-button {
   display: grid;
   grid-template-columns: repeat(2, auto);
@@ -401,9 +374,9 @@
 .radio-buttons__array {
   display: flex; }
 
-/*!********************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/buttons/rate-stars/rate-stars.scss ***!
-  \********************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/button/__rate-stars/button__rate-stars.scss ***!
+  \*****************************************************************************************************************************************************/
 .gradient-fill, .star-rate {
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   background-clip: text;
@@ -414,9 +387,9 @@
 .star-rate {
   margin-right: 20px; }
 
-/*!************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/buttons/toggle/toggle.scss ***!
-  \************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/button/__toggle/button__toggle.scss ***!
+  \*********************************************************************************************************************************************/
 .oval-button_frame, .toggle-button__elem {
   height: 20px;
   width: 40px;
@@ -467,6 +440,33 @@
   display: grid;
   grid-row: 2;
   grid-gap: 14px; }
+
+/*!****************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/button/button.scss ***!
+  \****************************************************************************************************************************/
+.oval-button_frame {
+  height: 20px;
+  width: 40px;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #1F2041;
+  color: #1F2041;
+  opacity: .25;
+  cursor: pointer;
+  appearance: none; }
+  .oval-button_frame:checked {
+    border-color: #BC9CFF;
+    color: #BC9CFF;
+    opacity: 1; }
+
+.oval-button_dot-marker {
+  height: 12px;
+  width: 12px;
+  background-color: #1F2041;
+  border-radius: 50%; }
 
 /*!****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/color-sample/color-sample.scss ***!
@@ -551,9 +551,9 @@
   .comment-bar__comment-text {
     line-height: 24px; }
 
-/*!***********************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/expandable-items/checkbox-list/checkbox-list.scss ***!
-  \***********************************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/expandable/__checkbox-list/expandable__checkbox-list.scss ***!
+  \*******************************************************************************************************************************************************************/
 .checkbox-list__title {
   position: relative;
   display: flex;
@@ -578,9 +578,9 @@
   display: none;
   margin-top: 18px; }
 
-/*!*************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/expandable-items/dropdown/dropdown.scss ***!
-  \*************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/expandable/__dropdown/expandable__dropdown.scss ***!
+  \*********************************************************************************************************************************************************/
 .dropdown {
   position: absolute;
   display: none;
@@ -604,9 +604,9 @@
       line-height: 15px;
       text-transform: uppercase; }
 
-/*!************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/expandable-items/expandable-items.scss ***!
-  \************************************************************************************************************************************************/
+/*!************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/expandable/expandable.scss ***!
+  \************************************************************************************************************************************/
 .expander_active {
   display: table; }
 
@@ -657,9 +657,9 @@
     display: grid;
     grid-gap: 20px; }
 
-/*!*********************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/headers/landing/header-landing.scss ***!
-  \*********************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/header/__landing/header__landing.scss ***!
+  \***********************************************************************************************************************************************/
 .header-landing {
   display: flex;
   align-items: center;
@@ -689,9 +689,9 @@
     gap: 20px;
     align-items: center; }
 
-/*!***************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/headers/ui-kit/header-ui.scss ***!
-  \***************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/header/__ui-kit/header__ui-kit.scss ***!
+  \*********************************************************************************************************************************************/
 header.ui-kit__header {
   height: 140px;
   width: 100%; }
@@ -800,9 +800,9 @@ header.ui-kit__header {
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased; }
 
-/*!*****************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/navigation-links/link/link.scss ***!
-  \*****************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/navigation-bar/__link/navigation-bar__link.scss ***!
+  \*********************************************************************************************************************************************************/
 .link {
   display: flex;
   color: rgba(31, 32, 65, 0.5); }
@@ -813,17 +813,17 @@ header.ui-kit__header {
       font-weight: bold;
       color: rgba(31, 32, 65, 0.75); }
 
-/*!************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/navigation-links/navigation-links.scss ***!
-  \************************************************************************************************************************************************/
-.navigation-links {
+/*!********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/navigation-bar/navigation-bar.scss ***!
+  \********************************************************************************************************************************************/
+.navigation-bar {
   display: grid;
   grid-gap: 20px;
   font-size: 14px;
   line-height: 14px; }
-  .navigation-links_vertical {
+  .navigation-bar_vertical {
     grid-template-rows: repeat(5, auto); }
-  .navigation-links_horizontal {
+  .navigation-bar_horizontal {
     grid-template-columns: repeat(5, auto); }
 
 /*!************************************************************************************************************************************!*\

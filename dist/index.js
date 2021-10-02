@@ -145,80 +145,80 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
-/***/ "./src/components/buttons/buttons.scss":
-/*!*********************************************!*\
-  !*** ./src/components/buttons/buttons.scss ***!
-  \*********************************************/
+/***/ "./src/components/button/__checkbox/button__checkbox.scss":
+/*!****************************************************************!*\
+  !*** ./src/components/button/__checkbox/button__checkbox.scss ***!
+  \****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/buttons/buttons.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__checkbox/button__checkbox.scss?");
 
 /***/ }),
 
-/***/ "./src/components/buttons/checkbox/checkbox.scss":
-/*!*******************************************************!*\
-  !*** ./src/components/buttons/checkbox/checkbox.scss ***!
-  \*******************************************************/
+/***/ "./src/components/button/__like/button__like.scss":
+/*!********************************************************!*\
+  !*** ./src/components/button/__like/button__like.scss ***!
+  \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/buttons/checkbox/checkbox.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__like/button__like.scss?");
 
 /***/ }),
 
-/***/ "./src/components/buttons/like/like.scss":
-/*!***********************************************!*\
-  !*** ./src/components/buttons/like/like.scss ***!
-  \***********************************************/
+/***/ "./src/components/button/__mean-oval/button__mean-oval.scss":
+/*!******************************************************************!*\
+  !*** ./src/components/button/__mean-oval/button__mean-oval.scss ***!
+  \******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/buttons/like/like.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__mean-oval/button__mean-oval.scss?");
 
 /***/ }),
 
-/***/ "./src/components/buttons/mean-oval/mean-oval.scss":
-/*!*********************************************************!*\
-  !*** ./src/components/buttons/mean-oval/mean-oval.scss ***!
-  \*********************************************************/
+/***/ "./src/components/button/__radio/button__radio.scss":
+/*!**********************************************************!*\
+  !*** ./src/components/button/__radio/button__radio.scss ***!
+  \**********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/buttons/mean-oval/mean-oval.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__radio/button__radio.scss?");
 
 /***/ }),
 
-/***/ "./src/components/buttons/radio/radio.scss":
-/*!*************************************************!*\
-  !*** ./src/components/buttons/radio/radio.scss ***!
-  \*************************************************/
+/***/ "./src/components/button/__rate-stars/button__rate-stars.scss":
+/*!********************************************************************!*\
+  !*** ./src/components/button/__rate-stars/button__rate-stars.scss ***!
+  \********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/buttons/radio/radio.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__rate-stars/button__rate-stars.scss?");
 
 /***/ }),
 
-/***/ "./src/components/buttons/rate-stars/rate-stars.scss":
-/*!***********************************************************!*\
-  !*** ./src/components/buttons/rate-stars/rate-stars.scss ***!
-  \***********************************************************/
+/***/ "./src/components/button/__toggle/button__toggle.scss":
+/*!************************************************************!*\
+  !*** ./src/components/button/__toggle/button__toggle.scss ***!
+  \************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/buttons/rate-stars/rate-stars.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__toggle/button__toggle.scss?");
 
 /***/ }),
 
-/***/ "./src/components/buttons/toggle/toggle.scss":
-/*!***************************************************!*\
-  !*** ./src/components/buttons/toggle/toggle.scss ***!
-  \***************************************************/
+/***/ "./src/components/button/button.scss":
+/*!*******************************************!*\
+  !*** ./src/components/button/button.scss ***!
+  \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/buttons/toggle/toggle.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/button.scss?");
 
 /***/ }),
 
@@ -244,36 +244,36 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
-/***/ "./src/components/expandable-items/checkbox-list/checkbox-list.scss":
-/*!**************************************************************************!*\
-  !*** ./src/components/expandable-items/checkbox-list/checkbox-list.scss ***!
-  \**************************************************************************/
+/***/ "./src/components/expandable/__checkbox-list/expandable__checkbox-list.scss":
+/*!**********************************************************************************!*\
+  !*** ./src/components/expandable/__checkbox-list/expandable__checkbox-list.scss ***!
+  \**********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/expandable-items/checkbox-list/checkbox-list.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/expandable/__checkbox-list/expandable__checkbox-list.scss?");
 
 /***/ }),
 
-/***/ "./src/components/expandable-items/dropdown/dropdown.scss":
-/*!****************************************************************!*\
-  !*** ./src/components/expandable-items/dropdown/dropdown.scss ***!
-  \****************************************************************/
+/***/ "./src/components/expandable/__dropdown/expandable__dropdown.scss":
+/*!************************************************************************!*\
+  !*** ./src/components/expandable/__dropdown/expandable__dropdown.scss ***!
+  \************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/expandable-items/dropdown/dropdown.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/expandable/__dropdown/expandable__dropdown.scss?");
 
 /***/ }),
 
-/***/ "./src/components/expandable-items/expandable-items.scss":
-/*!***************************************************************!*\
-  !*** ./src/components/expandable-items/expandable-items.scss ***!
-  \***************************************************************/
+/***/ "./src/components/expandable/expandable.scss":
+/*!***************************************************!*\
+  !*** ./src/components/expandable/expandable.scss ***!
+  \***************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/expandable-items/expandable-items.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/expandable/expandable.scss?");
 
 /***/ }),
 
@@ -288,25 +288,25 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
-/***/ "./src/components/headers/landing/header-landing.scss":
+/***/ "./src/components/header/__landing/header__landing.scss":
+/*!**************************************************************!*\
+  !*** ./src/components/header/__landing/header__landing.scss ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/header/__landing/header__landing.scss?");
+
+/***/ }),
+
+/***/ "./src/components/header/__ui-kit/header__ui-kit.scss":
 /*!************************************************************!*\
-  !*** ./src/components/headers/landing/header-landing.scss ***!
+  !*** ./src/components/header/__ui-kit/header__ui-kit.scss ***!
   \************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/headers/landing/header-landing.scss?");
-
-/***/ }),
-
-/***/ "./src/components/headers/ui-kit/header-ui.scss":
-/*!******************************************************!*\
-  !*** ./src/components/headers/ui-kit/header-ui.scss ***!
-  \******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/headers/ui-kit/header-ui.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/header/__ui-kit/header__ui-kit.scss?");
 
 /***/ }),
 
@@ -343,25 +343,25 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
-/***/ "./src/components/navigation-links/link/link.scss":
-/*!********************************************************!*\
-  !*** ./src/components/navigation-links/link/link.scss ***!
-  \********************************************************/
+/***/ "./src/components/navigation-bar/__link/navigation-bar__link.scss":
+/*!************************************************************************!*\
+  !*** ./src/components/navigation-bar/__link/navigation-bar__link.scss ***!
+  \************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/navigation-links/link/link.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/navigation-bar/__link/navigation-bar__link.scss?");
 
 /***/ }),
 
-/***/ "./src/components/navigation-links/navigation-links.scss":
-/*!***************************************************************!*\
-  !*** ./src/components/navigation-links/navigation-links.scss ***!
-  \***************************************************************/
+/***/ "./src/components/navigation-bar/navigation-bar.scss":
+/*!***********************************************************!*\
+  !*** ./src/components/navigation-bar/navigation-bar.scss ***!
+  \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/navigation-links/navigation-links.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/navigation-bar/navigation-bar.scss?");
 
 /***/ }),
 
@@ -485,43 +485,43 @@ eval("/* provided dependency */ var jQuery = __webpack_require__(/*! jquery */ \
 
 /***/ }),
 
-/***/ "./src/components/buttons/like/like.js":
-/*!*********************************************!*\
-  !*** ./src/components/buttons/like/like.js ***!
-  \*********************************************/
+/***/ "./src/components/button/__like/button__like.js":
+/*!******************************************************!*\
+  !*** ./src/components/button/__like/button__like.js ***!
+  \******************************************************/
 /***/ (() => {
 
-eval("function likeButtonEventListeners() {\r\n  const items = document.querySelectorAll('.like-button__elem');\r\n\r\n  for (let item of items) {\r\n    item.addEventListener('click', likeButtonPressing);\r\n  }\r\n}\r\n\r\nfunction likeButtonPressing({target}) {\r\n  const aim = target.closest('.like-button');\r\n  const input = aim.firstElementChild;\r\n  const icon = aim.querySelector('.material-icons');\r\n  const counter = aim.querySelector('.counter-elem');\r\n\r\n  if ( input.hasAttribute('checked') ) {\r\n    icon.textContent = 'favorite_border';\r\n    --counter.textContent;\r\n    input.removeAttribute('checked')\r\n  } else {\r\n    icon.textContent = 'favorite'\r\n    ++counter.textContent;\r\n    input.setAttribute('checked', true)\r\n  }\r\n}\r\n\r\nlikeButtonEventListeners();\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/buttons/like/like.js?");
+eval("function likeButtonEventListeners() {\r\n  const items = document.querySelectorAll('.like-button__elem');\r\n\r\n  for (let item of items) {\r\n    item.addEventListener('click', likeButtonPressing);\r\n  }\r\n}\r\n\r\nfunction likeButtonPressing({target}) {\r\n  const aim = target.closest('.like-button');\r\n  const input = aim.firstElementChild;\r\n  const icon = aim.querySelector('.material-icons');\r\n  const counter = aim.querySelector('.counter-elem');\r\n\r\n  if ( input.hasAttribute('checked') ) {\r\n    icon.textContent = 'favorite_border';\r\n    --counter.textContent;\r\n    input.removeAttribute('checked')\r\n  } else {\r\n    icon.textContent = 'favorite'\r\n    ++counter.textContent;\r\n    input.setAttribute('checked', true)\r\n  }\r\n}\r\n\r\nlikeButtonEventListeners();\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__like/button__like.js?");
 
 /***/ }),
 
-/***/ "./src/components/buttons/mean-oval/mean-oval.js":
-/*!*******************************************************!*\
-  !*** ./src/components/buttons/mean-oval/mean-oval.js ***!
-  \*******************************************************/
+/***/ "./src/components/button/__mean-oval/button__mean-oval.js":
+/*!****************************************************************!*\
+  !*** ./src/components/button/__mean-oval/button__mean-oval.js ***!
+  \****************************************************************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/buttons/mean-oval/mean-oval.js?");
+eval("\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__mean-oval/button__mean-oval.js?");
 
 /***/ }),
 
-/***/ "./src/components/buttons/radio/radio.js":
-/*!***********************************************!*\
-  !*** ./src/components/buttons/radio/radio.js ***!
-  \***********************************************/
+/***/ "./src/components/button/__radio/button__radio.js":
+/*!********************************************************!*\
+  !*** ./src/components/button/__radio/button__radio.js ***!
+  \********************************************************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/buttons/radio/radio.js?");
+eval("\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__radio/button__radio.js?");
 
 /***/ }),
 
-/***/ "./src/components/buttons/toggle/toggle.js":
-/*!*************************************************!*\
-  !*** ./src/components/buttons/toggle/toggle.js ***!
-  \*************************************************/
+/***/ "./src/components/button/__toggle/button__toggle.js":
+/*!**********************************************************!*\
+  !*** ./src/components/button/__toggle/button__toggle.js ***!
+  \**********************************************************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/buttons/toggle/toggle.js?");
+eval("\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__toggle/button__toggle.js?");
 
 /***/ }),
 
@@ -535,13 +535,13 @@ eval("\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/comme
 
 /***/ }),
 
-/***/ "./src/components/expandable-items/expandable-items.js":
-/*!*************************************************************!*\
-  !*** ./src/components/expandable-items/expandable-items.js ***!
-  \*************************************************************/
+/***/ "./src/components/expandable/expandable.js":
+/*!*************************************************!*\
+  !*** ./src/components/expandable/expandable.js ***!
+  \*************************************************/
 /***/ (() => {
 
-eval("function expanderInitEventListeners() {\r\n  const items = document.querySelectorAll('.expander');\r\n\r\n  for (let item of items) {\r\n    item.addEventListener('click', expanderActivation);\r\n  }\r\n}\r\n\r\nfunction expanderActivation({target}) {\r\n  const parent = target.closest('.expander__parent')\r\n  const aim = parent.querySelector('.expander__aim');\r\n  const icon = parent.querySelector('.material-icons');\r\n\r\n  target.hasAttribute('checked') \r\n    ? target.removeAttribute('checked') \r\n    : target.setAttribute('checked', '');\r\n\r\n  iconAnimation(icon);\r\n  aim.classList.toggle('expander_active');\r\n}\r\n\r\nfunction iconAnimation(icon) {\r\n  const animation = icon.animate({\r\n    transform: 'rotateX(0.5turn)'\r\n  }, {\r\n    easing: 'ease',\r\n    duration: 400,\r\n    fill: 'both',\r\n    composite: 'add'\r\n  })\r\n  animation.persist();\r\n}\r\n\r\nexpanderInitEventListeners();\r\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/expandable-items/expandable-items.js?");
+eval("function expanderInitEventListeners() {\r\n  const items = document.querySelectorAll('.expander');\r\n\r\n  for (let item of items) {\r\n    item.addEventListener('click', expanderActivation);\r\n  }\r\n}\r\n\r\nfunction expanderActivation({target}) {\r\n  const parent = target.closest('.expander__parent')\r\n  const aim = parent.querySelector('.expander__aim');\r\n  const icon = parent.querySelector('.material-icons');\r\n\r\n  target.hasAttribute('checked') \r\n    ? target.removeAttribute('checked') \r\n    : target.setAttribute('checked', '');\r\n\r\n  iconAnimation(icon);\r\n  aim.classList.toggle('expander_active');\r\n}\r\n\r\nfunction iconAnimation(icon) {\r\n  const animation = icon.animate({\r\n    transform: 'rotateX(0.5turn)'\r\n  }, {\r\n    easing: 'ease',\r\n    duration: 400,\r\n    fill: 'both',\r\n    composite: 'add'\r\n  })\r\n  animation.persist();\r\n}\r\n\r\nexpanderInitEventListeners();\r\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/expandable/expandable.js?");
 
 /***/ }),
 
@@ -583,7 +583,7 @@ eval("const omniImport = resolve => resolve.keys().forEach(resolve);\r\n\r\nomni
   \*********************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("var map = {\n\t\"./assets/fonts/Font Awesome/fonts.scss\": \"./src/assets/fonts/Font Awesome/fonts.scss\",\n\t\"./assets/fonts/Material Icons/fonts.scss\": \"./src/assets/fonts/Material Icons/fonts.scss\",\n\t\"./assets/fonts/Montserrat/fonts.scss\": \"./src/assets/fonts/Montserrat/fonts.scss\",\n\t\"./assets/fonts/Quicksand/fonts.scss\": \"./src/assets/fonts/Quicksand/fonts.scss\",\n\t\"./components/advantage-bar/advantage-bar.scss\": \"./src/components/advantage-bar/advantage-bar.scss\",\n\t\"./components/bullet-list/bullet-list.scss\": \"./src/components/bullet-list/bullet-list.scss\",\n\t\"./components/buttons/buttons.scss\": \"./src/components/buttons/buttons.scss\",\n\t\"./components/buttons/checkbox/checkbox.scss\": \"./src/components/buttons/checkbox/checkbox.scss\",\n\t\"./components/buttons/like/like.js\": \"./src/components/buttons/like/like.js\",\n\t\"./components/buttons/like/like.scss\": \"./src/components/buttons/like/like.scss\",\n\t\"./components/buttons/mean-oval/mean-oval.js\": \"./src/components/buttons/mean-oval/mean-oval.js\",\n\t\"./components/buttons/mean-oval/mean-oval.scss\": \"./src/components/buttons/mean-oval/mean-oval.scss\",\n\t\"./components/buttons/radio/radio.js\": \"./src/components/buttons/radio/radio.js\",\n\t\"./components/buttons/radio/radio.scss\": \"./src/components/buttons/radio/radio.scss\",\n\t\"./components/buttons/rate-stars/rate-stars.scss\": \"./src/components/buttons/rate-stars/rate-stars.scss\",\n\t\"./components/buttons/toggle/toggle.js\": \"./src/components/buttons/toggle/toggle.js\",\n\t\"./components/buttons/toggle/toggle.scss\": \"./src/components/buttons/toggle/toggle.scss\",\n\t\"./components/color-sample/color-sample.scss\": \"./src/components/color-sample/color-sample.scss\",\n\t\"./components/comment-bar/comment-bar.js\": \"./src/components/comment-bar/comment-bar.js\",\n\t\"./components/comment-bar/comment-bar.scss\": \"./src/components/comment-bar/comment-bar.scss\",\n\t\"./components/expandable-items/checkbox-list/checkbox-list.scss\": \"./src/components/expandable-items/checkbox-list/checkbox-list.scss\",\n\t\"./components/expandable-items/dropdown/dropdown.scss\": \"./src/components/expandable-items/dropdown/dropdown.scss\",\n\t\"./components/expandable-items/expandable-items.js\": \"./src/components/expandable-items/expandable-items.js\",\n\t\"./components/expandable-items/expandable-items.scss\": \"./src/components/expandable-items/expandable-items.scss\",\n\t\"./components/footer/footer.scss\": \"./src/components/footer/footer.scss\",\n\t\"./components/headers/landing/header-landing.scss\": \"./src/components/headers/landing/header-landing.scss\",\n\t\"./components/headers/ui-kit/header-ui.scss\": \"./src/components/headers/ui-kit/header-ui.scss\",\n\t\"./components/input/input.scss\": \"./src/components/input/input.scss\",\n\t\"./components/logo/logo.scss\": \"./src/components/logo/logo.scss\",\n\t\"./components/material-icon-cell/material-icon-cell.scss\": \"./src/components/material-icon-cell/material-icon-cell.scss\",\n\t\"./components/navigation-links/link/link.scss\": \"./src/components/navigation-links/link/link.scss\",\n\t\"./components/navigation-links/navigation-links.scss\": \"./src/components/navigation-links/navigation-links.scss\",\n\t\"./components/pagination/pagination.js\": \"./src/components/pagination/pagination.js\",\n\t\"./components/pagination/pagination.scss\": \"./src/components/pagination/pagination.scss\",\n\t\"./components/range-slider/range-slider.js\": \"./src/components/range-slider/range-slider.js\",\n\t\"./components/range-slider/range-slider.scss\": \"./src/components/range-slider/range-slider.scss\",\n\t\"./components/title-bar/title-bar.scss\": \"./src/components/title-bar/title-bar.scss\",\n\t\"./components/type-sample/type-sample.scss\": \"./src/components/type-sample/type-sample.scss\",\n\t\"./index.js\": \"./src/index.js\",\n\t\"./pages/form-elements.scss\": \"./src/pages/form-elements.scss\",\n\t\"./pages/headers-n-footers.scss\": \"./src/pages/headers-n-footers.scss\",\n\t\"./pages/index.scss\": \"./src/pages/index.scss\",\n\t\"./styles/gradient-fill-entities.scss\": \"./src/styles/gradient-fill-entities.scss\",\n\t\"./styles/ui-kit-pages.scss\": \"./src/styles/ui-kit-pages.scss\",\n\t\"./variables/variables.scss\": \"./src/variables/variables.scss\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src sync recursive \\\\.js$|\\\\.scss$\";\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/_sync_\\.js$%7C\\.scss$?");
+eval("var map = {\n\t\"./assets/fonts/Font Awesome/fonts.scss\": \"./src/assets/fonts/Font Awesome/fonts.scss\",\n\t\"./assets/fonts/Material Icons/fonts.scss\": \"./src/assets/fonts/Material Icons/fonts.scss\",\n\t\"./assets/fonts/Montserrat/fonts.scss\": \"./src/assets/fonts/Montserrat/fonts.scss\",\n\t\"./assets/fonts/Quicksand/fonts.scss\": \"./src/assets/fonts/Quicksand/fonts.scss\",\n\t\"./components/advantage-bar/advantage-bar.scss\": \"./src/components/advantage-bar/advantage-bar.scss\",\n\t\"./components/bullet-list/bullet-list.scss\": \"./src/components/bullet-list/bullet-list.scss\",\n\t\"./components/button/__checkbox/button__checkbox.scss\": \"./src/components/button/__checkbox/button__checkbox.scss\",\n\t\"./components/button/__like/button__like.js\": \"./src/components/button/__like/button__like.js\",\n\t\"./components/button/__like/button__like.scss\": \"./src/components/button/__like/button__like.scss\",\n\t\"./components/button/__mean-oval/button__mean-oval.js\": \"./src/components/button/__mean-oval/button__mean-oval.js\",\n\t\"./components/button/__mean-oval/button__mean-oval.scss\": \"./src/components/button/__mean-oval/button__mean-oval.scss\",\n\t\"./components/button/__radio/button__radio.js\": \"./src/components/button/__radio/button__radio.js\",\n\t\"./components/button/__radio/button__radio.scss\": \"./src/components/button/__radio/button__radio.scss\",\n\t\"./components/button/__rate-stars/button__rate-stars.scss\": \"./src/components/button/__rate-stars/button__rate-stars.scss\",\n\t\"./components/button/__toggle/button__toggle.js\": \"./src/components/button/__toggle/button__toggle.js\",\n\t\"./components/button/__toggle/button__toggle.scss\": \"./src/components/button/__toggle/button__toggle.scss\",\n\t\"./components/button/button.scss\": \"./src/components/button/button.scss\",\n\t\"./components/color-sample/color-sample.scss\": \"./src/components/color-sample/color-sample.scss\",\n\t\"./components/comment-bar/comment-bar.js\": \"./src/components/comment-bar/comment-bar.js\",\n\t\"./components/comment-bar/comment-bar.scss\": \"./src/components/comment-bar/comment-bar.scss\",\n\t\"./components/expandable/__checkbox-list/expandable__checkbox-list.scss\": \"./src/components/expandable/__checkbox-list/expandable__checkbox-list.scss\",\n\t\"./components/expandable/__dropdown/expandable__dropdown.scss\": \"./src/components/expandable/__dropdown/expandable__dropdown.scss\",\n\t\"./components/expandable/expandable.js\": \"./src/components/expandable/expandable.js\",\n\t\"./components/expandable/expandable.scss\": \"./src/components/expandable/expandable.scss\",\n\t\"./components/footer/footer.scss\": \"./src/components/footer/footer.scss\",\n\t\"./components/header/__landing/header__landing.scss\": \"./src/components/header/__landing/header__landing.scss\",\n\t\"./components/header/__ui-kit/header__ui-kit.scss\": \"./src/components/header/__ui-kit/header__ui-kit.scss\",\n\t\"./components/input/input.scss\": \"./src/components/input/input.scss\",\n\t\"./components/logo/logo.scss\": \"./src/components/logo/logo.scss\",\n\t\"./components/material-icon-cell/material-icon-cell.scss\": \"./src/components/material-icon-cell/material-icon-cell.scss\",\n\t\"./components/navigation-bar/__link/navigation-bar__link.scss\": \"./src/components/navigation-bar/__link/navigation-bar__link.scss\",\n\t\"./components/navigation-bar/navigation-bar.scss\": \"./src/components/navigation-bar/navigation-bar.scss\",\n\t\"./components/pagination/pagination.js\": \"./src/components/pagination/pagination.js\",\n\t\"./components/pagination/pagination.scss\": \"./src/components/pagination/pagination.scss\",\n\t\"./components/range-slider/range-slider.js\": \"./src/components/range-slider/range-slider.js\",\n\t\"./components/range-slider/range-slider.scss\": \"./src/components/range-slider/range-slider.scss\",\n\t\"./components/title-bar/title-bar.scss\": \"./src/components/title-bar/title-bar.scss\",\n\t\"./components/type-sample/type-sample.scss\": \"./src/components/type-sample/type-sample.scss\",\n\t\"./index.js\": \"./src/index.js\",\n\t\"./pages/form-elements.scss\": \"./src/pages/form-elements.scss\",\n\t\"./pages/headers-n-footers.scss\": \"./src/pages/headers-n-footers.scss\",\n\t\"./pages/index.scss\": \"./src/pages/index.scss\",\n\t\"./styles/gradient-fill-entities.scss\": \"./src/styles/gradient-fill-entities.scss\",\n\t\"./styles/ui-kit-pages.scss\": \"./src/styles/ui-kit-pages.scss\",\n\t\"./variables/variables.scss\": \"./src/variables/variables.scss\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./src sync recursive \\\\.js$|\\\\.scss$\";\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/_sync_\\.js$%7C\\.scss$?");
 
 /***/ })
 
