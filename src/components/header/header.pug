@@ -24,17 +24,10 @@ mixin header( item )
             span.header__user-bar_full-name Юлий Цезарь
         when false 
           .header__authorization-buttons
-            +meanOvalButtons([
-              {
-                groupname: "header__login-btn",
-                buttons: [
-                  { type: "outlined", text: "войти" }
-                ]
-              },
-              {
-                groupname: "header__registration-btn",
-                buttons: [
-                  { type: "contained", text: "зарегестрироваться", widthbypercent: 75 }
-                ]
-              }
-            ])
+            +meanOvalButtons({
+              groupname: "header__login-btn",
+              buttons: [
+                { type: "outlined", text: "войти" },
+                { type: "contained", text: "зарегестрироваться", widthbypercent: 75 }
+              ]
+            })

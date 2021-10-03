@@ -173,19 +173,17 @@ body.ui-kit__body
                   ]
                 })
               .mean-oval-buttons__unit
-                +meanOvalButtons([
-                  {
-                    groupname: "uik-fe__mob-huge",
-                    buttons: [
-                      {
-                        type: "contained",
-                        text: "перейти к оплате",
-                        iconname: "arrow_forward",
-                        widthbypercent: 100
-                      }
-                    ]
-                  }
-                ])
+                +meanOvalButtons({
+                  groupname: "uik-fe__mob-huge",
+                  buttons: [
+                    {
+                      type: "contained",
+                      text: "перейти к оплате",
+                      iconname: "arrow_forward",
+                      widthbypercent: 100
+                    }
+                  ]
+                })
         .form-elements__block.block__pagination
           .form-elements__element
             +titleBar("pagination")
