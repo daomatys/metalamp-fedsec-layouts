@@ -1,9 +1,10 @@
 include ../../../components/logo/logo.pug
+include ../../../components/card/__find-room/card__find-room.pug
 
-body.ui-kit__body
+body.ui-kit__body.bgcolor_whisper
   header.ui-kit__header
     +logo({ type: "monochrome" })
   main.ui-kit__main
     .headers-n-footers
-
+      +cardFindRoom()
   footer.ui-kit__footer

@@ -468,9 +468,24 @@
   background-color: #1F2041;
   border-radius: 50%; }
 
+/*!***********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/__find-room/card__find-room.scss ***!
+  \***********************************************************************************************************************************************/
+.find-room__submit-button {
+  margin-top: 11px; }
+
 /*!************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/card.scss ***!
   \************************************************************************************************************************/
+.card-style_default {
+  display: grid;
+  grid-gap: 20px;
+  padding: 40px 30px 30px 30px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2); }
 
 /*!****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/color-sample/color-sample.scss ***!
