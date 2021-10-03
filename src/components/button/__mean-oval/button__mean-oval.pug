@@ -1,28 +1,28 @@
-mixin meanOvalButtons( items=[] )
+mixin meanOvalButtons( item )
   - let buttonCount = 0;
 
-  each item in items
+  each button in item.buttons
     - const buttonId = item.groupname + '_' + ++buttonCount
-    - const buttonText = item.text ? item.text : 'click me'
-    - const widthByPercent = item.widthbypercent ? item.widthbypercent : '30'
-    - const widthClass = item.type === 'text' ? '' : `elem__width_${widthByPercent}`
-    - const frozenClass = item.disabled ? 'frozen' : ''
+    - const buttonText = button.text ? button.text : 'click me'
+    - const widthByPercent = button.widthbypercent ? button.widthbypercent : '30'
+    - const widthClass = button.type === 'text' ? '' : `elem__width_${widthByPercent}`
+    - const frozenClass = button.disabled ? 'frozen' : ''
 
-    case item.type 
+    case button.type 
       when 'contained'
         .mean-oval-button.button-style_contained( class=[ widthClass, frozenClass ] )
-          button.mean-oval-button__elem( id=buttonId disabled=item.disabled ) #{buttonText}
+          button.mean-oval-button__elem( id=buttonId disabled=button.disabled ) #{buttonText}
           label.mean-oval-button__background( for=buttonId )
-          if item.iconname 
+          if button.iconname 
             .mean-oval-button__icon
-              +materialIcon( item.iconname, buttonId )
+              +materialIcon( button.iconname, buttonId )
 
       when 'outlined'
         .mean-oval-button.button-style_outlined( class=[ widthClass, frozenClass ] )
-          button.mean-oval-button__elem( id=buttonId disabled=item.disabled ) #{buttonText}
+          button.mean-oval-button__elem( id=buttonId disabled=button.disabled ) #{buttonText}
           label.mean-oval-button__background( for=buttonId )
           label.mean-oval-button__thumb( for=buttonId )
           
       when 'text'
         .mean-oval-button.button-style_text( class=[ widthClass, frozenClass ] )
-          button.mean-oval-button__elem( id=buttonId disabled=item.disabled ) #{buttonText}
+          button.mean-oval-button__elem( id=buttonId disabled=button.disabled ) #{buttonText}

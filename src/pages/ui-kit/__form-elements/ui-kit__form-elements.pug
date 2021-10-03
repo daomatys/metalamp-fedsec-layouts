@@ -155,25 +155,35 @@ body.ui-kit__body
             +titleBar("buttons")
             .mean-oval-buttons
               .mean-oval-buttons__array
-                +meanOvalButtons([
-                  { groupname: "uik-fe__mob-mid", type: "contained" },
-                  { groupname: "uik-fe__mob-mid", type: "contained", disabled: true },
-                  { groupname: "uik-fe__mob-mid", type: "outlined" },
-                  { groupname: "uik-fe__mob-mid", type: "outlined", disabled: true }
-                ])
+                +meanOvalButtons({
+                  groupname: "uik-fe__mob-mid",
+                  buttons: [
+                    { type: "contained" },
+                    { type: "contained", disabled: true },
+                    { type: "outlined"  },
+                    { type: "outlined", disabled: true }
+                  ]
+                })
               .mean-oval-buttons__array
-                +meanOvalButtons([
-                  { groupname: "uik-fe__mob-small", type: "text" },
-                  { groupname: "uik-fe__mob-small", type: "text", disabled: true },
-                ])
+                +meanOvalButtons({
+                  groupname: "uik-fe__mob-small",
+                  buttons: [
+                    { type: "text" },
+                    { type: "text", disabled: true }
+                  ]
+                })
               .mean-oval-buttons__unit
                 +meanOvalButtons([
                   {
                     groupname: "uik-fe__mob-huge",
-                    iconname: "arrow_forward",
-                    widthbypercent: "100",
-                    type: "contained",
-                    text: "перейти к оплате"
+                    buttons: [
+                      {
+                        type: "contained",
+                        text: "перейти к оплате",
+                        iconname: "arrow_forward",
+                        widthbypercent: 100
+                      }
+                    ]
                   }
                 ])
         .form-elements__block.block__pagination

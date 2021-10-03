@@ -27,13 +27,14 @@ mixin header( item )
             +meanOvalButtons([
               {
                 groupname: "header__login-btn",
-                type: "outlined",
-                text: "войти"
+                buttons: [
+                  { type: "outlined", text: "войти" }
+                ]
               },
               {
                 groupname: "header__registration-btn",
-                type: "contained",
-                text: "зарегестрироваться",
-                widthbypercent: 75
+                buttons: [
+                  { type: "contained", text: "зарегестрироваться", widthbypercent: 75 }
+                ]
               }
             ])
