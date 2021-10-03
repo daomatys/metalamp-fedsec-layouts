@@ -1,4 +1,11 @@
+@import "@variables";
+
 .find-room {
+  &__title {
+    font-weight: bold;
+    color: $valhalla;
+  }
+
   &__submit-button {
     margin-top: 11px;
   }

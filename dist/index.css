@@ -471,6 +471,10 @@
 /*!***********************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/__find-room/card__find-room.scss ***!
   \***********************************************************************************************************************************************/
+.find-room__title {
+  font-weight: bold;
+  color: #1F2041; }
+
 .find-room__submit-button {
   margin-top: 11px; }
 
@@ -485,7 +489,8 @@
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   box-sizing: border-box;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  width: 380px; }
 
 /*!****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/color-sample/color-sample.scss ***!
@@ -580,7 +585,7 @@
   top: 43px;
   padding: 7px 7px 7px 15px;
   width: inherit;
-  z-index: 10;
+  z-index: 20;
   background-color: #fff;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   border-color: rgba(31, 32, 65, 0.5);
