@@ -1,0 +1,50 @@
+include ../../input/input.pug
+include ../../button/__mean-oval/button__mean-oval.pug
+include ../../button/__radio/button__radio.pug
+include ../../button/__toggle/button__toggle.pug
+
+mixin cardRegistration()
+  .registration.card-style_default
+    .registration__title
+      span.find-room__title.font-size_h1 Найдём номера под ваши пожелания
+    .registration__input_basic-data
+      +inputs([
+        { placeholder: "Имя" },
+        { placeholder: "Фамилия" }
+      ])
+      +radioButtons([
+        { id: "registration_male",   label: "Мужчина", pressed: true },
+        { id: "registration_female", label: "Женщина" }
+      ])
+    .registration__input_date-of-birth
+      +inputs([
+        { title: "дата рождения", placeholder: "ДД.ММ.ГГГГ" }
+      ])
+    .registration__input_login-data
+      +inputs([
+        { placeholder: "Email", title: "данные для входа в сервис", type: "Email" }
+        { placeholder: "Пароль" }
+      ])
+      +toggleButtons([
+        { groupname: "registration_toggles", label: "Получать спецпредложения", pressed: false },
+      ])
+    .registration__button_submit
+      +meanOvalButtons({
+        groupname: "registration__submit-button",
+        buttons: [
+          {
+            type: "contained",
+            text: "перейти к оплате",
+            iconname: "arrow_forward",
+            widthbypercent: 100
+          }
+        ]
+      })
+    .registration__button_login
+      span.registration__bottom-text Уже есть аккаунт на Toxin
+      +meanOvalButtons({
+        groupname: "uik-fe__mob-mid",
+        buttons: [
+          { type: "outlined", text: "войти" },
+        ]
+      })
