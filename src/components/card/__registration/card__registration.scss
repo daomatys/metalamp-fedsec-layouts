@@ -1,4 +1,10 @@
 .registration {
+
+  & > * {
+    display: grid;
+    grid-gap: 10px;
+  }
+
   &__title {
 
   }
@@ -23,7 +29,7 @@
     }
 
     &_login {
-
+      margin-top: 10px;
     }
   }
 }

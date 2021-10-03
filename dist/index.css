@@ -481,6 +481,12 @@
 /*!*****************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/__registration/card__registration.scss ***!
   \*****************************************************************************************************************************************************/
+.registration > * {
+  display: grid;
+  grid-gap: 10px; }
+
+.registration__button_login {
+  margin-top: 10px; }
 
 /*!************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/card.scss ***!
