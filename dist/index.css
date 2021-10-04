@@ -429,7 +429,7 @@
     display: inherit;
     align-items: flex-start;
     font-size: 14px;
-    opacity: .75; }
+    color: rgba(31, 32, 65, 0.75); }
 
 .toggle-buttons__array {
   display: grid;
@@ -473,6 +473,9 @@
 .find-room__button_submit {
   margin-top: 11px; }
 
+.find-room__dropdowns_date-picker {
+  grid-gap: 20px; }
+
 /*!*****************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/__registration/card__registration.scss ***!
   \*****************************************************************************************************************************************************/
@@ -480,8 +483,14 @@
   display: grid;
   grid-gap: 10px; }
 
-.registration__button_login {
+.registration__login-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-top: 10px; }
+  .registration__login-section_text {
+    font-size: 14px;
+    color: rgba(31, 32, 65, 0.75); }
 
 /*!************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/card.scss ***!
@@ -571,7 +580,8 @@
 
 .twins-grid-line {
   display: grid;
-  grid-template-columns: repeat(2, auto); }
+  grid-template-columns: repeat(2, auto);
+  justify-content: start; }
 
 /*!*******************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/expandable/__checkbox-list/expandable__checkbox-list.scss ***!

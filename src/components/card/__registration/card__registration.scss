@@ -1,3 +1,5 @@
+@import "@variables";
+
 .registration {
 
   & > * {
@@ -23,13 +25,19 @@
     }
   }
 
-  &__button {
-    &_submit {
+  &__button_submit {
 
-    }
+  }
 
-    &_login {
-      margin-top: 10px;
+  &__login-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+
+    &_text {
+      font-size: 14px;
+      color: rgba($valhalla, .75);
     }
   }
 }

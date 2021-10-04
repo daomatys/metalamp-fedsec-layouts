@@ -13,7 +13,7 @@ mixin cardRegistration()
         { placeholder: "Имя" },
         { placeholder: "Фамилия" }
       ])
-      .registration__radio-buttons.twinline-gap_own
+      .registration__radio-buttons
         +radioButtons([
           { id: "registration_male",   label: "Мужчина", pressed: true },
           { id: "registration_female", label: "Женщина" }
@@ -47,8 +47,8 @@ mixin cardRegistration()
         ]
       })
 
-    .registration__button_login.twinline-gap_longest
-      span.registration__bottom-text Уже есть аккаунт на Toxin
+    .registration__login-section
+      span.registration__login-section_text Уже есть аккаунт на Toxin
       +meanOvalButtons({
         groupname: "uik-fe__mob-mid",
         buttons: [
