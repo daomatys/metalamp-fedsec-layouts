@@ -234,11 +234,8 @@
       justify-content: center; }
       .like-button__text_icon > label {
         width: 20px; }
-
-.like-buttons__array {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  grid-gap: 10px; }
+  .like-button__line-array {
+    grid-gap: 10px; }
 
 /*!***************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/button/__mean-oval/button__mean-oval.scss ***!
@@ -336,8 +333,7 @@
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-gap: 10px;
-  align-items: center;
-  margin-right: 20px; }
+  align-items: center; }
   .radio-button * {
     cursor: pointer; }
   .radio-button__elem {
@@ -370,13 +366,12 @@
     font-size: 14px;
     color: #1F2041;
     opacity: .5; }
+  .radio-button__line-array {
+    grid-gap: 20px; }
 
-.radio-buttons__array {
-  display: flex; }
-
-/*!*****************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/button/__rate-stars/button__rate-stars.scss ***!
-  \*****************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/button/__star-rate/button__star-rate.scss ***!
+  \***************************************************************************************************************************************************/
 .gradient-fill, .star-rate {
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   background-clip: text;
@@ -384,8 +379,8 @@
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent; }
 
-.star-rate {
-  margin-right: 20px; }
+.star-rate__line-array {
+  grid-gap: 20px; }
 
 /*!*********************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/button/__toggle/button__toggle.scss ***!
@@ -558,6 +553,25 @@
     user-select: text; }
   .comment-bar__comment-text {
     line-height: 24px; }
+
+/*!*************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/components.scss ***!
+  \*************************************************************************************************************************/
+.elem__width_100 {
+  width: 320px; }
+
+.elem__width_75 {
+  width: 266px; }
+
+.elem__width_50 {
+  width: 150px; }
+
+.elem__width_30 {
+  width: 99px; }
+
+.twins-grid-line {
+  display: grid;
+  grid-template-columns: repeat(2, auto); }
 
 /*!*******************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/expandable/__checkbox-list/expandable__checkbox-list.scss ***!
@@ -746,6 +760,9 @@
 
 .input__frame.expander {
   cursor: pointer; }
+
+.input__line-array {
+  grid-gap: 20px; }
 
 .dropdown,
 .input__frame {
@@ -1099,12 +1116,6 @@
 .column_center {
   margin-right: 72px; }
 
-.twinline-gap_own, .twinline-gap_longest {
-  display: flex; }
-
-.twinline-gap_longest {
-  justify-content: space-between; }
-
 /*!**************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/ui-kit/__headers-n-footers/ui-kit__headers-n-footers.scss ***!
   \**************************************************************************************************************************************************************/
@@ -1123,8 +1134,7 @@
   margin: auto;
   width: 1440px;
   font-family: Montserrat, Quicksand, sans-serif;
-  user-select: none;
-  background-color: white; }
+  user-select: none; }
 
 .ui-kit__header {
   height: 140px;
@@ -1138,19 +1148,10 @@
 .ui-kit__footer {
   height: 145px; }
 
-.elem__width_100 {
-  width: 320px; }
+.bg-color_white {
+  background-color: white; }
 
-.elem__width_75 {
-  width: 266px; }
-
-.elem__width_50 {
-  width: 150px; }
-
-.elem__width_30 {
-  width: 99px; }
-
-.bgcolor_whisper {
+.bg-color_whisper {
   background-color: #E5E5E5; }
 
 .frozen {

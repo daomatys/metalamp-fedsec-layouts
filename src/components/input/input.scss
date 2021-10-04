@@ -69,6 +69,10 @@
   &__frame.expander {
     cursor: pointer;
   }
+
+  &__line-array {
+    grid-gap: 20px;
+  }
 }
 
 .dropdown,

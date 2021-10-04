@@ -11,11 +11,11 @@ include ../../../components/expandable/__checkbox-list/expandable__checkbox-list
 include ../../../components/button/__toggle/button__toggle.pug
 include ../../../components/button/__like/button__like.pug
 include ../../../components/button/__radio/button__radio.pug
-include ../../../components/button/__rate-stars/button__rate-stars.pug
+include ../../../components/button/__star-rate/button__star-rate.pug
 include ../../../components/button/__checkbox/button__checkbox.pug
 include ../../../components/button/__mean-oval/button__mean-oval.pug
 
-body.ui-kit__body
+body.ui-kit__body.bg-color_white
   header.ui-kit__header
     +logo({ type: "monochrome" })
   main.ui-kit__main
@@ -52,31 +52,32 @@ body.ui-kit__body
             }
           ])
         .form-elements__block.block__dropdowns_date-twins
-          .form-elements__element.twinline-gap_longest
-            +inputs([
-              {
-                id: "dropdown__date-twins_01",
-                title: "date dropdown",
-                placeholder: "ДД.ММ.ГГГГ",
-                widthbypercent: 50,
-                dropdown: {
-                  options: [
-                    ""
-                  ]
+          .form-elements__element
+            .input__line-array.twins-grid-line
+              +inputs([
+                {
+                  id: "dropdown__date-twins_01",
+                  title: "date dropdown",
+                  placeholder: "ДД.ММ.ГГГГ",
+                  widthbypercent: 50,
+                  dropdown: {
+                    options: [
+                      ""
+                    ]
+                  }
+                },
+                {
+                  id: "dropdown__date-twins_02",
+                  title: "date dropdown",
+                  placeholder: "19.08.2019",
+                  widthbypercent: 50,
+                  dropdown: {
+                    options: [
+                      ""
+                    ]
+                  }
                 }
-              },
-              {
-                id: "dropdown__date-twins_02",
-                title: "date dropdown",
-                placeholder: "19.08.2019",
-                widthbypercent: 50,
-                dropdown: {
-                  options: [
-                    ""
-                  ]
-                }
-              }
-            ])
+              ])
         .form-elements__block.block__dropdowns_date-semi-wide
           +inputs([
             {
@@ -117,11 +118,10 @@ body.ui-kit__body
         .form-elements__block.block__radio-buttons
           .form-elements__element
             +titleBar("radio buttons")
-            .radio-buttons__array 
-              +radioButtons([
-                { id: "uik-fe_male", label: "Мужчина", pressed: true },
-                { id: "uik-fe_female", label: "Женщина" }
-              ])
+            +radioButtons([
+              { id: "uik-fe_male", label: "Мужчина", pressed: true },
+              { id: "uik-fe_female", label: "Женщина" }
+            ])
         .form-elements__block.block__toggle-buttons
           .form-elements__element
             +titleBar("toggle")
@@ -133,7 +133,7 @@ body.ui-kit__body
         .form-elements__block.block__like-buttons
           .form-elements__element
             +titleBar("like button")
-            .like-buttons__array.twinline-gap_own
+            .like-button__line-array.twins-grid-line
               +likeButtons([
                 { groupname: "uik-fe-like", pressed: false, likecount: 2 },
                 { groupname: "uik-fe-like", pressed: true, likecount: 12 }
@@ -141,8 +141,8 @@ body.ui-kit__body
         .form-elements__block.block__star-rate
           .form-elements__element
             +titleBar("rate button")
-            .star-rate__elem.twinline-gap_own
-              +stars([4, 5])
+            .star-rate__line-array.twins-grid-line
+              +starRateButtons([4, 5])
       .form-elements__column.column_right
         .form-elements__block.block__range-slider
           +rangeSlider({

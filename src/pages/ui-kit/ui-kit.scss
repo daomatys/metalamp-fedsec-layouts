@@ -6,7 +6,6 @@
     width: 1440px;
     font-family: Montserrat, Quicksand, sans-serif;
     user-select: none;
-    background-color: white;
   }
 
   &__header {
@@ -25,26 +24,14 @@
   }
 }
 
-.elem__width {
-  &_100 {
-    width: 320px
+.bg-color {
+  &_white {
+    background-color: white;
   }
 
-  &_75 {
-    width: 266px;
+  &_whisper {
+    background-color: $whisper;
   }
-
-  &_50 {
-    width: 150px
-  }
-
-  &_30 {
-    width: 99px;
-  }
-}
-
-.bgcolor_whisper {
-  background-color: $whisper;
 }
 
 .frozen {

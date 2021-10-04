@@ -1,5 +1,5 @@
 <head><script defer src="index.js"></script><link href="index.css" rel="stylesheet"></head>
-<body class="ui-kit__body bgcolor_whisper">
+<body class="ui-kit__body bg-color_whisper">
   <header class="ui-kit__header">
     <form class="logotype logotype_monochrome" action="index.html">
       <input class="logotype__button" type="submit"><img class="logotype__image" src="static/images/logo-monochrome-s48.svg">
@@ -98,14 +98,16 @@
             </div>
           </div>
           <div class="registration__radio-buttons twinline-gap_own">
-            <label class="radio-button" for="registration_male">
-              <input class="radio-button__elem" type="radio" name="sex" id="registration_male" checked>
-              <label class="radio-button__label" for="registration_male">Мужчина</label>
-            </label>
-            <label class="radio-button" for="registration_female">
-              <input class="radio-button__elem" type="radio" name="sex" id="registration_female">
-              <label class="radio-button__label" for="registration_female">Женщина</label>
-            </label>
+            <div class="radio-button__line-array twins-grid-line">
+              <label class="radio-button" for="registration_male">
+                <input class="radio-button__elem" type="radio" name="sex" id="registration_male" checked>
+                <label class="radio-button__label" for="registration_male">Мужчина</label>
+              </label>
+              <label class="radio-button" for="registration_female">
+                <input class="radio-button__elem" type="radio" name="sex" id="registration_female">
+                <label class="radio-button__label" for="registration_female">Женщина</label>
+              </label>
+            </div>
           </div>
         </div>
         <div class="registration__input_date-of-birth">

@@ -3,5 +3,8 @@
 
 .star-rate {
   @extend .gradient-fill;
-  margin-right: 20px;
+
+  &__line-array {
+    grid-gap: 20px;
+  }
 }

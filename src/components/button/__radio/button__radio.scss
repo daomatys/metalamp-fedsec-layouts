@@ -5,7 +5,6 @@
   grid-template-columns: repeat(2, auto);
   grid-gap: 10px;
   align-items: center;
-  margin-right: 20px;
 
   & * {
     cursor: pointer;
@@ -50,8 +49,8 @@
     color: $valhalla;
     opacity: .5;
   }
-}
 
-.radio-buttons__array {
-  display: flex;
+  &__line-array {
+    grid-gap: 20px;
+  }
 }

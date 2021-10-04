@@ -50,10 +50,8 @@
       }
     }
   }
-}
 
-.like-buttons__array {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  grid-gap: 10px;
+  &__line-array {
+    grid-gap: 10px;
+  }
 }

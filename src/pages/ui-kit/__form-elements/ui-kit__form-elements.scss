@@ -46,14 +46,3 @@
     margin-right: 72px;
   }
 }
-
-.twinline-gap {
-  &_own,
-  &_longest {
-    display: flex;
-  }
-
-  &_longest {
-    justify-content: space-between;
-  }
-}
