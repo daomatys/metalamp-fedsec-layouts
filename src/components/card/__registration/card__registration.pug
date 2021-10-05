@@ -6,7 +6,7 @@ include /components/button/__toggle/button__toggle.pug
 mixin cardRegistration()
   .registration.card-style_default
     .registration__title
-      span.font-size_h1 Регистрация аккаунта
+      span.custom-font-style_h1 Регистрация аккаунта
 
     .registration__input_basic-data
       +inputs([
@@ -40,7 +40,7 @@ mixin cardRegistration()
         buttons: [
           {
             type: "contained",
-            text: "перейти к оплате",
+            text: "Зарегистрироваться",
             iconname: "arrow_forward",
             widthbypercent: 100
           }
@@ -49,7 +49,7 @@ mixin cardRegistration()
 
     .registration__login-section
       .registration__login-section-container.card-footer
-        span Уже есть аккаунт на Toxin
+        span.custom-font-style_body Уже есть аккаунт на Toxin
         +meanOvalButtons({
           groupname: "registration__button_login",
           buttons: [

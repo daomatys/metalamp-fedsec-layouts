@@ -1,3 +1,5 @@
+@import "@variables";
+
 .elem__width {
   &_100 {
     width: 320px
@@ -13,6 +15,32 @@
 
   &_30 {
     width: 99px;
+  }
+}
+
+.custom-font-style {
+  &_h1,
+  &_h2,
+  &_h3 {
+    color: $valhalla;
+    font-weight: bold;
+  }
+
+  &_h1 {
+    font-size: 24px;
+  }
+
+  &_h2 {
+    font-size: 19px;
+  }
+
+  &_h3 {
+    font-size: 12px;
+  }
+
+  &_body {
+    color: rgba($valhalla, .75);
+    font-size: 14px;
   }
 }
 

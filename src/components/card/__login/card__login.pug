@@ -6,7 +6,7 @@ include /components/button/__toggle/button__toggle.pug
 mixin cardLogin()
   .login.card-style_default
     .login__title
-      span.font-size_h1 Войти
+      span.custom-font-style_h1 Войти
 
     .login__input_login-data
       +inputs([
@@ -29,10 +29,10 @@ mixin cardLogin()
 
     .login__registration-section
       .login__registration-section-container.card-footer
-        span Нет аккаунта на Toxin
+        span.custom-font-style_body Нет аккаунта на Toxin
         +meanOvalButtons({
           groupname: "login__button_registration",
           buttons: [
-            { type: "outlined", text: "войти" },
+            { type: "outlined", text: "создать" },
           ]
         })

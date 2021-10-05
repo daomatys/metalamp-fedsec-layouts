@@ -564,6 +564,23 @@
 .elem__width_30 {
   width: 99px; }
 
+.custom-font-style_h1, .custom-font-style_h2, .custom-font-style_h3 {
+  color: #1F2041;
+  font-weight: bold; }
+
+.custom-font-style_h1 {
+  font-size: 24px; }
+
+.custom-font-style_h2 {
+  font-size: 19px; }
+
+.custom-font-style_h3 {
+  font-size: 12px; }
+
+.custom-font-style_body {
+  color: rgba(31, 32, 65, 0.75);
+  font-size: 14px; }
+
 .twins-grid-line {
   display: grid;
   grid-template-columns: repeat(2, auto);
@@ -1053,23 +1070,6 @@
     display: inherit;
     margin: 0 0 0 30px;
     width: 369px; }
-
-.font-size_h1 > .type-item__note, .font-size_h2 > .type-item__note, .font-size_h3 > .type-item__note {
-  font-weight: bold; }
-
-.font-size_h1 {
-  font-size: 24px; }
-
-.font-size_h2 {
-  font-size: 19px; }
-
-.font-size_h3 {
-  font-size: 12px; }
-
-.font-size_body {
-  font-size: 14px; }
-  .font-size_body > .type-item__note {
-    opacity: 0.75; }
 
 /*!*****************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/404/404.scss ***!

@@ -27,33 +27,3 @@
     width: 369px;
   }
 }
-
-.font-size {
-  &_h1,
-  &_h2,
-  &_h3 {
-    & > .type-item__note {
-      font-weight: bold;
-    }
-  }
-
-  &_h1 {
-    font-size: 24px;
-  }
-
-  &_h2 {
-    font-size: 19px;
-  }
-
-  &_h3 {
-    font-size: 12px;
-  }
-
-  &_body {
-    font-size: 14px;
-    
-    & > .type-item__note {
-      opacity: 0.75;
-    }
-  }
-}

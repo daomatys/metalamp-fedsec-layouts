@@ -3,7 +3,8 @@ include /components/button/__mean-oval/button__mean-oval.pug
 
 mixin cardFindRoom()
   .find-room.card-style_default
-    span.find-room__title.font-size_h1 Найдём номера под ваши пожелания
+    .find-room__title
+      span.custom-font-style_h1 Найдём номера под ваши пожелания
     .find-room__dropdowns
       .find-room__dropdowns_date-picker.twins-grid-line
         +inputs([
