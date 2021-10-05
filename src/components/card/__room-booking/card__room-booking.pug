@@ -2,35 +2,42 @@ include /components/input/input.pug
 
 mixin cardRoomBooking()
   .room-booking.card-style_default
-    .room-booking__title
-      .room-booking__room-number
-      .room-booking__room-class 
-      .room-booking__price-per-day
-    .room-booking__inputs_date-picker.twins-grid-line
-      +inputs([
-        {
-          id: "room-booking__date-picker_01",
-          title: "прибытие",
-          placeholder: "ДД.ММ.ГГГГ",
-          widthbypercent: 50,
-          dropdown: {
-            options: [
-              ""
-            ]
+    .room-booking__card-header-container
+      .room-booking__card-header
+        .room-booking__title
+          span.room-booking__title_prefix.custom-font-style_body-plain № 
+          span.room-booking__title_room-number.custom-font-style_h1 888
+          span.room-booking__title_room-class люкс
+        .room-booking__price.custom-font-style_body-plain
+          span.room-booking__price_value 9990
+          span.room-booking__price_symbol ₽ 
+          span.room-booking__price_addition в сутки
+    .room-booking__inputs-container
+      .room-booking__inputs_date-picker.twins-grid-line
+        +inputs([
+          {
+            id: "room-booking__date-picker_01",
+            title: "прибытие",
+            placeholder: "ДД.ММ.ГГГГ",
+            widthbypercent: 50,
+            dropdown: {
+              options: [
+                ""
+              ]
+            }
+          },
+          {
+            id: "room-booking__date-picker_02",
+            title: "выезд",
+            placeholder: "ДД.ММ.ГГГГ",
+            widthbypercent: 50,
+            dropdown: {
+              options: [
+                ""
+              ]
+            }
           }
-        },
-        {
-          id: "room-booking__date-picker_02",
-          title: "выезд",
-          placeholder: "ДД.ММ.ГГГГ",
-          widthbypercent: 50,
-          dropdown: {
-            options: [
-              ""
-            ]
-          }
-        }
-      ])
+        ])
     .room-booking__inputs_guests
       +inputs([
         {

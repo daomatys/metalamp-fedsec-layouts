@@ -1,0 +1,39 @@
+@import "@variables";
+
+.room-booking {
+
+  &__card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__title {
+    &_prefix,
+    &_room-class {
+      font-weight: bold;
+    }
+
+    &_room-class {
+      font-size: 12px;
+      line-height: 15px;
+      margin-left: 8px;
+      color: $perfume;
+    }
+  }
+
+  &__price {
+    opacity: .5;
+
+    &_value,
+    &_symbol {
+      font-weight: bold;
+    }
+  }
+
+  &__inputs {
+    &_date-picker {
+      grid-gap: 20px;
+    }
+  }
+}

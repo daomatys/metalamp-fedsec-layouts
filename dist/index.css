@@ -459,6 +459,27 @@
 /*!*****************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/__room-booking/card__room-booking.scss ***!
   \*****************************************************************************************************************************************************/
+.room-booking__card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; }
+
+.room-booking__title_prefix, .room-booking__title_room-class {
+  font-weight: bold; }
+
+.room-booking__title_room-class {
+  font-size: 12px;
+  line-height: 15px;
+  margin-left: 8px;
+  color: #BC9CFF; }
+
+.room-booking__price {
+  opacity: .5; }
+  .room-booking__price_value, .room-booking__price_symbol {
+    font-weight: bold; }
+
+.room-booking__inputs_date-picker {
+  grid-gap: 20px; }
 
 /*!************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/card.scss ***!
