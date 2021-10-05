@@ -1,7 +1,7 @@
 mixin checkboxButtons( item )
   - let buttonsCount = 0
 
-  .checkbox-buttons__container
+  .checkbox-button__container
     each checkbox in item.checkboxes
       - const buttonChecked = checkbox.pressed ? true : false
       - const buttonId = item.groupname + '_' + ++buttonsCount

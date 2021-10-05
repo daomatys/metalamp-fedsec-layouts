@@ -102,8 +102,6 @@
     position: relative;
     left: 20px;
     width: 240px;
-    color: rgba(31, 32, 65, 0.75);
-    font-size: 14px;
     line-height: 24px;
     margin-bottom: 10px; }
     .bullet-list__row::before {
@@ -120,18 +118,17 @@
 /*!*************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/button/__checkbox/button__checkbox.scss ***!
   \*************************************************************************************************************************************************/
-.checkbox-buttons__container {
-  display: grid;
-  justify-items: start;
-  grid-template-rows: repeat(2, auto);
-  grid-gap: 10px; }
-
 .checkbox-button {
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-gap: 10px;
   align-items: start;
   margin-right: 20px; }
+  .checkbox-button__container {
+    display: grid;
+    justify-items: start;
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 10px; }
   .checkbox-button * {
     cursor: pointer; }
   .checkbox-button label {
@@ -411,12 +408,16 @@
 
 .toggle-button {
   display: flex; }
+  .toggle-button__array {
+    display: grid;
+    grid-row: 2;
+    grid-gap: 14px; }
   .toggle-button__elem {
-    display: inherit;
+    display: flex;
     align-items: center;
     margin-right: 10px; }
     .toggle-button__elem::after {
-      display: inherit;
+      display: flex;
       margin-inline: 3px;
       -webkit-transition: transform 0.3s ease;
       transition: transform 0.3s ease;
@@ -426,15 +427,8 @@
       -webkit-transform: translateX(20px);
       transform: translateX(20px); }
   .toggle-button__label {
-    display: inherit;
-    align-items: flex-start;
-    font-size: 14px;
-    color: rgba(31, 32, 65, 0.75); }
-
-.toggle-buttons__array {
-  display: grid;
-  grid-row: 2;
-  grid-gap: 14px; }
+    display: flex;
+    align-items: flex-start; }
 
 /*!****************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/button/button.scss ***!
@@ -573,7 +567,8 @@
 
 .custom-font-style_body {
   color: rgba(31, 32, 65, 0.75);
-  font-size: 14px; }
+  font-size: 14px;
+  line-height: 24px; }
 
 .twins-grid-line {
   display: grid;
@@ -678,10 +673,6 @@
     height: 367px; }
     .footer__central-section > span {
       margin-block: 20px 25px; }
-  .footer__common-text {
-    font-size: 14px;
-    line-height: 24px;
-    color: rgba(31, 32, 65, 0.75); }
   .footer__content_start-end {
     display: grid;
     grid-gap: 20px; }
@@ -1031,11 +1022,7 @@
 .title-bar {
   display: flex;
   justify-content: space-between;
-  text-transform: uppercase;
-  font-size: 12px;
-  color: #1F2041; }
-  .title-bar__title {
-    font-weight: bold; }
+  text-transform: uppercase; }
   .title-bar__state {
     font-weight: normal;
     opacity: .5; }

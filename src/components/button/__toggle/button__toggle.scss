@@ -4,15 +4,21 @@
 .toggle-button {
   display: flex;
 
+  &__array {
+    display: grid;
+    grid-row: 2;
+    grid-gap: 14px;
+  }
+
   &__elem {
     @extend .oval-button_frame;
-    display: inherit;
+    display: flex;
     align-items: center;
     margin-right: 10px;
 
     &::after {
       @extend .oval-button_dot-marker;
-      display: inherit;
+      display: flex;
       margin-inline: 3px;
       -webkit-transition: transform 0.3s ease;
       transition: transform 0.3s ease;
@@ -27,15 +33,7 @@
   }
 
   &__label {
-    display: inherit;
+    display: flex;
     align-items: flex-start;
-    font-size: 14px;
-    color: rgba($valhalla, .75);
   }
-}
-
-.toggle-buttons__array {
-  display: grid;
-  grid-row: 2;
-  grid-gap: 14px;
 }
