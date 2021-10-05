@@ -1,14 +1,20 @@
 include /components/logo/logo.pug
+
 include /components/card/__registration/card__registration.pug
 include /components/card/__find-room/card__find-room.pug
 include /components/card/__login/card__login.pug
+include /components/card/__room-booking/card__room-booking.pug
 
 body.ui-kit__body.bg-color_whisper
   header.ui-kit__header
     +logo({ type: "monochrome" })
   main.ui-kit__main
-    .headers-n-footers
-      +cardFindRoom()
-      +cardRegistration()
-      +cardLogin()
+    .headers-n-footers__wrap
+      .headers-n-footers__column
+        +cardFindRoom()
+        +cardRegistration()
+      .headers-n-footers__column
+        +cardRoomBooking()
+        +cardLogin()
+      .headers-n-footers__column-right
   footer.ui-kit__footer

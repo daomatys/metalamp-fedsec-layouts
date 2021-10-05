@@ -456,6 +456,10 @@
 .find-room__dropdowns_date-picker {
   grid-gap: 20px; }
 
+/*!*****************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/__room-booking/card__room-booking.scss ***!
+  \*****************************************************************************************************************************************************/
+
 /*!************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/card.scss ***!
   \************************************************************************************************************************/
@@ -1050,6 +1054,17 @@
 .index-links {
   margin-top: 80px;
   margin-left: 80px; }
+
+/*!**************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/ui-kit/__cards/ui-kit__cards.scss ***!
+  \**************************************************************************************************************************************/
+.headers-n-footers__wrap, .headers-n-footers__column {
+  display: grid;
+  align-items: start;
+  grid-gap: 40px; }
+
+.headers-n-footers__wrap {
+  grid-template-columns: repeat(2, 380px) 320px; }
 
 /*!******************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/ui-kit/__colors-n-type/ui-kit__colors-n-type.scss ***!

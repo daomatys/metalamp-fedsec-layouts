@@ -1,0 +1,50 @@
+include /components/input/input.pug
+
+mixin cardRoomBooking()
+  .room-booking.card-style_default
+    .room-booking__title
+      .room-booking__room-number
+      .room-booking__room-class 
+      .room-booking__price-per-day
+    .room-booking__inputs_date-picker.twins-grid-line
+      +inputs([
+        {
+          id: "room-booking__date-picker_01",
+          title: "прибытие",
+          placeholder: "ДД.ММ.ГГГГ",
+          widthbypercent: 50,
+          dropdown: {
+            options: [
+              ""
+            ]
+          }
+        },
+        {
+          id: "room-booking__date-picker_02",
+          title: "выезд",
+          placeholder: "ДД.ММ.ГГГГ",
+          widthbypercent: 50,
+          dropdown: {
+            options: [
+              ""
+            ]
+          }
+        }
+      ])
+    .room-booking__inputs_guests
+      +inputs([
+        {
+          id: "room-booking__guests",
+          title: "гости",
+          placeholder: "Сколько гостей",
+          dropdown: {
+            options: [
+              "взрослые",
+              "дети",
+              "младенцы"
+            ]
+          }
+        }
+      ])
+    .room-booking__calculator 
+    .room-booking__button_submit

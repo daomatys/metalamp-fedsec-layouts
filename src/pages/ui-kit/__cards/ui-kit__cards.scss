@@ -1,0 +1,13 @@
+.headers-n-footers {
+
+  &__wrap,
+  &__column {
+    display: grid;
+    align-items: start;
+    grid-gap: 40px;
+  }
+
+  &__wrap {
+    grid-template-columns: repeat(2, 380px) 320px ;
+  }
+}
