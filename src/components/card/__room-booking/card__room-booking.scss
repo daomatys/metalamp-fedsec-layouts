@@ -36,4 +36,41 @@
       grid-gap: 20px;
     }
   }
+
+  &__calc {
+    &_price-basic,
+    &_price-off,
+    &_fee {
+      & > .room-booking__sub-container {
+        display: flex;
+        justify-content: space-between;
+
+        & > .room-booking__nano-container {
+          display: inherit;
+          align-items: center;
+
+          & > .material-icons {
+            font-size: 20px;
+            color: rgba($valhalla, .25)
+          }
+        }
+      }
+    }
+
+    &_price-basic {
+
+    }
+
+    &_price-off {
+
+    }
+
+    &_fee {
+
+    }
+
+    &_summary {
+      margin-top: 20px;
+    }
+  }
 }

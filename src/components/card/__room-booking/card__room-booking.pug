@@ -1,7 +1,10 @@
 include /components/input/input.pug
+include /components/button/__mean-oval/button__mean-oval.pug
+include /components/material-icon-cell/material-icon-cell.pug
 
 mixin cardRoomBooking()
   .room-booking.card-style_default
+
     .room-booking__card-header-container
       .room-booking__card-header
         .room-booking__title
@@ -12,6 +15,7 @@ mixin cardRoomBooking()
           span.room-booking__price_value 9990
           span.room-booking__price_symbol ₽ 
           span.room-booking__price_addition в сутки
+
     .room-booking__inputs-container
       .room-booking__inputs_date-picker.twins-grid-line
         +inputs([
@@ -38,6 +42,7 @@ mixin cardRoomBooking()
             }
           }
         ])
+
     .room-booking__inputs_guests
       +inputs([
         {
@@ -53,5 +58,38 @@ mixin cardRoomBooking()
           }
         }
       ])
-    .room-booking__calculator 
+
+    .room-booking__calc-container.custom-font-style_body
+      .room-booking__calc_price-basic
+        .room-booking__sub-container
+          span 9 990₽ X 4 суток
+          span 39 960₽
+      .room-booking__calc_price-off
+        .room-booking__sub-container
+          .room-booking__nano-container
+            span Сбор за услуги: скидка 2 179₽
+            +materialIcon("info_outline")
+          span 0₽
+      .room-booking__calc_fee
+        .room-booking__sub-container
+          .room-booking__nano-container
+            span Сбор за дополнительные услуги
+            +materialIcon("info_outline")
+          span 300₽
+      .room-booking__calc_summary.custom-font-style_h2
+        .room-booking__sub-container
+          span Итого
+          span 38 081₽
+
     .room-booking__button_submit
+      +meanOvalButtons({
+        groupname: "room-booking__button_submit",
+        buttons: [
+          {
+            type: "contained",
+            text: "Забронировать",
+            iconname: "arrow_forward",
+            widthbypercent: 100
+          }
+        ]
+      })

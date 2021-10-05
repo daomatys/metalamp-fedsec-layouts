@@ -481,6 +481,19 @@
 .room-booking__inputs_date-picker {
   grid-gap: 20px; }
 
+.room-booking__calc_price-basic > .room-booking__sub-container, .room-booking__calc_price-off > .room-booking__sub-container, .room-booking__calc_fee > .room-booking__sub-container {
+  display: flex;
+  justify-content: space-between; }
+  .room-booking__calc_price-basic > .room-booking__sub-container > .room-booking__nano-container, .room-booking__calc_price-off > .room-booking__sub-container > .room-booking__nano-container, .room-booking__calc_fee > .room-booking__sub-container > .room-booking__nano-container {
+    display: inherit;
+    align-items: center; }
+    .room-booking__calc_price-basic > .room-booking__sub-container > .room-booking__nano-container > .material-icons, .room-booking__calc_price-off > .room-booking__sub-container > .room-booking__nano-container > .material-icons, .room-booking__calc_fee > .room-booking__sub-container > .room-booking__nano-container > .material-icons {
+      font-size: 20px;
+      color: rgba(31, 32, 65, 0.25); }
+
+.room-booking__calc_summary {
+  margin-top: 20px; }
+
 /*!************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/card.scss ***!
   \************************************************************************************************************************/
