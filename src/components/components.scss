@@ -1,6 +1,7 @@
 @import "@variables";
 
 .elem__width {
+  
   &_100 {
     width: 320px
   }
@@ -19,6 +20,7 @@
 }
 
 .custom-font-style {
+
   &_h1,
   &_h2,
   &_h3 {
@@ -38,10 +40,18 @@
     font-size: 12px;
   }
 
-  &_body {
-    color: rgba($valhalla, .75);
+  &_body,
+  &_body-plain {
     font-size: 14px;
     line-height: 24px;
+  }
+
+  &_body {
+    color: rgba($valhalla, .75);
+
+    &-plain {
+      color: $valhalla;
+    }
   }
 }
 

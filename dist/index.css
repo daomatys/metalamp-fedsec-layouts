@@ -326,6 +326,8 @@
   grid-template-columns: repeat(2, auto);
   grid-gap: 10px;
   align-items: center; }
+  .radio-button__line-array {
+    grid-gap: 20px; }
   .radio-button * {
     cursor: pointer; }
   .radio-button__elem {
@@ -343,8 +345,8 @@
     .radio-button__elem:checked {
       align-items: center;
       justify-content: center;
-      opacity: 1;
-      border-color: #BC9CFF; }
+      border-color: #BC9CFF;
+      opacity: 1; }
       .radio-button__elem:checked:after {
         position: absolute;
         width: 12px;
@@ -352,14 +354,10 @@
         border-radius: 50%;
         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
         content: ''; }
-      .radio-button__elem:checked + label {
+      .radio-button__elem:checked + .radio-button__label {
         opacity: .75; }
   .radio-button__label {
-    font-size: 14px;
-    color: #1F2041;
     opacity: .5; }
-  .radio-button__line-array {
-    grid-gap: 20px; }
 
 /*!***************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/button/__star-rate/button__star-rate.scss ***!
@@ -556,10 +554,14 @@
 .custom-font-style_h3 {
   font-size: 12px; }
 
-.custom-font-style_body {
-  color: rgba(31, 32, 65, 0.75);
+.custom-font-style_body, .custom-font-style_body-plain {
   font-size: 14px;
   line-height: 24px; }
+
+.custom-font-style_body {
+  color: rgba(31, 32, 65, 0.75); }
+  .custom-font-style_body-plain {
+    color: #1F2041; }
 
 .twins-grid-line {
   display: grid;

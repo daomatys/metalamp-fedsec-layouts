@@ -6,6 +6,10 @@
   grid-gap: 10px;
   align-items: center;
 
+  &__line-array {
+    grid-gap: 20px;
+  }
+
   & * {
     cursor: pointer;
   }
@@ -26,8 +30,8 @@
     &:checked {
       align-items: center;
       justify-content: center;
-      opacity: 1;
       border-color: $perfume;
+      opacity: 1;
 
       &:after {
         position: absolute;
@@ -38,19 +42,13 @@
         content: '';
       }
 
-      & + label {
-        opacity: .75
+      & + .radio-button__label {
+        opacity: .75;
       }
     }
   }
 
   &__label {
-    font-size: 14px;
-    color: $valhalla;
     opacity: .5;
-  }
-
-  &__line-array {
-    grid-gap: 20px;
   }
 }
