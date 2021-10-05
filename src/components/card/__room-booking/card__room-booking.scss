@@ -38,16 +38,20 @@
   }
 
   &__calc {
+
     &_price-basic,
     &_price-off,
     &_fee {
       & > .room-booking__sub-container {
+        position: relative;
         display: flex;
         justify-content: space-between;
+        width: 320px;
 
         & > .room-booking__nano-container {
           display: inherit;
-          align-items: center;
+          align-items: flex-start;
+          width: 234px;
 
           & > .material-icons {
             font-size: 20px;
@@ -57,16 +61,20 @@
       }
     }
 
-    &_price-basic {
+    &_summary > .room-booking__sub-container {
+      display: flex;
+      justify-content: space-between;
 
-    }
+      & > span {
+        white-space: nowrap;
+      }
 
-    &_price-off {
-
-    }
-
-    &_fee {
-
+      & > .room-booking__sub-container_divider {
+        position: relative;
+        bottom: 5px;
+        width: 100%;
+        border-bottom: 1px dotted rgba($valhalla, .25);
+      }
     }
 
     &_summary {
