@@ -466,31 +466,8 @@
 /*!***********************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/__find-room/card__find-room.scss ***!
   \***********************************************************************************************************************************************/
-.find-room__title {
-  font-weight: bold;
-  color: #1F2041; }
-
-.find-room__button_submit {
-  margin-top: 11px; }
-
 .find-room__dropdowns_date-picker {
   grid-gap: 20px; }
-
-/*!*****************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/__registration/card__registration.scss ***!
-  \*****************************************************************************************************************************************************/
-.registration > * {
-  display: grid;
-  grid-gap: 10px; }
-
-.registration__login-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 10px; }
-  .registration__login-section_text {
-    font-size: 14px;
-    color: rgba(31, 32, 65, 0.75); }
 
 /*!************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/card.scss ***!
@@ -505,6 +482,15 @@
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   width: 380px; }
+  .card-style_default > * {
+    display: inherit;
+    grid-gap: 10px; }
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px; }
 
 /*!****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/color-sample/color-sample.scss ***!
@@ -1085,6 +1071,13 @@
   .font-size_body > .type-item__note {
     opacity: 0.75; }
 
+/*!*****************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/404/404.scss ***!
+  \*****************************************************************************************************************/
+.notfound_text {
+  color: #1f2041;
+  font-size: 72; }
+
 /*!*********************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/index/index.scss ***!
   \*********************************************************************************************************************/
@@ -1156,7 +1149,9 @@
   justify-content: space-between; }
 
 .ui-kit__footer {
-  height: 145px; }
+  position: absolute;
+  height: 145px;
+  bottom: 0px; }
 
 .bg-color_white {
   background-color: white; }

@@ -1,0 +1,38 @@
+include /components/input/input.pug
+include /components/button/__mean-oval/button__mean-oval.pug
+include /components/button/__radio/button__radio.pug
+include /components/button/__toggle/button__toggle.pug
+
+mixin cardLogin()
+  .login.card-style_default
+    .login__title
+      span.font-size_h1 Войти
+
+    .login__input_login-data
+      +inputs([
+        { placeholder: "Email", type: "Email" },
+        { placeholder: "Пароль" }
+      ])
+
+    .login__authorization-button
+      +meanOvalButtons({
+        groupname: "login__authorization-button",
+        buttons: [
+          {
+            type: "contained",
+            text: "войти",
+            iconname: "arrow_forward",
+            widthbypercent: 100
+          }
+        ]
+      })
+
+    .login__registration-section
+      .login__registration-section-container.card-footer
+        span Нет аккаунта на Toxin
+        +meanOvalButtons({
+          groupname: "login__button_registration",
+          buttons: [
+            { type: "outlined", text: "войти" },
+          ]
+        })

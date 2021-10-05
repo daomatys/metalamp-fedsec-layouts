@@ -1,14 +1,6 @@
 @import "@variables";
 
 .find-room {
-  &__title {
-    font-weight: bold;
-    color: $valhalla;
-  }
-
-  &__button_submit {
-    margin-top: 11px;
-  }
 
   &__dropdowns_date-picker {
     grid-gap: 20px;

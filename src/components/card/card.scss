@@ -9,5 +9,17 @@
     border: 1px solid rgba(black, .12);
     border-radius: 4px;
     width: 380px;
+
+    & > * {
+      display: inherit;
+      grid-gap: 10px;
+    }
   }
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
 }

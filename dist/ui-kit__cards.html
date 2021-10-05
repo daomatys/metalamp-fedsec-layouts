@@ -8,39 +8,41 @@
   <main class="ui-kit__main">
     <div class="headers-n-footers">
       <div class="find-room card-style_default"><span class="find-room__title font-size_h1">Найдём номера под ваши пожелания</span>
-        <div class="find-room__dropdowns_date-picker twins-grid-line">
-          <div class="input elem__width_50 expander__parent">
-            <div class="input__title">
-              <div class="title-bar"><span class="title-bar__title">прибытие</span>
+        <div class="find-room__dropdowns">
+          <div class="find-room__dropdowns_date-picker twins-grid-line">
+            <div class="input elem__width_50 expander__parent">
+              <div class="input__title">
+                <div class="title-bar"><span class="title-bar__title">прибытие</span>
+                </div>
               </div>
-            </div>
-            <div class="input__element">
-              <input class="input__frame expander" id="find-room__date-picker_01" placeholder="ДД.ММ.ГГГГ" readonly>
-              <div class="input__icon_dropdown">
-                <label class="material-icons" for="find-room__date-picker_01">expand_more</label>
-              </div>
-              <div class="dropdown expander__aim">
-                <div class="dropdown__option"><span class="dropdown__option_name"></span>
-                  <div class="dropdown__button_inc"> </div><span class="dropdown__counter"> </span>
-                  <div class="dropdown__button_dec"></div>
+              <div class="input__element">
+                <input class="input__frame expander" id="find-room__date-picker_01" placeholder="ДД.ММ.ГГГГ" readonly>
+                <div class="input__icon_dropdown">
+                  <label class="material-icons" for="find-room__date-picker_01">expand_more</label>
+                </div>
+                <div class="dropdown expander__aim">
+                  <div class="dropdown__option"><span class="dropdown__option_name"></span>
+                    <div class="dropdown__button_inc"> </div><span class="dropdown__counter"> </span>
+                    <div class="dropdown__button_dec"></div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="input elem__width_50 expander__parent">
-            <div class="input__title">
-              <div class="title-bar"><span class="title-bar__title">выезд</span>
+            <div class="input elem__width_50 expander__parent">
+              <div class="input__title">
+                <div class="title-bar"><span class="title-bar__title">выезд</span>
+                </div>
               </div>
-            </div>
-            <div class="input__element">
-              <input class="input__frame expander" id="find-room__date-picker_02" placeholder="ДД.ММ.ГГГГ" readonly>
-              <div class="input__icon_dropdown">
-                <label class="material-icons" for="find-room__date-picker_02">expand_more</label>
-              </div>
-              <div class="dropdown expander__aim">
-                <div class="dropdown__option"><span class="dropdown__option_name"></span>
-                  <div class="dropdown__button_inc"> </div><span class="dropdown__counter"> </span>
-                  <div class="dropdown__button_dec"></div>
+              <div class="input__element">
+                <input class="input__frame expander" id="find-room__date-picker_02" placeholder="ДД.ММ.ГГГГ" readonly>
+                <div class="input__icon_dropdown">
+                  <label class="material-icons" for="find-room__date-picker_02">expand_more</label>
+                </div>
+                <div class="dropdown expander__aim">
+                  <div class="dropdown__option"><span class="dropdown__option_name"></span>
+                    <div class="dropdown__button_inc"> </div><span class="dropdown__counter"> </span>
+                    <div class="dropdown__button_dec"></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -74,7 +76,7 @@
             </div>
           </div>
         </div>
-        <div class="find-room__button_submit">
+        <div class="find-room__button_submit card-footer">
           <div class="mean-oval-button button-style_contained elem__width_100">
             <button class="mean-oval-button__elem" id="find-room__submit-button_1">подобрать номер</button>
             <label class="mean-oval-button__background" for="find-room__submit-button_1"></label>
@@ -85,7 +87,7 @@
         </div>
       </div>
       <div class="registration card-style_default">
-        <div class="registration__title"><span class="find-room__title font-size_h1">Регистрация аккаунта</span></div>
+        <div class="registration__title"><span class="font-size_h1">Регистрация аккаунта</span></div>
         <div class="registration__input_basic-data">
           <div class="input elem__width_100">
             <div class="input__element">
@@ -143,18 +145,53 @@
         </div>
         <div class="registration__button_submit">
           <div class="mean-oval-button button-style_contained elem__width_100">
-            <button class="mean-oval-button__elem" id="registration__submit-button_1">перейти к оплате</button>
-            <label class="mean-oval-button__background" for="registration__submit-button_1"></label>
+            <button class="mean-oval-button__elem" id="registration__button_submit_1">перейти к оплате</button>
+            <label class="mean-oval-button__background" for="registration__button_submit_1"></label>
             <div class="mean-oval-button__icon">
-              <label class="material-icons" for="registration__submit-button_1">arrow_forward</label>
+              <label class="material-icons" for="registration__button_submit_1">arrow_forward</label>
             </div>
           </div>
         </div>
-        <div class="registration__login-section"><span class="registration__login-section_text">Уже есть аккаунт на Toxin</span>
-          <div class="mean-oval-button button-style_outlined elem__width_30">
-            <button class="mean-oval-button__elem" id="uik-fe__mob-mid_1">войти</button>
-            <label class="mean-oval-button__background" for="uik-fe__mob-mid_1"></label>
-            <label class="mean-oval-button__thumb" for="uik-fe__mob-mid_1"></label>
+        <div class="registration__login-section">
+          <div class="registration__login-section-container card-footer"><span>Уже есть аккаунт на Toxin</span>
+            <div class="mean-oval-button button-style_outlined elem__width_30">
+              <button class="mean-oval-button__elem" id="registration__button_login_1">войти</button>
+              <label class="mean-oval-button__background" for="registration__button_login_1"></label>
+              <label class="mean-oval-button__thumb" for="registration__button_login_1"></label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="login card-style_default">
+        <div class="login__title"><span class="font-size_h1">Войти</span></div>
+        <div class="login__input_login-data">
+          <div class="input elem__width_100">
+            <div class="input__element">
+              <input class="input__frame" type="Email" placeholder="Email">
+            </div>
+          </div>
+          <div class="input elem__width_100">
+            <div class="input__element">
+              <input class="input__frame" placeholder="Пароль">
+            </div>
+          </div>
+        </div>
+        <div class="login__authorization-button">
+          <div class="mean-oval-button button-style_contained elem__width_100">
+            <button class="mean-oval-button__elem" id="login__authorization-button_1">войти</button>
+            <label class="mean-oval-button__background" for="login__authorization-button_1"></label>
+            <div class="mean-oval-button__icon">
+              <label class="material-icons" for="login__authorization-button_1">arrow_forward</label>
+            </div>
+          </div>
+        </div>
+        <div class="login__registration-section">
+          <div class="login__registration-section-container card-footer"><span>Нет аккаунта на Toxin</span>
+            <div class="mean-oval-button button-style_outlined elem__width_30">
+              <button class="mean-oval-button__elem" id="login__button_registration_1">войти</button>
+              <label class="mean-oval-button__background" for="login__button_registration_1"></label>
+              <label class="mean-oval-button__thumb" for="login__button_registration_1"></label>
+            </div>
           </div>
         </div>
       </div>

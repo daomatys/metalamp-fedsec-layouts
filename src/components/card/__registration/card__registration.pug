@@ -6,7 +6,7 @@ include /components/button/__toggle/button__toggle.pug
 mixin cardRegistration()
   .registration.card-style_default
     .registration__title
-      span.find-room__title.font-size_h1 Регистрация аккаунта
+      span.font-size_h1 Регистрация аккаунта
 
     .registration__input_basic-data
       +inputs([
@@ -36,7 +36,7 @@ mixin cardRegistration()
 
     .registration__button_submit
       +meanOvalButtons({
-        groupname: "registration__submit-button",
+        groupname: "registration__button_submit",
         buttons: [
           {
             type: "contained",
@@ -48,10 +48,11 @@ mixin cardRegistration()
       })
 
     .registration__login-section
-      span.registration__login-section_text Уже есть аккаунт на Toxin
-      +meanOvalButtons({
-        groupname: "uik-fe__mob-mid",
-        buttons: [
-          { type: "outlined", text: "войти" },
-        ]
-      })
+      .registration__login-section-container.card-footer
+        span Уже есть аккаунт на Toxin
+        +meanOvalButtons({
+          groupname: "registration__button_login",
+          buttons: [
+            { type: "outlined", text: "войти" },
+          ]
+        })
