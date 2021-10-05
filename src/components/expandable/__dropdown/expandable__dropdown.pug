@@ -4,7 +4,7 @@ mixin dropdownElem( dropdown, expanded )
   .dropdown.expander__aim( class=expanderActiveClass )
     each option in dropdown.options
       .dropdown__option
-        span.dropdown__option_name #{option}
+        span.dropdown__option_name.custom-font-style_h3 #{option}
         .dropdown__button_inc 
         span.dropdown__counter 
         .dropdown__button_dec

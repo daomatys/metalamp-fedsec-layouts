@@ -6,7 +6,7 @@ mixin advantageBars( items=[] )
       .advantages-bar__content
         .advantages-bar__icon
           +materialIcon( item.iconname )
-        .advantages-bar__text
+        .advantages-bar__text.custom-font-style_body
           span.advantages-bar__title #{item.title}
           span.advantages-bar__brief #{item.brief}
       hr.advantages-bar__line( noshade=true size='1px' width='280px' )

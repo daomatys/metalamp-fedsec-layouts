@@ -1,7 +1,16 @@
 @import "@variables";
 @import "../../styles/gradient-fill-entities.scss";
 
+$default-color: rgba($valhalla, .25);
+$focused-color_text: rgba($valhalla, .75);
+$focused-color_border-n-icon: rgba($valhalla, .5);
+
 .input {
+
+  &__line-array {
+    grid-gap: 20px;
+  }
+
   &__title {
     margin-bottom: 5px;
   }
@@ -14,28 +23,33 @@
   &__frame {
     margin: 0;
     border-radius: 4px;
-    border-color: rgba($valhalla, .25);
+    border-color: $default-color;
+    color: $focused-color_text;
     height: 44px;
     padding: 0px 15px 0px 15px;
     width: inherit;
     background-color: transparent;
 
     &::placeholder {
-      color: rgba($valhalla, .25);
-      font-size: 16px;
-      line-height: 18px;
+      color: $default-color;
+      font-size: 14px;
+      line-height: 24px;
     }
 
     &:hover,
     &:disabled,
     &:focus-within,
     &[checked] {
+      border-color: $focused-color_border-n-icon;
+
       &::placeholder {
-        color: rgba($valhalla, .75);
+        color: $focused-color_text
       }
 
-      &:placeholder-shown {
-        border-color: rgba($valhalla, .5);
+      & + .input__icon_dropdown {
+        & > .material-icons{
+          color: $focused-color_text
+        }
       }
     }
 
@@ -45,15 +59,7 @@
   }
 
   &__icon {
-    &_dropdown {
-      color: $valhalla;
-      opacity: .5;
-    }
-  
-    &_subscription {
-      @extend .gradient-fill;
-    }
-  
+
     &_dropdown,
     &_subscription {
       position: absolute;
@@ -64,14 +70,18 @@
         cursor: pointer;
       }
     }
+
+    &_dropdown {
+      color: $focused-color_border-n-icon;
+    }
+  
+    &_subscription {
+      @extend .gradient-fill;
+    }
   }
 
   &__frame.expander {
     cursor: pointer;
-  }
-
-  &__line-array {
-    grid-gap: 20px;
   }
 }
 

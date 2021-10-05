@@ -1,41 +1,45 @@
 @import "@variables";
 
 .comment-bar {
-  display: grid;
-  grid-template-columns: 50px 653px;
-  grid-gap: 10px;
-  font-size: 14px;
+  grid-template-columns: repeat(2, auto);
 
-  &__avatar {
-    & > img {
-      filter: drop-shadow(0px 10px 20px rgba($valhalla, 0.1));
-    }
+  &,
+  &__avatar-section,
+  &__text-section,
+  &__like-button,
+  &__title {
+    display: grid;
+    align-items: start;
   }
 
-  &__like-button-wrap {
-    display: inherit;
-    align-items: start;
+  &,
+  &__avatar-section,
+  &__text-section {
+    grid-gap: 10px;
+  }
+  
+  &__avatar-section,
+  &__text-section {
+    grid-template-rows: repeat(2, auto);
+  }
+
+  &__text-section {
+    width: 653px;
+  }
+
+  &__avatar > img {
+    filter: drop-shadow(0px 10px 20px rgba($valhalla, 0.1));
+  }
+
+  &__like-button {
     justify-content: center;
-    position: relative;
-    top: 1px;
   }
 
   &__title {
-    display: inherit;
     align-items: center;
 
-    &_name {
+    &_username {
       font-weight: bold;
     }
-  }
-
-  &__title,
-  &__comment-text {
-    color: rgba($valhalla, .75);
-    user-select: text;
-  }
-
-  &__comment-text {
-    line-height: 24px;
   }
 }

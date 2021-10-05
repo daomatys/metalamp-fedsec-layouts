@@ -24,17 +24,10 @@
   &__text {
     display: inherit;
     flex-direction: column;
-    opacity: .75;
-    font-size: 14px;
-    line-height: 24px;
   }
 
   &__title {
     font-weight: bold;
-  }
-
-  &__brief  {
-    font-weight: normal;
   }
   
   &__line {
