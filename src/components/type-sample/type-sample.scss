@@ -1,29 +1,24 @@
 @import "@variables";
 
-.type-items__holder {
-  display: grid;
-  grid-row: 7;
-  grid-gap: 51px;
-  width: 436px;
-  height: 321px;
-}
-
 .type-item {
-  display:flex;
-  width: 100%;
-  height: 100%;
+  display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  color: $valhalla;
 
-  &__tagname {
-    margin: 0;
-    opacity: .25;
+  &__array {
+    display: grid;
+    grid-row: 7;
+    grid-gap: 51px;
+  }
+
+  &__style-name {
+    font-weight: normal;
+    color: rgba($valhalla, .25);
   }
 
   &__note {
     display: inherit;
-    margin: 0 0 0 30px;
+    margin-left: 30px;
     width: 369px;
   }
 }
