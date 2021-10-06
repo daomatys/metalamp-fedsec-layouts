@@ -1,18 +1,18 @@
 include /components/logo/logo.pug
 include /components/input/input.pug
-include /components/advantage-bar/advantage-bar.pug
 include /components/title-bar/title-bar.pug
-include /components/range-slider/range-slider.pug
 include /components/pagination/pagination.pug
 include /components/bullet-list/bullet-list.pug
 include /components/comment-bar/comment-bar.pug
-include /components/expandable/__checkbox-list/expandable__checkbox-list.pug
+include /components/range-slider/range-slider.pug
+include /components/checkbox-list/checkbox-list.pug
+include /components/advantage-bar/advantage-bar.pug
 
-include /components/button/__toggle/button__toggle.pug
 include /components/button/__like/button__like.pug
 include /components/button/__radio/button__radio.pug
-include /components/button/__star-rate/button__star-rate.pug
+include /components/button/__toggle/button__toggle.pug
 include /components/button/__checkbox/button__checkbox.pug
+include /components/button/__star-rate/button__star-rate.pug
 include /components/button/__mean-oval/button__mean-oval.pug
 
 body.ui-kit__body.bg-color_white
@@ -24,21 +24,25 @@ body.ui-kit__body.bg-color_white
         .form-elements__block.block__inputs_common
           +inputs([
             {
+              type: "text",
               title: "text field",
               state: "default",
               placeholder: "Email"
             },
             {
+              type: "text",
               title: "text field",
               state: "hover / focus",
               placeholder: "This is pretty awesome",
               disabled: true
             },
             {
-              id: "dropdown__common_01",
+              id: "uik-fe__common_01",
+              type: "dropdown",
               title: "dropdown",
               placeholder: "Сколько гостей",
               dropdown: {
+                expanded: false,
                 options: [
                   "взрослые",
                   "дети",
@@ -47,6 +51,7 @@ body.ui-kit__body.bg-color_white
               }
             },
             {
+              type: "date",
               title: "masked text field",
               placeholder: "ДД.ММ.ГГГГ"
             }
@@ -56,50 +61,37 @@ body.ui-kit__body.bg-color_white
             .input__line-array.twins-grid-line
               +inputs([
                 {
-                  id: "dropdown__date-twins_01",
+                  id: "uik-fe__twins_01",
+                  type: "date-picker",
                   title: "date dropdown",
                   placeholder: "ДД.ММ.ГГГГ",
                   widthbypercent: 50,
-                  dropdown: {
-                    options: [
-                      ""
-                    ]
-                  }
                 },
                 {
-                  id: "dropdown__date-twins_02",
+                  id: "uik-fe__twins_02",
+                  type: "date-picker",
                   title: "date dropdown",
                   placeholder: "19.08.2019",
                   widthbypercent: 50,
-                  dropdown: {
-                    options: [
-                      ""
-                    ]
-                  }
                 }
               ])
         .form-elements__block.block__dropdowns_date-semi-wide
           +inputs([
             {
-              id: "dropdown__date-semi-wide_01",
+              id: "uik-fe__semi-wide_01",
+              type: "date-picker",
               title: "filter date dropdown",
               placeholder: "19 авг - 23 авг",
               widthbypercent: 75,
-              dropdown: {
-                options: [
-                  ""
-                ]
-              }
             }
           ])
         .form-elements__block.block__inputs_subscribe
           +inputs([
             {
+              type: "subscription",
               title: "subscription text field",
               placeholder: "Email",
-              type: "email",
               widthbypercent: 75,
-              subscription: true
             }
           ])
       .form-elements__column.column_center
@@ -194,25 +186,29 @@ body.ui-kit__body.bg-color_white
         .form-elements__block.block__dropdowns_action
           +inputs([
             {
-              id: "input__action_01",
+              id: "uik-fe__action_01",
+              type: "dropdown",
               title: "dropdown",
               state: "default",
               placeholder: "2 спальни, 2 кровати...",
               widthbypercent: 75,
               dropdown: {
                 options: [
-                  ""
+                  "спальни",
+                  "кровати",
+                  "ванные комнаты"
                 ]
               }
             },
             {
-              id: "input__action_02",
+              id: "uik-fe__action_02",
+              type: "dropdown",
               title: "dropdown",
               state: "expanded",
               placeholder: "2 спальни, 2 кровати...",
               widthbypercent: 75,
-              expanded: true,
               dropdown: {
+                expanded: true,
                 options: [
                   "спальни",
                   "кровати",
@@ -225,35 +221,37 @@ body.ui-kit__body.bg-color_white
         .form-elements__block.block__dropdowns_no-guests
           +inputs([
             {
-              id: "dropdown_no-guests_01",
+              id: "uik-fe__no-guests_01",
+              type: "dropdown",
               title: "dropdown",
               placeholder: "Сколько гостей",
-              expanded: true,
               dropdown: {
+                expanded: true,
                 options: [
                   "взрослые",
                   "дети",
                   "младенцы"
                 ]
               }
-            },
+            }
           ])
       .form-elements__column.column_right
         .form-elements__block.block__dropdowns_guests
           +inputs([
             {
-              id: "dropdown_guests_01",
+              id: "uik-fe__guests_01",
+              type: "dropdown",
               title: "dropdown",
               placeholder: "3 гостя",
-              expanded: true,
               dropdown: {
+                expanded: true,
                 options: [
                   "взрослые",
                   "дети",
                   "младенцы"
                 ]
               }
-            },
+            }
           ])
     .form-elements__wrap.wrap_lower-middle
       .form-elements__column.column_left

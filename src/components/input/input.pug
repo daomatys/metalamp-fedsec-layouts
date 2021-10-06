@@ -1,36 +1,31 @@
-include /components/expandable/__dropdown/expandable__dropdown.pug
 include /components/title-bar/title-bar.pug
-include /components/material-icon-cell/material-icon-cell.pug
+
+include _date-picker/input_date-picker.pug
+include _default/input_default.pug
+include _dropdown/input_dropdown.pug
+include _subscription/input_subscription.pug
 
 mixin inputs( items=[] )
   each item in items
     - const widthByPercent = item.widthbypercent ? item.widthbypercent : '100'
-    - const widthClass = `elem__width_${widthByPercent}`
-    - const expanderDefinitionClass = item.dropdown ? 'expander' : ''
-    - const expanderReadOnlyState = item.dropdown ? true : false
-    - const expanderParentClass = item.dropdown ? 'expander__parent' : ''
-    - const iconFlippedClass = item.expanded ? 'icon_flipped' : ''
+    - const widthByPercentClass = `elem__width_${widthByPercent}`
+    - const expanderParentCase = item.type === 'dropdown' || item.type === 'date-picker';
+    - const expanderParentClass = expanderParentCase ? 'expander__parent' : '';
 
-    .input( class=[widthClass, expanderParentClass] )
+    .input( class=[widthByPercentClass, expanderParentClass] )
+
       if item.title
         .input__title
           +titleBar( item.title, item.state )
+
       .input__element
-        input.input__frame(
-          class=expanderDefinitionClass
-          id=item.id
-          type=item.type
-          disabled=item.disabled
-          placeholder=item.placeholder
-          readonly=expanderReadOnlyState
-          checked=item.expanded
-        ) 
-
-        if item.dropdown
-          .input__icon_dropdown( class=iconFlippedClass )
-            +materialIcon('expand_more', item.id )
-          +dropdownElem( item.dropdown, item.expanded )
-
-        if item.subscription
-          .input__icon_subscription
-            +materialIcon('arrow_forward', item.id)
+        case item.type
+          when 'dropdown'
+            +inputDropdown( item )
+          when 'date-picker'
+            +inputDatePicker( item )
+          when 'subscription'
+            +inputSubscription( item )
+          default
+            +inputDefault( item )
+            

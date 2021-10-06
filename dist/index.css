@@ -301,7 +301,6 @@
   position: relative; }
   .button-style_text > button {
     color: #BC9CFF;
-    background-color: #fff;
     padding: 0; }
     .button-style_text > button:hover, .button-style_text > button:disabled {
       color: #1F2041;
@@ -531,6 +530,33 @@
   justify-content: space-between;
   margin-top: 10px; }
 
+/*!******************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/checkbox-list/checkbox-list.scss ***!
+  \******************************************************************************************************************************************/
+.checkbox-list__title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; }
+  .checkbox-list__title_button {
+    position: absolute;
+    left: -6px;
+    bottom: -5px;
+    appearance: none;
+    width: 256px;
+    height: 28px;
+    cursor: pointer; }
+  .checkbox-list__title_icon {
+    position: relative;
+    margin-left: 40px;
+    opacity: .5; }
+    .checkbox-list__title_icon > label {
+      cursor: pointer; }
+
+.checkbox-list__items {
+  display: none;
+  margin-top: 18px; }
+
 /*!****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/color-sample/color-sample.scss ***!
   \****************************************************************************************************************************************/
@@ -620,58 +646,9 @@
   grid-template-columns: repeat(2, auto);
   justify-content: start; }
 
-/*!*******************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/expandable/__checkbox-list/expandable__checkbox-list.scss ***!
-  \*******************************************************************************************************************************************************************/
-.checkbox-list__title {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; }
-  .checkbox-list__title_button {
-    position: absolute;
-    left: -6px;
-    bottom: -5px;
-    appearance: none;
-    width: 256px;
-    height: 28px;
-    cursor: pointer; }
-  .checkbox-list__title_icon {
-    position: relative;
-    margin-left: 40px;
-    opacity: .5; }
-    .checkbox-list__title_icon > label {
-      cursor: pointer; }
-
-.checkbox-list__items {
-  display: none;
-  margin-top: 18px; }
-
-/*!*********************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/expandable/__dropdown/expandable__dropdown.scss ***!
-  \*********************************************************************************************************************************************************/
-.dropdown {
-  position: absolute;
-  display: none;
-  top: 43px;
-  width: inherit;
-  z-index: 20;
-  padding: 7px 7px 7px 15px;
-  background-color: white;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  border-color: rgba(31, 32, 65, 0.5);
-  border-radius: 0px 0px 4px 4px; }
-  .dropdown__option {
-    display: flex;
-    align-items: center;
-    margin-bottom: 7px;
-    height: 30px; }
-    .dropdown__option_name {
-      text-transform: uppercase; }
-
-/*!************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/expandable/expandable.scss ***!
-  \************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/expandable-entities/expandable-entities.scss ***!
+  \******************************************************************************************************************************************************/
 .expander_active {
   display: table; }
 
@@ -750,10 +727,32 @@
     gap: 20px;
     align-items: center; }
 
+/*!*********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/input/_dropdown/input_dropdown.scss ***!
+  \*********************************************************************************************************************************************/
+.dropdown {
+  position: absolute;
+  display: none;
+  top: 43px;
+  width: inherit;
+  z-index: 20;
+  padding: 7px 7px 7px 15px;
+  background-color: white;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border-color: rgba(31, 32, 65, 0.5);
+  border-radius: 0px 0px 4px 4px; }
+  .dropdown__option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px;
+    height: 30px; }
+    .dropdown__option_name {
+      text-transform: uppercase; }
+
 /*!**************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/input/input.scss ***!
   \**************************************************************************************************************************/
-.gradient-fill, .input__icon_subscription {
+.gradient-fill, .input__icon_subscribe {
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -789,17 +788,17 @@
       color: rgba(31, 32, 65, 0.75); }
     .input__frame:hover + .input__icon_dropdown > .material-icons, .input__frame:disabled + .input__icon_dropdown > .material-icons, .input__frame:focus-within + .input__icon_dropdown > .material-icons, .input__frame[checked] + .input__icon_dropdown > .material-icons {
       color: rgba(31, 32, 65, 0.75); }
-  .input__frame.expander[checked] {
+  .input__frame.input__dropdown.expander[checked] {
     border-radius: 4px 4px 0px 0px; }
 
-.input__icon_dropdown, .input__icon_subscription {
+.input__icon_expand, .input__icon_subscribe {
   position: absolute;
   bottom: 10px;
   right: 10px; }
-  .input__icon_dropdown > .material-icons, .input__icon_subscription > .material-icons {
+  .input__icon_expand > .material-icons, .input__icon_subscribe > .material-icons {
     cursor: pointer; }
 
-.input__icon_dropdown {
+.input__icon_expand {
   color: rgba(31, 32, 65, 0.5); }
 
 .input__frame.expander {

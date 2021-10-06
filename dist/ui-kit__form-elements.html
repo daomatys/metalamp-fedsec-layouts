@@ -15,7 +15,7 @@
               </div>
             </div>
             <div class="input__element">
-              <input class="input__frame" placeholder="Email">
+              <input class="input__frame" type="text" placeholder="Email">
             </div>
           </div>
           <div class="input elem__width_100">
@@ -24,7 +24,7 @@
               </div>
             </div>
             <div class="input__element">
-              <input class="input__frame" disabled placeholder="This is pretty awesome">
+              <input class="input__frame" type="text" placeholder="This is pretty awesome" disabled>
             </div>
           </div>
           <div class="input elem__width_100 expander__parent">
@@ -33,9 +33,9 @@
               </div>
             </div>
             <div class="input__element">
-              <input class="input__frame expander" id="dropdown__common_01" placeholder="Сколько гостей" readonly>
-              <div class="input__icon_dropdown">
-                <label class="material-icons" for="dropdown__common_01">expand_more</label>
+              <input class="input__frame input__dropdown expander" id="uik-fe__common_01" placeholder="Сколько гостей" readonly>
+              <div class="input__icon_expand">
+                <label class="material-icons" for="uik-fe__common_01">expand_more</label>
               </div>
               <div class="dropdown expander__aim">
                 <div class="dropdown__option"><span class="dropdown__option_name custom-font-style_h3">взрослые</span>
@@ -59,7 +59,7 @@
               </div>
             </div>
             <div class="input__element">
-              <input class="input__frame" placeholder="ДД.ММ.ГГГГ">
+              <input class="input__frame" type="date" placeholder="ДД.ММ.ГГГГ">
             </div>
           </div>
         </div>
@@ -72,16 +72,11 @@
                   </div>
                 </div>
                 <div class="input__element">
-                  <input class="input__frame expander" id="dropdown__date-twins_01" placeholder="ДД.ММ.ГГГГ" readonly>
-                  <div class="input__icon_dropdown">
-                    <label class="material-icons" for="dropdown__date-twins_01">expand_more</label>
+                  <input class="input__frame expander" id="uik-fe__twins_01" placeholder="ДД.ММ.ГГГГ" readonly>
+                  <div class="input__icon_expand">
+                    <label class="material-icons" for="uik-fe__twins_01">expand_more</label>
                   </div>
-                  <div class="dropdown expander__aim">
-                    <div class="dropdown__option"><span class="dropdown__option_name custom-font-style_h3"></span>
-                      <div class="dropdown__button_inc"> </div><span class="dropdown__counter"> </span>
-                      <div class="dropdown__button_dec"></div>
-                    </div>
-                  </div>
+                  <div class="date-picker expander__aim"></div>
                 </div>
               </div>
               <div class="input elem__width_50 expander__parent">
@@ -90,16 +85,11 @@
                   </div>
                 </div>
                 <div class="input__element">
-                  <input class="input__frame expander" id="dropdown__date-twins_02" placeholder="19.08.2019" readonly>
-                  <div class="input__icon_dropdown">
-                    <label class="material-icons" for="dropdown__date-twins_02">expand_more</label>
+                  <input class="input__frame expander" id="uik-fe__twins_02" placeholder="19.08.2019" readonly>
+                  <div class="input__icon_expand">
+                    <label class="material-icons" for="uik-fe__twins_02">expand_more</label>
                   </div>
-                  <div class="dropdown expander__aim">
-                    <div class="dropdown__option"><span class="dropdown__option_name custom-font-style_h3"></span>
-                      <div class="dropdown__button_inc"> </div><span class="dropdown__counter"> </span>
-                      <div class="dropdown__button_dec"></div>
-                    </div>
-                  </div>
+                  <div class="date-picker expander__aim"></div>
                 </div>
               </div>
             </div>
@@ -112,16 +102,11 @@
               </div>
             </div>
             <div class="input__element">
-              <input class="input__frame expander" id="dropdown__date-semi-wide_01" placeholder="19 авг - 23 авг" readonly>
-              <div class="input__icon_dropdown">
-                <label class="material-icons" for="dropdown__date-semi-wide_01">expand_more</label>
+              <input class="input__frame expander" id="uik-fe__semi-wide_01" placeholder="19 авг - 23 авг" readonly>
+              <div class="input__icon_expand">
+                <label class="material-icons" for="uik-fe__semi-wide_01">expand_more</label>
               </div>
-              <div class="dropdown expander__aim">
-                <div class="dropdown__option"><span class="dropdown__option_name custom-font-style_h3"></span>
-                  <div class="dropdown__button_inc"> </div><span class="dropdown__counter"> </span>
-                  <div class="dropdown__button_dec"></div>
-                </div>
-              </div>
+              <div class="date-picker expander__aim"></div>
             </div>
           </div>
         </div>
@@ -132,8 +117,8 @@
               </div>
             </div>
             <div class="input__element">
-              <input class="input__frame" type="email" placeholder="Email">
-              <div class="input__icon_subscription"><span class="material-icons">arrow_forward</span>
+              <input class="input__frame" type="Email" placeholder="Email">
+              <div class="input__icon_subscribe"><span class="material-icons">arrow_forward</span>
               </div>
             </div>
           </div>
@@ -312,12 +297,20 @@
               </div>
             </div>
             <div class="input__element">
-              <input class="input__frame expander" id="input__action_01" placeholder="2 спальни, 2 кровати..." readonly>
-              <div class="input__icon_dropdown">
-                <label class="material-icons" for="input__action_01">expand_more</label>
+              <input class="input__frame input__dropdown expander" id="uik-fe__action_01" placeholder="2 спальни, 2 кровати..." readonly>
+              <div class="input__icon_expand">
+                <label class="material-icons" for="uik-fe__action_01">expand_more</label>
               </div>
               <div class="dropdown expander__aim">
-                <div class="dropdown__option"><span class="dropdown__option_name custom-font-style_h3"></span>
+                <div class="dropdown__option"><span class="dropdown__option_name custom-font-style_h3">спальни</span>
+                  <div class="dropdown__button_inc"> </div><span class="dropdown__counter"> </span>
+                  <div class="dropdown__button_dec"></div>
+                </div>
+                <div class="dropdown__option"><span class="dropdown__option_name custom-font-style_h3">кровати</span>
+                  <div class="dropdown__button_inc"> </div><span class="dropdown__counter"> </span>
+                  <div class="dropdown__button_dec"></div>
+                </div>
+                <div class="dropdown__option"><span class="dropdown__option_name custom-font-style_h3">ванные комнаты</span>
                   <div class="dropdown__button_inc"> </div><span class="dropdown__counter"> </span>
                   <div class="dropdown__button_dec"></div>
                 </div>
@@ -330,9 +323,9 @@
               </div>
             </div>
             <div class="input__element">
-              <input class="input__frame expander" id="input__action_02" placeholder="2 спальни, 2 кровати..." readonly checked>
-              <div class="input__icon_dropdown icon_flipped">
-                <label class="material-icons" for="input__action_02">expand_more</label>
+              <input class="input__frame input__dropdown expander" id="uik-fe__action_02" placeholder="2 спальни, 2 кровати..." checked readonly>
+              <div class="input__icon_expand icon_flipped">
+                <label class="material-icons" for="uik-fe__action_02">expand_more</label>
               </div>
               <div class="dropdown expander__aim expander_active">
                 <div class="dropdown__option"><span class="dropdown__option_name custom-font-style_h3">спальни</span>
@@ -360,9 +353,9 @@
               </div>
             </div>
             <div class="input__element">
-              <input class="input__frame expander" id="dropdown_no-guests_01" placeholder="Сколько гостей" readonly checked>
-              <div class="input__icon_dropdown icon_flipped">
-                <label class="material-icons" for="dropdown_no-guests_01">expand_more</label>
+              <input class="input__frame input__dropdown expander" id="uik-fe__no-guests_01" placeholder="Сколько гостей" checked readonly>
+              <div class="input__icon_expand icon_flipped">
+                <label class="material-icons" for="uik-fe__no-guests_01">expand_more</label>
               </div>
               <div class="dropdown expander__aim expander_active">
                 <div class="dropdown__option"><span class="dropdown__option_name custom-font-style_h3">взрослые</span>
@@ -390,9 +383,9 @@
               </div>
             </div>
             <div class="input__element">
-              <input class="input__frame expander" id="dropdown_guests_01" placeholder="3 гостя" readonly checked>
-              <div class="input__icon_dropdown icon_flipped">
-                <label class="material-icons" for="dropdown_guests_01">expand_more</label>
+              <input class="input__frame input__dropdown expander" id="uik-fe__guests_01" placeholder="3 гостя" checked readonly>
+              <div class="input__icon_expand icon_flipped">
+                <label class="material-icons" for="uik-fe__guests_01">expand_more</label>
               </div>
               <div class="dropdown expander__aim expander_active">
                 <div class="dropdown__option"><span class="dropdown__option_name custom-font-style_h3">взрослые</span>

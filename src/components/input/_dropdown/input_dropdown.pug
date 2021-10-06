@@ -1,0 +1,17 @@
+include /components/material-icon-cell/material-icon-cell.pug
+
+mixin inputDropdown( item )
+  - const dropdown = item.dropdown || {}
+  - const expanderActiveClass = dropdown.expanded ? 'expander_active' : ''
+  - const iconFlippedClass = dropdown.expanded ? 'icon_flipped' : ''
+
+  input.input__frame.input__dropdown.expander( id=item.id placeholder=item.placeholder checked=dropdown.expanded readonly )
+  .input__icon_expand( class=iconFlippedClass )
+    +materialIcon('expand_more', item.id )
+  .dropdown.expander__aim( class=expanderActiveClass )
+    each option in item.dropdown.options
+      .dropdown__option
+        span.dropdown__option_name.custom-font-style_h3 #{option}
+        .dropdown__button_inc 
+        span.dropdown__counter 
+        .dropdown__button_dec
