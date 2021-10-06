@@ -26,16 +26,20 @@ const PAGES = PAGES_DIR.map( dir => fs.readdirSync( dir ).find( fileName => file
 
 module.exports = {
   mode: 'development',
+  
   externals: {
     paths: PATHS
   },
+
   entry: {
     app: PATHS.src,
   },
+
   output: {
     filename: 'index.js',
     path: PATHS.dist
   },
+
   module: {
     rules: [
       {
@@ -72,6 +76,7 @@ module.exports = {
       }
     ]
   },
+
   plugins: [
     ...PAGES.map( (page, index) => new HtmlWebpackPlugin({
       template: `${PAGES_DIR[index]}/${page}`,
@@ -88,6 +93,7 @@ module.exports = {
     }),
     new CleanWebpackPlugin()
   ],
+
   resolve: {
     alias: {
       '@variables': path.resolve(__dirname, 'src/variables/variables.scss'),
