@@ -53,13 +53,12 @@ $focused-color_border-n-icon: rgba($valhalla, .5);
       }
     }
 
-    &.input__dropdown.expander[checked] {
+    &.dropdown.expander[checked] {
       border-radius:4px 4px 0px 0px;
     }
   }
 
   &__icon {
-
     &_expand,
     &_subscribe {
       position: absolute;
@@ -85,7 +84,7 @@ $focused-color_border-n-icon: rgba($valhalla, .5);
   }
 }
 
-.dropdown,
+.input__dropdown,
 .input__frame {
   border-width: 1px;
   border-style: solid;

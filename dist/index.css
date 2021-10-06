@@ -730,7 +730,7 @@
 /*!*********************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/input/_dropdown/input_dropdown.scss ***!
   \*********************************************************************************************************************************************/
-.dropdown {
+.input__dropdown {
   position: absolute;
   display: none;
   top: 43px;
@@ -741,13 +741,13 @@
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   border-color: rgba(31, 32, 65, 0.5);
   border-radius: 0px 0px 4px 4px; }
-  .dropdown__option {
+  .input__dropdown_option {
     display: flex;
     align-items: center;
     margin-bottom: 7px;
     height: 30px; }
-    .dropdown__option_name {
-      text-transform: uppercase; }
+  .input__dropdown_name {
+    text-transform: uppercase; }
 
 /*!**************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/input/input.scss ***!
@@ -788,7 +788,7 @@
       color: rgba(31, 32, 65, 0.75); }
     .input__frame:hover + .input__icon_dropdown > .material-icons, .input__frame:disabled + .input__icon_dropdown > .material-icons, .input__frame:focus-within + .input__icon_dropdown > .material-icons, .input__frame[checked] + .input__icon_dropdown > .material-icons {
       color: rgba(31, 32, 65, 0.75); }
-  .input__frame.input__dropdown.expander[checked] {
+  .input__frame.dropdown.expander[checked] {
     border-radius: 4px 4px 0px 0px; }
 
 .input__icon_expand, .input__icon_subscribe {
@@ -804,7 +804,7 @@
 .input__frame.expander {
   cursor: pointer; }
 
-.dropdown,
+.input__dropdown,
 .input__frame {
   border-width: 1px;
   border-style: solid;
