@@ -17,6 +17,7 @@ $.datepicker.regional['ru'] = {
 	showMonthAfterYear: false,
 	yearSuffix: ''
 };
+
 $.datepicker.setDefaults($.datepicker.regional['ru']);
 
 function findDatePickerContainer() {
@@ -35,9 +36,7 @@ function initDatePicker( item ) {
   const itemId = '#' + item.id;
 
   $( itemId ).datepicker({
-		showOn: "button",
-		buttonImage: "https://snipp.ru/demo/437/calendar.gif",
-		buttonImageOnly: true,
+    showOtherMonths: true,
 		buttonText: "Выбрать дату"
   });
 }
