@@ -27,7 +27,8 @@
   }
 
   &__items {
-    display: none;
+    position: absolute;
+    visibility: hidden;
     margin-top: 18px;
   }
 }
