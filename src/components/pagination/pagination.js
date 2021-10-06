@@ -1,22 +1,28 @@
 import 'paginationjs/dist/pagination.min';
 
-$(
-  function() {
-    $('#pagination').pagination({
-      className: 'custom-paginationjs',
-      dataSource: generateDataByCount,
-      pageRange: 1,
-      pageSize: 12,
-      autoHidePrevious: true,
-      autoHideNext: true,
-      prevText: 'arrow_forward',
-      nextText: 'arrow_forward',
-      showNavigator: true,
-      formatNavigator: defineNavigatorText/*,
-      callback: activateTemplating*/
-    });
+function findPaginationContainer() {
+  const paginationElem = document.querySelector('#pagination');
+
+  if ( paginationElem ) {
+    initPaginationModule();
   }
-);
+}
+
+function initPaginationModule() {
+  $('#pagination').pagination({
+    className: 'custom-paginationjs',
+    dataSource: generateDataByCount,
+    pageRange: 1,
+    pageSize: 12,
+    autoHidePrevious: true,
+    autoHideNext: true,
+    prevText: 'arrow_forward',
+    nextText: 'arrow_forward',
+    showNavigator: true,
+    formatNavigator: defineNavigatorText/*,
+    callback: activateTemplating*/
+  });
+}
 
 function generateDataByCount(done) {
   let result = [];
@@ -36,7 +42,7 @@ function defineNavigatorText( currentPage, undefined, totalNumber ) {
   return result;
 }
 
-/*function activateTemplating( data, pagination ) {
+/*function activateTemplating( data, paginationElem ) {
   let html = simpleTemplating(data);
   $('#data-container').html(html);
 }
@@ -49,3 +55,5 @@ function simpleTemplating(data) {
   html += '</ul>';
   return html;
 }*/
+
+findPaginationContainer();
