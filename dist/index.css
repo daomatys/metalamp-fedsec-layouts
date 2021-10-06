@@ -2770,78 +2770,6 @@ a.ui-button:active,
 /*!****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/range-slider/range-slider.scss ***!
   \****************************************************************************************************************************************/
-/*!
- * jQuery UI Slider 1.12.1
- * http://jqueryui.com
- *
- * Copyright jQuery Foundation and other contributors
- * Released under the MIT license.
- * http://jquery.org/license
- *
- * http://api.jqueryui.com/slider/#theming
- */
-.ui-slider {
-  position: relative;
-  text-align: left; }
-
-.ui-slider .ui-slider-handle {
-  position: absolute;
-  z-index: 2;
-  width: 1.2em;
-  height: 1.2em;
-  cursor: default;
-  -ms-touch-action: none;
-  touch-action: none; }
-
-.ui-slider .ui-slider-range {
-  position: absolute;
-  z-index: 1;
-  font-size: .7em;
-  display: block;
-  border: 0;
-  background-position: 0 0; }
-
-/* support: IE8 - See #6727 */
-.ui-slider.ui-state-disabled .ui-slider-handle,
-.ui-slider.ui-state-disabled .ui-slider-range {
-  filter: inherit; }
-
-.ui-slider-horizontal {
-  height: .8em; }
-
-.ui-slider-horizontal .ui-slider-handle {
-  top: -.3em;
-  margin-left: -.6em; }
-
-.ui-slider-horizontal .ui-slider-range {
-  top: 0;
-  height: 100%; }
-
-.ui-slider-horizontal .ui-slider-range-min {
-  left: 0; }
-
-.ui-slider-horizontal .ui-slider-range-max {
-  right: 0; }
-
-.ui-slider-vertical {
-  width: .8em;
-  height: 100px; }
-
-.ui-slider-vertical .ui-slider-handle {
-  left: -.3em;
-  margin-left: 0;
-  margin-bottom: -.6em; }
-
-.ui-slider-vertical .ui-slider-range {
-  left: 0;
-  width: 100%; }
-
-.ui-slider-vertical .ui-slider-range-min {
-  bottom: 0; }
-
-.ui-slider-vertical .ui-slider-range-max {
-  top: 0; }
-
 .range-slider {
   box-sizing: border-box; }
   .range-slider__container {
@@ -2851,26 +2779,34 @@ a.ui-button:active,
     margin-top: 23px; }
 
 .ui-slider {
+  position: relative;
   height: 6px;
-  background: #FFF;
+  text-align: left;
+  background: white;
   border: 1px solid rgba(31, 32, 65, 0.25);
-  box-sizing: border-box;
-  border-radius: 3px; }
-
-.ui-widget-content .ui-state-default {
-  border: 2px solid #FFF;
-  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-  border-radius: 50%;
-  width: 12px;
-  height: 12px;
-  top: -6px;
-  appearance: none;
-  outline: none; }
-
-.ui-slider .ui-slider-range {
-  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-  height: 6px;
-  top: -1px; }
+  border-radius: 3px;
+  box-sizing: border-box; }
+  .ui-slider > .ui-slider-range,
+  .ui-slider > .ui-slider-handle {
+    position: absolute;
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%); }
+  .ui-slider > .ui-slider-handle {
+    width: 12px;
+    height: 12px;
+    top: -6px;
+    margin-left: -.6em;
+    touch-action: none;
+    appearance: none;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 50%;
+    z-index: 2; }
+  .ui-slider > .ui-slider-range {
+    display: block;
+    height: 6px;
+    top: -1px;
+    border: none;
+    z-index: 1; }
 
 /*!**********************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/title-bar/title-bar.scss ***!

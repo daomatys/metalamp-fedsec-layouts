@@ -1,5 +1,4 @@
 @import "@variables";
-@import "jquery-ui/themes/base/slider";
 
 .range-slider {
   box-sizing: border-box;
@@ -13,26 +12,38 @@
 }
 
 .ui-slider {
+  position: relative;
   height: 6px;
-  background: #FFF;
+  text-align: left;
+  background: white;
   border: 1px solid rgba(31, 32, 65, 0.25);
-  box-sizing: border-box;
   border-radius: 3px;
-}
+  box-sizing: border-box;
 
-.ui-widget-content .ui-state-default {
-  border: 2px solid #FFF;
-  background: $secondary-gradient;
-  border-radius: 50%;
-  width: 12px;
-  height: 12px;
-  top: -6px;
-  appearance: none;
-  outline: none;
-}
+  & > .ui-slider-range,
+  & > .ui-slider-handle {
+    position: absolute;
+    background: $secondary-gradient;
+  }
 
-.ui-slider .ui-slider-range {
-  background: $secondary-gradient;
-  height: 6px;
-  top: -1px;
+  & > .ui-slider-handle {
+    width: 12px;
+    height: 12px;
+    top: -6px;
+    margin-left: -.6em;
+    touch-action: none;
+    appearance: none;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  & > .ui-slider-range {
+    display: block;
+    height: 6px;
+    top: -1px;
+    border: none;
+    z-index: 1;
+  }
 }
