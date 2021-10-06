@@ -1,7 +1,7 @@
 @import "@variables";
 
 .room-booking {
-
+  
   &__card-header {
     display: flex;
     justify-content: space-between;
@@ -38,7 +38,6 @@
   }
 
   &__calc {
-
     &_price-basic,
     &_price-off,
     &_fee {
