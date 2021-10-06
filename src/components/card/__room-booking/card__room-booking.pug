@@ -21,25 +21,17 @@ mixin cardRoomBooking()
         +inputs([
           {
             id: "room-booking__date-picker_arrival",
+            type: "date-picker",
             title: "прибытие",
             placeholder: "ДД.ММ.ГГГГ",
             widthbypercent: 50,
-            dropdown: {
-              options: [
-                ""
-              ]
-            }
           },
           {
             id: "room-booking__date-picker_departure",
+            type: "date-picker",
             title: "выезд",
             placeholder: "ДД.ММ.ГГГГ",
             widthbypercent: 50,
-            dropdown: {
-              options: [
-                ""
-              ]
-            }
           }
         ])
 
@@ -47,6 +39,7 @@ mixin cardRoomBooking()
       +inputs([
         {
           id: "room-booking__guests",
+          type: "dropdown",
           title: "гости",
           placeholder: "Сколько гостей",
           dropdown: {

@@ -45,7 +45,7 @@ $focused-color_border-n-icon: rgba($valhalla, .5);
         color: $focused-color_text
       }
 
-      & + .input__icon_dropdown {
+      & + .input__icon_expand {
         & > .material-icons{
           color: $focused-color_text
         }

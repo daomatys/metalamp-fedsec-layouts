@@ -12,34 +12,59 @@
           <div class="find-room__title"><span class="custom-font-style_h1">Найдём номера под ваши пожелания</span></div>
           <div class="find-room__dropdowns">
             <div class="find-room__dropdowns_date-picker twins-grid-line">
-              <div class="input elem__width_50">
+              <div class="input elem__width_50 expander__parent">
                 <div class="input__title">
                   <div class="title-bar custom-font-style_h3"><span class="title-bar__title">прибытие</span>
                   </div>
                 </div>
                 <div class="input__element">
-                  <input class="input__frame" placeholder="ДД.ММ.ГГГГ">
+                  <input class="input__frame expander" id="find-room__date-picker_arrival" placeholder="ДД.ММ.ГГГГ" readonly>
+                  <div class="input__icon_expand">
+                    <label class="material-icons" for="find-room__date-picker_arrival">expand_more</label>
+                  </div>
+                  <div class="date-picker expander__aim"></div>
                 </div>
               </div>
-              <div class="input elem__width_50">
+              <div class="input elem__width_50 expander__parent">
                 <div class="input__title">
                   <div class="title-bar custom-font-style_h3"><span class="title-bar__title">выезд</span>
                   </div>
                 </div>
                 <div class="input__element">
-                  <input class="input__frame" placeholder="ДД.ММ.ГГГГ">
+                  <input class="input__frame expander" id="find-room__date-picker_departure" placeholder="ДД.ММ.ГГГГ" readonly>
+                  <div class="input__icon_expand">
+                    <label class="material-icons" for="find-room__date-picker_departure">expand_more</label>
+                  </div>
+                  <div class="date-picker expander__aim"></div>
                 </div>
               </div>
             </div>
           </div>
           <div class="find-room__dropdowns_guests">
-            <div class="input elem__width_100">
+            <div class="input elem__width_100 expander__parent">
               <div class="input__title">
                 <div class="title-bar custom-font-style_h3"><span class="title-bar__title">гости</span>
                 </div>
               </div>
               <div class="input__element">
-                <input class="input__frame" placeholder="Сколько гостей">
+                <input class="input__frame dropdown expander" id="find-room__guests" placeholder="Сколько гостей" readonly>
+                <div class="input__icon_expand">
+                  <label class="material-icons" for="find-room__guests">expand_more</label>
+                </div>
+                <div class="input__dropdown expander__aim">
+                  <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">взрослые</span>
+                    <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
+                    <div class="input__dropdown_button-dec"></div>
+                  </div>
+                  <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">дети</span>
+                    <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
+                    <div class="input__dropdown_button-dec"></div>
+                  </div>
+                  <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">младенцы</span>
+                    <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
+                    <div class="input__dropdown_button-dec"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -140,34 +165,59 @@
           </div>
           <div class="room-booking__inputs-container">
             <div class="room-booking__inputs_date-picker twins-grid-line">
-              <div class="input elem__width_50">
+              <div class="input elem__width_50 expander__parent">
                 <div class="input__title">
                   <div class="title-bar custom-font-style_h3"><span class="title-bar__title">прибытие</span>
                   </div>
                 </div>
                 <div class="input__element">
-                  <input class="input__frame" placeholder="ДД.ММ.ГГГГ">
+                  <input class="input__frame expander" id="room-booking__date-picker_arrival" placeholder="ДД.ММ.ГГГГ" readonly>
+                  <div class="input__icon_expand">
+                    <label class="material-icons" for="room-booking__date-picker_arrival">expand_more</label>
+                  </div>
+                  <div class="date-picker expander__aim"></div>
                 </div>
               </div>
-              <div class="input elem__width_50">
+              <div class="input elem__width_50 expander__parent">
                 <div class="input__title">
                   <div class="title-bar custom-font-style_h3"><span class="title-bar__title">выезд</span>
                   </div>
                 </div>
                 <div class="input__element">
-                  <input class="input__frame" placeholder="ДД.ММ.ГГГГ">
+                  <input class="input__frame expander" id="room-booking__date-picker_departure" placeholder="ДД.ММ.ГГГГ" readonly>
+                  <div class="input__icon_expand">
+                    <label class="material-icons" for="room-booking__date-picker_departure">expand_more</label>
+                  </div>
+                  <div class="date-picker expander__aim"></div>
                 </div>
               </div>
             </div>
           </div>
           <div class="room-booking__inputs_guests">
-            <div class="input elem__width_100">
+            <div class="input elem__width_100 expander__parent">
               <div class="input__title">
                 <div class="title-bar custom-font-style_h3"><span class="title-bar__title">гости</span>
                 </div>
               </div>
               <div class="input__element">
-                <input class="input__frame" placeholder="Сколько гостей">
+                <input class="input__frame dropdown expander" id="room-booking__guests" placeholder="Сколько гостей" readonly>
+                <div class="input__icon_expand">
+                  <label class="material-icons" for="room-booking__guests">expand_more</label>
+                </div>
+                <div class="input__dropdown expander__aim">
+                  <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">взрослые</span>
+                    <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
+                    <div class="input__dropdown_button-dec"></div>
+                  </div>
+                  <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">дети</span>
+                    <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
+                    <div class="input__dropdown_button-dec"></div>
+                  </div>
+                  <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">младенцы</span>
+                    <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
+                    <div class="input__dropdown_button-dec"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

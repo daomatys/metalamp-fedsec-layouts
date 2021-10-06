@@ -10,30 +10,23 @@ mixin cardFindRoom()
         +inputs([
           {
             id: "find-room__date-picker_arrival",
+            type: "date-picker",
             title: "прибытие",
             placeholder: "ДД.ММ.ГГГГ",
             widthbypercent: 50,
-            dropdown: {
-              options: [
-                ""
-              ]
-            }
           },
           {
             id: "find-room__date-picker_departure",
+            type: "date-picker",
             title: "выезд",
             placeholder: "ДД.ММ.ГГГГ",
             widthbypercent: 50,
-            dropdown: {
-              options: [
-                ""
-              ]
-            }
           }
         ])
     .find-room__dropdowns_guests
       +inputs([
         {
+          type: "dropdown",
           id: "find-room__guests",
           title: "гости",
           placeholder: "Сколько гостей",

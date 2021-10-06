@@ -787,7 +787,7 @@
     border-color: rgba(31, 32, 65, 0.5); }
     .input__frame:hover::placeholder, .input__frame:disabled::placeholder, .input__frame:focus-within::placeholder, .input__frame[checked]::placeholder {
       color: rgba(31, 32, 65, 0.75); }
-    .input__frame:hover + .input__icon_dropdown > .material-icons, .input__frame:disabled + .input__icon_dropdown > .material-icons, .input__frame:focus-within + .input__icon_dropdown > .material-icons, .input__frame[checked] + .input__icon_dropdown > .material-icons {
+    .input__frame:hover + .input__icon_expand > .material-icons, .input__frame:disabled + .input__icon_expand > .material-icons, .input__frame:focus-within + .input__icon_expand > .material-icons, .input__frame[checked] + .input__icon_expand > .material-icons {
       color: rgba(31, 32, 65, 0.75); }
   .input__frame.dropdown.expander[checked] {
     border-radius: 4px 4px 0px 0px; }
