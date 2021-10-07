@@ -26,7 +26,7 @@ $.datepicker.regional['ru'] = {
   dateFormat:  'dd.mm.yy',
   yearSuffix:  '',
   firstDay: 1,
-  isRTL:              false,
+  isRTL: false,
   showMonthAfterYear: false
 };
 
@@ -34,8 +34,6 @@ $.datepicker.setDefaults($.datepicker.regional['ru']);
 
 function findDatePickerContainer() {
   const datePickerItems = document.querySelectorAll(".date-picker");
-
-  console.log(datePickerItems)
 
   if ( datePickerItems ) {
     for ( let item of datePickerItems ) {
@@ -47,10 +45,18 @@ function findDatePickerContainer() {
 function initDatePicker( item ) {
   const itemId = '#' + item.id;
 
+  const dateToday = '2019-08-08';
+
+  //const today = new Date();
+  //const dateToday =`${ today.getFullYear() }-${ today.getMonth() + 1 }-${ today.getDate() }`;
+
+  const something = id => $.datepicker.parseDate( $.datepicker._defaults.dateFormat, $( id ).val() );
+
   $( itemId ).datepicker({
     showOtherMonths: true,
-    buttonText: "Выбрать дату"
-  });
+    minDate: new Date( dateToday ),
+    currentDate: new Date( dateToday ),
+  })
 }
 
 findDatePickerContainer();

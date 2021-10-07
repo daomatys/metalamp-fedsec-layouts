@@ -995,7 +995,9 @@
     position: absolute;
     top: 2px;
     width: 24px;
-    height: 24px; }
+    height: 24px;
+    background: rgba(188, 156, 255, 0.25);
+    cursor: pointer; }
     .ui-datepicker-prev-hover, .ui-datepicker-next-hover {
       opacity: .75; }
   .ui-datepicker-prev .ui-icon {

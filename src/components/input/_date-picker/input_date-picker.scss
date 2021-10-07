@@ -32,6 +32,8 @@
     top: 2px;
     width: 24px;
     height: 24px;
+    background: rgba($perfume, .25);
+    cursor: pointer;
 
     &-hover {
       opacity: .75;
