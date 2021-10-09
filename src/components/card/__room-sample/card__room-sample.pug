@@ -1,0 +1,9 @@
+include /components/button/__star-rate/button__star-rate.pug
+
+mixin cardRoomSample()
+  .room-sample
+    .room-sample__image-container
+      img( src=require(`/src/assets/images/raster/avatars/${ item.avatarname }.png`) )
+      .room-sample__arrow_left 
+      .room-sample__arrow_right
+    .room-sample__room-info-container 
