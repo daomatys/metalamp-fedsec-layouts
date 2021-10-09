@@ -7,16 +7,33 @@ function expanderInitEventListeners() {
 }
 
 function expanderActivation({target}) {
-  const parent = target.closest('.expander__parent')
+  const expander = target;
+  const parent = expander.closest('.expander__parent');
   const aim = parent.querySelector('.expander__aim');
   const icon = parent.querySelector('.material-icons');
 
-  target.hasAttribute('checked') 
-    ? target.removeAttribute('checked') 
-    : target.setAttribute('checked', '');
+  console.log(expander)
 
-  iconAnimation(icon);
-  aim.classList.toggle('expander_active');
+  const isExpanderActive = !expander.hasAttribute('checked');
+
+  if ( isExpanderActive ) {
+    expander.setAttribute('checked', '');
+  } else {
+    expander.removeAttribute('checked');
+  }
+
+  expanderToggle();
+
+  function expanderToggle() {
+    iconAnimation( icon );
+    aim.classList.toggle('expander_active');
+  }
+
+  function expanderBlurEvent() {
+    expander.removeEventListener('blur', expanderBlurEvent, { once: true });
+    expander.removeAttribute('checked');
+    expanderToggle();
+  }
 }
 
 function iconAnimation(icon) {
@@ -27,7 +44,7 @@ function iconAnimation(icon) {
     duration: 400,
     fill: 'both',
     composite: 'add'
-  })
+  });
   animation.persist();
 }
 
