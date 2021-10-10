@@ -17,39 +17,35 @@ mixin cardRoomBooking()
 
     .room-booking__inputs-container
       .room-booking__inputs_date-picker.twins-grid-line
-        +inputs([
-          {
-            id: "room-booking__date-picker_arrival",
-            type: "date-picker",
-            title: "прибытие",
-            placeholder: "ДД.ММ.ГГГГ",
-            widthbypercent: 50,
-          },
-          {
-            id: "room-booking__date-picker_departure",
-            type: "date-picker",
-            title: "выезд",
-            placeholder: "ДД.ММ.ГГГГ",
-            widthbypercent: 50,
-          }
-        ])
+        +input({
+          id: "room-booking__date-picker_arrival",
+          type: "date-picker",
+          title: "прибытие",
+          placeholder: "ДД.ММ.ГГГГ",
+          widthbypercent: 50,
+        })
+        +input({
+          id: "room-booking__date-picker_departure",
+          type: "date-picker",
+          title: "выезд",
+          placeholder: "ДД.ММ.ГГГГ",
+          widthbypercent: 50,
+        })
 
     .room-booking__inputs_guests
-      +inputs([
-        {
-          id: "room-booking__guests",
-          type: "dropdown",
-          title: "гости",
-          placeholder: "Сколько гостей",
-          dropdown: {
-            options: [
-              "взрослые",
-              "дети",
-              "младенцы"
-            ]
-          }
+      +input({
+        id: "room-booking__guests",
+        type: "dropdown",
+        title: "гости",
+        placeholder: "Сколько гостей",
+        dropdown: {
+          options: [
+            "взрослые",
+            "дети",
+            "младенцы"
+          ]
         }
-      ])
+      })
 
     .room-booking__calc-container.custom-font-style_body
       .room-booking__calc_price-basic

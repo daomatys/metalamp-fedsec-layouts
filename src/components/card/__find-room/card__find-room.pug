@@ -7,38 +7,34 @@ mixin cardFindRoom()
       span.custom-font-style_h1 Найдём номера под ваши пожелания
     .find-room__dropdowns
       .find-room__dropdowns_date-picker.twins-grid-line
-        +inputs([
-          {
-            id: "find-room__date-picker_arrival",
-            type: "date-picker",
-            title: "прибытие",
-            placeholder: "ДД.ММ.ГГГГ",
-            widthbypercent: 50,
-          },
-          {
-            id: "find-room__date-picker_departure",
-            type: "date-picker",
-            title: "выезд",
-            placeholder: "ДД.ММ.ГГГГ",
-            widthbypercent: 50,
-          }
-        ])
+        +input({
+          id: "find-room__date-picker_arrival",
+          type: "date-picker",
+          title: "прибытие",
+          placeholder: "ДД.ММ.ГГГГ",
+          widthbypercent: 50,
+        })
+        +input({
+          id: "find-room__date-picker_departure",
+          type: "date-picker",
+          title: "выезд",
+          placeholder: "ДД.ММ.ГГГГ",
+          widthbypercent: 50,
+        })
     .find-room__dropdowns_guests
-      +inputs([
-        {
-          type: "dropdown",
-          id: "find-room__guests",
-          title: "гости",
-          placeholder: "Сколько гостей",
-          dropdown: {
-            options: [
-              "взрослые",
-              "дети",
-              "младенцы"
-            ]
-          }
+      +input({
+        type: "dropdown",
+        id: "find-room__guests",
+        title: "гости",
+        placeholder: "Сколько гостей",
+        dropdown: {
+          options: [
+            "взрослые",
+            "дети",
+            "младенцы"
+          ]
         }
-      ])
+      })
     .find-room__button_submit.card-footer
       +meanOvalButtons({
         groupname: "find-room__submit-button",

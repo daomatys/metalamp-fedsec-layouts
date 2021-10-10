@@ -9,10 +9,8 @@ mixin cardLogin()
       span.custom-font-style_h1 Войти
 
     .login__input_login-data
-      +inputs([
-        { placeholder: "Email", type: "Email" },
-        { placeholder: "Пароль" }
-      ])
+      +input({ placeholder: "Email", type: "Email" })
+      +input({ placeholder: "Пароль" })
 
     .login__authorization-button
       +meanOvalButtons({

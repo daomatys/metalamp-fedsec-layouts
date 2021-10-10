@@ -9,10 +9,9 @@ mixin cardRegistration()
       span.custom-font-style_h1 Регистрация аккаунта
 
     .registration__input_basic-data
-      +inputs([
-        { placeholder: "Имя" },
-        { placeholder: "Фамилия" }
-      ])
+      +input({ placeholder: "Имя" })
+      +input({ placeholder: "Фамилия" })
+
       .registration__radio-buttons
         +radioButtons([
           { id: "registration_male",   label: "Мужчина", pressed: true },
@@ -20,15 +19,11 @@ mixin cardRegistration()
         ])
 
     .registration__input_date-of-birth
-      +inputs([
-        { title: "дата рождения", placeholder: "ДД.ММ.ГГГГ" }
-      ])
+      +input({ title: "дата рождения", placeholder: "ДД.ММ.ГГГГ" })
 
     .registration__input_login-data
-      +inputs([
-        { placeholder: "Email", title: "данные для входа в сервис", type: "Email" },
-        { placeholder: "Пароль" }
-      ])
+      +input({ placeholder: "Email", title: "данные для входа в сервис", type: "Email" })
+      +input({ placeholder: "Пароль" })
 
       +toggleButton({ id: "registration_toggle_01", label: "Получать спецпредложения", pressed: false })
 

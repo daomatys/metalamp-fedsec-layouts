@@ -5,26 +5,25 @@ include _default/input_default.pug
 include _dropdown/input_dropdown.pug
 include _subscription/input_subscription.pug
 
-mixin inputs( items=[] )
-  each item in items
-    - const widthByPercent = item.widthbypercent ? item.widthbypercent : '100'
-    - const widthByPercentClass = `elem__width_${widthByPercent}`
-    - const expanderParentCase = item.type === 'dropdown' || item.type === 'date-picker';
-    - const expanderParentClass = expanderParentCase ? 'expander__parent' : '';
+mixin input( item )
+  - const widthByPercent = item.widthbypercent ? item.widthbypercent : '100'
+  - const widthByPercentClass = `elem__width_${widthByPercent}`
+  - const expanderParentCase = item.type === 'dropdown' || item.type === 'date-picker';
+  - const expanderParentClass = expanderParentCase ? 'expander__parent' : '';
 
-    .input( class=[widthByPercentClass, expanderParentClass] )
+  .input( class=[widthByPercentClass, expanderParentClass] )
 
-      if item.title
-        .input__title
-          +titleBar( item.title, item.state )
+    if item.title
+      .input__title
+        +titleBar( item.title, item.state )
 
-      .input__element
-        case item.type
-          when 'dropdown'
-            +inputDropdown( item )
-          when 'date-picker'
-            +inputDatePicker( item )
-          when 'subscription'
-            +inputSubscription( item )
-          default
-            +inputDefault( item )
+    .input__element
+      case item.type
+        when 'dropdown'
+          +inputDropdown( item )
+        when 'date-picker'
+          +inputDatePicker( item )
+        when 'subscription'
+          +inputSubscription( item )
+        default
+          +inputDefault( item )
