@@ -1,14 +1,14 @@
 function createArrowScrollersEventListeners() {
 
-  let positioning = {
+  let indication = {
     position: 1,
     left: {
-      shift() { return --this.position < 1; }, 
-      jump()  { this.position = 4 }
+      get case() { return --this.position < 1; }, 
+      set jump( val = 4 ) { this.position = val }
     },
     right: {
-      shift() { return ++this.position > 4; },
-      jump()  { this.position = 1 }
+      get case() { return ++this.position > 4; },
+      set jump( val = 1 ) { this.position = val }
     }
   };
 
@@ -17,25 +17,26 @@ function createArrowScrollersEventListeners() {
   for ( let scroller of scrollers ) {
     scroller.addEventListener(
       'click',
-      ({target}) => filterAnimation({ target: target, positioning: positioning })
+      ({target}) => filterAnimation({ target: target, indication: indication })
     );
   }
 }
 
 function filterAnimation( click ) {
   const target = click.target;
-  const side = target.classList.contains('.room-sample__arrow-scroller_left') ? 'left' : 'right' ;
+  const side = target.classList.contains('room-sample__arrow-scroller_right') ? 'left' : 'right' ;
   const parent = target.closest('.room-sample__container_top');
   const aim = parent.querySelector('.room-sample__image');
-  const changePosition = side === 'left' ? click.positioning.left : click.positioning.right ;
+  const indicationUpdate = side === 'left' ? click.indication.left : click.indication.right ;
 
-  if ( click.case ) {
+  if ( indicationUpdate.case ) {
     scrollAnimation({ aim: aim, side: side })
-    changePosition().shift();
   } else {
     scrollAnimation({ aim: aim, side: side, borderline: true })
-    changePosition().warp();
+    indicationUpdate.jump;
   }
+
+  console.log(click.indication)
 }
 
 function scrollAnimation( click ) {
