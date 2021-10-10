@@ -736,8 +736,8 @@
     height: 30px;
     border-left: 1px solid rgba(31, 32, 65, 0.1);
     padding-left: 20px; }
-    .header__user-bar_full-name {
-      color: rgba(31, 32, 65, 0.5); }
+    .header__user-bar_username {
+      opacity: .5; }
   .header__authorization-buttons {
     display: grid;
     grid-template-columns: repeat(2, auto);

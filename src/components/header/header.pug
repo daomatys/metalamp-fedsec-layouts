@@ -21,7 +21,7 @@ mixin header( item )
       case item.authorized
         when true
           .header__user-bar
-            span.header__user-bar_full-name Юлий Цезарь
+            span.header__user-bar_username.custom-font-style_body-plain Юлий Цезарь
         when false 
           .header__authorization-buttons
             +meanOvalButtons({
