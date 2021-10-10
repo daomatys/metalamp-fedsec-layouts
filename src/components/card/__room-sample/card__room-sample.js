@@ -6,12 +6,15 @@ function createArrowScrollersEventListeners() {
     let indication = {
       position: 1,
       left: {
-        get case() { return --this.position < 1; }, 
-        set jump( val = 4 ) { this.position = val }
+        shift()    { --indication.position; },
+        jump()     { indication.position = 4; },
+        get case() { return indication.position < 1; }
       },
       right: {
-        get case() { return ++this.position > 4; },
-        set jump( val = 1 ) { this.position = val }
+        shift()    { ++indication.position; },
+        jump()     { indication.position = 1; },
+        get case() { return indication.position > 4; },
+        
       }
     };
 
@@ -28,11 +31,15 @@ function filterAnimation( click ) {
   if ( target ) {
     const aim = click.parent.querySelector('.room-sample__image');
     const side = target.classList.contains('room-sample__arrow-scroller_left') ? 'left' : 'right' ;
+    const indicator = side === 'left' ? click.indication.left : click.indication.right ;
 
-    if ( true ) {
+    indicator.shift();
+
+    if ( !indicator.case ) {
       scrollAnimation({ aim: aim, side: side })
     } else {
       scrollAnimation({ aim: aim, side: side, borderline: true })
+      indicator.jump();
     }
   }
 }
@@ -43,7 +50,7 @@ function scrollAnimation( click ) {
 
   const shiftAnimation = click.aim.animate({
     transform: `translateX(${ shiftValue })`
-  },{
+  }, {
     easing: 'ease',
     duration: 500,
     fill: 'forwards',
@@ -59,9 +66,14 @@ function scrollAnimation( click ) {
 
 function scrollBorderTeleportation( aim, modifier ) {
   const jumpValue = modifier * -1080 + 'px';
+  
+  console.log('jump!')
 
   const jumpAnimation = aim.animate({
     transform: `translateX(${ jumpValue })`
+  }, {
+    fill: 'forwards',
+    composite: 'replace'
   });
 
   jumpAnimation.persist();
