@@ -512,40 +512,63 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/__room-sample/card__room-sample.scss ***!
   \***************************************************************************************************************************************************/
 .room-sample {
+  background-color: white;
   width: 270px; }
   .room-sample__container_top {
-    width: 151px; }
+    border-radius: 4px 4px 0px 0px;
+    position: relative;
+    width: 270px;
+    height: 151px;
+    overflow: hidden; }
     .room-sample__container_top .material-icons {
       color: white; }
+  .room-sample__image {
+    display: flex; }
+  .room-sample__arrow_left, .room-sample__arrow_right, .room-sample__listing-indicator {
+    position: absolute; }
   .room-sample__arrow_left, .room-sample__arrow_right {
+    top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: inherit;
     width: 42px;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%); }
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+    cursor: pointer; }
   .room-sample__arrow_right {
-    transform: scaleX(-1); }
+    transform: scaleX(-1);
+    right: 0px; }
   .room-sample__listing-indicator {
+    position: absolute;
     display: flex;
     justify-content: space-between;
-    width: 41px; }
+    width: 41px;
+    bottom: 15px;
+    right: 15px; }
     .room-sample__listing-indicator > .material-icons {
       font-size: 8px; }
 
 /*!************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/card.scss ***!
   \************************************************************************************************************************/
+.card-style_default, .card-style_room-sample {
+  background-color: white;
+  box-sizing: border-box;
+  border-radius: 4px; }
+
 .card-style_default {
   display: grid;
   grid-gap: 20px;
   padding: 39px 29px 29px 29px;
-  background: #FFFFFF;
-  box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
   width: 380px; }
   .card-style_default > * {
     display: inherit;
     grid-gap: 10px; }
+
+.card-style_room-sample {
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05); }
 
 .card-footer {
   display: flex;

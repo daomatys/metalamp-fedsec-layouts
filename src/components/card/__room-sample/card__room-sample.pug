@@ -4,13 +4,13 @@ include /components/material-icon-cell/material-icon-cell.pug
 mixin cardRoomSample( item )
   - let index = 0
 
-  .room-sample
+  .room-sample.card-style_room-sample
     .room-sample__container_top
       .room-sample__image
         while index < 4
           - const suffix = item.picturescount < ++index ? 'no-image' : item.number + '-' + index
 
-          img.room-sample__image_thumbnail( src=require(`/src/assets/images/raster/room/__thumbnail/room__thumbnail_${ suffix }.png`) )
+          img( src=require(`/src/assets/images/raster/room/__thumbnail/room__thumbnail_${ suffix }.png`) )
       .room-sample__arrow_left
         +materialIcon("chevron_left")
       .room-sample__listing-indicator
