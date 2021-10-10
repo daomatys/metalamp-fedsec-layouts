@@ -23,7 +23,7 @@ function createArrowScrollersEventListeners() {
 }
 
 function filterAnimation( click ) {
-  const target = click.target;
+  const target = click.target.closest('.room-sample__arrow-scroller_left, .room-sample__arrow-scroller_right');
   const side = target.classList.contains('room-sample__arrow-scroller_right') ? 'left' : 'right' ;
   const parent = target.closest('.room-sample__container_top');
   const aim = parent.querySelector('.room-sample__image');
@@ -36,7 +36,7 @@ function filterAnimation( click ) {
     indicationUpdate.jump;
   }
 
-  console.log(click.indication)
+  console.log(click.indication.left.position)
 }
 
 function scrollAnimation( click ) {
@@ -55,7 +55,7 @@ function scrollAnimation( click ) {
   shiftAnimation.persist();
 
   if ( click.borderline ) {
-    shiftAnimation.onfinish = scrollBorderTeleportation( click.aim, shiftModifier );
+    shiftAnimation.onfinish = () => scrollBorderTeleportation( click.aim, shiftModifier );
   }
 }
 
