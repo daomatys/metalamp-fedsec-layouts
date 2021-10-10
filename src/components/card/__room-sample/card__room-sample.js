@@ -23,14 +23,17 @@ function createArrowScrollersEventListeners() {
 }
 
 function filterAnimation( click ) {
-  const target = click.target.querySelector('.room-sample__arrow-scroller_left, .room-sample__arrow-scroller_right');
-  const side = target.classList.contains('room-sample__arrow-scroller_left') ? 'left' : 'right' ;
-  const aim = click.parent.querySelector('.room-sample__image');
+  const target = click.target.closest('.room-sample__arrow-scroller_left, .room-sample__arrow-scroller_right');
 
-  if ( indicationUpdate.case ) {
-    scrollAnimation({ aim: aim, side: side })
-  } else {
-    scrollAnimation({ aim: aim, side: side, borderline: true })
+  if ( target ) {
+    const aim = click.parent.querySelector('.room-sample__image');
+    const side = target.classList.contains('room-sample__arrow-scroller_left') ? 'left' : 'right' ;
+
+    if ( true ) {
+      scrollAnimation({ aim: aim, side: side })
+    } else {
+      scrollAnimation({ aim: aim, side: side, borderline: true })
+    }
   }
 }
 
