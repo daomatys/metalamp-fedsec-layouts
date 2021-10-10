@@ -1,46 +1,41 @@
 function createArrowScrollersEventListeners() {
+  const containers = document.querySelectorAll('.room-sample__container_top');
 
-  let indication = {
-    position: 1,
-    left: {
-      get case() { return --this.position < 1; }, 
-      set jump( val = 4 ) { this.position = val }
-    },
-    right: {
-      get case() { return ++this.position > 4; },
-      set jump( val = 1 ) { this.position = val }
-    }
-  };
+  for ( let container of containers ) {
 
-  const scrollers = document.querySelectorAll('.room-sample__arrow-scroller_left, .room-sample__arrow-scroller_right');
+    let indication = {
+      position: 1,
+      left: {
+        get case() { return --this.position < 1; }, 
+        set jump( val = 4 ) { this.position = val }
+      },
+      right: {
+        get case() { return ++this.position > 4; },
+        set jump( val = 1 ) { this.position = val }
+      }
+    };
 
-  for ( let scroller of scrollers ) {
-    scroller.addEventListener(
+    container.addEventListener(
       'click',
-      ({target}) => filterAnimation({ target: target, indication: indication })
+      ({target}) => filterAnimation({ parent: container, target: target, indication: indication })
     );
   }
 }
 
 function filterAnimation( click ) {
-  const target = click.target.closest('.room-sample__arrow-scroller_left, .room-sample__arrow-scroller_right');
-  const side = target.classList.contains('room-sample__arrow-scroller_right') ? 'left' : 'right' ;
-  const parent = target.closest('.room-sample__container_top');
-  const aim = parent.querySelector('.room-sample__image');
-  const indicationUpdate = side === 'left' ? click.indication.left : click.indication.right ;
+  const target = click.target.querySelector('.room-sample__arrow-scroller_left, .room-sample__arrow-scroller_right');
+  const side = target.classList.contains('room-sample__arrow-scroller_left') ? 'left' : 'right' ;
+  const aim = click.parent.querySelector('.room-sample__image');
 
   if ( indicationUpdate.case ) {
     scrollAnimation({ aim: aim, side: side })
   } else {
     scrollAnimation({ aim: aim, side: side, borderline: true })
-    indicationUpdate.jump;
   }
-
-  console.log(click.indication.left.position)
 }
 
 function scrollAnimation( click ) {
-  const shiftModifier = click.side === 'left' ? -1 : 1 ;
+  const shiftModifier = click.side === 'left' ? 1 : -1 ;
   const shiftValue = shiftModifier * 270 + 'px';
 
   const shiftAnimation = click.aim.animate({
