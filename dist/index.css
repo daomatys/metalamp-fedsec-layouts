@@ -523,10 +523,11 @@
     .room-sample__container_top .material-icons {
       color: white; }
   .room-sample__image {
-    display: flex; }
-  .room-sample__arrow_left, .room-sample__arrow_right, .room-sample__listing-indicator {
+    display: flex;
+    transform: translateX(-270px); }
+  .room-sample__listing-indicator, .room-sample__arrow-scroller_left, .room-sample__arrow-scroller_right {
     position: absolute; }
-  .room-sample__arrow_left, .room-sample__arrow_right {
+  .room-sample__arrow-scroller_left, .room-sample__arrow-scroller_right {
     top: 0px;
     display: flex;
     align-items: center;
@@ -535,7 +536,7 @@
     width: 42px;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
     cursor: pointer; }
-  .room-sample__arrow_right {
+  .room-sample__arrow-scroller_right {
     transform: scaleX(-1);
     right: 0px; }
   .room-sample__listing-indicator {

@@ -1,11 +1,13 @@
+$cardWidth: 270px;
+
 .room-sample {
   background-color: white;
-  width: 270px;
+  width: $cardWidth;
 
   &__container_top {
     border-radius: 4px 4px 0px 0px;
     position: relative;
-    width: 270px;
+    width: $cardWidth;
     height: 151px;
     overflow: hidden;
 
@@ -16,15 +18,16 @@
 
   &__image {
     display: flex;
+    transform: translateX( -$cardWidth );
   }
 
-  &__arrow_left,
-  &__arrow_right,
-  &__listing-indicator {
+  &__listing-indicator,
+  &__arrow-scroller_left,
+  &__arrow-scroller_right {
     position: absolute;
   }
 
-  &__arrow {
+  &__arrow-scroller {
     &_left,
     &_right {
       top: 0px;

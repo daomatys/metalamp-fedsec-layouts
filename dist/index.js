@@ -599,7 +599,7 @@ eval("function likeButtonEventListeners() {\r\n  const items = document.querySel
   \****************************************************************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/card/__room-sample/card__room-sample.js?");
+eval("function createArrowScrollersEventListeners() {\r\n  const findAllScrollersByType = suffix => document.querySelectorAll(`.room-sample__arrow-scroller_${suffix}`);\r\n\r\n  const leftScrollers = findAllScrollersByType('left');\r\n  const rightScrollers = findAllScrollersByType('right');\r\n}\r\n\r\n\r\nfunction imageScroll() {\r\n  \r\n}\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/card/__room-sample/card__room-sample.js?");
 
 /***/ }),
 
