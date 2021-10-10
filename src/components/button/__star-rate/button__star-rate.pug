@@ -1,12 +1,11 @@
 include /components/material-icon-cell/material-icon-cell.pug
 
-mixin starRateButtons( ratings=[] )
-  each rating in ratings
-    - let num = 0
-    
-    .star-rate
-      while num < 5
-        if ++num <= rating
-          +materialIcon('star')
-        else 
-          +materialIcon('star_border')
+mixin starRateButton( rating )
+  - let num = 0
+  
+  .star-rate
+    while num < 5
+      if ++num <= rating
+        +materialIcon('star')
+      else 
+        +materialIcon('star_border')

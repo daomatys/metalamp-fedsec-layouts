@@ -1,13 +1,15 @@
 include /components/button/__star-rate/button__star-rate.pug
 
-mixin cardRoomSample()
+mixin cardRoomSample( item )
   .room-sample
     .room-sample__container_top
       .room-sample__image
+        each image in item.images
+          img( src=require(`/src/assets/images/raster/room/__thumbnail/room__thumbnail_${ item.image }.png`) )
       .room-sample__arrow_left 
       .room-sample__image-listing-indicator
       .room-sample__arrow_right
     .room-sample__container_bottom
       .room-sample__title
       .room-sample__rate-n-rewievs
-        +starRateButtons([4])
+        +starRateButtons( item.rate )
