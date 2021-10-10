@@ -618,14 +618,23 @@
 .elem__width_100 {
   width: 320px; }
 
-.elem__width_75 {
+.elem__width_83 {
   width: 266px; }
 
-.elem__width_50 {
+.elem__width_81 {
+  width: 260px; }
+
+.elem__width_61 {
+  width: 196px; }
+
+.elem__width_47 {
   width: 150px; }
 
 .elem__width_30 {
   width: 99px; }
+
+.elem__width_27 {
+  width: 87px; }
 
 .custom-font-style_h1, .custom-font-style_h2, .custom-font-style_h3 {
   color: #1F2041;
@@ -930,14 +939,23 @@
 .elem__width_100 {
   width: 320px; }
 
-.elem__width_75 {
+.elem__width_83 {
   width: 266px; }
 
-.elem__width_50 {
+.elem__width_81 {
+  width: 260px; }
+
+.elem__width_61 {
+  width: 196px; }
+
+.elem__width_47 {
   width: 150px; }
 
 .elem__width_30 {
   width: 99px; }
+
+.elem__width_27 {
+  width: 87px; }
 
 .custom-font-style_h1, .custom-font-style_h2, .ui-datepicker-title, .custom-font-style_h3 {
   color: #1F2041;

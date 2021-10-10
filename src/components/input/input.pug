@@ -7,7 +7,7 @@ include _subscription/input_subscription.pug
 
 mixin input( item )
   - const widthByPercent = item.widthbypercent ? item.widthbypercent : '100'
-  - const widthByPercentClass = `elem__width_${widthByPercent}`
+  - const widthByPercentClass = `elem__width_${ widthByPercent }`
   - const expanderParentCase = item.type === 'dropdown' || item.type === 'date-picker';
   - const expanderParentClass = expanderParentCase ? 'expander__parent' : '';
 
