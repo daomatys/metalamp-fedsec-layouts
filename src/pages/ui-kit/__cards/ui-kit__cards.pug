@@ -4,6 +4,7 @@ include /components/card/__registration/card__registration.pug
 include /components/card/__find-room/card__find-room.pug
 include /components/card/__login/card__login.pug
 include /components/card/__room-booking/card__room-booking.pug
+include /components/card/__room-sample/card__room-sample.pug
 
 head 
   title UI KIT / Cards
@@ -20,4 +21,14 @@ body.ui-kit__body.bg-color_whisper
         +cardRoomBooking()
         +cardLogin()
       .headers-n-footers__column
+        +cardRoomSample({
+          number: 888,
+          picturescount: 3,
+          rate: 5
+        })
+        +cardRoomSample({
+          number: 840,
+          picturescount: 1,
+          rate: 4
+        })
   footer.ui-kit__footer

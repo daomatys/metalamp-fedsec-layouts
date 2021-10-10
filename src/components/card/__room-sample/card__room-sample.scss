@@ -1,3 +1,41 @@
 .room-sample {
   width: 270px;
+
+  &__container_top {
+    width: 151px;
+
+    & .material-icons {
+      color: white;
+    }
+  }
+
+  &__image {
+
+    &_thumbnail {
+
+    }
+  }
+
+  &__arrow {
+    &_left,
+    &_right {
+      height: inherit;
+      width: 42px;
+      background: linear-gradient(90deg, rgba(black, 0.5) 0%, rgba(black, 0) 99.99%, rgba(white, 0) 100%);
+    }
+
+    &_right {
+      transform: scaleX(-1);
+    }
+  }
+
+  &__listing-indicator {
+    display: flex;
+    justify-content: space-between;
+    width: 41px;
+
+    & > .material-icons {
+      font-size: 8px;
+    }
+  }
 }
