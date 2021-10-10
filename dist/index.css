@@ -420,7 +420,8 @@
       transform: translateX(20px); }
   .toggle-button__label {
     display: flex;
-    align-items: flex-start; }
+    align-items: flex-start;
+    cursor: pointer; }
 
 /*!****************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/button/button.scss ***!

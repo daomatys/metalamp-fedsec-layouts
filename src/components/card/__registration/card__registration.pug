@@ -30,9 +30,7 @@ mixin cardRegistration()
         { placeholder: "Пароль" }
       ])
 
-      +toggleButtons([
-        { groupname: "registration_toggles", label: "Получать спецпредложения", pressed: false },
-      ])
+      +toggleButton({ id: "registration_toggle_01", label: "Получать спецпредложения", pressed: false })
 
     .registration__button_submit
       +meanOvalButtons({

@@ -1,7 +1,6 @@
-mixin toggleButtons( items=[] )
-  each item in items
-    - const buttonChecked = item.pressed ? true : false
+mixin toggleButton( item )
+  - const buttonChecked = item.pressed ? true : false
 
-    .toggle-button 
-      input.toggle-button__elem( type='checkbox' checked=buttonChecked )
-      label.toggle-button__label.custom-font-style_body #{item.label}
+  .toggle-button 
+    input.toggle-button__elem( id=item.id type='checkbox' checked=buttonChecked )
+    label.toggle-button__label.custom-font-style_body( for=item.id ) #{item.label}

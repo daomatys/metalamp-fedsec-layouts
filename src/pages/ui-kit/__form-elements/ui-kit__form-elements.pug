@@ -118,10 +118,8 @@ body.ui-kit__body.bg-color_white
           .form-elements__element
             +titleBar("toggle")
             .toggle-button__array
-              +toggleButtons([
-                { groupname: "uik-fe_toggles", label: "Получать спецпредложения", pressed: true },
-                { groupname: "uik-fe_toggles", label: "Получать спецпредложения", pressed: false }
-              ])
+              +toggleButton({ id: "uik-fe_toggle_1", label: "Получать спецпредложения", pressed: true })
+              +toggleButton({ id: "uik-fe_toggle_2", label: "Получать спецпредложения", pressed: false })
         .form-elements__block.block__like-buttons
           .form-elements__element
             +titleBar("like button")
