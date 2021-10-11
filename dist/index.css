@@ -1417,16 +1417,16 @@
   border: 1px solid #1F2041; }
 
 .unit:nth-child(1) {
-  stroke: #86cfa3;
+  stroke: #BC9CFF;
   stroke-dasharray: 90 360; }
 
 .unit:nth-child(2) {
-  stroke: #000;
+  stroke: #6FCF97;
   stroke-dasharray: 90 360;
   stroke-dashoffset: -90; }
 
 .unit:nth-child(3) {
-  stroke: #CCC;
+  stroke: #FFE39C;
   stroke-dasharray: 180 360;
   stroke-dashoffset: -180; }
 
