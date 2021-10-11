@@ -3,10 +3,10 @@ mixin votesChart( items=[] )
   - const strokeWidth = 4
   - const figureOuterRadius = 60
   - const figureInnerRadius = figureOuterRadius - strokeWidth
-  - const strokeLength = 2 * Math.PI * figureInnerRadius;
+  - const strokeLength = 2 * Math.PI.toFixed(2) * figureInnerRadius;
 
   - let votesTotal = 0
-  - let strokeOffset = 0
+  - let strokeOffset = -1
 
   .votes-chart
     .votes-chart__diagram
@@ -15,13 +15,13 @@ mixin votesChart( items=[] )
           each item in items
             - votesTotal += item.votes
 
-            linearGradient( id=`${ item.name }-gradient` x1="0" x2="0" y1="0" y2="1" )
+            linearGradient( id=`${ item.name }-gradient` x1="1" y1="0" x2="0" y2="0" )
               stop( class=`gradient__${ item.name }_start` offset="0%" )
               stop( class=`gradient__${ item.name }_end`   offset="100%" )
 
         each item in items
           - const votesPercent = item.votes / votesTotal
-          - const strokeFilled = strokeLength * votesPercent
+          - const strokeFilled = item.votes !== 0 ? strokeLength * votesPercent : 2
 
           circle.unit(
             r=figureInnerRadius
@@ -29,9 +29,9 @@ mixin votesChart( items=[] )
             cy="50%"
             stroke=`url(#${ item.name }-gradient)`
             stroke-width=strokeWidth
-            stroke-dasharray=`${strokeFilled} ${strokeLength}`
-            stroke-dashoffset= -strokeOffset
+            stroke-dasharray=`${strokeFilled - 2} ${strokeLength}`
+            stroke-dashoffset=strokeOffset
           )
+          - strokeOffset -= strokeFilled
 
-          - strokeOffset += strokeFilled
     .votes-chart__legend

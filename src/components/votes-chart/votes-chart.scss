@@ -1,5 +1,9 @@
 @import "@variables";
 
+.chart {
+  transform: rotateZ(-90deg);
+}
+
 .unit {
   fill: none;
 }
