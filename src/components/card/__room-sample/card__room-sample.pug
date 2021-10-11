@@ -9,7 +9,7 @@ mixin cardRoomSample( item )
   - let suffixes = []
 
   while index < 4
-    - suffixes[++index] = item.picturescount < index ? 'no-image' : item.roomnumber + '-' + index
+    - suffixes[++index] = item.picturescount < index ? 'no-image2' : item.roomnumber + '-' + index
     - suffixes[0] = suffixes[4]
     - suffixes[5] = suffixes[1]
 
@@ -19,14 +19,14 @@ mixin cardRoomSample( item )
         each suffix in suffixes
           img( src=require(`/src/assets/images/raster/room/__thumbnail/room__thumbnail_${ suffix }.png`) )
 
-      .room-sample__arrow-scroller_left.scroller( id=itemLeftID )
-        +materialIcon("chevron_left", itemLeftID)
-
       .room-sample__listing-indicator
         +materialIcon("circle")
-        +materialIcon("trip_origin")
-        +materialIcon("trip_origin")
-        +materialIcon("trip_origin")
+        +materialIcon("panorama_fish_eye")
+        +materialIcon("panorama_fish_eye")
+        +materialIcon("panorama_fish_eye")
+
+      .room-sample__arrow-scroller_left.scroller( id=itemLeftID )
+        +materialIcon("chevron_left", itemLeftID)
 
       .room-sample__arrow-scroller_right.scroller( id=itemRightID )
         +materialIcon("chevron_left", itemRightID)

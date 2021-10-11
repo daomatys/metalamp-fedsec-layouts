@@ -29,9 +29,11 @@ function filterAnimation( click ) {
     const side = target.classList.contains('room-sample__arrow-scroller_left') ? 'left' : 'right' ;
     const indicator = side === 'left' ? click.indication.left : click.indication.right ;
     const listingIndicator = click.parent.querySelectorAll('.room-sample__listing-indicator .material-icons');
-    const index = () => click.indication.position - 1;
 
-    listingIndicator[ index() ].textContent = 'trip_origin';
+    const defineIndex = () => click.indication.position - 1;
+    const adjustIndicatorByIndex = text => listingIndicator[ defineIndex() ].textContent = text;
+
+    adjustIndicatorByIndex('panorama_fish_eye');
 
     if ( !indicator.case ) {
       scrollAnimation({ aim: aim, side: side })
@@ -40,7 +42,7 @@ function filterAnimation( click ) {
       indicator.jump();
     }
 
-    listingIndicator[ index() ].textContent = 'circle';
+    adjustIndicatorByIndex('circle');
   }
 }
 
@@ -49,7 +51,7 @@ function scrollAnimation( click ) {
   const shiftValue = shiftModifier * 270 + 'px';
 
   if ( click.borderjump ) {
-    scrollBorderJump( click.aim, shiftModifier );
+    borderJumpAnimation( click.aim, shiftModifier );
   }
 
   const shiftAnimation = click.aim.animate({
@@ -64,11 +66,11 @@ function scrollAnimation( click ) {
   shiftAnimation.persist();
 }
 
-function scrollBorderJump( aim, modifier ) {
-  const jumpValue = -modifier * 1080 + 'px';
+function borderJumpAnimation( aim, modifier ) {
+  const jumpRange = modifier * -1080 + 'px';
 
   const jumpAnimation = aim.animate({
-    transform: `translateX(${ jumpValue })`
+    transform: `translateX(${ jumpRange })`
   }, {
     fill: 'both',
     composite: 'add'
