@@ -15,10 +15,13 @@ const PAGES_ROOT = PATHS.src + '/pages/';
 const PAGES_DIRNAMES = [
   '404/',
   'index/',
+
   'ui-kit/__cards/',
   'ui-kit/__colors-n-type/',
   'ui-kit/__form-elements/',
-  'ui-kit/__headers-n-footers/'
+  'ui-kit/__headers-n-footers/',
+
+  'website/__room/'
 ];
 
 const PAGES_DIR = PAGES_DIRNAMES.map( dirName => PAGES_ROOT + dirName );
