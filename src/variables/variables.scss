@@ -3,11 +3,14 @@ $valhalla: #1F2041;
 $perfume: #BC9CFF;
 $portage: #8BA4F9;
 
-$silver-tree: #6FCF97;
+$silver-tree:    #6FCF97;
 $turquoise-blue: #66D2EA;
 
 $cream-brulee: #FFE39C;
-$mandys-pink: #FFBA9C;
+$mandys-pink:  #FFBA9C;
+
+$suva-grey: #909090;
+$port-gore: #3D4975;
 
 $whisper: #E5E5E5;
 
@@ -16,6 +19,7 @@ $whisper: #E5E5E5;
   @return linear-gradient(180deg, $primary 0%, $secondary 100%);
 }
 
-$primary-gradient: defineGradient( $perfume, $portage );
-$secondary-gradient: defineGradient( $silver-tree, $turquoise-blue );
-$tertiary-gradient: defineGradient( $cream-brulee, $mandys-pink );
+$primary-gradient:    defineGradient( $perfume, $portage );
+$secondary-gradient:  defineGradient( $silver-tree, $turquoise-blue );
+$tertiary-gradient:   defineGradient( $cream-brulee, $mandys-pink );
+$quaternary-gradient: defineGradient( $suva-grey , $port-gore );
