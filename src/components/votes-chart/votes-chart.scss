@@ -30,7 +30,18 @@
       color: $perfume;
     }
   }
-  
+
+  &__legend {
+
+  }
+
+  &__legend-item {
+    &_marker {
+      border-radius: 50%;
+      height: 10px;
+      width: 10px;
+    }
+  }
 }
 
 
@@ -70,5 +81,22 @@
     &_end {
       stop-color: $port-gore;
     }
+  }
+}
+
+.marker {
+  &_primary {
+    background: $primary-gradient;
+  }
+  &_secondary {
+    background: $secondary-gradient;
+  }
+
+  &_tertiary {
+    background: $tertiary-gradient;
+  }
+
+  &_quaternary {
+    background: $quaternary-gradient;
   }
 }
