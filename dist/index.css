@@ -1461,10 +1461,19 @@
     .votes-chart__diagram-text > .votes-chart__diagram-text_votes,
     .votes-chart__diagram-text > .votes-chart__diagram-text_word {
       color: #BC9CFF; }
-  .votes-chart__legend-item_marker {
-    border-radius: 50%;
-    height: 10px;
-    width: 10px; }
+  .votes-chart__legend {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 30px; }
+  .votes-chart__legend-item {
+    display: flex;
+    align-items: center; }
+    .votes-chart__legend-item_marker {
+      border-radius: 50%;
+      height: 10px;
+      width: 10px;
+      margin-right: 5px; }
 
 .gradient__primary_start {
   stop-color: #BC9CFF; }

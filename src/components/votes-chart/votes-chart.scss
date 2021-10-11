@@ -32,14 +32,21 @@
   }
 
   &__legend {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 30px;
   }
 
   &__legend-item {
+    display: flex;
+    align-items: center;
+
     &_marker {
       border-radius: 50%;
       height: 10px;
       width: 10px;
+      margin-right: 5px;
     }
   }
 }
