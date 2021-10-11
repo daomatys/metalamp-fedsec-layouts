@@ -1408,28 +1408,6 @@
     border: none;
     z-index: 1; }
 
-/*!******************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/reviews-chart/reviews-chart.scss ***!
-  \******************************************************************************************************************************************/
-.unit {
-  fill: none;
-  stroke-width: 4;
-  border: 1px solid #1F2041; }
-
-.unit:nth-child(1) {
-  stroke: #BC9CFF;
-  stroke-dasharray: 90 360; }
-
-.unit:nth-child(2) {
-  stroke: #6FCF97;
-  stroke-dasharray: 90 360;
-  stroke-dashoffset: -90; }
-
-.unit:nth-child(3) {
-  stroke: #FFE39C;
-  stroke-dasharray: 180 360;
-  stroke-dashoffset: -180; }
-
 /*!**********************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/title-bar/title-bar.scss ***!
   \**********************************************************************************************************************************/
@@ -1459,6 +1437,36 @@
     display: inherit;
     margin-left: 30px;
     width: 369px; }
+
+/*!**************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/votes-chart/votes-chart.scss ***!
+  \**************************************************************************************************************************************/
+.unit {
+  fill: none; }
+
+.gradient__primary_start {
+  stop-color: #BC9CFF; }
+
+.gradient__primary_end {
+  stop-color: #8BA4F9; }
+
+.gradient__secondary_start {
+  stop-color: #6FCF97; }
+
+.gradient__secondary_end {
+  stop-color: #66D2EA; }
+
+.gradient__tertiary_start {
+  stop-color: #FFE39C; }
+
+.gradient__tertiary_end {
+  stop-color: #FFBA9C; }
+
+.gradient__quaternary_start {
+  stop-color: #909090; }
+
+.gradient__quaternary_end {
+  stop-color: #3D4975; }
 
 /*!*****************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/404/404.scss ***!

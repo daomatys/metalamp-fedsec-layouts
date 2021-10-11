@@ -7,8 +7,11 @@ body
   header 
 
   main 
-    +votesChart({
-      test: 1
-    })
+    +votesChart([
+      { name: "primary",    votes: 65  },
+      { name: "secondary",  votes: 65  },
+      { name: "tertiary",   votes: 130 },
+      { name: "quaternary", votes: 0   }
+    ])
 
   footer 
