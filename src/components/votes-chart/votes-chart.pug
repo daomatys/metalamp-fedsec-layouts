@@ -43,19 +43,20 @@ mixin votesChart( items=[] )
           .votes-chart__legend-item_marker( class=`marker_${ item.name }` )
           .votes-chart__legend-item_text.custom-font-style_body #{ item.legend }
 
-  -
-    function setWordEnding( num ) {
-      let result = ''
+-
+  function setWordEnding( num ) {
+    let result = ''
 
-      if ( Math.floor(num/10)===1 || num%10<1 || num%10>4 ) {
-        result = 'ов';
-      }
-      if ( num%10===1 ) {
+    if ( Math.floor(num/10)===1 || num%10<1 || num%10>4 ) {
+      result = 'ов';
+    } else {
+      if ( num%10>1 ) {
         result = 'a';
       }
-      return result;
     }
+    return result;
+  }
 
-    function sortItems( arr ) {
-      arr.reverse().push( arr.shift() );
-    }
+  function sortItems( arr ) {
+    arr.reverse().push( arr.shift() );
+  }
