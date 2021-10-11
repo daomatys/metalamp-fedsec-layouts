@@ -1,4 +1,4 @@
-mixin reviewsChart( item )
+mixin votesChart( item )
   - 
     const gradients = [
       {
@@ -23,20 +23,27 @@ mixin reviewsChart( item )
       }
     ]
 
-  .reviews-chart
-    .reviews-chart__diagram
+  - const strokeWidth = 4
+  - const figureOuterRadius = 60
+  - const figureInnerRadius = figureOuterRadius - strokeWidth
+
+  .votes-chart
+    .votes-chart__diagram
       svg.chart( width="120" height="120" viewBox="0 0 120 120" preserveAspectRatio="none" )
         defs
           each gradient in gradients
-            linearGradient( id=`${ gradient.name }-gradient` )
+            linearGradient( id=`${ gradient.name }-gradient` x1="0" x2="0" y1="0" y2="1" )
               stop( offset="0%"   stop-color=gradient.startcolor )
               stop( offset="100%" stop-color=gradient.endcolor )
 
         each gradient in gradients 
           circle.unit(
-            r="56"
+            r=figureInnerRadius
             cx="50%"
             cy="50%"
-            fill=`url(#${ gradient.name }-gradient)`
+            stroke=`url(#${ gradient.name }-gradient)`
+            stroke-width=strokeWidth
+            stroke-dasharray=
+            stroke-dashoffset=
           )
-    .reviews-chart__legend
+    .votes-chart__legend
