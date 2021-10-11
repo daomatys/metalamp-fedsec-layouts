@@ -39,7 +39,7 @@ mixin cardRoomSample( item )
           if ( item.luxe )
             span.room-booking__title_luxe-mark ЛЮКС
         .room-booking__price.custom-font-style_body-plain
-          span.room-booking__price_value #{ item.price }
+          span.room-booking__price_value #{ item.price.toLocaleString("ru-RU") }
           span.room-booking__price_symbol ₽ 
           span.room-booking__price_addition в сутки
 
