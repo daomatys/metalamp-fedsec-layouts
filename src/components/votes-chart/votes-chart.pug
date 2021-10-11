@@ -1,27 +1,4 @@
 mixin votesChart( item )
-  - 
-    const gradients = [
-      {
-        name: "primary",
-        startcolor: "#BC9CFF",
-        endcolor:   "#8BA4F9"
-      },
-      {
-        name: "secondary",
-        startcolor: "#6FCF97",
-        endcolor:   "#66D2EA"
-      },
-      {
-        name: "tetriary",
-        startcolor: "#FFE39C",
-        endcolor:   "#FFBA9C"
-      },
-      {
-        name: "quartenary",
-        startcolor: "#909090",
-        endcolor:   "#3D4975"
-      }
-    ]
 
   - const strokeWidth = 4
   - const figureOuterRadius = 60
@@ -31,12 +8,12 @@ mixin votesChart( item )
     .votes-chart__diagram
       svg.chart( width="120" height="120" viewBox="0 0 120 120" preserveAspectRatio="none" )
         defs
-          each gradient in gradients
+          each gradient in item.gradients
             linearGradient( id=`${ gradient.name }-gradient` x1="0" x2="0" y1="0" y2="1" )
-              stop( offset="0%"   stop-color=gradient.startcolor )
-              stop( offset="100%" stop-color=gradient.endcolor )
+              stop( class=`gradient__${ gradient.name }_start` offset="0%" )
+              stop( class=`gradient__${ gradient.name }_end`   offset="100%" )
 
-        each gradient in gradients 
+        each gradient in item.gradients
           circle.unit(
             r=figureInnerRadius
             cx="50%"

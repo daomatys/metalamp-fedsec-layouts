@@ -3,3 +3,41 @@
 .unit {
   fill: none;
 }
+
+.gradient {
+  &__primary {
+    &_start {
+      stop-color: $perfume;
+    }
+    &_end {
+      stop-color: $portage;
+    }
+  }
+
+  &__secondary {
+    &_start {
+      stop-color: $silver-tree;
+    }
+    &_end {
+      stop-color: $turquoise-blue;
+    }
+  }
+
+  &__tertiary {
+    &_start {
+      stop-color: $cream-brulee;
+    }
+    &_end {
+      stop-color: $mandys-pink;
+    }
+  }
+
+  &__quaternary {
+    &_start {
+      stop-color: $suva-grey;
+    }
+    &_end {
+      stop-color: $port-gore;
+    }
+  }
+}
