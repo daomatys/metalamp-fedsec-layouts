@@ -10,15 +10,19 @@
 
   &__title {
     &_prefix,
-    &_room-class {
+    &_luxe-mark {
       font-weight: bold;
     }
 
-    &_room-class {
+    &_luxe-mark {
       font-size: 12px;
       line-height: 15px;
-      margin-left: 8px;
       color: $perfume;
+      margin-left: 1px;
+    }
+
+    &_room-number {
+      margin-right: 7px;
     }
   }
 

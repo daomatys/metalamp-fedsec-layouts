@@ -1,3 +1,5 @@
+@import "@variables";
+
 $cardWidth: 270px;
 
 .room-sample {
@@ -5,10 +7,11 @@ $cardWidth: 270px;
   width: $cardWidth;
 
   &__container_top {
-    border-radius: 4px 4px 0px 0px;
     position: relative;
     width: $cardWidth;
     height: 151px;
+    border-radius: 4px 4px 0px 0px;
+    background-color: $valhalla;
     overflow: hidden;
 
     & .material-icons {
@@ -61,5 +64,31 @@ $cardWidth: 270px;
     & > .material-icons {
       font-size: 8px;
     }
+  }
+
+
+  &__container_bottom {
+    padding: 20px;
+  }
+
+  &__title-container,
+  &__rate-n-reviews {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  &__title-container {
+    margin-bottom: 8px;
+  }
+
+  &__rate-n-reviews {
+    padding-top: 8px;
+    border-top: 1px solid rgba($valhalla, .1);
+  }
+
+  &__reviews {
+    color: rgba($valhalla, .5);
+    font-size: 14px;
   }
 }

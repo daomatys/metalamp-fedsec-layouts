@@ -464,14 +464,17 @@
   justify-content: space-between;
   align-items: flex-end; }
 
-.room-booking__title_prefix, .room-booking__title_room-class {
+.room-booking__title_prefix, .room-booking__title_luxe-mark {
   font-weight: bold; }
 
-.room-booking__title_room-class {
+.room-booking__title_luxe-mark {
   font-size: 12px;
   line-height: 15px;
-  margin-left: 8px;
-  color: #BC9CFF; }
+  color: #BC9CFF;
+  margin-left: 1px; }
+
+.room-booking__title_room-number {
+  margin-right: 7px; }
 
 .room-booking__price {
   opacity: .5; }
@@ -515,10 +518,11 @@
   background-color: white;
   width: 270px; }
   .room-sample__container_top {
-    border-radius: 4px 4px 0px 0px;
     position: relative;
     width: 270px;
     height: 151px;
+    border-radius: 4px 4px 0px 0px;
+    background-color: #1F2041;
     overflow: hidden; }
     .room-sample__container_top .material-icons {
       color: white; }
@@ -550,6 +554,20 @@
     right: 15px; }
     .room-sample__listing-indicator > .material-icons {
       font-size: 8px; }
+  .room-sample__container_bottom {
+    padding: 20px; }
+  .room-sample__title-container, .room-sample__rate-n-reviews {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between; }
+  .room-sample__title-container {
+    margin-bottom: 8px; }
+  .room-sample__rate-n-reviews {
+    padding-top: 8px;
+    border-top: 1px solid rgba(31, 32, 65, 0.1); }
+  .room-sample__reviews {
+    color: rgba(31, 32, 65, 0.5);
+    font-size: 14px; }
 
 /*!************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/card.scss ***!
