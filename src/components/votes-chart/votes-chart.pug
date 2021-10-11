@@ -1,16 +1,29 @@
 mixin votesChart( items=[] )
+  -
+    function setWordEnding( num ) {
+      let result = ''
+
+      if ( Math.floor(num/10)===1 || num%10<1 || num%10>4 ) {
+        result = 'ов';
+      }
+      if ( num%10===1 ) {
+        result = 'a';
+      }
+      return result;
+    }
 
   - const strokeWidth = 4
   - const figureOuterRadius = 60
   - const figureInnerRadius = figureOuterRadius - strokeWidth
-  - const strokeLength = 2 * Math.PI.toFixed(2) * figureInnerRadius;
+  - const strokeLength = 2 * Math.PI.toFixed(2) * figureInnerRadius
+  - const strokeGap = 4
 
   - let votesTotal = 0
-  - let strokeOffset = -1
+  - let strokeOffset = -strokeGap / 2
 
   .votes-chart
     .votes-chart__diagram
-      svg.chart( width="120" height="120" viewBox="0 0 120 120" preserveAspectRatio="none" )
+      svg.votes-chart__diagram-elem( width="120" height="120" viewBox="0 0 120 120" preserveAspectRatio="none" )
         defs
           each item in items
             - votesTotal += item.votes
@@ -21,17 +34,19 @@ mixin votesChart( items=[] )
 
         each item in items
           - const votesPercent = item.votes / votesTotal
-          - const strokeFilled = item.votes !== 0 ? strokeLength * votesPercent : 2
+          - const strokeFilled = item.votes !== 0 ? strokeLength * votesPercent : strokeGap
 
-          circle.unit(
+          circle.votes-chart__diagram-elem_unit(
             r=figureInnerRadius
             cx="50%"
             cy="50%"
             stroke=`url(#${ item.name }-gradient)`
             stroke-width=strokeWidth
-            stroke-dasharray=`${strokeFilled - 2} ${strokeLength}`
+            stroke-dasharray=`${strokeFilled - strokeGap} ${strokeLength}`
             stroke-dashoffset=strokeOffset
           )
           - strokeOffset -= strokeFilled
-
+      .votes-chart__diagram-text 
+        span.votes-chart__diagram-text_votes.custom-font-style_h1 #{ votesTotal }
+        span.votes-chart__diagram-text_word.custom-font-style_h3 голос#{ setWordEnding( votesTotal ) }
     .votes-chart__legend

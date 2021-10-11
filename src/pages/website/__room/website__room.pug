@@ -3,10 +3,10 @@ include /components/votes-chart/votes-chart.pug
 head 
   title = TOXIN HOTEL / ROOM 
 
-body 
+body.ui-kit__body 
   header 
 
-  main 
+  main
     +votesChart([
       { name: "primary",    votes: 65  },
       { name: "secondary",  votes: 65  },
