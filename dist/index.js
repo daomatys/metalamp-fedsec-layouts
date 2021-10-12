@@ -663,7 +663,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jque
   \***************************************************/
 /***/ (() => {
 
-eval("function eternalCircleRotation() {\r\n  const circle = document.querySelector('.votes-chart__diagram-element');\r\n\r\n  if ( circle ) {\r\n    circle.animate({\r\n      transform: 'rotateZ(360deg)'\r\n    }, {\r\n      easing: 'linear',\r\n      duration: 60000,\r\n      iterations: Infinity,\r\n      composite: 'add'\r\n    });\r\n  }\r\n}\r\n\r\neternalCircleRotation();\r\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/votes-chart/votes-chart.js?");
+eval("function eternalCircleRotation() {\r\n  const circle = document.querySelector('.votes-chart__diagram-element');\r\n\r\n  if ( circle ) {\r\n    const circleAnimation = circle.animate({\r\n      transform: 'rotateZ(360deg)'\r\n    }, {\r\n      easing: 'linear',\r\n      duration: 60000,\r\n      iterations: Infinity,\r\n      composite: 'add'\r\n    });\r\n  }\r\n}\r\n\r\neternalCircleRotation();\r\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/votes-chart/votes-chart.js?");
 
 /***/ }),
 

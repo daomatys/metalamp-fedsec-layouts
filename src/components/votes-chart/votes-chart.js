@@ -2,7 +2,7 @@ function eternalCircleRotation() {
   const circle = document.querySelector('.votes-chart__diagram-element');
 
   if ( circle ) {
-    circle.animate({
+    const circleAnimation = circle.animate({
       transform: 'rotateZ(360deg)'
     }, {
       easing: 'linear',

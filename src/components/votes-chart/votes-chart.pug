@@ -1,30 +1,30 @@
 mixin votesChart( items=[] )
   - const strokeWidth = 4
   - const figureOuterRadius = 60
-  - const figureInnerRadius = figureOuterRadius - strokeWidth
+  - const figureInnerRadius = figureOuterRadius - strokeWidth / 2
   - const strokeLength = 2 * Math.PI.toFixed(2) * figureInnerRadius
-  - const strokeGap = 2
+  - const strokeGap = 4
 
   - let votesTotal = 0
   - let strokeOffset = -strokeGap / 2
 
   .votes-chart
     .votes-chart__diagram
-      svg.votes-chart__diagram-element( width="120" height="120" viewBox="0 0 120 120" preserveAspectRatio="none" )
+      svg.votes-chart__diagram-element( width='120' height='120' viewBox='0 0 120 120' preserveAspectRatio='none' )
         defs
           each item in items
             - votesTotal += item.votes
-            linearGradient( id=`${ item.name }-gradient` x1="1" y1="0" x2="0" y2="0" )
-              stop( class=`gradient__${ item.name }_start` offset="0%" )
-              stop( class=`gradient__${ item.name }_end`   offset="100%" )
+            linearGradient( id=`${ item.name }-gradient` x1='1' y1='0' x2='0' y2='0' )
+              stop( class=`gradient__${ item.name }_start` offset='0%' )
+              stop( class=`gradient__${ item.name }_end`   offset='100%' )
 
         each item in items
           - const votesPercentage = item.votes / votesTotal
           - const strokeFilled = item.votes !== 0 ? strokeLength * votesPercentage : strokeGap
           circle.votes-chart__diagram-element_unit(
             r=figureInnerRadius
-            cx="50%"
-            cy="50%"
+            cx='50%'
+            cy='50%'
             stroke=`url(#${ item.name }-gradient)`
             stroke-width=strokeWidth
             stroke-dasharray=`${strokeFilled - strokeGap} ${strokeLength}`
