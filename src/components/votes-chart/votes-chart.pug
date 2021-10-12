@@ -19,8 +19,8 @@ mixin votesChart( items=[] )
               stop( class=`gradient__${ item.name }_end`   offset="100%" )
 
         each item in items
-          - const votesPercent = item.votes / votesTotal
-          - const strokeFilled = item.votes !== 0 ? strokeLength * votesPercent : strokeGap
+          - const votesPercentage = item.votes / votesTotal
+          - const strokeFilled = item.votes !== 0 ? strokeLength * votesPercentage : strokeGap
           circle.votes-chart__diagram-elem_unit(
             r=figureInnerRadius
             cx="50%"
@@ -34,17 +34,17 @@ mixin votesChart( items=[] )
 
       .votes-chart__diagram-text 
         span.votes-chart__diagram-text_votes.custom-font-style_h1 #{ votesTotal }
-        span.votes-chart__diagram-text_word.custom-font-style_h3 голос#{ setWordEnding( votesTotal ) }
+        span.votes-chart__diagram-text_word.custom-font-style_h3 голос#{ defineWordEnding( votesTotal ) }
 
     .votes-chart__legend
-      - sortItems( items );
-      each item in items
+      - const sortedItems = sortArray( items )
+      each item in sortedItems
         .votes-chart__legend-item
           .votes-chart__legend-item_marker( class=`marker_${ item.name }` )
           .votes-chart__legend-item_text.custom-font-style_body #{ item.legend }
 
 -
-  function setWordEnding( num ) {
+  function defineWordEnding( num ) {
     let result = ''
 
     if ( Math.floor(num/10)===1 || num%10<1 || num%10>4 ) {
@@ -57,6 +57,7 @@ mixin votesChart( items=[] )
     return result;
   }
 
-  function sortItems( arr ) {
+  function sortArray( arr ) {
     arr.reverse().push( arr.shift() );
+    return arr;
   }
