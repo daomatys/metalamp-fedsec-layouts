@@ -10,7 +10,7 @@ mixin votesChart( items=[] )
 
   .votes-chart
     .votes-chart__diagram
-      svg.votes-chart__diagram-elem( width="120" height="120" viewBox="0 0 120 120" preserveAspectRatio="none" )
+      svg.votes-chart__diagram-element( width="120" height="120" viewBox="0 0 120 120" preserveAspectRatio="none" )
         defs
           each item in items
             - votesTotal += item.votes
@@ -21,7 +21,7 @@ mixin votesChart( items=[] )
         each item in items
           - const votesPercentage = item.votes / votesTotal
           - const strokeFilled = item.votes !== 0 ? strokeLength * votesPercentage : strokeGap
-          circle.votes-chart__diagram-elem_unit(
+          circle.votes-chart__diagram-element_unit(
             r=figureInnerRadius
             cx="50%"
             cy="50%"

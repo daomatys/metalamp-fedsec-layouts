@@ -1448,9 +1448,9 @@
     display: flex;
     align-items: center;
     justify-content: center; }
-  .votes-chart__diagram-elem {
+  .votes-chart__diagram-element {
     transform: rotateZ(-90deg); }
-    .votes-chart__diagram-elem_unit {
+    .votes-chart__diagram-element_unit {
       fill: none; }
   .votes-chart__diagram-text {
     position: absolute;
