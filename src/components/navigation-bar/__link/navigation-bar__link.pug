@@ -2,7 +2,7 @@ include /components/material-icon-cell/material-icon-cell.pug
 
 mixin link( item )
   - const styleClass = item.bold ? 'link__elem_bold' : ''
-  - const linkHref = item.href ? item.href : '404.html'
+  - const linkHref = item.href ? item.href : 'website__no-page.html'
 
   .link
     a.link__elem( class=styleClass href=linkHref ) #{item.name}

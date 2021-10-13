@@ -1,12 +1,15 @@
+include /components/footer/footer.pug
+include /components/header/header.pug
 include /components/votes-chart/votes-chart.pug
 
 head 
   title = TOXIN HOTEL / ROOM 
 
-body.ui-kit__body 
-  header 
+body.website__body
+  header.website__header
+    +header({authorization: false})
 
-  main
+  main.website__main
     +votesChart([
       { gradient: "primary",    votes: 65,  legend: "Удовлетворительно" },
       { gradient: "secondary",  votes: 65,  legend: "Хорошо"            },
@@ -14,4 +17,5 @@ body.ui-kit__body
       { gradient: "quaternary", votes: 0,   legend: "Разочарован"       }
     ])
 
-  footer 
+  footer.website__footer
+    +footer({type: 'default'})
