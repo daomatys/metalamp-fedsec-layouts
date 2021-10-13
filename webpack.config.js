@@ -21,7 +21,8 @@ const PAGES_DIRNAMES = [
   'ui-kit/__form-elements/',
   'ui-kit/__headers-n-footers/',
 
-  'website/__room/'
+  'website/__room/',
+  'website/__landing/'
 ];
 
 const PAGES_DIR = PAGES_DIRNAMES.map( dirName => PAGES_ROOT + dirName );
