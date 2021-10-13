@@ -1515,8 +1515,27 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/index/index.scss ***!
   \*********************************************************************************************************************/
 .index-links {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 50px;
   margin-top: 80px;
   margin-left: 80px; }
+  .index-links > * {
+    min-width: 130px; }
+
+/*!***************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/pages.scss ***!
+  \***************************************************************************************************************/
+body {
+  margin: auto;
+  font-family: Montserrat, Quicksand, sans-serif;
+  user-select: none; }
+
+img,
+embed,
+object,
+video {
+  max-width: 100%; }
 
 /*!**************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/ui-kit/__cards/ui-kit__cards.scss ***!
@@ -1586,10 +1605,7 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/ui-kit/ui-kit.scss ***!
   \***********************************************************************************************************************/
 .ui-kit__body {
-  margin: auto;
-  width: 1440px;
-  font-family: Montserrat, Quicksand, sans-serif;
-  user-select: none; }
+  width: 1440px; }
 
 .ui-kit__header {
   height: 140px;
@@ -1642,32 +1658,20 @@
 /*!*************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/website/website.scss ***!
   \*************************************************************************************************************************/
-.ui-kit__body {
-  margin: auto;
-  width: 1440px;
-  font-family: Montserrat, Quicksand, sans-serif;
-  user-select: none; }
+.website__body {
+  width: 100%; }
 
-.ui-kit__header {
+.website__header {
   height: 140px;
   width: 100%; }
 
-.ui-kit__main {
+.website__main {
   padding: 0px 158px 0px 150px; }
 
-.ui-kit__footer {
+.website__footer {
   position: absolute;
   height: 145px;
   bottom: 0px; }
-
-.bg-color_white {
-  background-color: white; }
-
-.bg-color_whisper {
-  background-color: #E5E5E5; }
-
-.frozen {
-  pointer-events: none; }
 
 /*!*********************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/gradient-fill-entities.scss ***!

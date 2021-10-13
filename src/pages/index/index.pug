@@ -11,12 +11,23 @@ body.ui-kit__body
     .index-links 
       +navigationBar({
         vertical: true,
-        title: "ui kit pages",
+        title: "ui kit",
         links: [
           { name: "cards",             href: "ui-kit__cards.html" },
           { name: "colors & type",     href: "ui-kit__colors-n-type.html" },
           { name: "form elements",     href: "ui-kit__form-elements.html" },
           { name: "headers & footers", href: "ui-kit__headers-n-footers.html" }
+        ]
+      })
+      +navigationBar({
+        vertical: true,
+        title: "toxin hotel",
+        links: [
+          { name: "landing",      href: "website__landing.html" },
+          { name: "login",        href: "website__login.html" },
+          { name: "registration", href: "website__registration.html" },
+          { name: "room",         href: "website__room.html" },
+          { name: "search",       href: "website__search.html" }
         ]
       })
   footer.ui-kit__footer
