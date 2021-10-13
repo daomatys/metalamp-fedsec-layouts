@@ -1605,7 +1605,8 @@ object {
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/ui-kit/ui-kit.scss ***!
   \***********************************************************************************************************************/
 .ui-kit__body {
-  width: 1440px; }
+  width: 1440px;
+  background-color: white; }
 
 .ui-kit__header {
   height: 140px;
@@ -1618,9 +1619,6 @@ object {
   position: absolute;
   height: 145px;
   bottom: 0px; }
-
-.bg-color_white {
-  background-color: white; }
 
 .bg-color_whisper {
   background-color: #E5E5E5; }

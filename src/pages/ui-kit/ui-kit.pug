@@ -1,9 +1,12 @@
+include /components/logo/logo.pug
+
 head 
   block head
 
-body.ui-kit__body
+block body
   header.ui-kit__header
     block header
+      +logo({ type: "monochrome" })
 
   main.ui-kit__main
     block main
