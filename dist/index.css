@@ -1518,6 +1518,7 @@
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-gap: 50px;
+  align-items: start;
   margin-top: 80px;
   margin-left: 80px; }
   .index-links > * {
@@ -1605,20 +1606,24 @@ object {
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/ui-kit/ui-kit.scss ***!
   \***********************************************************************************************************************/
 .ui-kit__body {
-  width: 1440px;
-  background-color: white; }
+  width: 1440px; }
+  .ui-kit__body > .ui-kit__main {
+    padding: 0px 158px 0px 150px; }
+  .ui-kit__body_no-padding {
+    width: 100%;
+    padding: 0; }
 
 .ui-kit__header {
   height: 140px;
   width: 100%; }
 
-.ui-kit__main {
-  padding: 0px 158px 0px 150px; }
-
 .ui-kit__footer {
   position: absolute;
   height: 145px;
   bottom: 0px; }
+
+.bg-color_white {
+  background-color: white; }
 
 .bg-color_whisper {
   background-color: #E5E5E5; }
