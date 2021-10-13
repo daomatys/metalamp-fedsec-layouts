@@ -1,18 +1,23 @@
-include /components/logo/logo.pug
-include /components/header/header.pug
-include /components/footer/footer.pug
+extends /pages/ui-kit/ui-kit.pug
 
-head 
+
+block head 
   title UI KIT / Headers & Footers
 
-body.ui-kit__body.bg-color_whisper
-  header.ui-kit__header
-    +logo({ type: "monochrome" })
-  main
-    .headers-n-footers
-      +header({ authorized: false })
-      +header({ authorized: true })
-      +footer({ type: 'default' })
-      +footer({ type: 'mobile' })
-  footer.ui-kit__footer
+
+block header
+  include /components/logo/logo.pug
+
+  +logo({ type: "monochrome" })
+
+
+block main
+  include /components/header/header.pug
+  include /components/footer/footer.pug
+
+  .headers-n-footers
+    +header({ authorized: false })
+    +header({ authorized: true })
+    +footer({ type: 'default' })
+    +footer({ type: 'mobile' })
     

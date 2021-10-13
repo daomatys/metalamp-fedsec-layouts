@@ -2,349 +2,349 @@
 <head> 
   <title>UI KIT / Cards</title>
 <script defer src="index.js"></script><link href="index.css" rel="stylesheet"></head>
-<body class="ui-kit__body bg-color_whisper">
+<body class="ui-kit__body">
   <header class="ui-kit__header">
-    <form class="logotype logotype_monochrome" action="index.html">
-      <input class="logotype__button" type="submit"><img class="logotype__image" src="static/images/logo-monochrome-s48.svg">
-    </form>
+        <form class="logotype logotype_monochrome" action="index.html">
+          <input class="logotype__button" type="submit"><img class="logotype__image" src="static/images/logo-monochrome-s48.svg">
+        </form>
   </header>
   <main class="ui-kit__main">
     <div class="headers-n-footers__wrap">
       <div class="headers-n-footers__column">
-        <div class="find-room card-style_default">
-          <div class="find-room__title"><span class="custom-font-style_h1">Найдём номера под ваши пожелания</span></div>
-          <div class="find-room__dropdowns">
-            <div class="find-room__dropdowns_date-picker twins-grid-line">
-              <div class="input elem__width_47 expander__parent">
-                <div class="input__title">
-                  <div class="title-bar custom-font-style_h3"><span class="title-bar__title">прибытие</span>
-                  </div>
-                </div>
-                <div class="input__element">
-                  <input class="input__frame expander" id="find-room__date-picker_arrival" placeholder="ДД.ММ.ГГГГ" readonly>
-                  <div class="input__icon_expand">
-                    <label class="material-icons" for="find-room__date-picker_arrival">expand_more</label>
-                  </div>
-                  <div class="input__date-picker date-picker expander__aim" id="dp-find-room__date-picker_arrival"></div>
-                </div>
-              </div>
-              <div class="input elem__width_47 expander__parent">
-                <div class="input__title">
-                  <div class="title-bar custom-font-style_h3"><span class="title-bar__title">выезд</span>
-                  </div>
-                </div>
-                <div class="input__element">
-                  <input class="input__frame expander" id="find-room__date-picker_departure" placeholder="ДД.ММ.ГГГГ" readonly>
-                  <div class="input__icon_expand">
-                    <label class="material-icons" for="find-room__date-picker_departure">expand_more</label>
-                  </div>
-                  <div class="input__date-picker date-picker expander__aim" id="dp-find-room__date-picker_departure"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="find-room__dropdowns_guests">
-            <div class="input elem__width_100 expander__parent">
-              <div class="input__title">
-                <div class="title-bar custom-font-style_h3"><span class="title-bar__title">гости</span>
+            <div class="find-room card-style_default">
+              <div class="find-room__title"><span class="custom-font-style_h1">Найдём номера под ваши пожелания</span></div>
+              <div class="find-room__dropdowns">
+                <div class="find-room__dropdowns_date-picker twins-grid-line">
+                      <div class="input elem__width_47 expander__parent">
+                        <div class="input__title">
+                              <div class="title-bar custom-font-style_h3"><span class="title-bar__title">прибытие</span>
+                              </div>
+                        </div>
+                        <div class="input__element">
+                              <input class="input__frame expander" id="find-room__date-picker_arrival" placeholder="ДД.ММ.ГГГГ" readonly>
+                              <div class="input__icon_expand">
+                                    <label class="material-icons" for="find-room__date-picker_arrival">expand_more</label>
+                              </div>
+                              <div class="input__date-picker date-picker expander__aim" id="dp-find-room__date-picker_arrival"></div>
+                        </div>
+                      </div>
+                      <div class="input elem__width_47 expander__parent">
+                        <div class="input__title">
+                              <div class="title-bar custom-font-style_h3"><span class="title-bar__title">выезд</span>
+                              </div>
+                        </div>
+                        <div class="input__element">
+                              <input class="input__frame expander" id="find-room__date-picker_departure" placeholder="ДД.ММ.ГГГГ" readonly>
+                              <div class="input__icon_expand">
+                                    <label class="material-icons" for="find-room__date-picker_departure">expand_more</label>
+                              </div>
+                              <div class="input__date-picker date-picker expander__aim" id="dp-find-room__date-picker_departure"></div>
+                        </div>
+                      </div>
                 </div>
               </div>
-              <div class="input__element">
-                <input class="input__frame dropdown expander" id="find-room__guests" placeholder="Сколько гостей" readonly>
-                <div class="input__icon_expand">
-                  <label class="material-icons" for="find-room__guests">expand_more</label>
-                </div>
-                <div class="input__dropdown expander__aim">
-                  <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">взрослые</span>
-                    <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
-                    <div class="input__dropdown_button-dec"></div>
-                  </div>
-                  <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">дети</span>
-                    <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
-                    <div class="input__dropdown_button-dec"></div>
-                  </div>
-                  <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">младенцы</span>
-                    <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
-                    <div class="input__dropdown_button-dec"></div>
-                  </div>
-                </div>
+              <div class="find-room__dropdowns_guests">
+                    <div class="input elem__width_100 expander__parent">
+                      <div class="input__title">
+                            <div class="title-bar custom-font-style_h3"><span class="title-bar__title">гости</span>
+                            </div>
+                      </div>
+                      <div class="input__element">
+                            <input class="input__frame dropdown expander" id="find-room__guests" placeholder="Сколько гостей" readonly>
+                            <div class="input__icon_expand">
+                                  <label class="material-icons" for="find-room__guests">expand_more</label>
+                            </div>
+                            <div class="input__dropdown expander__aim">
+                              <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">взрослые</span>
+                                <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
+                                <div class="input__dropdown_button-dec"></div>
+                              </div>
+                              <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">дети</span>
+                                <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
+                                <div class="input__dropdown_button-dec"></div>
+                              </div>
+                              <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">младенцы</span>
+                                <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
+                                <div class="input__dropdown_button-dec"></div>
+                              </div>
+                            </div>
+                      </div>
+                    </div>
+              </div>
+              <div class="find-room__button_submit card-footer">
+                    <div class="mean-oval-button button-style_contained elem__width_100">
+                      <button class="mean-oval-button__elem" id="find-room__submit-button_1">подобрать номер</button>
+                      <label class="mean-oval-button__background" for="find-room__submit-button_1"></label>
+                      <div class="mean-oval-button__icon">
+                            <label class="material-icons" for="find-room__submit-button_1">arrow_forward</label>
+                      </div>
+                    </div>
               </div>
             </div>
-          </div>
-          <div class="find-room__button_submit card-footer">
-            <div class="mean-oval-button button-style_contained elem__width_100">
-              <button class="mean-oval-button__elem" id="find-room__submit-button_1">подобрать номер</button>
-              <label class="mean-oval-button__background" for="find-room__submit-button_1"></label>
-              <div class="mean-oval-button__icon">
-                <label class="material-icons" for="find-room__submit-button_1">arrow_forward</label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="registration card-style_default">
-          <div class="registration__title"><span class="custom-font-style_h1">Регистрация аккаунта</span></div>
-          <div class="registration__input_basic-data">
-            <div class="input elem__width_100">
-              <div class="input__element">
-                <input class="input__frame" placeholder="Имя">
-              </div>
-            </div>
-            <div class="input elem__width_100">
-              <div class="input__element">
-                <input class="input__frame" placeholder="Фамилия">
-              </div>
-            </div>
-            <div class="registration__radio-buttons">
-              <div class="radio-button__line-array twins-grid-line">
-                <label class="radio-button" for="registration_male">
-                  <input class="radio-button__elem" type="radio" name="sex" id="registration_male" checked>
-                  <label class="radio-button__label custom-font-style_body-plain" for="registration_male">Мужчина</label>
-                </label>
-                <label class="radio-button" for="registration_female">
-                  <input class="radio-button__elem" type="radio" name="sex" id="registration_female">
-                  <label class="radio-button__label custom-font-style_body-plain" for="registration_female">Женщина</label>
-                </label>
-              </div>
-            </div>
-          </div>
-          <div class="registration__input_date-of-birth">
-            <div class="input elem__width_100">
-              <div class="input__title">
-                <div class="title-bar custom-font-style_h3"><span class="title-bar__title">дата рождения</span>
-                </div>
-              </div>
-              <div class="input__element">
-                <input class="input__frame" placeholder="ДД.ММ.ГГГГ">
-              </div>
-            </div>
-          </div>
-          <div class="registration__input_login-data">
-            <div class="input elem__width_100">
-              <div class="input__title">
-                <div class="title-bar custom-font-style_h3"><span class="title-bar__title">данные для входа в сервис</span>
+            <div class="registration card-style_default">
+              <div class="registration__title"><span class="custom-font-style_h1">Регистрация аккаунта</span></div>
+              <div class="registration__input_basic-data">
+                    <div class="input elem__width_100">
+                      <div class="input__element">
+                            <input class="input__frame" placeholder="Имя">
+                      </div>
+                    </div>
+                    <div class="input elem__width_100">
+                      <div class="input__element">
+                            <input class="input__frame" placeholder="Фамилия">
+                      </div>
+                    </div>
+                <div class="registration__radio-buttons">
+                      <div class="radio-button__line-array twins-grid-line">
+                        <label class="radio-button" for="registration_male">
+                          <input class="radio-button__elem" type="radio" name="sex" id="registration_male" checked>
+                          <label class="radio-button__label custom-font-style_body-plain" for="registration_male">Мужчина</label>
+                        </label>
+                        <label class="radio-button" for="registration_female">
+                          <input class="radio-button__elem" type="radio" name="sex" id="registration_female">
+                          <label class="radio-button__label custom-font-style_body-plain" for="registration_female">Женщина</label>
+                        </label>
+                      </div>
                 </div>
               </div>
-              <div class="input__element">
-                <input class="input__frame" type="Email" placeholder="Email">
+              <div class="registration__input_date-of-birth">
+                    <div class="input elem__width_100">
+                      <div class="input__title">
+                            <div class="title-bar custom-font-style_h3"><span class="title-bar__title">дата рождения</span>
+                            </div>
+                      </div>
+                      <div class="input__element">
+                            <input class="input__frame" placeholder="ДД.ММ.ГГГГ">
+                      </div>
+                    </div>
+              </div>
+              <div class="registration__input_login-data">
+                    <div class="input elem__width_100">
+                      <div class="input__title">
+                            <div class="title-bar custom-font-style_h3"><span class="title-bar__title">данные для входа в сервис</span>
+                            </div>
+                      </div>
+                      <div class="input__element">
+                            <input class="input__frame" type="Email" placeholder="Email">
+                      </div>
+                    </div>
+                    <div class="input elem__width_100">
+                      <div class="input__element">
+                            <input class="input__frame" placeholder="Пароль">
+                      </div>
+                    </div>
+                    <div class="toggle-button"> 
+                      <input class="toggle-button__elem" id="registration_toggle_01" type="checkbox">
+                      <label class="toggle-button__label custom-font-style_body" for="registration_toggle_01">Получать спецпредложения</label>
+                    </div>
+              </div>
+              <div class="registration__button_submit">
+                    <div class="mean-oval-button button-style_contained elem__width_100">
+                      <button class="mean-oval-button__elem" id="registration__button_submit_1">Зарегистрироваться</button>
+                      <label class="mean-oval-button__background" for="registration__button_submit_1"></label>
+                      <div class="mean-oval-button__icon">
+                            <label class="material-icons" for="registration__button_submit_1">arrow_forward</label>
+                      </div>
+                    </div>
+              </div>
+              <div class="registration__login-section">
+                <div class="registration__login-section-container card-footer"><span class="custom-font-style_body">Уже есть аккаунт на Toxin</span>
+                      <div class="mean-oval-button button-style_outlined elem__width_30">
+                        <button class="mean-oval-button__elem" id="registration__button_login_1">войти</button>
+                        <label class="mean-oval-button__background" for="registration__button_login_1"></label>
+                        <label class="mean-oval-button__thumb" for="registration__button_login_1"></label>
+                      </div>
+                </div>
               </div>
             </div>
-            <div class="input elem__width_100">
-              <div class="input__element">
-                <input class="input__frame" placeholder="Пароль">
-              </div>
-            </div>
-            <div class="toggle-button"> 
-              <input class="toggle-button__elem" id="registration_toggle_01" type="checkbox">
-              <label class="toggle-button__label custom-font-style_body" for="registration_toggle_01">Получать спецпредложения</label>
-            </div>
-          </div>
-          <div class="registration__button_submit">
-            <div class="mean-oval-button button-style_contained elem__width_100">
-              <button class="mean-oval-button__elem" id="registration__button_submit_1">Зарегистрироваться</button>
-              <label class="mean-oval-button__background" for="registration__button_submit_1"></label>
-              <div class="mean-oval-button__icon">
-                <label class="material-icons" for="registration__button_submit_1">arrow_forward</label>
-              </div>
-            </div>
-          </div>
-          <div class="registration__login-section">
-            <div class="registration__login-section-container card-footer"><span class="custom-font-style_body">Уже есть аккаунт на Toxin</span>
-              <div class="mean-oval-button button-style_outlined elem__width_30">
-                <button class="mean-oval-button__elem" id="registration__button_login_1">войти</button>
-                <label class="mean-oval-button__background" for="registration__button_login_1"></label>
-                <label class="mean-oval-button__thumb" for="registration__button_login_1"></label>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
       <div class="headers-n-footers__column">
-        <div class="room-booking card-style_default">
-          <div class="room-booking__card-header-container">
-            <div class="room-booking__card-header">
-              <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="room-booking__title_room-number custom-font-style_h1">888</span><span class="room-booking__title_luxe-mark">ЛЮКС</span></div>
-              <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">9 990</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
-            </div>
-          </div>
-          <div class="room-booking__inputs-container">
-            <div class="room-booking__inputs_date-picker twins-grid-line">
-              <div class="input elem__width_47 expander__parent">
-                <div class="input__title">
-                  <div class="title-bar custom-font-style_h3"><span class="title-bar__title">прибытие</span>
-                  </div>
-                </div>
-                <div class="input__element">
-                  <input class="input__frame expander" id="room-booking__date-picker_arrival" placeholder="ДД.ММ.ГГГГ" readonly>
-                  <div class="input__icon_expand">
-                    <label class="material-icons" for="room-booking__date-picker_arrival">expand_more</label>
-                  </div>
-                  <div class="input__date-picker date-picker expander__aim" id="dp-room-booking__date-picker_arrival"></div>
+            <div class="room-booking card-style_default">
+              <div class="room-booking__card-header-container">
+                <div class="room-booking__card-header">
+                  <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="room-booking__title_room-number custom-font-style_h1">888</span><span class="room-booking__title_luxe-mark">ЛЮКС</span></div>
+                  <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">9 990</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
                 </div>
               </div>
-              <div class="input elem__width_47 expander__parent">
-                <div class="input__title">
-                  <div class="title-bar custom-font-style_h3"><span class="title-bar__title">выезд</span>
-                  </div>
-                </div>
-                <div class="input__element">
-                  <input class="input__frame expander" id="room-booking__date-picker_departure" placeholder="ДД.ММ.ГГГГ" readonly>
-                  <div class="input__icon_expand">
-                    <label class="material-icons" for="room-booking__date-picker_departure">expand_more</label>
-                  </div>
-                  <div class="input__date-picker date-picker expander__aim" id="dp-room-booking__date-picker_departure"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="room-booking__inputs_guests">
-            <div class="input elem__width_100 expander__parent">
-              <div class="input__title">
-                <div class="title-bar custom-font-style_h3"><span class="title-bar__title">гости</span>
-                </div>
-              </div>
-              <div class="input__element">
-                <input class="input__frame dropdown expander" id="room-booking__guests" placeholder="Сколько гостей" readonly>
-                <div class="input__icon_expand">
-                  <label class="material-icons" for="room-booking__guests">expand_more</label>
-                </div>
-                <div class="input__dropdown expander__aim">
-                  <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">взрослые</span>
-                    <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
-                    <div class="input__dropdown_button-dec"></div>
-                  </div>
-                  <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">дети</span>
-                    <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
-                    <div class="input__dropdown_button-dec"></div>
-                  </div>
-                  <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">младенцы</span>
-                    <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
-                    <div class="input__dropdown_button-dec"></div>
-                  </div>
+              <div class="room-booking__inputs-container">
+                <div class="room-booking__inputs_date-picker twins-grid-line">
+                      <div class="input elem__width_47 expander__parent">
+                        <div class="input__title">
+                              <div class="title-bar custom-font-style_h3"><span class="title-bar__title">прибытие</span>
+                              </div>
+                        </div>
+                        <div class="input__element">
+                              <input class="input__frame expander" id="room-booking__date-picker_arrival" placeholder="ДД.ММ.ГГГГ" readonly>
+                              <div class="input__icon_expand">
+                                    <label class="material-icons" for="room-booking__date-picker_arrival">expand_more</label>
+                              </div>
+                              <div class="input__date-picker date-picker expander__aim" id="dp-room-booking__date-picker_arrival"></div>
+                        </div>
+                      </div>
+                      <div class="input elem__width_47 expander__parent">
+                        <div class="input__title">
+                              <div class="title-bar custom-font-style_h3"><span class="title-bar__title">выезд</span>
+                              </div>
+                        </div>
+                        <div class="input__element">
+                              <input class="input__frame expander" id="room-booking__date-picker_departure" placeholder="ДД.ММ.ГГГГ" readonly>
+                              <div class="input__icon_expand">
+                                    <label class="material-icons" for="room-booking__date-picker_departure">expand_more</label>
+                              </div>
+                              <div class="input__date-picker date-picker expander__aim" id="dp-room-booking__date-picker_departure"></div>
+                        </div>
+                      </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="room-booking__calc-container custom-font-style_body">
-            <div class="room-booking__calc_price-basic">
-              <div class="room-booking__sub-container"><span>9 990₽ X 4 суток</span><span>39 960₽</span></div>
-            </div>
-            <div class="room-booking__calc_price-off">
-              <div class="room-booking__sub-container">
-                <div class="room-booking__nano-container"><span>Сбор за услуги: скидка 2 179₽</span><span class="material-icons">info_outline</span>
-                </div><span>0₽</span>
+              <div class="room-booking__inputs_guests">
+                    <div class="input elem__width_100 expander__parent">
+                      <div class="input__title">
+                            <div class="title-bar custom-font-style_h3"><span class="title-bar__title">гости</span>
+                            </div>
+                      </div>
+                      <div class="input__element">
+                            <input class="input__frame dropdown expander" id="room-booking__guests" placeholder="Сколько гостей" readonly>
+                            <div class="input__icon_expand">
+                                  <label class="material-icons" for="room-booking__guests">expand_more</label>
+                            </div>
+                            <div class="input__dropdown expander__aim">
+                              <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">взрослые</span>
+                                <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
+                                <div class="input__dropdown_button-dec"></div>
+                              </div>
+                              <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">дети</span>
+                                <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
+                                <div class="input__dropdown_button-dec"></div>
+                              </div>
+                              <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">младенцы</span>
+                                <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
+                                <div class="input__dropdown_button-dec"></div>
+                              </div>
+                            </div>
+                      </div>
+                    </div>
+              </div>
+              <div class="room-booking__calc-container custom-font-style_body">
+                <div class="room-booking__calc_price-basic">
+                  <div class="room-booking__sub-container"><span>9 990₽ X 4 суток</span><span>39 960₽</span></div>
+                </div>
+                <div class="room-booking__calc_price-off">
+                  <div class="room-booking__sub-container">
+                    <div class="room-booking__nano-container"><span>Сбор за услуги: скидка 2 179₽</span><span class="material-icons">info_outline</span>
+                    </div><span>0₽</span>
+                  </div>
+                </div>
+                <div class="room-booking__calc_fee">
+                  <div class="room-booking__sub-container">
+                    <div class="room-booking__nano-container"><span>Сбор за дополнительные услуги</span><span class="material-icons">info_outline</span>
+                    </div><span>300₽</span>
+                  </div>
+                </div>
+                <div class="room-booking__calc_summary custom-font-style_h2">
+                  <div class="room-booking__sub-container"><span>Итого</span><span class="room-booking__sub-container_divider"></span><span>38 081₽</span></div>
+                </div>
+              </div>
+              <div class="room-booking__button_submit">
+                    <div class="mean-oval-button button-style_contained elem__width_100">
+                      <button class="mean-oval-button__elem" id="room-booking__button_submit_1">Забронировать</button>
+                      <label class="mean-oval-button__background" for="room-booking__button_submit_1"></label>
+                      <div class="mean-oval-button__icon">
+                            <label class="material-icons" for="room-booking__button_submit_1">arrow_forward</label>
+                      </div>
+                    </div>
               </div>
             </div>
-            <div class="room-booking__calc_fee">
-              <div class="room-booking__sub-container">
-                <div class="room-booking__nano-container"><span>Сбор за дополнительные услуги</span><span class="material-icons">info_outline</span>
-                </div><span>300₽</span>
+            <div class="login card-style_default">
+              <div class="login__title"><span class="custom-font-style_h1">Войти</span></div>
+              <div class="login__input_login-data">
+                    <div class="input elem__width_100">
+                      <div class="input__element">
+                            <input class="input__frame" type="Email" placeholder="Email">
+                      </div>
+                    </div>
+                    <div class="input elem__width_100">
+                      <div class="input__element">
+                            <input class="input__frame" placeholder="Пароль">
+                      </div>
+                    </div>
+              </div>
+              <div class="login__authorization-button">
+                    <div class="mean-oval-button button-style_contained elem__width_100">
+                      <button class="mean-oval-button__elem" id="login__authorization-button_1">войти</button>
+                      <label class="mean-oval-button__background" for="login__authorization-button_1"></label>
+                      <div class="mean-oval-button__icon">
+                            <label class="material-icons" for="login__authorization-button_1">arrow_forward</label>
+                      </div>
+                    </div>
+              </div>
+              <div class="login__registration-section">
+                <div class="login__registration-section-container card-footer"><span class="custom-font-style_body">Нет аккаунта на Toxin</span>
+                      <div class="mean-oval-button button-style_outlined elem__width_30">
+                        <button class="mean-oval-button__elem" id="login__button_registration_1">создать</button>
+                        <label class="mean-oval-button__background" for="login__button_registration_1"></label>
+                        <label class="mean-oval-button__thumb" for="login__button_registration_1"></label>
+                      </div>
+                </div>
               </div>
             </div>
-            <div class="room-booking__calc_summary custom-font-style_h2">
-              <div class="room-booking__sub-container"><span>Итого</span><span class="room-booking__sub-container_divider"></span><span>38 081₽</span></div>
-            </div>
-          </div>
-          <div class="room-booking__button_submit">
-            <div class="mean-oval-button button-style_contained elem__width_100">
-              <button class="mean-oval-button__elem" id="room-booking__button_submit_1">Забронировать</button>
-              <label class="mean-oval-button__background" for="room-booking__button_submit_1"></label>
-              <div class="mean-oval-button__icon">
-                <label class="material-icons" for="room-booking__button_submit_1">arrow_forward</label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="login card-style_default">
-          <div class="login__title"><span class="custom-font-style_h1">Войти</span></div>
-          <div class="login__input_login-data">
-            <div class="input elem__width_100">
-              <div class="input__element">
-                <input class="input__frame" type="Email" placeholder="Email">
-              </div>
-            </div>
-            <div class="input elem__width_100">
-              <div class="input__element">
-                <input class="input__frame" placeholder="Пароль">
-              </div>
-            </div>
-          </div>
-          <div class="login__authorization-button">
-            <div class="mean-oval-button button-style_contained elem__width_100">
-              <button class="mean-oval-button__elem" id="login__authorization-button_1">войти</button>
-              <label class="mean-oval-button__background" for="login__authorization-button_1"></label>
-              <div class="mean-oval-button__icon">
-                <label class="material-icons" for="login__authorization-button_1">arrow_forward</label>
-              </div>
-            </div>
-          </div>
-          <div class="login__registration-section">
-            <div class="login__registration-section-container card-footer"><span class="custom-font-style_body">Нет аккаунта на Toxin</span>
-              <div class="mean-oval-button button-style_outlined elem__width_30">
-                <button class="mean-oval-button__elem" id="login__button_registration_1">создать</button>
-                <label class="mean-oval-button__background" for="login__button_registration_1"></label>
-                <label class="mean-oval-button__thumb" for="login__button_registration_1"></label>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
       <div class="headers-n-footers__column">
-        <div class="room-sample card-style_room-sample">
-          <div class="room-sample__container_top">
-            <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_888-1.png"><img src="static/images/room__thumbnail_888-2.png"><img src="static/images/room__thumbnail_888-3.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_888-1.png">
-            </div>
-            <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
-            </div>
-            <div class="room-sample__arrow-scroller_left scroller" id="888_left">
-              <label class="material-icons" for="888_left">chevron_left</label>
-            </div>
-            <div class="room-sample__arrow-scroller_right scroller" id="888_right">
-              <label class="material-icons" for="888_right">chevron_left</label>
-            </div>
-          </div>
-          <div class="room-sample__container_bottom">
-            <div class="room-sample__title-container"> 
-              <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">888</span><span class="room-booking__title_luxe-mark">ЛЮКС</span>
-              </div>
-              <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">9 990</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
-            </div>
-            <div class="room-sample__rate-n-reviews">
-              <div class="room-sample__rate">
-                <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+            <div class="room-sample card-style_room-sample">
+              <div class="room-sample__container_top">
+                <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_888-1.png"><img src="static/images/room__thumbnail_888-2.png"><img src="static/images/room__thumbnail_888-3.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_888-1.png">
+                </div>
+                <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
+                </div>
+                <div class="room-sample__arrow-scroller_left scroller" id="888_left">
+                      <label class="material-icons" for="888_left">chevron_left</label>
+                </div>
+                <div class="room-sample__arrow-scroller_right scroller" id="888_right">
+                      <label class="material-icons" for="888_right">chevron_left</label>
                 </div>
               </div>
-              <div class="room-sample__reviews"><span class="room-booking__price_value">145</span><span class="room-booking__price_addition"> Отзывов</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="room-sample card-style_room-sample">
-          <div class="room-sample__container_top">
-            <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_840-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_840-1.png">
-            </div>
-            <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
-            </div>
-            <div class="room-sample__arrow-scroller_left scroller" id="840_left">
-              <label class="material-icons" for="840_left">chevron_left</label>
-            </div>
-            <div class="room-sample__arrow-scroller_right scroller" id="840_right">
-              <label class="material-icons" for="840_right">chevron_left</label>
-            </div>
-          </div>
-          <div class="room-sample__container_bottom">
-            <div class="room-sample__title-container"> 
-              <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">840</span>
-              </div>
-              <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">9 990</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
-            </div>
-            <div class="room-sample__rate-n-reviews">
-              <div class="room-sample__rate">
-                <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span>
+              <div class="room-sample__container_bottom">
+                <div class="room-sample__title-container"> 
+                  <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">888</span><span class="room-booking__title_luxe-mark">ЛЮКС</span>
+                  </div>
+                  <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">9 990</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
+                </div>
+                <div class="room-sample__rate-n-reviews">
+                  <div class="room-sample__rate">
+                        <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+                        </div>
+                  </div>
+                  <div class="room-sample__reviews"><span class="room-booking__price_value">145</span><span class="room-booking__price_addition"> Отзывов</span></div>
                 </div>
               </div>
-              <div class="room-sample__reviews"><span class="room-booking__price_value">65</span><span class="room-booking__price_addition"> Отзывов</span></div>
             </div>
-          </div>
-        </div>
+            <div class="room-sample card-style_room-sample">
+              <div class="room-sample__container_top">
+                <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_840-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_840-1.png">
+                </div>
+                <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
+                </div>
+                <div class="room-sample__arrow-scroller_left scroller" id="840_left">
+                      <label class="material-icons" for="840_left">chevron_left</label>
+                </div>
+                <div class="room-sample__arrow-scroller_right scroller" id="840_right">
+                      <label class="material-icons" for="840_right">chevron_left</label>
+                </div>
+              </div>
+              <div class="room-sample__container_bottom">
+                <div class="room-sample__title-container"> 
+                  <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">840</span>
+                  </div>
+                  <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">9 990</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
+                </div>
+                <div class="room-sample__rate-n-reviews">
+                  <div class="room-sample__rate">
+                        <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span>
+                        </div>
+                  </div>
+                  <div class="room-sample__reviews"><span class="room-booking__price_value">65</span><span class="room-booking__price_addition"> Отзывов</span></div>
+                </div>
+              </div>
+            </div>
       </div>
     </div>
   </main>
