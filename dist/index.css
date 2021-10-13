@@ -1679,10 +1679,15 @@ object {
 .website__footer {
   height: 145px; }
 
-.bg-pic__landing {
-  background-image: url(static/images/background__landing.png);
+.bg-pic__landing, .bg-pic__login-n-registration {
   background-repeat: no-repeat;
   background-size: 100% auto; }
+
+.bg-pic__landing {
+  background-image: url(static/images/background__landing.png); }
+
+.bg-pic__login-n-registration {
+  background-image: url(static/images/background__login-n-registration.png); }
 
 /*!*********************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/gradient-fill-entities.scss ***!

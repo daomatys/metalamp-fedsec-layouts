@@ -2,3 +2,9 @@ extends /pages/website/website.pug
 
 block head
   title TOXIN HOTEL / LOGIN
+
+block main
+  include /components/card/__login/card__login.pug
+
+  main.website__main.bg-pic__login-n-registration
+    +cardLogin()

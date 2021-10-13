@@ -20,9 +20,17 @@
 }
 
 .bg-pic {
-  &__landing {
-    background-image: url("/src/assets/images/raster/background/background__landing.png");
+  &__landing,
+  &__login-n-registration {
     background-repeat: no-repeat;
     background-size: 100% auto;
+  }
+
+  &__landing {
+    background-image: url("/src/assets/images/raster/background/background__landing.png");
+  }
+
+  &__login-n-registration {
+    background-image: url("/src/assets/images/raster/background/background__login-n-registration.png");
   }
 }
