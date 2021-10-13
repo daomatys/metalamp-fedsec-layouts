@@ -6,10 +6,9 @@ head
 
 body.website__body
   header.website__header
-    +header({ authorization: false })
+    +header({ authorized: false })
 
-  main.website__main
-    block main
+  block main
 
   footer.website__footer
     +footer({ type: 'default' })

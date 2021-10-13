@@ -2,3 +2,12 @@ extends /pages/website/website.pug
 
 block head
   title TOXIN HOTEL / LANDING
+
+block main
+  include /components/card/__find-room/card__find-room.pug
+
+  main.website__main.bg-pic__landing
+    +cardFindRoom()
+
+    span.landing__bg-note.custom-font-style_body Лучшие номера для вашей работы, отдыха и просто вдохновения
+

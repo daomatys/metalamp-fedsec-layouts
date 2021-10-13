@@ -6,18 +6,23 @@
   }
 
   &__header {
-    height: 140px;
     width: 100%;
   }
 
   &__main {
-    padding: 0px 158px 0px 150px;
+    padding: 70px 140px 0px 140px;
+    height: 100%;
   }
   
   &__footer {
-    position: absolute;
     height: 145px;
-    bottom: 0px;
   }
 }
 
+.bg-pic {
+  &__landing {
+    background-image: url("/src/assets/images/raster/background/background__landing.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+}

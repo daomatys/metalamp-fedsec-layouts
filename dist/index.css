@@ -1634,6 +1634,11 @@ object {
 /*!********************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/website/__landing/website__landing.scss ***!
   \********************************************************************************************************************************************/
+.landing__bg-note {
+  position: absolute;
+  right: 0px;
+  bottom: 18px;
+  width: 297px; }
 
 /*!****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/website/__login/website__login.scss ***!
@@ -1665,16 +1670,19 @@ object {
   width: 100%; }
 
 .website__header {
-  height: 140px;
   width: 100%; }
 
 .website__main {
-  padding: 0px 158px 0px 150px; }
+  padding: 70px 140px 0px 140px;
+  height: 100%; }
 
 .website__footer {
-  position: absolute;
-  height: 145px;
-  bottom: 0px; }
+  height: 145px; }
+
+.bg-pic__landing {
+  background-image: url(static/images/background__landing.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto; }
 
 /*!*********************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/gradient-fill-entities.scss ***!
