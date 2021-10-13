@@ -1,14 +1,4 @@
-include /components/footer/footer.pug
-include /components/header/header.pug
+extends ../website.pug
 
-head 
+block head
   title TOXIN HOTEL / LOGIN
-
-body.website__body
-  header.website__header
-    +header({authorization: false})
-
-  main.website__main
-
-  footer.website__footer
-    +footer({type: 'default'})

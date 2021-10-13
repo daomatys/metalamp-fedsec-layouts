@@ -1,13 +1,7 @@
-include /components/footer/footer.pug
-include /components/header/header.pug
+extends ../website.pug
 
-head 
+block head 
   title 404 / Not Found
 
-body.website__body.bg-color_whisper
-  header.website__header
-    +header({authorization: true})
-  main.website__main.notfound
-    span.notfound_text 404 NOT FOUND
-  footer.website__footer
-    +footer({type: 'default'})
+block main
+  span.notfound_text 404 NOT FOUND

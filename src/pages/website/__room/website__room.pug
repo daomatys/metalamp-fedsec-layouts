@@ -1,21 +1,14 @@
-include /components/footer/footer.pug
-include /components/header/header.pug
-include /components/votes-chart/votes-chart.pug
+extends ../website.pug
 
-head 
+block head 
   title = TOXIN HOTEL / ROOM 
 
-body.website__body
-  header.website__header
-    +header({authorization: false})
-
-  main.website__main
-    +votesChart([
-      { gradient: "primary",    votes: 65,  legend: "Удовлетворительно" },
-      { gradient: "secondary",  votes: 65,  legend: "Хорошо"            },
-      { gradient: "tertiary",   votes: 130, legend: "Великолепно"       },
-      { gradient: "quaternary", votes: 0,   legend: "Разочарован"       }
-    ])
-
-  footer.website__footer
-    +footer({type: 'default'})
+block main 
+  include /components/votes-chart/votes-chart.pug
+  
+  +votesChart([
+    { gradient: "primary",    votes: 65,  legend: "Удовлетворительно" },
+    { gradient: "secondary",  votes: 65,  legend: "Хорошо"            },
+    { gradient: "tertiary",   votes: 130, legend: "Великолепно"       },
+    { gradient: "quaternary", votes: 0,   legend: "Разочарован"       }
+  ])

@@ -1,0 +1,15 @@
+include /components/footer/footer.pug
+include /components/header/header.pug
+
+head
+  block head
+
+body.website__body
+  header.website__header
+    +header({ authorization: false })
+
+  main.website__main
+    block main
+
+  footer.website__footer
+    +footer({ type: 'default' })
