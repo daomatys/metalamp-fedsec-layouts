@@ -1,9 +1,9 @@
 @import "@variables";
 
-.color-item {
+.color-sample {
   display: flex;
 
-  &__holder {
+  &__container {
     display: grid;
     grid-row: 7;
     grid-gap: 20px;
@@ -11,7 +11,7 @@
     margin: 0;
   }
 
-  &__sample {
+  &__element {
     width: 70px;
     height: 70px;
     border-radius: 6px;

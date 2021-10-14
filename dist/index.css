@@ -628,25 +628,25 @@
 /*!****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/color-sample/color-sample.scss ***!
   \****************************************************************************************************************************************/
-.color-item {
+.color-sample {
   display: flex; }
-  .color-item__holder {
+  .color-sample__container {
     display: grid;
     grid-row: 7;
     grid-gap: 20px;
     width: 282px;
     margin: 0; }
-  .color-item__sample {
+  .color-sample__element {
     width: 70px;
     height: 70px;
     border-radius: 6px; }
-  .color-item__description {
+  .color-sample__description {
     display: flex;
     margin-left: 40px;
     line-height: 28px;
     flex-direction: column;
     justify-content: center; }
-  .color-item__color-hexcode {
+  .color-sample__color-hexcode {
     font-weight: normal; }
 
 /*!**************************************************************************************************************************************!*\
@@ -1614,7 +1614,7 @@ object {
 .ui-kit__body {
   width: 1440px; }
   .ui-kit__body > .ui-kit__main {
-    padding: 0px 158px 0px 150px; }
+    padding: 0px 140px; }
   .ui-kit__body_no-padding {
     width: 100%;
     padding: 0; }

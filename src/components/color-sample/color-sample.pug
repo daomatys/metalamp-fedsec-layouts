@@ -1,8 +1,8 @@
 mixin colorSamples( items=[] )
-  .color-item__holder
+  .color-sample__container
     each item in items
-      .color-item
-        .color-item__sample( style=`background-color: ${item.hexcolor}; opacity: ${item.opacity}%;` )
-        .color-item__description.custom-font-style_h2
-          span.color-item__title #{item.title}
-          span.color-item__color-hexcode #{item.hexcolor}
+      .color-sample
+        .color-sample__element( style=`background-color: ${item.hexcolor}; opacity: ${item.opacity}%;` )
+        .color-sample__description.custom-font-style_h2
+          span.color-sample__title #{item.title}
+          span.color-sample__color-hexcode #{item.hexcolor}
