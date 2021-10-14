@@ -1,20 +1,21 @@
-.index-links {
+.index-links,
+.index-links__container {
   display: flex;
   align-items: flex-start;
+}
+
+.index-links {
   justify-content: space-between;
   width: 50%;
   max-width: 650px;
 
-  & > * {
-    min-width: 130px;
-  }
-
-
   &__container {
-    display: flex;
+    justify-content: center;
     width: 100%;
     height: 100%;
-    justify-content: center;
-    align-items: flex-start;
+  }
+
+  & > * {
+    min-width: 130px;
   }
 }
