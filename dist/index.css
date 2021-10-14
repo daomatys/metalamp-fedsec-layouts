@@ -1561,7 +1561,8 @@ object {
 .colors-n-type-samples {
   display: grid;
   align-items: start;
-  justify-content: space-between; }
+  justify-content: space-between;
+  padding: 0px 10px; }
 
 /*!******************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/ui-kit/__form-elements/ui-kit__form-elements.scss ***!
