@@ -1,8 +1,8 @@
-mixin typeSamples(items=[])
-  .type-item__array
+mixin typeSamples( items=[] )
+  .type-sample__container
     each item in items
       - const tagName = item.tagname.toLowerCase();
 
-      .type-item( class=`custom-font-style_${tagName}` )
-        span.type-item__style-name #{item.tagname}
-        span.type-item__note #{item.note}
+      .type-sample( class=`custom-font-style_${tagName}` )
+        span.type-sample__associative-tag #{item.tagname}
+        span.type-sample__usage-instruction #{item.note}
