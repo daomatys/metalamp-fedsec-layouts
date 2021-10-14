@@ -1515,14 +1515,19 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/index/index.scss ***!
   \*********************************************************************************************************************/
 .index-links {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  grid-gap: 50px;
-  align-items: start;
-  margin-top: 80px;
-  margin-left: 80px; }
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 50%;
+  max-width: 650px; }
   .index-links > * {
     min-width: 130px; }
+  .index-links__container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-start; }
 
 /*!***************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/pages.scss ***!
