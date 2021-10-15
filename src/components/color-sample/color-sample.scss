@@ -25,6 +25,11 @@
     justify-content: center;
   }
 
+  &__title,
+  &__color-hexcode {
+    padding-block: 3px;
+  }
+
   &__color-hexcode {
     font-weight: normal;
   }

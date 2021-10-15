@@ -646,6 +646,8 @@
     line-height: 28px;
     flex-direction: column;
     justify-content: center; }
+  .color-sample__title, .color-sample__color-hexcode {
+    padding-block: 3px; }
   .color-sample__color-hexcode {
     font-weight: normal; }
 
@@ -704,7 +706,8 @@
   font-size: 24px; }
 
 .custom-font-style_h2 {
-  font-size: 19px; }
+  font-size: 19px;
+  line-height: 23px; }
 
 .custom-font-style_h3 {
   font-size: 12px; }
@@ -1025,7 +1028,8 @@
   font-size: 24px; }
 
 .custom-font-style_h2, .ui-datepicker-title {
-  font-size: 19px; }
+  font-size: 19px;
+  line-height: 23px; }
 
 .custom-font-style_h3 {
   font-size: 12px; }
@@ -1436,7 +1440,8 @@
   .type-sample__usage-instruction {
     display: inherit;
     margin-left: 30px;
-    width: 369px; }
+    width: 369px;
+    white-space: pre-line; }
 
 /*!**************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/votes-chart/votes-chart.scss ***!
@@ -1558,11 +1563,15 @@ object {
 /*!******************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/ui-kit/__colors-n-type/ui-kit__colors-n-type.scss ***!
   \******************************************************************************************************************************************************/
-.colors-n-type-samples {
-  display: grid;
+.samples {
+  display: flex;
   align-items: start;
   justify-content: space-between;
-  padding: 0px 10px; }
+  margin-top: 5px; }
+  .samples__colors {
+    margin-left: 10px; }
+  .samples__type {
+    margin-right: 18px; }
 
 /*!******************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/ui-kit/__form-elements/ui-kit__form-elements.scss ***!
