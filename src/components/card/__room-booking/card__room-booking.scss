@@ -52,19 +52,6 @@
     box-sizing: border-box;
   }
 
-  &__calc {
-    &-fee,
-    &-discount,
-    &-initial-price {
-      margin-bottom: 6px;
-    }
-
-    &-summary {
-      white-space: nowrap;
-      margin-top: 20px;
-    }
-  }
-
   &__sub-container {
     &_price,
     &_fee {
@@ -74,7 +61,6 @@
 
     &_price {
       position: relative;
-      line-height: 18px;
       width: 320px;
     }
 
@@ -88,9 +74,28 @@
     }
   }
 
-  &__dotted-bottom-border {
-    position: relative;
-    width: 100%;
-    border-bottom: 1px dotted rgba($valhalla, .25);
+  &__calc {
+    &-fee,
+    &-discount,
+    &-initial-price {
+      line-height: 18px;
+    }
+
+    &-discount,
+    &-initial-price {
+      margin-bottom: 6px;
+    }
+
+    &-summary {
+      white-space: nowrap;
+      margin-top: 20px;
+
+      &_dotted-border {
+        position: relative;
+        bottom: 3px;
+        width: 100%;
+        border-bottom: 1px dotted rgba($valhalla, .25);
+      }
+    }
   }
 }

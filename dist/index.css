@@ -495,20 +495,12 @@
 .room-booking__container_calc {
   box-sizing: border-box; }
 
-.room-booking__calc-fee, .room-booking__calc-discount, .room-booking__calc-initial-price {
-  margin-bottom: 6px; }
-
-.room-booking__calc-summary {
-  white-space: nowrap;
-  margin-top: 20px; }
-
 .room-booking__sub-container_price, .room-booking__sub-container_fee {
   display: flex;
   justify-content: space-between; }
 
 .room-booking__sub-container_price {
   position: relative;
-  line-height: 18px;
   width: 320px; }
 
 .room-booking__sub-container_fee {
@@ -517,10 +509,20 @@
   .room-booking__sub-container_fee > .material-icons {
     color: rgba(31, 32, 65, 0.25); }
 
-.room-booking__dotted-bottom-border {
-  position: relative;
-  width: 100%;
-  border-bottom: 1px dotted rgba(31, 32, 65, 0.25); }
+.room-booking__calc-fee, .room-booking__calc-discount, .room-booking__calc-initial-price {
+  line-height: 18px; }
+
+.room-booking__calc-discount, .room-booking__calc-initial-price {
+  margin-bottom: 6px; }
+
+.room-booking__calc-summary {
+  white-space: nowrap;
+  margin-top: 20px; }
+  .room-booking__calc-summary_dotted-border {
+    position: relative;
+    bottom: 3px;
+    width: 100%;
+    border-bottom: 1px dotted rgba(31, 32, 65, 0.25); }
 
 /*!***************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/__room-sample/card__room-sample.scss ***!
