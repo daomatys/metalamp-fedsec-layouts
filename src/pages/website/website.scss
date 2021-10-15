@@ -1,34 +1,39 @@
 @import "@variables";
 
 @media screen and (max-width: 1160px) {
-  .footer_default {
+  .website__footer_default {
     display: none;
   }
 }
 
 @media screen and (min-width: 1160px) {
-  .footer_mobile {
+  .website__footer_mobile {
     display: none;
   }
 }
 
 .website {
-  &__header {
+  &__main {
+    position: relative;
+  }
+
+  &__header,
+  &__footer {
     width: 100%;
   }
   
   &__footer {
-    height: 145px;
+    display: flex;
+    justify-content: center;
   }
 }
 
 .bg-pic {
   &__landing,
   &__login-n-registration {
-    width: 100%;
-    background-size:cover;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: center;
   }
 
   &__landing {
