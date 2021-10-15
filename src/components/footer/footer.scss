@@ -3,40 +3,32 @@
 .footer {
   background-color: white;
 
-  &_default {
+  &_default,
+  &_mobile {
     width: 100%;
   }
 
   &_mobile {
-    width: 768px;
+    max-width: 768px;
   }
 
   &__upper-section,
   &__lower-section {
+    display: flex;
+    justify-content: space-between;
     padding-inline: 140px;
   }
 
   &__upper-section {
-    display: grid;
-    align-items: center;
-    height: 372px;
+    align-items: start;
+    padding-block: 100px;
     border-bottom: 1px solid rgba($valhalla, .25);
-
-    &_content {
-      display: grid;
-      align-items: start;
-      grid-template-columns: 260px repeat(3, 150px) 260px;
-      grid-gap: 40px;
-      height: 170px;
-    }
   }
 
   &__lower-section {
-    display: flex;
-    height: 70px;
-    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    flex-direction: row;
+    height: 70px;
   }
 
   &__central-section {
@@ -51,8 +43,15 @@
     }
   }
 
-  &__content_start-end {
-    display: grid;
-    grid-gap: 20px;
+  &__content {
+    &_shell {
+      display: grid;
+      grid-gap: 20px;
+      width: 260px;
+    }
+
+    &_core {
+      width: 150px;
+    }
   }
 }

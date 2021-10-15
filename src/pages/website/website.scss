@@ -4,6 +4,9 @@
   .website__footer_default {
     display: none;
   }
+  .header {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 1161px) {
@@ -21,11 +24,6 @@
   &__footer {
     width: 100%;
   }
-  
-  &__footer {
-    display: flex;
-    justify-content: center;
-  }
 }
 
 .bg-pic {
@@ -34,6 +32,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    max-width: 100%;
   }
 
   &__landing {

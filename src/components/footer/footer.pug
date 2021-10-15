@@ -42,26 +42,24 @@ mixin footer( item )
     when 'default'
       .footer.footer_default
         .footer__upper-section
-          .footer__upper-section_content
+          .footer__content_shell
+            .footer__logotype
+              +logo({ type: "colorful" })
+            .footer__awards-text
+              span.custom-font-style_body Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
 
-            .footer__content_start-end
-              .footer__logotype
-                +logo({ type: "colorful" })
-              .footer__awards-text
-                span.custom-font-style_body Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+          each unit in navBarUnits
+            .footer__content_core
+              +navigationBar( unit )
 
-            each unit in navBarUnits
-              .footer__content
-                +navigationBar( unit )
-
-            .footer__content_start-end
-              +titleBar("подписка")
-              span.custom-font-style_body Получайте специальные предложения и новости сервиса
-              +input({
-                placeholder: "Email",
-                type: "subscription",
-                widthbypercent: 81,
-              })
+          .footer__content_shell
+            +titleBar("подписка")
+            span.custom-font-style_body Получайте специальные предложения и новости сервиса
+            +input({
+              placeholder: "Email",
+              type: "subscription",
+              widthbypercent: 81,
+            })
 
         .footer__lower-section
           .footer__lower-section_left
