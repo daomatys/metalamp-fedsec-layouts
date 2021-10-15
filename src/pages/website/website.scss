@@ -5,7 +5,7 @@
     display: none;
   }
   .header {
-    
+    opacity: .9;
   }
 }
 
@@ -16,14 +16,22 @@
 }
 
 .website {
-  &__main {
-    position: relative;
-  }
-
+  &__main,
   &__header,
   &__footer {
     width: 100%;
   }
+
+  &__main {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.universal-container {
+  position: relative;
+  min-width: $wideFramesWidthMin;
+  max-width: $wideFramesWidthMax;
 }
 
 .bg-pic {
@@ -37,7 +45,6 @@
 
   &__landing {
     padding-top: 70px;
-    padding-inline: 140px;
     min-height: 830px;
     background-image: url("/src/assets/images/raster/background/background__landing.png");
   }
