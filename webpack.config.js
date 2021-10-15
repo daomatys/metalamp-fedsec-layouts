@@ -14,12 +14,10 @@ const PATHS = {
 const PAGES_ROOT = PATHS.src + '/pages/';
 const PAGES_DIRNAMES = [
   'index/',
-
   'ui-kit/__cards/',
   'ui-kit/__colors-n-type/',
   'ui-kit/__form-elements/',
   'ui-kit/__headers-n-footers/',
-
   'website/__landing/',
   'website/__login/',
   'website/__no-page/',
@@ -29,7 +27,9 @@ const PAGES_DIRNAMES = [
 ];
 
 const PAGES_DIR = PAGES_DIRNAMES.map( dirName => PAGES_ROOT + dirName );
-const PAGES = PAGES_DIR.map( dir => fs.readdirSync( dir ).find( fileName => fileName.endsWith('.pug') ) );
+const PAGES = PAGES_DIR.map( 
+  dir => fs.readdirSync( dir ).find( fileName => fileName.endsWith('.pug') ) 
+);
 
 module.exports = {
   mode: 'development',
