@@ -453,7 +453,10 @@
 /*!***********************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/__find-room/card__find-room.scss ***!
   \***********************************************************************************************************************************************/
-.find-room__dropdowns_date-picker {
+.find-room__container_title, .find-room__container_date-pickers, .find-room__container_guests-dropdown {
+  margin-bottom: 1px; }
+
+.find-room__date-pickers-row {
   grid-gap: 20px; }
 
 /*!*****************************************************************************************************************************************************!*\
@@ -1558,7 +1561,8 @@ object {
   grid-gap: 40px; }
 
 .headers-n-footers__wrap {
-  grid-template-columns: repeat(2, 380px) 320px; }
+  grid-template-columns: repeat(2, 380px) 320px;
+  margin-top: 10px; }
 
 /*!******************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/ui-kit/__colors-n-type/ui-kit__colors-n-type.scss ***!
