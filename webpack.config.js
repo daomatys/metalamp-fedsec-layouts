@@ -33,7 +33,15 @@ const PAGES = PAGES_DIR.map(
 
 module.exports = {
   mode: 'development',
-  
+
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    compress: true,
+    port: 9000,
+  },
+
   externals: {
     paths: PATHS
   },
