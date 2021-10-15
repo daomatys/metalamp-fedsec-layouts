@@ -13,15 +13,22 @@
 .bg-pic {
   &__landing,
   &__login-n-registration {
+    width: 100%;
+    background-size:cover;
     background-repeat: no-repeat;
     background-position: bottom;
   }
 
   &__landing {
+    min-height: 830px;
     background-image: url("/src/assets/images/raster/background/background__landing.png");
   }
 
   &__login-n-registration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 690px;
     background-image: url("/src/assets/images/raster/background/background__login-n-registration.png");
   }
 }
