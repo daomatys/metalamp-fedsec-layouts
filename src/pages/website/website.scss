@@ -1,17 +1,8 @@
 @import "@variables";
 
 .website {
-  &__body {
-    width: 100%;
-  }
-
   &__header {
     width: 100%;
-  }
-
-  &__main {
-    padding: 70px 140px 0px 140px;
-    height: 100%;
   }
   
   &__footer {
@@ -23,7 +14,7 @@
   &__landing,
   &__login-n-registration {
     background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-position: bottom;
   }
 
   &__landing {
