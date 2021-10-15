@@ -1,8 +1,0 @@
-mixin colorSamples( items=[] )
-  .color-sample__container
-    each item in items
-      .color-sample
-        .color-sample__element( style=`background-color: ${item.hexcolor}; opacity: ${item.opacity}%;` )
-        .color-sample__description.custom-font-style_h2
-          span.color-sample__title #{item.title}
-          span.color-sample__color-hexcode #{item.hexcolor}

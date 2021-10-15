@@ -1,0 +1,1775 @@
+/*!***********************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/fonts/Font Awesome/fonts.scss ***!
+  \***********************************************************************************************************************************/
+@charset "UTF-8";
+@font-face {
+  font-family: 'fa-brands';
+  src: local("☺"), url(static/fonts/fa-brands.woff) format("woff"), url(static/fonts/fa-brands.ttf) format("truetype"), url(static/fonts/fa-brands.svg) format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/fonts/Material Icons/fonts.scss ***!
+  \*************************************************************************************************************************************/
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v99/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format("woff2"); }
+
+/*!*********************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/fonts/Montserrat/fonts.scss ***!
+  \*********************************************************************************************************************************/
+@charset "UTF-8";
+@font-face {
+  font-family: 'Montserrat';
+  src: local("☺"), url(static/fonts/Montserrat-Regular.woff) format("woff"), url(static/fonts/Montserrat-Regular.ttf) format("truetype"), url(static/fonts/Montserrat-Regular.svg) format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local("☺"), url(static/fonts/Montserrat-Bold.woff) format("woff"), url(static/fonts/Montserrat-Bold.ttf) format("truetype"), url(static/fonts/Montserrat-Bold.svg) format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
+/*!********************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/fonts/Quicksand/fonts.scss ***!
+  \********************************************************************************************************************************/
+@charset "UTF-8";
+@font-face {
+  font-family: 'Quicksand';
+  src: local("☺"), url(static/fonts/Quicksand-Regular.woff) format("woff"), url(static/fonts/Quicksand-Regular.ttf) format("truetype"), url(static/fonts/Quicksand-Regular.svg) format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Quicksand';
+  src: local("☺"), url(static/fonts/Quicksand-Bold.woff) format("woff"), url(static/fonts/Quicksand-Bold.ttf) format("truetype"), url(static/fonts/Quicksand-Bold.svg) format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
+/*!******************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/advantage-bar/advantage-bar.scss ***!
+  \******************************************************************************************************************************************/
+.gradient-fill, .advantages-bar__icon {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+.advantages-bar {
+  width: 280px; }
+  .advantages-bar__content {
+    display: flex;
+    margin-bottom: 17px; }
+  .advantages-bar__icon {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    margin-right: 10px; }
+    .advantages-bar__icon > span {
+      font-size: 48px; }
+  .advantages-bar__text {
+    display: inherit;
+    flex-direction: column; }
+  .advantages-bar__title {
+    font-weight: bold; }
+  .advantages-bar__line {
+    color: #1F2041;
+    opacity: .1;
+    margin: 0; }
+
+.block__advantage-bars {
+  display: grid;
+  grid-gap: 20px; }
+
+/*!**************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/bullet-list/bullet-list.scss ***!
+  \**************************************************************************************************************************************/
+.bullet-list {
+  position: relative;
+  top: -2px;
+  margin: 0;
+  padding: 0; }
+  .bullet-list__row {
+    position: relative;
+    left: 20px;
+    width: 240px;
+    line-height: 24px;
+    margin-bottom: 10px; }
+    .bullet-list__row::before {
+      position: absolute;
+      top: 7px;
+      left: -20px;
+      background: rgba(31, 32, 65, 0.25);
+      width: 10px;
+      height: 10px;
+      border: transparent;
+      border-radius: 50%;
+      content: ''; }
+
+/*!*************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/button/__checkbox/button__checkbox.scss ***!
+  \*************************************************************************************************************************************************/
+.checkbox-button {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 10px;
+  align-items: start;
+  margin-right: 20px; }
+  .checkbox-button__container {
+    display: grid;
+    justify-items: start;
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 10px; }
+  .checkbox-button * {
+    cursor: pointer; }
+  .checkbox-button label {
+    color: #1F2041; }
+  .checkbox-button__elem {
+    position: relative;
+    display: flex;
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    border-color: rgba(31, 32, 65, 0.25); }
+    .checkbox-button__elem:checked {
+      align-items: center;
+      justify-content: center;
+      border-color: #BC9CFF; }
+      .checkbox-button__elem:checked:after {
+        position: absolute;
+        width: 10px;
+        height: 12px;
+        background-image: url(static/images/checkmark_primary-gradient.svg);
+        content: ''; }
+  .checkbox-button__common-label {
+    width: 195px;
+    font-size: 14px;
+    opacity: .5; }
+  .checkbox-button__rich-label {
+    display: flex;
+    flex-direction: column;
+    width: 230px; }
+    .checkbox-button__rich-label_title {
+      margin-block: 1px 7px;
+      font-size: 14px;
+      font-weight: bold;
+      opacity: .75; }
+    .checkbox-button__rich-label_info {
+      font-size: 12px;
+      opacity: .5;
+      white-space: pre-wrap; }
+
+/*!*****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/button/__like/button__like.scss ***!
+  \*****************************************************************************************************************************************/
+.oval-button_frame, .like-button__elem {
+  height: 20px;
+  width: 40px;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #1F2041;
+  color: #1F2041;
+  opacity: .25;
+  cursor: pointer;
+  appearance: none; }
+  .oval-button_frame:checked, .like-button__elem:checked {
+    border-color: #BC9CFF;
+    color: #BC9CFF;
+    opacity: 1; }
+
+.oval-button_dot-marker {
+  height: 12px;
+  width: 12px;
+  background-color: #1F2041;
+  border-radius: 50%; }
+
+.gradient-fill, .like-button__elem:checked + .like-button__text > .like-button__text_icon > label {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+.like-button {
+  display: flex;
+  position: relative;
+  align-items: center; }
+  .like-button__elem:checked + .like-button__text {
+    opacity: 1; }
+    .like-button__elem:checked + .like-button__text > .like-button__text_counter > label {
+      color: #BC9CFF; }
+  .like-button__text {
+    display: inherit;
+    position: absolute;
+    opacity: .25;
+    left: 1px; }
+    .like-button__text_icon > label, .like-button__text_counter > label {
+      display: inherit;
+      justify-content: center;
+      align-items: center;
+      font-size: 10px;
+      line-height: 12px;
+      cursor: pointer; }
+    .like-button__text_icon {
+      display: inherit;
+      justify-content: center; }
+      .like-button__text_icon > label {
+        width: 20px; }
+  .like-button__line-array {
+    grid-gap: 10px; }
+
+/*!***************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/button/__mean-oval/button__mean-oval.scss ***!
+  \***************************************************************************************************************************************************/
+.mean-oval-buttons {
+  display: grid;
+  grid-gap: 30px; }
+  .mean-oval-buttons__array {
+    display: inherit;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 30px 20px;
+    justify-content: start; }
+
+.mean-oval-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 15px;
+  min-width: 61px;
+  margin: 0;
+  box-sizing: border-box; }
+  .mean-oval-button > * {
+    cursor: pointer; }
+  .mean-oval-button:hover > .mean-oval-button__background {
+    opacity: .5; }
+  .mean-oval-button__background {
+    position: absolute;
+    border-radius: 22px;
+    height: 44px;
+    width: 100%;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    z-index: 11;
+    transition: opacity 200ms ease; }
+  .mean-oval-button__thumb {
+    position: relative;
+    margin-inline: 2px;
+    border-radius: 20px;
+    height: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    z-index: 12; }
+  .mean-oval-button__elem {
+    position: absolute;
+    appearance: none;
+    border: none;
+    background: transparent;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: inherit;
+    font-weight: bold;
+    color: #fff;
+    z-index: 13; }
+    .mean-oval-button__elem:disabled + label {
+      opacity: .5; }
+  .mean-oval-button__icon {
+    position: absolute;
+    color: #fff;
+    right: 0px;
+    z-index: 13;
+    margin-right: 10px; }
+
+.button-style_contained, .button-style_outlined {
+  height: 44px; }
+
+.button-style_outlined > button {
+  color: #BC9CFF; }
+
+.button-style_text {
+  position: relative; }
+  .button-style_text > button {
+    color: #BC9CFF;
+    padding: 0; }
+    .button-style_text > button:hover, .button-style_text > button:disabled {
+      color: #1F2041;
+      opacity: .5; }
+
+.ripple, .mean-oval-button__elem:not(:active) {
+  animation: rippling 180ms ease forwards; }
+
+@keyframes rippling {
+  0% {
+    transform: scale(1); }
+  66% {
+    transform: scale(0.94); }
+  100% {
+    transform: scale(1); } }
+
+/*!*******************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/button/__radio/button__radio.scss ***!
+  \*******************************************************************************************************************************************/
+.radio-button {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 10px;
+  align-items: center; }
+  .radio-button__line-array {
+    grid-gap: 20px; }
+  .radio-button * {
+    cursor: pointer; }
+  .radio-button__elem {
+    position: relative;
+    display: flex;
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 50%;
+    border-color: #1F2041;
+    opacity: .25; }
+    .radio-button__elem:checked {
+      align-items: center;
+      justify-content: center;
+      border-color: #BC9CFF;
+      opacity: 1; }
+      .radio-button__elem:checked:after {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        content: ''; }
+      .radio-button__elem:checked + .radio-button__label {
+        opacity: .75; }
+  .radio-button__label {
+    opacity: .5; }
+
+/*!***************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/button/__star-rate/button__star-rate.scss ***!
+  \***************************************************************************************************************************************************/
+.gradient-fill, .star-rate {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+.star-rate__line-array {
+  grid-gap: 20px; }
+
+/*!*********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/button/__toggle/button__toggle.scss ***!
+  \*********************************************************************************************************************************************/
+.oval-button_frame, .toggle-button__elem {
+  height: 20px;
+  width: 40px;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #1F2041;
+  color: #1F2041;
+  opacity: .25;
+  cursor: pointer;
+  appearance: none; }
+  .oval-button_frame:checked, .toggle-button__elem:checked {
+    border-color: #BC9CFF;
+    color: #BC9CFF;
+    opacity: 1; }
+
+.oval-button_dot-marker, .toggle-button__elem::after {
+  height: 12px;
+  width: 12px;
+  background-color: #1F2041;
+  border-radius: 50%; }
+
+.toggle-button {
+  display: flex; }
+  .toggle-button__array {
+    display: grid;
+    grid-row: 2;
+    grid-gap: 10px; }
+  .toggle-button__elem {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; }
+    .toggle-button__elem::after {
+      display: flex;
+      margin-inline: 3px;
+      -webkit-transition: transform 0.3s ease;
+      transition: transform 0.3s ease;
+      content: ''; }
+    .toggle-button__elem:checked::after {
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      -webkit-transform: translateX(20px);
+      transform: translateX(20px); }
+  .toggle-button__label {
+    position: relative;
+    top: -2px;
+    cursor: pointer; }
+
+/*!****************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/button/button.scss ***!
+  \****************************************************************************************************************************/
+.oval-button_frame {
+  height: 20px;
+  width: 40px;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #1F2041;
+  color: #1F2041;
+  opacity: .25;
+  cursor: pointer;
+  appearance: none; }
+  .oval-button_frame:checked {
+    border-color: #BC9CFF;
+    color: #BC9CFF;
+    opacity: 1; }
+
+.oval-button_dot-marker {
+  height: 12px;
+  width: 12px;
+  background-color: #1F2041;
+  border-radius: 50%; }
+
+/*!***********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/__find-room/card__find-room.scss ***!
+  \***********************************************************************************************************************************************/
+.find-room__container_title, .find-room__container_date-pickers, .find-room__container_guests-dropdown {
+  margin-bottom: 1px; }
+
+.find-room__date-pickers-row {
+  grid-gap: 20px; }
+
+/*!*****************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/__room-booking/card__room-booking.scss ***!
+  \*****************************************************************************************************************************************************/
+.room-booking__price, .room-booking__title, .room-booking__title-complex {
+  display: flex;
+  align-items: baseline;
+  white-space: pre; }
+
+.room-booking__title-complex {
+  justify-content: space-between; }
+
+.room-booking__title_prefix, .room-booking__title_luxe-mark {
+  font-weight: bold; }
+
+.room-booking__title_luxe-mark {
+  font-size: 12px;
+  line-height: 15px;
+  color: #BC9CFF;
+  margin-left: 1px; }
+
+.room-booking__title_room-number {
+  margin-right: 7px; }
+
+.room-booking__price {
+  opacity: .5; }
+  .room-booking__price_value, .room-booking__price_symbol {
+    font-weight: bold; }
+  .room-booking__price_addition {
+    font-size: 12px; }
+
+.room-booking__date-pickers-row {
+  grid-gap: 20px; }
+
+.room-booking__container_calc {
+  box-sizing: border-box; }
+
+.room-booking__sub-container_price, .room-booking__sub-container_fee {
+  display: flex;
+  justify-content: space-between; }
+
+.room-booking__sub-container_price {
+  position: relative;
+  width: 320px; }
+
+.room-booking__sub-container_fee {
+  align-items: flex-start;
+  width: 240px; }
+  .room-booking__sub-container_fee > .material-icons {
+    color: rgba(31, 32, 65, 0.25); }
+
+.room-booking__calc-fee, .room-booking__calc-discount, .room-booking__calc-initial-price {
+  line-height: 18px; }
+
+.room-booking__calc-discount, .room-booking__calc-initial-price {
+  margin-bottom: 6px; }
+
+.room-booking__calc-summary {
+  white-space: nowrap;
+  margin-top: 20px; }
+  .room-booking__calc-summary_dotted-border {
+    position: relative;
+    bottom: 3px;
+    width: 100%;
+    border-bottom: 1px dotted rgba(31, 32, 65, 0.25); }
+
+/*!***************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/__room-sample/card__room-sample.scss ***!
+  \***************************************************************************************************************************************************/
+.room-sample {
+  background-color: white;
+  width: 270px; }
+  .room-sample__container_top {
+    position: relative;
+    width: 270px;
+    height: 151px;
+    border-radius: 4px 4px 0px 0px;
+    background-color: #1F2041;
+    overflow: hidden; }
+    .room-sample__container_top .material-icons {
+      color: white; }
+  .room-sample__image {
+    display: flex;
+    transform: translateX(-270px); }
+  .room-sample__listing-indicator, .room-sample__arrow-scroller_left, .room-sample__arrow-scroller_right {
+    position: absolute; }
+  .room-sample__arrow-scroller_left, .room-sample__arrow-scroller_right {
+    top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+    width: 42px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+    cursor: pointer; }
+    .room-sample__arrow-scroller_left > label, .room-sample__arrow-scroller_right > label {
+      cursor: inherit; }
+  .room-sample__arrow-scroller_right {
+    transform: scaleX(-1);
+    right: 0px; }
+  .room-sample__listing-indicator {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 41px;
+    bottom: 15px;
+    right: 15px; }
+    .room-sample__listing-indicator > .material-icons {
+      font-size: 8px; }
+  .room-sample__container_bottom {
+    padding: 20px; }
+  .room-sample__title-container, .room-sample__rate-n-reviews {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between; }
+  .room-sample__title-container {
+    margin-bottom: 8px; }
+  .room-sample__rate-n-reviews {
+    padding-top: 8px;
+    border-top: 1px solid rgba(31, 32, 65, 0.1); }
+  .room-sample__reviews {
+    color: rgba(31, 32, 65, 0.5);
+    font-size: 14px; }
+
+/*!************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/card.scss ***!
+  \************************************************************************************************************************/
+.card-style_default, .card-style_room-sample {
+  background-color: white;
+  box-sizing: border-box;
+  border-radius: 4px; }
+
+.card-style_default {
+  display: grid;
+  grid-gap: 20px;
+  padding: 39px 29px 29px 29px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  width: 380px; }
+  .card-style_default > * {
+    display: inherit;
+    grid-gap: 10px; }
+
+.card-style_room-sample {
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05); }
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px; }
+
+/*!******************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/checkbox-list/checkbox-list.scss ***!
+  \******************************************************************************************************************************************/
+.checkbox-list__title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; }
+  .checkbox-list__title_button {
+    position: absolute;
+    left: -6px;
+    bottom: -5px;
+    appearance: none;
+    width: 256px;
+    height: 28px;
+    cursor: pointer; }
+  .checkbox-list__title_icon {
+    position: relative;
+    margin-left: 40px;
+    opacity: .5; }
+    .checkbox-list__title_icon > label {
+      cursor: pointer; }
+
+.checkbox-list__items {
+  position: absolute;
+  visibility: hidden;
+  margin-top: 18px; }
+
+/*!****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/color-sample/color-sample.scss ***!
+  \****************************************************************************************************************************************/
+.color-sample {
+  display: flex; }
+  .color-sample__container {
+    display: grid;
+    grid-row: 7;
+    grid-gap: 20px;
+    width: 282px;
+    margin: 0; }
+  .color-sample__element {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px; }
+  .color-sample__description {
+    display: flex;
+    margin-left: 40px;
+    line-height: 28px;
+    flex-direction: column;
+    justify-content: center; }
+  .color-sample__title, .color-sample__color-hexcode {
+    padding-block: 3px; }
+  .color-sample__color-hexcode {
+    font-weight: normal; }
+
+/*!**************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/comment-bar/comment-bar.scss ***!
+  \**************************************************************************************************************************************/
+.comment-bar {
+  grid-template-columns: repeat(2, auto); }
+  .comment-bar, .comment-bar__avatar-section, .comment-bar__text-section, .comment-bar__like-button, .comment-bar__title {
+    display: grid;
+    align-items: start; }
+  .comment-bar, .comment-bar__avatar-section, .comment-bar__text-section {
+    grid-gap: 10px; }
+  .comment-bar__avatar-section, .comment-bar__text-section {
+    grid-template-rows: repeat(2, auto); }
+  .comment-bar__text-section {
+    width: 653px; }
+  .comment-bar__avatar > img {
+    filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.1)); }
+  .comment-bar__like-button {
+    justify-content: center; }
+  .comment-bar__title {
+    align-items: center; }
+    .comment-bar__title_username {
+      font-weight: bold; }
+
+/*!*************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/components.scss ***!
+  \*************************************************************************************************************************/
+.elem__width_100 {
+  width: 320px; }
+
+.elem__width_83 {
+  width: 266px; }
+
+.elem__width_81 {
+  width: 260px; }
+
+.elem__width_61 {
+  width: 196px; }
+
+.elem__width_47 {
+  width: 150px; }
+
+.elem__width_30 {
+  width: 99px; }
+
+.elem__width_27 {
+  width: 87px; }
+
+.custom-font-style_h1, .custom-font-style_h2, .custom-font-style_h3 {
+  color: #1F2041;
+  font-weight: bold; }
+
+.custom-font-style_h1 {
+  font-size: 24px; }
+
+.custom-font-style_h2 {
+  font-size: 19px;
+  line-height: 23px; }
+
+.custom-font-style_h3 {
+  font-size: 12px; }
+
+.custom-font-style_body, .custom-font-style_body-plain {
+  font-size: 14px;
+  line-height: 24px; }
+
+.custom-font-style_body {
+  color: rgba(31, 32, 65, 0.75); }
+  .custom-font-style_body-plain {
+    color: #1F2041; }
+
+.twins-grid-line {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: start; }
+
+/*!******************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/expandable-entities/expandable-entities.scss ***!
+  \******************************************************************************************************************************************************/
+.expander_active {
+  visibility: visible !important; }
+
+.icon_flipped {
+  transform: scaleY(-1); }
+
+/*!****************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/footer/footer.scss ***!
+  \****************************************************************************************************************************/
+.footer_default {
+  width: 100%; }
+
+.footer__sections_upper, .footer__sections_lower {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-inline: 140px;
+  background-color: white; }
+
+.footer__sections_upper {
+  align-items: start;
+  padding-block: 100px;
+  border-bottom: 1px solid rgba(31, 32, 65, 0.25); }
+
+.footer__sections_lower {
+  align-items: center;
+  flex-direction: row;
+  height: 70px; }
+
+.footer_mobile, .footer__mobile-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; }
+
+.footer__mobile-section {
+  flex-direction: column;
+  height: 367px;
+  max-width: 768px;
+  background-color: white; }
+  .footer__mobile-section > span {
+    margin-block: 20px 25px; }
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1600px;
+  min-width: 1160px; }
+  .footer__content_shell {
+    display: grid;
+    grid-gap: 20px;
+    width: 260px; }
+  .footer__content_core {
+    width: 150px; }
+
+/*!****************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/header/header.scss ***!
+  \****************************************************************************************************************************/
+.header {
+  justify-content: center;
+  padding-inline: 140px;
+  width: 100%;
+  height: 70px;
+  box-sizing: border-box;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  background-color: white; }
+  .header, .header__sections, .header__sections_right, .header__user-bar {
+    display: flex;
+    align-items: center; }
+  .header__sections {
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1600px;
+    min-width: 1160px; }
+    .header__sections_right {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(2, auto); }
+  .header__user-bar {
+    height: 30px;
+    border-left: 1px solid rgba(31, 32, 65, 0.1);
+    padding-left: 20px; }
+    .header__user-bar_username {
+      opacity: .5; }
+  .header__authorization-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 20px;
+    align-items: center; }
+
+/*!*****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/jquery-ui/themes/base/datepicker.css ***!
+  \*****************************************************************************************************/
+/*!
+ * jQuery UI Datepicker 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/datepicker/#theming
+ */
+.ui-datepicker {
+	width: 17em;
+	padding: .2em .2em 0;
+	display: none;
+}
+.ui-datepicker .ui-datepicker-header {
+	position: relative;
+	padding: .2em 0;
+}
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+	position: absolute;
+	top: 2px;
+	width: 1.8em;
+	height: 1.8em;
+}
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {
+	top: 1px;
+}
+.ui-datepicker .ui-datepicker-prev {
+	left: 2px;
+}
+.ui-datepicker .ui-datepicker-next {
+	right: 2px;
+}
+.ui-datepicker .ui-datepicker-prev-hover {
+	left: 1px;
+}
+.ui-datepicker .ui-datepicker-next-hover {
+	right: 1px;
+}
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+	display: block;
+	position: absolute;
+	left: 50%;
+	margin-left: -8px;
+	top: 50%;
+	margin-top: -8px;
+}
+.ui-datepicker .ui-datepicker-title {
+	margin: 0 2.3em;
+	line-height: 1.8em;
+	text-align: center;
+}
+.ui-datepicker .ui-datepicker-title select {
+	font-size: 1em;
+	margin: 1px 0;
+}
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+	width: 45%;
+}
+.ui-datepicker table {
+	width: 100%;
+	font-size: .9em;
+	border-collapse: collapse;
+	margin: 0 0 .4em;
+}
+.ui-datepicker th {
+	padding: .7em .3em;
+	text-align: center;
+	font-weight: bold;
+	border: 0;
+}
+.ui-datepicker td {
+	border: 0;
+	padding: 1px;
+}
+.ui-datepicker td span,
+.ui-datepicker td a {
+	display: block;
+	padding: .2em;
+	text-align: right;
+	text-decoration: none;
+}
+.ui-datepicker .ui-datepicker-buttonpane {
+	background-image: none;
+	margin: .7em 0 0 0;
+	padding: 0 .2em;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 0;
+}
+.ui-datepicker .ui-datepicker-buttonpane button {
+	float: right;
+	margin: .5em .2em .4em;
+	cursor: pointer;
+	padding: .2em .6em .3em .6em;
+	width: auto;
+	overflow: visible;
+}
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+	float: left;
+}
+
+/* with multiple calendars */
+.ui-datepicker.ui-datepicker-multi {
+	width: auto;
+}
+.ui-datepicker-multi .ui-datepicker-group {
+	float: left;
+}
+.ui-datepicker-multi .ui-datepicker-group table {
+	width: 95%;
+	margin: 0 auto .4em;
+}
+.ui-datepicker-multi-2 .ui-datepicker-group {
+	width: 50%;
+}
+.ui-datepicker-multi-3 .ui-datepicker-group {
+	width: 33.3%;
+}
+.ui-datepicker-multi-4 .ui-datepicker-group {
+	width: 25%;
+}
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {
+	border-left-width: 0;
+}
+.ui-datepicker-multi .ui-datepicker-buttonpane {
+	clear: left;
+}
+.ui-datepicker-row-break {
+	clear: both;
+	width: 100%;
+	font-size: 0;
+}
+
+/* RTL support */
+.ui-datepicker-rtl {
+	direction: rtl;
+}
+.ui-datepicker-rtl .ui-datepicker-prev {
+	right: 2px;
+	left: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-next {
+	left: 2px;
+	right: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-prev:hover {
+	right: 1px;
+	left: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-next:hover {
+	left: 1px;
+	right: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-buttonpane {
+	clear: right;
+}
+.ui-datepicker-rtl .ui-datepicker-buttonpane button {
+	float: left;
+}
+.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current,
+.ui-datepicker-rtl .ui-datepicker-group {
+	float: right;
+}
+.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header {
+	border-right-width: 0;
+	border-left-width: 1px;
+}
+
+/* Icons */
+.ui-datepicker .ui-icon {
+	display: block;
+	text-indent: -99999px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	left: .5em;
+	top: .3em;
+}
+
+/*!***************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/input/_date-picker/input_date-picker.scss ***!
+  \***************************************************************************************************************************************************/
+.elem__width_100 {
+  width: 320px; }
+
+.elem__width_83 {
+  width: 266px; }
+
+.elem__width_81 {
+  width: 260px; }
+
+.elem__width_61 {
+  width: 196px; }
+
+.elem__width_47 {
+  width: 150px; }
+
+.elem__width_30 {
+  width: 99px; }
+
+.elem__width_27 {
+  width: 87px; }
+
+.custom-font-style_h1, .custom-font-style_h2, .ui-datepicker-title, .custom-font-style_h3 {
+  color: #1F2041;
+  font-weight: bold; }
+
+.custom-font-style_h1 {
+  font-size: 24px; }
+
+.custom-font-style_h2, .ui-datepicker-title {
+  font-size: 19px;
+  line-height: 23px; }
+
+.custom-font-style_h3 {
+  font-size: 12px; }
+
+.custom-font-style_body, .custom-font-style_body-plain {
+  font-size: 14px;
+  line-height: 24px; }
+
+.custom-font-style_body {
+  color: rgba(31, 32, 65, 0.75); }
+  .custom-font-style_body-plain {
+    color: #1F2041; }
+
+.twins-grid-line {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: start; }
+
+.material-icons, .ui-datepicker-prev .ui-icon, .ui-datepicker-next .ui-icon {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased; }
+
+.input__date-picker {
+  position: absolute;
+  top: 50px;
+  padding: 20px 19px;
+  visibility: hidden;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  z-index: 20; }
+
+.ui-datepicker {
+  width: 100%;
+  padding: 0; }
+  .ui-datepicker-header {
+    position: relative;
+    margin-bottom: 30px;
+    padding: 0; }
+  .ui-datepicker-prev, .ui-datepicker-next {
+    position: absolute;
+    top: 2px;
+    width: 24px;
+    height: 24px;
+    background: rgba(188, 156, 255, 0.25);
+    cursor: pointer; }
+    .ui-datepicker-prev-hover, .ui-datepicker-next-hover {
+      opacity: .75; }
+  .ui-datepicker-prev .ui-icon {
+    left: 0px;
+    content: "arrow_back"; }
+  .ui-datepicker-next .ui-icon {
+    right: 0px;
+    content: "arrow_forward"; }
+  .ui-datepicker-calendar {
+    color: #BC9CFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .ui-datepicker-calendar > thead,
+    .ui-datepicker-calendar > tbody {
+      font-size: 12px; }
+      .ui-datepicker-calendar > thead > tr,
+      .ui-datepicker-calendar > tbody > tr {
+        display: grid;
+        grid-template-columns: repeat(7, auto); }
+        .ui-datepicker-calendar > thead > tr > td,
+        .ui-datepicker-calendar > thead > tr > th,
+        .ui-datepicker-calendar > tbody > tr > td,
+        .ui-datepicker-calendar > tbody > tr > th {
+          padding: 0; }
+          .ui-datepicker-calendar > thead > tr > td > a,
+          .ui-datepicker-calendar > thead > tr > td > span,
+          .ui-datepicker-calendar > thead > tr > th > a,
+          .ui-datepicker-calendar > thead > tr > th > span,
+          .ui-datepicker-calendar > tbody > tr > td > a,
+          .ui-datepicker-calendar > tbody > tr > td > span,
+          .ui-datepicker-calendar > tbody > tr > th > a,
+          .ui-datepicker-calendar > tbody > tr > th > span {
+            display: grid;
+            height: 40px;
+            width: 40px;
+            justify-content: center;
+            align-content: center;
+            padding: 0; }
+    .ui-datepicker-calendar > tbody .ui-datepicker-today > a,
+    .ui-datepicker-calendar > tbody .ui-datepicker-current-day > a {
+      color: white;
+      font-weight: bold;
+      pointer-events: none; }
+    .ui-datepicker-calendar > tbody a {
+      border-radius: 50%;
+      color: rgba(31, 32, 65, 0.5);
+      text-decoration: none;
+      transition: background .5s ease; }
+      .ui-datepicker-calendar > tbody a:hover {
+        background: rgba(188, 156, 255, 0.25); }
+    .ui-datepicker-calendar > tbody span {
+      color: rgba(31, 32, 65, 0.25); }
+  .ui-datepicker-current-day > a {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%); }
+  .ui-datepicker-today > a {
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%); }
+
+/*!*********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/input/_dropdown/input_dropdown.scss ***!
+  \*********************************************************************************************************************************************/
+.input__dropdown {
+  position: absolute;
+  visibility: hidden;
+  top: 43px;
+  width: inherit;
+  z-index: 20;
+  padding: 7px 7px 7px 15px;
+  background-color: white;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border-color: rgba(31, 32, 65, 0.5);
+  border-radius: 0px 0px 4px 4px; }
+  .input__dropdown_option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px;
+    height: 30px; }
+  .input__dropdown_name {
+    text-transform: uppercase; }
+
+/*!**************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/input/input.scss ***!
+  \**************************************************************************************************************************/
+.gradient-fill, .input__icon_subscribe {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+.input__line-array {
+  grid-gap: 20px; }
+
+.input__title {
+  margin-bottom: 5px; }
+
+.input__element {
+  position: relative;
+  width: inherit; }
+
+.input__frame {
+  margin: 0;
+  border-radius: 4px;
+  border-color: rgba(31, 32, 65, 0.25);
+  color: rgba(31, 32, 65, 0.75);
+  height: 44px;
+  padding: 0px 15px 0px 15px;
+  width: inherit;
+  background-color: transparent; }
+  .input__frame::placeholder {
+    color: rgba(31, 32, 65, 0.25);
+    font-size: 14px;
+    line-height: 24px; }
+  .input__frame:hover, .input__frame:disabled, .input__frame:focus-within, .input__frame[checked] {
+    border-color: rgba(31, 32, 65, 0.5); }
+    .input__frame:hover::placeholder, .input__frame:disabled::placeholder, .input__frame:focus-within::placeholder, .input__frame[checked]::placeholder {
+      color: rgba(31, 32, 65, 0.75); }
+    .input__frame:hover + .input__icon_expand > .material-icons, .input__frame:disabled + .input__icon_expand > .material-icons, .input__frame:focus-within + .input__icon_expand > .material-icons, .input__frame[checked] + .input__icon_expand > .material-icons {
+      color: rgba(31, 32, 65, 0.75); }
+  .input__frame.dropdown.expander[checked] {
+    border-radius: 4px 4px 0px 0px; }
+
+.input__icon_expand, .input__icon_subscribe {
+  position: absolute;
+  bottom: 10px;
+  right: 10px; }
+  .input__icon_expand > .material-icons, .input__icon_subscribe > .material-icons {
+    cursor: pointer; }
+
+.input__icon_expand {
+  color: rgba(31, 32, 65, 0.5); }
+
+.input__frame.expander {
+  cursor: pointer; }
+
+.input__dropdown,
+.input__frame {
+  border-width: 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  outline: none; }
+
+/*!************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/logo/logo.scss ***!
+  \************************************************************************************************************************/
+.logotype {
+  position: relative;
+  display: flex;
+  margin: 0; }
+  .logotype__button {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer; }
+    .logotype__button:disabled {
+      cursor: auto; }
+  .logotype_monochrome {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    width: 48px;
+    height: 48px; }
+    .logotype_monochrome > .logotype__button {
+      box-sizing: border-box;
+      border-radius: 50%;
+      width: inherit;
+      height: inherit; }
+  .logotype_colorful {
+    width: 107px; }
+    .logotype_colorful > .logotype__button {
+      width: 100%;
+      height: 100%; }
+      .logotype_colorful > .logotype__button + .logotype__image {
+        margin-right: 13px; }
+
+/*!****************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/material-icon-cell/material-icon-cell.scss ***!
+  \****************************************************************************************************************************************************/
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased; }
+
+/*!*********************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/navigation-bar/__link/navigation-bar__link.scss ***!
+  \*********************************************************************************************************************************************************/
+.link {
+  display: flex;
+  color: rgba(31, 32, 65, 0.5); }
+  .link__elem {
+    text-decoration: none;
+    color: inherit; }
+    .link__elem_bold {
+      font-weight: bold;
+      color: rgba(31, 32, 65, 0.75); }
+
+/*!********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/navigation-bar/navigation-bar.scss ***!
+  \********************************************************************************************************************************************/
+.navigation-bar {
+  display: grid;
+  grid-gap: 20px;
+  font-size: 14px;
+  line-height: 14px; }
+  .navigation-bar_vertical {
+    grid-template-rows: repeat(5, auto); }
+  .navigation-bar_horizontal {
+    grid-template-columns: repeat(5, auto); }
+
+/*!************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/pagination/pagination.scss ***!
+  \************************************************************************************************************************************/
+.material-icons, .custom-paginationjs .paginationjs-pages ul li.paginationjs-prev > a,
+.custom-paginationjs .paginationjs-pages ul li.paginationjs-next > a {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased; }
+
+.custom-paginationjs {
+  display: grid;
+  grid-gap: 10px;
+  justify-items: center;
+  float: left;
+  margin: 0;
+  padding: 0; }
+  .custom-paginationjs .paginationjs-pages {
+    float: inherit;
+    font-size: 12px; }
+    .custom-paginationjs .paginationjs-pages ul {
+      float: inherit;
+      margin: 0;
+      padding: 0; }
+      .custom-paginationjs .paginationjs-pages ul li {
+        float: inherit;
+        border: none;
+        list-style: none; }
+        .custom-paginationjs .paginationjs-pages ul li > a {
+          display: block;
+          height: 40px;
+          width: 40px;
+          line-height: 40px;
+          background: transparent;
+          color: rgba(31, 32, 65, 0.5);
+          text-decoration: none;
+          text-align: center;
+          border-radius: 50%;
+          transition: all .5s ease; }
+          .custom-paginationjs .paginationjs-pages ul li > a:hover {
+            background: rgba(188, 156, 255, 0.25); }
+        .custom-paginationjs .paginationjs-pages ul li.paginationjs-prev > a {
+          transform: scaleX(-1); }
+        .custom-paginationjs .paginationjs-pages ul li.paginationjs-prev > a,
+        .custom-paginationjs .paginationjs-pages ul li.paginationjs-next > a {
+          background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+          color: white; }
+          .custom-paginationjs .paginationjs-pages ul li.paginationjs-prev > a:hover,
+          .custom-paginationjs .paginationjs-pages ul li.paginationjs-next > a:hover {
+            opacity: .75; }
+        .custom-paginationjs .paginationjs-pages ul li.active > a {
+          color: white;
+          background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%); }
+        .custom-paginationjs .paginationjs-pages ul li.disabled > a:hover {
+          background: none; }
+  .custom-paginationjs .paginationjs-nav {
+    color: rgba(31, 32, 65, 0.75);
+    font-size: 14px; }
+
+/*!****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/range-slider/range-slider.scss ***!
+  \****************************************************************************************************************************************/
+.range-slider {
+  box-sizing: border-box; }
+  .range-slider__container {
+    display: grid;
+    align-items: end;
+    height: 6px;
+    margin-top: 23px; }
+
+.range-slider__elem.ui-slider {
+  position: relative;
+  height: 6px;
+  text-align: left;
+  background: white;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 3px;
+  box-sizing: border-box; }
+  .range-slider__elem.ui-slider > .ui-slider-range,
+  .range-slider__elem.ui-slider > .ui-slider-handle {
+    position: absolute;
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%); }
+  .range-slider__elem.ui-slider > .ui-slider-handle {
+    width: 12px;
+    height: 12px;
+    top: -6px;
+    margin-left: -.6em;
+    touch-action: none;
+    appearance: none;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 50%;
+    z-index: 2; }
+  .range-slider__elem.ui-slider > .ui-slider-range {
+    display: block;
+    height: 6px;
+    top: -1px;
+    border: none;
+    z-index: 1; }
+
+/*!**********************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/title-bar/title-bar.scss ***!
+  \**********************************************************************************************************************************/
+.title-bar {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase; }
+  .title-bar__state {
+    font-weight: normal;
+    opacity: .5; }
+
+/*!**************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/type-sample/type-sample.scss ***!
+  \**************************************************************************************************************************************/
+.type-sample {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end; }
+  .type-sample__container {
+    display: grid;
+    grid-row: 7;
+    grid-gap: 51px; }
+  .type-sample__associative-tag {
+    font-weight: normal;
+    color: rgba(31, 32, 65, 0.25); }
+  .type-sample__usage-instruction {
+    display: inherit;
+    margin-left: 30px;
+    width: 369px;
+    white-space: pre-line; }
+
+/*!**************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/votes-chart/votes-chart.scss ***!
+  \**************************************************************************************************************************************/
+.votes-chart {
+  display: flex; }
+  .votes-chart__diagram {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .votes-chart__diagram-element {
+    transform: rotateZ(-90deg); }
+    .votes-chart__diagram-element_unit {
+      fill: none; }
+  .votes-chart__diagram-text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase; }
+    .votes-chart__diagram-text > .votes-chart__diagram-text_votes,
+    .votes-chart__diagram-text > .votes-chart__diagram-text_word {
+      color: #BC9CFF; }
+  .votes-chart__legend {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 30px; }
+  .votes-chart__legend-item {
+    display: flex;
+    align-items: center; }
+    .votes-chart__legend-item_marker {
+      border-radius: 50%;
+      height: 10px;
+      width: 10px;
+      margin-right: 5px; }
+
+.gradient__primary_start {
+  stop-color: #BC9CFF; }
+
+.gradient__primary_end {
+  stop-color: #8BA4F9; }
+
+.gradient__secondary_start {
+  stop-color: #6FCF97; }
+
+.gradient__secondary_end {
+  stop-color: #66D2EA; }
+
+.gradient__tertiary_start {
+  stop-color: #FFE39C; }
+
+.gradient__tertiary_end {
+  stop-color: #FFBA9C; }
+
+.gradient__quaternary_start {
+  stop-color: #909090; }
+
+.gradient__quaternary_end {
+  stop-color: #3D4975; }
+
+.marker_primary {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%); }
+
+.marker_secondary {
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%); }
+
+.marker_tertiary {
+  background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%); }
+
+.marker_quaternary {
+  background: linear-gradient(180deg, #909090 0%, #3D4975 100%); }
+
+/*!*********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/index/index.scss ***!
+  \*********************************************************************************************************************/
+.index-links,
+.index-links__container {
+  display: flex;
+  align-items: flex-start; }
+
+.index-links {
+  justify-content: space-between;
+  width: 50%;
+  max-width: 650px; }
+  .index-links__container {
+    justify-content: center;
+    width: 100%;
+    height: 100%; }
+  .index-links > * {
+    min-width: 130px; }
+
+/*!***************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/pages.scss ***!
+  \***************************************************************************************************************/
+body {
+  margin: auto;
+  font-family: Montserrat, Quicksand, sans-serif;
+  user-select: none; }
+
+img,
+embed,
+video,
+object {
+  max-width: 100%; }
+
+/*!**************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/ui-kit/__cards/ui-kit__cards.scss ***!
+  \**************************************************************************************************************************************/
+.headers-n-footers__wrap, .headers-n-footers__column {
+  display: grid;
+  align-items: start;
+  grid-gap: 40px; }
+
+.headers-n-footers__wrap {
+  grid-template-columns: repeat(2, 380px) 320px;
+  margin-top: 10px; }
+
+/*!******************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/ui-kit/__colors-n-type/ui-kit__colors-n-type.scss ***!
+  \******************************************************************************************************************************************************/
+.samples {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  margin-top: 5px; }
+  .samples__colors {
+    margin-left: 10px; }
+  .samples__type {
+    margin-right: 18px; }
+
+/*!******************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/ui-kit/__form-elements/ui-kit__form-elements.scss ***!
+  \******************************************************************************************************************************************************/
+.wrap_top {
+  margin-top: 3px; }
+
+.form-elements__wrap {
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 80px; }
+
+.form-elements__column, .form-elements__block, .form-elements__element {
+  display: grid; }
+
+.form-elements__column {
+  width: 320px;
+  grid-gap: 40px; }
+
+.form-elements__block {
+  grid-gap: 20px;
+  justify-content: start; }
+
+.form-elements__element {
+  grid-gap: 16px; }
+
+.wrap_upper-middle {
+  height: 240px; }
+
+.wrap_lower-middle {
+  height: 312px; }
+
+.column_center, .column_center-right {
+  margin-left: 126px; }
+
+.column_center {
+  margin-right: 72px; }
+
+/*!**************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/ui-kit/__headers-n-footers/ui-kit__headers-n-footers.scss ***!
+  \**************************************************************************************************************************************************************/
+.headers-n-footers {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  align-items: center; }
+  .headers-n-footers > .footer {
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05); }
+
+/*!***********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/ui-kit/ui-kit.scss ***!
+  \***********************************************************************************************************************/
+.ui-kit__body {
+  width: 1440px; }
+  .ui-kit__body > .ui-kit__main {
+    padding: 0px 140px; }
+  .ui-kit__body_no-padding {
+    width: 100%;
+    padding: 0; }
+
+.ui-kit__header {
+  height: 140px;
+  width: 100%; }
+
+.ui-kit__footer {
+  position: absolute;
+  height: 145px;
+  bottom: 0px; }
+
+.bg-color_white {
+  background-color: white; }
+
+.bg-color_whisper {
+  background-color: #E5E5E5; }
+
+.frozen {
+  pointer-events: none; }
+
+/*!********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/website/__landing/website__landing.scss ***!
+  \********************************************************************************************************************************************/
+.landing-page__bg-note {
+  position: absolute;
+  bottom: 18px;
+  right: 0px;
+  width: 297px;
+  text-align: right; }
+
+/*!****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/website/__login/website__login.scss ***!
+  \****************************************************************************************************************************************/
+.login-page {
+  display: flex;
+  justify-content: center; }
+
+/*!********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/website/__no-page/website__no-page.scss ***!
+  \********************************************************************************************************************************************/
+.not-found_text {
+  color: #1f2041;
+  font-size: 72; }
+
+/*!******************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/website/__registration/website__registration.scss ***!
+  \******************************************************************************************************************************************************/
+.registration-page {
+  display: flex;
+  justify-content: center; }
+
+/*!**************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/website/__room/website__room.scss ***!
+  \**************************************************************************************************************************************/
+
+/*!******************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/website/__search/website__search.scss ***!
+  \******************************************************************************************************************************************/
+
+/*!*************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/website/website.scss ***!
+  \*************************************************************************************************************************/
+@media screen and (max-width: 1160px) {
+  .website__footer_default {
+    display: none; }
+  .header {
+    opacity: .9; } }
+
+@media screen and (min-width: 1161px) {
+  .website__footer_mobile {
+    display: none; } }
+
+.website__main, .website__header, .website__footer {
+  width: 100%; }
+
+.website__main {
+  display: flex;
+  justify-content: center; }
+
+.universal-container {
+  position: relative;
+  min-width: 1160px;
+  max-width: 1600px; }
+
+.bg-pic__landing, .bg-pic__login-n-registration {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  max-width: 100%; }
+
+.bg-pic__landing {
+  padding-top: 70px;
+  min-height: 830px;
+  background-image: url(static/images/background__landing.png); }
+
+.bg-pic__login-n-registration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 690px;
+  background-image: url(static/images/background__login-n-registration.png); }
+
+/*!*********************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/gradient-fill-entities.scss ***!
+  \*********************************************************************************************************************************/
+.gradient-fill {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+/*!***********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/variables/variables.scss ***!
+  \***********************************************************************************************************************/
+

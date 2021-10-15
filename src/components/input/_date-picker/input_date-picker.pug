@@ -1,7 +1,0 @@
-include /components/material-icon-cell/material-icon-cell.pug
-
-mixin inputDatePicker( item )
-  input.input__frame.expander( id=item.id placeholder=item.placeholder readonly )
-  .input__icon_expand
-    +materialIcon('expand_more', item.id )
-  .input__date-picker.date-picker.expander__aim( id=`dp-${item.id}` )

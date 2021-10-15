@@ -1,8 +1,0 @@
-mixin typeSamples( items=[] )
-  .type-sample__container
-    each item in items
-      - const tagName = item.tagname.toLowerCase();
-
-      .type-sample( class=`custom-font-style_${tagName}` )
-        span.type-sample__associative-tag #{item.tagname}
-        span.type-sample__usage-instruction #{item.note}
