@@ -462,10 +462,13 @@
 /*!*****************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/__room-booking/card__room-booking.scss ***!
   \*****************************************************************************************************************************************************/
-.room-booking__card-header {
+.room-booking__price, .room-booking__title, .room-booking__title-complex {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end; }
+  align-items: baseline;
+  white-space: pre; }
+
+.room-booking__title-complex {
+  justify-content: space-between; }
 
 .room-booking__title_prefix, .room-booking__title_luxe-mark {
   font-weight: bold; }
@@ -483,36 +486,41 @@
   opacity: .5; }
   .room-booking__price_value, .room-booking__price_symbol {
     font-weight: bold; }
+  .room-booking__price_addition {
+    font-size: 12px; }
 
-.room-booking__inputs_date-picker {
+.room-booking__date-pickers-row {
   grid-gap: 20px; }
 
-.room-booking__calc_price-basic > .room-booking__sub-container, .room-booking__calc_price-off > .room-booking__sub-container, .room-booking__calc_fee > .room-booking__sub-container {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  width: 320px; }
-  .room-booking__calc_price-basic > .room-booking__sub-container > .room-booking__nano-container, .room-booking__calc_price-off > .room-booking__sub-container > .room-booking__nano-container, .room-booking__calc_fee > .room-booking__sub-container > .room-booking__nano-container {
-    display: inherit;
-    align-items: flex-start;
-    width: 234px; }
-    .room-booking__calc_price-basic > .room-booking__sub-container > .room-booking__nano-container > .material-icons, .room-booking__calc_price-off > .room-booking__sub-container > .room-booking__nano-container > .material-icons, .room-booking__calc_fee > .room-booking__sub-container > .room-booking__nano-container > .material-icons {
-      font-size: 20px;
-      color: rgba(31, 32, 65, 0.25); }
+.room-booking__container_calc {
+  box-sizing: border-box; }
 
-.room-booking__calc_summary > .room-booking__sub-container {
+.room-booking__calc-fee, .room-booking__calc-discount, .room-booking__calc-initial-price {
+  margin-bottom: 6px; }
+
+.room-booking__calc-summary {
+  white-space: nowrap;
+  margin-top: 20px; }
+
+.room-booking__sub-container_price, .room-booking__sub-container_fee {
   display: flex;
   justify-content: space-between; }
-  .room-booking__calc_summary > .room-booking__sub-container > span {
-    white-space: nowrap; }
-  .room-booking__calc_summary > .room-booking__sub-container > .room-booking__sub-container_divider {
-    position: relative;
-    bottom: 5px;
-    width: 100%;
-    border-bottom: 1px dotted rgba(31, 32, 65, 0.25); }
 
-.room-booking__calc_summary {
-  margin-top: 20px; }
+.room-booking__sub-container_price {
+  position: relative;
+  line-height: 18px;
+  width: 320px; }
+
+.room-booking__sub-container_fee {
+  align-items: flex-start;
+  width: 240px; }
+  .room-booking__sub-container_fee > .material-icons {
+    color: rgba(31, 32, 65, 0.25); }
+
+.room-booking__dotted-bottom-border {
+  position: relative;
+  width: 100%;
+  border-bottom: 1px dotted rgba(31, 32, 65, 0.25); }
 
 /*!***************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/card/__room-sample/card__room-sample.scss ***!

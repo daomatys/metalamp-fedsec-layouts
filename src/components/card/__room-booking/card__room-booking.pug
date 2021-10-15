@@ -4,10 +4,10 @@ include /components/material-icon-cell/material-icon-cell.pug
 
 mixin cardRoomBooking()
   .room-booking.card-style_default
-    .room-booking__card-header-container
-      .room-booking__card-header
+    .room-booking__container_title-complex
+      .room-booking__title-complex
         .room-booking__title
-          span.room-booking__title_prefix.custom-font-style_body-plain № 
+          span.room-booking__title_prefix.custom-font-style_body-plain #{'№ '}
           span.room-booking__title_room-number.custom-font-style_h1 888
           span.room-booking__title_luxe-mark ЛЮКС
         .room-booking__price.custom-font-style_body-plain
@@ -15,8 +15,8 @@ mixin cardRoomBooking()
           span.room-booking__price_symbol ₽ 
           span.room-booking__price_addition в сутки
 
-    .room-booking__inputs-container
-      .room-booking__inputs_date-picker.twins-grid-line
+    .room-booking__container_date-pickers
+      .room-booking__date-pickers-row.twins-grid-line
         +input({
           id: "room-booking__date-picker_arrival",
           type: "date-picker",
@@ -32,7 +32,7 @@ mixin cardRoomBooking()
           widthbypercent: 47,
         })
 
-    .room-booking__inputs_guests
+    .room-booking__container_guests-input
       +input({
         id: "room-booking__guests",
         type: "dropdown",
@@ -47,27 +47,30 @@ mixin cardRoomBooking()
         }
       })
 
-    .room-booking__calc-container.custom-font-style_body
-      .room-booking__calc_price-basic
-        .room-booking__sub-container
-          span 9 990₽ X 4 суток
+    .room-booking__container_calc.custom-font-style_body
+      .room-booking__calc-initial-price
+        .room-booking__sub-container_price
+          span 9 990₽ x 4 суток
           span 39 960₽
-      .room-booking__calc_price-off
-        .room-booking__sub-container
-          .room-booking__nano-container
+
+      .room-booking__calc-discount
+        .room-booking__sub-container_price
+          .room-booking__sub-container_fee
             span Сбор за услуги: скидка 2 179₽
             +materialIcon("info_outline")
           span 0₽
-      .room-booking__calc_fee
-        .room-booking__sub-container
-          .room-booking__nano-container
+
+      .room-booking__calc-fee
+        .room-booking__sub-container_price
+          .room-booking__sub-container_fee
             span Сбор за дополнительные услуги
             +materialIcon("info_outline")
           span 300₽
-      .room-booking__calc_summary.custom-font-style_h2
-        .room-booking__sub-container
+
+      .room-booking__calc-summary.custom-font-style_h2
+        .room-booking__sub-container_price
           span Итого
-          span.room-booking__sub-container_divider
+          span.room-booking__dotted-bottom-border
           span 38 081₽
 
     .room-booking__button_submit

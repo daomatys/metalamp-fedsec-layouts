@@ -1,11 +1,16 @@
 @import "@variables";
 
 .room-booking {
-  
-  &__card-header {
+  &__price,
+  &__title,
+  &__title-complex {
     display: flex;
+    align-items: baseline;
+    white-space: pre;
+  }
+
+  &__title-complex {
     justify-content: space-between;
-    align-items: flex-end;
   }
 
   &__title {
@@ -33,55 +38,59 @@
     &_symbol {
       font-weight: bold;
     }
+
+    &_addition {
+      font-size: 12px;
+    }
   }
 
-  &__inputs {
-    &_date-picker {
-      grid-gap: 20px;
-    }
+  &__date-pickers-row {
+    grid-gap: 20px;
+  }
+
+  &__container_calc {
+    box-sizing: border-box;
   }
 
   &__calc {
-    &_price-basic,
-    &_price-off,
-    &_fee {
-      & > .room-booking__sub-container {
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        width: 320px;
-
-        & > .room-booking__nano-container {
-          display: inherit;
-          align-items: flex-start;
-          width: 234px;
-
-          & > .material-icons {
-            font-size: 20px;
-            color: rgba($valhalla, .25)
-          }
-        }
-      }
+    &-fee,
+    &-discount,
+    &-initial-price {
+      margin-bottom: 6px;
     }
 
-    &_summary > .room-booking__sub-container {
-      display: flex;
-      justify-content: space-between;
-
-      & > span {
-        white-space: nowrap;
-      }
-
-      & > .room-booking__sub-container_divider {
-        position: relative;
-        bottom: 5px;
-        width: 100%;
-        border-bottom: 1px dotted rgba($valhalla, .25);
-      }
-    }
-
-    &_summary {
+    &-summary {
+      white-space: nowrap;
       margin-top: 20px;
     }
+  }
+
+  &__sub-container {
+    &_price,
+    &_fee {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &_price {
+      position: relative;
+      line-height: 18px;
+      width: 320px;
+    }
+
+    &_fee {
+      align-items: flex-start;
+      width: 240px;
+
+      & > .material-icons {
+        color: rgba($valhalla, .25)
+      }
+    }
+  }
+
+  &__dotted-bottom-border {
+    position: relative;
+    width: 100%;
+    border-bottom: 1px dotted rgba($valhalla, .25);
   }
 }
