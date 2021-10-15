@@ -1,26 +1,33 @@
 @import "@variables";
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  background-color: white;
   box-sizing: border-box;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   padding-inline: 140px;
   width: 100%;
   height: 70px;
-  background-color: white;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
+  &,
+  &__sections,
   &__sections_right,
   &__user-bar {
     display: flex;
     align-items: center;
   }
+  
+  &__sections {
+    justify-content: space-between;
+    width: 100%;
+    max-width: $wideFramesWidthMax;
+    min-width: $wideFramesWidthMin;
 
-  &__sections_right {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(2, auto);
+    &_right {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(2, auto);
+    }
   }
 
   &__user-bar {
