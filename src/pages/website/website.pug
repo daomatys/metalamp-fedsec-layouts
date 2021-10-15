@@ -11,4 +11,7 @@ body.website__body
   block main
 
   footer.website__footer
-    +footer({ type: 'default' })
+    .footer_default
+      +footer({ type: 'default' })
+    .footer_mobile 
+      +footer({ type: 'mobile' })
