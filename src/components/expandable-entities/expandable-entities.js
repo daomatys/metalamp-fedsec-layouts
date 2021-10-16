@@ -28,12 +28,6 @@ function expanderActivation({target}) {
     iconAnimation( icon );
     aim.classList.toggle('expander_active');
   }
-
-  function expanderBlurEvent() {
-    expander.removeEventListener('blur', expanderBlurEvent, { once: true });
-    expander.removeAttribute('checked');
-    expanderToggle();
-  }
 }
 
 function iconAnimation(icon) {
