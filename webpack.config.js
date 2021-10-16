@@ -105,8 +105,7 @@ module.exports = {
       jQuery: 'jquery',
       'window.$': 'jquery',
       'window.jQuery': 'jquery'
-    }),
-    new CleanWebpackPlugin()
+    })
   ],
 
   resolve: {
