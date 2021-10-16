@@ -117,53 +117,65 @@ block main
       }
     ]
 
-  include /components/button/__checkbox/button__checkbox.pug
   include /components/card/__room-sample/card__room-sample.pug
-  include /components/title-bar/title-bar.pug
-  include /components/pagination/pagination.pug
+  include /components/button/__checkbox/button__checkbox.pug
   include /components/checkbox-list/checkbox-list.pug
   include /components/range-slider/range-slider.pug
+  include /components/pagination/pagination.pug
+  include /components/title-bar/title-bar.pug
+  include /components/input/input.pug
 
   main.website__main
     .search-page.universal-container
       .search-page__input-parameters
-        +input({
-          id: "search-by__date",
-          type: "date-picker",
-          title: "дата пребывания в отеле",
-          placeholder: "19 авг - 23 авг",
-          widthbypercent: 83,
-        })
-        +input({
-          id: "search-by__guests",
-          type: "dropdown",
-          title: "гости",
-          placeholder: "3 гостя, 1 младенец",
-          widthbypercent: 83,
-        })
-        +rangeSlider({
-          title: "диапазон цены",
-          id: "search-by__range-prices",
-          widthbypercent: 83,
-        })
-        span.search-page__range-slider-note
+        .search-page__date
+          +input({
+            id: "search-by__date",
+            type: "date-picker",
+            title: "дата пребывания в отеле",
+            placeholder: "19 авг - 23 авг",
+            widthbypercent: 83
+          })
+        .search-page__guests
+          +input({
+            id: "search-by__guests",
+            type: "dropdown",
+            title: "гости",
+            placeholder: "3 гостя, 1 младенец",
+            widthbypercent: 83,
+            dropdown: {
+              expanded: false,
+              options: [
+                "взрослые",
+                "дети",
+                "младенцы"
+              ]
+            }
+          })
+        .search-page__slider
+          +rangeSlider({
+            title: "диапазон цены",
+            id: "search-by__range-prices",
+            widthbypercent: 83
+          })
+          span.search-page__slider-note
         .search-page__checkboxes
           +titleBar("правила дома")
-            .checkbox-button__array
-              +checkboxButtons({
-                groupname: "search-by__checkbox-allows", 
-                checkboxes: [
-                  { pressed: false, label: "Можно курить" },
-                  { pressed: true,  label: "Можно с питомцами" },
-                  { pressed: true,  label: "Можно пригласить гостей (до 10 человек)" }
-                ]
-              })
+          .checkbox-button__array
+            +checkboxButtons({
+              groupname: "search-by__checkbox-allows", 
+              checkboxes: [
+                { pressed: false, label: "Можно курить" },
+                { pressed: true,  label: "Можно с питомцами" },
+                { pressed: true,  label: "Можно пригласить гостей (до 10 человек)" }
+              ]
+            })
         .search-page__rich-checkboxes
           +titleBar("доступность")
           .checkbox-buttons__array
             +checkboxButtons({
               richmode: true,
-              groupname: "uik-fe_rich-cbb",
+              groupname: "search-by__accessibility",
               checkboxes: [
                 {
                   title: "Широкий коридор",
@@ -175,6 +187,7 @@ block main
                 }
               ]
             })
+
       .search-page__filtered-items
         each room in roomsData
           +cardRoomSample( room )
