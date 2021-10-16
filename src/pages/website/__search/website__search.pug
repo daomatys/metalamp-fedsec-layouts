@@ -4,5 +4,55 @@ block head
   title TOXIN HOTEL / SEARCH
 
 block main
+  -
+    const rooms = [
+      {
+        room: 888,
+        luxe: true,
+        price: 9990,
+        count: {
+          rate: 5,
+          reviews: 145,
+          pictures: 3,
+        }
+      },
+      {
+        room: 840,
+        luxe: false,
+        price: 9990,
+        count: {
+          rate: 4,
+          reviews: 65,
+        }
+      },
+      {
+        room: 980,
+        luxe: true,
+        price: 8500,
+        count: {
+          rate: 3,
+          reviews: 35,
+        }
+      },
+      {
+        room: 856,
+        luxe: false,
+        price: 7300,
+        count: {
+          rate: 5,
+          reviews: 19,
+        }
+      },
+      {
+        room: 740,
+        luxe: false,
+        price: 6000,
+        count: {
+          rate: 4,
+          reviews: 44,
+        }
+      }
+
+    ]
   main.website__main
     .search-page.universal-container

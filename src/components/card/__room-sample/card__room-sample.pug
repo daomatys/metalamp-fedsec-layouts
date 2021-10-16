@@ -4,12 +4,13 @@ include /components/material-icon-cell/material-icon-cell.pug
 mixin cardRoomSample( item )
   - const itemLeftID = item.room + '_left'
   - const itemRightID = item.room + '_right'
+  - const picturesCount = item.count.pictures || 1
 
   - let index = 0
   - let suffixes = []
 
   while index < 4
-    - suffixes[++index] = item.count.pictures < index ? 'no-image' : item.room + '-' + index
+    - suffixes[++index] = picturesCount < index ? 'no-image' : item.room + '-' + index
     - suffixes[0] = suffixes[4]
     - suffixes[5] = suffixes[1]
 
@@ -45,7 +46,7 @@ mixin cardRoomSample( item )
 
       .room-sample__rate-n-reviews
         .room-sample__rate
-          +starRateButton( item.rate )
+          +starRateButton( item.count.rate )
         .room-sample__reviews
           span.room-booking__price_value #{ item.count.reviews }
           span.room-booking__price_addition  Отзывов
