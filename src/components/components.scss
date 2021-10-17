@@ -66,6 +66,12 @@
       color: $valhalla;
     }
   }
+
+  &_micro-note {
+    color: rgba($valhalla, .5);
+    font-size: 12px;
+    line-height: 14px;
+  }
 }
 
 .twins-grid-line {

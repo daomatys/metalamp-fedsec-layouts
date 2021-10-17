@@ -153,12 +153,13 @@ block main
             }
           })
         .search-page__slider
-          +rangeSlider({
-            title: "диапазон цены",
-            id: "search-by__range-prices",
-            widthbypercent: 83
-          })
-          span.search-page__slider-note
+          .search-page__slider-frame
+            +rangeSlider({
+              title: "диапазон цен",
+              id: "search-by__range-prices",
+              widthbypercent: 83
+            })
+          span.search-page__slider-note.custom-font-style_micro-note Стоимость за сутки пребывания в номере
         .search-page__checkboxes.form-elements__element
           +titleBar("правила дома")
           .checkbox-button__array
