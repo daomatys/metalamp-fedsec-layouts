@@ -8,9 +8,16 @@ block main
   
   main.website__main
     .room-page.universal-container
-      +votesChart([
-        { gradient: "primary",    votes: 65,  legend: "Удовлетворительно" },
-        { gradient: "secondary",  votes: 65,  legend: "Хорошо"            },
-        { gradient: "tertiary",   votes: 130, legend: "Великолепно"       },
-        { gradient: "quaternary", votes: 0,   legend: "Разочарован"       }
-      ])
+      .room-page__section_interiors-footage 
+      .room-page__section_information
+        .room-page__room-advantages
+        .room-page__visitors-impression-chart
+          +votesChart([
+            { gradient: "primary",    votes: 65,  legend: "Удовлетворительно" },
+            { gradient: "secondary",  votes: 65,  legend: "Хорошо"            },
+            { gradient: "tertiary",   votes: 130, legend: "Великолепно"       },
+            { gradient: "quaternary", votes: 0,   legend: "Разочарован"       }
+          ])
+        .room-page__reviews
+        .room-page__rules-list 
+        .room-page__cancellation-policy
