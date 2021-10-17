@@ -1,0 +1,41 @@
+.room-page {
+  &__section_information {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 70px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__sub-section_left {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-rows: none;
+    grid-template-columns: 341px;
+    grid-template-areas:
+      "a b"
+      "c c"
+      "d e";
+  }
+  &__room-advantages {
+    grid-area: a;
+  }
+  &__visitors-impression-chart {
+    grid-area: b;
+  }
+  &__reviews {
+    grid-area: c;
+  }
+  &__rules-list {
+    grid-area: d;
+  }
+  &__cancellation-policy {
+    grid-area: e;
+  }
+
+  &__cancellation-policy {
+    width: 341px;
+  }
+}
