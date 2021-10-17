@@ -18,10 +18,6 @@
     cursor: pointer;
   }
 
-  & label {
-    color: $valhalla;
-  }
-
   &__elem {
     position: relative;
     display: flex;
@@ -51,7 +47,6 @@
 
   &__common-label {
     width: 195px;
-    font-size: 14px;
     opacity: .5;
   }
 
@@ -62,14 +57,10 @@
     
     &_title {
       margin-block: 1px 7px;
-      font-size: 14px;
       font-weight: bold;
-      opacity: .75;
     }
 
     &_info {
-      font-size: 12px;
-      opacity: .5;
       white-space: pre-wrap;
     }
   }
