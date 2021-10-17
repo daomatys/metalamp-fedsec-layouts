@@ -11,12 +11,14 @@ block main
   include /components/bullet-list/bullet-list.pug
   
   main.website__main.fullscreen-bottom-border
-    .room-page.universal-container
+    .room-page
       .room-page__section_interiors-footage
-        .room-page__interior-pic_major
-        .room-page__interior-pic_minor-top
-        .room-page__interior-pic_minor-bottom
-      .room-page__section_information
+        .room-page__footage_left
+          img.room-page__interior-pic_major( src=require(`/src/assets/images/raster/room/__original/room__original_888-1.png`) )
+        .room-page__footage_right
+          img.room-page__interior-pic_minor-top( src=require(`/src/assets/images/raster/room/__original/room__original_888-2.png`) )
+          img.room-page__interior-pic_minor-bottom( src=require(`/src/assets/images/raster/room/__original/room__original_888-3.png`) )
+      .room-page__section_information.universal-container
         .room-page__sub-section_left
           .room-page__room-advantages
             .room-page__title
