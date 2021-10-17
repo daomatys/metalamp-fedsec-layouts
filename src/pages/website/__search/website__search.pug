@@ -4,7 +4,7 @@ block head
   title TOXIN HOTEL / SEARCH
 
 block main
-  - 
+  -
     const samples = [
       {
         room: 888,
@@ -127,7 +127,7 @@ block main
 
   main.website__main
     .search-page.universal-container
-      .search-page__input-parameters
+      .search-page__input-parameters.elem__width_83
         .search-page__date
           +input({
             id: "search-by__date",
@@ -159,7 +159,7 @@ block main
             widthbypercent: 83
           })
           span.search-page__slider-note
-        .search-page__checkboxes
+        .search-page__checkboxes.form-elements__element
           +titleBar("правила дома")
           .checkbox-button__array
             +checkboxButtons({
@@ -170,7 +170,7 @@ block main
                 { pressed: true,  label: "Можно пригласить гостей (до 10 человек)" }
               ]
             })
-        .search-page__rich-checkboxes
+        .search-page__rich-checkboxes.form-elements__element
           +titleBar("доступность")
           .checkbox-buttons__array
             +checkboxButtons({
@@ -217,5 +217,8 @@ block main
             ]
           })
       .search-page__filtered-items
-        each sample in samples
-          +cardRoomSample( sample )
+        .search-page__filtered-items-title
+          span.custom-font-style_h1 Номера, которые мы для вас подобрали
+        .search-page__filtered-items-grid
+          each sample in samples
+            +cardRoomSample( sample )
