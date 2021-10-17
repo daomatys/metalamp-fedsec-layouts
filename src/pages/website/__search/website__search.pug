@@ -5,7 +5,7 @@ block head
 
 block main
   - 
-    const roomsData = [
+    const samples = [
       {
         room: 888,
         luxe: true,
@@ -217,5 +217,5 @@ block main
             ]
           })
       .search-page__filtered-items
-        each room in roomsData
-          +cardRoomSample( room )
+        each sample in samples
+          +cardRoomSample( sample )

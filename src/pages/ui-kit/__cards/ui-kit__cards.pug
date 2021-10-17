@@ -24,22 +24,28 @@ block main
       +cardRoomBooking()
       +cardLogin()
     .headers-n-footers__column
-      +cardRoomSample({
-        room: 888,
-        luxe: true,
-        price: 9990,
-        count: {
-          rate: 5,
-          reviews: 145,
-          pictures: 3,
-        }
-      })
-      +cardRoomSample({
-        room: 840,
-        luxe: false,
-        price: 9990,
-        count: {
-          rate: 4,
-          reviews: 65,
-        }
-      })
+      -
+        const samples = [
+          {
+            room: 888,
+            luxe: true,
+            price: 9990,
+            count: {
+              rate: 5,
+              reviews: 145,
+              pictures: 3
+            }
+          },
+          {
+            room: 840,
+            luxe: false,
+            price: 9990,
+            count: {
+              rate: 4,
+              reviews: 65
+            }
+          }
+        ]
+
+      each sample in samples
+        +cardRoomSample( sample )
