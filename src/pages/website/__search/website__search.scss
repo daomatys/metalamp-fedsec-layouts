@@ -23,5 +23,12 @@
       grid-template-columns: repeat(3, auto);
       grid-gap: 20px 12px;
     }
+
+    &-pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 41px;
+      margin-bottom: 70px;
+    }
   }
 }
