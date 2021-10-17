@@ -1715,6 +1715,18 @@ object {
 /*!******************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/website/__search/website__search.scss ***!
   \******************************************************************************************************************************************/
+.search-page {
+  margin-top: 30px;
+  display: flex;
+  align-items: flex-start; }
+  .search-page__input-parameters, .search-page__filtered-items {
+    display: grid; }
+  .search-page__input-parameters {
+    grid-gap: 20px;
+    padding-right: 60px; }
+  .search-page__filtered-items {
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 20px 12px; }
 
 /*!*************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/website/website.scss ***!
