@@ -4,13 +4,36 @@ block head
   title = TOXIN HOTEL / ROOM 
 
 block main 
+  include /components/advantage-bar/advantage-bar.pug
   include /components/votes-chart/votes-chart.pug
+  include /components/comment-bar/comment-bar.pug
+  include /components/bullet-list/bullet-list.pug
   
-  main.website__main
+  main.website__main.fullscreen-bottom-border
     .room-page.universal-container
-      .room-page__section_interiors-footage 
+      .room-page__section_interiors-footage
+        .room-page__interior-pic_major
+        .room-page__interior-pic_minor-top
+        .room-page__interior-pic_minor-bottom
       .room-page__section_information
         .room-page__room-advantages
+          +advantageBars([
+            {
+              iconname: "insert_emoticon",
+              title: "Комфорт",
+              brief: "Шумопоглощающие стены"
+            },
+            {
+              iconname: "location_city",
+              title: "Удобство",
+              brief: "Окно в каждой из спален"
+            },
+            {
+              iconname: "whatshot",
+              title: "Уют",
+              brief: "Номер оснащён камином"
+            }
+          ])
         .room-page__visitors-impression-chart
           +votesChart([
             { gradient: "primary",    votes: 65,  legend: "Удовлетворительно" },
@@ -19,5 +42,34 @@ block main
             { gradient: "quaternary", votes: 0,   legend: "Разочарован"       }
           ])
         .room-page__reviews
-        .room-page__rules-list 
+          +commentBar([
+            {
+              name: "Мурад Сарафанов",
+              daysago: "5 дней назад",
+              avatarname: "murad",
+              text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+              likebtn: {
+                groupname: "room-page__comment-first",
+                pressed: true,
+                likecount: 12
+              }
+            },
+            {
+              name: "Патрисия Стёклышкова",
+              daysago: "Неделю назад",
+              avatarname: "patricia",
+              text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
+              likebtn: {
+                groupname: "room-page__comment-second",
+                pressed: false,
+                likecount: 3
+              }
+            },
+          ])
+        .room-page__rules-list
+          +bulletList([
+            "Нельзя с питомцами",
+            "Без вечеринок и мероприятий",
+            "Время прибытия — после 13:00, а выезд до 12:00"
+          ])
         .room-page__cancellation-policy
