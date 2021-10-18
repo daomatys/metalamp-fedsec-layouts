@@ -1,40 +1,52 @@
+@import "@variables";
+
+$mainHeigth: 1424px;
+$documentHeigth: 1937px;
+
 .room-page {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: percentage( $mainHeigth / $documentHeigth );
 
   &__section_interiors-footage {
     display: flex;
-    width: 100%;
+    height: percentage( 484px / $mainHeigth );
   }
+
+  &__footage {
+    &_left {
+      width: percentage( 981px / $wideFramesWidthBase );
+    }
+    &_right {
+      width: percentage( 459px / $wideFramesWidthBase );
+    }
+  }
+
+  &__interior-pic {
+    &_major,
+    &_minor-top,
+    &_minor-bottom {
+      object-fit: cover;
+      width: 100%;
+    }
+
+    &_major {
+      height: 100%;
+    }
+
+    &_minor-top,
+    &_minor-bottom {
+      height: 50%;
+    }
+  }
+
 
   &__section_information {
     display: flex;
     justify-content: space-between;
     margin-block: 70px;
-  }
-
-  &__footage {
-    &_left {
-      flex: 68%;
-    }
-    &_right {
-      flex: 32%;
-    }
-  }
-
-  &__interior-pic {
-    &_major {
-    }
-    &_minor {
-      &-top,
-      &-bottom {
-      }
-
-      &-bottom {
-        
-      }
-    }
+    height: 800px;
   }
 
   &__title {
