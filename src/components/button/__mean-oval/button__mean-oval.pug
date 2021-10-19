@@ -5,24 +5,19 @@ mixin meanOvalButtons( item )
     - const buttonId = item.groupname + '_' + ++buttonCount
     - const buttonText = button.text || 'click me'
     - const widthByPercent = button.widthbypercent || '30'
+
     - const widthClass = button.type === 'text' ? '' : `elem__width_${widthByPercent}`
     - const frozenClass = button.disabled ? 'frozen' : ''
+    - const typeClass = `button-style_${button.type}`
 
-    case button.type 
-      when 'contained'
-        .mean-oval-button.button-style_contained( class=[ widthClass, frozenClass ] )
-          button.mean-oval-button__elem( id=buttonId disabled=button.disabled ) #{buttonText}
+    .mean-oval-button( class=[ typeClass, widthClass, frozenClass ] )
+      button.mean-oval-button__elem( id=buttonId disabled=button.disabled ) #{buttonText}
+      case button.type 
+        when 'contained'
           label.mean-oval-button__background( for=buttonId )
           if button.iconname 
             .mean-oval-button__icon
               +materialIcon( button.iconname, buttonId )
-
-      when 'outlined'
-        .mean-oval-button.button-style_outlined( class=[ widthClass, frozenClass ] )
-          button.mean-oval-button__elem( id=buttonId disabled=button.disabled ) #{buttonText}
+        when 'outlined'
           label.mean-oval-button__background( for=buttonId )
           label.mean-oval-button__thumb( for=buttonId )
-          
-      when 'text'
-        .mean-oval-button.button-style_text( class=[ widthClass, frozenClass ] )
-          button.mean-oval-button__elem( id=buttonId disabled=button.disabled ) #{buttonText}
