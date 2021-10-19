@@ -4,6 +4,8 @@ $optionButtonSize: 30px;
 
 .input {
   &__dropdown {
+    display: grid;
+    grid-gap: 7px;
     position: absolute;
     top: 43px;
     width: inherit;
@@ -24,8 +26,6 @@ $optionButtonSize: 30px;
 
   &__option {
     align-items: center;
-    height: 30px;
-    margin-bottom: 7px;
 
     &_name {
       text-transform: uppercase;
@@ -65,6 +65,6 @@ $optionButtonSize: 30px;
   }
 
   &__clear-n-submit {
-    margin-top: 20px;
+    margin-block: 13px 5px;
   }
 }
