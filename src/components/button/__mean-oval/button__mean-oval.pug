@@ -3,8 +3,8 @@ mixin meanOvalButtons( item )
 
   each button in item.buttons
     - const buttonId = item.groupname + '_' + ++buttonCount
-    - const buttonText = button.text ? button.text : 'click me'
-    - const widthByPercent = button.widthbypercent ? button.widthbypercent : '30'
+    - const buttonText = button.text || 'click me'
+    - const widthByPercent = button.widthbypercent || '30'
     - const widthClass = button.type === 'text' ? '' : `elem__width_${widthByPercent}`
     - const frozenClass = button.disabled ? 'frozen' : ''
 

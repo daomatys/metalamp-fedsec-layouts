@@ -31,7 +31,7 @@
   }
 
   &__background {
-    position: absolute;
+    position: relative;
     border-radius: 22px;
     height: 44px;
     width: 100%;
@@ -94,7 +94,8 @@
   }
 
   &_text {
-    position: relative;
+    width: max-content;
+    white-space: nowrap;
 
     & > button {
       color: $perfume;
