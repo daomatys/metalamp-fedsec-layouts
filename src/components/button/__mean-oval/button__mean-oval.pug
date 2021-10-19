@@ -2,15 +2,17 @@ mixin meanOvalButtons( item )
   - let buttonCount = 0;
 
   each button in item.buttons
-    - const buttonId = item.groupname + '_' + ++buttonCount
+    - buttonCount += 1
+    
+    - const buttonId = item.groupname + '_' + buttonCount
     - const buttonText = button.text || 'click me'
     - const widthByPercent = button.widthbypercent || '30'
 
     - let buttonClasses = ''
 
     - buttonClasses += button.type === 'text' ? '' : `elem__width_${widthByPercent}`
-    - buttonClasses += button.disabled ? 'frozen' : ''
-    - buttonClasses += `button-style_${button.type}`
+    - buttonClasses += button.disabled ? ' frozen' : ''
+    - buttonClasses += ` button-style_${button.type}`
 
     .mean-oval-button( class=buttonClasses )
       button.mean-oval-button__elem( id=buttonId disabled=button.disabled ) #{buttonText}
