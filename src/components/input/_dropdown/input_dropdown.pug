@@ -10,8 +10,8 @@ mixin inputDropdown( item )
     +materialIcon('expand_more', item.id )
   .input__dropdown.expander__aim( class=expanderActiveClass )
     each option in item.dropdown.options
-      .input__option
-        span.input__option_name.custom-font-style_h3 #{option}
+      .input__option.custom-font-style_h3
+        span.input__option_name #{option}
         .input__option_buttons
           .input__option_button-dec -
           .input__option_counter 0

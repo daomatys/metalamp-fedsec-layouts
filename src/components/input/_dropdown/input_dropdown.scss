@@ -4,15 +4,15 @@ $optionButtonSize: 30px;
 
 .input {
   &__dropdown {
+    position: absolute;
+    top: 43px;
+    width: inherit;
     background-color: $white;
     border-color: rgba($valhalla, 0.5);
     border-radius: 0 0 4px 4px;
     box-shadow: 0 10px 20px rgba($valhalla, 0.05);
     padding: 7px 7px 7px 15px;
-    position: absolute;
-    top: 43px;
     visibility: hidden;
-    width: inherit;
     z-index: 20;
   }
 
@@ -27,8 +27,14 @@ $optionButtonSize: 30px;
       text-transform: uppercase;
     }
 
-    &_buttons {
+    &_counter,
+    &_buttons,
+    &_button-dec,
+    &_button-inc {
       display: flex;
+    }
+
+    &_buttons {
       justify-content: space-between;
       width: 92px;
     }
@@ -36,18 +42,19 @@ $optionButtonSize: 30px;
     &_counter,
     &_button-dec,
     &_button-inc {
-      text-align: center;
-      vertical-align: middle;
+      justify-content: center;
+      align-items: center;
+      height: $optionButtonSize;
+      box-sizing: border-box;
     }
 
     &_button-dec,
     &_button-inc {
+      width: $optionButtonSize;
+      color: rgba($valhalla, 0.5);
       border: 1px solid rgba($valhalla, 0.25);
       border-radius: 50%;
-      height: $optionButtonSize;
-      width: $optionButtonSize;
-      line-height: $optionButtonSize;
+      font-weight: normal;
     }
   }
-
 }
