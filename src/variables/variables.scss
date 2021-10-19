@@ -13,6 +13,7 @@ $suva-grey: #909090;
 $port-gore: #3D4975;
 
 $whisper: #E5E5E5;
+$white: #FFF;
 
 @function defineGradient( $primary, $secondary ) {
   @return linear-gradient(180deg, $primary 0%, $secondary 100%);
