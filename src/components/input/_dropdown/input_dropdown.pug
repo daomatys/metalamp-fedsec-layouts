@@ -17,12 +17,12 @@ mixin inputDropdown( item )
           .input__option_button-dec -
           .input__option_counter #{option.count}
           .input__option_button-inc +
-      if ( item.dropdown.controls )
-        .input__clear-n-submit
-          +meanOvalButtons({
-            groupname: item.id,
-            buttons: [
-              { type: "text", text: "очистить" },
-              { type: "text", text: "применить"}
-            ]
-          })
+    if ( item.dropdown.controls )
+      .input__clear-n-submit
+        +meanOvalButtons({
+          groupname: item.id,
+          buttons: [
+            { type: "text", text: "очистить" },
+            { type: "text", text: "применить"}
+          ]
+        })

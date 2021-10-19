@@ -16,10 +16,14 @@ $optionButtonSize: 30px;
     z-index: 20;
   }
 
-  &__option {
+  &__option,
+  &__clear-n-submit {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+  }
+
+  &__option {
+    align-items: center;
     height: 30px;
     margin-bottom: 7px;
 
@@ -58,5 +62,9 @@ $optionButtonSize: 30px;
       font-weight: normal;
       cursor: pointer;
     }
+  }
+
+  &__clear-n-submit {
+    margin-top: 20px;
   }
 }
