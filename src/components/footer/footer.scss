@@ -3,6 +3,7 @@
 .footer {
   &_default{
     width: 100%;
+    height: 442px
   }
 
   &__sections {
@@ -17,7 +18,7 @@
 
     &_upper {
       align-items: start;
-      padding-block: 111px;
+      padding-block: 111px
     }
 
     &_lower {
