@@ -50,11 +50,13 @@ $optionButtonSize: 30px;
 
     &_button-dec,
     &_button-inc {
+      font-size: 18px;
       width: $optionButtonSize;
       color: rgba($valhalla, 0.5);
       border: 1px solid rgba($valhalla, 0.25);
       border-radius: 50%;
       font-weight: normal;
+      cursor: pointer;
     }
   }
 }
