@@ -146,9 +146,9 @@ block main
             dropdown: {
               expanded: false,
               options: [
-                "взрослые",
-                "дети",
-                "младенцы"
+                { name: "взрослые", count: 2 },
+                { name: "дети",     count: 1 },
+                { name: "младенцы", count: 1 }
               ]
             }
           })
@@ -197,9 +197,9 @@ block main
             widthbypercent: 83,
             dropdown: {
               options: [
-                "спальни",
-                "кровати",
-                "ванные комнаты"
+              { name: "спальни",        count: 2 },
+              { name: "кровати",        count: 2 },
+              { name: "ванные комнаты", count: 0 }
               ]
             }
           })

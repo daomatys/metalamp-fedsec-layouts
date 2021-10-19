@@ -48,9 +48,9 @@ block main
           dropdown: {
             expanded: false,
             options: [
-              "взрослые",
-              "дети",
-              "младенцы"
+              { name: "взрослые", count: 0 },
+              { name: "дети",     count: 0 },
+              { name: "младенцы", count: 0 }
             ]
           }
         })
@@ -188,9 +188,9 @@ block main
           widthbypercent: 83,
           dropdown: {
             options: [
-              "спальни",
-              "кровати",
-              "ванные комнаты"
+              { name: "спальни",        count: 0 },
+              { name: "кровати",        count: 0 },
+              { name: "ванные комнаты", count: 0 }
             ]
           }
         })
@@ -204,9 +204,9 @@ block main
           dropdown: {
             expanded: true,
             options: [
-              "спальни",
-              "кровати",
-              "ванные комнаты"
+              { name: "спальни",        count: 0 },
+              { name: "кровати",        count: 0 },
+              { name: "ванные комнаты", count: 0 }
             ]
           }
         })
@@ -219,10 +219,11 @@ block main
           placeholder: "Сколько гостей",
           dropdown: {
             expanded: true,
+            controls: true,
             options: [
-              "взрослые",
-              "дети",
-              "младенцы"
+              { name: "взрослые", count: 0 },
+              { name: "дети",     count: 0 },
+              { name: "младенцы", count: 0 }
             ]
           }
         })
@@ -236,9 +237,9 @@ block main
           dropdown: {
             expanded: true,
             options: [
-              "взрослые",
-              "дети",
-              "младенцы"
+              { name: "взрослые", count: 2 },
+              { name: "дети",     count: 1 },
+              { name: "младенцы", count: 0 }
             ]
           }
         })

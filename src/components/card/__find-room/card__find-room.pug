@@ -31,9 +31,9 @@ mixin cardFindRoom()
         placeholder: "Сколько гостей",
         dropdown: {
           options: [
-            "взрослые",
-            "дети",
-            "младенцы"
+              { name: "взрослые", count: 0 },
+              { name: "дети",     count: 0 },
+              { name: "младенцы", count: 0 }
           ]
         }
       })

@@ -12,10 +12,10 @@ mixin inputDropdown( item )
   .input__dropdown.expander__aim( class=expanderActiveClass )
     each option in item.dropdown.options
       .input__option.custom-font-style_h3
-        span.input__option_name #{option}
+        span.input__option_name #{option.name}
         .input__option_buttons
           .input__option_button-dec -
-          .input__option_counter 0
+          .input__option_counter #{option.count}
           .input__option_button-inc +
       if ( item.dropdown.controls )
         .input__clear-n-submit

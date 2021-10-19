@@ -40,9 +40,9 @@ mixin cardRoomBooking()
         placeholder: "Сколько гостей",
         dropdown: {
           options: [
-            "взрослые",
-            "дети",
-            "младенцы"
+            { name: "взрослые", count: 2 },
+            { name: "дети",     count: 1 },
+            { name: "младенцы", count: 0 }
           ]
         }
       })
