@@ -6,11 +6,13 @@ mixin meanOvalButtons( item )
     - const buttonText = button.text || 'click me'
     - const widthByPercent = button.widthbypercent || '30'
 
-    - const widthClass = button.type === 'text' ? '' : `elem__width_${widthByPercent}`
-    - const frozenClass = button.disabled ? 'frozen' : ''
-    - const typeClass = `button-style_${button.type}`
+    - let buttonClasses = ''
 
-    .mean-oval-button( class=[ typeClass, widthClass, frozenClass ] )
+    - buttonClasses += button.type === 'text' ? '' : `elem__width_${widthByPercent}`
+    - buttonClasses += button.disabled ? 'frozen' : ''
+    - buttonClasses += `button-style_${button.type}`
+
+    .mean-oval-button( class=buttonClasses )
       button.mean-oval-button__elem( id=buttonId disabled=button.disabled ) #{buttonText}
       case button.type 
         when 'contained'
