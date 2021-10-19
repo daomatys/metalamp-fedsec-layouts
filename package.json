@@ -17,6 +17,7 @@
     "pug-loader": "^2.4.0",
     "sass-loader": "^12.1.0",
     "stylelint": "^13.13.1",
+    "stylelint-config-sass-guidelines": "^8.0.0",
     "stylelint-scss": "^3.21.0",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
