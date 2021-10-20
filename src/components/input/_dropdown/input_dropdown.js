@@ -17,9 +17,9 @@ const initListeners = function initDropdownElementsEventListeners( item ) {
     submitController.addEventListener('click', () => submitForm( submitController ));
   }
 
-  optionCalcSections.forEach( item => {
-    const optionButtons = defineButtons( item );
-    const optionCounter = item.querySelector('.input__option_counter');
+  optionCalcSections.forEach( section => {
+    const optionButtons = defineButtons( section );
+    const optionCounter = section.querySelector('.input__option_counter');
     const optionCounterValue = optionCounter.textContent;
 
     adjustButtonsState( optionButtons, optionCounterValue );
@@ -55,7 +55,7 @@ const adjustButtonsState = function optionsButtonsStateAccordingToMinAndMaxRange
     if ( caseB ) {
       buttons.right.classList.add('frozen');
     }
-  } 
+  }
   if ( !(caseA || caseB) ) {
     buttons.left.classList.remove('frozen');
     buttons.right.classList.remove('frozen');
@@ -72,7 +72,11 @@ const resetCounters = function resetCounterValueOnButtonClick( controller, secti
     adjustButtonsState( optionButtons, 0 );
   });
 
-  controller.style.visibility = 'hidden';
+  changeControllerState( controller );
+}
+
+const changeControllerState = function toggleControllerHiddenClass( controller ) {
+  controller.classList.toggle('hidden-controller');
 }
 
 const submitForm = function submitFormOnButtonClick() {
