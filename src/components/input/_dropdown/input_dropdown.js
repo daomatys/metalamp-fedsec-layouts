@@ -5,45 +5,44 @@ const find = function findDropdownContainers() {
 }
 
 const initListeners = function initElementsEventListeners( item ) {
+  const counters = item.querySelectorAll('.input__option_counter');
   const buttonGroups = item.querySelectorAll('.input__option_buttons');
   const controllersBar = item.querySelector('.input__clear-n-submit');
 
   if ( controllersBar ) {
-    const counters = item.querySelectorAll('.input__option_counter');
-    initControllers( counters, controllersBar, buttonGroups );
+    const controllers = defineButtons( controllersBar );
+    initControllers( counters, controllers, buttonGroups );
+    buttonGroups.forEach( buttons => initButtons( buttons, counters, controllers ) );
+  } else {
+    buttonGroups.forEach( buttons => initButtons( buttons, counters, undefined ) );
   }
-
-  buttonGroups.forEach( buttons => initButtons( buttons ) );
 }
 
-const initControllers = function initControllersEventListeners( counters, controllersBar, buttonGroups ) {
-  const controllers = defineButtons( controllersBar );
+const initControllers = function initControllersEventListeners( counters, controllers, buttonGroups ) {
   const resetController = controllers.left;
   const submitController = controllers.right;
 
-  defineResetControllerState( counters, resetController );
+  defineResetControllerState( counters, controllers );
 
-  resetController.addEventListener('click', () => resetCounters( resetController, counters, buttonGroups ));
+  resetController.addEventListener('click', () => resetCounters( controllers, counters, buttonGroups ));
   submitController.addEventListener('click', () => submitForm( submitController ));
 }
 
-const defineResetControllerState = function( counters, controller ) {
+const defineResetControllerState = function( counters, controllers ) {
   const countersSum = defineCountersSum( counters );
 
-  if ( countersSum === 0 ) {
-    changeControllerState( controller );
-  }
+  adjustButtonsState( controllers, countersSum, 'hidden-controller', true )
 }
 
-const initButtons = function initOptionButtonsEventListeners( buttons ) {
+const initButtons = function initOptionButtonsEventListeners( buttons, counters, controllers ) {
   const optionButtons = defineButtons( buttons );
   const optionCounter = buttons.querySelector('.input__option_counter');
   const optionCounterValue = optionCounter.textContent;
 
-  adjustButtonsState( optionButtons, optionCounterValue );
+  adjustButtonsState( optionButtons, optionCounterValue, 'button-frozen' );
 
-  optionButtons.left.addEventListener('click', () => counterMathOps( optionButtons, optionCounter, -1 ));
-  optionButtons.right.addEventListener('click', () => counterMathOps( optionButtons, optionCounter, 1 ));
+  optionButtons.left.addEventListener('click', () => updateDropdown( optionButtons, optionCounter, -1, controllers, counters ));
+  optionButtons.right.addEventListener('click', () => updateDropdown( optionButtons, optionCounter, 1, controllers, counters ));
 }
 
 const defineButtons = function defineFirstAndLastChildByItsParent( parent ) {
@@ -58,38 +57,42 @@ const defineButtons = function defineFirstAndLastChildByItsParent( parent ) {
   return result;
 }
 
-const counterMathOps = function counterIncreaseByAddificationValue( buttons, counter, addification ) {
+const updateDropdown = function counterIncreaseByAddificationValue( buttons, counter, addification, controllers, counters ) {
   const newCounterValue = parseInt( counter.textContent ) + addification;
 
-  adjustButtonsState( buttons, newCounterValue );
+  adjustButtonsState( buttons, newCounterValue, 'button-frozen' );
 
   counter.textContent = newCounterValue;
+
+  if ( controllers ) {
+    defineResetControllerState( counters, controllers );
+  }
 }
 
-const adjustButtonsState = function optionsButtonsStateAccordingToMinAndMaxRanges( buttons, value ) {
+const adjustButtonsState = function optionsButtonsStateAccordingToMinAndMaxRanges( buttons, value, selector, leftOnly ) {
   const caseA = value < 1;
   const caseB = value > 9;
 
   if ( caseA || caseB ) {
     if ( caseA ) {
-      buttons.left.classList.add('button-frozen');
+      buttons.left.classList.add( selector );
     }
-    if ( caseB ) {
-      buttons.right.classList.add('button-frozen');
+    if ( caseB && !leftOnly) {
+      buttons.right.classList.add( selector );
     }
   }
   if ( !(caseA || caseB) ) {
-    buttons.left.classList.remove('button-frozen');
-    buttons.right.classList.remove('button-frozen');
+    buttons.left.classList.remove( selector );
+    buttons.right.classList.remove( selector );
   }
 }
 
-const resetCounters = function resetCounterValueOnButtonClick( controller, counters, buttonGroups ) {
+const resetCounters = function resetCounterValueOnButtonClick( controllers, counters, buttonGroups ) {
   counters.forEach( counter => counter.textContent = 0 );
 
   buttonGroups.forEach( group => defineButtons( group ).left.classList.add('button-frozen') );
 
-  changeControllerState( controller );
+  defineResetControllerState( counters, controllers );
 }
 
 const defineCountersSum = function( counters ) {
@@ -99,10 +102,6 @@ const defineCountersSum = function( counters ) {
     .reduce( (prev, curr) => prev + curr );
 
   return result;
-}
-
-const changeControllerState = function toggleControllerHiddenClass( controller ) {
-  controller.classList.toggle('hidden-controller');
 }
 
 const submitForm = function submitFormOnButtonClick() {
