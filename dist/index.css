@@ -126,8 +126,6 @@
     grid-gap: 10px; }
   .checkbox-button * {
     cursor: pointer; }
-  .checkbox-button label {
-    color: #1F2041; }
   .checkbox-button__elem {
     position: relative;
     display: flex;
@@ -151,7 +149,6 @@
         content: ''; }
   .checkbox-button__common-label {
     width: 195px;
-    font-size: 14px;
     opacity: .5; }
   .checkbox-button__rich-label {
     display: flex;
@@ -159,12 +156,8 @@
     width: 230px; }
     .checkbox-button__rich-label_title {
       margin-block: 1px 7px;
-      font-size: 14px;
-      font-weight: bold;
-      opacity: .75; }
+      font-weight: bold; }
     .checkbox-button__rich-label_info {
-      font-size: 12px;
-      opacity: .5;
       white-space: pre-wrap; }
 
 /*!*****************************************************************************************************************************************!*\
@@ -247,7 +240,6 @@
   justify-content: center;
   align-items: center;
   min-height: 15px;
-  min-width: 61px;
   margin: 0;
   box-sizing: border-box; }
   .mean-oval-button > * {
@@ -298,13 +290,17 @@
   color: #BC9CFF; }
 
 .button-style_text {
-  position: relative; }
+  width: max-content;
+  white-space: nowrap; }
   .button-style_text > button {
     color: #BC9CFF;
     padding: 0; }
     .button-style_text > button:hover, .button-style_text > button:disabled {
       color: #1F2041;
       opacity: .5; }
+
+.mob_non-absolute {
+  position: relative; }
 
 .ripple, .mean-oval-button__elem:not(:active) {
   animation: rippling 180ms ease forwards; }
@@ -734,10 +730,18 @@
   .custom-font-style_body-plain {
     color: #1F2041; }
 
+.custom-font-style_micro-note {
+  color: rgba(31, 32, 65, 0.5);
+  font-size: 12px;
+  line-height: 14px; }
+
 .twins-grid-line {
   display: grid;
   grid-template-columns: repeat(2, auto);
   justify-content: start; }
+
+.fullscreen-bottom-border {
+  border-bottom: 1px solid rgba(31, 32, 65, 0.25); }
 
 /*!******************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/expandable-entities/expandable-entities.scss ***!
@@ -752,19 +756,19 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/footer/footer.scss ***!
   \****************************************************************************************************************************/
 .footer_default {
+  height: 442px;
   width: 100%; }
 
 .footer__sections_upper, .footer__sections_lower {
+  background-color: #fff;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
-  box-sizing: border-box;
-  padding-inline: 140px;
-  background-color: white; }
+  padding-inline: 140px; }
 
 .footer__sections_upper {
   align-items: start;
-  padding-block: 100px;
-  border-bottom: 1px solid rgba(31, 32, 65, 0.25); }
+  padding-block: 111px; }
 
 .footer__sections_lower {
   align-items: center;
@@ -772,25 +776,25 @@
   height: 70px; }
 
 .footer_mobile, .footer__mobile-section {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
   width: 100%; }
 
 .footer__mobile-section {
+  background-color: #fff;
   flex-direction: column;
   height: 367px;
-  max-width: 768px;
-  background-color: white; }
+  max-width: 768px; }
   .footer__mobile-section > span {
     margin-block: 20px 25px; }
 
 .footer__content {
   display: flex;
   justify-content: space-between;
-  width: 100%;
   max-width: 1600px;
-  min-width: 1160px; }
+  min-width: 1160px;
+  width: 100%; }
   .footer__content_shell {
     display: grid;
     grid-gap: 20px;
@@ -1069,10 +1073,18 @@
   .custom-font-style_body-plain {
     color: #1F2041; }
 
+.custom-font-style_micro-note {
+  color: rgba(31, 32, 65, 0.5);
+  font-size: 12px;
+  line-height: 14px; }
+
 .twins-grid-line {
   display: grid;
   grid-template-columns: repeat(2, auto);
   justify-content: start; }
+
+.fullscreen-bottom-border {
+  border-bottom: 1px solid rgba(31, 32, 65, 0.25); }
 
 .material-icons, .ui-datepicker-prev .ui-icon, .ui-datepicker-next .ui-icon {
   font-family: 'Material Icons';
@@ -1175,23 +1187,55 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/input/_dropdown/input_dropdown.scss ***!
   \*********************************************************************************************************************************************/
 .input__dropdown {
+  display: grid;
+  grid-gap: 7px;
   position: absolute;
-  visibility: hidden;
   top: 43px;
   width: inherit;
-  z-index: 20;
-  padding: 7px 7px 7px 15px;
-  background-color: white;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  background-color: #FFF;
   border-color: rgba(31, 32, 65, 0.5);
-  border-radius: 0px 0px 4px 4px; }
-  .input__dropdown_option {
-    display: flex;
-    align-items: center;
-    margin-bottom: 7px;
-    height: 30px; }
-  .input__dropdown_name {
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  padding: 7px 7px 7px 15px;
+  visibility: hidden;
+  z-index: 20; }
+
+.input__option, .input__clear-n-submit {
+  display: flex;
+  justify-content: space-between; }
+
+.input__option {
+  align-items: center; }
+  .input__option_name {
     text-transform: uppercase; }
+  .input__option_counter, .input__option_buttons, .input__option_button-dec, .input__option_button-inc {
+    display: flex; }
+  .input__option_buttons {
+    justify-content: space-between;
+    width: 92px; }
+  .input__option_counter, .input__option_button-dec, .input__option_button-inc {
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    box-sizing: border-box; }
+  .input__option_button-dec, .input__option_button-inc {
+    font-size: 18px;
+    width: 30px;
+    color: rgba(31, 32, 65, 0.5);
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 50%;
+    font-weight: normal;
+    cursor: pointer; }
+
+.input__clear-n-submit {
+  margin-block: 13px 5px; }
+
+.hidden-controller {
+  visibility: hidden; }
+
+.button-frozen {
+  pointer-events: none;
+  opacity: .5; }
 
 /*!**************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/input/input.scss ***!
@@ -1564,9 +1608,13 @@
 /*!***************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/pages.scss ***!
   \***************************************************************************************************************/
+html,
 body {
-  margin: auto;
+  height: 100%; }
+
+body {
   font-family: Montserrat, Quicksand, sans-serif;
+  margin: auto;
   user-select: none; }
 
 img,
@@ -1711,6 +1759,48 @@ object {
 /*!**************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/website/__room/website__room.scss ***!
   \**************************************************************************************************************************************/
+.room-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 73.51575%; }
+  .room-page__section_interiors-footage {
+    display: flex;
+    height: 33.98876%; }
+  .room-page__footage_left {
+    width: 68.125%; }
+  .room-page__footage_right {
+    width: 31.875%; }
+  .room-page__interior-pic_major, .room-page__interior-pic_minor-top, .room-page__interior-pic_minor-bottom {
+    object-fit: cover;
+    width: 100%; }
+  .room-page__interior-pic_major {
+    height: 100%; }
+  .room-page__interior-pic_minor-top, .room-page__interior-pic_minor-bottom {
+    height: 50%; }
+  .room-page__section_information {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 70px;
+    height: 800px; }
+  .room-page__title {
+    margin-bottom: 20px; }
+  .room-page__sub-section_left {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas: "a b" "c c" "d e"; }
+  .room-page__room-advantages {
+    grid-area: a; }
+  .room-page__visitors-impression-chart {
+    grid-area: b; }
+  .room-page__reviews {
+    grid-area: c; }
+  .room-page__rules-list {
+    grid-area: d; }
+  .room-page__cancellation-policy {
+    grid-area: e; }
+  .room-page__cancellation-policy {
+    width: 341px; }
 
 /*!******************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/website/__search/website__search.scss ***!
@@ -1718,15 +1808,25 @@ object {
 .search-page {
   margin-top: 30px;
   display: flex;
-  align-items: flex-start; }
-  .search-page__input-parameters, .search-page__filtered-items {
+  align-items: flex-start;
+  justify-content: space-between; }
+  .search-page__input-parameters, .search-page__filtered-items-grid {
     display: grid; }
   .search-page__input-parameters {
-    grid-gap: 20px;
-    padding-right: 60px; }
-  .search-page__filtered-items {
+    grid-gap: 30px;
+    margin-right: 30px; }
+  .search-page__filtered-items-title {
+    margin-bottom: 21px; }
+  .search-page__filtered-items-grid {
     grid-template-columns: repeat(3, auto);
     grid-gap: 20px 12px; }
+  .search-page__filtered-items-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 41px;
+    margin-bottom: 70px; }
+  .search-page__slider-frame {
+    margin-bottom: 13px; }
 
 /*!*************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/website/website.scss ***!
