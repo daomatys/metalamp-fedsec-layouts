@@ -4,49 +4,46 @@ const find = function findDropdownContainers() {
   dropdowns.forEach( item => initListeners( item ) );
 }
 
-const initListeners = function initElementsEventListeners( item ) { 
-  initControllers( item );
-  initButtons( item );
-}
-
-const initControllers = function initControllersEventListeners( item ) {
+const initListeners = function initElementsEventListeners( item ) {
+  const buttonGroups = item.querySelectorAll('.input__option_buttons');
   const controllersBar = item.querySelector('.input__clear-n-submit');
 
   if ( controllersBar ) {
-    const controllers = defineButtons( controllersBar );
-    const resetController = controllers.left;
-    const submitController = controllers.right;
-
-    defineResetControllerState( item );
-
-    resetController.addEventListener('click', () => resetCounters( resetController, optionCalcSections ));
-    submitController.addEventListener('click', () => submitForm( submitController ));
+    const counters = item.querySelectorAll('.input__option_counter');
+    initControllers( counters, controllersBar, buttonGroups );
   }
+
+  buttonGroups.forEach( buttons => initButtons( buttons ) );
 }
 
-const defineResetControllerState = function( item ) {
-  const optionCounters = item.querySelectorAll('.input__option_counter');
+const initControllers = function initControllersEventListeners( counters, controllersBar, buttonGroups ) {
+  const controllers = defineButtons( controllersBar );
+  const resetController = controllers.left;
+  const submitController = controllers.right;
 
-  const countersSum = defineCountersSum( optionCounters );
+  defineResetControllerState( counters, resetController );
+
+  resetController.addEventListener('click', () => resetCounters( resetController, counters, buttonGroups ));
+  submitController.addEventListener('click', () => submitForm( submitController ));
+}
+
+const defineResetControllerState = function( counters, controller ) {
+  const countersSum = defineCountersSum( counters );
 
   if ( countersSum === 0 ) {
-    changeControllerState( resetController );
+    changeControllerState( controller );
   }
 }
 
-const initButtons = function initOptionButtonsEventListeners( item ) {
-  const optionCalcSections = item.querySelectorAll('.input__option_buttons');
+const initButtons = function initOptionButtonsEventListeners( buttons ) {
+  const optionButtons = defineButtons( buttons );
+  const optionCounter = buttons.querySelector('.input__option_counter');
+  const optionCounterValue = optionCounter.textContent;
 
-  optionCalcSections.forEach( section => {
-    const optionButtons = defineButtons( section );
-    const optionCounter = section.querySelector('.input__option_counter');
-    const optionCounterValue = optionCounter.textContent;
+  adjustButtonsState( optionButtons, optionCounterValue );
 
-    adjustButtonsState( optionButtons, optionCounterValue );
-
-    optionButtons.left.addEventListener('click', () => counterMathOps( optionButtons, optionCounter, -1 ));
-    optionButtons.right.addEventListener('click', () => counterMathOps( optionButtons, optionCounter, 1 ));
-  });
+  optionButtons.left.addEventListener('click', () => counterMathOps( optionButtons, optionCounter, -1 ));
+  optionButtons.right.addEventListener('click', () => counterMathOps( optionButtons, optionCounter, 1 ));
 }
 
 const defineButtons = function defineFirstAndLastChildByItsParent( parent ) {
@@ -87,15 +84,10 @@ const adjustButtonsState = function optionsButtonsStateAccordingToMinAndMaxRange
   }
 }
 
-const resetCounters = function resetCounterValueOnButtonClick( controller, sections ) {
-  sections.forEach( item => {
-    const optionButtons = defineButtons( item );
-    const optionCounter = item.querySelector('.input__option_counter');
+const resetCounters = function resetCounterValueOnButtonClick( controller, counters, buttonGroups ) {
+  counters.forEach( counter => counter.textContent = 0 );
 
-    optionCounter.textContent = 0;
-
-    adjustButtonsState( optionButtons, 0 );
-  });
+  buttonGroups.forEach( group => defineButtons( group ).left.classList.add('button-frozen') );
 
   changeControllerState( controller );
 }
