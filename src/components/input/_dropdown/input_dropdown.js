@@ -10,12 +10,13 @@ const initListeners = function initDropdownElementsEventListeners( item ) {
 
   if ( controllersBar ) {
     const optionCounters = item.querySelectorAll('.input__option_counter');
+
     const countersSum = defineCountersSum( optionCounters );
     const controllers = defineButtons( controllersBar );
     const resetController = controllers.left;
     const submitController = controllers.right;
 
-    if ( countersSum > 0 ) {
+    if ( countersSum === 0 ) {
       changeControllerState( resetController );
     }
   
@@ -87,10 +88,11 @@ const resetCounters = function resetCounterValueOnButtonClick( controller, secti
 }
 
 const defineCountersSum = function( counters ) {
-  const result = counters
+  const result = Array
+    .from( counters )
     .map( counter => Number( counter.textContent ) )
-    .reduce( prev, curr => prev + curr );
-  
+    .reduce( (prev, curr) => prev + curr );
+
   return result;
 }
 
