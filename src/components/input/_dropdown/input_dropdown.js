@@ -22,27 +22,44 @@ const initListeners = function initDropdownElementsEventListeners( item ) {
     controllerButtons.right.addEventListener('click', submitForm);
   }
 
-  const optionCalcSections = item.querySelectorAll('input__option_buttons');
+  const optionCalcSections = item.querySelectorAll('.input__option_buttons');
 
   optionCalcSections.forEach( item => {
     const optionButtons = defineButtons( item );
     const optionCounter = item.querySelector('.input__option_counter');
 
-    optionButtons.left.addEventListener('click', () => counterDec( optionCounter ));
-    optionButtons.right.addEventListener('click', () => counterInc( optionCounter ));
+    optionButtons.left.addEventListener('click', () => counterMathOps( optionButtons, optionCounter, -1 ));
+    optionButtons.right.addEventListener('click', () => counterMathOps( optionButtons, optionCounter, 1 ));
   })
 }
 
-const counterDec = function( counter ) {
-  counter.textContent -= 1;
+const counterMathOps = function counterIncreaseByAddificationValue( buttons, counter, addification ) {
+  const newCounterValue = parseInt( counter.textContent ) + addification;
+
+  checkValue( buttons, newCounterValue );
+
+  counter.textContent = newCounterValue;
 }
 
-const counterInc = function( counter ) {
-  counter.textContent += 1;
+const checkValue = function checkCounterValueEquivalencyToMinAndMax( buttons, value ) {
+  const caseA = value < 1;
+  const caseB = value > 9;
+
+  if ( caseA || caseB ) {
+    if ( caseA ) {
+      buttons.left.classList.add('frozen');
+    }
+    if ( caseB ) {
+      buttons.right.classList.add('frozen');
+    }
+  } else {
+    buttons.left.classList.remove('frozen');
+    buttons.right.classList.remove('frozen');
+  }
 }
 
-const resetCounters = function resetCounterValueOnButtonClick() {
-  
+const resetCounters = function resetCounterValueOnButtonClick( counters ) {
+  counters.forEach( item => item.textContent = 0 );
 }
 
 const submitForm = function submitFormOnButtonClick() {
