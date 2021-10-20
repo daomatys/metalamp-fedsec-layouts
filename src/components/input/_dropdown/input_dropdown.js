@@ -62,8 +62,17 @@ const adjustButtonsState = function optionsButtonsStateAccordingToMinAndMaxRange
   }
 }
 
-const resetCounters = function resetCounterValueOnButtonClick( buttons, counters ) {
-  counters.forEach( item => item.textContent = 0 );
+const resetCounters = function resetCounterValueOnButtonClick( controller, sections ) {
+  sections.forEach( item => {
+    const optionButtons = defineButtons( item );
+    const optionCounter = item.querySelector('.input__option_counter');
+
+    optionCounter.textContent = 0;
+
+    adjustButtonsState( optionButtons, 0 );
+  });
+
+  controller.style.visibility = 'hidden';
 }
 
 const submitForm = function submitFormOnButtonClick() {
