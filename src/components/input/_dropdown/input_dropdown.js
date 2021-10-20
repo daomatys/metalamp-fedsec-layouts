@@ -4,25 +4,38 @@ const find = function findDropdownContainers() {
   dropdowns.forEach( item => initListeners( item ) );
 }
 
-const initListeners = function initDropdownElementsEventListeners( item ) {
-  const optionCalcSections = item.querySelectorAll('.input__option_buttons');
+const initListeners = function initElementsEventListeners( item ) { 
+  initControllers( item );
+  initButtons( item );
+}
+
+const initControllers = function initControllersEventListeners( item ) {
   const controllersBar = item.querySelector('.input__clear-n-submit');
 
   if ( controllersBar ) {
-    const optionCounters = item.querySelectorAll('.input__option_counter');
-
-    const countersSum = defineCountersSum( optionCounters );
     const controllers = defineButtons( controllersBar );
     const resetController = controllers.left;
     const submitController = controllers.right;
 
-    if ( countersSum === 0 ) {
-      changeControllerState( resetController );
-    }
-  
+    defineResetControllerState( item );
+
     resetController.addEventListener('click', () => resetCounters( resetController, optionCalcSections ));
     submitController.addEventListener('click', () => submitForm( submitController ));
   }
+}
+
+const defineResetControllerState = function( item ) {
+  const optionCounters = item.querySelectorAll('.input__option_counter');
+
+  const countersSum = defineCountersSum( optionCounters );
+
+  if ( countersSum === 0 ) {
+    changeControllerState( resetController );
+  }
+}
+
+const initButtons = function initOptionButtonsEventListeners( item ) {
+  const optionCalcSections = item.querySelectorAll('.input__option_buttons');
 
   optionCalcSections.forEach( section => {
     const optionButtons = defineButtons( section );
