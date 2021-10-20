@@ -13,7 +13,8 @@ const initListeners = function initElementsEventListeners( item ) {
     const controllers = defineButtons( controllersBar );
     initControllers( counters, controllers, buttonGroups );
     buttonGroups.forEach( buttons => initButtons( buttons, counters, controllers ) );
-  } else {
+  }
+  if ( !controllersBar ) {
     buttonGroups.forEach( buttons => initButtons( buttons, counters, undefined ) );
   }
 }
@@ -90,7 +91,12 @@ const adjustButtonsState = function optionsButtonsStateAccordingToMinAndMaxRange
 const resetCounters = function resetCounterValueOnButtonClick( controllers, counters, buttonGroups ) {
   counters.forEach( counter => counter.textContent = 0 );
 
-  buttonGroups.forEach( group => defineButtons( group ).left.classList.add('button-frozen') );
+  buttonGroups.forEach( group => {
+    const buttons = defineButtons( group )
+    
+    buttons.left.classList.add('button-frozen');
+    buttons.right.classList.remove('button-frozen');
+  });
 
   defineResetControllerState( counters, controllers );
 }
