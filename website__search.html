@@ -33,12 +33,12 @@
             </nav>
           </div>
           <div class="header__authorization-buttons">
-            <div class="mean-oval-button button-style_outlined elem__width_27">
+            <div class="mean-oval-button elem__width_27 button-style_outlined">
               <button class="mean-oval-button__elem" id="header__login-btn_1">войти</button>
               <label class="mean-oval-button__background" for="header__login-btn_1"></label>
               <label class="mean-oval-button__thumb" for="header__login-btn_1"></label>
             </div>
-            <div class="mean-oval-button button-style_contained elem__width_61">
+            <div class="mean-oval-button elem__width_61 button-style_contained">
               <button class="mean-oval-button__elem" id="header__login-btn_2">зарегестрироваться</button>
               <label class="mean-oval-button__background" for="header__login-btn_2"></label>
             </div>
@@ -47,9 +47,9 @@
       </div>
     </div>
   </header>
-  <main class="website__main">
+  <main class="website__main fullscreen-bottom-border">
     <div class="search-page universal-container">
-      <div class="search-page__input-parameters">
+      <div class="search-page__input-parameters elem__width_83">
         <div class="search-page__date">
             <div class="input elem__width_83 expander__parent">
               <div class="input__title">
@@ -77,52 +77,63 @@
                       <label class="material-icons" for="search-by__guests">expand_more</label>
                   </div>
                   <div class="input__dropdown expander__aim">
-                    <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">взрослые</span>
-                      <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
-                      <div class="input__dropdown_button-dec"></div>
+                    <div class="input__option custom-font-style_h3"><span class="input__option_name">взрослые</span>
+                      <div class="input__option_buttons">
+                        <div class="input__option_button-dec">-</div>
+                        <div class="input__option_counter">2</div>
+                        <div class="input__option_button-inc">+</div>
+                      </div>
                     </div>
-                    <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">дети</span>
-                      <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
-                      <div class="input__dropdown_button-dec"></div>
+                    <div class="input__option custom-font-style_h3"><span class="input__option_name">дети</span>
+                      <div class="input__option_buttons">
+                        <div class="input__option_button-dec">-</div>
+                        <div class="input__option_counter">1</div>
+                        <div class="input__option_button-inc">+</div>
+                      </div>
                     </div>
-                    <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">младенцы</span>
-                      <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
-                      <div class="input__dropdown_button-dec"></div>
+                    <div class="input__option custom-font-style_h3"><span class="input__option_name">младенцы</span>
+                      <div class="input__option_buttons">
+                        <div class="input__option_button-dec">-</div>
+                        <div class="input__option_counter">1</div>
+                        <div class="input__option_button-inc">+</div>
+                      </div>
                     </div>
                   </div>
               </div>
             </div>
         </div>
         <div class="search-page__slider">
-            <div class="range-slider__wrap elem__width_83">
-                <div class="title-bar custom-font-style_h3"><span class="title-bar__title">диапазон цены</span><span class="title-bar__state" id="search-by__range-prices_state"></span>
+          <div class="search-page__slider-frame">
+              <div class="range-slider__wrap elem__width_83">
+                  <div class="title-bar custom-font-style_h3"><span class="title-bar__title">диапазон цен</span><span class="title-bar__state" id="search-by__range-prices_state"></span>
+                  </div>
+                <div class="range-slider__container">
+                  <div class="range-slider__elem" id="search-by__range-prices"></div>
                 </div>
-              <div class="range-slider__container">
-                <div class="range-slider__elem" id="search-by__range-prices"></div>
               </div>
-            </div><span class="search-page__slider-note"></span>
+          </div><span class="search-page__slider-note custom-font-style_micro-note">Стоимость за сутки пребывания в номере</span>
         </div>
-        <div class="search-page__checkboxes">
+        <div class="search-page__checkboxes form-elements__element">
             <div class="title-bar custom-font-style_h3"><span class="title-bar__title">правила дома</span>
             </div>
           <div class="checkbox-button__array">
               <div class="checkbox-button__container">
                 <div class="checkbox-button">
                   <input class="checkbox-button__elem" type="checkbox" id="search-by__checkbox-allows_1">
-                  <label class="checkbox-button__common-label" for="search-by__checkbox-allows_1">Можно курить</label>
+                  <label class="checkbox-button__common-label custom-font-style_body-plain" for="search-by__checkbox-allows_1">Можно курить</label>
                 </div>
                 <div class="checkbox-button">
                   <input class="checkbox-button__elem" type="checkbox" id="search-by__checkbox-allows_2" checked>
-                  <label class="checkbox-button__common-label" for="search-by__checkbox-allows_2">Можно с питомцами</label>
+                  <label class="checkbox-button__common-label custom-font-style_body-plain" for="search-by__checkbox-allows_2">Можно с питомцами</label>
                 </div>
                 <div class="checkbox-button">
                   <input class="checkbox-button__elem" type="checkbox" id="search-by__checkbox-allows_3" checked>
-                  <label class="checkbox-button__common-label" for="search-by__checkbox-allows_3">Можно пригласить гостей (до 10 человек)</label>
+                  <label class="checkbox-button__common-label custom-font-style_body-plain" for="search-by__checkbox-allows_3">Можно пригласить гостей (до 10 человек)</label>
                 </div>
               </div>
           </div>
         </div>
-        <div class="search-page__rich-checkboxes">
+        <div class="search-page__rich-checkboxes form-elements__element">
             <div class="title-bar custom-font-style_h3"><span class="title-bar__title">доступность</span>
             </div>
           <div class="checkbox-buttons__array">
@@ -130,16 +141,16 @@
                 <div class="checkbox-button">
                   <input class="checkbox-button__elem" type="checkbox" id="search-by__accessibility_1">
                   <div class="checkbox-button__rich-label">
-                    <label class="checkbox-button__rich-label_title" for="search-by__accessibility_1">Широкий коридор</label>
-                    <label class="checkbox-button__rich-label_info" for="search-by__accessibility_1">Ширина коридоров в номере 
+                    <label class="checkbox-button__rich-label_title custom-font-style_body" for="search-by__accessibility_1">Широкий коридор</label>
+                    <label class="checkbox-button__rich-label_info custom-font-style_micro-note" for="search-by__accessibility_1">Ширина коридоров в номере 
 не менее 91 см.</label>
                   </div>
                 </div>
                 <div class="checkbox-button">
                   <input class="checkbox-button__elem" type="checkbox" id="search-by__accessibility_2">
                   <div class="checkbox-button__rich-label">
-                    <label class="checkbox-button__rich-label_title" for="search-by__accessibility_2">Помощник для инвалидов</label>
-                    <label class="checkbox-button__rich-label_info" for="search-by__accessibility_2">На 1 этаже вас встретит специалист  и проводит до номера.</label>
+                    <label class="checkbox-button__rich-label_title custom-font-style_body" for="search-by__accessibility_2">Помощник для инвалидов</label>
+                    <label class="checkbox-button__rich-label_info custom-font-style_micro-note" for="search-by__accessibility_2">На 1 этаже вас встретит специалист  и проводит до номера.</label>
                   </div>
                 </div>
               </div>
@@ -157,17 +168,26 @@
                       <label class="material-icons" for="search-by__baths">expand_more</label>
                   </div>
                   <div class="input__dropdown expander__aim">
-                    <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">спальни</span>
-                      <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
-                      <div class="input__dropdown_button-dec"></div>
+                    <div class="input__option custom-font-style_h3"><span class="input__option_name">спальни</span>
+                      <div class="input__option_buttons">
+                        <div class="input__option_button-dec">-</div>
+                        <div class="input__option_counter">2</div>
+                        <div class="input__option_button-inc">+</div>
+                      </div>
                     </div>
-                    <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">кровати</span>
-                      <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
-                      <div class="input__dropdown_button-dec"></div>
+                    <div class="input__option custom-font-style_h3"><span class="input__option_name">кровати</span>
+                      <div class="input__option_buttons">
+                        <div class="input__option_button-dec">-</div>
+                        <div class="input__option_counter">2</div>
+                        <div class="input__option_button-inc">+</div>
+                      </div>
                     </div>
-                    <div class="input__dropdown_option"><span class="input__dropdown_name custom-font-style_h3">ванные комнаты</span>
-                      <div class="input__dropdown_button-inc"> </div><span class="input__dropdown_counter"> </span>
-                      <div class="input__dropdown_button-dec"></div>
+                    <div class="input__option custom-font-style_h3"><span class="input__option_name">ванные комнаты</span>
+                      <div class="input__option_buttons">
+                        <div class="input__option_button-dec">-</div>
+                        <div class="input__option_counter">0</div>
+                        <div class="input__option_button-inc">+</div>
+                      </div>
                     </div>
                   </div>
               </div>
@@ -189,27 +209,27 @@
                   <div class="checkbox-button__container">
                     <div class="checkbox-button">
                       <input class="checkbox-button__elem" type="checkbox" id="uik-fe__checkbox-list_default_1">
-                      <label class="checkbox-button__common-label" for="uik-fe__checkbox-list_default_1">Завтрак</label>
+                      <label class="checkbox-button__common-label custom-font-style_body-plain" for="uik-fe__checkbox-list_default_1">Завтрак</label>
                     </div>
                     <div class="checkbox-button">
                       <input class="checkbox-button__elem" type="checkbox" id="uik-fe__checkbox-list_default_2" checked>
-                      <label class="checkbox-button__common-label" for="uik-fe__checkbox-list_default_2">Письменный стол</label>
+                      <label class="checkbox-button__common-label custom-font-style_body-plain" for="uik-fe__checkbox-list_default_2">Письменный стол</label>
                     </div>
                     <div class="checkbox-button">
                       <input class="checkbox-button__elem" type="checkbox" id="uik-fe__checkbox-list_default_3" checked>
-                      <label class="checkbox-button__common-label" for="uik-fe__checkbox-list_default_3">Стул для кормления</label>
+                      <label class="checkbox-button__common-label custom-font-style_body-plain" for="uik-fe__checkbox-list_default_3">Стул для кормления</label>
                     </div>
                     <div class="checkbox-button">
                       <input class="checkbox-button__elem" type="checkbox" id="uik-fe__checkbox-list_default_4" checked>
-                      <label class="checkbox-button__common-label" for="uik-fe__checkbox-list_default_4">Кроватка</label>
+                      <label class="checkbox-button__common-label custom-font-style_body-plain" for="uik-fe__checkbox-list_default_4">Кроватка</label>
                     </div>
                     <div class="checkbox-button">
                       <input class="checkbox-button__elem" type="checkbox" id="uik-fe__checkbox-list_default_5">
-                      <label class="checkbox-button__common-label" for="uik-fe__checkbox-list_default_5">Телевизор</label>
+                      <label class="checkbox-button__common-label custom-font-style_body-plain" for="uik-fe__checkbox-list_default_5">Телевизор</label>
                     </div>
                     <div class="checkbox-button">
                       <input class="checkbox-button__elem" type="checkbox" id="uik-fe__checkbox-list_default_6">
-                      <label class="checkbox-button__common-label" for="uik-fe__checkbox-list_default_6">Шампунь</label>
+                      <label class="checkbox-button__common-label custom-font-style_body-plain" for="uik-fe__checkbox-list_default_6">Шампунь</label>
                     </div>
                   </div>
               </div>
@@ -217,349 +237,355 @@
         </div>
       </div>
       <div class="search-page__filtered-items">
-          <div class="room-sample card-style_room-sample">
-            <div class="room-sample__container_top">
-              <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_888-1.png"><img src="static/images/room__thumbnail_888-2.png"><img src="static/images/room__thumbnail_888-3.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_888-1.png">
+        <div class="search-page__filtered-items-title"><span class="custom-font-style_h1">Номера, которые мы для вас подобрали</span></div>
+        <div class="search-page__filtered-items-grid">
+            <div class="room-sample card-style_room-sample">
+              <div class="room-sample__container_top">
+                <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_888-1.png"><img src="static/images/room__thumbnail_888-2.png"><img src="static/images/room__thumbnail_888-3.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_888-1.png">
+                </div>
+                <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
+                </div>
+                <div class="room-sample__arrow-scroller_left scroller" id="888_left">
+                    <label class="material-icons" for="888_left">chevron_left</label>
+                </div>
+                <div class="room-sample__arrow-scroller_right scroller" id="888_right">
+                    <label class="material-icons" for="888_right">chevron_left</label>
+                </div>
               </div>
-              <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
-              </div>
-              <div class="room-sample__arrow-scroller_left scroller" id="888_left">
-                  <label class="material-icons" for="888_left">chevron_left</label>
-              </div>
-              <div class="room-sample__arrow-scroller_right scroller" id="888_right">
-                  <label class="material-icons" for="888_right">chevron_left</label>
+              <div class="room-sample__container_bottom">
+                <div class="room-sample__title-container"> 
+                  <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">888</span><span class="room-booking__title_luxe-mark">ЛЮКС</span>
+                  </div>
+                  <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">9 990</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
+                </div>
+                <div class="room-sample__rate-n-reviews">
+                  <div class="room-sample__rate">
+                      <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+                      </div>
+                  </div>
+                  <div class="room-sample__reviews"><span class="room-booking__price_value">145</span><span class="room-booking__price_addition"> Отзывов</span></div>
+                </div>
               </div>
             </div>
-            <div class="room-sample__container_bottom">
-              <div class="room-sample__title-container"> 
-                <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">888</span><span class="room-booking__title_luxe-mark">ЛЮКС</span>
+            <div class="room-sample card-style_room-sample">
+              <div class="room-sample__container_top">
+                <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_840-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_840-1.png">
                 </div>
-                <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">9 990</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
+                <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
+                </div>
+                <div class="room-sample__arrow-scroller_left scroller" id="840_left">
+                    <label class="material-icons" for="840_left">chevron_left</label>
+                </div>
+                <div class="room-sample__arrow-scroller_right scroller" id="840_right">
+                    <label class="material-icons" for="840_right">chevron_left</label>
+                </div>
               </div>
-              <div class="room-sample__rate-n-reviews">
-                <div class="room-sample__rate">
-                    <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
-                    </div>
+              <div class="room-sample__container_bottom">
+                <div class="room-sample__title-container"> 
+                  <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">840</span>
+                  </div>
+                  <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">9 990</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
                 </div>
-                <div class="room-sample__reviews"><span class="room-booking__price_value">145</span><span class="room-booking__price_addition"> Отзывов</span></div>
+                <div class="room-sample__rate-n-reviews">
+                  <div class="room-sample__rate">
+                      <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span>
+                      </div>
+                  </div>
+                  <div class="room-sample__reviews"><span class="room-booking__price_value">65</span><span class="room-booking__price_addition"> Отзывов</span></div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="room-sample card-style_room-sample">
-            <div class="room-sample__container_top">
-              <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_840-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_840-1.png">
+            <div class="room-sample card-style_room-sample">
+              <div class="room-sample__container_top">
+                <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_980-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_980-1.png">
+                </div>
+                <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
+                </div>
+                <div class="room-sample__arrow-scroller_left scroller" id="980_left">
+                    <label class="material-icons" for="980_left">chevron_left</label>
+                </div>
+                <div class="room-sample__arrow-scroller_right scroller" id="980_right">
+                    <label class="material-icons" for="980_right">chevron_left</label>
+                </div>
               </div>
-              <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
-              </div>
-              <div class="room-sample__arrow-scroller_left scroller" id="840_left">
-                  <label class="material-icons" for="840_left">chevron_left</label>
-              </div>
-              <div class="room-sample__arrow-scroller_right scroller" id="840_right">
-                  <label class="material-icons" for="840_right">chevron_left</label>
+              <div class="room-sample__container_bottom">
+                <div class="room-sample__title-container"> 
+                  <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">980</span><span class="room-booking__title_luxe-mark">ЛЮКС</span>
+                  </div>
+                  <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">8 500</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
+                </div>
+                <div class="room-sample__rate-n-reviews">
+                  <div class="room-sample__rate">
+                      <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
+                      </div>
+                  </div>
+                  <div class="room-sample__reviews"><span class="room-booking__price_value">35</span><span class="room-booking__price_addition"> Отзывов</span></div>
+                </div>
               </div>
             </div>
-            <div class="room-sample__container_bottom">
-              <div class="room-sample__title-container"> 
-                <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">840</span>
+            <div class="room-sample card-style_room-sample">
+              <div class="room-sample__container_top">
+                <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_856-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_856-1.png">
                 </div>
-                <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">9 990</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
+                <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
+                </div>
+                <div class="room-sample__arrow-scroller_left scroller" id="856_left">
+                    <label class="material-icons" for="856_left">chevron_left</label>
+                </div>
+                <div class="room-sample__arrow-scroller_right scroller" id="856_right">
+                    <label class="material-icons" for="856_right">chevron_left</label>
+                </div>
               </div>
-              <div class="room-sample__rate-n-reviews">
-                <div class="room-sample__rate">
-                    <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span>
-                    </div>
+              <div class="room-sample__container_bottom">
+                <div class="room-sample__title-container"> 
+                  <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">856</span>
+                  </div>
+                  <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">7 300</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
                 </div>
-                <div class="room-sample__reviews"><span class="room-booking__price_value">65</span><span class="room-booking__price_addition"> Отзывов</span></div>
+                <div class="room-sample__rate-n-reviews">
+                  <div class="room-sample__rate">
+                      <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+                      </div>
+                  </div>
+                  <div class="room-sample__reviews"><span class="room-booking__price_value">19</span><span class="room-booking__price_addition"> Отзывов</span></div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="room-sample card-style_room-sample">
-            <div class="room-sample__container_top">
-              <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_980-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_980-1.png">
+            <div class="room-sample card-style_room-sample">
+              <div class="room-sample__container_top">
+                <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_740-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_740-1.png">
+                </div>
+                <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
+                </div>
+                <div class="room-sample__arrow-scroller_left scroller" id="740_left">
+                    <label class="material-icons" for="740_left">chevron_left</label>
+                </div>
+                <div class="room-sample__arrow-scroller_right scroller" id="740_right">
+                    <label class="material-icons" for="740_right">chevron_left</label>
+                </div>
               </div>
-              <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
-              </div>
-              <div class="room-sample__arrow-scroller_left scroller" id="980_left">
-                  <label class="material-icons" for="980_left">chevron_left</label>
-              </div>
-              <div class="room-sample__arrow-scroller_right scroller" id="980_right">
-                  <label class="material-icons" for="980_right">chevron_left</label>
+              <div class="room-sample__container_bottom">
+                <div class="room-sample__title-container"> 
+                  <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">740</span>
+                  </div>
+                  <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">6 000</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
+                </div>
+                <div class="room-sample__rate-n-reviews">
+                  <div class="room-sample__rate">
+                      <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span>
+                      </div>
+                  </div>
+                  <div class="room-sample__reviews"><span class="room-booking__price_value">44</span><span class="room-booking__price_addition"> Отзывов</span></div>
+                </div>
               </div>
             </div>
-            <div class="room-sample__container_bottom">
-              <div class="room-sample__title-container"> 
-                <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">980</span><span class="room-booking__title_luxe-mark">ЛЮКС</span>
+            <div class="room-sample card-style_room-sample">
+              <div class="room-sample__container_top">
+                <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_982-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_982-1.png">
                 </div>
-                <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">8 500</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
+                <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
+                </div>
+                <div class="room-sample__arrow-scroller_left scroller" id="982_left">
+                    <label class="material-icons" for="982_left">chevron_left</label>
+                </div>
+                <div class="room-sample__arrow-scroller_right scroller" id="982_right">
+                    <label class="material-icons" for="982_right">chevron_left</label>
+                </div>
               </div>
-              <div class="room-sample__rate-n-reviews">
-                <div class="room-sample__rate">
-                    <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
-                    </div>
+              <div class="room-sample__container_bottom">
+                <div class="room-sample__title-container"> 
+                  <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">982</span>
+                  </div>
+                  <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">5 800</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
                 </div>
-                <div class="room-sample__reviews"><span class="room-booking__price_value">35</span><span class="room-booking__price_addition"> Отзывов</span></div>
+                <div class="room-sample__rate-n-reviews">
+                  <div class="room-sample__rate">
+                      <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
+                      </div>
+                  </div>
+                  <div class="room-sample__reviews"><span class="room-booking__price_value">56</span><span class="room-booking__price_addition"> Отзывов</span></div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="room-sample card-style_room-sample">
-            <div class="room-sample__container_top">
-              <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_856-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_856-1.png">
+            <div class="room-sample card-style_room-sample">
+              <div class="room-sample__container_top">
+                <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_678-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_678-1.png">
+                </div>
+                <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
+                </div>
+                <div class="room-sample__arrow-scroller_left scroller" id="678_left">
+                    <label class="material-icons" for="678_left">chevron_left</label>
+                </div>
+                <div class="room-sample__arrow-scroller_right scroller" id="678_right">
+                    <label class="material-icons" for="678_right">chevron_left</label>
+                </div>
               </div>
-              <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
-              </div>
-              <div class="room-sample__arrow-scroller_left scroller" id="856_left">
-                  <label class="material-icons" for="856_left">chevron_left</label>
-              </div>
-              <div class="room-sample__arrow-scroller_right scroller" id="856_right">
-                  <label class="material-icons" for="856_right">chevron_left</label>
+              <div class="room-sample__container_bottom">
+                <div class="room-sample__title-container"> 
+                  <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">678</span>
+                  </div>
+                  <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">5 500</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
+                </div>
+                <div class="room-sample__rate-n-reviews">
+                  <div class="room-sample__rate">
+                      <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+                      </div>
+                  </div>
+                  <div class="room-sample__reviews"><span class="room-booking__price_value">45</span><span class="room-booking__price_addition"> Отзывов</span></div>
+                </div>
               </div>
             </div>
-            <div class="room-sample__container_bottom">
-              <div class="room-sample__title-container"> 
-                <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">856</span>
+            <div class="room-sample card-style_room-sample">
+              <div class="room-sample__container_top">
+                <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_450-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_450-1.png">
                 </div>
-                <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">7 300</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
+                <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
+                </div>
+                <div class="room-sample__arrow-scroller_left scroller" id="450_left">
+                    <label class="material-icons" for="450_left">chevron_left</label>
+                </div>
+                <div class="room-sample__arrow-scroller_right scroller" id="450_right">
+                    <label class="material-icons" for="450_right">chevron_left</label>
+                </div>
               </div>
-              <div class="room-sample__rate-n-reviews">
-                <div class="room-sample__rate">
-                    <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
-                    </div>
+              <div class="room-sample__container_bottom">
+                <div class="room-sample__title-container"> 
+                  <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">450</span>
+                  </div>
+                  <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">5 300</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
                 </div>
-                <div class="room-sample__reviews"><span class="room-booking__price_value">19</span><span class="room-booking__price_addition"> Отзывов</span></div>
+                <div class="room-sample__rate-n-reviews">
+                  <div class="room-sample__rate">
+                      <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span>
+                      </div>
+                  </div>
+                  <div class="room-sample__reviews"><span class="room-booking__price_value">39</span><span class="room-booking__price_addition"> Отзывов</span></div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="room-sample card-style_room-sample">
-            <div class="room-sample__container_top">
-              <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_740-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_740-1.png">
+            <div class="room-sample card-style_room-sample">
+              <div class="room-sample__container_top">
+                <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_350-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_350-1.png">
+                </div>
+                <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
+                </div>
+                <div class="room-sample__arrow-scroller_left scroller" id="350_left">
+                    <label class="material-icons" for="350_left">chevron_left</label>
+                </div>
+                <div class="room-sample__arrow-scroller_right scroller" id="350_right">
+                    <label class="material-icons" for="350_right">chevron_left</label>
+                </div>
               </div>
-              <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
-              </div>
-              <div class="room-sample__arrow-scroller_left scroller" id="740_left">
-                  <label class="material-icons" for="740_left">chevron_left</label>
-              </div>
-              <div class="room-sample__arrow-scroller_right scroller" id="740_right">
-                  <label class="material-icons" for="740_right">chevron_left</label>
+              <div class="room-sample__container_bottom">
+                <div class="room-sample__title-container"> 
+                  <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">350</span>
+                  </div>
+                  <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">5 000</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
+                </div>
+                <div class="room-sample__rate-n-reviews">
+                  <div class="room-sample__rate">
+                      <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
+                      </div>
+                  </div>
+                  <div class="room-sample__reviews"><span class="room-booking__price_value">77</span><span class="room-booking__price_addition"> Отзывов</span></div>
+                </div>
               </div>
             </div>
-            <div class="room-sample__container_bottom">
-              <div class="room-sample__title-container"> 
-                <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">740</span>
+            <div class="room-sample card-style_room-sample">
+              <div class="room-sample__container_top">
+                <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_666-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_666-1.png">
                 </div>
-                <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">6 000</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
+                <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
+                </div>
+                <div class="room-sample__arrow-scroller_left scroller" id="666_left">
+                    <label class="material-icons" for="666_left">chevron_left</label>
+                </div>
+                <div class="room-sample__arrow-scroller_right scroller" id="666_right">
+                    <label class="material-icons" for="666_right">chevron_left</label>
+                </div>
               </div>
-              <div class="room-sample__rate-n-reviews">
-                <div class="room-sample__rate">
-                    <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span>
-                    </div>
+              <div class="room-sample__container_bottom">
+                <div class="room-sample__title-container"> 
+                  <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">666</span>
+                  </div>
+                  <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">5 000</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
                 </div>
-                <div class="room-sample__reviews"><span class="room-booking__price_value">44</span><span class="room-booking__price_addition"> Отзывов</span></div>
+                <div class="room-sample__rate-n-reviews">
+                  <div class="room-sample__rate">
+                      <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+                      </div>
+                  </div>
+                  <div class="room-sample__reviews"><span class="room-booking__price_value">25</span><span class="room-booking__price_addition"> Отзывов</span></div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="room-sample card-style_room-sample">
-            <div class="room-sample__container_top">
-              <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_982-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_982-1.png">
+            <div class="room-sample card-style_room-sample">
+              <div class="room-sample__container_top">
+                <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_444-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_444-1.png">
+                </div>
+                <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
+                </div>
+                <div class="room-sample__arrow-scroller_left scroller" id="444_left">
+                    <label class="material-icons" for="444_left">chevron_left</label>
+                </div>
+                <div class="room-sample__arrow-scroller_right scroller" id="444_right">
+                    <label class="material-icons" for="444_right">chevron_left</label>
+                </div>
               </div>
-              <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
-              </div>
-              <div class="room-sample__arrow-scroller_left scroller" id="982_left">
-                  <label class="material-icons" for="982_left">chevron_left</label>
-              </div>
-              <div class="room-sample__arrow-scroller_right scroller" id="982_right">
-                  <label class="material-icons" for="982_right">chevron_left</label>
+              <div class="room-sample__container_bottom">
+                <div class="room-sample__title-container"> 
+                  <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">444</span>
+                  </div>
+                  <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">5 000</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
+                </div>
+                <div class="room-sample__rate-n-reviews">
+                  <div class="room-sample__rate">
+                      <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
+                      </div>
+                  </div>
+                  <div class="room-sample__reviews"><span class="room-booking__price_value">15</span><span class="room-booking__price_addition"> Отзывов</span></div>
+                </div>
               </div>
             </div>
-            <div class="room-sample__container_bottom">
-              <div class="room-sample__title-container"> 
-                <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">982</span>
+            <div class="room-sample card-style_room-sample">
+              <div class="room-sample__container_top">
+                <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_352-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_352-1.png">
                 </div>
-                <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">5 800</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
+                <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
+                </div>
+                <div class="room-sample__arrow-scroller_left scroller" id="352_left">
+                    <label class="material-icons" for="352_left">chevron_left</label>
+                </div>
+                <div class="room-sample__arrow-scroller_right scroller" id="352_right">
+                    <label class="material-icons" for="352_right">chevron_left</label>
+                </div>
               </div>
-              <div class="room-sample__rate-n-reviews">
-                <div class="room-sample__rate">
-                    <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
-                    </div>
+              <div class="room-sample__container_bottom">
+                <div class="room-sample__title-container"> 
+                  <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">352</span>
+                  </div>
+                  <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">5 000</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
                 </div>
-                <div class="room-sample__reviews"><span class="room-booking__price_value">56</span><span class="room-booking__price_addition"> Отзывов</span></div>
+                <div class="room-sample__rate-n-reviews">
+                  <div class="room-sample__rate">
+                      <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
+                      </div>
+                  </div>
+                  <div class="room-sample__reviews"><span class="room-booking__price_value">55</span><span class="room-booking__price_addition"> Отзывов</span></div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="room-sample card-style_room-sample">
-            <div class="room-sample__container_top">
-              <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_678-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_678-1.png">
-              </div>
-              <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
-              </div>
-              <div class="room-sample__arrow-scroller_left scroller" id="678_left">
-                  <label class="material-icons" for="678_left">chevron_left</label>
-              </div>
-              <div class="room-sample__arrow-scroller_right scroller" id="678_right">
-                  <label class="material-icons" for="678_right">chevron_left</label>
-              </div>
-            </div>
-            <div class="room-sample__container_bottom">
-              <div class="room-sample__title-container"> 
-                <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">678</span>
-                </div>
-                <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">5 500</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
-              </div>
-              <div class="room-sample__rate-n-reviews">
-                <div class="room-sample__rate">
-                    <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
-                    </div>
-                </div>
-                <div class="room-sample__reviews"><span class="room-booking__price_value">45</span><span class="room-booking__price_addition"> Отзывов</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="room-sample card-style_room-sample">
-            <div class="room-sample__container_top">
-              <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_450-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_450-1.png">
-              </div>
-              <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
-              </div>
-              <div class="room-sample__arrow-scroller_left scroller" id="450_left">
-                  <label class="material-icons" for="450_left">chevron_left</label>
-              </div>
-              <div class="room-sample__arrow-scroller_right scroller" id="450_right">
-                  <label class="material-icons" for="450_right">chevron_left</label>
-              </div>
-            </div>
-            <div class="room-sample__container_bottom">
-              <div class="room-sample__title-container"> 
-                <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">450</span>
-                </div>
-                <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">5 300</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
-              </div>
-              <div class="room-sample__rate-n-reviews">
-                <div class="room-sample__rate">
-                    <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span>
-                    </div>
-                </div>
-                <div class="room-sample__reviews"><span class="room-booking__price_value">39</span><span class="room-booking__price_addition"> Отзывов</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="room-sample card-style_room-sample">
-            <div class="room-sample__container_top">
-              <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_350-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_350-1.png">
-              </div>
-              <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
-              </div>
-              <div class="room-sample__arrow-scroller_left scroller" id="350_left">
-                  <label class="material-icons" for="350_left">chevron_left</label>
-              </div>
-              <div class="room-sample__arrow-scroller_right scroller" id="350_right">
-                  <label class="material-icons" for="350_right">chevron_left</label>
-              </div>
-            </div>
-            <div class="room-sample__container_bottom">
-              <div class="room-sample__title-container"> 
-                <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">350</span>
-                </div>
-                <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">5 000</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
-              </div>
-              <div class="room-sample__rate-n-reviews">
-                <div class="room-sample__rate">
-                    <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
-                    </div>
-                </div>
-                <div class="room-sample__reviews"><span class="room-booking__price_value">77</span><span class="room-booking__price_addition"> Отзывов</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="room-sample card-style_room-sample">
-            <div class="room-sample__container_top">
-              <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_666-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_666-1.png">
-              </div>
-              <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
-              </div>
-              <div class="room-sample__arrow-scroller_left scroller" id="666_left">
-                  <label class="material-icons" for="666_left">chevron_left</label>
-              </div>
-              <div class="room-sample__arrow-scroller_right scroller" id="666_right">
-                  <label class="material-icons" for="666_right">chevron_left</label>
-              </div>
-            </div>
-            <div class="room-sample__container_bottom">
-              <div class="room-sample__title-container"> 
-                <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">666</span>
-                </div>
-                <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">5 000</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
-              </div>
-              <div class="room-sample__rate-n-reviews">
-                <div class="room-sample__rate">
-                    <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
-                    </div>
-                </div>
-                <div class="room-sample__reviews"><span class="room-booking__price_value">25</span><span class="room-booking__price_addition"> Отзывов</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="room-sample card-style_room-sample">
-            <div class="room-sample__container_top">
-              <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_444-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_444-1.png">
-              </div>
-              <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
-              </div>
-              <div class="room-sample__arrow-scroller_left scroller" id="444_left">
-                  <label class="material-icons" for="444_left">chevron_left</label>
-              </div>
-              <div class="room-sample__arrow-scroller_right scroller" id="444_right">
-                  <label class="material-icons" for="444_right">chevron_left</label>
-              </div>
-            </div>
-            <div class="room-sample__container_bottom">
-              <div class="room-sample__title-container"> 
-                <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">444</span>
-                </div>
-                <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">5 000</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
-              </div>
-              <div class="room-sample__rate-n-reviews">
-                <div class="room-sample__rate">
-                    <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
-                    </div>
-                </div>
-                <div class="room-sample__reviews"><span class="room-booking__price_value">15</span><span class="room-booking__price_addition"> Отзывов</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="room-sample card-style_room-sample">
-            <div class="room-sample__container_top">
-              <div class="room-sample__image"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_352-1.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_no-image.png"><img src="static/images/room__thumbnail_352-1.png">
-              </div>
-              <div class="room-sample__listing-indicator"><span class="material-icons">circle</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span><span class="material-icons">panorama_fish_eye</span>
-              </div>
-              <div class="room-sample__arrow-scroller_left scroller" id="352_left">
-                  <label class="material-icons" for="352_left">chevron_left</label>
-              </div>
-              <div class="room-sample__arrow-scroller_right scroller" id="352_right">
-                  <label class="material-icons" for="352_right">chevron_left</label>
-              </div>
-            </div>
-            <div class="room-sample__container_bottom">
-              <div class="room-sample__title-container"> 
-                <div class="room-booking__title"><span class="room-booking__title_prefix custom-font-style_body-plain">№ </span><span class="custom-font-style_h2">352</span>
-                </div>
-                <div class="room-booking__price custom-font-style_body-plain"><span class="room-booking__price_value">5 000</span><span class="room-booking__price_symbol">₽ </span><span class="room-booking__price_addition">в сутки</span></div>
-              </div>
-              <div class="room-sample__rate-n-reviews">
-                <div class="room-sample__rate">
-                    <div class="star-rate"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
-                    </div>
-                </div>
-                <div class="room-sample__reviews"><span class="room-booking__price_value">55</span><span class="room-booking__price_addition"> Отзывов</span></div>
-              </div>
-            </div>
-          </div>
+        </div>
+        <div class="search-page__filtered-items-pagination">
+            <div id="pagination"></div>
+        </div>
       </div>
     </div>
   </main>
   <footer class="website__footer">
     <div class="website__footer_default">
       <div class="footer footer_default">
-        <div class="footer__sections_upper">
+        <div class="footer__sections_upper fullscreen-bottom-border">
           <div class="footer__content">
             <div class="footer__content_shell">
               <div class="footer__logotype">
