@@ -72,3 +72,8 @@ $optionButtonSize: 30px;
 .hidden-controller {
   visibility: hidden;
 }
+
+.button-frozen {
+  pointer-events: none;
+  opacity: .5;
+}

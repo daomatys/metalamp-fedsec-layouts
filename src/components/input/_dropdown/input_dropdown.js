@@ -5,13 +5,19 @@ const find = function findDropdownContainers() {
 }
 
 const initListeners = function initDropdownElementsEventListeners( item ) {
-  const controllersBar = item.querySelector('.input__clear-n-submit');
   const optionCalcSections = item.querySelectorAll('.input__option_buttons');
+  const controllersBar = item.querySelector('.input__clear-n-submit');
 
   if ( controllersBar ) {
+    const optionCounters = item.querySelectorAll('.input__option_counter');
+    const countersSum = defineCountersSum( optionCounters );
     const controllers = defineButtons( controllersBar );
     const resetController = controllers.left;
     const submitController = controllers.right;
+
+    if ( countersSum > 0 ) {
+      changeControllerState( resetController );
+    }
   
     resetController.addEventListener('click', () => resetCounters( resetController, optionCalcSections ));
     submitController.addEventListener('click', () => submitForm( submitController ));
@@ -33,7 +39,12 @@ const defineButtons = function defineFirstAndLastChildByItsParent( parent ) {
   const firstElement = parent.firstElementChild;
   const lastElement = parent.lastElementChild;
 
-  return { left: firstElement, right: lastElement };
+  const result = {
+    left: firstElement,
+    right: lastElement
+  };
+
+  return result;
 }
 
 const counterMathOps = function counterIncreaseByAddificationValue( buttons, counter, addification ) {
@@ -50,15 +61,15 @@ const adjustButtonsState = function optionsButtonsStateAccordingToMinAndMaxRange
 
   if ( caseA || caseB ) {
     if ( caseA ) {
-      buttons.left.classList.add('frozen');
+      buttons.left.classList.add('button-frozen');
     }
     if ( caseB ) {
-      buttons.right.classList.add('frozen');
+      buttons.right.classList.add('button-frozen');
     }
   }
   if ( !(caseA || caseB) ) {
-    buttons.left.classList.remove('frozen');
-    buttons.right.classList.remove('frozen');
+    buttons.left.classList.remove('button-frozen');
+    buttons.right.classList.remove('button-frozen');
   }
 }
 
@@ -73,6 +84,14 @@ const resetCounters = function resetCounterValueOnButtonClick( controller, secti
   });
 
   changeControllerState( controller );
+}
+
+const defineCountersSum = function( counters ) {
+  const result = counters
+    .map( counter => Number( counter.textContent ) )
+    .reduce( prev, curr => prev + curr );
+  
+  return result;
 }
 
 const changeControllerState = function toggleControllerHiddenClass( controller ) {
