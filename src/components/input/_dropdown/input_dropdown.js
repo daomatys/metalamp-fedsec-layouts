@@ -22,12 +22,12 @@ const initListeners = function initElementsEventListeners( item ) {
 
 const initControllers = function initControllersEventListeners( counters, controllers, buttonGroups ) {
   const resetController = controllers.left;
-  const submitController = controllers.right;
+  const acceptController = controllers.right;
 
   defineResetControllerState( counters, controllers );
 
   resetController.addEventListener('click', () => resetCounters( controllers, counters, buttonGroups ));
-  submitController.addEventListener('click', () => submitForm( submitController ));
+  acceptController.addEventListener('click', () => acceptForm( acceptController ));
 }
 
 const defineResetControllerState = function( counters, controllers ) {
@@ -110,7 +110,7 @@ const defineCountersSum = function( counters ) {
   return result;
 }
 
-const submitForm = function submitFormOnButtonClick( controller ) {
+const acceptForm = function acceptFormOnButtonClick( controller ) {
   const frame = controller.closest('.input__element').querySelector('.input__frame');
 
   frame.dispatchEvent( new Event('click') );
