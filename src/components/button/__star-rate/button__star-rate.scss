@@ -2,7 +2,7 @@
 @import "../../../styles/gradient-fill-entities.scss";
 
 .star-rate {
-  @extend .gradient-fill;
+  @extend %gradient-fill;
 
   &__line-array {
     grid-gap: 20px;

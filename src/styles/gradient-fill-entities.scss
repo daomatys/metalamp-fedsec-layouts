@@ -1,6 +1,6 @@
 @import "@variables";
 
-.gradient-fill {
+%gradient-fill {
   background: $primary-gradient;
   background-clip: text;
   -webkit-background-clip: text;

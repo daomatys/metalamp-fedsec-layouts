@@ -14,7 +14,7 @@
       opacity: 1;
 
       & > .like-button__text_icon > label {
-        @extend .gradient-fill;
+        @extend %gradient-fill;
       }
 
       & > .like-button__text_counter > label {
