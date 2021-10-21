@@ -291,7 +291,8 @@
 
 .button-style_text {
   width: max-content;
-  white-space: nowrap; }
+  white-space: nowrap;
+  transition: opacity .5s ease; }
   .button-style_text > button {
     color: #BC9CFF;
     padding: 0; }
@@ -1225,13 +1226,14 @@
     border: 1px solid rgba(31, 32, 65, 0.25);
     border-radius: 50%;
     font-weight: normal;
-    cursor: pointer; }
+    cursor: pointer;
+    transition: opacity .5s ease; }
 
 .input__clear-n-submit {
   margin-block: 13px 5px; }
 
 .hidden-controller {
-  visibility: hidden; }
+  opacity: 0; }
 
 .button-frozen {
   pointer-events: none;
@@ -1745,9 +1747,67 @@ object {
 /*!********************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/website/__no-page/website__no-page.scss ***!
   \********************************************************************************************************************************************/
-.not-found_text {
-  color: #1f2041;
-  font-size: 72; }
+.no-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: 100%;
+  background-image: url(static/images/not-found.png);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  object-fit: cover; }
+  .no-page__not-found_title {
+    text-transform: uppercase;
+    font-size: 96px;
+    line-height: 96px; }
+  .no-page__not-found_note {
+    font-size: 18px;
+    line-height: 24px; }
+  .no-page__not-found_title, .no-page__not-found_note {
+    position: relative; }
+    .no-page__not-found_title::before, .no-page__not-found_title::after, .no-page__not-found_note::before, .no-page__not-found_note::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.8); }
+    .no-page__not-found_title::before, .no-page__not-found_note::before {
+      left: 2px;
+      text-shadow: -1px 0 #ff0000;
+      animation: glitch-anim 1.7s infinite linear alternate-reverse; }
+    .no-page__not-found_title::after, .no-page__not-found_note::after {
+      left: -2px;
+      text-shadow: -1px 0 #008000;
+      animation: glitch-anim 1.5s infinite linear alternate-reverse; }
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(99px, 9999px, 54px, 0); }
+  10% {
+    clip: rect(38px, 9999px, 55px, 0); }
+  20% {
+    clip: rect(41px, 9999px, 23px, 0); }
+  30% {
+    clip: rect(20px, 9999px, 96px, 0); }
+  40% {
+    clip: rect(87px, 9999px, 41px, 0); }
+  50% {
+    clip: rect(15px, 9999px, 80px, 0); }
+  60% {
+    clip: rect(41px, 9999px, 67px, 0); }
+  70% {
+    clip: rect(76px, 9999px, 61px, 0); }
+  80% {
+    clip: rect(44px, 9999px, 19px, 0); }
+  90% {
+    clip: rect(38px, 9999px, 49px, 0); }
+  100% {
+    clip: rect(71px, 9999px, 56px, 0); } }
 
 /*!******************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/pages/website/__registration/website__registration.scss ***!
