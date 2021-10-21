@@ -12,8 +12,6 @@ function expanderActivation({target}) {
   const aim = parent.querySelector('.expander__aim');
   const icon = parent.querySelector('.material-icons');
 
-  console.log(expander)
-
   const isExpanderActive = !expander.hasAttribute('checked');
 
   if ( isExpanderActive ) {
