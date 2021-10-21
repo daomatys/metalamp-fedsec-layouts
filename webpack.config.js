@@ -4,7 +4,9 @@ const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const miniCss = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+
 
 const PATHS = {
   src: path.join(__dirname, './src'),
@@ -68,7 +70,7 @@ module.exports = {
       {
         test:/\.(s*)css$/,
         use: [
-          miniCss.loader,
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader'
         ]
@@ -97,9 +99,10 @@ module.exports = {
       template: `${PAGES_DIR[index]}/${page}`,
       filename: `./${page.replace(/\.pug/,'.html')}`
     })),
-    new miniCss({
+    new MiniCssExtractPlugin({
       filename: 'index.css',
     }),
+    new CssMinimizerPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
@@ -108,6 +111,12 @@ module.exports = {
     }),
     //new CleanWebpackPlugin()
   ],
+
+  optimization: {
+    minimizer: [
+      new CssMinimizerPlugin(),
+    ],
+  },
 
   resolve: {
     alias: {
