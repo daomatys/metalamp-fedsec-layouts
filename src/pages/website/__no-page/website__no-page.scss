@@ -40,12 +40,12 @@
       }
 
       &::before {
-        left: 2px;
-        text-shadow: -1px 0 #ff0000;
+        left: -2px;
+        text-shadow: 1px 0 #ff0000;
         animation: glitch-anim 1.7s infinite linear alternate-reverse;
       }
       &::after {
-        left: -2px;
+        left: 2px;
         text-shadow: -1px 0 #008000;
         animation: glitch-anim 1.5s infinite linear alternate-reverse;
       }
@@ -58,7 +58,7 @@
 
   @for $index from 0 through $iterations {
     #{ percentage( $index * ( 1 / $iterations ) ) } {
-      clip: rect( random(100) + px, 9999px, random(100) + px, 0 );
+      clip: rect( random(100) + px, 100vw, random(100) + px, 0 );
     }
   }
 }
