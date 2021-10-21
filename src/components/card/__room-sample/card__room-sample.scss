@@ -1,9 +1,10 @@
 @import "@variables";
 
 $cardWidth: 270px;
+$black: #000000;
 
 .room-sample {
-  background-color: white;
+  background-color: $white;
   width: $cardWidth;
 
   &__container_top {
@@ -15,7 +16,7 @@ $cardWidth: 270px;
     overflow: hidden;
 
     & .material-icons {
-      color: white;
+      color: $white;
     }
   }
 
@@ -39,10 +40,16 @@ $cardWidth: 270px;
       justify-content: center;
       height: inherit;
       width: 42px;
-      background: linear-gradient(90deg, rgba(black, 0.5) 0%, rgba(black, 0) 99.99%, rgba(white, 0) 100%);
+      background: linear-gradient(90deg, rgba($black, 0.5) 0%, rgba($black, 0) 99.99%, rgba($white, 0) 100%);
       cursor: pointer;
+      opacity: 0;
+      transition: opacity .5s ease;
 
-      & > label {
+      &:hover {
+        opacity: 1;
+      }
+
+      & > .material-icons {
         cursor: inherit;
       }
     }

@@ -10,9 +10,11 @@ mixin cardRoomSample( item )
   - let suffixes = []
 
   while index < 4
-    - suffixes[++index] = picturesCount < index ? 'no-image' : item.room + '-' + index
-    - suffixes[0] = suffixes[4]
-    - suffixes[5] = suffixes[1]
+    - index += 1
+    - suffixes[index] = picturesCount < index ? 'no-image' : `${item.room}-${index}`
+    
+  - suffixes[0] = suffixes[4]
+  - suffixes[5] = suffixes[1]
 
   .room-sample.card-style_room-sample
     .room-sample__container_top
