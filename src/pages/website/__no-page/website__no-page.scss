@@ -49,7 +49,7 @@ $noteSize: 18px;
       }
       &::after {
         left: 2px;
-        text-shadow: -1px 0 #008000;
+        text-shadow: -1px 0 #00ff00;
         animation: glitch-anim 1.4s infinite linear alternate-reverse;
       }
     }
@@ -57,11 +57,15 @@ $noteSize: 18px;
 }
 
 @keyframes glitch-anim {
-  $iterations: 10;
-
-  @for $index from 0 through $iterations {
-    #{ percentage( $index * ( 1 / $iterations ) ) } {
-      clip: rect( random( $titleSize ) + px, 100vw, random( $titleSize ) + px, 0 );
-    }
-  }
+  0% {   clip: rect(14px, 100vw, 41px, 0); }
+  10% {  clip: rect(10px, 100vw, 94px, 0); }
+  20% {  clip: rect(82px, 100vw, 53px, 0); }
+  30% {  clip: rect(55px, 100vw, 8px, 0);  }
+  40% {  clip: rect(85px, 100vw, 71px, 0); }
+  50% {  clip: rect(60px, 100vw, 35px, 0); }
+  60% {  clip: rect(74px, 100vw, 58px, 0); }
+  70% {  clip: rect(85px, 100vw, 61px, 0); }
+  80% {  clip: rect(3px, 100vw, 30px, 0);  }
+  90% {  clip: rect(1px, 100vw, 7px, 0);   }
+  100% { clip: rect(68px, 100vw, 73px, 0); }
 }
