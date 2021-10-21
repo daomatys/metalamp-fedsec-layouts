@@ -8,7 +8,7 @@
   align-items: center;
 
   &__elem {
-    @extend .oval-button_frame;
+    @extend %oval-button_frame;
 
     &:checked + .like-button__text {
       opacity: 1;

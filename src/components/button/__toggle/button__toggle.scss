@@ -11,13 +11,13 @@
   }
 
   &__elem {
-    @extend .oval-button_frame;
+    @extend %oval-button_frame;
     display: flex;
     align-items: center;
     margin-right: 10px;
 
     &::after {
-      @extend .oval-button_dot-marker;
+      @extend %oval-button_dot-marker;
       display: flex;
       margin-inline: 3px;
       -webkit-transition: transform 0.3s ease;
