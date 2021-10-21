@@ -54,12 +54,11 @@
 }
 
 @keyframes glitch-anim {
-  $steps: 10;
+  $iterations: 10;
 
-  @for $i from 0 through $steps {
-    #{ percentage( $i * ( 1 / $steps ) ) } {
+  @for $index from 0 through $iterations {
+    #{ percentage( $index * ( 1 / $iterations ) ) } {
       clip: rect( random(100) + px, 9999px, random(100) + px, 0 );
     }
   }
 }
-
