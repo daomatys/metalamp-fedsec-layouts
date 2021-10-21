@@ -1,8 +1,10 @@
+include /pages/pages.pug
 include /components/footer/footer.pug
 include /components/header/header.pug
 
 head
   block head
+  +pageFavicons()
 
 body.website__body
   header.website__header
@@ -12,6 +14,6 @@ body.website__body
 
   footer.website__footer
     .website__footer_default
-      +footer({ type: 'default' })
+      +footer({ type: "default" })
     .website__footer_mobile 
-      +footer({ type: 'mobile' })
+      +footer({ type: "mobile" })

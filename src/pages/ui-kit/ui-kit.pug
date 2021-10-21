@@ -1,7 +1,9 @@
+include /pages/pages.pug
 include /components/logo/logo.pug
 
 head 
   block head
+  +pageFavicons()
 
 block body
   header.ui-kit__header
