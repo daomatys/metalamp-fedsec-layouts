@@ -110,8 +110,10 @@ const defineCountersSum = function( counters ) {
   return result;
 }
 
-const submitForm = function submitFormOnButtonClick() {
-  
+const submitForm = function submitFormOnButtonClick( controller ) {
+  const frame = controller.closest('.input__element').querySelector('.input__frame');
+
+  frame.dispatchEvent( new Event('click') );
 }
 
 find();
