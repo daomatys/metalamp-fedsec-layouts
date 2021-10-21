@@ -61,6 +61,7 @@ $optionButtonSize: 30px;
       border-radius: 50%;
       font-weight: normal;
       cursor: pointer;
+      transition: opacity .5s ease;
     }
   }
 
@@ -70,7 +71,7 @@ $optionButtonSize: 30px;
 }
 
 .hidden-controller {
-  visibility: hidden;
+  opacity: 0;
 }
 
 .button-frozen {

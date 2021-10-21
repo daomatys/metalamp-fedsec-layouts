@@ -95,6 +95,7 @@
   &_text {
     width: max-content;
     white-space: nowrap;
+    transition: opacity .5s ease;
 
     & > button {
       color: $perfume;

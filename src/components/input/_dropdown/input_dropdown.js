@@ -11,6 +11,7 @@ const initListeners = function initElementsEventListeners( item ) {
 
   if ( controllersBar ) {
     const controllers = defineButtons( controllersBar );
+
     initControllers( counters, controllers, buttonGroups );
     buttonGroups.forEach( buttons => initButtons( buttons, counters, controllers ) );
   }
@@ -58,11 +59,10 @@ const defineButtons = function defineFirstAndLastChildByItsParent( parent ) {
   return result;
 }
 
-const updateDropdown = function counterIncreaseByAddificationValue( buttons, counter, addification, controllers, counters ) {
+const updateDropdown = function updateCalcsAndControllersToCurrentState( buttons, counter, addification, controllers, counters ) {
   const newCounterValue = parseInt( counter.textContent ) + addification;
 
   adjustButtonsState( buttons, newCounterValue, 'button-frozen' );
-
   counter.textContent = newCounterValue;
 
   if ( controllers ) {
