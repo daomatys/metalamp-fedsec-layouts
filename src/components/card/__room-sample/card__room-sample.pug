@@ -21,19 +21,16 @@ mixin cardRoomSample( item )
       .room-sample__image
         each suffix in suffixes
           img( src=require(`/src/assets/images/raster/room/__thumbnail/room__thumbnail_${ suffix }.png`) )
-
       .room-sample__listing-indicator
         +materialIcon("circle")
         +materialIcon("panorama_fish_eye")
         +materialIcon("panorama_fish_eye")
         +materialIcon("panorama_fish_eye")
-
-      .room-sample__arrow-scroller_left.scroller( id=itemLeftID )
-        +materialIcon("chevron_left", itemLeftID)
-
-      .room-sample__arrow-scroller_right.scroller( id=itemRightID )
-        +materialIcon("chevron_left", itemRightID)
-
+      .room-sample__arrows-container
+        .room-sample__arrow-scroller_left.scroller( id=itemLeftID )
+          +materialIcon("chevron_left", itemLeftID)
+        .room-sample__arrow-scroller_right.scroller( id=itemRightID )
+          +materialIcon("chevron_left", itemRightID)
     .room-sample__container_bottom
       .room-sample__title-container 
         .room-booking__title
@@ -45,7 +42,6 @@ mixin cardRoomSample( item )
           span.room-booking__price_value #{ item.price.toLocaleString("ru-RU") }
           span.room-booking__price_symbol ₽ 
           span.room-booking__price_addition в сутки
-
       .room-sample__rate-n-reviews
         .room-sample__rate
           +starRateButton( item.count.rate )
