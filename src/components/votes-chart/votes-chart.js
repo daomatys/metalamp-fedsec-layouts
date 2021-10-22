@@ -6,7 +6,7 @@ const votes = function() {
 
 const onPointerOver = function XXZ({target}) {
   const lastWidthValue = target.getAttribute('stroke-width');
-  const newWidthValue = 30;
+  const newWidthValue = 36;
 
   target.setAttribute('stroke-width', newWidthValue);
 
