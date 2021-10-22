@@ -41,7 +41,7 @@ mixin votesChart( items=[] )
     .votes-chart__legend
       - const sortedItems = sortArray( items )
       each item in sortedItems
-        label.votes-chart__legend-item( for=`votes-chart-${item.gradient}` )
+        .votes-chart__legend-item( data-link=`votes-chart-${item.gradient}` )
           .votes-chart__legend-item_marker( class=`marker_${item.gradient}` )
           .votes-chart__legend-item_text.custom-font-style_body #{item.legend}
 
