@@ -30,6 +30,7 @@ mixin votesChart( items=[] )
             stroke-dasharray=`${strokeFilled - strokeGap} ${strokeLength}`
             stroke-dashoffset=strokeOffset
             data-votes=item.votes
+            data-votes-total=votesTotal
           )
           - strokeOffset -= strokeFilled
 
