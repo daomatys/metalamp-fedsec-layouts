@@ -10,21 +10,21 @@ mixin votesChart( items=[] )
 
   .votes-chart
     .votes-chart__diagram
-      svg.votes-chart__diagram-element( width='120' height='120' viewBox='0 0 120 120' preserveAspectRatio='none' )
+      svg.votes-chart__diagram-element( width="120" height="120" viewBox="0 0 120 120" preserveAspectRatio="none" )
         defs
           each item in items
             - votesTotal += item.votes
-            linearGradient( id=`${ item.gradient }-gradient` x1='1' y1='0' x2='0' y2='0' )
-              stop( class=`gradient__${ item.gradient }_start` offset='0%' )
-              stop( class=`gradient__${ item.gradient }_end`   offset='100%' )
+            linearGradient( id=`${ item.gradient }-gradient` x1="1" y1="0" x2="0" y2="0" )
+              stop( class=`gradient__${ item.gradient }_start` offset="0%" )
+              stop( class=`gradient__${ item.gradient }_end`   offset="100%" )
 
         each item in items
           - const votesPercentage = item.votes / votesTotal
           - const strokeFilled = item.votes !== 0 ? strokeLength * votesPercentage : strokeGap
           circle.votes-chart__diagram-element_unit(
             r=figureInnerRadius
-            cx='50%'
-            cy='50%'
+            cx="50%"
+            cy="50%"
             stroke=`url(#${ item.gradient }-gradient)`
             stroke-width=strokeWidth
             stroke-dasharray=`${strokeFilled - strokeGap} ${strokeLength}`
@@ -47,13 +47,13 @@ mixin votesChart( items=[] )
 
 -
   function defineWordEnding( num ) {
-    let result = ''
+    let result = ""
 
     if ( Math.floor(num/10)===1 || num%10<1 || num%10>4 ) {
-      result = 'ов';
+      result = "ов";
     } else {
       if ( num%10>1 ) {
-        result = 'a';
+        result = "a";
       }
     }
     return result;

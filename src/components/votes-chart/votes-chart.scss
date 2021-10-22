@@ -12,10 +12,11 @@
 
   &__diagram-element {
     animation: infiniteRotation 60s linear infinite;
+    clip-path: circle(50%);
 
     &_unit {
       fill: none;
-      transition: all 0.3s ease;
+      transition: stroke-width 0.3s ease;
       cursor: pointer;
     }
   }
