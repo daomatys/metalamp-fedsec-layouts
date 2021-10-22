@@ -31,6 +31,7 @@
     &_votes,
     &_word {
       color: $perfume;
+      transition: color .3s ease;
     }
   }
 
@@ -44,6 +45,7 @@
   &__legend-item {
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     &_marker {
       border-radius: 50%;
@@ -53,8 +55,6 @@
     }
   }
 }
-
-
 
 .gradient {
   &__primary {
