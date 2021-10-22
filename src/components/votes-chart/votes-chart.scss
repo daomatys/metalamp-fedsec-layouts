@@ -16,8 +16,9 @@
 
     &_unit {
       fill: none;
-      transition: stroke-width 0.3s ease;
+      transition: all .5s ease;
       cursor: pointer;
+      outline: none;
     }
   }
 
@@ -31,7 +32,7 @@
     &_votes,
     &_word {
       color: $perfume;
-      transition: color .3s ease;
+      transition: color .5s ease;
     }
   }
 

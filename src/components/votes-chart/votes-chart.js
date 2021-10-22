@@ -1,7 +1,7 @@
 const init = function initEventListeners() {
   const arcs = document.querySelectorAll('.votes-chart__diagram-element_unit');
 
-  arcs.forEach( arc => arc.addEventListener('focus', () => onFocus( arc ), { once: true }) );
+  arcs.forEach( arc => arc.addEventListener('focus', () => onFocus( arc )) );
 }
 
 const onFocus = function onFocusEvent(arc) {
