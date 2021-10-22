@@ -15,7 +15,8 @@
 
     &_unit {
       fill: none;
-      transition: stroke-width 0.3s ease;
+      transition: all 0.3s ease;
+      cursor: pointer;
     }
   }
 

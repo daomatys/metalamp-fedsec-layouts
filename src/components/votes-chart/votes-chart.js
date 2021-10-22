@@ -7,15 +7,20 @@ const votes = function() {
 }
 
 const onPointerOver = function XXZ({target}) {
-  const lastAttribute = target.getAttribute('stroke-width');
+  const lastWidthValue = target.getAttribute('stroke-width');
+  const lastRadius = target.getAttribute('r');
+  const newWidthValue = 25;
+  const newRadius = 60 - newWidthValue / 2;
 
-  target.setAttribute('stroke-width', 9);
+  target.setAttribute('stroke-width', newWidthValue);
+  target.setAttribute('r', newRadius);
 
-  target.addEventListener('pointerout', () => onPointerOut( target, lastAttribute ), {once: true});
+  target.addEventListener('pointerout', () => onPointerOut( target, lastWidthValue, lastRadius ), {once: true});
 }
 
-const onPointerOut = function ASFSA( target, lastAttribute ) {
-  target.setAttribute('stroke-width', lastAttribute);
+const onPointerOut = function ASFSA( target, lastWidthValue, lastRadius ) {
+  target.setAttribute('stroke-width', lastWidthValue);
+  target.setAttribute('r', lastRadius);
 }
 
 votes();
