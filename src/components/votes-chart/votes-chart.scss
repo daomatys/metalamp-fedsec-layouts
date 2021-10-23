@@ -1,12 +1,10 @@
 @import "@variables";
 
 .votes-chart {
-  &,
-  &__legend {
-    display: flex;
-    align-items: flex-start;
-  }
+  align-items: flex-end;
 
+  &,
+  &__legend,
   &__diagram,
   &__diagram-text,
   &__legend-item {
@@ -46,6 +44,7 @@
 
   &__legend {
     flex-direction: column;
+    align-items: flex-start;
     justify-content: flex-end;
     margin-left: 30px;
   }
