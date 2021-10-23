@@ -1,15 +1,18 @@
-const init = function() {
+const init = function initEverythingForRenderAndListen() {
   const chart = document.querySelector('.votes-chart');
   const arcs = chart.querySelectorAll('.votes-chart__diagram-element_unit');
   const legendItems = chart.querySelectorAll('.votes-chart__legend-item');
-  const diagramTextBlock = chart.querySelector('.votes-chart__diagram-text');
+
+  const diagramText = chart.querySelector('.votes-chart__diagram-text');
+  const diagramTextCounter = diagramText.firstElementChild;
+  const diagramTextWorder = diagramText.lastElementChild;
 
   const votesTotal = [...arcs].map( arc => Number( arc.getAttribute('data-votes') ) ).reduce( (prev, curr) => prev + curr );
 
   renderArcs( arcs, votesTotal );
-  renderDiagramText( diagramTextBlock, votesTotal );
+  renderTexts( diagramTextCounter, diagramTextWorder, votesTotal );
 
-  arcs.forEach( arc => arc.addEventListener('focus', () => onFocus( arc )) );
+  arcs.forEach( arc => arc.addEventListener('focus', () => onFocus( arc, diagramTextCounter, diagramTextWorder )) );
   legendItems.forEach( item => item.addEventListener('pointerdown', (event) => onLegendClick( event, item )) );
 }
 
@@ -39,14 +42,9 @@ const renderArcs = function renderArcsSVGFigures( arcs, votesTotal ) {
   });
 }
 
-const renderDiagramText = function renderDiagramBlockInnerTextSpans( block, votesTotal ) {
-  const count = block.firstElementChild;
-  const word = block.lastElementChild;
-
-  console.log(count)
-
-  count.textContent = votesTotal;
-  word.textContent = 'голос' + wordEnding( votesTotal );
+const renderTexts = function renderDiagramBlockInnerTextSpans( counter, worder, num ) {
+  counter.textContent = num;
+  worder.textContent = defineWord( num );
 }
 
 const onLegendClick = function onLegendClickEvent( event, item ) {
@@ -58,17 +56,12 @@ const onLegendClick = function onLegendClickEvent( event, item ) {
   aim.focus();
 }
 
-const onFocus = function onFocusEvent( arc ) {
-  const defineElement = suffix => document.querySelector(`.votes-chart__diagram-text_${suffix}`);
-
-  const centralTextVotes = defineElement('votes');
-  const centralTextWord = defineElement('word');
-
-  const votesTotal = centralTextVotes.textContent;
+const onFocus = function onFocusEvent( arc, counter, worder ) {
+  const votesTotal = counter.textContent;
   const votes = arc.getAttribute('data-votes');
 
-  const wordOriginal = centralTextWord.textContent;
-  const word = 'голос' + wordEnding( votes );
+  const wordOriginal = worder.textContent;
+  const word = defineWord( votes );
 
   const lastWidthValue = arc.getAttribute('stroke-width');
   const newWidthValue = 32;
@@ -78,8 +71,8 @@ const onFocus = function onFocusEvent( arc ) {
       elem.textContent = text;
       elem.classList.toggle(`gradient__${arc.id.slice(14)}_start`);
     }
-    switchState( centralTextVotes, vvote );
-    switchState( centralTextWord, wword );
+    switchState( counter, vvote );
+    switchState( worder, wword );
 
     arc.setAttribute('stroke-width', vvalue);
   }
@@ -89,16 +82,16 @@ const onFocus = function onFocusEvent( arc ) {
   arc.addEventListener('blur', () => apply( lastWidthValue, votesTotal, wordOriginal ), { once: true });
 }
 
-const wordEnding = function defineWordEndingAccordingToNumber( num ) {
-  let result = ""
+const defineWord = function defineWordEndingAccordingToNumber( num ) {
+  let result = 'голос'
 
   if ( Math.floor(num/10)===1 || num%10<1 || num%10>4 ) {
-    result = "ов";
- } else {
+    result += 'ов';
+  } else {
     if ( num%10>1 ) {
-      result = "a";
-   }
- }
+      result += 'a';
+    }
+  }
   return result;
 }
 
