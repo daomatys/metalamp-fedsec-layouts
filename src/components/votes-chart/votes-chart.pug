@@ -1,64 +1,24 @@
-mixin votesChart( items=[] )
-  - const strokeWidth = 4
-  - const figureOuterRadius = 60
-  - const figureInnerRadius = figureOuterRadius - strokeWidth / 2
-  - const strokeLength = 2 * Math.PI.toFixed(2) * figureInnerRadius
-  - const strokeGap = 4
-
-  - let votesTotal = 0
-  - let strokeOffset = -strokeGap / 2
-
+mixin votesChart( item )
   .votes-chart
     .votes-chart__diagram
       svg.votes-chart__diagram-element( width="120" height="120" viewBox="0 0 120 120" preserveAspectRatio="none" )
         defs
-          each item in items
-            - votesTotal += item.votes
-            linearGradient( id=`${item.gradient}-gradient` x1="1" y1="0" x2="0" y2="0" )
-              stop( class=`gradient__${item.gradient}_start` offset="0%" )
-              stop( class=`gradient__${item.gradient}_end`   offset="100%" )
-
-        each item in items
-          - const votesPercentage = item.votes / votesTotal
-          - const strokeFilled = item.votes !== 0 ? strokeLength * votesPercentage : strokeGap
-          circle.votes-chart__diagram-element_unit(
-            id=`votes-chart-${item.gradient}`
-            r=figureInnerRadius
-            cx="50%"
-            cy="50%"
-            stroke=`url(#${item.gradient}-gradient)`
-            stroke-width=strokeWidth
-            stroke-dasharray=`${strokeFilled - strokeGap} ${strokeLength}`
-            stroke-dashoffset=strokeOffset
-            data-votes=item.votes
-          )
-          - strokeOffset -= strokeFilled
-
+          each arc in item.arcs
+            linearGradient( id=`${arc.gradient}-gradient` x1="1" y1="0" x2="0" y2="0" )
+              stop( class=`gradient__${arc.gradient}_start` offset="0%" )
+              stop( class=`gradient__${arc.gradient}_end`   offset="100%" )
+        each arc in items
+          circle.votes-chart__diagram-element_unit( id=`votes-chart-${arc.gradient}` cx="50%" cy="50%" data-votes=arc.votes )
       .votes-chart__diagram-text 
-        span.votes-chart__diagram-text_votes.custom-font-style_h1 #{votesTotal}
-        span.votes-chart__diagram-text_word.custom-font-style_h3 голос#{defineWordEnding( votesTotal )}
-
+        span.votes-chart__diagram-text_votes.custom-font-style_h1
+        span.votes-chart__diagram-text_word.custom-font-style_h3
     .votes-chart__legend
       - const sortedItems = sortArray( items )
       each item in sortedItems
         .votes-chart__legend-item( data-link=`votes-chart-${item.gradient}` )
           .votes-chart__legend-item_marker( class=`marker_${item.gradient}` )
           .votes-chart__legend-item_text.custom-font-style_body #{item.legend}
-
 -
-  function defineWordEnding( num ) {
-    let result = ""
-
-    if ( Math.floor(num/10)===1 || num%10<1 || num%10>4 ) {
-      result = "ов";
-   } else {
-      if ( num%10>1 ) {
-        result = "a";
-     }
-   }
-    return result;
- }
-
   function sortArray( arr ) {
     arr.reverse().push( arr.shift() );
     return arr;
