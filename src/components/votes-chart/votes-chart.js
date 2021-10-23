@@ -15,21 +15,21 @@ const render = function renderArcs( arcs ) {
   const strokeGap = 4;
   const votesTotal = [...arcs].map( arc => Number( arc.getAttribute('data-votes') ) ).reduce( (prev, curr) => prev + curr );
 
-  console.log(votesTotal)
-
   let strokeOffset = -strokeGap / 2;
 
   arcs.forEach( arc => {
     const votes = arc.getAttribute('data-votes');
-    const votesPercentage = votes / votesTotal
-    const strokeFilled = votes !== 0 ? strokeLength * votesPercentage : strokeGap
+    const votesPercentage = votes / votesTotal;
+    const strokeFilled = votes > 1 ? strokeLength * votesPercentage : strokeGap;
 
-    const x = {
+    const calculatedAttributes = {
       r: figureInnerRadius,
       'stroke-width': strokeWidth,
       'stroke-dasharray': `${strokeFilled - strokeGap} ${strokeLength}`,
       'stroke-dashoffset': strokeOffset
-    }
+    };
+
+    Object.entries( calculatedAttributes ).forEach( ([key, value]) => arc.setAttribute(key, value) );
     strokeOffset -= strokeFilled;
   });
 }
@@ -61,7 +61,7 @@ const onFocus = function onFocusEvent( arc ) {
   const apply = function applyProperties( vvalue, vvote, wword ) {
     const switchState = function switchElementsContentAndClasses( elem, text ) {
       elem.textContent = text;
-      elem.classList.toggle(`gradient__${arc.id.slice(12)}_start`);
+      elem.classList.toggle(`gradient__${arc.id.slice(14)}_start`);
     }
     switchState( centralTextVotes, vvote );
     switchState( centralTextWord, wword );
