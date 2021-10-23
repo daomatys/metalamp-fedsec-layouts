@@ -1,19 +1,24 @@
-const init = function initEventListeners() {
-  const arcs = document.querySelectorAll('.votes-chart__diagram-element_unit');
-  const legendItems = document.querySelectorAll('.votes-chart__legend-item');
+const init = function() {
+  const chart = document.querySelector('.votes-chart');
+  const arcs = chart.querySelectorAll('.votes-chart__diagram-element_unit');
+  const legendItems = chart.querySelectorAll('.votes-chart__legend-item');
+  const diagramTextBlock = chart.querySelector('.votes-chart__diagram-text');
 
-  render( arcs );
+  const votesTotal = [...arcs].map( arc => Number( arc.getAttribute('data-votes') ) ).reduce( (prev, curr) => prev + curr );
+
+  renderArcs( arcs, votesTotal );
+  renderDiagramText( diagramTextBlock, votesTotal );
+
   arcs.forEach( arc => arc.addEventListener('focus', () => onFocus( arc )) );
   legendItems.forEach( item => item.addEventListener('pointerdown', (event) => onLegendClick( event, item )) );
 }
 
-const render = function renderArcs( arcs ) {
+const renderArcs = function renderArcsSVGFigures( arcs, votesTotal ) {
   const strokeWidth = 4;
   const figureOuterRadius = 60;
   const figureInnerRadius = figureOuterRadius - strokeWidth / 2;
   const strokeLength = 2 * Math.PI.toFixed(2) * figureInnerRadius;
   const strokeGap = 4;
-  const votesTotal = [...arcs].map( arc => Number( arc.getAttribute('data-votes') ) ).reduce( (prev, curr) => prev + curr );
 
   let strokeOffset = -strokeGap / 2;
 
@@ -28,10 +33,20 @@ const render = function renderArcs( arcs ) {
       'stroke-dasharray': `${strokeFilled - strokeGap} ${strokeLength}`,
       'stroke-dashoffset': strokeOffset
     };
-
     Object.entries( calculatedAttributes ).forEach( ([key, value]) => arc.setAttribute(key, value) );
+
     strokeOffset -= strokeFilled;
   });
+}
+
+const renderDiagramText = function renderDiagramBlockInnerTextSpans( block, votesTotal ) {
+  const count = block.firstElementChild;
+  const word = block.lastElementChild;
+
+  console.log(count)
+
+  count.textContent = votesTotal;
+  word.textContent = 'голос' + wordEnding( votesTotal );
 }
 
 const onLegendClick = function onLegendClickEvent( event, item ) {
