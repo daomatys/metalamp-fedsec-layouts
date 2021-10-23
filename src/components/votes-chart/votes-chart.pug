@@ -1,19 +1,19 @@
-mixin votesChart( item )
+mixin votesChart( item={} )
   .votes-chart
     .votes-chart__diagram
       svg.votes-chart__diagram-element( width="120" height="120" viewBox="0 0 120 120" preserveAspectRatio="none" )
         defs
-          each arc in item.arcs
-            linearGradient( id=`${arc.gradient}-gradient` x1="1" y1="0" x2="0" y2="0" )
-              stop( class=`gradient__${arc.gradient}_start` offset="0%" )
-              stop( class=`gradient__${arc.gradient}_end`   offset="100%" )
-        each arc in items
-          circle.votes-chart__diagram-element_unit( id=`votes-chart-${arc.gradient}` cx="50%" cy="50%" data-votes=arc.votes )
+          each unit in item.units
+            linearGradient( id=`${unit.gradient}-gradient` x1="1" y1="0" x2="0" y2="0" )
+              stop( class=`gradient__${unit.gradient}_start` offset="0%" )
+              stop( class=`gradient__${unit.gradient}_end`   offset="100%" )
+        each unit in item.units
+          circle.votes-chart__diagram-element_unit( id=`votes-chart-${unit.gradient}` cx="50%" cy="50%" data-votes=unit.votes )
       .votes-chart__diagram-text 
         span.votes-chart__diagram-text_votes.custom-font-style_h1
         span.votes-chart__diagram-text_word.custom-font-style_h3
     .votes-chart__legend
-      - const sortedItems = sortArray( items )
+      - const sortedItems = sortArray( item.units )
       each item in sortedItems
         .votes-chart__legend-item( data-link=`votes-chart-${item.gradient}` )
           .votes-chart__legend-item_marker( class=`marker_${item.gradient}` )

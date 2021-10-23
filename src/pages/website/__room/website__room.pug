@@ -44,15 +44,15 @@ block main
           .room-page__visitors-impression-chart
             .room-page__title
               span.custom-font-style_h2 Впечатления от номера
-            +votesChart(
+            +votesChart({
               id: 'group',
-              arcs: [
+              units: [
                 { gradient: "primary",    votes: 260, legend: "Удовлетворительно" },
                 { gradient: "secondary",  votes: 259, legend: "Хорошо"            },
                 { gradient: "tertiary",   votes: 521, legend: "Великолепно"       },
                 { gradient: "quaternary", votes: 11,  legend: "Разочарован"       }
               ]
-            )
+            })
           .room-page__reviews
             .room-page__title
               span.custom-font-style_h2 Отзывы посетителей номера
