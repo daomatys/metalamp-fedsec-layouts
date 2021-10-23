@@ -8,16 +8,22 @@ mixin votesChart( item={} )
               stop( class=`gradient__${unit.gradient}_start` offset="0%" )
               stop( class=`gradient__${unit.gradient}_end`   offset="100%" )
         each unit in item.units
-          circle.votes-chart__diagram-element_unit( id=`votes-chart-${unit.gradient}` cx="50%" cy="50%" data-votes=unit.votes )
+          circle.votes-chart__diagram-element_unit(
+            id=`${item.id}-${unit.gradient}`
+            cx="50%"
+            cy="50%"
+            data-votes=unit.votes
+            stroke=`url(#${unit.gradient}-gradient)`
+          )
       .votes-chart__diagram-text 
         span.votes-chart__diagram-text_votes.custom-font-style_h1
         span.votes-chart__diagram-text_word.custom-font-style_h3
     .votes-chart__legend
-      - const sortedItems = sortArray( item.units )
-      each item in sortedItems
-        .votes-chart__legend-item( data-link=`votes-chart-${item.gradient}` )
-          .votes-chart__legend-item_marker( class=`marker_${item.gradient}` )
-          .votes-chart__legend-item_text.custom-font-style_body #{item.legend}
+      - const sortedUnits = sortArray( item.units )
+      each unit in sortedUnits
+        .votes-chart__legend-item( data-link=`${item.id}-${unit.gradient}` )
+          .votes-chart__legend-item_marker( class=`marker_${unit.gradient}` )
+          .votes-chart__legend-item_text.custom-font-style_body #{unit.legend}
 -
   function sortArray( arr ) {
     arr.reverse().push( arr.shift() );
