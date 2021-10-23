@@ -33,7 +33,7 @@ const onFocus = function onFocusEvent( arc ) {
   const apply = function applyProperties( vvalue, vvote, wword ) {
     const switchState = function switchElementsContentAndClasses( elem, text ) {
       elem.textContent = text;
-      elem.classList.toggle(`gradient__${arc.id.slice(12)}_end`);
+      elem.classList.toggle(`gradient__${arc.id.slice(12)}_start`);
     }
     switchState( centralTextVotes, vvote );
     switchState( centralTextWord, wword );

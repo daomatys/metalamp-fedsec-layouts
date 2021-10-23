@@ -76,9 +76,9 @@
   }
 
   @include svgGradient( 'primary', $perfume, $portage );
-  @include svgGradient( 'primary', $silver-tree, $turquoise-blue );
-  @include svgGradient( 'primary', $cream-brulee, $mandys-pink );
-  @include svgGradient( 'primary', $suva-grey, $port-gore );
+  @include svgGradient( 'secondary', $silver-tree, $turquoise-blue );
+  @include svgGradient( 'tertiary', $cream-brulee, $mandys-pink );
+  @include svgGradient( 'quaternary', $suva-grey, $port-gore );
 }
 
 .marker {
