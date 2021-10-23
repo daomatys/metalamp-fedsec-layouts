@@ -1,7 +1,37 @@
+
+const render = function renderArcs( arcs ) {
+  const strokeWidth = 4;
+  const figureOuterRadius = 60;
+  const figureInnerRadius = figureOuterRadius - strokeWidth / 2;
+  const strokeLength = 2 * Math.PI.toFixed(2) * figureInnerRadius;
+  const strokeGap = 4;
+  const votesTotal = arcs.map( arc => arc.getAttribute('data-votes') ).reduce( (prev, curr) => prev + curr );
+
+  console.log(votesTotal)
+
+  let strokeOffset = -strokeGap / 2;
+
+  arcs.forEach( arc => {
+    const votes = arc.getAttribute('data-votes');
+    const votesPercentage = item.votes / votesTotal
+    const strokeFilled = item.votes !== 0 ? strokeLength * votesPercentage : strokeGap
+
+    const x = {
+      r: figureInnerRadius,
+      stroke: `url(#${item.gradient}-gradient)`,
+      'stroke-width': strokeWidth,
+      'stroke-dasharray': `${strokeFilled - strokeGap} ${strokeLength}`,
+      'stroke-dashoffset': strokeOffset
+    }
+    strokeOffset -= strokeFilled;
+  });
+}
+
 const init = function initEventListeners() {
   const arcs = document.querySelectorAll('.votes-chart__diagram-element_unit');
   const legendItems = document.querySelectorAll('.votes-chart__legend-item');
 
+  render( arcs );
   arcs.forEach( arc => arc.addEventListener('focus', () => onFocus( arc )) );
   legendItems.forEach( item => item.addEventListener('pointerdown', (event) => onLegendClick( event, item )) );
 }
