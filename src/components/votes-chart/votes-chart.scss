@@ -37,7 +37,6 @@
 
     &_votes,
     &_word {
-      color: $perfume;
       transition: color .8s ease;
     }
   }
@@ -64,45 +63,22 @@
 }
 
 .gradient {
-  &__primary {
-    &_start {
-      stop-color: $perfume;
-    }
-    &_end {
-      color: $portage;
-      stop-color: $portage;
-    }
-  }
-
-  &__secondary {
-    &_start {
-      stop-color: $silver-tree;
-    }
-    &_end {
-      color: $turquoise-blue;
-      stop-color: $turquoise-blue;
+  @mixin svgGradient( $suffix, $start-color, $end-color ) {
+    &__#{ $suffix } {
+      &_start {
+        color: $start-color;
+        stop-color: $start-color;
+      }
+      &_end {
+        stop-color: $end-color;
+      }
     }
   }
 
-  &__tertiary {
-    &_start {
-      stop-color: $cream-brulee;
-    }
-    &_end {
-      color: $mandys-pink;
-      stop-color: $mandys-pink;
-    }
-  }
-
-  &__quaternary {
-    &_start {
-      stop-color: $suva-grey;
-    }
-    &_end {
-      color: $port-gore;
-      stop-color: $port-gore;
-    }
-  }
+  @include svgGradient( 'primary', $perfume, $portage );
+  @include svgGradient( 'primary', $silver-tree, $turquoise-blue );
+  @include svgGradient( 'primary', $cream-brulee, $mandys-pink );
+  @include svgGradient( 'primary', $suva-grey, $port-gore );
 }
 
 .marker {
@@ -112,11 +88,9 @@
   &_secondary {
     background: $secondary-gradient;
   }
-
   &_tertiary {
     background: $tertiary-gradient;
   }
-
   &_quaternary {
     background: $quaternary-gradient;
   }
