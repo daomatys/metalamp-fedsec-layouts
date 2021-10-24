@@ -25,9 +25,27 @@ const renderArcs = function renderArcsSVGFigures( arcs, votesTotal ) {
 
   let strokeOffset = -strokeGap / 2;
 
+  const votesTotalFixed = [...arcs]
+    .map( arc => {
+      const minimalPercent = 0.015;
+      const votes = arc.getAttribute('data-votes');
+      const votesPercentage = votes / votesTotal;
+      const votesFiltrator = ( votesPercentage > 0.011 || votesPercentage === 0 ) ? votes : votesTotal * minimalPercent;
+      const result = Number( votesFiltrator ).toFixed();
+
+      arc.setAttribute('data-votes-fixed', result);
+
+      console.log(votes, votesPercentage, votesFiltrator, result)
+
+      return Number( result );
+    })
+    .reduce( (prev, curr) => prev + curr );
+
+  console.log(votesTotalFixed)
+
   arcs.forEach( arc => {
-    const votes = arc.getAttribute('data-votes');
-    const votesPercentage = votes / votesTotal;
+    const votes = arc.getAttribute('data-votes-fixed');
+    const votesPercentage = votes / votesTotalFixed;
 
     const strokeFilledValue = strokeLength * votesPercentage;
     const strokeFilled = votes > 1 ? strokeFilledValue.toFixed(2) : strokeGap;
