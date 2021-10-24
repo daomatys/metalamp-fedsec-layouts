@@ -18,7 +18,7 @@ const initListeners = function initEverythingForRenderAndListen( chart ) {
   const diagramTextCounter = diagramText.firstElementChild;
   const diagramTextWorder = diagramText.lastElementChild;
 
-  const votesTotal = calcSum( arcs, arc => Number( arc.getAttribute('data-votes') ) );
+  const votesTotal = calcSum( arcs, ( arc => Number(arc.getAttribute('data-votes')) ) );
 
   renderArcs( arcs, votesTotal );
   renderTexts( diagramTextCounter, diagramTextWorder, votesTotal );
@@ -45,7 +45,7 @@ const renderArcs = function renderArcsSVGFigures( arcs, votesTotal ) {
   const figureInnerRadius = figureOuterRadius - strokeWidth / 2;
   const strokeLength = 2 * Math.PI.toFixed(3) * figureInnerRadius;
   const strokeGap = 2;
-  const votesTotalFixed = calcSum( arcs, arc => calcVotesTotalFixed( arc ) );
+  const votesTotalFixed = calcSum( arcs, ( arc => calcVotesTotalFixed( arc ) ) );
 
   let strokeOffset = 0;
 
