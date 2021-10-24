@@ -18,10 +18,10 @@ const init = function initEverythingForRenderAndListen() {
 
 const renderArcs = function renderArcsSVGFigures( arcs, votesTotal ) {
   const calcVotesTotalFixed = function calcVotesTotalFixedValueToPreventRenderBugs( arc ) {
-    const minimalPercent = 0.015;
+    const minimalPercent = 0.01;
     const votes = arc.getAttribute('data-votes');
     const votesPercentage = votes / votesTotal;
-    const votesFiltrator = ( votesPercentage > 0.011 || votesPercentage === 0 ) ? votes : votesTotal * minimalPercent;
+    const votesFiltrator = ( votesPercentage > minimalPercent || votesPercentage === 0 ) ? votes : votesTotal * minimalPercent;
     const result = Number( votesFiltrator ).toFixed();
 
     arc.setAttribute('data-votes-fixed', result);
