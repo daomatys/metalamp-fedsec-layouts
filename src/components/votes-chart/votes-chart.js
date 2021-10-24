@@ -1,8 +1,8 @@
 const init = function() {
-  const chart = document.querySelector('.votes-chart');
+  const charts = document.querySelectorAll('.votes-chart');
 
-  if ( chart ) {
-    initListeners( chart );
+  if ( charts ) {
+    charts.forEach( chart => initListeners( chart ) );
   }
 }
 
