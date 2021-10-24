@@ -12,8 +12,8 @@ mixin votesChart( item={} )
             id=`${item.id}-${unit.gradient}`
             cx="50%"
             cy="50%"
-            data-votes=unit.votes
             stroke=`url(#${unit.gradient}-gradient)`
+            data-votes=unit.votes
           )
       .votes-chart__diagram-text
         span.votes-chart__diagram-text_votes.custom-font-style_h1
