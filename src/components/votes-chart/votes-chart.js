@@ -1,5 +1,12 @@
-const init = function initEverythingForRenderAndListen() {
+const init = function() {
   const chart = document.querySelector('.votes-chart');
+
+  if ( chart ) {
+    initListeners( chart );
+  }
+}
+
+const initListeners = function initEverythingForRenderAndListen( chart ) {
   const arcs = chart.querySelectorAll('.votes-chart__diagram-element_unit');
   const legendItems = chart.querySelectorAll('.votes-chart__legend-item');
 
