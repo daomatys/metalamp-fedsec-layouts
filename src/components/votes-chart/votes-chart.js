@@ -6,7 +6,7 @@ const init = function() {
   }
 }
 
-const calcSum = function calcSumOfNeededNumbersOfArcsCollection( arcs, extractNeededNumbers ) {
+const calcSum = function calcSumOfNeededParametersOfArcsCollectionItems( arcs, extractNeededNumbers ) {
   return [...arcs].map( extractNeededNumbers ).reduce( (prev, curr) => prev + curr );
 }
 
