@@ -6,6 +6,10 @@ const init = function() {
   }
 }
 
+const calcSum = function calcSumOfNeededNumbersOfArcsCollection( arcs, extractNeededNumbers ) {
+  return [...arcs].map( extractNeededNumbers ).reduce( (prev, curr) => prev + curr );
+}
+
 const initListeners = function initEverythingForRenderAndListen( chart ) {
   const arcs = chart.querySelectorAll('.votes-chart__diagram-element_unit');
   const legendItems = chart.querySelectorAll('.votes-chart__legend-item');
@@ -14,7 +18,7 @@ const initListeners = function initEverythingForRenderAndListen( chart ) {
   const diagramTextCounter = diagramText.firstElementChild;
   const diagramTextWorder = diagramText.lastElementChild;
 
-  const votesTotal = [...arcs].map( arc => Number( arc.getAttribute('data-votes') ) ).reduce( (prev, curr) => prev + curr );
+  const votesTotal = calcSum( arcs, arc => Number( arc.getAttribute('data-votes') ) );
 
   renderArcs( arcs, votesTotal );
   renderTexts( diagramTextCounter, diagramTextWorder, votesTotal );
@@ -41,7 +45,7 @@ const renderArcs = function renderArcsSVGFigures( arcs, votesTotal ) {
   const figureInnerRadius = figureOuterRadius - strokeWidth / 2;
   const strokeLength = 2 * Math.PI.toFixed(3) * figureInnerRadius;
   const strokeGap = 2;
-  const votesTotalFixed = [...arcs].map( arc => calcVotesTotalFixed( arc ) ).reduce( (prev, curr) => prev + curr );
+  const votesTotalFixed = calcSum( arcs, arc => calcVotesTotalFixed( arc ) );
 
   let strokeOffset = 0;
 
