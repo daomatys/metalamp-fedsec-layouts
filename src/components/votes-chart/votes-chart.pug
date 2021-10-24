@@ -15,7 +15,7 @@ mixin votesChart( item={} )
             data-votes=unit.votes
             stroke=`url(#${unit.gradient}-gradient)`
           )
-      .votes-chart__diagram-text 
+      .votes-chart__diagram-text
         span.votes-chart__diagram-text_votes.custom-font-style_h1
         span.votes-chart__diagram-text_word.custom-font-style_h3
     .votes-chart__legend
@@ -26,6 +26,6 @@ mixin votesChart( item={} )
           .votes-chart__legend-item_text.custom-font-style_body #{unit.legend}
 -
   function sortArray( arr ) {
-    arr.reverse().push( arr.shift() );
+    arr.reverse();
     return arr;
   }

@@ -28,7 +28,9 @@ const renderArcs = function renderArcsSVGFigures( arcs, votesTotal ) {
   arcs.forEach( arc => {
     const votes = arc.getAttribute('data-votes');
     const votesPercentage = votes / votesTotal;
-    const strokeFilled = votes > 1 ? strokeLength * votesPercentage : strokeGap;
+
+    const strokeFilledValue = strokeLength * votesPercentage;
+    const strokeFilled = votes > 1 ? strokeFilledValue.toFixed(2) : strokeGap;
 
     const calculatedAttributes = {
       r: figureInnerRadius,
