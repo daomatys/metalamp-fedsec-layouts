@@ -13,7 +13,7 @@ $suva-grey: #909090;
 $port-gore: #3D4975;
 
 $whisper: #E5E5E5;
-$white: #FFF;
+$white:   #FFF;
 
 @function defineGradient( $primary, $secondary ) {
   @return linear-gradient(180deg, $primary 0%, $secondary 100%);
@@ -24,6 +24,6 @@ $secondary-gradient:  defineGradient( $silver-tree, $turquoise-blue );
 $tertiary-gradient:   defineGradient( $cream-brulee, $mandys-pink );
 $quaternary-gradient: defineGradient( $suva-grey , $port-gore );
 
-$wideFramesWidthMax: 1600px;
-$wideFramesWidthMin: 1160px;
+$wideFramesWidthMax:  1600px;
+$wideFramesWidthMin:  1160px;
 $wideFramesWidthBase: 1440px;
