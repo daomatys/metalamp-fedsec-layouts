@@ -36,16 +36,14 @@ function findDatePickerContainer() {
   const datePickerItems = document.querySelectorAll(".date-picker");
 
   if ( datePickerItems ) {
-    for ( let item of datePickerItems ) {
-      initDatePicker( item );
-    }
+    datePickerItems.forEach( item => initDatePicker( item ) );
   }
 }
 
 function initDatePicker( item ) {
   const itemId = '#' + item.id;
 
-  const dateToday = '2019-08-08';
+  const dateToday = new Date('2019-08-08');
 
   //const today = new Date();
   //const dateToday =`${ today.getFullYear() }-${ today.getMonth() + 1 }-${ today.getDate() }`;
@@ -54,8 +52,8 @@ function initDatePicker( item ) {
 
   $( itemId ).datepicker({
     showOtherMonths: true,
-    minDate: new Date( dateToday ),
-    currentDate: new Date( dateToday ),
+    minDate: dateToday,
+    currentDate: dateToday,
   })
 }
 
