@@ -1,6 +1,7 @@
-@import "../../../../node_modules/jquery-ui/themes/base/datepicker.css";
+//@import "../../../../node_modules/jquery-ui/themes/base/datepicker.css";
 
 @import "../../components.scss";
+@import "../../../styles/gradient-fill-entities.scss";
 @import "../../material-icon-cell/material-icon-cell.scss";
 @import "@variables";
 
@@ -29,31 +30,37 @@
   &-prev,
   &-next {
     position: absolute;
-    top: 2px;
-    width: 24px;
-    height: 24px;
-    background: rgba($perfume, .25);
     cursor: pointer;
+
+    &::after {
+      @extend .material-icons;
+      color: $perfume;
+    }
 
     &-hover {
       opacity: .75;
     }
   }
 
-  &-prev .ui-icon {
-    @extend .material-icons;
-    left: 0px;
-    content: "arrow_back";
+  &-prev {
+    left: 2px;
+
+    &::after {
+      content: "arrow_back";
+    }
   }
 
-  &-next .ui-icon {
-    @extend .material-icons;
-    right: 0px;
-    content: "arrow_forward";
+  &-next {
+    right: 2px;
+
+    &::after {
+      content: "arrow_forward";
+    }
   }
 
   &-title {
     @extend .custom-font-style_h2;
+    text-align: center;
   }
 
   &-calendar {
@@ -73,6 +80,7 @@
         & > td,
         & > th {
           padding: 0;
+          border: 0;
 
           & > a,
           & > span {
@@ -83,6 +91,11 @@
             align-content: center;
             padding: 0;
           }
+        }
+
+        & > th {
+          font-weight: 700;
+          text-align: center;
         }
       }
     }
@@ -138,4 +151,14 @@
   &-today > a {
     background: $secondary-gradient;
   }
+}
+
+.ui-icon {
+  display: block;
+  left: 50%;
+  margin-left: -8px;
+  margin-top: -8px;
+  position: absolute;
+  top: 50%;
+  visibility: hidden;
 }
