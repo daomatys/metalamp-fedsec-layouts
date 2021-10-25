@@ -4,9 +4,6 @@
   .website__footer_default {
     display: none;
   }
-  .header {
-    opacity: .9;
-  }
 }
 
 @media screen and (min-width: 1161px) {
@@ -46,7 +43,7 @@
   &__landing {
     padding-top: 70px;
     min-height: 830px;
-    background-image: url("/src/assets/images/raster/background/background__landing.jpg");
+    background-image: url("/src/assets/images/raster/background/background__landing-1.jpg");
   }
 
   &__login-n-registration {
