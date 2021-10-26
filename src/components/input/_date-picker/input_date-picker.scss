@@ -1,7 +1,5 @@
 @import "/node_modules/air-datepicker/air-datepicker.css";
-
-@import "../../../styles/gradient-fill-entities.scss";
-@import "../../components.scss";
+@import "/src/components/components.scss";
 @import "@variables";
 
 $cell-size: 40px;
