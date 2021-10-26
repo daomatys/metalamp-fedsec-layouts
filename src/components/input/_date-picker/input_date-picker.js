@@ -1,26 +1,43 @@
 import AirDatepicker from 'air-datepicker';
 
-const defineContainer = function findDatePickerContainer() {
-  const datePickerItems = document.querySelectorAll('.date-picker__element');
+const defineContainers = function findDatePickerContainers() {
+  const datePickerContainers = document.querySelectorAll('.adp');
 
-  if ( datePickerItems ) {
-    datePickerItems.forEach( item => render( item ) );
+  if ( datePickerContainers ) {
+    datePickerContainers.forEach( container => init( container ) );
   }
 }
 
-const render = function renderDatePicker( item ) {
+const init = function initDatePicker( container ) {
+  const frame = container.querySelector('.input__frame');
+  const element = container.querySelector('.date-picker__element');
+
+  if ( element ) {
+    render( frame, element );
+  }
+
+
+  const frameHierarchicalState = frame.classList;
+
+  if ( frameHierarchicalState === 'slave' ) {
+
+  }
+
+  console.log(frameHierarchicalState)
+}
+
+const render = function renderAirDatePicker( frame, element ) {
   const icon = name => '<span class="material-icons">' + name + '</span>';
   const date = text => new Date( text );
 
   const currentDate = date('2019-08-08');
   const chosenDates = [ date('2019-08-19'), date('2019-08-23') ];
 
-  const frame = item.closest('.input__element').querySelector('.input__frame');
-  const buttons = item.nextElementSibling;
+  const buttons = element.nextElementSibling;
   const clearButton = buttons.firstElementChild.querySelector('button');
   const acceptButton = buttons.lastElementChild.querySelector('button');
   
-  const datePicker = new AirDatepicker( item, {
+  const datePicker = new AirDatepicker( element, {
     range: true,
     keyboardNav: false,
     altField: frame,
@@ -36,10 +53,8 @@ const render = function renderDatePicker( item ) {
     selectedDates: chosenDates,
   });
 
-  console.log(frame.value)
-
   clearButton.onclick = () => datePicker.clear();
   acceptButton.onclick = () => frame.click();
 }
 
-defineContainer();
+defineContainers();
