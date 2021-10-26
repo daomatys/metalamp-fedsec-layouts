@@ -21,16 +21,19 @@ const render = function renderDatePicker( item ) {
     content: 'Применить',
     className: 'custom-button-classname',
     onClick: () => frame.click(),
-  }
+  };
   
   const datePicker = new AirDatepicker( item, {
     range: true,
+    navTitles: {
+      days: 'MMMM yyyy',
+    },
     prevHtml: icon('arrow_back'),
     nextHtml: icon('arrow_forward'),
     minDate: currentDate,
     startDate: currentDate,
     selectedDates: chosenDates,
-    buttons: ['clear', acceptButton]
+    buttons: ['clear', acceptButton],
   });
 }
 
