@@ -1,34 +1,32 @@
-function expanderInitEventListeners() {
-  const items = document.querySelectorAll('.expander');
+const init = function expanderInitEventListeners() {
+  const expanders = document.querySelectorAll('.expander');
 
-  for (let item of items) {
-    item.addEventListener('click', expanderActivation);
+  if ( expanders ) {
+    expanders.forEach( expander => expander.addEventListener('click', activate) );
   }
 }
 
-function expanderActivation({target}) {
-  const expander = target;
-  const parent = expander.closest('.expander__parent');
+const activate = function expanderActivation({target}) {
+  const parent = target.closest('.expander__parent');
   const aim = parent.querySelector('.expander__aim');
   const icon = parent.querySelector('.material-icons');
 
-  const isExpanderActive = !expander.hasAttribute('checked');
+  const isExpanderActive = !target.hasAttribute('checked');
 
   if ( isExpanderActive ) {
-    expander.setAttribute('checked', '');
+    target.setAttribute('checked', '');
   } else {
-    expander.removeAttribute('checked');
+    target.removeAttribute('checked');
   }
 
-  expanderToggle();
-
-  function expanderToggle() {
-    iconAnimation( icon );
+  animate( icon );
+    
+  if ( aim ) {
     aim.classList.toggle('expander_active');
   }
 }
 
-function iconAnimation(icon) {
+const animate = function iconAnimation( icon ) {
   const animation = icon.animate({
     transform: 'rotateX(0.5turn)'
   }, {
@@ -40,4 +38,4 @@ function iconAnimation(icon) {
   animation.persist();
 }
 
-expanderInitEventListeners();
+init();
