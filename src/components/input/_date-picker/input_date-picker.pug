@@ -2,16 +2,17 @@ include /components/material-icon-cell/material-icon-cell.pug
 include /components/button/__mean-oval/button__mean-oval.pug
 
 mixin inputDatePicker( item )
-  input.input__frame.expander( id=item.id placeholder=item.placeholder readonly )
+  input.input__frame.expander( id=item.id placeholder="ДД.ММ.ГГГГ" data-hierarchy=item.hierarchy readonly  )
   .input__icon_expand
     +materialIcon('expand_more', item.id )
-  .input__date-picker.expander__aim( id=`dp-${item.id}` )
-    .date-picker
-    .date-picker__buttons
-      +meanOvalButtons({
-        groupname: `${item.id}-small`,
-        buttons: [
-          { type: "text", text: "очистить" },
-          { type: "text", text: "применить" }
-        ]
-      })
+  if ( item.hierarchy !== 'slave' )
+    .input__date-picker.expander__aim( id=`dp-${item.id}` )
+      .date-picker__element
+      .date-picker__buttons
+        +meanOvalButtons({
+          groupname: `${item.id}-small`,
+          buttons: [
+            { type: "text", text: "очистить" },
+            { type: "text", text: "применить" }
+          ]
+        })

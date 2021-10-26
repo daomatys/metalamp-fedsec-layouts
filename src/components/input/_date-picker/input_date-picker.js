@@ -1,7 +1,7 @@
 import AirDatepicker from 'air-datepicker';
 
 const defineContainer = function findDatePickerContainer() {
-  const datePickerItems = document.querySelectorAll('.date-picker');
+  const datePickerItems = document.querySelectorAll('.date-picker__element');
 
   if ( datePickerItems ) {
     datePickerItems.forEach( item => render( item ) );
@@ -22,6 +22,10 @@ const render = function renderDatePicker( item ) {
   
   const datePicker = new AirDatepicker( item, {
     range: true,
+    keyboardNav: false,
+    altField: frame,
+    altFieldDateFormat: 'dd.MM.yyyy',
+    multipleDatesSeparator: ' - ',
     navTitles: {
       days: 'MMMM yyyy',
     },
@@ -31,6 +35,8 @@ const render = function renderDatePicker( item ) {
     startDate: currentDate,
     selectedDates: chosenDates,
   });
+
+  console.log(frame.value)
 
   clearButton.onclick = () => datePicker.clear();
   acceptButton.onclick = () => frame.click();
