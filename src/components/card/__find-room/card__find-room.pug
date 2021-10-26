@@ -12,14 +12,14 @@ mixin cardFindRoom()
           id: "find-room__date-picker_arrival",
           type: "date-picker",
           title: "прибытие",
-          placeholder: "ДД.ММ.ГГГГ",
+          hierarchy: "master",
           widthbypercent: 47,
         })
         +input({
           id: "find-room__date-picker_departure",
           type: "date-picker",
           title: "выезд",
-          placeholder: "ДД.ММ.ГГГГ",
+          hierarchy: "slave",
           widthbypercent: 47,
         })
 
