@@ -85,7 +85,7 @@ $font-size: 12px;
   }
 
   &-cell {
-    transition: background-color .3s ease;
+    transition: background .3s ease;
 
     &.-disabled- {
       pointer-events: none;
@@ -115,10 +115,10 @@ $font-size: 12px;
       background-image: $secondary-gradient;
       color: $white;
     }
-  }
 
-  &.-focus-.-range-to-,
-  &.-focus-.-range-from- {
-    background-image: $primary-gradient-a;
+    &.-focus-.-range-to-,
+    &.-focus-.-range-from- {
+      background-image: $primary-gradient-a;
+    }
   }
 }

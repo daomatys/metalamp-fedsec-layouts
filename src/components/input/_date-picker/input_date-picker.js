@@ -20,8 +20,6 @@ const render = function renderDatePicker( item ) {
   const buttons = item.nextElementSibling;
   const clearButton = buttons.firstElementChild.querySelector('button');
   const acceptButton = buttons.lastElementChild.querySelector('button');
-
-  console.log(clearButton, acceptButton)
   
   const datePicker = new AirDatepicker( item, {
     range: true,
