@@ -36,28 +36,38 @@
   --adp-color-disabled:    #{rgba($valhalla, .25)};
   --adp-day-name-color: #{$perfume};
   --adp-accent-color:   #{$perfume};
+
   --adp-background-color-hover: #{rgba($perfume, .25)};
+  --adp-background-color-in-range: #{$primary-gradient-a};
+  --adp-background-color-selected-other-month: #{$primary-gradient-a};
+  --adp-background-color-selected-other-month-focused: #{$primary-gradient-b};
 
   --adp-cell-border-radius: 50%;
-  --adp-cell-background-color-selected-hover: none;
-  --adp-cell-background-color-in-range-hover: none;
   --adp-cell-background-color-selected: #{$primary-gradient-a};
   --adp-cell-background-color-in-range: #{$primary-gradient-a};
-
+  --adp-cell-background-color-selected-hover: #{$primary-gradient-b};
+  --adp-cell-background-color-in-range-hover: #{$primary-gradient-b};
 
   &-cell{
-    &.-range-from-,
-    &.-range-to {
-      position: relative;
+    &.-disabled- {
+      pointer-events: none;
+    }
 
-      &::after {
+    &.-selected- {
+      position: relative;
+      z-index: 110;
+      content: attr(data-date);
+
+      &::before {
         position: absolute;
-        width: 100%;
-        height: 100%;
+        width: $cell-size;
+        height: $cell-size;
         border-radius: 50%;
         background: $primary-gradient;
+        z-index: 109;
+        content: initial;
+
       }
-      
     }
   }
 }
