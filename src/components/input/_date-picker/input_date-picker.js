@@ -9,15 +9,23 @@ const defineContainer = function findDatePickerContainer() {
 }
 
 const render = function renderDatePicker( item ) {
-  const currentDate = new Date('2019-08-08')
-  const chosenDates = [ new Date('2019-08-19'), new Date('2019-08-23') ]
+  const date = text => new Date( text );
+
+  const currentDate = date('2019-08-08')
+  const chosenDates = [ date('2019-08-19'), date('2019-08-23') ]
+
+  const acceptButton = {
+    content: 'Select 2021-07-26',
+    className: 'custom-button-classname',
+    onClick: item.click(),
+  }
   
   const datePicker = new AirDatepicker( item, {
     range: true,
     minDate: currentDate,
-    //maxDate: '+6m',
     startDate: currentDate,
     selectedDates: chosenDates,
+    buttons: [acceptButton, 'clear']
   });
 }
 
