@@ -15,8 +15,7 @@ const render = function renderDatePicker( item ) {
   const currentDate = date('2019-08-08');
   const chosenDates = [ date('2019-08-19'), date('2019-08-23') ];
 
-  const input = item.closest('.input__element');
-  const frame = input.querySelector('.input__frame');
+  const frame = item.closest('.input__element').querySelector('.input__frame');
   const buttons = item.nextElementSibling;
   const clearButton = buttons.firstElementChild.querySelector('button');
   const acceptButton = buttons.lastElementChild.querySelector('button');

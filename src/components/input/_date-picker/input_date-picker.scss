@@ -91,19 +91,32 @@ $font-size: 12px;
       pointer-events: none;
     }
 
-    &.-min-date-,
-    &.-selected- {
-      position: relative;
-      
-      &::before {
-        position: absolute;
-        width: $cell-size;
-        height: $cell-size;
-        line-height: $cell-size;
-        border-radius: 50%;
+    &.-day- {
+      &.-min-date-,
+      &.-selected- {
+        position: relative;
+        
+        &::before {
+          position: absolute;
+          width: $cell-size;
+          height: $cell-size;
+          line-height: $cell-size;
+          border-radius: 50%;
+          font-weight: bold;
+          text-align: center;
+          content: attr(data-date);
+        }
+      }
+    }
+
+    &.-year-,
+    &.-month- {
+      &.-current-,
+      &.-selected- {
         font-weight: bold;
-        text-align: center;
-        content: attr(data-date);
+      }
+      &.-selected- {
+        background-image: $primary-gradient;
       }
     }
 
