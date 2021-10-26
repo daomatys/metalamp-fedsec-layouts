@@ -4,7 +4,7 @@ mixin meanOvalButtons( item )
   each button in item.buttons
     - buttonCount += 1
 
-    - const buttonId = item.groupname + '_' + buttonCount
+    - const buttonId = item.groupname + '-' + buttonCount
     - const buttonText = button.text || 'click me'
     - const widthByPercent = button.widthbypercent || '30'
     - const isTextType = button.type === 'text'
