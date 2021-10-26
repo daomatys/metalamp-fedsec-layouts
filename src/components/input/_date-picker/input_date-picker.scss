@@ -20,6 +20,11 @@ $font-size: 12px;
   visibility: hidden;
 }
 
+.date-picker__buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
 .air-datepicker {
   --adp-font-family: inherit;
   --adp-font-size: #{$font-size};
@@ -30,10 +35,6 @@ $font-size: 12px;
   --adp-day-cell-height: #{$cell-size};
   --adp-day-cell-width:  #{$cell-size};
   --adp-day-name-color: #{$perfume};
-
-  --adp-transition-duration: .5s;
-  --adp-transition-offset: none;
-  --adp-transition-ease: ease;
 
   --adp-border-color: none;
   --adp-border-color-inner: none;
@@ -57,6 +58,8 @@ $font-size: 12px;
   box-sizing: border-box;
 
   &-body {
+    transition: none;
+
     &--day-names {
       margin: 0;
     }
@@ -81,6 +84,8 @@ $font-size: 12px;
   }
 
   &-cell {
+    transition: background-color .3s ease;
+
     &.-disabled- {
       pointer-events: none;
     }
@@ -102,17 +107,17 @@ $font-size: 12px;
     }
 
     &.-selected-::before {
-      background: $primary-gradient;
+      background-image: $primary-gradient;
     }
 
     &.-min-date-::before {
-      background: $secondary-gradient;
+      background-image: $secondary-gradient;
       color: $white;
     }
   }
 
   &.-focus-.-range-to-,
   &.-focus-.-range-from- {
-    background: $primary-gradient-a;
+    background-image: $primary-gradient-a;
   }
 }
