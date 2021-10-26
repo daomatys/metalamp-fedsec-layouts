@@ -10,19 +10,15 @@ const defineContainer = function findDatePickerContainer() {
 
 const render = function renderDatePicker( item ) {
   const currentDate = new Date('2019-08-08')
+  const chosenDates = [ new Date('2019-08-19'), new Date('2019-08-23') ]
   
-  .datepicker({
-    showOtherMonths: true,
+  const datePicker = new AirDatepicker( item, {
+    range: true,
     minDate: currentDate,
-    maxDate: '+6m',
-    defaultDate: currentDate,
+    //maxDate: '+6m',
+    startDate: currentDate,
+    selectedDates: chosenDates,
   });
 }
 
-const onSelect = function defineRangePickerPossibility() {
-
-}
-
-defineDefaults();
 defineContainer();
-

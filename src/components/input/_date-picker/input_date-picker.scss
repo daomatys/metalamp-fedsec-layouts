@@ -1,3 +1,5 @@
+@import "/node_modules/air-datepicker/air-datepicker.css";
+
 @import "../../components.scss";
 @import "../../../styles/gradient-fill-entities.scss";
 @import "../../material-icon-cell/material-icon-cell.scss";
@@ -10,7 +12,7 @@
   visibility: hidden;
   border: 1px solid rgba($valhalla, .5);
   border-radius: 4px;
-  background-color: white;
+  background-color: $white;
   box-shadow: 0px 10px 20px rgba($valhalla, 0.05);
   z-index: 20;
 }
