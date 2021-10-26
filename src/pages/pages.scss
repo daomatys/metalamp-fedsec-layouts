@@ -1,3 +1,24 @@
+@import "@variables";
+
+:root {
+  --hue__whisper:  #{$whisper};
+  --hue__valhalla: #{$valhalla};
+  --hue__perfume: #{$perfume};
+  --hue__portage: #{$portage};
+  --hue__silver-tree:    #{$silver-tree};
+  --hue__turquoise-blue: #{$turquoise-blue};
+  --hue__cream-brulee: #{$cream-brulee};
+  --hue__mandys-pink:  #{$mandys-pink};
+  --hue__suva-grey: #{$suva-grey};
+  --hue__port-gore: #{$port-gore};
+  --hue__white: #{$white};
+  --hue__black: #{$black};
+  --gradient__primary:    #{$primary-gradient};
+  --gradient__secondary:  #{$secondary-gradient};
+  --gradient__tertiary:   #{$tertiary-gradient};
+  --gradient__quaternary: #{$quaternary-gradient};
+}
+
 html,
 body {
   height: 100%;

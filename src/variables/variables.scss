@@ -1,4 +1,5 @@
 $valhalla: #1F2041;
+$whisper: #E5E5E5;
 
 $perfume: #BC9CFF;
 $portage: #8BA4F9;
@@ -12,8 +13,8 @@ $mandys-pink:  #FFBA9C;
 $suva-grey: #909090;
 $port-gore: #3D4975;
 
-$whisper: #E5E5E5;
-$white:   #FFF;
+$white: #FFF;
+$black: #000;
 
 @function defineGradient( $primary, $secondary ) {
   @return linear-gradient(180deg, $primary 0%, $secondary 100%);
