@@ -5,6 +5,7 @@
 @import "@variables";
 
 $cell-size: 40px;
+$font-size: 12px;
 
 .input__date-picker {
   position: absolute;
@@ -21,7 +22,7 @@ $cell-size: 40px;
 
 .air-datepicker {
   --adp-font-family: inherit;
-  --adp-font-size: 12px;
+  --adp-font-size: #{$font-size};
 
   --adp-width: 100%;
   --adp-padding: 0;
@@ -30,20 +31,22 @@ $cell-size: 40px;
   --adp-day-cell-width:  #{$cell-size};
   --adp-day-name-color: #{$perfume};
 
-  --adp-transition-duration: none;
+  --adp-transition-duration: .5s;
   --adp-transition-offset: none;
-  --adp-transition-ease: none;
+  --adp-transition-ease: ease;
 
+  --adp-border-color: none;
+  --adp-border-color-inner: none;
+
+  --adp-color: #{rgba($valhalla, .5)};
   --adp-color-other-month: #{rgba($valhalla, .25)};
   --adp-color-disabled:    #{rgba($valhalla, .25)};
-  --adp-accent-color:   #{$perfume};
+  --adp-accent-color: #{$perfume};
 
   --adp-background-color-hover: #{rgba($perfume, .25)};
   --adp-background-color-in-range: #{$primary-gradient-a};
   --adp-background-color-selected-other-month: #{$primary-gradient-a};
   --adp-background-color-selected-other-month-focused: #{$primary-gradient-b};
-
-  --adp-border-color-inner: none;
 
   --adp-cell-border-radius: 50%;
   --adp-cell-background-color-selected: #{$primary-gradient-a};
@@ -51,9 +54,29 @@ $cell-size: 40px;
   --adp-cell-background-color-selected-hover: #{$primary-gradient-b};
   --adp-cell-background-color-in-range-hover: #{$primary-gradient-b};
 
+  box-sizing: border-box;
+
   &-body {
+    &--day-names {
+      margin: 0;
+    }
+
     &--day-name {
+      margin-top: 30px;
       text-transform: initial;
+      font-size: $font-size;
+      font-weight: bold;
+      line-height: $cell-size;
+    }
+  }
+
+  &-nav {
+    &--action {
+      color: $perfume;
+    }
+
+    &--title {
+      @extend .custom-font-style_h2;
     }
   }
 

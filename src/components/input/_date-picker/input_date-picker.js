@@ -16,12 +16,6 @@ const render = function renderDatePicker( item ) {
 
   const currentDate = date('2019-08-08');
   const chosenDates = [ date('2019-08-19'), date('2019-08-23') ];
-
-  const acceptButton = {
-    content: 'Применить',
-    className: 'custom-button-classname',
-    onClick: () => frame.click(),
-  };
   
   const datePicker = new AirDatepicker( item, {
     range: true,
@@ -33,7 +27,6 @@ const render = function renderDatePicker( item ) {
     minDate: currentDate,
     startDate: currentDate,
     selectedDates: chosenDates,
-    buttons: ['clear', acceptButton],
   });
 }
 
