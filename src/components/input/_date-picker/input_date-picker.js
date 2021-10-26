@@ -12,49 +12,69 @@ const DATENAMES = {
   }
 }
 
-$.datepicker.regional['ru'] = {
-  closeText:   'Закрыть',
-  prevText:    'Предыдущий месяц',
-  nextText:    'Следующий месяц',
-  currentText: 'Сегодня',
-  monthNames:      DATENAMES.months.full,
-  monthNamesShort: DATENAMES.months.short,
-  dayNames:        DATENAMES.days.full,
-  dayNamesShort:   DATENAMES.days.short,
-  dayNamesMin:     DATENAMES.days.min,
-  weekHeader:  'Не',
-  dateFormat:  'dd.mm.yy',
-  yearSuffix:  '',
-  firstDay: 1,
-  isRTL: false,
-  showMonthAfterYear: false
-};
+const defineDefaults = function defineDatePickerDefaultProperties () {
+  $.datepicker.regional['ru'] = {
+    closeText:   'Закрыть',
+    prevText:    'Предыдущий месяц',
+    nextText:    'Следующий месяц',
+    currentText: 'Сегодня',
+    monthNames:      DATENAMES.months.full,
+    monthNamesShort: DATENAMES.months.short,
+    dayNames:        DATENAMES.days.full,
+    dayNamesShort:   DATENAMES.days.short,
+    dayNamesMin:     DATENAMES.days.min,
+    weekHeader:  'Не',
+    dateFormat:  'dd.mm.yyyy',
+    yearSuffix:  '',
+    firstDay: 1,
+    isRTL: false,
+    showMonthAfterYear: false
+  };
 
-$.datepicker.setDefaults($.datepicker.regional['ru']);
+  $.datepicker.setDefaults($.datepicker.regional['ru']);
+}
 
-function findDatePickerContainer() {
-  const datePickerItems = document.querySelectorAll(".date-picker");
+const defineContainer = function findDatePickerContainer() {
+  const datePickerItems = document.querySelectorAll('.date-picker');
 
   if ( datePickerItems ) {
-    datePickerItems.forEach( item => initDatePicker( item ) );
+    datePickerItems.forEach( item => render( item ) );
   }
 }
 
-function initDatePicker( item ) {
+const render = function renderDatePicker( item ) {
   const itemId = '#' + item.id;
-
-  const dateToday = new Date('2019-08-08');
-
-  //const today = new Date();
-  //const dateToday =`${ today.getFullYear() }-${ today.getMonth() + 1 }-${ today.getDate() }`;
-
-  const something = id => $.datepicker.parseDate( $.datepicker._defaults.dateFormat, $( id ).val() );
-
+  const currentDate = new Date('2019-08-08')
+  
   $( itemId ).datepicker({
     showOtherMonths: true,
-    minDate: dateToday,
-    currentDate: dateToday,
-  })
+    minDate: currentDate,
+    maxDate: '+6m',
+    defaultDate: currentDate,
+    //onSelect: onSelect(),
+  });
 }
 
-findDatePickerContainer();
+const onSelect = function defineRangePickerPossibility() {
+  const date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $('#input1').val());
+  const date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $('#input2').val());
+  const selectedDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
+
+  if ( !date1 || date2 ) {
+    $('#input1').val( dateText );
+    $('#input2').val('');
+    $(this).datepicker();
+  } else {
+    if( selectedDate < date1 ) {
+      $('#input2').val( $('#input1').val() );
+      $('#input1').val( dateText );
+      $(this).datepicker();
+    } else {
+      $('#input2').val( dateText );
+      $(this).datepicker();
+    }
+  }
+}
+
+defineContainer();
+defineDefaults();
