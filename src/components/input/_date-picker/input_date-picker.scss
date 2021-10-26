@@ -27,5 +27,8 @@
   --adp-width: 100%;
   --adp-day-cell-height: 40px;
   --adp-day-cell-width: 40px;
-  --adp-cell-border-radius:50%;
+  --adp-cell-border-radius: 50%;
+  --adp-day-name-color: rgb($perfume);
+  --adp-color-other-month: rgba($valhalla, .25);
+  --adp-color-disabled: rgba($valhalla, .25);
 }
