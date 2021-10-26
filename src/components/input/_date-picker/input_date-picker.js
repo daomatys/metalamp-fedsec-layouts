@@ -1,29 +1,23 @@
 import AirDatepicker from 'air-datepicker';
 
-const defineContainers = function findDatePickerContainers() {
-  const datePickerContainers = document.querySelectorAll('.adp');
+const defineFrames = function findDatePickerFrames() {
+  const datePickerFrames = document.querySelectorAll('.adp');
 
-  if ( datePickerContainers ) {
-    datePickerContainers.forEach( container => init( container ) );
+  if ( datePickerFrames ) {
+    datePickerFrames.forEach( frame => init( frame ) );
   }
 }
 
-const init = function initDatePicker( container ) {
-  const frame = container.querySelector('.input__frame');
-  const element = container.querySelector('.date-picker__element');
+const init = function initDatePicker( frame ) {
+  const element = frame.querySelector('.date-picker__element');
 
   if ( element ) {
     render( frame, element );
   }
-
-
-  const frameHierarchicalState = frame.classList;
-
-  if ( frameHierarchicalState === 'slave' ) {
-
+  if ( !element ) {
+    const master = frame.parentNode.querySelector('master');
+    frame.onclick = () => master.click();
   }
-
-  console.log(frameHierarchicalState)
 }
 
 const render = function renderAirDatePicker( frame, element ) {
@@ -57,4 +51,4 @@ const render = function renderAirDatePicker( frame, element ) {
   acceptButton.onclick = () => frame.click();
 }
 
-defineContainers();
+defineFrames();
