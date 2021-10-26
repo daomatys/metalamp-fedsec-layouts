@@ -9,23 +9,28 @@ const defineContainer = function findDatePickerContainer() {
 }
 
 const render = function renderDatePicker( item ) {
+  const icon = name => '<span class="material-icons">' + name + '</span>';
   const date = text => new Date( text );
 
-  const currentDate = date('2019-08-08')
-  const chosenDates = [ date('2019-08-19'), date('2019-08-23') ]
+  const frame = item.closest('.input__element').querySelector('.input__frame');
+
+  const currentDate = date('2019-08-08');
+  const chosenDates = [ date('2019-08-19'), date('2019-08-23') ];
 
   const acceptButton = {
-    content: 'Select 2021-07-26',
+    content: 'Применить',
     className: 'custom-button-classname',
-    onClick: item.click(),
+    onClick: () => frame.click(),
   }
   
   const datePicker = new AirDatepicker( item, {
     range: true,
+    prevHtml: icon('arrow_back'),
+    nextHtml: icon('arrow_forward'),
     minDate: currentDate,
     startDate: currentDate,
     selectedDates: chosenDates,
-    buttons: [acceptButton, 'clear']
+    buttons: ['clear', acceptButton]
   });
 }
 
