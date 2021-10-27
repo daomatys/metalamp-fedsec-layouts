@@ -4,27 +4,45 @@ const init = function initDatePicker() {
   const datePickerFrames = document.querySelectorAll('.input__frame.adp');
 
   if ( datePickerFrames ) {
-    datePickerFrames.forEach( frame => sortFramesTasks( frame ) );
+    datePickerFrames.forEach( frame => sortElementsTasks( frame ) );
   }
 }
 
-const sortFramesTasks = function sortDatePickerFramesTasksOfInputFrames( frame ) {
-  const caseSlaveFrame = frame.classList.contains('slave');
-  const frames = defineFrames( frame );
+const defineElements = function( frame ) {
+  const holder = frame.closest('.expander__parent').parentNode;
 
-  if ( caseSlaveFrame ) {
-    trigger( frames );
+  const master = holder.firstElementChild;
+  const slave = holder.lastElementChild;
+
+  return {
+    frames: {
+      master: master.querySelector('.input__date-picker'),
+      slave:  slave.querySelector('.input__date-picker')
+    },
+    aims: {
+      master: master.querySelector('.input__frame'),
+      slave:  slave.querySelector('.input__frame')
+    }
+  }
+}
+
+const sortElementsTasks = function sortDatePickerElementsTasks( frame ) {
+  const caseSlaveAim = frame.querySelector('.expander__aim').classList.contains('slave');
+  const elements = defineElements( frame );
+
+  if ( caseSlaveAim ) {
+    trigger( elements );
   } else {
-    render( frames );
-    validate( frames );
+    render( elements );
+    validate( elements );
   }
 }
 
-const render = function renderAirDatePicker( frames ) {
+const render = function renderAirDatePicker( elements ) {
   const icon = name => '<span class="material-icons">' + name + '</span>';
   const date = text => new Date( text );
 
-  const element = frames.master.parentNode.querySelector('.date-picker__element');
+  const element = elements.frames.master.parentNode.querySelector('.date-picker__element');
   const buttons = element.nextElementSibling;
 
   const currentDate = date('2019-08-08');
@@ -36,7 +54,7 @@ const render = function renderAirDatePicker( frames ) {
   const datePicker = new AirDatepicker( element, {
     range: true,
     keyboardNav: false,
-    altField: frames.master,
+    altField: elements.frames.master,
     altFieldDateFormat: 'dd.MM.yyyy',
     multipleDatesSeparator: ' - ',
     navTitles: {
@@ -47,44 +65,37 @@ const render = function renderAirDatePicker( frames ) {
     selectedDates: chosenDates,
     minDate:   currentDate,
     startDate: currentDate,
-    onSelect: () => validate( frames ),
+    onSelect: () => validate( elements.frames ),
   });
 
   clearButton.onclick = () => datePicker.clear();
-  acceptButton.onclick = () => frames.master.click();
+  acceptButton.onclick = () => elements.frames.master.click();
 }
 
-const trigger = function triggerRelativeElementClick( frames ) {
-  const masterAim = frames.master.querySelector('.expander__aim');
+const trigger = function triggerRelativeElementClick( elements ) {
+  const slaveFrame = elements.frames.slave;
+  const masterAim = elements.aims.master;
 
-  frames.slave.onclick = () => masterAim.classList.toggle('expander_active');
+  slaveFrame.onclick = () => masterAim.classList.toggle('expander_active');
 }
 
-const validate = function revalidateIncomingValues( frames ) {
-  const slave = frames.slave;
-  const master = frames.master;
-  const caseEquivalency = slave.isEqualNode( master );
+const validate = function revalidateIncomingValues( elements ) {
+  const slaveFrame = elements.frames.slave;
+  const masterFrame = elements.frames.master;
+  const caseEquivalence = slaveFrame.isEqualNode( masterFrame );
 
-  if ( !caseEquivalency ) {
-    const initialValue = master.value;
+  if ( !caseEquivalence ) {
+    const initialValue = masterFrame.value;
     const dividerIndex = initialValue.indexOf('-')
 
     if ( dividerIndex > -1 ) {
-      master.value = initialValue.slice( 0, dividerIndex - 1 );
-      slave.value = initialValue.slice( dividerIndex + 2 );
+      masterFrame.value = initialValue.slice( 0, dividerIndex - 1 );
+      slaveFrame.value = initialValue.slice( dividerIndex + 2 );
     } else {
-      slave.value = '';
-      master.value = initialValue;
+      slaveFrame.value = '';
+      masterFrame.value = initialValue;
     }
   }
-}
-
-const defineFrames = function( frame ) {
-  const holder = frame.closest('.expander__parent').parentNode;
-  const masterFrame = holder.firstElementChild.querySelector('.input__frame');
-  const slaveFrame = holder.lastElementChild.querySelector('.input__frame');
-
-  return { master: masterFrame, slave: slaveFrame };
 }
 
 init();
