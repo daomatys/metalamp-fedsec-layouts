@@ -2,7 +2,7 @@ const init = function expanderInitEventListeners() {
   const expanders = document.querySelectorAll('.expander');
 
   if ( expanders ) {
-    expanders.forEach( expander => expander.addEventListener('click', ({target}) => activate( expander )) );
+    expanders.forEach( expander => expander.addEventListener('click', () => activate( expander )) );
   }
 }
 
