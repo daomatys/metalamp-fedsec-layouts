@@ -2,27 +2,30 @@ const init = function expanderInitEventListeners() {
   const expanders = document.querySelectorAll('.expander');
 
   if ( expanders ) {
-    expanders.forEach( expander => expander.addEventListener('click', activate) );
+    expanders.forEach( expander => expander.addEventListener('click', () => activate( expander )) );
   }
 }
 
-const activate = function expanderActivation({target}) {
-  const parent = target.closest('.expander__parent');
+const activate = function expanderActivation( expander ) {
+  const parent = expander.closest('.expander__parent');
   const aim = parent.querySelector('.expander__aim');
   const icon = parent.querySelector('.material-icons');
 
-  const isExpanderActive = !target.hasAttribute('checked');
+  const isExpanderActive = !expander.hasAttribute('checked');
 
   if ( isExpanderActive ) {
-    target.setAttribute('checked', '');
+    expander.setAttribute('checked', '');
   } else {
-    target.removeAttribute('checked');
+    expander.removeAttribute('checked');
   }
 
   animate( icon );
+  expander.onblur = () => expander.click();
     
   if ( aim ) {
-    aim.classList.toggle('expander_active');
+    const toggle = () => aim.classList.toggle('expander_active');
+
+    toggle();
   }
 }
 
