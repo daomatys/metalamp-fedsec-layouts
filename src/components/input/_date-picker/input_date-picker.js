@@ -9,32 +9,31 @@ const init = function initDatePicker() {
 }
 
 const sortFramesTasks = function sortDatePickerFramesTasksOfInputFrames( frame ) {
-  const element = frame.parentNode.querySelector('.date-picker__element');
-
-  if ( frame.classList.contains('master') ) {
-    render( frame, element );
-  }
   if ( frame.classList.contains('slave') ) {
     trigger( frame );
+  } else {
+    render( frame );
   }
 }
 
-const render = function renderAirDatePicker( masterFrame, element ) {
+const render = function renderAirDatePicker( frame ) {
   const icon = name => '<span class="material-icons">' + name + '</span>';
   const date = text => new Date( text );
+
+  const element = frame.parentNode.querySelector('.date-picker__element');
+  const frames = defineFrames( frame );
+  const buttons = element.nextElementSibling;
 
   const currentDate = date('2019-08-08');
   const chosenDates = [ date('2019-08-19'), date('2019-08-23') ];
 
-  const frames = defineFrames( masterFrame );
-  const buttons = element.nextElementSibling;
   const clearButton = buttons.firstElementChild.querySelector('button');
   const acceptButton = buttons.lastElementChild.querySelector('button');
   
   const datePicker = new AirDatepicker( element, {
     range: true,
     keyboardNav: false,
-    altField: masterFrame,
+    altField: frame,
     altFieldDateFormat: 'dd.MM.yyyy',
     multipleDatesSeparator: ' - ',
     navTitles: {
@@ -47,6 +46,7 @@ const render = function renderAirDatePicker( masterFrame, element ) {
     startDate: currentDate,
     onSelect: () => validate( frames ),
   });
+  console.log( clearButton, acceptButton )
 
   validate( frames );
 
@@ -55,17 +55,23 @@ const render = function renderAirDatePicker( masterFrame, element ) {
 }
 
 const trigger = function triggerRelativeElementClick( slaveFrame ) {
-  
   slaveFrame.onclick = () => masterAim.classList.toggle('expander_active');
 }
 
-const validate = function revalidateIncomingValues( masterFrame ) {
+const validate = function revalidateIncomingValues( frames ) {
+  const slave = frames.slave;
+  const master = frames.master;
+  const dividerIndex = master.value.indexOf('-')
 
+  if ( dividerIndex ) {
+    master.value = master.value.slice( 0, dividerIndex );
+    slave.value = master.value.slice( dividerIndex );
+  }
 }
 
 const defineFrames = function( masterFrame ) {
   const holder = masterFrame.closest('.expander__parent').parentNode;
-  const slaveFrame = holder.lastElementChild.querySelector('input__frame');
+  const slaveFrame = holder.lastElementChild.querySelector('.input__frame');
 
   return {
     master: masterFrame,
