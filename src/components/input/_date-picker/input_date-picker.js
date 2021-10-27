@@ -57,32 +57,32 @@ const render = function renderAirDatePicker( frames ) {
 const trigger = function triggerRelativeElementClick( frames ) {
   const masterAim = frames.master.querySelector('.expander__aim');
 
-  console.log(masterAim)
-
   frames.slave.onclick = () => masterAim.classList.toggle('expander_active');
 }
 
 const validate = function revalidateIncomingValues( frames ) {
   const slave = frames.slave;
   const master = frames.master;
-  const initialValue = master.value;
-  const dividerIndex = initialValue.indexOf('-')
+  const caseEquivalency = slave.isEqualNode( master );
 
-  console.log(slave)
-  
-  if ( dividerIndex > -1 && slave ) {
-    master.value = initialValue.slice( 0, dividerIndex - 1 );
-    slave.value = initialValue.slice( dividerIndex + 2 );
-  } else {
-    master.value = initialValue;
-    slave.value = '';
+  if ( !caseEquivalency ) {
+    const initialValue = master.value;
+    const dividerIndex = initialValue.indexOf('-')
+
+    if ( dividerIndex > -1 ) {
+      master.value = initialValue.slice( 0, dividerIndex - 1 );
+      slave.value = initialValue.slice( dividerIndex + 2 );
+    } else {
+      slave.value = '';
+      master.value = initialValue;
+    }
   }
 }
 
 const defineFrames = function( frame ) {
   const holder = frame.closest('.expander__parent').parentNode;
   const masterFrame = holder.firstElementChild.querySelector('.input__frame');
-  const slaveFrame = holder.querySelector('slave').querySelector('.input__frame');
+  const slaveFrame = holder.lastElementChild.querySelector('.input__frame');
 
   return { master: masterFrame, slave: slaveFrame };
 }
