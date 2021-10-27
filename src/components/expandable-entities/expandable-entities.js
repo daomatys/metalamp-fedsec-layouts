@@ -10,22 +10,14 @@ const activate = function expanderActivation( expander ) {
   const parent = expander.closest('.expander__parent');
   const aim = parent.querySelector('.expander__aim');
   const icon = parent.querySelector('.material-icons');
-
   const isExpanderActive = !expander.hasAttribute('checked');
 
-  if ( isExpanderActive ) {
-    expander.setAttribute('checked', '');
-  } else {
-    expander.removeAttribute('checked');
-  }
-
+  isExpanderActive ? expander.setAttribute('checked', '') : expander.removeAttribute('checked') ;
   animate( icon );
-  expander.onblur = () => expander.click();
+  expander.onblur = () => isExpanderActive ? expander.click() : null ;
     
   if ( aim ) {
-    const toggle = () => aim.classList.toggle('expander_active');
-
-    toggle();
+    aim.classList.toggle('expander_active');
   }
 }
 
