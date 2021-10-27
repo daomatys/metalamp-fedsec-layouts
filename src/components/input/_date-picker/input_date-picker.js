@@ -9,19 +9,22 @@ const init = function initDatePicker() {
 }
 
 const sortFramesTasks = function sortDatePickerFramesTasksOfInputFrames( frame ) {
-  if ( frame.classList.contains('slave') ) {
-    trigger( frame );
+  const caseSlaveFrame = frame.classList.contains('slave');
+  const frames = defineFrames( frame );
+
+  if ( caseSlaveFrame ) {
+    trigger( frames );
   } else {
-    render( frame );
+    render( frames );
+    validate( frames );
   }
 }
 
-const render = function renderAirDatePicker( frame ) {
+const render = function renderAirDatePicker( frames ) {
   const icon = name => '<span class="material-icons">' + name + '</span>';
   const date = text => new Date( text );
 
-  const element = frame.parentNode.querySelector('.date-picker__element');
-  const frames = defineFrames( frame );
+  const element = frames.master.parentNode.querySelector('.date-picker__element');
   const buttons = element.nextElementSibling;
 
   const currentDate = date('2019-08-08');
@@ -33,7 +36,7 @@ const render = function renderAirDatePicker( frame ) {
   const datePicker = new AirDatepicker( element, {
     range: true,
     keyboardNav: false,
-    altField: frame,
+    altField: frames.master,
     altFieldDateFormat: 'dd.MM.yyyy',
     multipleDatesSeparator: ' - ',
     navTitles: {
@@ -46,37 +49,42 @@ const render = function renderAirDatePicker( frame ) {
     startDate: currentDate,
     onSelect: () => validate( frames ),
   });
-  console.log( clearButton, acceptButton )
-
-  validate( frames );
 
   clearButton.onclick = () => datePicker.clear();
-  acceptButton.onclick = () => frame.click();
+  acceptButton.onclick = () => frames.master.click();
 }
 
-const trigger = function triggerRelativeElementClick( slaveFrame ) {
-  slaveFrame.onclick = () => masterAim.classList.toggle('expander_active');
+const trigger = function triggerRelativeElementClick( frames ) {
+  const masterAim = frames.master.querySelector('.expander__aim');
+
+  console.log(masterAim)
+
+  frames.slave.onclick = () => masterAim.classList.toggle('expander_active');
 }
 
 const validate = function revalidateIncomingValues( frames ) {
   const slave = frames.slave;
   const master = frames.master;
-  const dividerIndex = master.value.indexOf('-')
+  const initialValue = master.value;
+  const dividerIndex = initialValue.indexOf('-')
 
-  if ( dividerIndex ) {
-    master.value = master.value.slice( 0, dividerIndex );
-    slave.value = master.value.slice( dividerIndex );
+  console.log(slave)
+  
+  if ( dividerIndex > -1 && slave ) {
+    master.value = initialValue.slice( 0, dividerIndex - 1 );
+    slave.value = initialValue.slice( dividerIndex + 2 );
+  } else {
+    master.value = initialValue;
+    slave.value = '';
   }
 }
 
-const defineFrames = function( masterFrame ) {
-  const holder = masterFrame.closest('.expander__parent').parentNode;
-  const slaveFrame = holder.lastElementChild.querySelector('.input__frame');
+const defineFrames = function( frame ) {
+  const holder = frame.closest('.expander__parent').parentNode;
+  const masterFrame = holder.firstElementChild.querySelector('.input__frame');
+  const slaveFrame = holder.querySelector('slave').querySelector('.input__frame');
 
-  return {
-    master: masterFrame,
-    slave: slaveFrame
-  };
+  return { master: masterFrame, slave: slaveFrame };
 }
 
 init();
