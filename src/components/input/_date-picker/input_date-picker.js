@@ -1,31 +1,32 @@
 import AirDatepicker from 'air-datepicker';
 
-const defineFrames = function findDatePickerFrames() {
-  const datePickerFrames = document.querySelectorAll('.adp');
+const init = function initDatePicker() {
+  const datePickerFrames = document.querySelectorAll('.input__frame.adp');
 
   if ( datePickerFrames ) {
-    datePickerFrames.forEach( frame => init( frame ) );
+    datePickerFrames.forEach( frame => sortFramesTasks( frame ) );
   }
 }
 
-const init = function initDatePicker( frame ) {
+const sortFramesTasks = function sortDatePickerFramesTasksOfInputFrames( frame ) {
   const element = frame.parentNode.querySelector('.date-picker__element');
 
-  if ( element ) {
+  if ( frame.classList.contains('master') ) {
     render( frame, element );
   }
-  if ( !element ) {
+  if ( frame.classList.contains('slave') ) {
     trigger( frame );
   }
 }
 
-const render = function renderAirDatePicker( frame, element ) {
+const render = function renderAirDatePicker( masterFrame, element ) {
   const icon = name => '<span class="material-icons">' + name + '</span>';
   const date = text => new Date( text );
 
   const currentDate = date('2019-08-08');
   const chosenDates = [ date('2019-08-19'), date('2019-08-23') ];
 
+  const frames = defineFrames( masterFrame );
   const buttons = element.nextElementSibling;
   const clearButton = buttons.firstElementChild.querySelector('button');
   const acceptButton = buttons.lastElementChild.querySelector('button');
@@ -33,7 +34,7 @@ const render = function renderAirDatePicker( frame, element ) {
   const datePicker = new AirDatepicker( element, {
     range: true,
     keyboardNav: false,
-    altField: frame,
+    altField: masterFrame,
     altFieldDateFormat: 'dd.MM.yyyy',
     multipleDatesSeparator: ' - ',
     navTitles: {
@@ -41,37 +42,35 @@ const render = function renderAirDatePicker( frame, element ) {
     },
     prevHtml: icon('arrow_back'),
     nextHtml: icon('arrow_forward'),
-    minDate: currentDate,
-    startDate: currentDate,
     selectedDates: chosenDates,
-    onSelect: ({date}) => validate( frame, date ),
+    minDate:   currentDate,
+    startDate: currentDate,
+    onSelect: () => validate( frames ),
   });
+
+  validate( frames );
 
   clearButton.onclick = () => datePicker.clear();
   acceptButton.onclick = () => frame.click();
 }
 
-const trigger = function triggerRelativeElementClick( frame ) {
-  const masterAim = defineTwin( frame, 'master' );
+const trigger = function triggerRelativeElementClick( slaveFrame ) {
   
-  frame.onclick = () => masterAim.classList.toggle('expander_active');
+  slaveFrame.onclick = () => masterAim.classList.toggle('expander_active');
 }
 
-const validate = function revalidateIncomingValues( frame, date ) {
-  const masterFrame = defineTwin( frame, 'master' ).closest('.input__frame');
+const validate = function revalidateIncomingValues( masterFrame ) {
 
-  if ( masterFrame ) {
-    const slaveFrame = defineTwin( frame, '.slave' ).closest('.input__frame');
-    consolr.log(1)
-    slaveFrame.value = date[2];
-  }
 }
 
-const defineTwin = function defintElementTwinMasterOrSlave( item, selector ) {
-  return item
-    .closest('.input')
-    .parentNode
-    .querySelector( selector );
+const defineFrames = function( masterFrame ) {
+  const holder = masterFrame.closest('.expander__parent').parentNode;
+  const slaveFrame = holder.lastElementChild.querySelector('input__frame');
+
+  return {
+    master: masterFrame,
+    slave: slaveFrame
+  };
 }
 
-defineFrames();
+init();
