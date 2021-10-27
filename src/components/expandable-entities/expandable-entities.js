@@ -14,7 +14,6 @@ const activate = function expanderActivation( expander ) {
 
   isExpanderActive ? expander.setAttribute('checked', '') : expander.removeAttribute('checked') ;
   animate( icon );
-  expander.onblur = () => isExpanderActive ? expander.click() : null ;
     
   if ( aim ) {
     aim.classList.toggle('expander_active');
