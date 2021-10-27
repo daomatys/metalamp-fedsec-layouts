@@ -12,29 +12,29 @@ const defineElements = function( frame ) {
   const holder = frame.closest('.expander__parent').parentNode;
 
   const master = holder.firstElementChild;
-  const slave = holder.lastElementChild;
+  const slave = holder.lastElementChild.isEqualNode( master ) ? master : holder.lastElementChild ;
 
   return {
     frames: {
-      master: master.querySelector('.input__date-picker'),
-      slave:  slave.querySelector('.input__date-picker')
-    },
-    aims: {
       master: master.querySelector('.input__frame'),
       slave:  slave.querySelector('.input__frame')
+    },
+    aims: {
+      master: master.querySelector('.input__date-picker'),
+      slave:  slave.querySelector('.input__date-picker')
     }
   }
 }
 
 const sortElementsTasks = function sortDatePickerElementsTasks( frame ) {
-  const caseSlaveAim = frame.querySelector('.expander__aim').classList.contains('slave');
+  const caseSlaveAim = frame.parentNode.querySelector('.expander__aim').classList.contains('slave');
   const elements = defineElements( frame );
 
   if ( caseSlaveAim ) {
     trigger( elements );
   } else {
     render( elements );
-    validate( elements );
+    validate( elements.frames );
   }
 }
 
@@ -79,14 +79,16 @@ const trigger = function triggerRelativeElementClick( elements ) {
   slaveFrame.onclick = () => masterAim.classList.toggle('expander_active');
 }
 
-const validate = function revalidateIncomingValues( elements ) {
-  const slaveFrame = elements.frames.slave;
-  const masterFrame = elements.frames.master;
+const validate = function revalidateIncomingValues( frames ) {
+  const slaveFrame = frames.slave;
+  const masterFrame = frames.master;
   const caseEquivalence = slaveFrame.isEqualNode( masterFrame );
+
+  console.log(1)
 
   if ( !caseEquivalence ) {
     const initialValue = masterFrame.value;
-    const dividerIndex = initialValue.indexOf('-')
+    const dividerIndex = initialValue.indexOf('-');
 
     if ( dividerIndex > -1 ) {
       masterFrame.value = initialValue.slice( 0, dividerIndex - 1 );
