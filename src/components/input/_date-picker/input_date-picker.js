@@ -54,8 +54,6 @@ const trigger = function triggerRelativeElementClick( frame, selector ) {
   const item = frame.closest('.input').parentNode.querySelector( selector );
 
   frame.onclick = () => item.classList.toggle('expander_active');
-
-  console.log(item, frame)
 }
 
 defineFrames();
