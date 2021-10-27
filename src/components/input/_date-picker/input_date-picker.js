@@ -13,8 +13,9 @@ const init = function initDatePicker( frame ) {
 
   if ( element ) {
     render( frame, element );
-  } else {
-    trigger( frame, '.master' );
+  }
+  if ( !element ) {
+    trigger( frame );
   }
 }
 
@@ -26,7 +27,6 @@ const render = function renderAirDatePicker( frame, element ) {
   const chosenDates = [ date('2019-08-19'), date('2019-08-23') ];
 
   const buttons = element.nextElementSibling;
-  
   const clearButton = buttons.firstElementChild.querySelector('button');
   const acceptButton = buttons.lastElementChild.querySelector('button');
   
@@ -44,16 +44,34 @@ const render = function renderAirDatePicker( frame, element ) {
     minDate: currentDate,
     startDate: currentDate,
     selectedDates: chosenDates,
+    onSelect: ({date}) => validate( frame, date ),
   });
 
   clearButton.onclick = () => datePicker.clear();
   acceptButton.onclick = () => frame.click();
 }
 
-const trigger = function triggerRelativeElementClick( frame, selector ) {
-  const item = frame.closest('.input').parentNode.querySelector( selector );
+const trigger = function triggerRelativeElementClick( frame ) {
+  const masterAim = defineTwin( frame, 'master' );
+  
+  frame.onclick = () => masterAim.classList.toggle('expander_active');
+}
 
-  frame.onclick = () => item.classList.toggle('expander_active');
+const validate = function revalidateIncomingValues( frame, date ) {
+  const masterFrame = defineTwin( frame, 'master' ).closest('.input__frame');
+
+  if ( masterFrame ) {
+    const slaveFrame = defineTwin( frame, '.slave' ).closest('.input__frame');
+    consolr.log(1)
+    slaveFrame.value = date[2];
+  }
+}
+
+const defineTwin = function defintElementTwinMasterOrSlave( item, selector ) {
+  return item
+    .closest('.input')
+    .parentNode
+    .querySelector( selector );
 }
 
 defineFrames();

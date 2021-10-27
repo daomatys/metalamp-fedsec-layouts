@@ -5,8 +5,8 @@ mixin inputDatePicker( item )
   input.input__frame.expander.adp( id=item.id placeholder="ДД.ММ.ГГГГ" readonly )
   .input__icon_expand
     +materialIcon('expand_more', item.id )
-  if ( item.hierarchy !== 'slave' )
-    .input__date-picker.expander__aim( class=item.hierarchy id=`dp-${item.id}` )
+  .input__date-picker.expander__aim( class=item.hierarchy id=`dp-${item.id}` )
+    if ( item.hierarchy !== 'slave' )
       .date-picker__element
       .date-picker__buttons
         +meanOvalButtons({
