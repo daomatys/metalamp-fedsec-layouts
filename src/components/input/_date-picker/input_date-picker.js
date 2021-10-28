@@ -4,14 +4,14 @@ const init = function initDatePicker() {
   const inputFrames = document.querySelectorAll('.input__frame.adp');
 
   if ( inputFrames ) {
-    inputFrames.forEach( frame => sortElementsTasks( frame ) );
+    inputFrames.forEach( frame => sortTasks( frame ) );
   }
 }
 
 const defineElements = function( frame ) {
   const holder = frame.closest('.expander__parent').parentNode;
+  
   const caseMasterSlaveModel = holder.querySelector('.master');
-
   const master = caseMasterSlaveModel ? holder.firstElementChild : frame.parentNode ;
   const slave = caseMasterSlaveModel ? holder.lastElementChild : master ;
 
@@ -28,10 +28,10 @@ const defineElements = function( frame ) {
   }
 }
 
-const sortElementsTasks = function sortDatePickerElementsTasks( frame ) {
+const sortTasks = function sortDatePickerElementsTasks( frame ) {
   const elements = defineElements( frame );
-  const currentAim = frame.parentNode.querySelector('.expander__aim');
 
+  const currentAim = frame.parentNode.querySelector('.expander__aim');
   const rawDates = currentAim.getAttribute('data-dates');
   const caseSlaveAim = currentAim.classList.contains('slave');
   const caseMasterAim = currentAim.classList.contains('master');
@@ -55,7 +55,6 @@ const renderDatePicker = function renderDatePickerUnderTheMasterFrame( elements,
   const acceptButton = buttons.lastElementChild.querySelector('button');
 
   const currentDate = new Date('2019-08-08');
-  
   const datePicker = new AirDatepicker( container, {
     navTitles: {
       days: 'MMMM yyyy',
@@ -93,7 +92,7 @@ const triggerClick = function triggerClickRelativeElementClick( slaveFrame, mast
 }
 
 const sendDates = function sendDatesUsingDispatchCustomEvent( rawDates, holder ) {
-  if (rawDates) {
+  if ( rawDates ) {
     const fixedDatesArray = rawDates.split(', ');
     const fixedDates = fixedDatesArray.map( fixedDate => new Date( fixedDate ) );
   
@@ -107,15 +106,14 @@ const route = function routeIncomingDateValues( frames ) {
   const caseEquivalence = slaveFrame.isEqualNode( masterFrame );
 
   if ( !caseEquivalence ) {
-    const initialValue = masterFrame.value;
-    const dividerIndex = initialValue.indexOf('-');
+    const initialValue = masterFrame.value.split(', ');
 
-    if ( dividerIndex > -1 ) {
-      masterFrame.value = initialValue.slice( 0, dividerIndex - 1 );
-      slaveFrame.value = initialValue.slice( dividerIndex + 2 );
+    if ( initialValue.length > 1 ) {
+      masterFrame.value = initialValue[0];
+      slaveFrame.value = initialValue[1];
     } else {
       slaveFrame.value = '';
-      masterFrame.value = initialValue;
+      masterFrame.value = initialValue[0];
     }
   }
 }
