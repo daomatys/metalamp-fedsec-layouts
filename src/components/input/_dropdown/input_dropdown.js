@@ -80,8 +80,11 @@ const updateDropdownValue = function( counter, counters ) {
   const values = [...counters].map( item => Number( item.textContent ) );
   const valuesSum = values.reduce( (prev, curr) => prev + curr );
 
-  const firstTextPart = valuesSum > 0 ? `${valuesSum} гост${defineEnding( valuesSum, 'ь', 'ей', 'я' )}` : '' ;
-  const lastTextPart = values[2] > 0 ? `, ${values[2]} младен${defineEnding( values[2], 'ец', 'цев', 'ца' )}` : '' ;
+  const firstText = `${valuesSum} гост${defineEnding( valuesSum, 'ь', 'ей', 'я' )}`;
+  const lastText = `, ${values[2]} младен${defineEnding( values[2], 'ец', 'цев', 'ца' )}`;
+
+  const firstTextPart = valuesSum > 0 ? firstText : '' ;
+  const lastTextPart = values[2] > 0 ? lastText : '' ;
 
   frame.value = firstTextPart + lastTextPart;
 } 
