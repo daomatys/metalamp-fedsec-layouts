@@ -10,9 +10,10 @@ const init = function initDatePicker() {
 
 const defineElements = function( frame ) {
   const holder = frame.closest('.expander__parent').parentNode;
+  const caseMasterSlaveModel = holder.querySelector('.master');
 
-  const master = holder.querySelector('.master') ? holder.firstElementChild : holder.querySelector('.self-sufficient') ;
-  const slave = holder.querySelector('.slave') ? holder.lastElementChild : master ;
+  const master = caseMasterSlaveModel ? holder.firstElementChild : frame.parentNode ;
+  const slave = caseMasterSlaveModel ? holder.lastElementChild : master ;
 
   return {
     holder: holder,
@@ -28,14 +29,12 @@ const defineElements = function( frame ) {
 }
 
 const sortElementsTasks = function sortDatePickerElementsTasks( frame ) {
-  const currentAim = frame.parentNode.querySelector('.expander__aim')
   const elements = defineElements( frame );
+  const currentAim = frame.parentNode.querySelector('.expander__aim');
 
   const rawDates = currentAim.getAttribute('data-dates');
   const caseSlaveAim = currentAim.classList.contains('slave');
   const caseMasterAim = currentAim.classList.contains('master');
-
-  console.log(currentAim, rawDates)
 
   if ( caseSlaveAim ) {
     sendDates( rawDates, elements.holder );
@@ -49,7 +48,7 @@ const renderDatePicker = function renderDatePickerUnderTheMasterFrame( elements,
   const icon = name => '<span class="material-icons">' + name + '</span>';
 
   const frames = elements.frames;
-  const container = elements.aims.master.firstChild;
+  const container = elements.aims.master.firstElementChild;
   const buttons = container.nextElementSibling;
 
   const clearButton = buttons.firstElementChild.querySelector('button');
@@ -76,7 +75,9 @@ const renderDatePicker = function renderDatePickerUnderTheMasterFrame( elements,
   clearButton.onclick = () => datePicker.clear();
   acceptButton.onclick = () => frames.master.click();
 
-  renderDateValues( datePicker, holder, rawDates, caseMasterAim );
+  if ( rawDates ) {
+    renderDateValues( datePicker, holder, rawDates, caseMasterAim );
+  }
 }
 
 const renderDateValues = function Dates( datePicker, holder, rawDates, caseMasterAim ) {
