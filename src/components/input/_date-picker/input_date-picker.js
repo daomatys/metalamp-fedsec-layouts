@@ -1,7 +1,7 @@
 import AirDatepicker from 'air-datepicker';
 
 const init = function initDatePicker() {
-  const inputFrames = document.querySelectorAll('.input__frame.adp');
+  const inputFrames = document.querySelectorAll('.adp-frame');
 
   if ( inputFrames ) {
     inputFrames.forEach( frame => sortTasks( frame ) );
@@ -34,12 +34,12 @@ const defineElements = function( frame ) {
   return {
     holder: holder,
     frames: {
-      master: master.querySelector('.input__frame'),
-      slave:  slave.querySelector('.input__frame')
+      master: master.querySelector('.adp-frame'),
+      slave:  slave.querySelector('.adp-frame')
     },
     aims: {
-      master: master.querySelector('.input__date-picker'),
-      slave:  slave.querySelector('.input__date-picker')
+      master: master.querySelector('.expander__aim'),
+      slave:  slave.querySelector('.expander__aim')
     }
   }
 }

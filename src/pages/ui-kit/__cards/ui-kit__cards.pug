@@ -15,6 +15,7 @@ block main
   include /components/card/__login/card__login.pug
   include /components/card/__room-booking/card__room-booking.pug
   include /components/card/__room-sample/card__room-sample.pug
+  include /components/input/input.pug
 
   .headers-n-footers__wrap
     .headers-n-footers__column
@@ -24,6 +25,15 @@ block main
       +cardRoomBooking()
       +cardLogin()
     .headers-n-footers__column
+      .headers-n-footers__date-picker
+        +input({
+          id: "uik-cards__date-picker",
+          type: "date-picker",
+          active: true,
+          widthbypercent: 83,
+          dates: "2019-08-19, 2019-08-23"
+        })
+
       -
         const samples = [
           {
