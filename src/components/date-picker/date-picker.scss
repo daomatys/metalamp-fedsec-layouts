@@ -1,0 +1,122 @@
+@import "/node_modules/air-datepicker/air-datepicker.css";
+@import "@variables";
+
+$cell-size: 40px;
+$font-size: 12px;
+
+.date-picker__buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.air-datepicker {
+  --adp-font-family: inherit;
+  --adp-font-size: #{$font-size};
+
+  --adp-width: 100%;
+  --adp-padding: 0;
+
+  --adp-day-cell-height: #{$cell-size};
+  --adp-day-cell-width:  #{$cell-size};
+  --adp-day-name-color: #{$perfume};
+
+  --adp-border-color: none;
+  --adp-border-color-inner: none;
+
+  --adp-color: #{rgba($valhalla, .5)};
+  --adp-color-other-month: #{rgba($valhalla, .25)};
+  --adp-color-disabled:    #{rgba($valhalla, .25)};
+  --adp-accent-color: #{$perfume};
+
+  --adp-background-color-hover: #{rgba($perfume, .25)};
+  --adp-background-color-in-range: #{$primary-gradient-a};
+  --adp-background-color-selected-other-month: #{$primary-gradient-a};
+  --adp-background-color-selected-other-month-focused: #{$primary-gradient-b};
+
+  --adp-cell-border-radius: 50%;
+  --adp-cell-background-color-selected: #{$primary-gradient-a};
+  --adp-cell-background-color-in-range: #{$primary-gradient-a};
+  --adp-cell-background-color-selected-hover: #{$primary-gradient-b};
+  --adp-cell-background-color-in-range-hover: #{$primary-gradient-b};
+
+  box-sizing: border-box;
+
+  &-body {
+    transition: none;
+
+    &--day-names {
+      margin: 0;
+    }
+
+    &--day-name {
+      margin-top: 30px;
+      text-transform: initial;
+      font-size: $font-size;
+      font-weight: bold;
+      line-height: $cell-size;
+    }
+  }
+
+  &-nav {
+    &--action {
+      width: auto;
+      color: $perfume;
+    }
+
+    &--title {
+      @extend .custom-font-style_h2;
+    }
+  }
+
+  &-cell {
+    transition: background .3s ease;
+
+    &.-disabled- {
+      pointer-events: none;
+    }
+
+    &.-day- {
+      &.-min-date-,
+      &.-selected- {
+        position: relative;
+        
+        &::before {
+          position: absolute;
+          width: $cell-size;
+          height: $cell-size;
+          line-height: $cell-size;
+          border-radius: 50%;
+          font-weight: bold;
+          text-align: center;
+          content: attr(data-date);
+        }
+      }
+    }
+
+    &.-year-,
+    &.-month- {
+      &.-current-,
+      &.-selected- {
+        font-weight: bold;
+      }
+      &.-selected- {
+        background-image: $primary-gradient;
+      }
+    }
+
+    &.-selected-::before {
+      background-image: $primary-gradient;
+    }
+
+    &.-min-date-::before {
+      background-image: $secondary-gradient;
+      color: $white;
+    }
+
+    &.-focus-.-range-to-,
+    &.-focus-.-range-from- {
+      background-image: $primary-gradient-a;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 include /components/material-icon-cell/material-icon-cell.pug
-include /components/button/__mean-oval/button__mean-oval.pug
+include /components/date-picker/date-picker.pug
 
 mixin inputDatePicker( item )
   - const activeClass = item.active ? 'expander_active' : ''
@@ -9,12 +9,4 @@ mixin inputDatePicker( item )
     +materialIcon('expand_more', item.id )
   .input__date-picker.expander__aim( class=[item.hierarchy, activeClass] data-dates=item.dates )
     if ( item.hierarchy !== 'slave' )
-      .date-picker__element
-      .date-picker__buttons
-        +meanOvalButtons({
-          groupname: `${item.id}-small`,
-          buttons: [
-            { type: "text", text: "очистить" },
-            { type: "text", text: "применить" }
-          ]
-        })
+      +datePicker( item.id )

@@ -1,0 +1,12 @@
+include /components/button/__mean-oval/button__mean-oval.pug
+
+mixin datePicker( id )
+  .date-picker__element
+  .date-picker__buttons
+    +meanOvalButtons({
+      groupname: `${id}-small`,
+      buttons: [
+        { type: "text", text: "очистить" },
+        { type: "text", text: "применить" }
+      ]
+    })
