@@ -75,10 +75,15 @@ const updateDropdown = function updateCalcsAndControllersToCurrentState( buttons
 }
 
 const updateDropdownValue = function( counter, counters ) {
-  const values = [...counters].map( item => item.textContent );
   const frame = counter.closest('.input__dropdown').parentNode.querySelector('.input__frame');
 
-  frame.value = `${values[0]}${values[1]}${values[2]}`;
+  const values = [...counters].map( item => Number( item.textContent ) );
+  const valuesSum = values.reduce( (prev, curr) => prev + curr );
+
+  const firstTextPart = valuesSum > 0 ? `${valuesSum} гост${1}` : '' ;
+  const lastTextPart = values[2] > 0 ? `, ${values[2]} младенц${1}`
+
+  frame.value = firstTextPart + lastTextPart;
 } 
 
 const adjustButtonsState = function optionsButtonsStateAccordingToMinAndMaxRanges( buttons, value, selector, leftOnly ) {
