@@ -80,8 +80,8 @@ const updateDropdownValue = function( counter, counters ) {
   const values = [...counters].map( item => Number( item.textContent ) );
   const valuesSum = values.reduce( (prev, curr) => prev + curr );
 
-  const firstTextPart = valuesSum > 0 ? `${valuesSum} гост${1}` : '' ;
-  const lastTextPart = values[2] > 0 ? `, ${values[2]} младенц${1}`
+  const firstTextPart = valuesSum > 0 ? `${valuesSum} гост${defineEnding( valuesSum, 'ь', 'ей', 'я' )}` : '' ;
+  const lastTextPart = values[2] > 0 ? `, ${values[2]} младен${defineEnding( values[2], 'ец', 'цев', 'ца' )}` : '' ;
 
   frame.value = firstTextPart + lastTextPart;
 } 
@@ -123,6 +123,19 @@ const defineCountersSum = function( counters ) {
     .map( counter => Number( counter.textContent ) )
     .reduce( (prev, curr) => prev + curr );
 
+  return result;
+}
+
+const defineEnding = function defineWordEndingAccordingToNumber( num, unoEnding, deciEnding, onefourEnding ) {
+  let result = unoEnding;
+
+  if ( Math.floor(num/10)===1 || num%10<1 || num%10>4 ) {
+    result = deciEnding;
+  } else {
+    if ( num%10>1 ) {
+      result = onefourEnding;
+    }
+  }
   return result;
 }
 
