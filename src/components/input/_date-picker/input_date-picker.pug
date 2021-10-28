@@ -2,11 +2,13 @@ include /components/material-icon-cell/material-icon-cell.pug
 include /components/button/__mean-oval/button__mean-oval.pug
 
 mixin inputDatePicker( item )
+  - const hierarchicalState = item.hierarchy || 'self-sufficient'
+
   input.input__frame.expander.adp( id=item.id placeholder="ДД.ММ.ГГГГ" readonly )
   .input__icon_expand
     +materialIcon('expand_more', item.id )
-  .input__date-picker.expander__aim( class=item.hierarchy id=`dp-${item.id}` data-dates=item.dates )
-    if ( item.hierarchy !== 'slave' )
+  .input__date-picker.expander__aim( class=hierarchicalState data-dates=item.dates )
+    if ( hierarchicalState !== 'slave' )
       .date-picker__element
       .date-picker__buttons
         +meanOvalButtons({

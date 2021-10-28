@@ -11,8 +11,8 @@ const init = function initDatePicker() {
 const defineElements = function( frame ) {
   const holder = frame.closest('.expander__parent').parentNode;
 
-  const master = holder.firstElementChild;
-  const slave = holder.lastElementChild.isEqualNode( master ) ? master : holder.lastElementChild ;
+  const master = holder.querySelector('.master') ? holder.firstElementChild : holder.querySelector('.self-sufficient') ;
+  const slave = holder.querySelector('.slave') ? holder.lastElementChild : master ;
 
   return {
     holder: holder,
@@ -35,28 +35,29 @@ const sortElementsTasks = function sortDatePickerElementsTasks( frame ) {
   const caseSlaveAim = currentAim.classList.contains('slave');
   const caseMasterAim = currentAim.classList.contains('master');
 
-  console.log(rawDates)
+  console.log(currentAim, rawDates)
 
   if ( caseSlaveAim ) {
     sendDates( rawDates, elements.holder );
     triggerClick( elements.frames.slave, elements.aims.master );
   } else {
-    renderDatePicker( elements.frames, elements.holder, rawDates, caseMasterAim );
+    renderDatePicker( elements, elements.holder, rawDates, caseMasterAim );
   }
 }
 
-const renderDatePicker = function renderDatePickerUnderTheMasterFrame( frames, holder, rawDates, caseMasterAim ) {
+const renderDatePicker = function renderDatePickerUnderTheMasterFrame( elements, holder, rawDates, caseMasterAim ) {
   const icon = name => '<span class="material-icons">' + name + '</span>';
 
-  const element = frames.master.parentNode.querySelector('.date-picker__element');
-  const buttons = element.nextElementSibling;
+  const frames = elements.frames;
+  const container = elements.aims.master.firstChild;
+  const buttons = container.nextElementSibling;
 
   const clearButton = buttons.firstElementChild.querySelector('button');
   const acceptButton = buttons.lastElementChild.querySelector('button');
 
   const currentDate = new Date('2019-08-08');
   
-  const datePicker = new AirDatepicker( element, {
+  const datePicker = new AirDatepicker( container, {
     navTitles: {
       days: 'MMMM yyyy',
     },
@@ -91,10 +92,12 @@ const triggerClick = function triggerClickRelativeElementClick( slaveFrame, mast
 }
 
 const sendDates = function sendDatesUsingDispatchCustomEvent( rawDates, holder ) {
-  const fixedDatesArray = rawDates.split(', ');
-  const fixedDates = fixedDatesArray.map( fixedDate => new Date( fixedDate ) );
-
-  holder.dispatchEvent( new CustomEvent('incoming-dates', { detail: fixedDates }) );
+  if (rawDates) {
+    const fixedDatesArray = rawDates.split(', ');
+    const fixedDates = fixedDatesArray.map( fixedDate => new Date( fixedDate ) );
+  
+    holder.dispatchEvent( new CustomEvent('incoming-dates', { detail: fixedDates }) );
+  }
 }
 
 const route = function routeIncomingDateValues( frames ) {
