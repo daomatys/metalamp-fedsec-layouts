@@ -43,8 +43,11 @@ const initButtons = function initOptionButtonsEventListeners( buttons, counters,
 
   adjustButtonsState( optionButtons, optionCounterValue, 'button-frozen' );
 
-  optionButtons.left.addEventListener('click', () => updateDropdown( optionButtons, optionCounter, -1, controllers, counters ));
-  optionButtons.right.addEventListener('click', () => updateDropdown( optionButtons, optionCounter, 1, controllers, counters ));
+  const update = function( elem, shift ){
+    elem.addEventListener('click', () => updateDropdown( optionButtons, optionCounter, shift, controllers, counters ));
+  }
+  update( optionButtons.left, -1);
+  update( optionButtons.right, 1);
 }
 
 const defineButtons = function defineFirstAndLastChildByItsParent( parent ) {
@@ -64,11 +67,19 @@ const updateDropdown = function updateCalcsAndControllersToCurrentState( buttons
 
   adjustButtonsState( buttons, newCounterValue, 'button-frozen' );
   counter.textContent = newCounterValue;
+  updateDropdownValue( counter, counters );
 
   if ( controllers ) {
     defineResetControllerState( counters, controllers );
   }
 }
+
+const updateDropdownValue = function( counter, counters ) {
+  const values = [...counters].map( item => item.textContent );
+  const frame = counter.closest('.input__dropdown').parentNode.querySelector('.input__frame');
+
+  frame.value = `${values[0]}${values[1]}${values[2]}`;
+} 
 
 const adjustButtonsState = function optionsButtonsStateAccordingToMinAndMaxRanges( buttons, value, selector, leftOnly ) {
   const caseA = value < 1;
