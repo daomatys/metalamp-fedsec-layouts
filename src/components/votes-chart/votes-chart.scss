@@ -67,7 +67,7 @@
   @mixin svgGradient( $suffix, $start-color, $end-color ) {
     &__#{ $suffix } {
       &_start {
-        color: $start-color;
+        color: mix( $start-color, $end-color );
         stop-color: $start-color;
       }
       &_end {
