@@ -25,7 +25,11 @@ block main
       +cardRoomBooking()
       +cardLogin()
     .headers-n-footers__column
-      +cardDatePicker()
+      +cardDatePicker({
+        id: "uik-cards__date-picker",
+        dates: "2019-08-19, 2019-08-23"
+      })
+      
       -
         const samples = [
           {
