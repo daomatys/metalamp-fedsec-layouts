@@ -28,13 +28,14 @@ const defineElements = function( frame ) {
 
 const sortElementsTasks = function sortDatePickerElementsTasks( frame ) {
   const caseSlaveAim = frame.parentNode.querySelector('.expander__aim').classList.contains('slave');
+  const rawDates = frame.getAttribure('data-dates');
   const elements = defineElements( frame );
 
   if ( caseSlaveAim ) {
     trigger( elements );
+    sendDates( rawDates );
   } else {
     render( elements );
-    validate( elements.frames );
   }
 }
 
@@ -46,7 +47,6 @@ const render = function renderAirDatePicker( elements ) {
   const buttons = element.nextElementSibling;
 
   const currentDate = date('2019-08-08');
-  const chosenDates = [ date('2019-08-19'), date('2019-08-23') ];
 
   const clearButton = buttons.firstElementChild.querySelector('button');
   const acceptButton = buttons.lastElementChild.querySelector('button');
@@ -62,11 +62,12 @@ const render = function renderAirDatePicker( elements ) {
     },
     prevHtml: icon('arrow_back'),
     nextHtml: icon('arrow_forward'),
-    selectedDates: chosenDates,
     minDate:   currentDate,
     startDate: currentDate,
-    onSelect: () => validate( elements.frames ),
+    onSelect: () => route( elements.frames )
   });
+
+  datePicker.selectDate( chosenDates );
 
   clearButton.onclick = () => datePicker.clear();
   acceptButton.onclick = () => elements.frames.master.click();
@@ -79,12 +80,14 @@ const trigger = function triggerRelativeElementClick( elements ) {
   slaveFrame.onclick = () => masterAim.classList.toggle('expander_active');
 }
 
-const validate = function revalidateIncomingValues( frames ) {
+const sendDates = function sendDatesUsingDispatchCustomEvent( rawDates ) {
+  const chosenDates = [ date('2019-08-19'), date('2019-08-23') ];
+}
+
+const route = function routeIncomingDateValues( frames ) {
   const slaveFrame = frames.slave;
   const masterFrame = frames.master;
   const caseEquivalence = slaveFrame.isEqualNode( masterFrame );
-
-  console.log(1)
 
   if ( !caseEquivalence ) {
     const initialValue = masterFrame.value;
