@@ -2,11 +2,9 @@ include /components/material-icon-cell/material-icon-cell.pug
 include /components/date-picker/date-picker.pug
 
 mixin inputDatePicker( item )
-  - const activeClass = item.active ? 'expander_active' : ''
-
   input.input__frame.expander.adp-frame( id=item.id placeholder="ДД.ММ.ГГГГ" readonly )
   .input__icon_expand
     +materialIcon('expand_more', item.id )
-  .input__date-picker.expander__aim( class=[item.hierarchy, activeClass] data-dates=item.dates )
+  .input__date-picker.expander__aim( class=item.hierarchy data-dates=item.dates )
     if ( item.hierarchy !== 'slave' )
       +datePicker( item.id )
