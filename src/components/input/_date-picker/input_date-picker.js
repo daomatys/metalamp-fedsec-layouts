@@ -1,10 +1,10 @@
 import AirDatepicker from 'air-datepicker';
 
 const init = function initDatePicker() {
-  const datePickerFrames = document.querySelectorAll('.input__frame.adp');
+  const inputFrames = document.querySelectorAll('.input__frame.adp');
 
-  if ( datePickerFrames ) {
-    datePickerFrames.forEach( frame => sortElementsTasks( frame ) );
+  if ( inputFrames ) {
+    inputFrames.forEach( frame => sortElementsTasks( frame ) );
   }
 }
 
@@ -15,6 +15,7 @@ const defineElements = function( frame ) {
   const slave = holder.lastElementChild.isEqualNode( master ) ? master : holder.lastElementChild ;
 
   return {
+    holder: holder,
     frames: {
       master: master.querySelector('.input__frame'),
       slave:  slave.querySelector('.input__frame')
@@ -27,61 +28,73 @@ const defineElements = function( frame ) {
 }
 
 const sortElementsTasks = function sortDatePickerElementsTasks( frame ) {
-  const caseSlaveAim = frame.parentNode.querySelector('.expander__aim').classList.contains('slave');
-  const rawDates = frame.getAttribure('data-dates');
+  const currentAim = frame.parentNode.querySelector('.expander__aim')
   const elements = defineElements( frame );
 
+  const rawDates = currentAim.getAttribute('data-dates');
+  const caseSlaveAim = currentAim.classList.contains('slave');
+  const caseMasterAim = currentAim.classList.contains('master');
+
+  console.log(rawDates)
+
   if ( caseSlaveAim ) {
-    trigger( elements );
-    sendDates( rawDates );
+    sendDates( rawDates, elements.holder );
+    triggerClick( elements.frames.slave, elements.aims.master );
   } else {
-    render( elements );
+    renderDatePicker( elements.frames, elements.holder, rawDates, caseMasterAim );
   }
 }
 
-const render = function renderAirDatePicker( elements ) {
+const renderDatePicker = function renderDatePickerUnderTheMasterFrame( frames, holder, rawDates, caseMasterAim ) {
   const icon = name => '<span class="material-icons">' + name + '</span>';
-  const date = text => new Date( text );
 
-  const element = elements.frames.master.parentNode.querySelector('.date-picker__element');
+  const element = frames.master.parentNode.querySelector('.date-picker__element');
   const buttons = element.nextElementSibling;
-
-  const currentDate = date('2019-08-08');
 
   const clearButton = buttons.firstElementChild.querySelector('button');
   const acceptButton = buttons.lastElementChild.querySelector('button');
+
+  const currentDate = new Date('2019-08-08');
   
   const datePicker = new AirDatepicker( element, {
-    range: true,
-    keyboardNav: false,
-    altField: elements.frames.master,
-    altFieldDateFormat: 'dd.MM.yyyy',
-    multipleDatesSeparator: ' - ',
     navTitles: {
       days: 'MMMM yyyy',
     },
+    range: true,
+    keyboardNav: false,
+    altField: frames.master,
+    altFieldDateFormat: 'dd.MM.yyyy',
+    multipleDatesSeparator: ' - ',
     prevHtml: icon('arrow_back'),
     nextHtml: icon('arrow_forward'),
     minDate:   currentDate,
     startDate: currentDate,
-    onSelect: () => route( elements.frames )
+    onSelect: () => route( frames )
   });
 
-  datePicker.selectDate( chosenDates );
-
   clearButton.onclick = () => datePicker.clear();
-  acceptButton.onclick = () => elements.frames.master.click();
+  acceptButton.onclick = () => frames.master.click();
+
+  renderDateValues( datePicker, holder, rawDates, caseMasterAim );
 }
 
-const trigger = function triggerRelativeElementClick( elements ) {
-  const slaveFrame = elements.frames.slave;
-  const masterAim = elements.aims.master;
+const renderDateValues = function Dates( datePicker, holder, rawDates, caseMasterAim ) {
+  holder.addEventListener('incoming-dates', ({detail}) => datePicker.selectDate( detail ), { once: true });
 
+  if ( !caseMasterAim ) {
+    sendDates( rawDates, holder );
+  }
+}
+
+const triggerClick = function triggerClickRelativeElementClick( slaveFrame, masterAim ) {
   slaveFrame.onclick = () => masterAim.classList.toggle('expander_active');
 }
 
-const sendDates = function sendDatesUsingDispatchCustomEvent( rawDates ) {
-  const chosenDates = [ date('2019-08-19'), date('2019-08-23') ];
+const sendDates = function sendDatesUsingDispatchCustomEvent( rawDates, holder ) {
+  const fixedDatesArray = rawDates.split(', ');
+  const fixedDates = fixedDatesArray.map( fixedDate => new Date( fixedDate ) );
+
+  holder.dispatchEvent( new CustomEvent('incoming-dates', { detail: fixedDates }) );
 }
 
 const route = function routeIncomingDateValues( frames ) {
