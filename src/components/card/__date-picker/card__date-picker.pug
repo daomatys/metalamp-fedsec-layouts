@@ -1,0 +1,7 @@
+include /components/date-picker/date-picker.pug
+
+mixin cardDatePicker
+  .date-picker.expander__parent
+    .adp-frame(  )
+    .expander__aim( data-dates="2019-08-19, 2019-08-23" )
+      +datePicker("uik-cards__date-picker")
