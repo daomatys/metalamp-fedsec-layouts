@@ -3,7 +3,7 @@ include /components/date-picker/date-picker.pug
 
 mixin inputDatePicker( item )
   input.input__frame.expander.adp-frame( id=item.id placeholder="ДД.ММ.ГГГГ" readonly )
-  .input__icon_expand
+  label.input__icon_expand( for=item.id )
     +materialIcon('expand_more', item.id )
   .input__date-picker.expander__aim( class=item.hierarchy data-dates=item.dates )
     if ( item.hierarchy !== 'slave' )

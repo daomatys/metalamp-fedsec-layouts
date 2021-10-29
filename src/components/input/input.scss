@@ -21,12 +21,12 @@ $focused-color_border-n-icon: rgba($valhalla, .5);
 
   &__frame {
     margin: 0;
+    padding: 0 15px;
+    height: 44px;
+    width: inherit;
     border-radius: 4px;
     border-color: $default-color;
     color: $focused-color_text;
-    height: 44px;
-    padding: 0px 15px 0px 15px;
-    width: inherit;
     background-color: transparent;
     font-family: inherit;
     font-size: 14px;
@@ -65,6 +65,7 @@ $focused-color_border-n-icon: rgba($valhalla, .5);
       bottom: 10px;
       right: 10px;
       
+      &,
       & > .material-icons {
         cursor: pointer;
       }
@@ -72,6 +73,17 @@ $focused-color_border-n-icon: rgba($valhalla, .5);
 
     &_expand {
       color: $focused-color_border-n-icon;
+      background-color: $white;
+
+      &::before {
+        $beforeSize: 24px;
+        position: absolute;
+        right: $beforeSize;
+        width: $beforeSize;
+        height: $beforeSize;
+        background-image: linear-gradient(90deg, rgba($white, 0) 0%, rgba($white, 1) 100%);
+        content: '';
+      }
     }
   
     &_subscribe {

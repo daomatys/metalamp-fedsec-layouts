@@ -15,7 +15,7 @@ mixin inputDropdown( item={} )
   - const iconFlippedClass = dropdown.expanded ? 'icon_flipped' : ''
 
   input.input__frame.dropdown.expander( id=item.id placeholder=placeholder checked=dropdown.expanded readonly )
-  .input__icon_expand( class=iconFlippedClass )
+  label.input__icon_expand( class=iconFlippedClass for=item.id )
     +materialIcon('expand_more', item.id )
   .input__dropdown.expander__aim( class=expanderActiveClass data-options-type=dropdown.type )
     each option, index in options
