@@ -18,10 +18,10 @@ mixin inputDropdown( item={} )
   .input__dropdown.expander__aim( class=expanderActiveClass data-options-type=dropdown.type )
     each option, index in options
       .input__option.custom-font-style_h3
-        span.input__option_name #{options}
+        span.input__option_name #{option}
         .input__option_buttons
           .input__option_button-dec -
-          .input__option_counter #{value[index]}
+          .input__option_counter #{values[index]}
           .input__option_button-inc +
     if ( dropdown.controls )
       .input__state-controllers
