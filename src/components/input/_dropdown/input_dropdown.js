@@ -1,13 +1,13 @@
 const find = function findDropdownContainers() {
   const dropdowns = document.querySelectorAll('.input__dropdown');
 
-  dropdowns.forEach( item => initListeners( item ) );
+  dropdowns.forEach( dropdown => initListeners( dropdown ) );
 }
 
-const initListeners = function initElementsEventListeners( item ) {
-  const counters = item.querySelectorAll('.input__option_counter');
-  const buttonGroups = item.querySelectorAll('.input__option_buttons');
-  const controllersBar = item.querySelector('.input__state-controllers');
+const initListeners = function initElementsEventListeners( dropdown ) {
+  const counters = dropdown.querySelectorAll('.input__option_counter');
+  const buttonGroups = dropdown.querySelectorAll('.input__option_buttons');
+  const controllersBar = dropdown.querySelector('.input__state-controllers');
 
   updateDropdownValue( [...counters][0], counters );
 
@@ -70,7 +70,7 @@ const defineButtons = function defineFirstAndLastChildByItsParent( parent ) {
   return result;
 }
 
-// general input_dropdown state section
+// general dropdown state-update functions
 
 const updateDropdown = function updateCalcsAndControllersToCurrentState( buttons, counter, addification, controllers, counters ) {
   const newCounterValue = parseInt( counter.textContent ) + addification;
@@ -106,23 +106,23 @@ const updateDropdownValue = function updateDropdownValue( anychild, counters ) {
 }
 
 const defineGuestInputValue = function defineGuestInputValue( values ) {
-  const valuesSum = values.reduce( (prev, curr) => prev + curr );
+  const valuesSum = values.reduce( (acc, curr) => acc + curr );
 
-  const firstText = defineWord( valuesSum, 0,         'гост',   [ 'ь', 'ей', 'я' ]    );
-  const lastText =  defineWord( values[2], valuesSum, 'младен', [ 'ец', 'цев', 'ца' ] );
+  const firstText = defineTextExpression( valuesSum, 0,         'гост',   [ 'ь', 'ей', 'я' ]    );
+  const lastText =  defineTextExpression( values[2], valuesSum, 'младен', [ 'ец', 'цев', 'ца' ] );
 
   return firstText + lastText;
 }
 
 const defineFacilitiesInputValue = function defineFacilitiesInputValue( values ) {
-  const firstText =  defineWord( values[0], 0,         'cпал',   [ 'ьня', 'ен', 'ьни' ] );
-  const secondText = defineWord( values[1], values[0], 'кроват', [ 'ь', 'ей', 'и' ]     );
-  const thirdText =  defineWord( values[2], values[1], 'ванн',   [ 'а', 'ых', 'ых' ]    );
+  const firstText =  defineTextExpression( values[0], 0,         'cпал',   [ 'ьня', 'ен', 'ьни' ] );
+  const secondText = defineTextExpression( values[1], values[0], 'кроват', [ 'ь', 'ей', 'и' ]     );
+  const thirdText =  defineTextExpression( values[2], values[1], 'ванн',   [ 'а', 'ых', 'ых' ]    );
 
-  return firstText + secondText + thirdText;;
+  return firstText + secondText + thirdText;
 }
 
-const defineWord = function defineWordEndingAccordingToNumber( currentValue, lastValue, word, endings=[] ) {
+const defineTextExpression = function defineTextExpressionAccordingToNumber( currentValue, lastValue, word, endings=[] ) {
   let result = '';
   let ending = endings[0];
 
@@ -142,13 +142,13 @@ const defineWord = function defineWordEndingAccordingToNumber( currentValue, las
       ending,
     ];
 
-    result = textParts.reduce( (prev, curr) => prev + curr );
+    result = textParts.reduce( (acc, curr) => acc + curr );
   }
 
   return result;
 }
 
-//controllers state section
+//buttons state manager
 
 const adjustButtonsState = function optionsButtonsStateAccordingToMinAndMaxRanges( buttons, value, selector, leftOnly ) {
   const caseA = value < 1;
@@ -168,7 +168,7 @@ const adjustButtonsState = function optionsButtonsStateAccordingToMinAndMaxRange
   }
 }
 
-// controllers actions
+//controllers actions
 
 const resetCounters = function resetCounterValueOnButtonClick( controllers, counters, buttonGroups ) {
   counters.forEach( counter => counter.textContent = 0 );
@@ -187,7 +187,7 @@ const defineCountersSum = function( counters ) {
   const result = Array
     .from( counters )
     .map( counter => Number( counter.textContent ) )
-    .reduce( (prev, curr) => prev + curr );
+    .reduce( (acc, curr) => acc + curr );
 
   return result;
 }
