@@ -92,51 +92,61 @@ const updateDropdownValue = function updateDropdownValue( anychild, counters ) {
 
   switch ( dropdownType ) {
     case 'guests': {
-      dropdownValue = defineGuestText( values );
+      dropdownValue = defineGuestInputValue( values );
       break;
     }
     case 'facilities': {
-      dropdownValue = defineFacilitiesText( values );
+      dropdownValue = defineFacilitiesInputValue( values );
       break;
     }
   }
   frame.value = dropdownValue;
 }
 
-const defineGuestText = function defineGuestText( values ) {
+const defineGuestInputValue = function defineGuestInputValue( values ) {
   const valuesSum = values.reduce( (prev, curr) => prev + curr );
 
-  const firstText = `${valuesSum} гост${defineEnding( valuesSum, 'ь', 'ей', 'я' )}`;
-  const lastText = `, ${values[2]} младен${defineEnding( values[2], 'ец', 'цев', 'ца' )}`;
+  const firstText = defineWord( valuesSum, 0,         'гост',   [ 'ь', 'ей', 'я' ]    );
+  const lastText =  defineWord( values[2], valuesSum, 'младен', [ 'ец', 'цев', 'ца' ] );
 
-  const firstTextPart = valuesSum > 0 ? firstText : '' ;
-  const lastTextPart = values[2] > 0 ? lastText : '' ;
-
-  return firstTextPart + lastTextPart;
+  return firstText + lastText;
 }
 
-const defineFacilitiesText = function defineFacilitiesText( values ) {
-  const firstText = `${values[0]} cпал${defineEnding( values[0], 'ьня', 'ен', 'ьни' )}`;
-  const secondText = `, ${values[1]} кроват${defineEnding( values[1], 'ь', 'ей', 'и' )}`;
-  const thirdText = `, ${values[2]} ванн${defineEnding( values[2], 'а', 'ых', 'ых' )}`;
+defineWord( valuesSum, 0,         'гост',   [ 'ь', 'ей', 'я' ]    );
+defineWord( values[2], valuesSum, 'младен', [ 'ец', 'цев', 'ца' ] );
 
-  const firstTextPart = values[0] > 0 ? firstText : '' ;
-  const secondTextPart = values[1] > 0 ? secondText : '' ;
-  const thirdTextPart = values[2] > 0 ? thirdText : '' ;
+const defineFacilitiesInputValue = function defineFacilitiesInputValue( values ) {
+  const firstText =  defineWord( values[0], 0,         'cпал',   [ 'ьня', 'ен', 'ьни' ] );
+  const secondText = defineWord( values[1], values[0], 'кроват', [ 'ь', 'ей', 'и' ]     );
+  const thirdText =  defineWord( values[2], values[1], 'ванн',   [ 'а', 'ых', 'ых' ]    );
 
-  return firstTextPart + secondTextPart + thirdTextPart;
+  const result = firstText + secondText + thirdText;
+
+  return result;
 }
 
-const defineEnding = function defineWordEndingAccordingToNumber( num, unoEnding, deciEnding, onefourEnding ) {
-  let result = unoEnding;
+const defineWord = function defineWordEndingAccordingToNumber( lastValue, currentValue, word, endings=[] ) {
+  let result = '';
+  let ending = endings[0];
 
-  if ( Math.floor(num/10)===1 || num%10<1 || num%10>4 ) {
-    result = deciEnding;
-  } else {
-    if ( num%10>1 ) {
-      result = onefourEnding;
+  if ( currentValue > 0 ) {
+    if ( Math.floor(currentValue/10)===1 || currentValue%10<1 || currentValue%10>4 ) {
+      ending = endings[1];
+    } else {
+      if ( currentValue%10>1 ) {
+        ending = endings[2];
+      }
     }
+    const textParts = [
+      lastValue > 0 ? ', ' : '' ,
+      currentValue + ' ',
+      word,
+      ending
+    ];
+
+    result = textParts.reduce( (prev, curr) => prev + curr );
   }
+
   return result;
 }
 
