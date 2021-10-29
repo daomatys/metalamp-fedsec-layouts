@@ -112,9 +112,6 @@ const defineGuestInputValue = function defineGuestInputValue( values ) {
   return firstText + lastText;
 }
 
-defineWord( valuesSum, 0,         'гост',   [ 'ь', 'ей', 'я' ]    );
-defineWord( values[2], valuesSum, 'младен', [ 'ец', 'цев', 'ца' ] );
-
 const defineFacilitiesInputValue = function defineFacilitiesInputValue( values ) {
   const firstText =  defineWord( values[0], 0,         'cпал',   [ 'ьня', 'ен', 'ьни' ] );
   const secondText = defineWord( values[1], values[0], 'кроват', [ 'ь', 'ей', 'и' ]     );
@@ -125,7 +122,7 @@ const defineFacilitiesInputValue = function defineFacilitiesInputValue( values )
   return result;
 }
 
-const defineWord = function defineWordEndingAccordingToNumber( lastValue, currentValue, word, endings=[] ) {
+const defineWord = function defineWordEndingAccordingToNumber( currentValue, lastValue, word, endings=[] ) {
   let result = '';
   let ending = endings[0];
 
@@ -137,11 +134,12 @@ const defineWord = function defineWordEndingAccordingToNumber( lastValue, curren
         ending = endings[2];
       }
     }
+
     const textParts = [
       lastValue > 0 ? ', ' : '' ,
       currentValue + ' ',
       word,
-      ending
+      ending,
     ];
 
     result = textParts.reduce( (prev, curr) => prev + curr );
