@@ -17,6 +17,7 @@ const initListeners = function initElementsEventListeners( item ) {
     initControllers( counters, controllers, buttonGroups );
     buttonGroups.forEach( buttons => initButtons( buttons, counters, controllers ) );
   }
+  
   if ( !controllersBar ) {
     buttonGroups.forEach( buttons => initButtons( buttons, counters, undefined ) );
   }
@@ -52,6 +53,7 @@ const initButtons = function initOptionButtonsEventListeners( buttons, counters,
   const update = function( elem, shift ){
     elem.addEventListener('click', () => updateDropdown( optionButtons, optionCounter, shift, controllers, counters ));
   }
+
   update( optionButtons.left, -1);
   update( optionButtons.right, 1);
 }
@@ -117,9 +119,7 @@ const defineFacilitiesInputValue = function defineFacilitiesInputValue( values )
   const secondText = defineWord( values[1], values[0], 'кроват', [ 'ь', 'ей', 'и' ]     );
   const thirdText =  defineWord( values[2], values[1], 'ванн',   [ 'а', 'ых', 'ых' ]    );
 
-  const result = firstText + secondText + thirdText;
-
-  return result;
+  return firstText + secondText + thirdText;;
 }
 
 const defineWord = function defineWordEndingAccordingToNumber( currentValue, lastValue, word, endings=[] ) {
