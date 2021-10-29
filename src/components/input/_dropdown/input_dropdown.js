@@ -76,10 +76,28 @@ const updateDropdown = function updateCalcsAndControllersToCurrentState( buttons
   }
 }
 
-const updateDropdownValue = function( anychild, counters ) {
-  const frame = anychild.closest('.input__dropdown').parentNode.querySelector('.input__frame');
-
+const updateDropdownValue = function updateDropdownValue( anychild, counters ) {
+  const dropdown = anychild.closest('.input__dropdown');
+  const frame = dropdown.parentNode.querySelector('.input__frame');
   const values = [...counters].map( item => Number( item.textContent ) );
+  const dropdownType = dropdown.getAttribute('data-options-type');
+
+  let dropdownValue = '';
+
+  switch ( dropdownType ) {
+    case 'guests': {
+      dropdownValue = defineGuestText( values );
+      break;
+    }
+    case 'facilities': {
+      dropdownValue = defineFacilitiesText( values );
+      break;
+    }
+  }
+  frame.value = dropdownValue;
+}
+
+const defineGuestText = function defineGuestText( values ) {
   const valuesSum = values.reduce( (prev, curr) => prev + curr );
 
   const firstText = `${valuesSum} гост${defineEnding( valuesSum, 'ь', 'ей', 'я' )}`;
@@ -88,8 +106,20 @@ const updateDropdownValue = function( anychild, counters ) {
   const firstTextPart = valuesSum > 0 ? firstText : '' ;
   const lastTextPart = values[2] > 0 ? lastText : '' ;
 
-  frame.value = firstTextPart + lastTextPart;
-} 
+  return firstTextPart + lastTextPart;
+}
+
+const defineFacilitiesText = function defineFacilitiesText( values ) {
+  const firstText = `${values[0]} cпал${defineEnding( values[0], 'ьня', 'ен', 'ьни' )}`;
+  const secondText = `, ${values[1]} кроват${defineEnding( values[1], 'ь', 'ей', 'и' )}`;
+  const thirdText = `, ${values[2]} ванн${defineEnding( values[2], 'а', 'ых', 'ых' )}`;
+
+  const firstTextPart = values[0] > 0 ? firstText : '' ;
+  const secondTextPart = values[1] > 0 ? secondText : '' ;
+  const thirdTextPart = values[2] > 0 ? thirdText : '' ;
+
+  return firstTextPart + secondTextPart + thirdTextPart;
+}
 
 const adjustButtonsState = function optionsButtonsStateAccordingToMinAndMaxRanges( buttons, value, selector, leftOnly ) {
   const caseA = value < 1;
