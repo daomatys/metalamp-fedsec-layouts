@@ -1,4 +1,5 @@
 import AirDatepicker from 'air-datepicker';
+import customLocale from './_custom-locale/date-picker_custom-locale';
 
 const init = function initDatePicker() {
   const inputFrames = document.querySelectorAll('.adp-frame');
@@ -31,7 +32,10 @@ const defineElements = function( frame ) {
   const master = caseRelations ? holder.firstElementChild : frame.parentNode ;
   const slave = caseRelations ? holder.lastElementChild : master ;
 
+  console.log( caseRelations );
+
   return {
+    relations: caseRelations ? true : false,
     holder: holder,
     frames: {
       master: master.querySelector('.adp-frame'),
@@ -57,6 +61,8 @@ const triggerClick = function triggerClickRelativeElementClick( slaveFrame, mast
 
 const renderDatePicker = function renderDatePickerUnderTheMasterFrame( elements, rawDates, caseMasterAim ) {
   const icon = name => '<span class="material-icons">' + name + '</span>';
+  const currentDate = new Date('2019-08-08');
+  const dateFormat = elements.relations ? 'dd.MM.yyyy' : 'd MMM' ;
 
   const frames = elements.frames;
   const container = elements.aims.master.firstElementChild;
@@ -65,15 +71,17 @@ const renderDatePicker = function renderDatePickerUnderTheMasterFrame( elements,
   const clearButton = buttons.firstElementChild.querySelector('button');
   const acceptButton = buttons.lastElementChild.querySelector('button');
 
-  const currentDate = new Date('2019-08-08');
+  console.log( elements.relations );
+
   const datePicker = new AirDatepicker( container, {
     navTitles: {
       days: 'MMMM yyyy',
     },
+    locale: customLocale,
     range: true,
     keyboardNav: false,
     altField: frames.master,
-    altFieldDateFormat: 'dd.MM.yyyy',
+    altFieldDateFormat: dateFormat,
     multipleDatesSeparator: ' - ',
     prevHtml: icon('arrow_back'),
     nextHtml: icon('arrow_forward'),
