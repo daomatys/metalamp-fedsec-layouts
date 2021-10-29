@@ -32,8 +32,6 @@ const defineElements = function( frame ) {
   const master = caseRelations ? holder.firstElementChild : frame.parentNode ;
   const slave = caseRelations ? holder.lastElementChild : master ;
 
-  console.log( caseRelations );
-
   return {
     relations: caseRelations ? true : false,
     holder: holder,
@@ -70,8 +68,6 @@ const renderDatePicker = function renderDatePickerUnderTheMasterFrame( elements,
   const buttons = container.nextElementSibling;
   const clearButton = buttons.firstElementChild.querySelector('button');
   const acceptButton = buttons.lastElementChild.querySelector('button');
-
-  console.log( elements.relations );
 
   const datePicker = new AirDatepicker( container, {
     navTitles: {
