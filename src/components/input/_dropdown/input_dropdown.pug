@@ -2,24 +2,29 @@ include /components/material-icon-cell/material-icon-cell.pug
 include /components/button/__mean-oval/button__mean-oval.pug
 
 mixin inputDropdown( item={} )
+  - const guestsOptionNames = [ 'взрослые', 'дети', 'младенцы' ]
+  - const facilitiesOptionNames = [ 'спальни', 'кровати', 'ванные' ]
+
   - const dropdown = item.dropdown || {}
+  - const values = dropdown.values || [ 0, 0, 0 ]
   - const expanderActiveClass = dropdown.expanded ? 'expander_active' : ''
   - const iconFlippedClass = dropdown.expanded ? 'icon_flipped' : ''
-  - const placeholderByType = dropdown.type === 'guests' ? 'Cколько гостей' : 'Количества удобств'
+  - const placeholderByType = dropdown.type === 'guests' ? 'Cколько гостей' : 'Композиция номера'
+  - const options = dropdown.type === 'guests' ? guestsOptionNames : facilitiesOptionNames
 
   input.input__frame.dropdown.expander( id=item.id placeholder=placeholderByType checked=dropdown.expanded readonly )
   .input__icon_expand( class=iconFlippedClass )
     +materialIcon('expand_more', item.id )
   .input__dropdown.expander__aim( class=expanderActiveClass data-options-type=dropdown.type )
-    each option in dropdown.options
+    each option, index in options
       .input__option.custom-font-style_h3
-        span.input__option_name #{option.name}
+        span.input__option_name #{options}
         .input__option_buttons
           .input__option_button-dec -
-          .input__option_counter #{option.count}
+          .input__option_counter #{value[index]}
           .input__option_button-inc +
     if ( dropdown.controls )
-      .input__clear-n-submit
+      .input__state-controllers
         +meanOvalButtons({
           groupname: item.id,
           buttons: [

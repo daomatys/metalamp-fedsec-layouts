@@ -44,14 +44,8 @@ block main
           id: "uik-fe__common_01",
           type: "dropdown",
           title: "dropdown",
-          placeholder: "Сколько гостей",
           dropdown: {
-            expanded: false,
-            options: [
-              { name: "взрослые", count: 0 },
-              { name: "дети",     count: 0 },
-              { name: "младенцы", count: 0 }
-            ]
+            type: "guests"
           }
         })
         +input({
@@ -183,14 +177,9 @@ block main
           type: "dropdown",
           title: "dropdown",
           state: "default",
-          placeholder: "2 спальни, 2 кровати...",
           widthbypercent: 83,
           dropdown: {
-            options: [
-              { name: "спальни",        count: 0 },
-              { name: "кровати",        count: 0 },
-              { name: "ванные комнаты", count: 0 }
-            ]
+            type: "facilities",
           }
         })
         +input({
@@ -198,15 +187,10 @@ block main
           type: "dropdown",
           title: "dropdown",
           state: "expanded",
-          placeholder: "2 спальни, 2 кровати...",
           widthbypercent: 83,
           dropdown: {
-            expanded: true,
-            options: [
-              { name: "спальни",        count: 0 },
-              { name: "кровати",        count: 0 },
-              { name: "ванные комнаты", count: 0 }
-            ]
+            type: "facilities",
+            expanded: true
           }
         })
     .form-elements__column.column_center
@@ -215,15 +199,10 @@ block main
           id: "uik-fe__no-guests",
           type: "dropdown",
           title: "dropdown",
-          placeholder: "Сколько гостей",
           dropdown: {
+            type: "guests",
             expanded: true,
-            controls: true,
-            options: [
-              { name: "взрослые", count: 0 },
-              { name: "дети",     count: 0 },
-              { name: "младенцы", count: 0 }
-            ]
+            controls: true
           }
         })
     .form-elements__column.column_right
@@ -232,15 +211,11 @@ block main
           id: "uik-fe__some-guests",
           type: "dropdown",
           title: "dropdown",
-          placeholder: "3 гостя",
           dropdown: {
+            type: "guests",
+            values: [ 2, 1, 0 ],
             expanded: true,
-            controls: true,
-            options: [
-              { name: "взрослые", count: 2 },
-              { name: "дети",     count: 1 },
-              { name: "младенцы", count: 0 }
-            ]
+            controls: true
           }
         })
   .form-elements__wrap.wrap_lower-middle

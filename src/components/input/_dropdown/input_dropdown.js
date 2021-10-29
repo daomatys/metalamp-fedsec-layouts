@@ -7,7 +7,7 @@ const find = function findDropdownContainers() {
 const initListeners = function initElementsEventListeners( item ) {
   const counters = item.querySelectorAll('.input__option_counter');
   const buttonGroups = item.querySelectorAll('.input__option_buttons');
-  const controllersBar = item.querySelector('.input__clear-n-submit');
+  const controllersBar = item.querySelector('.input__state-controllers');
 
   updateDropdownValue( [...counters][0], counters );
 
