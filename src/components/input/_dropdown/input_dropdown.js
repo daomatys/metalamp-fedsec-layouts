@@ -108,21 +108,21 @@ const updateDropdownValue = function updateDropdownValue( anychild, counters ) {
 const defineGuestInputValue = function defineGuestInputValue( values ) {
   const valuesSum = values.reduce( (acc, curr) => acc + curr );
 
-  const firstText = defineTextExpression( valuesSum, 0,         'гост',   [ 'ь', 'ей', 'я' ]    );
-  const lastText =  defineTextExpression( values[2], valuesSum, 'младен', [ 'ец', 'цев', 'ца' ] );
+  const firstText = defineText( valuesSum, 0,         'гост',   [ 'ь', 'ей', 'я' ]    );
+  const lastText =  defineText( values[2], valuesSum, 'младен', [ 'ец', 'цев', 'ца' ] );
 
   return firstText + lastText;
 }
 
 const defineFacilitiesInputValue = function defineFacilitiesInputValue( values ) {
-  const firstText =  defineTextExpression( values[0], 0,         'cпал',   [ 'ьня', 'ен', 'ьни' ] );
-  const secondText = defineTextExpression( values[1], values[0], 'кроват', [ 'ь', 'ей', 'и' ]     );
-  const thirdText =  defineTextExpression( values[2], values[1], 'ванн',   [ 'а', 'ых', 'ых' ]    );
+  const firstText =  defineText( values[0], 0,         'cпал',   [ 'ьня', 'ен', 'ьни' ]  );
+  const secondText = defineText( values[1], values[0], 'кроват', [ 'ь', 'ей', 'и' ]      );
+  const thirdText =  defineText( values[2], values[0] + values[1], 'ванн',   [ 'ая комната', 'ых комнат', 'ые комнаты' ] );
 
-  return firstText + secondText + thirdText;
+  return firstText + secondText + thirdText + '…';
 }
 
-const defineTextExpression = function defineTextExpressionAccordingToNumber( currentValue, lastValue, word, endings=[] ) {
+const defineText= function defineTextAccordingToNumber( currentValue, lastValue, word, endings=[] ) {
   let result = '';
   let ending = endings[0];
 
@@ -181,6 +181,7 @@ const resetCounters = function resetCounterValueOnButtonClick( controllers, coun
   });
 
   defineResetControllerState( counters, controllers );
+  updateDropdownValue( [...counters][0], counters );
 }
 
 const defineCountersSum = function( counters ) {

@@ -9,7 +9,7 @@ mixin inputDropdown( item={} )
   - const values = dropdown.values || [ 0, 0, 0 ]
 
   - const options = dropdown.type === 'guests' ? guestsOptionNames : facilitiesOptionNames
-  - const placeholder = dropdown.type === 'guests' ? 'Cколько гостей' : 'Композиция номера'
+  - const placeholder = dropdown.type === 'guests' ? 'Cколько гостей' : 'Cколько ванных и спален'
 
   - const expanderActiveClass = dropdown.expanded ? 'expander_active' : ''
   - const iconFlippedClass = dropdown.expanded ? 'icon_flipped' : ''
