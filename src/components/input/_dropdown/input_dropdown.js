@@ -9,6 +9,8 @@ const initListeners = function initElementsEventListeners( item ) {
   const buttonGroups = item.querySelectorAll('.input__option_buttons');
   const controllersBar = item.querySelector('.input__clear-n-submit');
 
+  updateDropdownValue( [...counters][0], counters );
+
   if ( controllersBar ) {
     const controllers = defineButtons( controllersBar );
 
@@ -74,8 +76,8 @@ const updateDropdown = function updateCalcsAndControllersToCurrentState( buttons
   }
 }
 
-const updateDropdownValue = function( counter, counters ) {
-  const frame = counter.closest('.input__dropdown').parentNode.querySelector('.input__frame');
+const updateDropdownValue = function( anychild, counters ) {
+  const frame = anychild.closest('.input__dropdown').parentNode.querySelector('.input__frame');
 
   const values = [...counters].map( item => Number( item.textContent ) );
   const valuesSum = values.reduce( (prev, curr) => prev + curr );

@@ -1,23 +1,24 @@
 include /components/material-icon-cell/material-icon-cell.pug
 include /components/button/__mean-oval/button__mean-oval.pug
 
-mixin inputDropdown( item )
+mixin inputDropdown( item={} )
   - const dropdown = item.dropdown || {}
   - const expanderActiveClass = dropdown.expanded ? 'expander_active' : ''
   - const iconFlippedClass = dropdown.expanded ? 'icon_flipped' : ''
+  - const placeholderByType = dropdown.type === 'guests' ? 'Cколько гостей' : 'Количества удобств'
 
-  input.input__frame.dropdown.expander( id=item.id placeholder='Сколько гостей' checked=dropdown.expanded readonly )
+  input.input__frame.dropdown.expander( id=item.id placeholder=placeholderByType checked=dropdown.expanded readonly )
   .input__icon_expand( class=iconFlippedClass )
     +materialIcon('expand_more', item.id )
-  .input__dropdown.expander__aim( class=expanderActiveClass )
-    each option in item.dropdown.options
+  .input__dropdown.expander__aim( class=expanderActiveClass data-options-type=dropdown.type )
+    each option in dropdown.options
       .input__option.custom-font-style_h3
         span.input__option_name #{option.name}
         .input__option_buttons
           .input__option_button-dec -
           .input__option_counter #{option.count}
           .input__option_button-inc +
-    if ( item.dropdown.controls )
+    if ( dropdown.controls )
       .input__clear-n-submit
         +meanOvalButtons({
           groupname: item.id,
