@@ -128,7 +128,7 @@ block main
   main.website__main.fullscreen-bottom-border
     .search-page.universal-container
       .search-page__input-parameters.elem__width_83
-        .search-page__date
+        .search-page__date-picker
           +input({
             id: "search-by__date",
             type: "date-picker",
@@ -136,20 +136,16 @@ block main
             widthbypercent: 83,
             dates: "2019-08-19, 2019-08-23"
           })
-        .search-page__guests
+        .search-page__guests-dropdown
           +input({
             id: "search-by__guests",
             type: "dropdown",
             title: "гости",
-            placeholder: "3 гостя, 1 младенец",
             widthbypercent: 83,
             dropdown: {
+              type: "guests",
+              values: [ 2, 0, 1 ],
               expanded: false,
-              options: [
-                { name: "взрослые", count: 2 },
-                { name: "дети",     count: 1 },
-                { name: "младенцы", count: 1 }
-              ]
             }
           })
         .search-page__slider
@@ -188,22 +184,18 @@ block main
                 }
               ]
             })
-        .search-page__sleeping-stuff
+        .search-page__facilities-dropdown
           +input({
             id: "search-by__baths",
             type: "dropdown",
             title: "удобства номера",
-            placeholder: "2 спальни, 2 кровати...",
             widthbypercent: 83,
             dropdown: {
-              options: [
-              { name: "спальни",        count: 2 },
-              { name: "кровати",        count: 2 },
-              { name: "ванные комнаты", count: 0 }
-              ]
+              type: "facilities",
+              values: [ 2, 2, 0 ]
             }
           })
-        .search-page__extra-service
+        .search-page__extra-services-list
           +checkboxList({
             title: "expandable checkbox list",
             groupname: "uik-fe__checkbox-list_default",
