@@ -17,7 +17,7 @@ const initListeners = function initElementsEventListeners( item ) {
     initControllers( counters, controllers, buttonGroups );
     buttonGroups.forEach( buttons => initButtons( buttons, counters, controllers ) );
   }
-  
+
   if ( !controllersBar ) {
     buttonGroups.forEach( buttons => initButtons( buttons, counters, undefined ) );
   }
@@ -167,6 +167,8 @@ const adjustButtonsState = function optionsButtonsStateAccordingToMinAndMaxRange
     buttons.right.classList.remove( selector );
   }
 }
+
+// controllers actions
 
 const resetCounters = function resetCounterValueOnButtonClick( controllers, counters, buttonGroups ) {
   counters.forEach( counter => counter.textContent = 0 );
