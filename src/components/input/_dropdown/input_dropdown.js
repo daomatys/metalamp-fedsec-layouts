@@ -22,6 +22,8 @@ const initListeners = function initElementsEventListeners( item ) {
   }
 }
 
+//init controllers section
+
 const initControllers = function initControllersEventListeners( counters, controllers, buttonGroups ) {
   const resetController = controllers.left;
   const acceptController = controllers.right;
@@ -37,6 +39,8 @@ const defineResetControllerState = function( counters, controllers ) {
 
   adjustButtonsState( controllers, countersSum, 'hidden-controller', true )
 }
+
+//init buttons section
 
 const initButtons = function initOptionButtonsEventListeners( buttons, counters, controllers ) {
   const optionButtons = defineButtons( buttons );
@@ -63,6 +67,8 @@ const defineButtons = function defineFirstAndLastChildByItsParent( parent ) {
 
   return result;
 }
+
+// general input_dropdown state section
 
 const updateDropdown = function updateCalcsAndControllersToCurrentState( buttons, counter, addification, controllers, counters ) {
   const newCounterValue = parseInt( counter.textContent ) + addification;
@@ -121,6 +127,21 @@ const defineFacilitiesText = function defineFacilitiesText( values ) {
   return firstTextPart + secondTextPart + thirdTextPart;
 }
 
+const defineEnding = function defineWordEndingAccordingToNumber( num, unoEnding, deciEnding, onefourEnding ) {
+  let result = unoEnding;
+
+  if ( Math.floor(num/10)===1 || num%10<1 || num%10>4 ) {
+    result = deciEnding;
+  } else {
+    if ( num%10>1 ) {
+      result = onefourEnding;
+    }
+  }
+  return result;
+}
+
+//controllers state section
+
 const adjustButtonsState = function optionsButtonsStateAccordingToMinAndMaxRanges( buttons, value, selector, leftOnly ) {
   const caseA = value < 1;
   const caseB = value > 9;
@@ -158,19 +179,6 @@ const defineCountersSum = function( counters ) {
     .map( counter => Number( counter.textContent ) )
     .reduce( (prev, curr) => prev + curr );
 
-  return result;
-}
-
-const defineEnding = function defineWordEndingAccordingToNumber( num, unoEnding, deciEnding, onefourEnding ) {
-  let result = unoEnding;
-
-  if ( Math.floor(num/10)===1 || num%10<1 || num%10>4 ) {
-    result = deciEnding;
-  } else {
-    if ( num%10>1 ) {
-      result = onefourEnding;
-    }
-  }
   return result;
 }
 
