@@ -5,48 +5,53 @@ include _date-picker/input_date-picker.pug
 include _dropdown/input_dropdown.pug
 
 mixin input( item )
-  - const dropdown = item.dropdown || {}
+  - 
+    const definePlaceholder = function definePlaceholdersByValue( type, dropdownType, placeholder ) {
+      let placeholderValue = '';
 
-  - const id = item.id
-  - const type = item.type === 'subscription' ? 'Email' : ''
-  - const placeholder = definePlaceholder( type, dropdown.type )
-  - const disabled = item.disabled
-  - const checked = dropdown.expanded
-  - const readonly = item.type === 'dropdown' || item.type === 'date-picker'
-
-  - const widthByPercentCase = item.widthbypercent ? item.widthbypercent : '100'
-  - const widthByPercentClass = `elem__width_${ widthByPercentCase }`
-  - const expanderParentClass = readonly ? 'expander__parent' : ''
-  - const datePickerClasses = item.type === 'date-picker' ? 'expander adp-frame' : ''
-  - const dropdownClasses =   item.type === 'dropdown' ? 'expander dropdown' : ''
-  - const frameClasses = [ datePickerClasses, dropdownClasses ]
-  - const parentClasses = [widthByPercentClass, expanderParentClass]
-
-  - const definePlaceholder = function definePlaceholderByType( type, dropdownType ) {
-    let placeholder = '';
-
-    switch ( type ) {
-      case 'date-picker': {
-        placeholder = 'ДД.ММ.ГГГГ';
-        break;
+      switch ( type ) {
+        case 'date-picker': {
+          placeholderValue = 'ДД.ММ.ГГГГ';
+          break;
+        }
+        case 'subscription': {
+          placeholderValue = 'Email';
+          break;
+        }
+        case 'dropdown': {
+          placeholderValue = dropdownType === 'guests' ? 'Cколько гостей' : 'Cколько ванных и спален'
+          break;
+        }
+        default: {
+          placeholderValue = placeholder
+        }
       }
-      case 'subscription': {
-        placeholder = 'Email';
-        break;
-      }
-      case 'dropdown': {
-        placeholder = dropdownType === 'guests' ? 'Cколько гостей' : 'Cколько ванных и спален'
-        break;
-      }
+      return placeholderValue;
     }
 
-    return placeholder;
-  }
+  - const dropdown = item.dropdown || {}
+  - const archetype = item.type
+  - const title = item.title
+
+  - const id = item.id
+  - const type = archetype === 'subscription' ? 'Email' : ''
+  - const placeholder = definePlaceholder( archetype, dropdown.type, item.placeholder )
+  - const disabled = item.disabled
+  - const checked = dropdown.expanded
+  - const readonly = archetype === 'dropdown' || archetype === 'date-picker'
+
+  - const widthByPercentClass = item.widthbypercent ? `elem__width_${ item.widthbypercent }` : '100'
+  - const expanderParentClass = readonly ? 'expander__parent' : ''
+  - const datePickerClasses = archetype === 'date-picker' ? 'expander adp-frame' : ''
+  - const dropdownClasses =   archetype === 'dropdown' ? 'expander dropdown' : ''
+
+  - const frameClasses =  [ datePickerClasses, dropdownClasses ]
+  - const parentClasses = [ widthByPercentClass, expanderParentClass ]
 
   .input( class=parentClasses )
-    if item.title
+    if title
       .input__title
-        +titleBar( item.title, item.state )
+        +titleBar( title, item.state )
     .input__element
       input.input__frame(
         class=       frameClasses
@@ -57,7 +62,7 @@ mixin input( item )
         checked=     checked
         readonly=    readonly
       )
-      case item.type
+      case archetype
         when 'dropdown'
           +inputDropdown( item )
         when 'date-picker'
