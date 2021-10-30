@@ -2,7 +2,7 @@ import AirDatepicker from 'air-datepicker';
 import customLocale from './_custom-locale/date-picker_custom-locale';
 
 const init = function initDatePicker() {
-  const inputFrames = document.querySelectorAll('.expander.adp-frame');
+  const inputFrames = document.querySelectorAll('.adp-frame');
 
   if ( inputFrames ) {
     inputFrames.forEach( frame => sortTasks( frame ) );

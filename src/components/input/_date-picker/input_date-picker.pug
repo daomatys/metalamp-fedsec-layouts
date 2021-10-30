@@ -2,6 +2,7 @@ include /components/material-icon-cell/material-icon-cell.pug
 include /components/date-picker/date-picker.pug
 
 mixin inputDatePicker( item )
+  .input__expander.expander
   .input__icon_expand
     +materialIcon('expand_more')
   .input__date-picker.expander__aim( class=item.hierarchy data-dates=item.dates )

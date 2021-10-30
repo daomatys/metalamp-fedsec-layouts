@@ -12,6 +12,7 @@ mixin inputDropdown( item={} )
   - const iconFlippedClass = dropdown.expanded ? 'icon_flipped' : ''
   - const expanderActiveClass = dropdown.expanded ? 'expander_active' : ''
 
+  .input__expander.expander
   .input__icon_expand( class=iconFlippedClass )
     +materialIcon('expand_more')
   .input__dropdown.expander__aim( class=expanderActiveClass data-options-type=dropdown.type )
