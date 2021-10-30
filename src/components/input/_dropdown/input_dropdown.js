@@ -38,7 +38,7 @@ const initControllers = function initControllersEventListeners( counters, contro
 const defineResetControllerState = function( counters, controllers ) {
   const countersSum = defineCountersSum( counters );
 
-  adjustButtonsState( controllers, countersSum, 'hidden-controller', true )
+  adjustButtonsState( controllers, countersSum, 'mob_hidden', true )
 }
 
 //init buttons section

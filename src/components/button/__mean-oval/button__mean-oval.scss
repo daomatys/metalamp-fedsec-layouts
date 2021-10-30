@@ -110,8 +110,15 @@
   }
 }
 
-.mob_non-absolute {
-  position: relative;
+.mob {
+  &_non-absolute {
+    position: relative;
+  }
+
+  &_hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
 }
 
 .ripple {
