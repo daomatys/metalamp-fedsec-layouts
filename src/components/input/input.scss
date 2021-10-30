@@ -31,13 +31,25 @@ $focused-color_border-n-icon: rgba($valhalla, .5);
     font-family: inherit;
     font-size: 14px;
 
+    &:disabled {
+      pointer-events: all;
+    }
+
+    &__frame.expander {
+      cursor: pointer;
+    }
+
+    &:focus-within {
+      user-select: none;
+    }
+
     &::placeholder {
       color: $default-color;
       line-height: 24px;
     }
 
     &:hover,
-    &:disabled,
+    &:read-only,
     &:focus-within,
     &[checked] {
       border-color: $focused-color_border-n-icon;
@@ -89,10 +101,6 @@ $focused-color_border-n-icon: rgba($valhalla, .5);
     &_subscribe {
       @extend %gradient-fill;
     }
-  }
-
-  &__frame.expander {
-    cursor: pointer;
   }
 }
 

@@ -34,10 +34,10 @@ mixin input( item )
   - const title =     item.title
 
   - const id = item.id
-  - const disabled = item.disabled
+  - const readonly = item.disabled
   - const checked = dropdown.expanded
   - const type = archetype === 'subscription' ? 'email' : 'text'
-  - const readonly = archetype === 'dropdown' || archetype === 'date-picker'
+  - const disabled = archetype === 'dropdown' || archetype === 'date-picker'
   - const placeholder = definePlaceholder( archetype, dropdown.type, item.placeholder )
 
   - const widthByPercentClass = item.widthbypercent ? 'elem__width_' + item.widthbypercent : 'elem__width_100'
