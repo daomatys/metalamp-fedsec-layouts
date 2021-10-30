@@ -2,7 +2,7 @@ import AirDatepicker from 'air-datepicker';
 import customLocale from './_custom-locale/date-picker_custom-locale';
 
 const init = function initDatePicker() {
-  const inputFrames = document.querySelectorAll('.adp-frame');
+  const inputFrames = document.querySelectorAll('.expander.adp-frame');
 
   if ( inputFrames ) {
     inputFrames.forEach( frame => sortTasks( frame ) );
@@ -83,7 +83,7 @@ const renderDatePicker = function renderDatePickerUnderTheMasterFrame( elements,
     nextHtml: icon('arrow_forward'),
     minDate:   currentDate,
     startDate: currentDate,
-    onSelect: () => routeValues( frames )
+    onSelect: () => routeValues( frames, clearButton )
   });
 
   clearButton.onclick = () => datePicker.clear();
@@ -100,7 +100,7 @@ const renderDateValues = function Dates( datePicker, holder, rawDates, caseMaste
   }
 }
 
-const routeValues = function routeIncomingDateValues( frames ) {
+const routeValues = function routeIncomingDateValues( frames, clearButton ) {
   const slaveFrame = frames.slave;
   const masterFrame = frames.master;
   const caseEquivalence = slaveFrame.isEqualNode( masterFrame );
@@ -115,6 +115,14 @@ const routeValues = function routeIncomingDateValues( frames ) {
       slaveFrame.value = '';
       masterFrame.value = initialValue[0];
     }
+  }
+
+  const caseValuesExists = masterFrame.value && slaveFrame.value;
+
+  if ( caseValuesExists ) {
+    clearButton.classList.remove('mob_hidden');
+  } else {
+    clearButton.classList.add('mob_hidden');
   }
 }
 

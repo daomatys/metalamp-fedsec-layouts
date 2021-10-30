@@ -10,9 +10,8 @@ $font-size: 12px;
   justify-content: space-between;
   margin-top: 20px;
 
-  &_clear {
+  &_clear .mean-oval-button__elem {
     transition: opacity .3s ease;
-    opacity: 0;
   }
 }
 
