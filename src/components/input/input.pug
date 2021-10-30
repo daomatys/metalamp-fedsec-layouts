@@ -5,7 +5,7 @@ include _date-picker/input_date-picker.pug
 include _dropdown/input_dropdown.pug
 
 mixin input( item )
-  - 
+  -
     const definePlaceholder = function definePlaceholdersByValue( type, dropdownType, placeholder ) {
       let placeholderValue = '';
 
@@ -29,18 +29,18 @@ mixin input( item )
       return placeholderValue;
     }
 
-  - const dropdown = item.dropdown || {}
+  - const dropdown =  item.dropdown || {}
   - const archetype = item.type
-  - const title = item.title
+  - const title =     item.title
 
   - const id = item.id
-  - const type = archetype === 'subscription' ? 'Email' : ''
-  - const placeholder = definePlaceholder( archetype, dropdown.type, item.placeholder )
   - const disabled = item.disabled
   - const checked = dropdown.expanded
+  - const type = archetype === 'subscription' ? 'Email' : ''
   - const readonly = archetype === 'dropdown' || archetype === 'date-picker'
+  - const placeholder = definePlaceholder( archetype, dropdown.type, item.placeholder )
 
-  - const widthByPercentClass = item.widthbypercent ? `elem__width_${ item.widthbypercent }` : '100'
+  - const widthByPercentClass = item.widthbypercent ? 'elem__width_' + item.widthbypercent : 'elem__width_100'
   - const expanderParentClass = readonly ? 'expander__parent' : ''
   - const datePickerClasses = archetype === 'date-picker' ? 'expander adp-frame' : ''
   - const dropdownClasses =   archetype === 'dropdown' ? 'expander dropdown' : ''
