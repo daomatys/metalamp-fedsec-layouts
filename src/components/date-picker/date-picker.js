@@ -89,7 +89,7 @@ const renderDatePicker = function renderDatePickerUnderTheMasterFrame( elements,
     onSelect: () => routeValues( slaveFrame, masterFrame, clearButton )
   });
 
-  defineClearButtonState( slaveFrame, masterFrame, clearButton );
+  defineClearButtonState( masterFrame, clearButton );
 
   clearButton.onclick = () => datePicker.clear();
   acceptButton.onclick = () => frames.master.click();
@@ -119,11 +119,11 @@ const routeValues = function routeIncomingDateValues( slaveFrame, masterFrame, c
       masterFrame.value = initialValue[0];
     }
   }
-  defineClearButtonState( slaveFrame, masterFrame, clearButton );
+  defineClearButtonState( masterFrame, clearButton );
 }
 
-const defineClearButtonState = function defineClearButtonState( slaveFrame, masterFrame, clearButton ) { 
-  const caseValuesExists = masterFrame.value && slaveFrame.value;
+const defineClearButtonState = function defineClearButtonState( masterFrame, clearButton ) { 
+  const caseValuesExists = masterFrame.value;
 
   if ( caseValuesExists ) {
     clearButton.classList.remove('mob_hidden');
