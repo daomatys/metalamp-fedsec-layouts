@@ -36,7 +36,7 @@ mixin input( item )
   - const id = item.id
   - const disabled = item.disabled
   - const checked = dropdown.expanded
-  - const type = archetype === 'subscription' ? 'Email' : ''
+  - const type = archetype === 'subscription' ? 'email' : 'text'
   - const readonly = archetype === 'dropdown' || archetype === 'date-picker'
   - const placeholder = definePlaceholder( archetype, dropdown.type, item.placeholder )
 
