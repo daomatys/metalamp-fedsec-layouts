@@ -9,6 +9,11 @@ $font-size: 12px;
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+
+  &_clear {
+    transition: opacity .3s ease;
+    opacity: 0;
+  }
 }
 
 .air-datepicker {
