@@ -62,8 +62,11 @@ const renderDatePicker = function renderDatePickerUnderTheMasterFrame( elements,
   const currentDate = new Date('2019-08-08');
   const dateFormat = elements.relations ? 'dd.MM.yyyy' : 'd MMM' ;
 
-  const frames = elements.frames;
   const container = elements.aims.master.firstElementChild;
+
+  const frames = elements.frames;
+  const slaveFrame = frames.slave;
+  const masterFrame = frames.master;
 
   const buttons = container.nextElementSibling;
   const clearButton = buttons.firstElementChild.querySelector('button');
@@ -83,8 +86,10 @@ const renderDatePicker = function renderDatePickerUnderTheMasterFrame( elements,
     nextHtml: icon('arrow_forward'),
     minDate:   currentDate,
     startDate: currentDate,
-    onSelect: () => routeValues( frames, clearButton )
+    onSelect: () => routeValues( slaveFrame, masterFrame, clearButton )
   });
+
+  defineClearButtonState( slaveFrame, masterFrame, clearButton );
 
   clearButton.onclick = () => datePicker.clear();
   acceptButton.onclick = () => frames.master.click();
@@ -100,9 +105,7 @@ const renderDateValues = function Dates( datePicker, holder, rawDates, caseMaste
   }
 }
 
-const routeValues = function routeIncomingDateValues( frames, clearButton ) {
-  const slaveFrame = frames.slave;
-  const masterFrame = frames.master;
+const routeValues = function routeIncomingDateValues( slaveFrame, masterFrame, clearButton ) {
   const caseEquivalence = slaveFrame.isEqualNode( masterFrame );
 
   if ( !caseEquivalence ) {
@@ -116,7 +119,10 @@ const routeValues = function routeIncomingDateValues( frames, clearButton ) {
       masterFrame.value = initialValue[0];
     }
   }
+  defineClearButtonState( slaveFrame, masterFrame, clearButton );
+}
 
+const defineClearButtonState = function defineClearButtonState( slaveFrame, masterFrame, clearButton ) { 
   const caseValuesExists = masterFrame.value && slaveFrame.value;
 
   if ( caseValuesExists ) {
