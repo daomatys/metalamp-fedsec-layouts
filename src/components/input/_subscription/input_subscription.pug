@@ -1,6 +1,5 @@
 include /components/material-icon-cell/material-icon-cell.pug
 
-mixin inputSubscription( item )
-  input.input__frame( type='Email' placeholder=item.placeholder disabled=item.disabled )
+mixin inputSubscription( id )
   .input__icon_subscribe
-    +materialIcon('arrow_forward', item.id)
+    +materialIcon('arrow_forward', id )

@@ -1,29 +1,66 @@
 include /components/title-bar/title-bar.pug
 
-include _date-picker/input_date-picker.pug
-include _default/input_default.pug
-include _dropdown/input_dropdown.pug
 include _subscription/input_subscription.pug
+include _date-picker/input_date-picker.pug
+include _dropdown/input_dropdown.pug
 
 mixin input( item )
-  - const widthByPercent = item.widthbypercent ? item.widthbypercent : '100'
-  - const widthByPercentClass = `elem__width_${ widthByPercent }`
-  - const expanderParentCase = item.type === 'dropdown' || item.type === 'date-picker';
-  - const expanderParentClass = expanderParentCase ? 'expander__parent' : '';
+  - const dropdown = item.dropdown || {}
 
-  .input( class=[widthByPercentClass, expanderParentClass] )
+  - const id = item.id
+  - const type = item.type === 'subscription' ? 'Email' : ''
+  - const placeholder = definePlaceholder( type, dropdown.type )
+  - const disabled = item.disabled
+  - const checked = dropdown.expanded
+  - const readonly = item.type === 'dropdown' || item.type === 'date-picker'
 
+  - const widthByPercentCase = item.widthbypercent ? item.widthbypercent : '100'
+  - const widthByPercentClass = `elem__width_${ widthByPercentCase }`
+  - const expanderParentClass = readonly ? 'expander__parent' : ''
+  - const datePickerClasses = item.type === 'date-picker' ? 'expander adp-frame' : ''
+  - const dropdownClasses =   item.type === 'dropdown' ? 'expander dropdown' : ''
+  - const frameClasses = [ datePickerClasses, dropdownClasses ]
+  - const parentClasses = [widthByPercentClass, expanderParentClass]
+
+  - const definePlaceholder = function definePlaceholderByType( type, dropdownType ) {
+    let placeholder = '';
+
+    switch ( type ) {
+      case 'date-picker': {
+        placeholder = 'ДД.ММ.ГГГГ';
+        break;
+      }
+      case 'subscription': {
+        placeholder = 'Email';
+        break;
+      }
+      case 'dropdown': {
+        placeholder = dropdownType === 'guests' ? 'Cколько гостей' : 'Cколько ванных и спален'
+        break;
+      }
+    }
+
+    return placeholder;
+  }
+
+  .input( class=parentClasses )
     if item.title
       .input__title
         +titleBar( item.title, item.state )
-
     .input__element
+      input.input__frame(
+        class=       frameClasses
+        id=          id
+        type=        type
+        placeholder= placeholder
+        disabled=    disabled
+        checked=     checked
+        readonly=    readonly
+      )
       case item.type
         when 'dropdown'
           +inputDropdown( item )
         when 'date-picker'
           +inputDatePicker( item )
         when 'subscription'
-          +inputSubscription( item )
-        default
-          +inputDefault( item )
+          +inputSubscription( id )

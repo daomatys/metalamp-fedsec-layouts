@@ -7,14 +7,11 @@ mixin inputDropdown( item={} )
 
   - const dropdown = item.dropdown || {}
   - const values = dropdown.values || [ 0, 0, 0 ]
-
   - const options = dropdown.type === 'guests' ? guestsOptionNames : facilitiesOptionNames
-  - const placeholder = dropdown.type === 'guests' ? 'Cколько гостей' : 'Cколько ванных и спален'
 
-  - const expanderActiveClass = dropdown.expanded ? 'expander_active' : ''
   - const iconFlippedClass = dropdown.expanded ? 'icon_flipped' : ''
+  - const expanderActiveClass = dropdown.expanded ? 'expander_active' : ''
 
-  input.input__frame.dropdown.expander( id=item.id placeholder=placeholder checked=dropdown.expanded readonly )
   label.input__icon_expand( class=iconFlippedClass for=item.id )
     +materialIcon('expand_more', item.id )
   .input__dropdown.expander__aim( class=expanderActiveClass data-options-type=dropdown.type )
