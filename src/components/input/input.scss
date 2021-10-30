@@ -53,7 +53,7 @@ $focused-color_border-n-icon: rgba($valhalla, .5);
     &:focus-within,
     &[checked] {
       border-color: $focused-color_border-n-icon;
-Ы
+
       &::placeholder {
         color: $focused-color_text
       }
