@@ -121,7 +121,7 @@ const defineFacilitiesInputValue = function defineFacilitiesInputValue( values )
 
   const result = firstText + secondText + thirdText + '…'
 
-  return result.slice(0, 32);
+  return result;
 }
 
 const defineText= function defineTextAccordingToNumber( currentValue, lastValue, word, endings=[] ) {
