@@ -1,17 +1,5 @@
 @import "@variables";
 
-@media screen and (max-width: 1160px) {
-  .website__footer_default {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 1161px) {
-  .website__footer_mobile {
-    display: none;
-  }
-}
-
 .website {
   &__main,
   &__header,
