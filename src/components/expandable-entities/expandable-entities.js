@@ -10,6 +10,13 @@ const activate = function expanderActivation( expander ) {
   const parent = expander.closest('.expander__parent');
   const aim = parent.querySelector('.expander__aim');
   const icon = parent.querySelector('.material-icons');
+  const caseExpanderIsDisabled = expander.hasAttribute('checked');
+
+  if ( caseExpanderIsDisabled ) {
+    expander.removeAttribute('checked');
+  } else {
+    expander.setAttribute('checked', '');
+  }
 
   animate( icon );
   

@@ -39,7 +39,7 @@ $focused-color_border-n-icon: rgba($valhalla, .5);
     font-family: inherit;
     font-size: 14px;
 
-    &.dropdown {
+    &.dropdown[checked] {
       border-radius: 4px 4px 0px 0px;
     }
 
@@ -75,7 +75,7 @@ $focused-color_border-n-icon: rgba($valhalla, .5);
 
       &::before {
         $fadeElementSize: 24px;
-        
+
         position: absolute;
         right: $fadeElementSize;
         width: $fadeElementSize;
