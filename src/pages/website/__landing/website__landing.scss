@@ -1,6 +1,6 @@
 @media only screen and (max-width: 768px) {
   .landing-page__bg-note {
-    padding-inline: 30px;
+    padding-inline: 0;
     right: 0px;
     width: 100%;
     text-align: center;
@@ -9,7 +9,7 @@
 
 @media only screen and (min-width: 768px) {
   .landing-page__bg-note {
-    padding-inline: 30px;
+    padding-inline: 150px;
     right: 150px;
     width: 297px;
     text-align: right;
