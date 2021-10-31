@@ -18,7 +18,7 @@
     width: 100%;
   }
 
-  &__sections {
+  &__default-sections {
     &_upper,
     &_lower {
       background-color: $white;
@@ -40,21 +40,16 @@
     }
   }
 
-  &_mobile,
-  &__mobile-section {
-    align-items: center;
+  &_mobile {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     width: 100%;
-  }
-
-  &__mobile-section {
-    background-color: $white;
-    flex-direction: column;
     height: 367px;
-    max-width: 768px;
+    background-color: $white;
 
-    & > span {
+    & > .footer__remark {
       margin-block: 20px 25px;
     }
   }
