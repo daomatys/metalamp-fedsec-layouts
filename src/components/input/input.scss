@@ -39,7 +39,7 @@ $focused-color_border-n-icon: rgba($valhalla, .5);
     font-family: inherit;
     font-size: 14px;
 
-    &.dropdown[checked] {
+    &.dropdown {
       border-radius: 4px 4px 0px 0px;
     }
 
@@ -64,15 +64,6 @@ $focused-color_border-n-icon: rgba($valhalla, .5);
     }
   }
 
-  &__expander {
-    position: absolute;
-    top: 0px;
-    width: 100%;
-    height: 44px;
-    z-index: 19;
-    cursor: pointer;
-  }
-
   &__icon {
     &_expand,
     &_subscribe {
@@ -83,11 +74,12 @@ $focused-color_border-n-icon: rgba($valhalla, .5);
       z-index: 20;
 
       &::before {
-        $beforeSize: 24px;
+        $fadeElementSize: 24px;
+        
         position: absolute;
-        right: $beforeSize;
-        width: $beforeSize;
-        height: $beforeSize;
+        right: $fadeElementSize;
+        width: $fadeElementSize;
+        height: $fadeElementSize;
         background-image: linear-gradient( 90deg, rgba( $white, 0 ) 0%, rgba( $white, 1 ) 100% );
         content: '';
       }
