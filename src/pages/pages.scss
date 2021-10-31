@@ -6,7 +6,6 @@ body {
 body {
   font-family: Montserrat, Quicksand, sans-serif;
   margin: auto;
-  user-select: none;
 }
 
 img,
@@ -14,4 +13,12 @@ embed,
 video,
 object {
   max-width: 100%;
+}
+
+img {
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
