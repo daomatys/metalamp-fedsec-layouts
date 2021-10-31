@@ -29,7 +29,7 @@ $focused-color_border-n-icon: rgba($valhalla, .5);
 
   &__frame {
     margin: 0;
-    padding: 0 10 0 15px;
+    padding: 0 10px 0 15px;
     height: 44px;
     width: inherit;
     border-radius: 4px;
@@ -40,6 +40,7 @@ $focused-color_border-n-icon: rgba($valhalla, .5);
     appearance: none;
     font-size: 14px;
     z-index: 20;
+    cursor: pointer;
 
     &.dropdown[checked] {
       border-radius: 4px 4px 0px 0px;
@@ -62,7 +63,6 @@ $focused-color_border-n-icon: rgba($valhalla, .5);
 
       & + .input__icon_expand > .material-icons {
         color: $focused-color_text;
-        cursor: pointer;
       }
     }
   }
@@ -74,7 +74,11 @@ $focused-color_border-n-icon: rgba($valhalla, .5);
       bottom: 10px;
       right: 10px;
       background-color: $white;
-      cursor: pointer;
+
+      &,
+      & > .material-icons {
+        cursor: pointer;
+      }
 
       &::before {
         $fadeElementSize: 24px;
