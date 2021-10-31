@@ -14,8 +14,12 @@ block main
   include /components/footer/footer.pug
 
   .headers-n-footers
-    +header({ authorized: false })
-    +header({ authorized: true })
-    +footer({ type: 'default' })
-    +footer({ type: 'mobile' })
+    .headers-n-footers__header_non-authorized
+      +header({ authorized: false })
+    .headers-n-footers__header_authorized
+      +header({ authorized: true })
+    .headers-n-footers__footer_default
+      +footer({ type: 'default' })
+    .headers-n-footers__footer_mobile
+      +footer({ type: 'mobile' })
     
