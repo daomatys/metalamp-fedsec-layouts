@@ -41,6 +41,7 @@ $focused-color_border-n-icon: rgba($valhalla, .5);
     font-size: 14px;
     z-index: 20;
     cursor: pointer;
+    -webkit-rtl-ordering: visual;
 
     &.dropdown[checked] {
       border-radius: 4px 4px 0px 0px;
