@@ -5,11 +5,10 @@ include /components/button/__mean-oval/button__mean-oval.pug
 mixin header( item )
   .header
     .header__sections
-      .header__sections_left
+      .header__sections_logo
         .header__logo
           +logo({ type: "colorful" })
-
-      .header__sections_right
+      .header__sections_desktop
         .header__nav
           +navigationBar({
             links: [
@@ -34,3 +33,4 @@ mixin header( item )
                   { type: "contained", widthbypercent: 61, text: "зарегестрироваться" }
                 ]
               })
+      .header__sections_mobile

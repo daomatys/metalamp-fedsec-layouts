@@ -1,5 +1,17 @@
 @import "@variables";
 
+@media only screen and (max-width: 1175px) {
+  .header__sections_desktop {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1920px) {
+  .header__sections_mobile {
+    display: none;
+  }
+}
+
 .header {
   justify-content: center;
   padding-inline: 140px;
