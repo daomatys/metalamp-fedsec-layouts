@@ -1,12 +1,12 @@
 @import '@variables';
 
-@media only screen and (max-width: 1160px) {
+@media only screen and (max-width: 1180px) {
   .website__footer_default {
     display: none;
   }
 }
 
-@media only screen and (min-width: 1161px) {
+@media only screen and (min-width: 1181px) {
   .website__footer_mobile {
     display: none;
   }
