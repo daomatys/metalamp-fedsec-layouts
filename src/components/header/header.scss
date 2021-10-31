@@ -1,14 +1,29 @@
 @import "@variables";
 
-@media only screen and (max-width: 1200px) {
-  .header__sections_desktop {
-    display: none !important;
+
+@media only screen and (max-width: 768px) {
+  .header__sections {
+    justify-content: center;
+
+    &_desktop {
+      display: none !important;
+    }
   }
 }
 
-@media only screen and (min-width: 1201px) {
-  .header__sections_mobile {
-    display: none;
+@media only screen and (min-width: 768px) {
+  .header__sections {
+    justify-content: space-between;
+
+    &_mobile {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .header__nav {
+    display: none !important;
   }
 }
 
@@ -30,7 +45,6 @@
   }
   
   &__sections {
-    justify-content: space-between;
     width: 100%;
 
     &_desktop {

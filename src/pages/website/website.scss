@@ -1,11 +1,19 @@
 @import "@variables";
 
-/*@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 576px) {
   
 }
 
 @media only screen and (max-width: 768px) {
+  .universal-container {
+    width: unset;
+  }
+}
 
+@media only screen and (min-width: 768px) {
+  .universal-container {
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 992px) {
@@ -18,7 +26,7 @@
 
 @media only screen and (max-width: 1920px) {
   
-}*/
+}
 
 .website {
   &__main,
@@ -35,7 +43,7 @@
 
 .universal-container {
   position: relative;
-  max-width: $wideFramesWidthMax;
+  padding-inline: 150px;
 }
 
 .bg-pic {
