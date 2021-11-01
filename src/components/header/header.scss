@@ -19,11 +19,17 @@
       display: none;
     }
   }
+  
 }
 
 @media only screen and (max-width: 1200px) {
-  .header__nav {
-    display: none !important;
+  .header {
+    &__nav {
+      display: none !important;
+    }
+    &__sections_desktop {
+      grid-template-columns: repeat(2, auto);
+    }
   }
 }
 
@@ -50,7 +56,6 @@
     &_desktop {
       display: grid;
       grid-gap: 20px;
-      grid-template-columns: repeat(2, auto);
     }
   }
 

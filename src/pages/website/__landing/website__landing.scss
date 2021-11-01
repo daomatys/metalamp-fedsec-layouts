@@ -1,32 +1,36 @@
-@media only screen and (max-width: 698px) {
+@media only screen and (max-width: 718px) {
   .landing-page {
     display: flex;
     align-items: flex-start;
     justify-content: center;
     padding-inline: 0;
+
+    &__bg-note {
+      right: 0px;
+      width: 100%;
+      text-align: center;
+    }
   }
 }
 
-@media only screen and (min-width: 698px) {
+@media only screen and (min-width: 718px) {
   .landing-page {
     padding-inline: 150px;
+
+    &__bg-note {
+      right: 150px;
+      width: 297px;
+      text-align: right;
+    }
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .landing-page__bg-note {
-    right: 0px;
-    width: 100%;
-    text-align: center;
-  }
+
 }
 
 @media only screen and (min-width: 768px) {
-  .landing-page__bg-note {
-    right: 150px;
-    width: 297px;
-    text-align: right;
-  }
+
 }
 
 .landing-page {
