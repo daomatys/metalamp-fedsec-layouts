@@ -1,10 +1,5 @@
-@media only screen and (max-width: 718px) {
+@media only screen and (max-width: 782px) {
   .landing-page {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding-inline: 0;
-
     &__bg-note {
       right: 0px;
       width: 100%;
@@ -13,10 +8,8 @@
   }
 }
 
-@media only screen and (min-width: 718px) {
+@media only screen and (min-width: 782px) {
   .landing-page {
-    padding-inline: 150px;
-
     &__bg-note {
       right: 150px;
       width: 297px;
@@ -25,12 +18,19 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
-
+@media only screen and (max-width: 680px) {
+  .landing-page {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-inline: 0;
+  }
 }
 
-@media only screen and (min-width: 768px) {
-
+@media only screen and (min-width: 680px) {
+  .landing-page {
+    padding-inline: 150px;
+  }
 }
 
 .landing-page {
