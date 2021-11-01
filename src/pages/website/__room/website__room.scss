@@ -1,5 +1,42 @@
 @import "@variables";
 
+@media only screen and (min-width: 380px) {
+  .room-page {
+    &__sub-section_left {
+      grid-template-areas:
+        "f"
+        "a"
+        "b"
+        "c"
+        "d"
+        "e";
+    }
+  }
+}
+
+@media only screen and (min-width: 861px) {
+  .room-page {
+    &__sub-section_left {
+      grid-template-areas:
+        "a f"
+        "b f"
+        "c c"
+        "d e";
+    }
+  }
+}
+
+@media only screen and (min-width: 1231px) {
+  .room-page {
+    &__sub-section_left {
+      grid-template-areas:
+        "a b f"
+        "c c f"
+        "d e f";
+    }
+  }
+}
+
 $mainHeigth: 1424px;
 $documentHeigth: 1937px;
 
@@ -41,12 +78,10 @@ $documentHeigth: 1937px;
     }
   }
 
-
   &__section_information {
     display: flex;
     justify-content: space-between;
     margin-block: 70px;
-    height: 800px;
   }
 
   &__title {
@@ -56,11 +91,8 @@ $documentHeigth: 1937px;
   &__sub-section_left {
     display: grid;
     grid-gap: 30px;
-    grid-template-areas:
-      "a b"
-      "c c"
-      "d e";
   }
+
   &__room-advantages {
     grid-area: a;
   }
@@ -75,6 +107,9 @@ $documentHeigth: 1937px;
   }
   &__cancellation-policy {
     grid-area: e;
+  }
+  &__booking-card {
+    grid-area: f;
   }
 
   &__cancellation-policy {
