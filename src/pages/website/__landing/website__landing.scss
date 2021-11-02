@@ -1,6 +1,6 @@
 @media only screen and (max-width: 782px) {
   .landing-page {
-    &__bg-note {
+    &__note {
       right: 0px;
       width: 100%;
       text-align: center;
@@ -10,7 +10,7 @@
 
 @media only screen and (min-width: 782px) {
   .landing-page {
-    &__bg-note {
+    &__note {
       right: 150px;
       width: 297px;
       text-align: right;
@@ -18,25 +18,27 @@
   }
 }
 
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 675px) {
   .landing-page {
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    position: relative;
     padding-inline: 0;
   }
 }
 
-@media only screen and (min-width: 680px) {
+@media only screen and (min-width: 675px) {
   .landing-page {
-    padding-inline: 150px;
+    padding-inline: 140px;
   }
 }
 
 .landing-page {
   width: 100%;
+  height: 100%;
 
-  &__bg-note {
+  &__note {
     position: absolute;
     bottom: 18px;
   }
