@@ -32,16 +32,17 @@ $focused-color_border-n-icon: rgba($valhalla, .5);
     padding: 0 10px 0 15px;
     height: 44px;
     width: inherit;
+    font-family: inherit;
+    font-size: 14px;
     border-radius: 4px;
     border-color: $default-color;
     color: $focused-color_text;
     background-color: $white;
-    font-family: inherit;
     appearance: none;
-    font-size: 14px;
-    z-index: 20;
-    cursor: pointer;
-    -webkit-rtl-ordering: visual;
+    
+    &.expander {
+      cursor: pointer;
+    }
 
     &.dropdown[checked] {
       border-radius: 4px 4px 0px 0px;
