@@ -1,7 +1,20 @@
+@media only screen and (max-width: 768px) {
+  .index-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .index-links{
+    align-items: flex-start;
+  }
+}
+
 .index-links,
 .index-links__container {
   display: flex;
-  align-items: flex-start;
 }
 
 .index-links {
@@ -12,10 +25,9 @@
   &__container {
     justify-content: center;
     width: 100%;
-    height: 100%;
   }
 
-  & > * {
+  &__nav-bar {
     min-width: 130px;
   }
 }

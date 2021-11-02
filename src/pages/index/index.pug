@@ -3,6 +3,7 @@ extends /pages/ui-kit/ui-kit.pug
 
 block head 
   title FEDSEC / Index
+  meta( name="viewport" content="width=380, initial-scale=1" )
 
 
 block append body
@@ -19,26 +20,28 @@ block main
   include /components/navigation-bar/navigation-bar.pug
 
   .index-links__container
-    .index-links 
-      +navigationBar({
-        vertical: true,
-        title: "ui kit",
-        links: [
-          { name: "cards",             href: "ui-kit__cards.html" },
-          { name: "colors & type",     href: "ui-kit__colors-n-type.html" },
-          { name: "form elements",     href: "ui-kit__form-elements.html" },
-          { name: "headers & footers", href: "ui-kit__headers-n-footers.html" }
-        ]
-      })
-      +navigationBar({
-        vertical: true,
-        title: "toxin hotel",
-        links: [
-          { name: "landing",      href: "website__landing.html" },
-          { name: "login",        href: "website__login.html" },
-          { name: "registration", href: "website__registration.html" },
-          { name: "room",         href: "website__room.html" },
-          { name: "search",       href: "website__search.html" },
-          { name: "not found",    href: "website__no-page.html" }
-        ]
-      })
+    .index-links
+      .index-links__nav-bar
+        +navigationBar({
+          vertical: true,
+          title: "ui kit",
+          links: [
+            { name: "cards",             href: "ui-kit__cards.html" },
+            { name: "colors & type",     href: "ui-kit__colors-n-type.html" },
+            { name: "form elements",     href: "ui-kit__form-elements.html" },
+            { name: "headers & footers", href: "ui-kit__headers-n-footers.html" }
+          ]
+        })
+      .index-links__nav-bar
+        +navigationBar({
+          vertical: true,
+          title: "toxin hotel",
+          links: [
+            { name: "landing",      href: "website__landing.html" },
+            { name: "login",        href: "website__login.html" },
+            { name: "registration", href: "website__registration.html" },
+            { name: "room",         href: "website__room.html" },
+            { name: "search",       href: "website__search.html" },
+            { name: "not found",    href: "website__no-page.html" }
+          ]
+        })
