@@ -4,10 +4,10 @@
   .room-page {
     &__sub-section_left {
       grid-template-areas:
-        "f"
         "a"
         "b"
         "d"
+        "f"
         "e";
     }
   }
@@ -17,6 +17,14 @@
   .room-page {
     &__reviews {
       display: none;
+    }
+
+    &__reviews,
+    &__rules-list,
+    &__room-advantages,
+    &__cancellation-policy,
+    &__visitors-impression-chart {
+      padding-left: 29px;
     }
   }
 }
