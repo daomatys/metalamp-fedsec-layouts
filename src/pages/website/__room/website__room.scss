@@ -1,13 +1,5 @@
 @import "@variables";
 
-@media only screen and (max-width: 860px) {
-  .room-page {
-    &__reviews {
-      display: none;
-    }
-  }
-}
-
 @media only screen and (min-width: 380px) {
   .room-page {
     &__sub-section_left {
@@ -17,6 +9,14 @@
         "b"
         "d"
         "e";
+    }
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .room-page {
+    &__reviews {
+      display: none;
     }
   }
 }

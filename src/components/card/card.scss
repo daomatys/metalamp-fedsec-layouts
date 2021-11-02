@@ -1,16 +1,9 @@
 @import "@variables";
 
-@media only screen and (max-width: 382px) {
-  .card-style_default,
-  .card-style_room-sample {
-    border-radius: 0;
-  }
-}
-
 @media only screen and (min-width: 381px) {
-  .card-style_default,
-  .card-style_room-sample {
+  .card-style_default {
     border-radius: 4px;
+    border: 1px solid rgba($black, .12);
   }
 }
 
@@ -26,7 +19,6 @@
     grid-gap: 20px;
     padding: 39px 29px 29px 29px;
     box-shadow: 0px 0px 25px rgba($black, .2);
-    border: 1px solid rgba($black, .12);
     width: 380px;
 
     & > * {
