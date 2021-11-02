@@ -1,21 +1,5 @@
 @import "@variables";
 
-@media only screen and (max-width: 576px) {
-  
-}
-
-@media only screen and (max-width: 992px) {
-  
-}
-
-@media only screen and (max-width: 1200px) {
-  
-}
-
-@media only screen and (max-width: 1920px) {
-
-}
-
 .website {
   &__main,
   &__header,
@@ -25,8 +9,8 @@
 
   &__main {
     display: flex;
-    justify-content: center;
     align-items: flex-start;
+    justify-content: center;
   }
 }
 
@@ -40,15 +24,11 @@
   }
 
   &__landing {
-    padding-top: 70px;
     min-height: 830px;
     background-image: url("/src/assets/images/raster/background/background__landing-1.jpg");
   }
 
   &__login-n-registration {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     min-height: 690px;
     background-image: url("/src/assets/images/raster/background/background__login-n-registration.jpg");
   }
