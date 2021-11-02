@@ -1,7 +1,7 @@
 @import "@variables";
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 710px) {
   .header__sections {
     justify-content: center;
 
@@ -11,7 +11,7 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 710px) {
   .header__sections {
     justify-content: space-between;
 
@@ -19,10 +19,9 @@
       display: none;
     }
   }
-  
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1180px) {
   .header {
     &__nav {
       display: none !important;
@@ -30,7 +29,7 @@
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1180px) {
   .header {
     &__sections_desktop {
       grid-template-columns: repeat(2, auto);
