@@ -1,47 +1,19 @@
 @media only screen and (max-width: 782px) {
-  .landing-page {
-    &__note {
-      width: 100%;
-      text-align: center;
-    }
-  }
+
 }
 
 @media only screen and (min-width: 782px) {
-  .landing-page {
-    &__note {
-      width: 297px;
-      text-align: right;
-    }
-  }
+
 }
 
 @media only screen and (max-width: 675px) {
-  .landing-page {
-    padding-inline: 0;
-  }
+
 }
 
 @media only screen and (min-width: 675px) {
-  .landing-page {
-    padding-inline: 140px;
-  }
+
 }
 
 .landing-page {
-  display: block;
-  position: relative;
-  width: 100%;
-  min-height: inherit;
 
-  &__card,
-  &__note {
-    height: 50%;
-  }
-
-  &__note {
-    position: absolute;
-    bottom: 18px;
-    right: 0px;
-  }
 }
