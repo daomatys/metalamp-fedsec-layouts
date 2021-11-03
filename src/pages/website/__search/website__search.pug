@@ -126,93 +126,94 @@ block main
   include /components/input/input.pug
 
   main.website__main.fullscreen-bottom-border
-    .search-page__input-parameters.elem__width_83
-      .search-page__date-picker
-        +input({
-          id: "search-by__date",
-          type: "date-picker",
-          title: "дата пребывания в отеле",
-          widthbypercent: 83,
-          dates: "2019-08-19, 2019-08-23"
-        })
-      .search-page__guests-dropdown
-        +input({
-          id: "search-by__guests",
-          type: "dropdown",
-          title: "гости",
-          widthbypercent: 83,
-          dropdown: {
-            type: "guests",
-            values: [ 2, 0, 1 ],
+    .search-page
+      .search-page__input-parameters.elem__width_83
+        .search-page__date-picker
+          +input({
+            id: "search-by__date",
+            type: "date-picker",
+            title: "дата пребывания в отеле",
+            widthbypercent: 83,
+            dates: "2019-08-19, 2019-08-23"
+          })
+        .search-page__guests-dropdown
+          +input({
+            id: "search-by__guests",
+            type: "dropdown",
+            title: "гости",
+            widthbypercent: 83,
+            dropdown: {
+              type: "guests",
+              values: [ 2, 0, 1 ],
+              expanded: false,
+            }
+          })
+        .search-page__slider
+          .search-page__slider-frame
+            +rangeSlider({
+              title: "диапазон цен",
+              id: "search-by__range-prices",
+              widthbypercent: 83
+            })
+          span.search-page__slider-note.custom-font-style_micro-note Стоимость за сутки пребывания в номере
+        .search-page__checkboxes.form-elements__element
+          +titleBar("правила дома")
+          .checkbox-button__array
+            +checkboxButtons({
+              groupname: "search-by__checkbox-allows", 
+              checkboxes: [
+                { pressed: false, label: "Можно курить" },
+                { pressed: true,  label: "Можно с питомцами" },
+                { pressed: true,  label: "Можно пригласить гостей (до 10 человек)" }
+              ]
+            })
+        .search-page__rich-checkboxes.form-elements__element
+          +titleBar("доступность")
+          .checkbox-buttons__array
+            +checkboxButtons({
+              richmode: true,
+              groupname: "search-by__accessibility",
+              checkboxes: [
+                {
+                  title: "Широкий коридор",
+                  info: "Ширина коридоров в номере \nне менее 91 см."
+                },
+                {
+                  title: "Помощник для инвалидов",
+                  info: "На 1 этаже вас встретит специалист  и проводит до номера."
+                }
+              ]
+            })
+        .search-page__facilities-dropdown
+          +input({
+            id: "search-by__baths",
+            type: "dropdown",
+            title: "удобства номера",
+            widthbypercent: 83,
+            dropdown: {
+              type: "facilities",
+              values: [ 2, 2, 0 ]
+            }
+          })
+        .search-page__extra-services-list
+          +checkboxList({
+            title: "expandable checkbox list",
+            groupname: "uik-fe__checkbox-list_default",
             expanded: false,
-          }
-        })
-      .search-page__slider
-        .search-page__slider-frame
-          +rangeSlider({
-            title: "диапазон цен",
-            id: "search-by__range-prices",
-            widthbypercent: 83
-          })
-        span.search-page__slider-note.custom-font-style_micro-note Стоимость за сутки пребывания в номере
-      .search-page__checkboxes.form-elements__element
-        +titleBar("правила дома")
-        .checkbox-button__array
-          +checkboxButtons({
-            groupname: "search-by__checkbox-allows", 
             checkboxes: [
-              { pressed: false, label: "Можно курить" },
-              { pressed: true,  label: "Можно с питомцами" },
-              { pressed: true,  label: "Можно пригласить гостей (до 10 человек)" }
+              { pressed: false, label: "Завтрак" },
+              { pressed: true,  label: "Письменный стол" },
+              { pressed: true,  label: "Стул для кормления" },
+              { pressed: true,  label: "Кроватка" },
+              { pressed: false, label: "Телевизор" },
+              { pressed: false, label: "Шампунь" }
             ]
           })
-      .search-page__rich-checkboxes.form-elements__element
-        +titleBar("доступность")
-        .checkbox-buttons__array
-          +checkboxButtons({
-            richmode: true,
-            groupname: "search-by__accessibility",
-            checkboxes: [
-              {
-                title: "Широкий коридор",
-                info: "Ширина коридоров в номере \nне менее 91 см."
-              },
-              {
-                title: "Помощник для инвалидов",
-                info: "На 1 этаже вас встретит специалист  и проводит до номера."
-              }
-            ]
-          })
-      .search-page__facilities-dropdown
-        +input({
-          id: "search-by__baths",
-          type: "dropdown",
-          title: "удобства номера",
-          widthbypercent: 83,
-          dropdown: {
-            type: "facilities",
-            values: [ 2, 2, 0 ]
-          }
-        })
-      .search-page__extra-services-list
-        +checkboxList({
-          title: "expandable checkbox list",
-          groupname: "uik-fe__checkbox-list_default",
-          expanded: false,
-          checkboxes: [
-            { pressed: false, label: "Завтрак" },
-            { pressed: true,  label: "Письменный стол" },
-            { pressed: true,  label: "Стул для кормления" },
-            { pressed: true,  label: "Кроватка" },
-            { pressed: false, label: "Телевизор" },
-            { pressed: false, label: "Шампунь" }
-          ]
-        })
-    .search-page__filtered-items
-      .search-page__filtered-items-title
-        span.custom-font-style_h1 Номера, которые мы для вас подобрали
-      .search-page__filtered-items-grid
-        each sample in samples
-          +cardRoomSample( sample )
-      .search-page__filtered-items-pagination
+      .search-page__filtered-items
+        .search-page__filtered-items-title
+          span.custom-font-style_h1 Номера, которые мы для вас подобрали
+        .search-page__filtered-items-grid
+          each sample in samples
+            +cardRoomSample( sample )
+        .search-page__filtered-items-pagination
           +paginationElem()
