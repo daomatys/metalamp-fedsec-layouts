@@ -20,16 +20,16 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    max-width: 100%;
+    background-clip: border-box;
   }
 
   &__landing {
-    min-height: 830px;
     background-image: url("/src/assets/images/raster/background/background__landing-1.jpg");
   }
 
   &__login-n-registration {
-    min-height: 690px;
+    display: flex;
+    align-items: center;
     background-image: url("/src/assets/images/raster/background/background__login-n-registration.jpg");
   }
 }

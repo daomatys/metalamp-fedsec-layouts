@@ -1,48 +1,36 @@
+@media only screen and (max-width: 660px) {
+  .landing-page {
+    padding-inline: 0;
+  }
+}
+
+@media only screen and (min-width: 660px) {
+  .landing-page {
+    padding-inline: 140px;
+  }
+}
+
+
 @media only screen and (max-width: 782px) {
   .landing-page {
-    &__card {
-  
-    }
-  
     &__note {
-      
+      text-align: center;
+
+      & > .custom-font-style_body {
+        width: 100%;
+      }
     }
   }
 }
 
 @media only screen and (min-width: 782px) {
   .landing-page {
-    &__card {
-  
-    }
-  
     &__note {
-      
-    }
-  }
-}
+      text-align: right;
 
-@media only screen and (max-width: 675px) {
-  .landing-page {
-    &__card {
-  
-    }
-  
-    &__note {
-      
-    }
-  }
-}
-
-@media only screen and (min-width: 675px) {
-  .landing-page {
-
-    &__card {
-  
-    }
-  
-    &__note {
-      
+      & > .custom-font-style_body {
+        width: 273px;
+      }
     }
   }
 }
@@ -51,13 +39,10 @@
 .landing-page {
   flex-direction: column;
   width: 100%;
-  margin-block: 70px 18px;
-  margin-inline: 140px;
+  padding-block: 70px 18px;
 
   &,
   &__note {
-    min-height: 1px;
-    height: 100%;
     display: flex;
   }
 
@@ -66,11 +51,8 @@
     width: 100%;
   }
 
-  &__card {
-
-  }
-
   &__note {
+    height: 388px;
     justify-content: flex-end;
     align-items: flex-end;
   }
