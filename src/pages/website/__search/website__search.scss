@@ -1,11 +1,11 @@
 @import "@variables";
 
-@media only screen and (max-width: 642px) {
+@media only screen and (max-width: 612px) {
   .search-page__filtered-items-title {
     margin-bottom: 30px;
 
     &::before {
-      content: "Номера для вас",
+      content: "Номера для вас";
     }
 
     &_text {
@@ -15,7 +15,7 @@
   }
 }
 
-@media only screen and (min-width: 642px) {
+@media only screen and (min-width: 612px) {
   .search-page__filtered-items {
     &-grid {
       grid-template-columns: repeat(2, auto);
@@ -48,6 +48,7 @@
       &-title {
         text-align: center;
       }
+
       &-grid {
         justify-items: center;
       }
