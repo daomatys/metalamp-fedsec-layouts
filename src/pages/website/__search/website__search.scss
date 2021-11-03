@@ -1,5 +1,18 @@
 @import "@variables";
 
+@media only screen and (max-width: 835px) {
+  .search-page__filtered-items-title {
+    &_text {
+      display: none;
+      text-align: center;
+    }
+
+    &::before {
+      content: "Номера",
+    }
+  }
+}
+
 @media only screen and (min-width: 834px) {
   .search-page {
     &__filtered-items {
@@ -27,6 +40,10 @@
       z-index: 100;
       background-color: $white;
       visibility: hidden;
+    }
+
+    &_text {
+      text-align: center;
     }
   }
 }
