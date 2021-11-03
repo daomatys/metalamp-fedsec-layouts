@@ -8,7 +8,7 @@
     }
 
     &::before {
-      content: "Номера",
+      content: "Номера для вас",
     }
   }
 }
@@ -42,8 +42,13 @@
       visibility: hidden;
     }
 
-    &_text {
-      text-align: center;
+    &__filtered-items {
+      &-title {
+        text-align: center;
+      }
+      &-grid {
+        justify-items: center;
+      }
     }
   }
 }
