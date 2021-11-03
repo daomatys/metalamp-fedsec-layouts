@@ -1,33 +1,35 @@
 @import "@variables";
 
-@media only screen and (max-width: 835px) {
+@media only screen and (max-width: 642px) {
   .search-page__filtered-items-title {
-    &_text {
-      display: none;
-      text-align: center;
-    }
+    margin-bottom: 30px;
 
     &::before {
       content: "Номера для вас",
     }
+
+    &_text {
+      display: none;
+      text-align: center;
+    }
   }
 }
 
-@media only screen and (min-width: 834px) {
-  .search-page {
-    &__filtered-items {
-      &-grid {
-        grid-template-columns: repeat(2, auto);
-      }
+@media only screen and (min-width: 642px) {
+  .search-page__filtered-items {
+    &-grid {
+      grid-template-columns: repeat(2, auto);
+    }
+
+    &-title {
+      margin-bottom: 21px;
     }
   }
 }
 
 @media only screen and (min-width: 1116px) {
-  .search-page__filtered-items {
-    &-grid {
-      grid-template-columns: repeat(3, auto);
-    }
+  .search-page__filtered-items-grid {
+    grid-template-columns: repeat(3, auto);
   }
 }
 
@@ -49,14 +51,6 @@
       &-grid {
         justify-items: center;
       }
-    }
-  }
-}
-
-@media only screen and (min-width: 1692px) {
-  .search-page__filtered-items {
-    &-grid {
-      grid-template-columns: repeat(3, auto);
     }
   }
 }
@@ -86,10 +80,6 @@
   }
 
   &__filtered-items {
-    &-title {
-      margin-bottom: 21px;
-    }
-
     &-grid {
       grid-gap: 20px 12px;
     }
