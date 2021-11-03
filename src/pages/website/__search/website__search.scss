@@ -1,6 +1,6 @@
 @import "@variables";
 
-@media only screen and (min-width: 592px) {
+@media only screen and (min-width: 834px) {
   .search-page {
     &__filtered-items {
       &-grid {
@@ -10,31 +10,39 @@
   }
 }
 
-@media only screen and (max-width: 928px) {
+@media only screen and (min-width: 1116px) {
+  .search-page__filtered-items {
+    &-grid {
+      grid-template-columns: repeat(3, auto);
+    }
+  }
+}
+
+@media only screen and (max-width: 1412px) {
   .search-page {
     &__input-parameters {
       position: absolute;
       left: 0px;
       padding: 20px 30px;
       z-index: 100;
-      height: 900;
       background-color: $white;
+      visibility: hidden;
     }
   }
 }
 
-@media only screen and (min-width: 1008px) {
-  .search-page__filtered-items {
-    &-grid {
-      grid-template-columns: repeat(2, auto);
-    }
-  }
-}
-
-@media only screen and (min-width: 1290px) {
+@media only screen and (min-width: 1692px) {
   .search-page__filtered-items {
     &-grid {
       grid-template-columns: repeat(3, auto);
+    }
+  }
+}
+
+@media only screen and (min-width: 1694px) {
+  .search-page__filtered-items {
+    &-grid {
+      grid-template-columns: repeat(4, auto);
     }
   }
 }
