@@ -48,10 +48,14 @@
     align-items: center;
   }
 
+  &__sections,
+  &__wide-part {
+    width: 100%;
+  }
+
   &__wide-part {
     justify-content: center;
     padding-inline: 140px;
-    width: 100%;
     box-sizing: border-box;
   }
 
@@ -59,15 +63,16 @@
     &_general {
       background-color: $white;
       height: 70px;
+      z-index: 30;
     }
 
     &_ejectable {
-      
+      transform: translateY(-35px);
+      z-index: 20;
     }
   }
   
   &__sections {
-    width: 100%;
     max-width: $wideFramesWidthMax;
 
     &_desktop {
@@ -100,6 +105,7 @@
 
   &__ejector {
     background-color: $white;
+    color: rgba($valhalla, .5);
     height: 14px;
   }
 }

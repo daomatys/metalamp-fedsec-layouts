@@ -1,4 +1,5 @@
 include /components/logo/logo.pug
+include /components/material-icon-cell/material-icon-cell.pug
 include /components/navigation-bar/navigation-bar.pug
 include /components/button/__mean-oval/button__mean-oval.pug
 
@@ -43,3 +44,4 @@ mixin header( item )
           ]
         })
       .header__ejector.header__wide-part
+        +materialIcon("more_horiz", "")
