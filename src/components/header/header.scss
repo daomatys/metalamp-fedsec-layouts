@@ -27,7 +27,7 @@
     }
 
     &__container_ejectable {
-      display: unset;
+      display: block !important;
     }
   }
 }
@@ -41,6 +41,8 @@
 }
 
 .header {
+  position: relative;
+  height: 70px;
   box-shadow: 0px 10px 20px rgba($valhalla, 0.05);
 
   &__wide-part,
