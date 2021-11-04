@@ -27,7 +27,7 @@
     }
 
     &__container_ejectable {
-      display: block !important;
+      transform: translateY(35px);
     }
   }
 }
@@ -37,17 +37,16 @@
     &__sections_desktop {
       grid-template-columns: repeat(2, auto);
     }
+
+    &__container_ejectable {
+      transform: translateY(21px);
+    }
   }
 }
 
 .header {
   position: relative;
   height: 70px;
-
-  &,
-  &__ejector {
-    box-shadow: 0px 10px 20px rgba($valhalla, 0.05);
-  }
 
   &__wide-part,
   &__sections,
@@ -79,8 +78,6 @@
     }
 
     &_ejectable {
-      display: none;
-      transform: translateY(35px);
       transition: transform .3s ease;
     }
   }
@@ -119,6 +116,7 @@
   }
 
   &__ejector {
+    box-shadow: 0px 10px 20px rgba($valhalla, 0.05);
     background-color: $white;
     color: rgba($valhalla, .5);
     height: 14px;
