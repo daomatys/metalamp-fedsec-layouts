@@ -4,33 +4,42 @@ include /components/button/__mean-oval/button__mean-oval.pug
 
 mixin header( item )
   .header
-    .header__sections
-      .header__sections_logo
-        .header__logo
-          +logo({ type: "colorful" })
-      .header__sections_desktop
-        .header__nav
-          +navigationBar({
-            links: [
-              { name: "О нас", bold: true },
-              { name: "Услуги", icon: true },
-              { name: "Вакансии", },
-              { name: "Новости", },
-              { name: "Соглашения", icon: true },
-            ]
-          })
-        case item.authorized
-          when true
-            .header__user-bar
-              span.header__user-bar_username.custom-font-style_body-plain Юлий Цезарь
-
-          when false 
-            .header__authorization-buttons
-              +meanOvalButtons({
-                groupname: "header__login-btn",
-                buttons: [
-                  { type: "outlined", widthbypercent: 27, text: "войти" },
-                  { type: "contained", widthbypercent: 61, text: "зарегестрироваться" }
-                ]
-              })
-      .header__sections_mobile
+    .header__container_general.header__wide-part
+      .header__sections
+        .header__sections_logo
+          .header__logo
+            +logo({ type: "colorful" })
+        .header__sections_desktop
+          .header__nav
+            +navigationBar({
+              links: [
+                { name: "О нас", bold: true },
+                { name: "Услуги", icon: true },
+                { name: "Вакансии", },
+                { name: "Новости", },
+                { name: "Соглашения", icon: true },
+              ]
+            })
+          case item.authorized
+            when true
+              .header__user-bar
+                span.header__user-bar_username.custom-font-style_body-plain Юлий Цезарь
+            when false 
+              .header__authorization-buttons
+                +meanOvalButtons({
+                  groupname: "header__login-btn",
+                  buttons: [
+                    { type: "outlined", widthbypercent: 27, text: "войти" },
+                    { type: "contained", widthbypercent: 61, text: "зарегестрироваться" }
+                  ]
+                })
+    .header__container_ejectable
+      .header__ejectable-button-panel.header__wide-part
+        +meanOvalButtons({
+          groupname: "header__login-btn",
+          buttons: [
+            { type: "text", widthbypercent: 27, text: "войти" },
+            { type: "text", widthbypercent: 61, text: "зарегестрироваться" }
+          ]
+        })
+      .header__ejector.header__wide-part
