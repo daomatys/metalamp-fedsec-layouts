@@ -84,14 +84,20 @@
       transition: transform .3s ease;
     }
   }
+
+  &__sections_desktop,
+  &__authorization-buttons {
+    display: grid;
+    grid-gap: 20px;
+  }
   
   &__sections {
     max-width: $wideFramesWidthMax;
+  }
 
-    &_desktop {
-      display: grid;
-      grid-gap: 20px;
-    }
+  &__authorization-buttons {
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
   }
 
   &__user-bar {
@@ -104,14 +110,9 @@
     }
   }
 
-  &__authorization-buttons {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 20px;
-    align-items: center;
-  }
-
   &__ejectable-button-panel {
+    display: flex;
+    gap: 5vw;
     background-color: rgba($whisper, .66);
     height: 36px;
     box-shadow: inset 0px 10px 20px rgba($valhalla, 0.05);
