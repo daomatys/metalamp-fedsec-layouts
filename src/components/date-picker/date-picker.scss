@@ -28,12 +28,12 @@ $font-size: 12px;
 
   --adp-border-color: none;
   --adp-border-color-inner: none;
-
   --adp-color: #{rgba($valhalla, .5)};
   --adp-color-other-month: #{rgba($valhalla, .25)};
   --adp-color-disabled:    #{rgba($valhalla, .25)};
   --adp-accent-color: #{$perfume};
-
+  
+  --adp-background-color: none;
   --adp-background-color-hover: #{rgba($perfume, .25)};
   --adp-background-color-in-range: #{$primary-gradient-a};
   --adp-background-color-selected-other-month: #{$primary-gradient-a};
