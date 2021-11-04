@@ -1,11 +1,9 @@
 @import "@variables";
 
 $cardWidth: 270px;
-$black: #000000;
+$borderRadius: 4px;
 
 .room-sample {
-  background-color: $white;
-
   &,
   &__container_top {
     width: $cardWidth;
@@ -14,7 +12,8 @@ $black: #000000;
   &__container_top {
     position: relative;
     height: 151px;
-    border-radius: 4px 4px 0px 0px;
+    border-top-left-radius: $borderRadius;
+    border-top-right-radius: $borderRadius;
     background-color: $valhalla;
     overflow: hidden;
 
