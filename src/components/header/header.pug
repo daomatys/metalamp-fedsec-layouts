@@ -8,10 +8,11 @@ mixin header( item )
     .header__container_ejectable
       .header__ejectable-button-panel.header__wide-part
         +meanOvalButtons({
-          groupname: "header__login-btn",
+          groupname: "header__controllers",
           buttons: [
-            { type: "text", text: "навигация" },
-            { type: "text", text: "еще ченить" }
+            { type: "text", text: "критерии номера" },
+            { type: "text", text: "навигация"       },
+            { type: "text", text: item.authorized ? "профиль" : "авторизация" }
           ]
         })
       .header__ejector.header__wide-part
