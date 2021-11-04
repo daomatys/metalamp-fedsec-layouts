@@ -1,6 +1,5 @@
 @import "@variables";
 
-
 @media only screen and (max-width: 832px) {
   .header__sections {
     justify-content: center;
@@ -26,6 +25,10 @@
     &__nav {
       display: none !important;
     }
+
+    &__container_ejectable {
+      display: unset;
+    }
   }
 }
 
@@ -49,7 +52,8 @@
   }
 
   &__sections,
-  &__wide-part {
+  &__wide-part,
+  &__container_ejectable {
     width: 100%;
   }
 
@@ -61,14 +65,16 @@
 
   &__container {
     &_general {
+      position: absolute;
+      top: 0px;
       background-color: $white;
       height: 70px;
-      z-index: 30;
+      isolation: isolate;
     }
 
     &_ejectable {
-      transform: translateY(-35px);
-      z-index: 20;
+      display: none;
+      transform: translateY(35px);
     }
   }
   

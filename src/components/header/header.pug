@@ -5,6 +5,17 @@ include /components/button/__mean-oval/button__mean-oval.pug
 
 mixin header( item )
   .header
+    .header__container_ejectable
+      .header__ejectable-button-panel.header__wide-part
+        +meanOvalButtons({
+          groupname: "header__login-btn",
+          buttons: [
+            { type: "text", widthbypercent: 27, text: "войти" },
+            { type: "text", widthbypercent: 61, text: "зарегестрироваться" }
+          ]
+        })
+      .header__ejector.header__wide-part
+        +materialIcon("more_horiz", "")
     .header__container_general.header__wide-part
       .header__sections
         .header__sections_logo
@@ -34,14 +45,3 @@ mixin header( item )
                     { type: "contained", widthbypercent: 61, text: "зарегестрироваться" }
                   ]
                 })
-    .header__container_ejectable
-      .header__ejectable-button-panel.header__wide-part
-        +meanOvalButtons({
-          groupname: "header__login-btn",
-          buttons: [
-            { type: "text", widthbypercent: 27, text: "войти" },
-            { type: "text", widthbypercent: 61, text: "зарегестрироваться" }
-          ]
-        })
-      .header__ejector.header__wide-part
-        +materialIcon("more_horiz", "")
