@@ -10,12 +10,12 @@ mixin header( item )
         +meanOvalButtons({
           groupname: "header__login-btn",
           buttons: [
-            { type: "text", widthbypercent: 27, text: "войти" },
-            { type: "text", widthbypercent: 61, text: "зарегестрироваться" }
+            { type: "text", text: "навигация" },
+            { type: "text", text: "еще ченить" }
           ]
         })
       .header__ejector.header__wide-part
-        +materialIcon("more_horiz", item.id)
+        +materialIcon("more_horiz")
     .header__container_general.header__wide-part
       .header__sections
         .header__sections_logo
