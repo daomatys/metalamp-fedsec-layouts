@@ -3,14 +3,8 @@
 .input__date-picker {
   position: absolute;
   top: 50px;
-  padding: 20px;
   z-index: 20;
   visibility: hidden;
-  
-  width: 320px;
-  border: 1px solid rgba($valhalla, .5);
-  box-shadow: 0px 10px 20px rgba($valhalla, 0.05);
-  box-sizing: border-box;
 }
 
 .slave {

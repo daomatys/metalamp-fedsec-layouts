@@ -62,7 +62,7 @@ const renderDatePicker = function renderDatePickerUnderTheMasterFrame( elements,
   const currentDate = new Date('2019-08-08');
   const dateFormat = elements.relations ? 'dd.MM.yyyy' : 'd MMM' ;
 
-  const container = elements.aims.master.firstElementChild;
+  const container = elements.aims.master.querySelector('.date-picker__container');
 
   const frames = elements.frames;
   const slaveFrame = frames.slave;

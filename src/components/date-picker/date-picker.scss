@@ -5,13 +5,22 @@
 $cell-size: 40px;
 $font-size: 12px;
 
-.date-picker__buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+.date-picker {
+  padding: 20px;
+  border: 1px solid rgba($valhalla, .5);
+  border-radius: 4px;
+  box-shadow: 0px 10px 20px rgba($valhalla, 0.05);
+  box-sizing: border-box;
+  background-color: $white;
 
-  &_clear .mean-oval-button__elem {
-    transition: opacity .3s ease;
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    &_clear .mean-oval-button__elem {
+      transition: opacity .3s ease;
+    }
   }
 }
 
