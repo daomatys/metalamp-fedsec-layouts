@@ -28,11 +28,12 @@
 
 .bg-color {
   &_white {
-    background-color: white;
+    background-color: $white;
   }
 
   &_whisper {
     background-color: $whisper;
+    height: 1350px;
   }
 }
 
