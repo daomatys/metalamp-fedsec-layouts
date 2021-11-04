@@ -43,7 +43,11 @@
 .header {
   position: relative;
   height: 70px;
-  box-shadow: 0px 10px 20px rgba($valhalla, 0.05);
+
+  &,
+  &__ejector {
+    box-shadow: 0px 10px 20px rgba($valhalla, 0.05);
+  }
 
   &__wide-part,
   &__sections,
@@ -108,8 +112,9 @@
   }
 
   &__ejectable-button-panel {
-    background-color: $whisper;
+    background-color: rgba($whisper, .66);
     height: 36px;
+    box-shadow: inset 0px 10px 20px rgba($valhalla, 0.05);
   }
 
   &__ejector {
