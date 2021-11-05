@@ -41,6 +41,12 @@
   }
 }
 
+@media only screen and (max-width: 1180px) {
+  .room-page {
+    padding-top: 14px;
+  }
+}
+
 @media only screen and (min-width: 1231px) {
   .room-page {
     &__sub-section_left {
@@ -60,6 +66,7 @@ $documentHeigth: 1937px;
   flex-direction: column;
   align-items: center;
   height: percentage( $mainHeigth / $documentHeigth );
+  transition: padding .3s ease;
 
   &__section_interiors-footage {
     display: flex;
