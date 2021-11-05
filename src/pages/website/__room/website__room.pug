@@ -1,7 +1,13 @@
 extends /pages/website/website.pug
 
 block head 
-  title TOXIN HOTEL / ROOM 
+  title TOXIN HOTEL / ROOM
+
+block header
+  include /components/header/header.pug
+
+  header.website__header
+    +header({ authorized: false })
 
 block main
   include /components/card/__room-booking/card__room-booking.pug

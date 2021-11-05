@@ -7,11 +7,12 @@ mixin header( item )
   .header
     .header__container_ejectable
       .header__ejectable-button-panel.header__wide-part
-        .header__ejectable-button_filter-rooms
-          +meanOvalButtons({
-            groupname: "ejectable-button_filter-rooms",
-            buttons: [{ type: "text", text: "подобрать номер" }]
-          })
+        if ( item.filtering )
+          .header__ejectable-button_filter-rooms
+            +meanOvalButtons({
+              groupname: "ejectable-button_filter-rooms",
+              buttons: [{ type: "text", text: "подобрать номер" }]
+            })
         .header__ejectable-button_navigation
           +meanOvalButtons({
             groupname: "ejectable-button_navigation",

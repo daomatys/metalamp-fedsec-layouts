@@ -3,6 +3,12 @@ extends /pages/website/website.pug
 block head 
   title 404 / NOT FOUND
 
+block header
+  include /components/header/header.pug
+
+  header.website__header
+    +header({ authorized: false })
+
 block main
   - const titleText = 'ошибка 404'
   - const noteText = 'страница не найдена'

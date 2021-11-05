@@ -1,6 +1,5 @@
 include /components/favicons-bulk/favicons-bulk.pug
 include /components/footer/footer.pug
-include /components/header/header.pug
 
 head
   block head
@@ -8,8 +7,7 @@ head
   meta( name="viewport" content="width=380, initial-scale=1" )
 
 body.website__body
-  header.website__header
-    +header({ authorized: false })
+  block header
 
   block main
 
