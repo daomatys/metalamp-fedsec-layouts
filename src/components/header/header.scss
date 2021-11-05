@@ -1,27 +1,39 @@
 @import "@variables";
 
 @media only screen and (max-width: 832px) {
-  .header__sections {
-    justify-content: center;
+  .header {
+    &__ejectable-button_login-or-profile {
+      display: unset;
+    }
 
-    &_desktop {
-      display: none;
+    &__sections {
+      justify-content: center;
+
+      &_desktop {
+        display: none;
+      }
     }
   }
 }
 
 @media only screen and (min-width: 832px) {
-  .header__sections {
-    justify-content: space-between;
-
-    &_mobile {
+  .header {
+    &__ejectable-button_login-or-profile {
       display: none;
     }
 
-    &_desktop {
-      display: grid;
-      grid-gap: 20px;
-      align-items: center;
+    &__sections {
+      justify-content: space-between;
+
+      &_mobile {
+        display: none;
+      }
+
+      &_desktop {
+        display: grid;
+        grid-gap: 20px;
+        align-items: center;
+      }
     }
   }
 }
@@ -112,12 +124,18 @@
     }
   }
 
-  &__ejectable-button-panel {
-    display: flex;
-    gap: 5vw;
-    background-color: rgba($whisper, .75);
-    height: 36px;
-    box-shadow: inset 0px 10px 20px rgba($valhalla, 0.05);
+  &__ejectable-button {
+    &-panel {
+      display: flex;
+      gap: 5vw;
+      background-color: rgba($whisper, .75);
+      height: 36px;
+      box-shadow: inset 0px 10px 20px rgba($valhalla, 0.05);
+    }
+
+    &_navigation {
+      display: none;
+    }
   }
 
   &__ejector {

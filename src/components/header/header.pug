@@ -7,14 +7,21 @@ mixin header( item )
   .header
     .header__container_ejectable
       .header__ejectable-button-panel.header__wide-part
-        +meanOvalButtons({
-          groupname: "header-controller",
-          buttons: [
-            { type: "text", text: "критерии номера" },
-            { type: "text", text: "навигация"       },
-            { type: "text", text: item.authorized ? "профиль" : "авторизация" }
-          ]
-        })
+        .header__ejectable-button_filters
+          +meanOvalButtons({
+            groupname: "ejectable-button_filters",
+            buttons: [{ type: "text", text: "подобрать номер" }]
+          })
+        .header__ejectable-button_navigation
+          +meanOvalButtons({
+            groupname: "ejectable-button_navigation",
+            buttons: [{ type: "text", text: "навигация" }]
+          })
+        .header__ejectable-button_login-or-profile
+          +meanOvalButtons({
+            groupname: "ejectable-button_login",
+            buttons: [{ type: "text", text: item.authorized ? "профиль" : "авторизация" }]
+          })
       .header__ejector.header__wide-part
         +materialIcon("more_horiz")
     .header__container_general.header__wide-part
