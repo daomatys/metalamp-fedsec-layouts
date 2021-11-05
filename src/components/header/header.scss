@@ -124,14 +124,12 @@
     }
   }
 
-  &__ejectable-button {
-    &-panel {
-      display: flex;
-      gap: 5vw;
-      background-color: rgba($whisper, .75);
-      height: 36px;
-      box-shadow: inset 0px 10px 20px rgba($valhalla, 0.05);
-    }
+  &__ejectable-button-panel {
+    display: flex;
+    gap: 5vw;
+    background-color: rgba($whisper, .75);
+    height: 36px;
+    box-shadow: inset 0px 10px 20px rgba($valhalla, 0.05);
   }
 
   &__ejector {
