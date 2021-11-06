@@ -1,5 +1,6 @@
 include /components/favicons-bulk/favicons-bulk.pug
 include /components/footer/footer.pug
+include /components/modal-window/modal-window.pug
 
 head
   block head
@@ -10,6 +11,31 @@ body.website__body
   block header
 
   block main
+  .modal-window_navigation
+    +modalWindow({
+      title: "Навигация",
+      links: [
+        { name: "О нас" },
+        { name: "Новости" },
+        { name: "Служба поддержки" },
+        { name: "Услуги" },
+        { name: "Соглашения" },
+      ]
+    })
+  .modal-window_authorization
+    +modalWindow({
+      title: "Авторизация",
+      links: [
+        { 
+          name: "Войти",
+          href: "website__login.html" 
+        },
+        {
+          name: "Зарегестрироваться",
+          href: "website__registration.html"
+        }
+      ]
+    })
 
   footer.website__footer
     .website__footer_default
