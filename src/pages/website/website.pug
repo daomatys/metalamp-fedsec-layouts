@@ -10,32 +10,31 @@ head
 body.website__body
   header.website__header
     block header
-    .website__modal-windows
-      .modal-window_navigation
-        +modalWindow({
-          title: "Навигация",
-          links: [
-            { name: "О нас" },
-            { name: "Новости" },
-            { name: "Служба поддержки" },
-            { name: "Услуги" },
-            { name: "Соглашения" },
-          ]
-        })
-      .modal-window_authorization
-        +modalWindow({
-          title: "Авторизация",
-          links: [
-            { 
-              name: "Войти",
-              href: "website__login.html" 
-            },
-            {
-              name: "Зарегестрироваться",
-              href: "website__registration.html"
-            }
-          ]
-        })
+    .modal-window_navigation
+      +modalWindow({
+        title: "Навигация",
+        links: [
+          { name: "О нас" },
+          { name: "Новости" },
+          { name: "Служба поддержки" },
+          { name: "Услуги" },
+          { name: "Соглашения" },
+        ]
+      })
+    .modal-window_authorization
+      +modalWindow({
+        title: "Авторизация",
+        links: [
+          { 
+            name: "Войти",
+            href: "website__login.html" 
+          },
+          {
+            name: "Зарегестрироваться",
+            href: "website__registration.html"
+          }
+        ]
+      })
 
   block main
 

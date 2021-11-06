@@ -1,16 +1,20 @@
+@import "@variables";
+
 .modal-window {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 25px;
   position: absolute;
-  background-color: azure;
+  background-color: white;
   padding-top: 50px;
   width: 100%;
   top: 71px;
 
   &__close-button {
-    width: 80px;
-    height: 80px;
+    height: 60px;
+    width: 60px;
+    position: fixed;
+    bottom: 30px;
   }
 }
