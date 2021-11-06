@@ -5,8 +5,8 @@ const find = function findDropdownContainers() {
 }
 
 const initListeners = function initElementsEventListeners( dropdown ) {
-  const counters = dropdown.querySelectorAll('.input__option_counter');
-  const buttonGroups = dropdown.querySelectorAll('.input__option_buttons');
+  const counters = dropdown.querySelectorAll('.input__option-counter');
+  const buttonGroups = dropdown.querySelectorAll('.input__option-button-block');
   const controllersBar = dropdown.querySelector('.input__state-controllers');
 
   updateDropdownValue( [...counters][0], counters );
@@ -45,7 +45,7 @@ const defineResetControllerState = function( counters, controllers ) {
 
 const initButtons = function initOptionButtonsEventListeners( buttons, counters, controllers ) {
   const optionButtons = defineButtons( buttons );
-  const optionCounter = buttons.querySelector('.input__option_counter');
+  const optionCounter = buttons.querySelector('.input__option-counter');
   const optionCounterValue = optionCounter.textContent;
 
   adjustButtonsState( optionButtons, optionCounterValue, 'circle-button_frozen' );

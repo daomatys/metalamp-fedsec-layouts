@@ -25,21 +25,21 @@
   &__option {
     align-items: center;
 
-    &_name {
+    &-name {
       text-transform: uppercase;
     }
 
-    &_counter,
-    &_buttons {
+    &-counter,
+    &-button-block {
       display: flex;
     }
 
-    &_buttons {
+    &-button-block {
       justify-content: space-between;
       width: 92px;
     }
 
-    &_counter {
+    &-counter {
       justify-content: center;
       align-items: center;
       height: 30px;
