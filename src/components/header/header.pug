@@ -18,9 +18,9 @@ mixin header( item )
             groupname: "ejectable-button_navigation",
             buttons: [{ type: "text", text: "навигация" }]
           })
-        .header__ejectable-button_login-or-profile
+        .header__ejectable-button_authorization
           +meanOvalButtons({
-            groupname: "ejectable-button_login",
+            groupname: "ejectable-button_authorization",
             buttons: [{ type: "text", text: item.authorized ? "профиль" : "авторизация" }]
           })
       .header__ejector.header__wide-part
