@@ -20,9 +20,9 @@ mixin inputDropdown( item )
       .input__option.custom-font-style_h3
         span.input__option_name #{option}
         .input__option_buttons
-          +circleButton({ id: item.id, icon: 'remove' })
+          +circleButton({ text: '-' })
           .input__option_counter #{values[index]}
-          +circleButton({ id: item.id, icon: 'add' })
+          +circleButton({ text: '+' })
     if ( dropdown.controls )
       .input__state-controllers
         +meanOvalButtons({

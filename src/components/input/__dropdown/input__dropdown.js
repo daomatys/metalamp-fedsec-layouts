@@ -48,7 +48,7 @@ const initButtons = function initOptionButtonsEventListeners( buttons, counters,
   const optionCounter = buttons.querySelector('.input__option_counter');
   const optionCounterValue = optionCounter.textContent;
 
-  adjustButtonsState( optionButtons, optionCounterValue, 'button-frozen' );
+  adjustButtonsState( optionButtons, optionCounterValue, 'circle-button_frozen' );
 
   const update = function( elem, shift ){
     elem.addEventListener('click', () => updateDropdown( optionButtons, optionCounter, shift, controllers, counters ));
@@ -75,7 +75,7 @@ const defineButtons = function defineFirstAndLastChildByItsParent( parent ) {
 const updateDropdown = function updateCalcsAndControllersToCurrentState( buttons, counter, addification, controllers, counters ) {
   const newCounterValue = parseInt( counter.textContent ) + addification;
 
-  adjustButtonsState( buttons, newCounterValue, 'button-frozen' );
+  adjustButtonsState( buttons, newCounterValue, 'circle-button_frozen' );
   counter.textContent = newCounterValue;
   updateDropdownValue( counter, counters );
 
