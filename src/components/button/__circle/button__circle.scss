@@ -1,21 +1,20 @@
 @import "@variables";
 
-$optionButtonSize: 30px;
+$buttonSize: 100%;
 
 .circle-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: $optionButtonSize;
-  width: $optionButtonSize;
+  height: $buttonSize;
+  width: $buttonSize;
   box-sizing: border-box;
   border: 1px solid rgba($valhalla, 0.25);
   border-radius: 50%;
   color: rgba($valhalla, 0.5);
-  font-size: 18px;
+  font-size: $buttonSize;
   font-weight: normal;
   cursor: pointer;
-  transition: opacity .5s ease;
 
   &_frozen {
     pointer-events: none;
