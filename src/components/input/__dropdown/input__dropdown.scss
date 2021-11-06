@@ -1,7 +1,5 @@
 @import '@variables';
 
-$optionButtonSize: 30px;
-
 .input {
   &__dropdown {
     display: grid;
@@ -32,9 +30,7 @@ $optionButtonSize: 30px;
     }
 
     &_counter,
-    &_buttons,
-    &_button-dec,
-    &_button-inc {
+    &_buttons {
       display: flex;
     }
 
@@ -43,34 +39,15 @@ $optionButtonSize: 30px;
       width: 92px;
     }
 
-    &_counter,
-    &_button-dec,
-    &_button-inc {
+    &_counter {
       justify-content: center;
       align-items: center;
-      height: $optionButtonSize;
+      height: 30px;
       box-sizing: border-box;
-    }
-
-    &_button-dec,
-    &_button-inc {
-      font-size: 18px;
-      width: $optionButtonSize;
-      color: rgba($valhalla, 0.5);
-      border: 1px solid rgba($valhalla, 0.25);
-      border-radius: 50%;
-      font-weight: normal;
-      cursor: pointer;
-      transition: opacity .5s ease;
     }
   }
 
   &__state-controllers {
     margin-block: 13px 5px;
   }
-}
-
-.button-frozen {
-  pointer-events: none;
-  opacity: .5;
 }

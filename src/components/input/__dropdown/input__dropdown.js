@@ -178,8 +178,8 @@ const resetCounters = function resetCounterValueOnButtonClick( controllers, coun
   buttonGroups.forEach( group => {
     const buttons = defineButtons( group )
     
-    buttons.left.classList.add('button-frozen');
-    buttons.right.classList.remove('button-frozen');
+    buttons.left.classList.add('circle-button_frozen');
+    buttons.right.classList.remove('circle-button_frozen');
   });
 
   defineResetControllerState( counters, controllers );
