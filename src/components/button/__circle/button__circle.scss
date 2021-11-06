@@ -12,7 +12,7 @@ $buttonSize: 100%;
   border: 1px solid rgba($valhalla, 0.25);
   border-radius: 50%;
   color: rgba($valhalla, 0.5);
-  font-size: $buttonSize;
+  font-size: calcRelativeFontSize( 18 );
   font-weight: normal;
   cursor: pointer;
 
