@@ -1,2 +1,7 @@
+include /components/material-icon-cell/material-icon-cell.pug
+
 mixin circleButton( item )
-  
+  - const id = item.id + '_' + item.icon
+
+  .circle-button
+    +materialIcon( item.icon, id )
