@@ -6,8 +6,7 @@ block head
 block header
   include /components/header/header.pug
 
-  header.website__header
-    +header({ authorized: false })
+  +header({ authorized: false })
 
 block main
   - const titleText = 'ошибка 404'

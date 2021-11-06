@@ -8,34 +8,36 @@ head
   meta( name="viewport" content="width=380, initial-scale=1" )
 
 body.website__body
-  block header
+  header.website__header
+    block header
+    .website__modal-windows
+      .modal-window_navigation
+        +modalWindow({
+          title: "Навигация",
+          links: [
+            { name: "О нас" },
+            { name: "Новости" },
+            { name: "Служба поддержки" },
+            { name: "Услуги" },
+            { name: "Соглашения" },
+          ]
+        })
+      .modal-window_authorization
+        +modalWindow({
+          title: "Авторизация",
+          links: [
+            { 
+              name: "Войти",
+              href: "website__login.html" 
+            },
+            {
+              name: "Зарегестрироваться",
+              href: "website__registration.html"
+            }
+          ]
+        })
 
   block main
-  .modal-window_navigation
-    +modalWindow({
-      title: "Навигация",
-      links: [
-        { name: "О нас" },
-        { name: "Новости" },
-        { name: "Служба поддержки" },
-        { name: "Услуги" },
-        { name: "Соглашения" },
-      ]
-    })
-  .modal-window_authorization
-    +modalWindow({
-      title: "Авторизация",
-      links: [
-        { 
-          name: "Войти",
-          href: "website__login.html" 
-        },
-        {
-          name: "Зарегестрироваться",
-          href: "website__registration.html"
-        }
-      ]
-    })
 
   footer.website__footer
     .website__footer_default

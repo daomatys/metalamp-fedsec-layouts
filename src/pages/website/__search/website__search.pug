@@ -5,9 +5,8 @@ block head
 
 block header
   include /components/header/header.pug
-
-  header.website__header
-    +header({ authorized: false, filtering: true })
+  
+  +header({ authorized: false, filtering: true })
 
 block main
   -
