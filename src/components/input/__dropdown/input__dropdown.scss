@@ -1,5 +1,7 @@
 @import '@variables';
 
+$optionButtonSize: 30px;
+
 .input {
   &__dropdown {
     display: grid;
@@ -34,15 +36,24 @@
       display: flex;
     }
 
-    &-button-block {
-      justify-content: space-between;
-      width: 92px;
+    &-button {
+      &-block {
+        justify-content: space-between;
+        width: 92px;
+      }
+
+      &_increase,
+      &_decrease {
+        width: $optionButtonSize;
+        height: $optionButtonSize;
+        transition: opacity .5s ease;
+      }
     }
 
     &-counter {
       justify-content: center;
       align-items: center;
-      height: 30px;
+      height: $optionButtonSize;
       box-sizing: border-box;
     }
   }
