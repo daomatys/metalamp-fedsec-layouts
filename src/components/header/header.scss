@@ -48,6 +48,10 @@
       transform: translateY(35px);
     }
   }
+
+  .container-ejected {
+    transform: translateY(70px)
+  }
 }
 
 @media only screen and (min-width: 1180px) {
@@ -60,6 +64,7 @@
       grid-template-columns: repeat(2, auto);
     }
 
+    .container_ejected,
     &__container_ejectable {
       transform: translateY(21px);
     }
@@ -138,8 +143,4 @@
     color: rgba($valhalla, .5);
     height: 14px;
   }
-}
-
-.container-ejected {
-  transform: translateY(70px)
 }
