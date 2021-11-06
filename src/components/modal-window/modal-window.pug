@@ -1,15 +1,19 @@
 include /components/navigation-bar/navigation-bar.pug
 include /components/button/__circle/button__circle.pug
+include /components/card/__filter/card__filter.pug
 
 mixin modalWindow( item )
   .modal-window
-    .modal-window__links
-      if ( item.links )
+    if ( item.links )
+      .modal-window__links
         +navigationBar({
           title: item.title,
           links: item.links,
           vertical: true,
         })
+    if ( item.filters )
+      .modal-window__filters
+        +cardFilter()
     .modal-window__close-button
       +circleButton({
         id: item.id,
