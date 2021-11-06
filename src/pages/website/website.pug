@@ -10,7 +10,7 @@ head
 body.website__body
   header.website__header
     block header
-    .modal-window_navigation
+    .modal-window_navigation.window_invisible
       +modalWindow({
         id: "navigation-modal-window",
         title: "Навигация",
@@ -22,7 +22,7 @@ body.website__body
           { name: "Соглашения" },
         ]
       })
-    .modal-window_authorization
+    .modal-window_authorization.window_invisible
       +modalWindow({
         id: "authorization-modal-window",
         title: "Авторизация",

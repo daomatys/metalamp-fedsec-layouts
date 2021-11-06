@@ -16,12 +16,21 @@ initEjector();
 
 
 const initButtons = function initButtons() {
-  const windowClassListToggle = window => {
-    window.classList.toggle('.modal-window_visible');
-    window.classList.toggle('.modal-window-invisible');
+  const main = document.querySelector('.website__main');
+  const footer = document.querySelector('.website__footer');
+
+  const elementClassListToggle = element => {
+    element.classList.toggle('window_invisible');
   }
+
+  const windowsClassListToggle = window => {
+    elementClassListToggle( main );
+    elementClassListToggle( window );
+    elementClassListToggle( footer );
+  }
+
   const defineButon = suffix => document.querySelector(`#ejectable-button_${suffix}-1`);
-  const defineButtonAction = ( button, window ) => button.addEventListener('click', () => windowClassListToggle( window ) );
+  const defineButtonAction = ( button, window ) => button.addEventListener('click', () => windowsClassListToggle( window ) );
 
   const buttonFilter = defineButon('filter-room');
   const buttonNavigation = defineButon('navigation');
@@ -31,7 +40,7 @@ const initButtons = function initButtons() {
   const modalWindowNavigation = document.querySelector('.modal-window_navigation');
   const modalWindowAuthorization = document.querySelector('.modal-window_authorization');
 
-  defineButtonAction( buttonFilter,        modalWindowFilter );
+  if ( buttonFilter ) defineButtonAction( buttonFilter, modalWindowFilter );
   defineButtonAction( buttonNavigation,    modalWindowNavigation );
   defineButtonAction( buttonAuthorization, modalWindowAuthorization );
 }
