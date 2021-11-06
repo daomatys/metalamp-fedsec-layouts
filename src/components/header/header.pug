@@ -8,9 +8,9 @@ mixin header( item )
     .header__container_ejectable
       .header__ejectable-button-panel.header__wide-part
         if ( item.filtering )
-          .header__ejectable-button_filter-rooms
+          .header__ejectable-button_filtration
             +meanOvalButtons({
-              groupname: "ejectable-button_filter-rooms",
+              groupname: "ejectable-button_filtration",
               buttons: [{ type: "text", text: "подбор номера" }]
             })
         .header__ejectable-button_navigation

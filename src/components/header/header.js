@@ -32,15 +32,15 @@ const initButtons = function initButtons() {
   const defineButon = suffix => document.querySelector(`#ejectable-button_${suffix}-1`);
   const defineButtonAction = ( button, window ) => button.addEventListener('click', () => windowsClassListToggle( window ) );
 
-  const buttonFilter = defineButon('filter-room');
+  const buttonFilter = defineButon('filtration');
   const buttonNavigation = defineButon('navigation');
   const buttonAuthorization = defineButon('authorization');
 
-  const modalWindowFilter = document.querySelector('.search-page__input-parameters');
+  const modalWindowFilter = document.querySelector('.modal-window_filtration');
   const modalWindowNavigation = document.querySelector('.modal-window_navigation');
   const modalWindowAuthorization = document.querySelector('.modal-window_authorization');
 
-  if ( buttonFilter ) defineButtonAction( buttonFilter, modalWindowFilter );
+  if ( modalWindowFilter ) defineButtonAction( buttonFilter, modalWindowFilter );
   defineButtonAction( buttonNavigation,    modalWindowNavigation );
   defineButtonAction( buttonAuthorization, modalWindowAuthorization );
 }
