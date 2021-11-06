@@ -70,18 +70,13 @@
   justify-content: space-between;
   margin-block: 30px;
 
-  &__input-parameters,
-  &__filtered-items-grid {
-    display: grid;
-  }
-
   &__input-parameters {
-    grid-gap: 30px;
     margin-right: 30px;
   }
 
   &__filtered-items {
     &-grid {
+      display: grid;
       grid-gap: 20px 12px;
     }
 
@@ -90,9 +85,5 @@
       justify-content: center;
       margin-block: 40px;
     }
-  }
-
-  &__slider-frame {
-    margin-bottom: 13px;
   }
 }
