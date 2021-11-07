@@ -50,7 +50,7 @@
   }
 }
 
-@media only screen and (max-width: 1180px) {
+@media only screen and (max-width: $piquetHeaderNavbarOps) {
   .header {
     &__nav {
       display: none;
@@ -66,7 +66,7 @@
   }
 }
 
-@media only screen and (min-width: 1180px) {
+@media only screen and (min-width: $piquetHeaderNavbarOps) {
   .header {
     &__nav {
       display: unset;
