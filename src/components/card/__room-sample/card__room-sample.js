@@ -1,5 +1,5 @@
 function createArrowScrollersEventListeners() {
-  const containers = document.querySelectorAll('.room-sample__container_top');
+  const containers = document.querySelectorAll('.card-room-sample__container_top');
 
   for ( let container of containers ) {
     let indication = {
@@ -22,13 +22,13 @@ function createArrowScrollersEventListeners() {
 }
 
 function filterAnimation( click ) {
-  const target = click.target.closest('.room-sample__arrow-scroller_left, .room-sample__arrow-scroller_right');
+  const target = click.target.closest('.card-room-sample__arrow-scroller_left, .card-room-sample__arrow-scroller_right');
 
   if ( target ) {
-    const aim = click.parent.querySelector('.room-sample__image');
-    const side = target.classList.contains('room-sample__arrow-scroller_left') ? 'left' : 'right' ;
+    const aim = click.parent.querySelector('.card-room-sample__image');
+    const side = target.classList.contains('card-room-sample__arrow-scroller_left') ? 'left' : 'right' ;
     const indicator = side === 'left' ? click.indication.left : click.indication.right ;
-    const listingIndicator = click.parent.querySelectorAll('.room-sample__listing-indicator .material-icons');
+    const listingIndicator = click.parent.querySelectorAll('.card-room-sample__listing-indicator .material-icons');
 
     const defineIndex = () => click.indication.position - 1;
     const adjustIndicatorByIndex = text => listingIndicator[ defineIndex() ].textContent = text;
