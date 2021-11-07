@@ -4,48 +4,42 @@ include /components/button/__radio/button__radio.pug
 include /components/button/__toggle/button__toggle.pug
 
 mixin cardRegistration()
-  .registration.card-style_default
-    .registration__title
+  .card-registration.card-style_default
+    .card-registration__title
       span.custom-font-style_h1 Регистрация аккаунта
-
-    .registration__input_basic-data
+    .card-registration__input_basic-data
       +input({ placeholder: "Имя" })
       +input({ placeholder: "Фамилия" })
-
-      .registration__radio-buttons
+      .card-registration__radio-buttons
         +radioButtons([
           { id: "registration_male",   label: "Мужчина", pressed: true },
           { id: "registration_female", label: "Женщина" }
         ])
-
-    .registration__input_date-of-birth
+    .card-registration__input_date-of-birth
       +input({ title: "дата рождения", placeholder: "ДД.ММ.ГГГГ" })
-
-    .registration__input_login-data
+    .card-registration__input_login-data
       +input({ placeholder: "Email", title: "данные для входа в сервис", type: "Email" })
       +input({ placeholder: "Пароль" })
-
       +toggleButton({ id: "registration_toggle_01", label: "Получать спецпредложения", pressed: false })
-
-    .registration__button_submit
+    form.card-registration__button_submit( action="website__landing.html" )
       +meanOvalButtons({
         groupname: "registration__button_submit",
-        buttons: [
-          {
-            type: "contained",
-            text: "Зарегистрироваться",
-            iconname: "arrow_forward",
-            widthbypercent: 100
-          }
-        ]
+        buttons: [{
+          type: "submit",
+          mode: "contained",
+          text: "Зарегистрироваться",
+          iconname: "arrow_forward",
+          widthbypercent: 100
+        }]
       })
-
-    .registration__login-section
-      .registration__login-section-container.card-footer
+    form.card-registration__login-section( action="website__login.html" )
+      .card-registration__login-section-container.card-footer
         span.custom-font-style_body Уже есть аккаунт на Toxin?
         +meanOvalButtons({
           groupname: "registration__button_login",
-          buttons: [
-            { type: "outlined", text: "войти" },
-          ]
+          buttons: [{
+            type: "submit",
+            mode: "outlined",
+            text: "войти"
+          }]
         })

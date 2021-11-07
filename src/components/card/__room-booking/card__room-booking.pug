@@ -3,20 +3,20 @@ include /components/button/__mean-oval/button__mean-oval.pug
 include /components/material-icon-cell/material-icon-cell.pug
 
 mixin cardRoomBooking()
-  .room-booking.card-style_default
-    .room-booking__container_title-complex
-      .room-booking__title-complex
-        .room-booking__title
-          span.room-booking__title_prefix.custom-font-style_body-plain #{'№ '}
-          span.room-booking__title_room-number.custom-font-style_h1 888
-          span.room-booking__title_luxe-mark ЛЮКС
-        .room-booking__price.custom-font-style_body-plain
-          span.room-booking__price_value 9 990
-          span.room-booking__price_symbol ₽ 
-          span.room-booking__price_addition в сутки
+  form.card-room-booking.card-style_default
+    .card-room-booking__container_title-complex
+      .card-room-booking__title-complex
+        .card-room-booking__title
+          span.card-room-booking__title_prefix.custom-font-style_body-plain #{'№ '}
+          span.card-room-booking__title_room-number.custom-font-style_h1 888
+          span.card-room-booking__title_luxe-mark ЛЮКС
+        .card-room-booking__price.custom-font-style_body-plain
+          span.card-room-booking__price_value 9 990
+          span.card-room-booking__price_symbol ₽ 
+          span.card-room-booking__price_addition в сутки
 
-    .room-booking__container_date-pickers
-      .room-booking__date-pickers-row.twins-grid-line
+    .card-room-booking__container_date-pickers
+      .card-room-booking__date-pickers-row.twins-grid-line
         +input({
           id: "room-booking__date-picker_arrival",
           type: "date-picker",
@@ -33,7 +33,7 @@ mixin cardRoomBooking()
           dates: "2019-08-19, 2019-08-23"
         })
 
-    .room-booking__container_guests-input
+    .card-room-booking__container_guests-input
       +input({
         id: "room-booking__guests",
         type: "dropdown",
@@ -45,38 +45,39 @@ mixin cardRoomBooking()
         }
       })
 
-    .room-booking__container_calc.custom-font-style_body
-      .room-booking__calc-initial-price
-        .room-booking__sub-container_price
+    .card-room-booking__container_calc.custom-font-style_body
+      .card-room-booking__calc-initial-price
+        .card-room-booking__sub-container_price
           span 9 990₽ x 4 суток
           span 39 960₽
 
-      .room-booking__calc-discount
-        .room-booking__sub-container_price
-          .room-booking__sub-container_fee
+      .card-room-booking__calc-discount
+        .card-room-booking__sub-container_price
+          .card-room-booking__sub-container_fee
             span Сбор за услуги: скидка 2 179₽
             +materialIcon("info_outline")
           span 0₽
 
-      .room-booking__calc-fee
-        .room-booking__sub-container_price
-          .room-booking__sub-container_fee
+      .card-room-booking__calc-fee
+        .card-room-booking__sub-container_price
+          .card-room-booking__sub-container_fee
             span Сбор за дополнительные услуги
             +materialIcon("info_outline")
           span 300₽
 
-      .room-booking__calc-summary.custom-font-style_h2
-        .room-booking__sub-container_price
+      .card-room-booking__calc-summary.custom-font-style_h2
+        .card-room-booking__sub-container_price
           span Итого
-          span.room-booking__calc-summary_dotted-border
+          span.card-room-booking__calc-summary_dotted-border
           span 38 081₽
 
-    .room-booking__button_submit
+    .card-room-booking__button_submit
       +meanOvalButtons({
-        groupname: "room-booking__button_submit",
+        groupname: "card-room-booking__button_submit",
         buttons: [
           {
-            type: "contained",
+            type: "submit",
+            mode: "contained",
             text: "Забронировать",
             iconname: "arrow_forward",
             widthbypercent: 100

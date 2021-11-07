@@ -2,31 +2,31 @@ include /components/input/input.pug
 include /components/button/__mean-oval/button__mean-oval.pug
 
 mixin cardFindRoom()
-  .find-room.card-style_default
-    .find-room__container_title
+  form.card-find-room.card-style_default( action="website__search.html" )
+    .card-find-room__container_title
       span.custom-font-style_h1 Найдём номера под ваши пожелания
 
-    .find-room__container_date-pickers
-      .find-room__date-pickers-row.twins-grid-line
+    .card-find-room__container_date-pickers
+      .card-find-room__date-pickers-row.twins-grid-line
         +input({
-          id: "find-room__date-picker_arrival",
+          id: "card-find-room__date-picker_arrival",
           type: "date-picker",
           title: "прибытие",
           hierarchy: "master",
           widthbypercent: 47,
         })
         +input({
-          id: "find-room__date-picker_departure",
+          id: "card-find-room__date-picker_departure",
           type: "date-picker",
           title: "выезд",
           hierarchy: "slave",
           widthbypercent: 47,
         })
 
-    .find-room__container_guests-dropdown
+    .card-find-room__container_guests-dropdown
       +input({
         type: "dropdown",
-        id: "find-room__guests",
+        id: "card-find-room__guests",
         title: "гости",
         placeholder: "Сколько гостей",
         dropdown: {
@@ -34,15 +34,14 @@ mixin cardFindRoom()
         }
       })
 
-    .find-room__container_submit-button.card-footer
+    .card-find-room__container_submit-button.card-footer
       +meanOvalButtons({
-        groupname: "find-room__submit-button",
-        buttons: [
-          {
-            type: "contained",
-            text: "подобрать номер",
-            iconname: "arrow_forward",
-            widthbypercent: 100
-          }
-        ]
+        groupname: "card-find-room__submit-button",
+        buttons: [{
+          type: "submit",
+          mode: "contained",
+          text: "подобрать номер",
+          iconname: "arrow_forward",
+          widthbypercent: 100
+        }]
       })

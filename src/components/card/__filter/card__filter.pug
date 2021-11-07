@@ -7,7 +7,7 @@ include /components/title-bar/title-bar.pug
 include /components/input/input.pug
 
 mixin cardFilter( item )
-  .card-filter
+  form.card-filter
     .card-filter__date-picker
       +input({
         id: item.id + "_date",
