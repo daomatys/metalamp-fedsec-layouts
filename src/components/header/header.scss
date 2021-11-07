@@ -14,7 +14,7 @@
 
 @media only screen and (max-width: 832px) {
   .header {
-    &__ejectable-button_login-or-profile {
+    &__ejectable-button_authorization {
       display: unset;
     }
 
@@ -30,7 +30,7 @@
 
 @media only screen and (min-width: 832px) {
   .header {
-    &__ejectable-button_login-or-profile {
+    &__ejectable-button_authorization {
       display: none;
     }
 
