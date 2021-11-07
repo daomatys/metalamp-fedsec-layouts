@@ -1,12 +1,14 @@
 @import "@variables";
 
-$sideWindowWidth: 326px;
+$sideWindowWidth: 306px;
 
 $piquetRoomGridColumnsTwo: 612px;
 $piquetRoomGridColumnsThree: 1116px;
 $piquetRoomGridColumnsFour: 1694px;
 
 $piquetSearchPageInputParameters: 1412px;
+
+$inputParametersPadding: 20px;
 
 @media only screen and (min-width: $piquetRoomGridColumnsTwo) {
   .search-page__filtered-items {
@@ -63,7 +65,7 @@ $piquetSearchPageInputParameters: 1412px;
         height: 1160px;
         box-shadow: $boxShadowAlternative;
         padding-block: 0;
-        padding-left: 30px;
+        padding-left: $inputParametersPadding;
         margin-right: 0;
         z-index: 20;
         transition: transform .5s ease;
@@ -116,7 +118,7 @@ $piquetSearchPageInputParameters: 1412px;
   margin-block: 30px;
 
   &__shift-activator {
-    margin-left: 20px;
+    margin-left: $inputParametersPadding;
     width: 20px;
     background-color: $whisper;
     border-start-end-radius: 20px;
