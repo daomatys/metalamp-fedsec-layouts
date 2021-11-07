@@ -40,3 +40,6 @@ $wideFramesWidthBase: 1440px;
 @function calcRelativeFontSize( $value ) {
   @return #{$value / 16}rem;
 }
+
+$boxShadowDefault: 0 0 25px rgba($black, .2);
+$boxShadowAlternative: 0 10px 20px rgba($valhalla, .05)
