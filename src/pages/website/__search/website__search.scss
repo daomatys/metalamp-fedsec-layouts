@@ -8,6 +8,18 @@ $piquetRoomGridColumnsFour: 1694px;
 
 $piquetSearchPageInputParameters: 1412px;
 
+@media only screen and (min-width: $piquetRoomGridColumnsTwo) {
+  .search-page__filtered-items {
+    &-grid {
+      grid-template-columns: repeat(2, auto);
+    }
+
+    &-title {
+      margin-bottom: 21px;
+    }
+  }
+}
+
 @media only screen and (max-width: $piquetRoomGridColumnsTwo) {
   .search-page__filtered-items-title {
     margin-bottom: 30px;
@@ -23,58 +35,40 @@ $piquetSearchPageInputParameters: 1412px;
   }
 }
 
-@media only screen and (min-width: $piquetRoomGridColumnsTwo) {
-  .search-page__filtered-items {
-    &-grid {
-      grid-template-columns: repeat(2, auto);
-    }
-
-    &-title {
-      margin-bottom: 21px;
-    }
-  }
-}
-
 @media only screen and (min-width: $piquetRoomGridColumnsThree) {
   .search-page__filtered-items-grid {
     grid-template-columns: repeat(3, auto);
   }
 }
 
-@media only screen and (max-width: $piquetHeaderNavbarOps) {
-  search-page__input-parameters-block {
-    display: none;
-  }
-}
-
 @media only screen and (min-width: $piquetHeaderNavbarOps) {
-  search-page__input-parameters-block {
+  .search-page__input-parameters-block {
     display: flex;
   }
 }
 
-@media only screen and (min-width: $piquetSearchPageInputParameters) {
+@media only screen and (max-width: $piquetHeaderNavbarOps) {
   .search-page__input-parameters-block {
-    margin-right: 30px;
-    padding-block: 20px;
+    display: none;
   }
 }
 
 @media only screen and (max-width: $piquetSearchPageInputParameters) {
   .search-page {
     &__input-parameters {
-      background-color: $white;
-
       &-block {
+        background-color: $white;
         position: absolute;
         left: -$sideWindowWidth;
-        height: 1117px;
+        height: 1160px;
         box-shadow: $boxShadowAlternative;
         padding-block: 0;
         padding-left: 30px;
         margin-right: 0;
         z-index: 20;
         transition: transform .5s ease;
+        border-start-end-radius: 20px;
+        border-end-end-radius: 20px;
       }
     }
 
@@ -91,6 +85,19 @@ $piquetSearchPageInputParameters: 1412px;
 
   .window_shifted {
     transform: translateX($sideWindowWidth);
+  }
+}
+
+@media only screen and (min-width: $piquetSearchPageInputParameters) {
+  .search-page {
+    &__input-parameters-block {
+      margin-right: 30px;
+      padding-block: 20px;
+    }
+
+    &__shift-activator {
+      display: none;
+    }
   }
 }
 
