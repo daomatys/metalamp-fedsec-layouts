@@ -11,17 +11,26 @@ mixin header( item )
           .header__ejectable-button_filtration
             +meanOvalButtons({
               groupname: "ejectable-button_filtration",
-              buttons: [{ type: "text", text: "подбор номера" }]
+              buttons: [{
+                mode: "text",
+                text: "подбор номера"
+              }]
             })
         .header__ejectable-button_navigation
           +meanOvalButtons({
             groupname: "ejectable-button_navigation",
-            buttons: [{ type: "text", text: "навигация" }]
+            buttons: [{
+              mode: "text",
+              text: "навигация"
+            }]
           })
         .header__ejectable-button_authorization
           +meanOvalButtons({
             groupname: "ejectable-button_authorization",
-            buttons: [{ type: "text", text: item.authorized ? "профиль" : "авторизация" }]
+            buttons: [{
+              mode: "text",
+              text: item.authorized ? "профиль" : "авторизация" 
+            }]
           })
       .header__ejector.header__wide-part
         +materialIcon("more_horiz")
