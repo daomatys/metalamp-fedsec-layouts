@@ -38,6 +38,7 @@ $wideFramesWidthMin:  1100px;
 $wideFramesWidthBase: 1440px;
 
 $piquetHeaderNavbarOps: 1180px;
+$piquetRoomGridColumnsTwo: 612px;
 
 @function calcRelativeFontSize( $value ) {
   @return #{$value / 16}rem;

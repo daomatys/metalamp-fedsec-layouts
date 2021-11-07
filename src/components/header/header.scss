@@ -1,5 +1,17 @@
 @import "@variables";
 
+@media only screen and (max-width: $piquetRoomGridColumnsTwo) {
+  .header__ejectable-button_filtration {
+    display: unset;
+  }
+}
+
+@media only screen and (min-width: $piquetRoomGridColumnsTwo) {
+  .header__ejectable-button_filtration {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 832px) {
   .header {
     &__ejectable-button_login-or-profile {

@@ -2,31 +2,12 @@
 
 $sideWindowWidth: 306px;
 
-$piquetRoomGridColumnsTwo: 612px;
 $piquetRoomGridColumnsThree: 1116px;
 $piquetRoomGridColumnsFour: 1694px;
 
 $piquetSearchPageInputParameters: 1412px;
 
 $inputParametersPadding: 20px;
-
-@media only screen and (min-width: $piquetRoomGridColumnsTwo) {
-  .search-page {
-    &__filtered-items {
-      &-grid {
-        grid-template-columns: repeat(2, auto);
-      }
-
-      &-title {
-        margin-bottom: 21px;
-      }
-    }
-
-    &__input-parameters-block {
-      display: flex;
-    }
-  }
-}
 
 @media only screen and (max-width: $piquetRoomGridColumnsTwo) {
   .search-page {
@@ -45,6 +26,24 @@ $inputParametersPadding: 20px;
 
     &__input-parameters-block {
       display: none;
+    }
+  }
+}
+
+@media only screen and (min-width: $piquetRoomGridColumnsTwo) {
+  .search-page {
+    &__filtered-items {
+      &-grid {
+        grid-template-columns: repeat(2, auto);
+      }
+
+      &-title {
+        margin-bottom: 21px;
+      }
+    }
+
+    &__input-parameters-block {
+      display: flex;
     }
   }
 }
