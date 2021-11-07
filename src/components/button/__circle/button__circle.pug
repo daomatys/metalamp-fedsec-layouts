@@ -4,5 +4,5 @@ mixin circleButton( item )
   if ( item.text )
     .circle-button #{item.text}
   if ( item.icon )
-    .circle-button
+    label.circle-button( for=item.id )
       +materialIcon( item.icon, item.id )
