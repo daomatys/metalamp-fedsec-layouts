@@ -6,26 +6,26 @@ mixin meanOvalButtons( item )
 
     - const buttonId = item.groupname + '-' + buttonCount
     - const buttonText = button.text || 'click me'
+    - const buttonType = button.type || 'button'
     - const widthByPercent = button.widthbypercent || '30'
-    - const isTextType = button.type === 'text'
-    - const textButtonClass = isTextType ? 'mob_non-absolute' : ''
+    - const isTextMode = button.mode === 'text'
+    - const textButtonClass = isTextMode ? 'mob_non-absolute' : ''
 
     - let buttonClasses = ''
 
-    - buttonClasses += isTextType ? '' : `elem__width_${widthByPercent}`
+    - buttonClasses += isTextMode ? '' : `elem__width_${widthByPercent}`
     - buttonClasses += button.disabled ? ' frozen' : ''
-    - buttonClasses += ` button-style_${button.type}`
+    - buttonClasses += ` button-style_${button.mode}`
 
     .mean-oval-button( class=buttonClasses )
-      button.mean-oval-button__elem( class=textButtonClass id=buttonId disabled=button.disabled ) #{buttonText}
-      case button.type
+      button.mean-oval-button__elem( class=textButtonClass id=buttonId disabled=button.disabled type=buttonType ) #{buttonText}
 
+      case button.mode
         when 'contained'
           label.mean-oval-button__background( for=buttonId )
           if button.iconname 
             .mean-oval-button__icon
               +materialIcon( button.iconname, buttonId )
-
         when 'outlined'
           label.mean-oval-button__background( for=buttonId )
           label.mean-oval-button__thumb( for=buttonId )

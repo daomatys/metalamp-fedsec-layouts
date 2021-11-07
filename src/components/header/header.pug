@@ -47,10 +47,23 @@ mixin header( item )
                 span.header__user-bar_username.custom-font-style_body-plain Юлий Цезарь
             when false 
               .header__authorization-buttons
-                +meanOvalButtons({
-                  groupname: "header__login-btn",
-                  buttons: [
-                    { type: "outlined", widthbypercent: 27, text: "войти" },
-                    { type: "contained", widthbypercent: 61, text: "зарегестрироваться" }
-                  ]
-                })
+                form.header__authorization-buttons-login( action="website__login.html" )
+                  +meanOvalButtons({
+                    groupname: "header__btn-login",
+                    buttons: [{
+                      type: "submit",
+                      mode: "outlined",
+                      widthbypercent: 27,
+                      text: "войти"
+                    }]
+                  })
+                form.header__authorization-buttons-registration( action="website__registration.html" )
+                  +meanOvalButtons({
+                    groupname: "header__btn-registration",
+                    buttons: [{
+                      type: "submit",
+                      mode: "contained",
+                      widthbypercent: 61,
+                      text: "зарегестрироваться"
+                    }]
+                  })

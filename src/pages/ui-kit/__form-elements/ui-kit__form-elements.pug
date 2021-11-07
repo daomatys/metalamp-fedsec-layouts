@@ -138,18 +138,18 @@ block main
               +meanOvalButtons({
                 groupname: "uik-fe__mob-mid",
                 buttons: [
-                  { type: "contained" },
-                  { type: "contained", disabled: true },
-                  { type: "outlined"  },
-                  { type: "outlined", disabled: true }
+                  { mode: "contained" },
+                  { mode: "contained", disabled: true },
+                  { mode: "outlined"  },
+                  { mode: "outlined", disabled: true }
                 ]
               })
             .mean-oval-buttons__array
               +meanOvalButtons({
                 groupname: "uik-fe__mob-small",
                 buttons: [
-                  { type: "text" },
-                  { type: "text", disabled: true }
+                  { mode: "text" },
+                  { mode: "text", disabled: true }
                 ]
               })
             .mean-oval-buttons__unit
@@ -157,7 +157,7 @@ block main
                 groupname: "uik-fe__mob-huge",
                 buttons: [
                   {
-                    type: "contained",
+                    mode: "contained",
                     text: "перейти к оплате",
                     iconname: "arrow_forward",
                     widthbypercent: 100
