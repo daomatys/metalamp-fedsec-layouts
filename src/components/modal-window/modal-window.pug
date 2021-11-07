@@ -13,7 +13,7 @@ mixin modalWindow( item )
         })
     if ( item.filters )
       .modal-window__filters
-        +cardFilter()
+        +cardFilter({ sliderid: "search-page_header-mobile-slider"})
     .modal-window__close-button
       +circleButton({
         id: item.id,

@@ -6,7 +6,7 @@ include /components/pagination/pagination.pug
 include /components/title-bar/title-bar.pug
 include /components/input/input.pug
 
-mixin cardFilter()
+mixin cardFilter( item )
   .card-filter
     .card-filter__date-picker
       +input({
@@ -32,7 +32,7 @@ mixin cardFilter()
       .card-filter__slider-frame
         +rangeSlider({
           title: "диапазон цен",
-          id: "search-by__range-prices",
+          id: item.sliderid,
           widthbypercent: 83
         })
       span.card-filter__slider-note.custom-font-style_micro-note Стоимость за сутки пребывания в номере
