@@ -2,7 +2,13 @@
 
 $sideWindowWidth: 326px;
 
-@media only screen and (max-width: 612px) {
+$piquetRoomGridColumnsTwo: 612px;
+$piquetRoomGridColumnsThree: 1116px;
+$piquetRoomGridColumnsFour: 1694px;
+
+$piquetSearchPageInputParameters: 1412px;
+
+@media only screen and (max-width: $piquetRoomGridColumnsTwo) {
   .search-page__filtered-items-title {
     margin-bottom: 30px;
 
@@ -17,7 +23,7 @@ $sideWindowWidth: 326px;
   }
 }
 
-@media only screen and (min-width: 612px) {
+@media only screen and (min-width: $piquetRoomGridColumnsTwo) {
   .search-page__filtered-items {
     &-grid {
       grid-template-columns: repeat(2, auto);
@@ -29,24 +35,43 @@ $sideWindowWidth: 326px;
   }
 }
 
-@media only screen and (min-width: 1116px) {
+@media only screen and (min-width: $piquetRoomGridColumnsThree) {
   .search-page__filtered-items-grid {
     grid-template-columns: repeat(3, auto);
   }
 }
 
-@media only screen and (max-width: 1412px) {
+@media only screen and (max-width: $piquetHeaderNavbarOps) {
+  search-page__input-parameters-block {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: $piquetHeaderNavbarOps) {
+  search-page__input-parameters-block {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: $piquetSearchPageInputParameters) {
+  .search-page__input-parameters-block {
+    margin-right: 30px;
+    padding-block: 20px;
+  }
+}
+
+@media only screen and (max-width: $piquetSearchPageInputParameters) {
   .search-page {
     &__input-parameters {
-      
+      background-color: $white;
+
       &-block {
         position: absolute;
         left: -$sideWindowWidth;
         height: 1117px;
-        background-color: #fff;
         box-shadow: $boxShadowAlternative;
         padding-block: 0;
-        padding-inline: 30px;
+        padding-left: 30px;
         margin-right: 0;
         z-index: 20;
         transition: transform .5s ease;
@@ -69,14 +94,7 @@ $sideWindowWidth: 326px;
   }
 }
 
-@media only screen and (min-width: 1412px) {
-  .search-page__input-parameters-block {
-    margin-right: 30px;
-    padding-block: 20px;
-  }
-}
-
-@media only screen and (min-width: 1694px) {
+@media only screen and (min-width: $piquetRoomGridColumnsFour) {
   .search-page__filtered-items {
     &-grid {
       grid-template-columns: repeat(4, auto);
@@ -89,6 +107,14 @@ $sideWindowWidth: 326px;
   align-items: flex-start;
   justify-content: space-between;
   margin-block: 30px;
+
+  &__shift-activator {
+    margin-left: 20px;
+    width: 20px;
+    background-color: $whisper;
+    border-start-end-radius: 20px;
+    border-end-end-radius: 20px;
+  }
 
   &__filtered-items {
     &-grid {
