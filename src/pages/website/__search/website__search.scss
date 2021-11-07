@@ -39,11 +39,12 @@
       background-color: #fff;
       left: 0;
       position: absolute;
-      height: 1200px;
+      height: 1117px;
       z-index: 20;
       transition: transform .5s ease;
       margin-right: 0;
       padding-block: 0;
+      box-shadow: $boxShadowAlternative;
     }
 
     &__filtered-items {
@@ -55,6 +56,10 @@
         justify-items: center;
       }
     }
+  }
+
+  .window_shifted {
+    transform: translateX(-326px);
   }
 }
 
@@ -95,8 +100,4 @@
       margin-block: 40px;
     }
   }
-}
-
-.window_shifted {
-  transform: translateX(-320px);
 }
