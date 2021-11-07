@@ -1,5 +1,7 @@
 @import "@variables";
 
+$piquetHeaderButtonBarOps: 832px;
+
 @media only screen and (max-width: $piquetRoomGridColumnsTwo) {
   .header__ejectable-button_filtration {
     display: unset;
@@ -12,7 +14,7 @@
   }
 }
 
-@media only screen and (max-width: 832px) {
+@media only screen and (max-width: $piquetHeaderButtonBarOps) {
   .header {
     &__ejectable-button_authorization {
       display: unset;
@@ -28,7 +30,7 @@
   }
 }
 
-@media only screen and (min-width: 832px) {
+@media only screen and (min-width: $piquetHeaderButtonBarOps) {
   .header {
     &__ejectable-button_authorization {
       display: none;
