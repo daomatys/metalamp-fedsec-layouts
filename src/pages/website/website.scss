@@ -1,5 +1,17 @@
 @import "@variables";
 
+@media only screen and (max-width: $piquetMinimalZoom) {
+  .website__body {
+    zoom: 90%
+  }
+}
+
+@media only screen and (min-width: $piquetMinimalZoom) {
+  .website__body {
+    zoom: 100%
+  }
+}
+
 .website {
   &__main,
   &__header,

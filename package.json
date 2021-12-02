@@ -33,7 +33,7 @@
     "dev": "webpack --mode=development --watch",
     "prod": "webpack --mode=production",
     "try": "webpack --mode=development",
-    "host": "webpack serve"
+    "host": "webpack serve --history-api-fallback --progress"
   },
   "repository": {
     "type": "git",

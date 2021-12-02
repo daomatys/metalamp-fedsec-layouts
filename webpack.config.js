@@ -7,7 +7,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
-
 const PATHS = {
   src: path.join(__dirname, './src'),
   dist: path.join(__dirname, './dist')
@@ -113,9 +112,12 @@ module.exports = {
   ],
 
   optimization: {
-    minimizer: [
-      new CssMinimizerPlugin(),
-    ],
+  },
+
+  cache: {
+    type: 'filesystem',
+    allowCollectingMemory: true,
+    cacheDirectory: path.resolve(__dirname, '.temp_cache'),
   },
 
   resolve: {
