@@ -1,11 +1,13 @@
 const fs = require('fs');
+const pug = require('pug');
 const path = require('path');
 const webpack = require('webpack');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlSWebpackPlugin = require('htmls-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+
 
 const PATHS = {
   src: path.join(__dirname, './src'),
@@ -94,10 +96,15 @@ module.exports = {
   },
 
   plugins: [
-    ...PAGES.map( (page, index) => new HtmlWebpackPlugin({
-      template: `${PAGES_DIR[index]}/${page}`,
-      filename: `./${page.replace(/\.pug/,'.html')}`
-    })),
+    new CleanWebpackPlugin(),
+    new HtmlSWebpackPlugin({
+      htmls: PAGES.map( (pageName, index) => {
+        return {
+          src: PAGES_DIR[index] + pageName,
+          filename: './' + pageName.replace(/\.pug/,'.html')
+        }
+      })
+    }),
     new MiniCssExtractPlugin({
       filename: 'index.css',
     }),
@@ -108,7 +115,6 @@ module.exports = {
       'window.$': 'jquery',
       'window.jQuery': 'jquery'
     }),
-    //new CleanWebpackPlugin()
   ],
 
   optimization: {

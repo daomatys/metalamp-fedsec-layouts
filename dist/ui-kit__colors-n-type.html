@@ -1,2 +1,33 @@
-<head> <title>UI KIT / Colors & Type</title><link rel="apple-touch-icon-precomposed" sizes="57x57" href="static/images/apple-touch-icon-57x57.png"><link rel="apple-touch-icon-precomposed" sizes="114x114" href="static/images/apple-touch-icon-114x114.png"><link rel="apple-touch-icon-precomposed" sizes="72x72" href="static/images/apple-touch-icon-72x72.png"><link rel="apple-touch-icon-precomposed" sizes="144x144" href="static/images/apple-touch-icon-144x144.png"><link rel="apple-touch-icon-precomposed" sizes="60x60" href="static/images/apple-touch-icon-60x60.png"><link rel="apple-touch-icon-precomposed" sizes="120x120" href="static/images/apple-touch-icon-120x120.png"><link rel="apple-touch-icon-precomposed" sizes="76x76" href="static/images/apple-touch-icon-76x76.png"><link rel="apple-touch-icon-precomposed" sizes="152x152" href="static/images/apple-touch-icon-152x152.png"><link rel="icon" type="image/png" href="static/images/favicon-196x196.png" sizes="196x196"><link rel="icon" type="image/png" href="static/images/favicon-96x96.png" sizes="96x96"><link rel="icon" type="image/png" href="static/images/favicon-32x32.png" sizes="32x32"><link rel="icon" type="image/png" href="static/images/favicon-16x16.png" sizes="16x16"><link rel="icon" type="image/png" href="static/images/favicon-128.png" sizes="128x128"><meta name="application-name" content="Toxin Hotel"><meta name="msapplication-TileColor" content="#FFFFFF"><meta name="msapplication-TileImage" content="static/images/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="static/images/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="static/images/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="static/images/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="static/images/mstile-310x310.png"><script defer src="index.js"></script><link href="index.css" rel="stylesheet"></head><header class="ui-kit__header"><form class="logotype logotype_monochrome" action="index.html"><input class="logotype__button" type="submit"><img class="logotype__image" src="static/images/logo-monochrome-s48.svg"></form></header><main class="ui-kit__main"><div class="samples"><div class="samples__colors"><div class="color-sample__container"><div class="color-sample"><div class="color-sample__element" style="background-color: #1F2041; opacity: 100%;"></div><div class="color-sample__description custom-font-style_h2"><span class="color-sample__title">Dark Shade 100%</span><span class="color-sample__color-hexcode">#1F2041</span></div></div><div class="color-sample"><div class="color-sample__element" style="background-color: #1F2041; opacity: 75%;"></div><div class="color-sample__description custom-font-style_h2"><span class="color-sample__title">Dark Shade 75%</span><span class="color-sample__color-hexcode">#1F2041</span></div></div><div class="color-sample"><div class="color-sample__element" style="background-color: #1F2041; opacity: 50%;"></div><div class="color-sample__description custom-font-style_h2"><span class="color-sample__title">Dark Shade 50%</span><span class="color-sample__color-hexcode">#1F2041</span></div></div><div class="color-sample"><div class="color-sample__element" style="background-color: #1F2041; opacity: 25%;"></div><div class="color-sample__description custom-font-style_h2"><span class="color-sample__title">Dark Shade 25%</span><span class="color-sample__color-hexcode">#1F2041</span></div></div><div class="color-sample"><div class="color-sample__element" style="background-color: #1F2041; opacity: 5%;"></div><div class="color-sample__description custom-font-style_h2"><span class="color-sample__title">Dark Shade 5%</span><span class="color-sample__color-hexcode">#1F2041</span></div></div><div class="color-sample"><div class="color-sample__element" style="background-color: #BC9CFF; opacity: 100%;"></div><div class="color-sample__description custom-font-style_h2"><span class="color-sample__title">Purple</span><span class="color-sample__color-hexcode">#BC9CFF</span></div></div><div class="color-sample"><div class="color-sample__element" style="background-color: #6FCF97; opacity: 100%;"></div><div class="color-sample__description custom-font-style_h2"><span class="color-sample__title">Green</span><span class="color-sample__color-hexcode">#6FCF97</span></div></div></div></div><div class="samples__type"><div class="type-sample__container"><div class="type-sample custom-font-style_h1"><span class="type-sample__associative-tag">H1</span><span class="type-sample__usage-instruction">This one is the sub-section or widget title</span></div><div class="type-sample custom-font-style_h2"><span class="type-sample__associative-tag">H2</span><span class="type-sample__usage-instruction">Next one is the item title inside widgets</span></div><div class="type-sample custom-font-style_h3"><span class="type-sample__associative-tag">H3</span><span class="type-sample__usage-instruction">THIS IS A LABEL OR CTA TEXT</span></div><div class="type-sample custom-font-style_body"><span class="type-sample__associative-tag">Body</span><span class="type-sample__usage-instruction">This is the body text which is used for most
-of the design, like paragraphs, lists, etc.</span></div></div></div></div></main><footer class="ui-kit__footer"></footer><body class="ui-kit__body bg-color_white"></body>
+extends /pages/ui-kit/ui-kit.pug
+
+
+block head 
+  title UI KIT / Colors & Type
+
+
+block append body
+  body.ui-kit__body.bg-color_white
+
+
+block main
+  include /components/color-sample/color-sample.pug
+  include /components/type-sample/type-sample.pug
+
+  .samples
+    .samples__colors
+      +colorSamples([
+        { hexcolor: "#1F2041", opacity: 100, title: "Dark Shade 100%" },
+        { hexcolor: "#1F2041", opacity: 75,  title: "Dark Shade 75%" },
+        { hexcolor: "#1F2041", opacity: 50,  title: "Dark Shade 50%" },
+        { hexcolor: "#1F2041", opacity: 25,  title: "Dark Shade 25%" },
+        { hexcolor: "#1F2041", opacity: 5,   title: "Dark Shade 5%" },
+        { hexcolor: "#BC9CFF", opacity: 100, title: "Purple" },
+        { hexcolor: "#6FCF97", opacity: 100, title: "Green" },
+      ])
+    .samples__type
+      +typeSamples([
+        { tagname: "H1",   note: "This one is the sub-section or widget title" },
+        { tagname: "H2",   note: "Next one is the item title inside widgets" },
+        { tagname: "H3",   note: "THIS IS A LABEL OR CTA TEXT" },
+        { tagname: "Body", note: "This is the body text which is used for most\nof the design, like paragraphs, lists, etc." },
+      ])
