@@ -60,7 +60,6 @@ module.exports = {
   },
 
   module: {
-    
     rules: [
       {
         test: /\.pug$/,
@@ -75,6 +74,7 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
+          'postcss-loader',
           'sass-loader'
         ]
       },
@@ -132,6 +132,10 @@ module.exports = {
     minimizer: [
       new CssMinimizerPlugin(),
     ]
+  },
+
+  performance: {
+    hints: 'warning',
   },
 
   cache: {
