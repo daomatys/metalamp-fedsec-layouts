@@ -7,11 +7,13 @@
     "air-datepicker": "^3.0.1"
   },
   "devDependencies": {
+    "@webdiscus/pug-loader": "^1.4.5",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^6.2.0",
     "css-minimizer-webpack-plugin": "^3.1.1",
     "eslint": "^8.2.0",
     "eslint-plugin-fsd": "^1.0.1",
+    "html-webpack-plugin": "^5.5.0",
     "htmls-webpack-plugin": "^2.0.2",
     "jquery": "^3.6.0",
     "jquery-ui": "^1.12.1",
@@ -26,7 +28,6 @@
     "stylelint-scss": "^3.21.0",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
-    "webpack-dashboard": "^3.3.6",
     "webpack-dev-server": "^4.3.1",
     "worker-farm": "^1.7.0"
   },

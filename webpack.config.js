@@ -3,11 +3,11 @@ const pug = require('pug');
 const path = require('path');
 const webpack = require('webpack');
 
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlSWebpackPlugin = require('htmls-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-
 
 const PATHS = {
   src: path.join(__dirname, './src'),
@@ -65,11 +65,11 @@ module.exports = {
         loader: 'pug-loader',
         options: {
           root: path.resolve(__dirname, 'src'),
-          pretty: false
+          esModule: false
         }
       },
       {
-        test:/\.(s*)css$/,
+        test:/\.(s*)css$/i,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
@@ -97,14 +97,23 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(),
+    /* html-w-p */
+    ...PAGES.map( (page, index) => new HtmlWebpackPlugin({
+      template: `${PAGES_DIR[index]}/${page}`,
+      filename: `./${page.replace(/\.pug/,'.html')}`
+    })),
+    /* htmls-w-p 
     new HtmlSWebpackPlugin({
       htmls: PAGES.map( (pageName, index) => {
+        const srcPath = PAGES_DIR[index] + pageName;
+
         return {
-          src: PAGES_DIR[index] + pageName,
-          filename: './' + pageName.replace(/\.pug/,'.html')
+          src: srcPath,
+          filename: './' + pageName.replace(/\.pug/,'.html'),
+          render: () => pug.renderFile( srcPath, { basedir: PATHS.src } )
         }
       })
-    }),
+    }),*/
     new MiniCssExtractPlugin({
       filename: 'index.css',
     }),
@@ -134,5 +143,11 @@ module.exports = {
       '@variables': path.resolve(__dirname, 'src/variables/variables.scss'),
       '@images': path.resolve(__dirname, 'src/assets/images/')
     }
-  }
+  },
+
+  /*resolveLoader: {
+    alias: {
+      'pug-loader': '@webdiscus/pug-loader'
+    }
+  }*/
 }

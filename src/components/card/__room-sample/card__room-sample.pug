@@ -20,7 +20,7 @@ mixin cardRoomSample( item )
     .card-room-sample__container_top
       .card-room-sample__image
         each suffix in suffixes
-          img( src=require(`/src/assets/images/raster/room/__thumbnail/room__thumbnail_${ suffix }.jpg`) )
+          img( src=require(`@images/raster/room/__thumbnail/room__thumbnail_${ suffix }.jpg`) )
       .card-room-sample__listing-indicator
         +materialIcon("circle")
         +materialIcon("panorama_fish_eye")
