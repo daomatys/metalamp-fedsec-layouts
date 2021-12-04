@@ -60,10 +60,11 @@ module.exports = {
   },
 
   module: {
+    
     rules: [
       {
         test: /\.pug$/,
-        loader: 'pug-loader',
+        loader: 'aliased-pug-loader',
         options: {
           root: PATHS.src,
           esModule: false
@@ -111,7 +112,7 @@ module.exports = {
         return {
           src: srcPath,
           filename: './' + pageName.replace(/\.pug/,'.html'),
-          render: () => pug.renderFile( srcPath, { basedir: PATHS.src } )
+          //render: () => pug.renderFile( srcPath, { basedir: PATHS.src } )
         }
       })
     }),*/
@@ -148,7 +149,8 @@ module.exports = {
 
   resolveLoader: {
     alias: {
-      'pug-loader': '@webdiscus/pug-loader'
+      'aliased-pug-loader': 'simple-pug-loader'
+      //'aliased-pug-loader': '@webdiscus/pug-loader'
     }
   }
 }
