@@ -146,9 +146,9 @@ module.exports = {
     }
   },
 
-  /*resolveLoader: {
+  resolveLoader: {
     alias: {
       'pug-loader': '@webdiscus/pug-loader'
     }
-  }*/
+  }
 }
