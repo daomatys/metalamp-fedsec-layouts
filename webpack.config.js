@@ -11,7 +11,8 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, './src'),
-  dist: path.join(__dirname, './dist')
+  dist: path.join(__dirname, './dist'),
+  cache: path.resolve(__dirname, '.temp_cache')
 };
 
 const PAGES_ROOT = PATHS.src + '/pages/';
@@ -39,7 +40,7 @@ module.exports = {
 
   devServer: {
     static: {
-      directory: path.join(__dirname, 'dist'),
+      directory: PATHS.dist
     },
     compress: true,
     port: 9000,
@@ -64,7 +65,7 @@ module.exports = {
         test: /\.pug$/,
         loader: 'pug-loader',
         options: {
-          root: path.resolve(__dirname, 'src'),
+          root: PATHS.src,
           esModule: false
         }
       },
@@ -98,9 +99,9 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     /* html-w-p */
-    ...PAGES.map( (page, index) => new HtmlWebpackPlugin({
-      template: `${PAGES_DIR[index]}/${page}`,
-      filename: `./${page.replace(/\.pug/,'.html')}`
+    ...PAGES.map( (pageName, index) => new HtmlWebpackPlugin({
+      template: PAGES_DIR[index] + pageName,
+      filename: `./${pageName.replace(/\.pug/,'.html')}`
     })),
     /* htmls-w-p 
     new HtmlSWebpackPlugin({
@@ -135,13 +136,13 @@ module.exports = {
   cache: {
     type: 'filesystem',
     allowCollectingMemory: true,
-    cacheDirectory: path.resolve(__dirname, '.temp_cache'),
+    cacheDirectory: PATHS.cache,
   },
 
   resolve: {
     alias: {
-      '@variables': path.resolve(__dirname, 'src/variables/variables.scss'),
-      '@images': path.resolve(__dirname, 'src/assets/images/')
+      '@variables': PATHS.src + '/variables/variables.scss',
+      '@images': PATHS.src + '/assets/images/'
     }
   },
 

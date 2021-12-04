@@ -35,7 +35,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode=development --watch",
     "prod": "webpack --mode=production",
-    "try": "webpack --mode=development",
+    "try": "webpack --mode=development --progress",
     "host": "webpack serve --history-api-fallback --progress"
   },
   "repository": {
