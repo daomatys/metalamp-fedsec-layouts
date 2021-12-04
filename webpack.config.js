@@ -5,7 +5,6 @@ const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlSWebpackPlugin = require('htmls-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
@@ -56,7 +55,8 @@ module.exports = {
 
   output: {
     filename: 'index.js',
-    path: PATHS.dist
+    path: PATHS.dist,
+    clean: true
   },
 
   module: {
@@ -98,7 +98,6 @@ module.exports = {
   },
 
   plugins: [
-    new CleanWebpackPlugin(),
     /* html-w-p */
     ...PAGES.map( (pageName, index) => new HtmlWebpackPlugin({
       template: PAGES_DIR[index] + pageName,
