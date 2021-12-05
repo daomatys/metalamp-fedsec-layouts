@@ -1,6 +1,8 @@
 include /components/favicons-bulk/favicons-bulk.pug
+include /components/header/header.pug
 include /components/footer/footer.pug
 include /components/modal-window/modal-window.pug
+
 
 head
   block head
@@ -9,7 +11,8 @@ head
 
 body.website__body
   header.website__header
-    block header
+    +header({ authorized: false })
+    block modal
     .modal-window_navigation.window_invisible
       +modalWindow({
         id: "ejectable-button_navigation-1",

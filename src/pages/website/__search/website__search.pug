@@ -1,13 +1,14 @@
 extends ../website.pug
 
+
+include /components/pagination/pagination.pug
+include /components/card/__filter/card__filter.pug
+
+
 block head 
   title TOXIN HOTEL / SEARCH
 
-block header
-  include /components/header/header.pug
-  
-  +header({ authorized: false, filtering: true })
-
+block modal
   .modal-window_filtration.window_invisible
     +modalWindow({
       id: "ejectable-button_filtration-1",
@@ -127,9 +128,6 @@ block main
         }
       }
     ]
-
-  include /components/pagination/pagination.pug
-  include /components/card/__filter/card__filter.pug
 
   main.website__main.fullscreen-bottom-border
     .search-page

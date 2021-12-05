@@ -1,16 +1,13 @@
 extends /pages/website/website.pug
 
+
+include /components/card/__login/card__login.pug
+
+
 block head
   title TOXIN HOTEL / LOGIN
 
-block header
-  include /components/header/header.pug
-
-  +header({ authorized: false })
-
 block main
-  include /components/card/__login/card__login.pug
-
   main.website__main.bg-pic__login-n-registration
     .login-page
       +cardLogin()
