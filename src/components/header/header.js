@@ -1,5 +1,11 @@
 import './header.scss';
 
+import '@components/logo/logo';
+import '@components/material-icon-cell/material-icon-cell';
+import '@components/navigation-bar/navigation-bar';
+import '@components/button/__mean-oval/button__mean-oval';
+
+
 const initEjector = function() {
   const ejectors = document.querySelectorAll(".header__ejector");
 

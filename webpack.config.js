@@ -144,8 +144,7 @@ module.exports = {
     alias: {
       '@variables': path.join( PATHS.src, '/variables/variables.scss' ),
       '@images': path.join( PATHS.src, '/assets/images/' ),
-      '@components': path.join( PATHS.src, '/components/' ),
-      '@pages': path.join( PATHS.src, '/pages/' ),
+      '@components': path.join( PATHS.src, '/components/' )
     }
   },
 
