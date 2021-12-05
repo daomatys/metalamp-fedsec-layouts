@@ -133,10 +133,6 @@ module.exports = {
     ]
   },
 
-  performance: {
-    hints: 'warning',
-  },
-
   cache: {
     type: 'filesystem',
     allowCollectingMemory: true,
