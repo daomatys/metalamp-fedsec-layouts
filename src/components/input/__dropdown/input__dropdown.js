@@ -1,3 +1,5 @@
+import './input__dropdown.scss';
+
 const find = function findDropdownContainers() {
   const dropdowns = document.querySelectorAll('.input__dropdown');
 
