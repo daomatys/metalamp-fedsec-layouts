@@ -1,3 +1,5 @@
+import './entities__expandable.scss';
+
 const init = function expanderInitEventListeners() {
   const expanders = document.querySelectorAll('.expander');
 
