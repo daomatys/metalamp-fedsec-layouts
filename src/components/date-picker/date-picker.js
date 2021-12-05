@@ -1,3 +1,5 @@
+import './date-picker.scss';
+
 import AirDatepicker from 'air-datepicker';
 import customLocale from './_custom-locale/date-picker_custom-locale';
 

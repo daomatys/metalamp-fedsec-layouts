@@ -1,3 +1,5 @@
+import './header.scss';
+
 const initEjector = function() {
   const ejectors = document.querySelectorAll(".header__ejector");
 
