@@ -2,5 +2,5 @@ import '../ui-kit';
 
 import './ui-kit__colors-n-type.scss';
 
-import '../../../components/color-sample/color-sample';
-import '../../../components/type-sample/type-sample';
+import '@components/color-sample/color-sample';
+import '@components/type-sample/type-sample';

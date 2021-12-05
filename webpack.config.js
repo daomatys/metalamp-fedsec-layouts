@@ -9,8 +9,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const PATHS = {
-  src: path.resolve(__dirname, './src'),
-  dist: path.resolve(__dirname, './dist'),
+  src: path.join(__dirname, './src'),
+  dist: path.join(__dirname, './dist'),
   cache: path.resolve(__dirname, '.temp_cache')
 };
 
@@ -33,8 +33,7 @@ const PAGES_PATHS = PAGES_DIRNAMES.map( dirName => path.join( PAGES_ROOT, dirNam
 const PAGES_ENTRIES = PAGES_PATHS
   .map( dir => fs.readdirSync( dir ).find( fileName => fileName.endsWith('.js') ) )
   .map( ( item, i ) => path.join( PAGES_PATHS[i], item ) );
-const PAGES = PAGES_PATHS.map( 
-  dir => fs.readdirSync( dir ).find( fileName => fileName.endsWith('.pug') ) 
+const PAGES = PAGES_PATHS.map( dir => fs.readdirSync( dir ).find( fileName => fileName.endsWith('.pug') ) 
 );
 
 module.exports = {
@@ -143,8 +142,10 @@ module.exports = {
 
   resolve: {
     alias: {
-      '@variables': PATHS.src + '/variables/variables.scss',
-      '@images': PATHS.src + '/assets/images/'
+      '@variables': path.join( PATHS.src, '/variables/variables.scss' ),
+      '@images': path.join( PATHS.src, '/assets/images/' ),
+      '@components': path.join( PATHS.src, '/components/' ),
+      '@pages': path.join( PATHS.src, '/pages/' ),
     }
   },
 
