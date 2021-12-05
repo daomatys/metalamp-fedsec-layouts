@@ -1,3 +1,5 @@
+import './button__like.scss';
+
 function likeButtonEventListeners() {
   const items = document.querySelectorAll('.like-button__elem');
 

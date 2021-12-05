@@ -1,3 +1,6 @@
+import '../card.scss';
+import './card__room-sample.scss';
+
 function createArrowScrollersEventListeners() {
   const containers = document.querySelectorAll('.card-room-sample__container_top');
 
