@@ -1,4 +1,4 @@
-import 'range-slider.scss';
+import './range-slider.scss';
 import 'jquery-ui/ui/widgets/slider';
 
 const init = function findRangeSliderContainer() {

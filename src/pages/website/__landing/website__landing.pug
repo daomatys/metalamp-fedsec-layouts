@@ -1,13 +1,13 @@
 extends /pages/website/website.pug
 
 
-include /components/card/__find-room/card__find-room.pug
-
-
 block head
   title TOXIN HOTEL / LANDING
 
+
 block main
+  include /components/card/__find-room/card__find-room.pug
+  
   main.website__main.bg-pic__landing
     .landing-page
       .landing-page__card

@@ -1,13 +1,13 @@
 extends /pages/website/website.pug
 
 
-include /components/card/__registration/card__registration.pug
-
-
 block head 
   title TOXIN HOTEL / REGISTRATION
 
+
 block main
+  include /components/card/__registration/card__registration.pug
+
   main.website__main.bg-pic__login-n-registration
     .registration-page
       +cardRegistration()

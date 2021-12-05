@@ -1,14 +1,13 @@
 extends ../website.pug
 
 
-include /components/pagination/pagination.pug
-include /components/card/__filter/card__filter.pug
-
-
 block head 
   title TOXIN HOTEL / SEARCH
 
+
 block modal
+  include /components/modal-window/modal-window.pug
+
   .modal-window_filtration.window_invisible
     +modalWindow({
       id: "ejectable-button_filtration-1",
@@ -16,6 +15,10 @@ block modal
     })
 
 block main
+  include /components/pagination/pagination.pug
+  include /components/card/__room-sample/card__room-sample.pug
+  include /components/card/__filter/card__filter.pug
+
   -
     const samples = [
       {

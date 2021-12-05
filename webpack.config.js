@@ -9,12 +9,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const PATHS = {
-  src: path.join(__dirname, './src'),
-  dist: path.join(__dirname, './dist'),
+  src: path.resolve(__dirname, './src'),
+  dist: path.resolve(__dirname, './dist'),
   cache: path.resolve(__dirname, '.temp_cache')
 };
 
-const PAGES_ROOT = PATHS.src + '/pages/';
+const PAGES_ROOT = path.join(PATHS.src, 'pages');
 const PAGES_DIRNAMES = [
   'index/',
   'ui-kit/__cards/',
@@ -29,8 +29,11 @@ const PAGES_DIRNAMES = [
   'website/__search/',
 ];
 
-const PAGES_DIR = PAGES_DIRNAMES.map( dirName => PAGES_ROOT + dirName );
-const PAGES = PAGES_DIR.map( 
+const PAGES_PATHS = PAGES_DIRNAMES.map( dirName => path.join( PAGES_ROOT, dirName ) );
+const PAGES_ENTRIES = PAGES_PATHS
+  .map( dir => fs.readdirSync( dir ).find( fileName => fileName.endsWith('.js') ) )
+  .map( ( item, i ) => path.join( PAGES_PATHS[i], item ) );
+const PAGES = PAGES_PATHS.map( 
   dir => fs.readdirSync( dir ).find( fileName => fileName.endsWith('.pug') ) 
 );
 
@@ -49,9 +52,7 @@ module.exports = {
     paths: PATHS
   },
 
-  entry: {
-    app: PATHS.src,
-  },
+  entry: PAGES_ENTRIES,
 
   output: {
     filename: 'index.js',
@@ -100,13 +101,14 @@ module.exports = {
   plugins: [
     /* html-w-p */
     ...PAGES.map( (pageName, index) => new HtmlWebpackPlugin({
-      template: PAGES_DIR[index] + pageName,
-      filename: `./${pageName.replace(/\.pug/,'.html')}`
+      template: PAGES_PATHS[index] + pageName,
+      filename: './' + pageName.replace(/\.pug/,'.html'),
+      chunks: [ pageName.replace(/\.pug/,'.js') ]
     })),
     /* htmls-w-p 
     new HtmlSWebpackPlugin({
       htmls: PAGES.map( (pageName, index) => {
-        const srcPath = PAGES_DIR[index] + pageName;
+        const srcPath = PAGES_PATHS[index] + pageName;
 
         return {
           src: srcPath,
