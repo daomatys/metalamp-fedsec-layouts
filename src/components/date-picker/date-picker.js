@@ -1,5 +1,8 @@
 import './date-picker.scss';
 
+import '@components/button/__mean-oval/button__mean-oval';
+
+
 import AirDatepicker from 'air-datepicker';
 import customLocale from './_custom-locale/date-picker_custom-locale';
 

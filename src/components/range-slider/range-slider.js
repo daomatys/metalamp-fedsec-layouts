@@ -1,5 +1,8 @@
 import './range-slider.scss';
+
 import 'jquery-ui/ui/widgets/slider';
+import '@components/title-bar/title-bar';
+
 
 const init = function findRangeSliderContainer() {
   const sliders = document.querySelectorAll(".range-slider__elem");
