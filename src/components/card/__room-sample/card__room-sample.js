@@ -1,6 +1,9 @@
 import '../card.scss';
 import './card__room-sample.scss';
 
+import '../../button/__star-rate/button__star-rate';
+import '../../material-icon-cell/material-icon-cell';
+
 function createArrowScrollersEventListeners() {
   const containers = document.querySelectorAll('.card-room-sample__container_top');
 
