@@ -1,3 +1,4 @@
+import './pagination.scss';
 import 'paginationjs/dist/pagination.min';
 
 function findPaginationContainer() {

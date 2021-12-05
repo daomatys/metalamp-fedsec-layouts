@@ -1,3 +1,5 @@
+import './votes-chart.scss';
+
 const init = function() {
   const charts = document.querySelectorAll('.votes-chart');
 
