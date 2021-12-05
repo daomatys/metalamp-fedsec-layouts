@@ -1,4 +1,4 @@
-import '../ui-kit';
+import '../ui-kit.noentry';
 
 import './ui-kit__colors-n-type.scss';
 

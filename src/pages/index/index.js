@@ -1,4 +1,4 @@
-import '../ui-kit/ui-kit';
+import '../ui-kit/ui-kit.noentry';
 
 import './index.scss';
 

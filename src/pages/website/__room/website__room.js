@@ -1,4 +1,4 @@
-import '../website';
+import '../website.noentry';
 
 import './website__room.scss';
 
