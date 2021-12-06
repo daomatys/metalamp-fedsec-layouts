@@ -8,8 +8,24 @@ const HtmlSWebpackPlugin = require('htmls-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
-const defineName = ext => ext + '/[name].' + ext;
-const findFileByExt = ( dir, ext ) => fs.readdirSync( dir ).find( fileName => fileName.endsWith( ext ) );
+const defineTemplate = ext => ext + '/[name].' + ext;
+const defineFileName = filepath => filepath.match(/[^\\/]+$/)[0].replace(/\.js/,'');
+
+const definePagesPaths = function definePagesPathsByRootFolder( folder ) {
+  const recursiveSearch = volumePath => fs
+    .readdirSync( volumePath )
+    .map( chapterName => path.join( volumePath, chapterName ) )
+    .flatMap( chapterPath => /\..+$/.exec( chapterPath ) ? chapterPath : recursiveSearch( chapterPath ) );
+
+  return recursiveSearch( folder ).filter( filepath => /(?<!\.noentry)\.js$/.exec( filepath ) );
+}
+
+const defineEnrties = function convertArrayOfPathsToEntriesObject( pagesArray ) {
+  const preparedArray = pagesArray
+    .map( page => [ defineFileName( page ), page ] );
+
+  return Object.fromEntries( preparedArray );
+}
 
 const PATHS = {
   src: path.join(__dirname, './src'),
@@ -17,45 +33,9 @@ const PATHS = {
   cache: path.resolve(__dirname, '.temp_cache')
 };
 
-
-
-const PAGES_ROOT = path.join(PATHS.src, 'pages');
-const PAGES_DIRNAMES = [
-  'index/',
-  'ui-kit/__cards/',
-  'ui-kit/__colors-n-type/',
-  'ui-kit/__form-elements/',
-  'ui-kit/__headers-n-footers/',
-  'website/__landing/',
-  'website/__login/',
-  'website/__no-page/',
-  'website/__registration/',
-  'website/__room/',
-  'website/__search/',
-];
-
-const PAGES_PATHS = PAGES_DIRNAMES.map( dirName => path.join( PAGES_ROOT, dirName ) );
-const PAGES_ENTRIES = PAGES_PATHS
-  .map( dir => findFileByExt( dir, '.js' ) )
-  .map( ( item, i ) => path.join( PAGES_PATHS[i], item ) );
-const PAGES = PAGES_PATHS.map( dir => findFileByExt( dir,'.pug' ) );
-
-/**/
-
 const PAGES__ROOT = path.join(PATHS.src, 'pages');
-
-const defineEntriesPaths = volumePath => fs
-  .readdirSync( volumePath )
-  .map( chapterName => path.join( volumePath, chapterName ) )
-  .map( chapterPath => /\..+$/.exec( chapterPath ) ? chapterPath : defineEntriesPaths( chapterPath ) )
-  .flat()
-  .filter( path => /\.js$/.exec( path ) );
-
-const PAGES__ENTRIES = defineEntriesPaths( PAGES__ROOT );
-
-console.log(PAGES__PATHS);
-
-
+const PAGES__FULLPATHS = definePagesPaths( PAGES__ROOT );
+const PAGES__ENTRIES = defineEnrties( PAGES__FULLPATHS );
 
 module.exports = {
   mode: 'development',
@@ -72,10 +52,10 @@ module.exports = {
     paths: PATHS
   },
 
-  entry: PAGES_ENTRIES,
+  entry: PAGES__ENTRIES,
 
   output: {
-    filename: defineName('js'),
+    filename: defineTemplate('js'),
     path: PATHS.dist,
     clean: true
   },
@@ -121,7 +101,7 @@ module.exports = {
   plugins: [
     /* html-w-p */
     ...PAGES.map( (pageName, index) => new HtmlWebpackPlugin({
-      template: PAGES_PATHS[index] + pageName,
+      template: PAGES__FULLPATHS[index] + pageName,
       filename: './' + pageName.replace(/\.pug/,'.html'),
       chunks: [ pageName.replace(/\.pug/,'.js') ]
     })),
@@ -138,7 +118,7 @@ module.exports = {
       })
     }),*/
     new MiniCssExtractPlugin({
-      filename: defineName('css'),
+      filename: defineTemplate('css'),
     }),
     new CssMinimizerPlugin(),
     new webpack.ProvidePlugin({
