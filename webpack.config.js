@@ -35,7 +35,12 @@ const PATHS = {
 
 const PAGES__ROOT = path.join(PATHS.src, 'pages');
 const PAGES__FULLPATHS = definePagesPaths( PAGES__ROOT );
+const PAGES__NAMES = PAGES__FULLPATHS.map( filepath => defineFileName( filepath ) );
 const PAGES__ENTRIES = defineEnrties( PAGES__FULLPATHS );
+
+
+console.log(PAGES__NAMES)
+
 
 module.exports = {
   mode: 'development',
@@ -100,10 +105,10 @@ module.exports = {
 
   plugins: [
     /* html-w-p */
-    ...PAGES.map( (pageName, index) => new HtmlWebpackPlugin({
-      template: PAGES__FULLPATHS[index] + pageName,
-      filename: './' + pageName.replace(/\.pug/,'.html'),
-      chunks: [ pageName.replace(/\.pug/,'.js') ]
+    ...PAGES__NAMES.map( (pageName, index) => new HtmlWebpackPlugin({
+      template: path.join( PAGES__FULLPATHS[index], `${pageName}.pug` ),
+      filename: `./'${pageName}.html`,
+      chunks: [ `${pageName}.js` ]
     })),
     /* htmls-w-p 
     new HtmlSWebpackPlugin({
