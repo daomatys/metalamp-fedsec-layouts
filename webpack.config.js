@@ -9,7 +9,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const defineTemplate = ext => ext + '/[name].' + ext;
-const defineFileName = filepath => filepath.match(/[^\\/]+$/)[0].replace(/\.js/,'');
+const defineFileName = filepath => filepath.match(/[^\\/]+$/)[0].replace(/\.js$/,'');
 
 const definePagesPaths = function definePagesPathsByRootFolder( folder ) {
   const recursiveSearch = volumePath => fs
@@ -28,19 +28,15 @@ const defineEnrties = function convertArrayOfPathsToEntriesObject( pagesArray ) 
 }
 
 const PATHS = {
-  src: path.join(__dirname, './src'),
-  dist: path.join(__dirname, './dist'),
-  cache: path.resolve(__dirname, '.temp_cache')
+  src: path.join(__dirname, '/src'),
+  dist: path.join(__dirname, '/dist'),
+  cache: path.resolve(__dirname, '/.temp_cache')
 };
 
 const PAGES__ROOT = path.join(PATHS.src, 'pages');
 const PAGES__FULLPATHS = definePagesPaths( PAGES__ROOT );
 const PAGES__NAMES = PAGES__FULLPATHS.map( filepath => defineFileName( filepath ) );
 const PAGES__ENTRIES = defineEnrties( PAGES__FULLPATHS );
-
-
-console.log(PAGES__NAMES)
-
 
 module.exports = {
   mode: 'development',
@@ -68,11 +64,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.pug$/,
+        test: /\.pug$/i,
         loader: 'aliased-pug-loader',
         options: {
           root: PATHS.src,
-          esModule: false
+          esModule: false,
+          pretty: true
         }
       },
       {
@@ -106,9 +103,9 @@ module.exports = {
   plugins: [
     /* html-w-p */
     ...PAGES__NAMES.map( (pageName, index) => new HtmlWebpackPlugin({
-      template: path.join( PAGES__FULLPATHS[index], `${pageName}.pug` ),
-      filename: `./'${pageName}.html`,
-      chunks: [ `${pageName}.js` ]
+      template: PAGES__FULLPATHS[index].replace(/\.js$/,'.pug'),
+      filename: `./${pageName}.html`,
+      chunks: [ `${pageName}.js` ],
     })),
     /* htmls-w-p 
     new HtmlSWebpackPlugin({
@@ -124,6 +121,7 @@ module.exports = {
     }),*/
     new MiniCssExtractPlugin({
       filename: defineTemplate('css'),
+      ignoreOrder: true
     }),
     new CssMinimizerPlugin(),
     new webpack.ProvidePlugin({
