@@ -7,6 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlSWebpackPlugin = require('htmls-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const HtmlWebpackInjectPreload = require('@principalstudio/html-webpack-inject-preload');
 
 const defineTemplate = ext => ext + '/[name].' + ext;
 const defineFileName = filepath => filepath.match(/[^\\/]+$/)[0].replace(/\.js$/,'');
@@ -119,6 +120,17 @@ module.exports = {
         }
       })
     }),*/
+    new HtmlWebpackInjectPreload({
+      files: [
+        {
+          match: /\.(s*)css$/i,
+          attributes: {
+            as: 'style',
+            rel: 'stylesheet'
+          },
+        }
+      ]
+    }),
     new MiniCssExtractPlugin({
       filename: defineTemplate('css'),
       ignoreOrder: true
