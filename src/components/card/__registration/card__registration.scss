@@ -1,0 +1,12 @@
+@import "@styles/__text/styles__text.scss";
+@import "@styles/__form/styles__form.scss";
+
+.card-registration {
+  &__title {
+    @extend %styles__text_h1;
+  }
+
+  &__login-question {
+    @extend %styles__text_body;
+  }
+}
