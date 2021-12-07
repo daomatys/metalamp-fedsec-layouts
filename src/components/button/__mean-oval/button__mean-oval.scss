@@ -63,7 +63,7 @@
     z-index: 13;
 
     &:not(:active) {
-      @extend .ripple;
+      @extend %ripple;
     }
 
     &:disabled {
@@ -121,7 +121,7 @@
   }
 }
 
-.ripple {
+%ripple {
   animation: rippling 180ms ease forwards;
 }
 
