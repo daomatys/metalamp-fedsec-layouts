@@ -79,28 +79,6 @@ eval("/* module decorator */ module = __webpack_require__.nmd(module);\nvar __WE
 
 /***/ }),
 
-/***/ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js ***!
-  \*******************************************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-eval("\n/* eslint-env browser */\n\n/*\n  eslint-disable\n  no-console,\n  func-names\n*/\n\nvar normalizeUrl = __webpack_require__(/*! ./normalize-url */ \"./node_modules/mini-css-extract-plugin/dist/hmr/normalize-url.js\");\n\nvar srcByModuleId = Object.create(null);\nvar noDocument = typeof document === \"undefined\";\nvar forEach = Array.prototype.forEach;\n\nfunction debounce(fn, time) {\n  var timeout = 0;\n  return function () {\n    var self = this; // eslint-disable-next-line prefer-rest-params\n\n    var args = arguments;\n\n    var functionCall = function functionCall() {\n      return fn.apply(self, args);\n    };\n\n    clearTimeout(timeout);\n    timeout = setTimeout(functionCall, time);\n  };\n}\n\nfunction noop() {}\n\nfunction getCurrentScriptUrl(moduleId) {\n  var src = srcByModuleId[moduleId];\n\n  if (!src) {\n    if (document.currentScript) {\n      src = document.currentScript.src;\n    } else {\n      var scripts = document.getElementsByTagName(\"script\");\n      var lastScriptTag = scripts[scripts.length - 1];\n\n      if (lastScriptTag) {\n        src = lastScriptTag.src;\n      }\n    }\n\n    srcByModuleId[moduleId] = src;\n  }\n\n  return function (fileMap) {\n    if (!src) {\n      return null;\n    }\n\n    var splitResult = src.split(/([^\\\\/]+)\\.js$/);\n    var filename = splitResult && splitResult[1];\n\n    if (!filename) {\n      return [src.replace(\".js\", \".css\")];\n    }\n\n    if (!fileMap) {\n      return [src.replace(\".js\", \".css\")];\n    }\n\n    return fileMap.split(\",\").map(function (mapRule) {\n      var reg = new RegExp(\"\".concat(filename, \"\\\\.js$\"), \"g\");\n      return normalizeUrl(src.replace(reg, \"\".concat(mapRule.replace(/{fileName}/g, filename), \".css\")));\n    });\n  };\n}\n\nfunction updateCss(el, url) {\n  if (!url) {\n    if (!el.href) {\n      return;\n    } // eslint-disable-next-line\n\n\n    url = el.href.split(\"?\")[0];\n  }\n\n  if (!isUrlRequest(url)) {\n    return;\n  }\n\n  if (el.isLoaded === false) {\n    // We seem to be about to replace a css link that hasn't loaded yet.\n    // We're probably changing the same file more than once.\n    return;\n  }\n\n  if (!url || !(url.indexOf(\".css\") > -1)) {\n    return;\n  } // eslint-disable-next-line no-param-reassign\n\n\n  el.visited = true;\n  var newEl = el.cloneNode();\n  newEl.isLoaded = false;\n  newEl.addEventListener(\"load\", function () {\n    if (newEl.isLoaded) {\n      return;\n    }\n\n    newEl.isLoaded = true;\n    el.parentNode.removeChild(el);\n  });\n  newEl.addEventListener(\"error\", function () {\n    if (newEl.isLoaded) {\n      return;\n    }\n\n    newEl.isLoaded = true;\n    el.parentNode.removeChild(el);\n  });\n  newEl.href = \"\".concat(url, \"?\").concat(Date.now());\n\n  if (el.nextSibling) {\n    el.parentNode.insertBefore(newEl, el.nextSibling);\n  } else {\n    el.parentNode.appendChild(newEl);\n  }\n}\n\nfunction getReloadUrl(href, src) {\n  var ret; // eslint-disable-next-line no-param-reassign\n\n  href = normalizeUrl(href, {\n    stripWWW: false\n  }); // eslint-disable-next-line array-callback-return\n\n  src.some(function (url) {\n    if (href.indexOf(src) > -1) {\n      ret = url;\n    }\n  });\n  return ret;\n}\n\nfunction reloadStyle(src) {\n  if (!src) {\n    return false;\n  }\n\n  var elements = document.querySelectorAll(\"link\");\n  var loaded = false;\n  forEach.call(elements, function (el) {\n    if (!el.href) {\n      return;\n    }\n\n    var url = getReloadUrl(el.href, src);\n\n    if (!isUrlRequest(url)) {\n      return;\n    }\n\n    if (el.visited === true) {\n      return;\n    }\n\n    if (url) {\n      updateCss(el, url);\n      loaded = true;\n    }\n  });\n  return loaded;\n}\n\nfunction reloadAll() {\n  var elements = document.querySelectorAll(\"link\");\n  forEach.call(elements, function (el) {\n    if (el.visited === true) {\n      return;\n    }\n\n    updateCss(el);\n  });\n}\n\nfunction isUrlRequest(url) {\n  // An URL is not an request if\n  // It is not http or https\n  if (!/^[a-zA-Z][a-zA-Z\\d+\\-.]*:/.test(url)) {\n    return false;\n  }\n\n  return true;\n}\n\nmodule.exports = function (moduleId, options) {\n  if (noDocument) {\n    console.log(\"no window.document found, will not HMR CSS\");\n    return noop;\n  }\n\n  var getScriptSrc = getCurrentScriptUrl(moduleId);\n\n  function update() {\n    var src = getScriptSrc(options.filename);\n    var reloaded = reloadStyle(src);\n\n    if (options.locals) {\n      console.log(\"[HMR] Detected local css modules. Reload all css\");\n      reloadAll();\n      return;\n    }\n\n    if (reloaded) {\n      console.log(\"[HMR] css reload %s\", src.join(\" \"));\n    } else {\n      console.log(\"[HMR] Reload all css\");\n      reloadAll();\n    }\n  }\n\n  return debounce(update, 50);\n};\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js?");
-
-/***/ }),
-
-/***/ "./node_modules/mini-css-extract-plugin/dist/hmr/normalize-url.js":
-/*!************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/hmr/normalize-url.js ***!
-  \************************************************************************/
-/***/ ((module) => {
-
-"use strict";
-eval("\n/* eslint-disable */\n\nfunction normalizeUrl(pathComponents) {\n  return pathComponents.reduce(function (accumulator, item) {\n    switch (item) {\n      case \"..\":\n        accumulator.pop();\n        break;\n\n      case \".\":\n        break;\n\n      default:\n        accumulator.push(item);\n    }\n\n    return accumulator;\n  }, []).join(\"/\");\n}\n\nmodule.exports = function (urlString) {\n  urlString = urlString.trim();\n\n  if (/^data:/i.test(urlString)) {\n    return urlString;\n  }\n\n  var protocol = urlString.indexOf(\"//\") !== -1 ? urlString.split(\"//\")[0] + \"//\" : \"\";\n  var components = urlString.replace(new RegExp(protocol, \"i\"), \"\").split(\"/\");\n  var host = components[0].toLowerCase().replace(/\\.$/, \"\");\n  components[0] = \"\";\n  var path = normalizeUrl(components);\n  return protocol + host + path;\n};\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./node_modules/mini-css-extract-plugin/dist/hmr/normalize-url.js?");
-
-/***/ }),
-
 /***/ "./node_modules/paginationjs/dist/pagination.min.js":
 /*!**********************************************************!*\
   !*** ./node_modules/paginationjs/dist/pagination.min.js ***!
@@ -162,7 +140,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _but
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _button_star_rate_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./button__star-rate.scss */ \"./src/components/button/__star-rate/button__star-rate.scss\");\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__star-rate/button__star-rate.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _button_star_rate_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./button__star-rate.scss */ \"./src/components/button/__star-rate/button__star-rate.scss\");\n/* harmony import */ var _components_material_icon_cell_material_icon_cell__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @components/material-icon-cell/material-icon-cell */ \"./src/components/material-icon-cell/material-icon-cell.js\");\n\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__star-rate/button__star-rate.js?");
 
 /***/ }),
 
@@ -184,7 +162,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _but
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _card_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../card.scss */ \"./src/components/card/card.scss\");\n/* harmony import */ var _card_filter_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./card__filter.scss */ \"./src/components/card/__filter/card__filter.scss\");\n/* harmony import */ var _card_room_sample_card_room_sample__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../card/__room-sample/card__room-sample */ \"./src/components/card/__room-sample/card__room-sample.js\");\n/* harmony import */ var _button_checkbox_button_checkbox__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../button/__checkbox/button__checkbox */ \"./src/components/button/__checkbox/button__checkbox.js\");\n/* harmony import */ var _checkbox_list_checkbox_list__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../checkbox-list/checkbox-list */ \"./src/components/checkbox-list/checkbox-list.js\");\n/* harmony import */ var _range_slider_range_slider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../range-slider/range-slider */ \"./src/components/range-slider/range-slider.js\");\n/* harmony import */ var _pagination_pagination__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../pagination/pagination */ \"./src/components/pagination/pagination.js\");\n/* harmony import */ var _title_bar_title_bar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../title-bar/title-bar */ \"./src/components/title-bar/title-bar.js\");\n/* harmony import */ var _input_input__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../input/input */ \"./src/components/input/input.js\");\n\n\n\n\n\n\n\n\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/card/__filter/card__filter.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _card_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../card.scss */ \"./src/components/card/card.scss\");\n/* harmony import */ var _card_filter_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./card__filter.scss */ \"./src/components/card/__filter/card__filter.scss\");\n/* harmony import */ var _components_card_room_sample_card_room_sample__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @components/card/__room-sample/card__room-sample */ \"./src/components/card/__room-sample/card__room-sample.js\");\n/* harmony import */ var _components_button_checkbox_button_checkbox__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @components/button/__checkbox/button__checkbox */ \"./src/components/button/__checkbox/button__checkbox.js\");\n/* harmony import */ var _components_checkbox_list_checkbox_list__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @components/checkbox-list/checkbox-list */ \"./src/components/checkbox-list/checkbox-list.js\");\n/* harmony import */ var _components_range_slider_range_slider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @components/range-slider/range-slider */ \"./src/components/range-slider/range-slider.js\");\n/* harmony import */ var _components_pagination_pagination__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @components/pagination/pagination */ \"./src/components/pagination/pagination.js\");\n/* harmony import */ var _components_title_bar_title_bar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @components/title-bar/title-bar */ \"./src/components/title-bar/title-bar.js\");\n/* harmony import */ var _components_input_input__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @components/input/input */ \"./src/components/input/input.js\");\n\n\n\n\n\n\n\n\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/card/__filter/card__filter.js?");
 
 /***/ }),
 
@@ -195,7 +173,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _car
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _card_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../card.scss */ \"./src/components/card/card.scss\");\n/* harmony import */ var _input_input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../input/input */ \"./src/components/input/input.js\");\n/* harmony import */ var _button_mean_oval_button_mean_oval__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../button/__mean-oval/button__mean-oval */ \"./src/components/button/__mean-oval/button__mean-oval.js\");\n/* harmony import */ var _button_radio_button_radio__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../button/__radio/button__radio */ \"./src/components/button/__radio/button__radio.js\");\n/* harmony import */ var _button_toggle_button_toggle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../button/__toggle/button__toggle */ \"./src/components/button/__toggle/button__toggle.js\");\n\n\n\n\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/card/__registration/card__registration.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _card_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../card.scss */ \"./src/components/card/card.scss\");\n/* harmony import */ var _components_input_input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @components/input/input */ \"./src/components/input/input.js\");\n/* harmony import */ var _components_button_mean_oval_button_mean_oval__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @components/button/__mean-oval/button__mean-oval */ \"./src/components/button/__mean-oval/button__mean-oval.js\");\n/* harmony import */ var _components_button_radio_button_radio__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @components/button/__radio/button__radio */ \"./src/components/button/__radio/button__radio.js\");\n/* harmony import */ var _components_button_toggle_button_toggle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @components/button/__toggle/button__toggle */ \"./src/components/button/__toggle/button__toggle.js\");\n\n\n\n\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/card/__registration/card__registration.js?");
 
 /***/ }),
 
@@ -206,7 +184,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _car
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _card_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../card.scss */ \"./src/components/card/card.scss\");\n/* harmony import */ var _card_room_sample_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./card__room-sample.scss */ \"./src/components/card/__room-sample/card__room-sample.scss\");\n/* harmony import */ var _button_star_rate_button_star_rate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../button/__star-rate/button__star-rate */ \"./src/components/button/__star-rate/button__star-rate.js\");\n/* harmony import */ var _material_icon_cell_material_icon_cell__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../material-icon-cell/material-icon-cell */ \"./src/components/material-icon-cell/material-icon-cell.js\");\nfunction _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== \"undefined\" && o[Symbol.iterator] || o[\"@@iterator\"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === \"number\") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError(\"Invalid attempt to iterate non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\"); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it[\"return\"] != null) it[\"return\"](); } finally { if (didErr) throw err; } } }; }\n\nfunction _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === \"string\") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === \"Object\" && o.constructor) n = o.constructor.name; if (n === \"Map\" || n === \"Set\") return Array.from(o); if (n === \"Arguments\" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }\n\nfunction _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }\n\n\n\n\n\n\nfunction createArrowScrollersEventListeners() {\n  var containers = document.querySelectorAll('.card-room-sample__container_top');\n\n  var _iterator = _createForOfIteratorHelper(containers),\n      _step;\n\n  try {\n    var _loop = function _loop() {\n      var container = _step.value;\n      var indication = {\n        position: 1,\n        left: {\n          jump: function jump() {\n            indication.position = 4;\n          },\n\n          get case() {\n            return --indication.position < 1;\n          }\n\n        },\n        right: {\n          jump: function jump() {\n            indication.position = 1;\n          },\n\n          get case() {\n            return ++indication.position > 4;\n          }\n\n        }\n      };\n      container.addEventListener('click', function (_ref) {\n        var target = _ref.target;\n        return filterAnimation({\n          parent: container,\n          target: target,\n          indication: indication\n        });\n      });\n    };\n\n    for (_iterator.s(); !(_step = _iterator.n()).done;) {\n      _loop();\n    }\n  } catch (err) {\n    _iterator.e(err);\n  } finally {\n    _iterator.f();\n  }\n}\n\nfunction filterAnimation(click) {\n  var target = click.target.closest('.card-room-sample__arrow-scroller_left, .card-room-sample__arrow-scroller_right');\n\n  if (target) {\n    var aim = click.parent.querySelector('.card-room-sample__image');\n    var side = target.classList.contains('card-room-sample__arrow-scroller_left') ? 'left' : 'right';\n    var indicator = side === 'left' ? click.indication.left : click.indication.right;\n    var listingIndicator = click.parent.querySelectorAll('.card-room-sample__listing-indicator .material-icons');\n\n    var defineIndex = function defineIndex() {\n      return click.indication.position - 1;\n    };\n\n    var adjustIndicatorByIndex = function adjustIndicatorByIndex(text) {\n      return listingIndicator[defineIndex()].textContent = text;\n    };\n\n    adjustIndicatorByIndex('panorama_fish_eye');\n\n    if (!indicator[\"case\"]) {\n      scrollAnimation({\n        aim: aim,\n        side: side\n      });\n    } else {\n      scrollAnimation({\n        aim: aim,\n        side: side,\n        borderjump: true\n      });\n      indicator.jump();\n    }\n\n    adjustIndicatorByIndex('circle');\n  }\n}\n\nfunction scrollAnimation(click) {\n  var shiftModifier = click.side === 'left' ? 1 : -1;\n  var shiftValue = shiftModifier * 270 + 'px';\n\n  if (click.borderjump) {\n    borderJumpAnimation(click.aim, shiftModifier);\n  }\n\n  var shiftAnimation = click.aim.animate({\n    transform: \"translateX(\".concat(shiftValue, \")\")\n  }, {\n    easing: 'ease',\n    duration: 500,\n    fill: 'forwards',\n    composite: 'add'\n  });\n  shiftAnimation.persist();\n}\n\nfunction borderJumpAnimation(aim, modifier) {\n  var jumpRange = modifier * -1080 + 'px';\n  var jumpAnimation = aim.animate({\n    transform: \"translateX(\".concat(jumpRange, \")\")\n  }, {\n    fill: 'both',\n    composite: 'add'\n  });\n  jumpAnimation.persist();\n}\n\ncreateArrowScrollersEventListeners();\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/card/__room-sample/card__room-sample.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _card_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../card.scss */ \"./src/components/card/card.scss\");\n/* harmony import */ var _card_room_sample_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./card__room-sample.scss */ \"./src/components/card/__room-sample/card__room-sample.scss\");\n/* harmony import */ var _components_button_star_rate_button_star_rate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @components/button/__star-rate/button__star-rate */ \"./src/components/button/__star-rate/button__star-rate.js\");\n/* harmony import */ var _components_material_icon_cell_material_icon_cell__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @components/material-icon-cell/material-icon-cell */ \"./src/components/material-icon-cell/material-icon-cell.js\");\nfunction _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== \"undefined\" && o[Symbol.iterator] || o[\"@@iterator\"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === \"number\") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError(\"Invalid attempt to iterate non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\"); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it[\"return\"] != null) it[\"return\"](); } finally { if (didErr) throw err; } } }; }\n\nfunction _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === \"string\") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === \"Object\" && o.constructor) n = o.constructor.name; if (n === \"Map\" || n === \"Set\") return Array.from(o); if (n === \"Arguments\" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }\n\nfunction _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }\n\n\n\n\n\n\nfunction createArrowScrollersEventListeners() {\n  var containers = document.querySelectorAll('.card-room-sample__container_top');\n\n  var _iterator = _createForOfIteratorHelper(containers),\n      _step;\n\n  try {\n    var _loop = function _loop() {\n      var container = _step.value;\n      var indication = {\n        position: 1,\n        left: {\n          jump: function jump() {\n            indication.position = 4;\n          },\n\n          get case() {\n            return --indication.position < 1;\n          }\n\n        },\n        right: {\n          jump: function jump() {\n            indication.position = 1;\n          },\n\n          get case() {\n            return ++indication.position > 4;\n          }\n\n        }\n      };\n      container.addEventListener('click', function (_ref) {\n        var target = _ref.target;\n        return filterAnimation({\n          parent: container,\n          target: target,\n          indication: indication\n        });\n      });\n    };\n\n    for (_iterator.s(); !(_step = _iterator.n()).done;) {\n      _loop();\n    }\n  } catch (err) {\n    _iterator.e(err);\n  } finally {\n    _iterator.f();\n  }\n}\n\nfunction filterAnimation(click) {\n  var target = click.target.closest('.card-room-sample__arrow-scroller_left, .card-room-sample__arrow-scroller_right');\n\n  if (target) {\n    var aim = click.parent.querySelector('.card-room-sample__image');\n    var side = target.classList.contains('card-room-sample__arrow-scroller_left') ? 'left' : 'right';\n    var indicator = side === 'left' ? click.indication.left : click.indication.right;\n    var listingIndicator = click.parent.querySelectorAll('.card-room-sample__listing-indicator .material-icons');\n\n    var defineIndex = function defineIndex() {\n      return click.indication.position - 1;\n    };\n\n    var adjustIndicatorByIndex = function adjustIndicatorByIndex(text) {\n      return listingIndicator[defineIndex()].textContent = text;\n    };\n\n    adjustIndicatorByIndex('panorama_fish_eye');\n\n    if (!indicator[\"case\"]) {\n      scrollAnimation({\n        aim: aim,\n        side: side\n      });\n    } else {\n      scrollAnimation({\n        aim: aim,\n        side: side,\n        borderjump: true\n      });\n      indicator.jump();\n    }\n\n    adjustIndicatorByIndex('circle');\n  }\n}\n\nfunction scrollAnimation(click) {\n  var shiftModifier = click.side === 'left' ? 1 : -1;\n  var shiftValue = shiftModifier * 270 + 'px';\n\n  if (click.borderjump) {\n    borderJumpAnimation(click.aim, shiftModifier);\n  }\n\n  var shiftAnimation = click.aim.animate({\n    transform: \"translateX(\".concat(shiftValue, \")\")\n  }, {\n    easing: 'ease',\n    duration: 500,\n    fill: 'forwards',\n    composite: 'add'\n  });\n  shiftAnimation.persist();\n}\n\nfunction borderJumpAnimation(aim, modifier) {\n  var jumpRange = modifier * -1080 + 'px';\n  var jumpAnimation = aim.animate({\n    transform: \"translateX(\".concat(jumpRange, \")\")\n  }, {\n    fill: 'both',\n    composite: 'add'\n  });\n  jumpAnimation.persist();\n}\n\ncreateArrowScrollersEventListeners();\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/card/__room-sample/card__room-sample.js?");
 
 /***/ }),
 
@@ -217,7 +195,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _car
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _checkbox_list_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./checkbox-list.scss */ \"./src/components/checkbox-list/checkbox-list.scss\");\n/* harmony import */ var _entities_expandable_entities_expandable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../entities/__expandable/entities__expandable */ \"./src/entities/__expandable/entities__expandable.js\");\n\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/checkbox-list/checkbox-list.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _checkbox_list_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./checkbox-list.scss */ \"./src/components/checkbox-list/checkbox-list.scss\");\n/* harmony import */ var _entities_expandable_entities_expandable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @entities/__expandable/entities__expandable */ \"./src/entities/__expandable/entities__expandable.js\");\n\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/checkbox-list/checkbox-list.js?");
 
 /***/ }),
 
@@ -250,7 +228,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _hea
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _input_date_picker_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./input__date-picker.scss */ \"./src/components/input/__date-picker/input__date-picker.scss\");\n/* harmony import */ var _entities_expandable_entities_expandable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../entities/__expandable/entities__expandable */ \"./src/entities/__expandable/entities__expandable.js\");\n\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/input/__date-picker/input__date-picker.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _input_date_picker_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./input__date-picker.scss */ \"./src/components/input/__date-picker/input__date-picker.scss\");\n/* harmony import */ var _entities_expandable_entities_expandable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @entities/__expandable/entities__expandable */ \"./src/entities/__expandable/entities__expandable.js\");\n\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/input/__date-picker/input__date-picker.js?");
 
 /***/ }),
 
@@ -261,7 +239,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _inp
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _input_dropdown_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./input__dropdown.scss */ \"./src/components/input/__dropdown/input__dropdown.scss\");\n/* harmony import */ var _entities_expandable_entities_expandable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../entities/__expandable/entities__expandable */ \"./src/entities/__expandable/entities__expandable.js\");\nfunction _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }\n\nfunction _nonIterableSpread() { throw new TypeError(\"Invalid attempt to spread non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\"); }\n\nfunction _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === \"string\") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === \"Object\" && o.constructor) n = o.constructor.name; if (n === \"Map\" || n === \"Set\") return Array.from(o); if (n === \"Arguments\" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }\n\nfunction _iterableToArray(iter) { if (typeof Symbol !== \"undefined\" && iter[Symbol.iterator] != null || iter[\"@@iterator\"] != null) return Array.from(iter); }\n\nfunction _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }\n\nfunction _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }\n\n\n\n\nvar find = function findDropdownContainers() {\n  var dropdowns = document.querySelectorAll('.input__dropdown');\n  dropdowns.forEach(function (dropdown) {\n    return initListeners(dropdown);\n  });\n};\n\nvar initListeners = function initElementsEventListeners(dropdown) {\n  var counters = dropdown.querySelectorAll('.input__option-counter');\n  var buttonGroups = dropdown.querySelectorAll('.input__option-button-block');\n  var controllersBar = dropdown.querySelector('.input__state-controllers');\n  updateDropdownValue(_toConsumableArray(counters)[0], counters);\n\n  if (controllersBar) {\n    var controllers = defineButtons(controllersBar);\n    initControllers(counters, controllers, buttonGroups);\n    buttonGroups.forEach(function (buttons) {\n      return initButtons(buttons, counters, controllers);\n    });\n  }\n\n  if (!controllersBar) {\n    buttonGroups.forEach(function (buttons) {\n      return initButtons(buttons, counters, undefined);\n    });\n  }\n}; //init controllers section\n\n\nvar initControllers = function initControllersEventListeners(counters, controllers, buttonGroups) {\n  var resetController = controllers.left;\n  var acceptController = controllers.right;\n  defineResetControllerState(counters, controllers);\n  resetController.addEventListener('click', function () {\n    return resetCounters(controllers, counters, buttonGroups);\n  });\n  acceptController.addEventListener('click', function () {\n    return acceptForm(acceptController);\n  });\n};\n\nvar defineResetControllerState = function defineResetControllerState(counters, controllers) {\n  var countersSum = defineCountersSum(counters);\n  adjustButtonsState(controllers, countersSum, 'mob_hidden', true);\n}; //init buttons section\n\n\nvar initButtons = function initOptionButtonsEventListeners(buttons, counters, controllers) {\n  var optionButtons = defineButtons(buttons);\n  var optionCounter = buttons.querySelector('.input__option-counter');\n  var optionCounterValue = optionCounter.textContent;\n  adjustButtonsState(optionButtons, optionCounterValue, 'circle-button_frozen');\n\n  var update = function update(elem, shift) {\n    elem.addEventListener('click', function () {\n      return updateDropdown(optionButtons, optionCounter, shift, controllers, counters);\n    });\n  };\n\n  update(optionButtons.left, -1);\n  update(optionButtons.right, 1);\n};\n\nvar defineButtons = function defineFirstAndLastChildByItsParent(parent) {\n  var firstElement = parent.firstElementChild;\n  var lastElement = parent.lastElementChild;\n  var result = {\n    left: firstElement,\n    right: lastElement\n  };\n  return result;\n}; // general dropdown state-update functions\n\n\nvar updateDropdown = function updateCalcsAndControllersToCurrentState(buttons, counter, addification, controllers, counters) {\n  var newCounterValue = parseInt(counter.textContent) + addification;\n  adjustButtonsState(buttons, newCounterValue, 'circle-button_frozen');\n  counter.textContent = newCounterValue;\n  updateDropdownValue(counter, counters);\n\n  if (controllers) {\n    defineResetControllerState(counters, controllers);\n  }\n};\n\nvar updateDropdownValue = function updateDropdownValue(anychild, counters) {\n  var dropdown = anychild.closest('.input__dropdown');\n  var frame = dropdown.parentNode.querySelector('.input__frame');\n\n  var values = _toConsumableArray(counters).map(function (item) {\n    return Number(item.textContent);\n  });\n\n  var dropdownType = dropdown.getAttribute('data-options-type');\n  var dropdownValue = '';\n\n  switch (dropdownType) {\n    case 'guests':\n      {\n        dropdownValue = defineGuestInputValue(values);\n        break;\n      }\n\n    case 'facilities':\n      {\n        dropdownValue = defineFacilitiesInputValue(values);\n        break;\n      }\n  }\n\n  frame.value = dropdownValue;\n};\n\nvar defineGuestInputValue = function defineGuestInputValue(values) {\n  var valuesSum = values.reduce(function (acc, curr) {\n    return acc + curr;\n  });\n  var firstText = defineText(valuesSum, 0, 'гост', ['ь', 'ей', 'я']);\n  var lastText = defineText(values[2], valuesSum, 'младен', ['ец', 'цев', 'ца']);\n  return firstText + lastText;\n};\n\nvar defineFacilitiesInputValue = function defineFacilitiesInputValue(values) {\n  var firstText = defineText(values[0], 0, 'cпал', ['ьня', 'ен', 'ьни']);\n  var secondText = defineText(values[1], values[0], 'кроват', ['ь', 'ей', 'и']);\n  var thirdText = defineText(values[2], values[0] + values[1], 'ванн', ['ая комната', 'ых комнат', 'ые комнаты']);\n  var result = firstText + secondText + thirdText + '…';\n  return result;\n};\n\nvar defineText = function defineTextAccordingToNumber(currentValue, lastValue, word) {\n  var endings = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : [];\n  var result = '';\n  var ending = endings[0];\n\n  if (currentValue > 0) {\n    if (Math.floor(currentValue / 10) === 1 || currentValue % 10 < 1 || currentValue % 10 > 4) {\n      ending = endings[1];\n    } else {\n      if (currentValue % 10 > 1) {\n        ending = endings[2];\n      }\n    }\n\n    var textParts = [lastValue > 0 ? ', ' : '', currentValue + ' ', word, ending];\n    result = textParts.reduce(function (acc, curr) {\n      return acc + curr;\n    });\n  }\n\n  return result;\n}; //buttons state manager\n\n\nvar adjustButtonsState = function optionsButtonsStateAccordingToMinAndMaxRanges(buttons, value, selector, leftOnly) {\n  var caseA = value < 1;\n  var caseB = value > 9;\n\n  if (caseA || caseB) {\n    if (caseA) {\n      buttons.left.classList.add(selector);\n    }\n\n    if (caseB && !leftOnly) {\n      buttons.right.classList.add(selector);\n    }\n  }\n\n  if (!(caseA || caseB)) {\n    buttons.left.classList.remove(selector);\n    buttons.right.classList.remove(selector);\n  }\n}; //controllers actions\n\n\nvar resetCounters = function resetCounterValueOnButtonClick(controllers, counters, buttonGroups) {\n  counters.forEach(function (counter) {\n    return counter.textContent = 0;\n  });\n  buttonGroups.forEach(function (group) {\n    var buttons = defineButtons(group);\n    buttons.left.classList.add('circle-button_frozen');\n    buttons.right.classList.remove('circle-button_frozen');\n  });\n  defineResetControllerState(counters, controllers);\n  updateDropdownValue(_toConsumableArray(counters)[0], counters);\n};\n\nvar defineCountersSum = function defineCountersSum(counters) {\n  var result = Array.from(counters).map(function (counter) {\n    return Number(counter.textContent);\n  }).reduce(function (acc, curr) {\n    return acc + curr;\n  });\n  return result;\n};\n\nvar acceptForm = function acceptFormOnButtonClick(controller) {\n  var frame = controller.closest('.input__element').querySelector('.input__frame');\n  frame.dispatchEvent(new Event('click'));\n};\n\nfind();\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/input/__dropdown/input__dropdown.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _input_dropdown_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./input__dropdown.scss */ \"./src/components/input/__dropdown/input__dropdown.scss\");\n/* harmony import */ var _entities_expandable_entities_expandable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @entities/__expandable/entities__expandable */ \"./src/entities/__expandable/entities__expandable.js\");\nfunction _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }\n\nfunction _nonIterableSpread() { throw new TypeError(\"Invalid attempt to spread non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\"); }\n\nfunction _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === \"string\") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === \"Object\" && o.constructor) n = o.constructor.name; if (n === \"Map\" || n === \"Set\") return Array.from(o); if (n === \"Arguments\" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }\n\nfunction _iterableToArray(iter) { if (typeof Symbol !== \"undefined\" && iter[Symbol.iterator] != null || iter[\"@@iterator\"] != null) return Array.from(iter); }\n\nfunction _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }\n\nfunction _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }\n\n\n\n\nvar find = function findDropdownContainers() {\n  var dropdowns = document.querySelectorAll('.input__dropdown');\n  dropdowns.forEach(function (dropdown) {\n    return initListeners(dropdown);\n  });\n};\n\nvar initListeners = function initElementsEventListeners(dropdown) {\n  var counters = dropdown.querySelectorAll('.input__option-counter');\n  var buttonGroups = dropdown.querySelectorAll('.input__option-button-block');\n  var controllersBar = dropdown.querySelector('.input__state-controllers');\n  updateDropdownValue(_toConsumableArray(counters)[0], counters);\n\n  if (controllersBar) {\n    var controllers = defineButtons(controllersBar);\n    initControllers(counters, controllers, buttonGroups);\n    buttonGroups.forEach(function (buttons) {\n      return initButtons(buttons, counters, controllers);\n    });\n  }\n\n  if (!controllersBar) {\n    buttonGroups.forEach(function (buttons) {\n      return initButtons(buttons, counters, undefined);\n    });\n  }\n}; //init controllers section\n\n\nvar initControllers = function initControllersEventListeners(counters, controllers, buttonGroups) {\n  var resetController = controllers.left;\n  var acceptController = controllers.right;\n  defineResetControllerState(counters, controllers);\n  resetController.addEventListener('click', function () {\n    return resetCounters(controllers, counters, buttonGroups);\n  });\n  acceptController.addEventListener('click', function () {\n    return acceptForm(acceptController);\n  });\n};\n\nvar defineResetControllerState = function defineResetControllerState(counters, controllers) {\n  var countersSum = defineCountersSum(counters);\n  adjustButtonsState(controllers, countersSum, 'mob_hidden', true);\n}; //init buttons section\n\n\nvar initButtons = function initOptionButtonsEventListeners(buttons, counters, controllers) {\n  var optionButtons = defineButtons(buttons);\n  var optionCounter = buttons.querySelector('.input__option-counter');\n  var optionCounterValue = optionCounter.textContent;\n  adjustButtonsState(optionButtons, optionCounterValue, 'circle-button_frozen');\n\n  var update = function update(elem, shift) {\n    elem.addEventListener('click', function () {\n      return updateDropdown(optionButtons, optionCounter, shift, controllers, counters);\n    });\n  };\n\n  update(optionButtons.left, -1);\n  update(optionButtons.right, 1);\n};\n\nvar defineButtons = function defineFirstAndLastChildByItsParent(parent) {\n  var firstElement = parent.firstElementChild;\n  var lastElement = parent.lastElementChild;\n  var result = {\n    left: firstElement,\n    right: lastElement\n  };\n  return result;\n}; // general dropdown state-update functions\n\n\nvar updateDropdown = function updateCalcsAndControllersToCurrentState(buttons, counter, addification, controllers, counters) {\n  var newCounterValue = parseInt(counter.textContent) + addification;\n  adjustButtonsState(buttons, newCounterValue, 'circle-button_frozen');\n  counter.textContent = newCounterValue;\n  updateDropdownValue(counter, counters);\n\n  if (controllers) {\n    defineResetControllerState(counters, controllers);\n  }\n};\n\nvar updateDropdownValue = function updateDropdownValue(anychild, counters) {\n  var dropdown = anychild.closest('.input__dropdown');\n  var frame = dropdown.parentNode.querySelector('.input__frame');\n\n  var values = _toConsumableArray(counters).map(function (item) {\n    return Number(item.textContent);\n  });\n\n  var dropdownType = dropdown.getAttribute('data-options-type');\n  var dropdownValue = '';\n\n  switch (dropdownType) {\n    case 'guests':\n      {\n        dropdownValue = defineGuestInputValue(values);\n        break;\n      }\n\n    case 'facilities':\n      {\n        dropdownValue = defineFacilitiesInputValue(values);\n        break;\n      }\n  }\n\n  frame.value = dropdownValue;\n};\n\nvar defineGuestInputValue = function defineGuestInputValue(values) {\n  var valuesSum = values.reduce(function (acc, curr) {\n    return acc + curr;\n  });\n  var firstText = defineText(valuesSum, 0, 'гост', ['ь', 'ей', 'я']);\n  var lastText = defineText(values[2], valuesSum, 'младен', ['ец', 'цев', 'ца']);\n  return firstText + lastText;\n};\n\nvar defineFacilitiesInputValue = function defineFacilitiesInputValue(values) {\n  var firstText = defineText(values[0], 0, 'cпал', ['ьня', 'ен', 'ьни']);\n  var secondText = defineText(values[1], values[0], 'кроват', ['ь', 'ей', 'и']);\n  var thirdText = defineText(values[2], values[0] + values[1], 'ванн', ['ая комната', 'ых комнат', 'ые комнаты']);\n  var result = firstText + secondText + thirdText + '…';\n  return result;\n};\n\nvar defineText = function defineTextAccordingToNumber(currentValue, lastValue, word) {\n  var endings = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : [];\n  var result = '';\n  var ending = endings[0];\n\n  if (currentValue > 0) {\n    if (Math.floor(currentValue / 10) === 1 || currentValue % 10 < 1 || currentValue % 10 > 4) {\n      ending = endings[1];\n    } else {\n      if (currentValue % 10 > 1) {\n        ending = endings[2];\n      }\n    }\n\n    var textParts = [lastValue > 0 ? ', ' : '', currentValue + ' ', word, ending];\n    result = textParts.reduce(function (acc, curr) {\n      return acc + curr;\n    });\n  }\n\n  return result;\n}; //buttons state manager\n\n\nvar adjustButtonsState = function optionsButtonsStateAccordingToMinAndMaxRanges(buttons, value, selector, leftOnly) {\n  var caseA = value < 1;\n  var caseB = value > 9;\n\n  if (caseA || caseB) {\n    if (caseA) {\n      buttons.left.classList.add(selector);\n    }\n\n    if (caseB && !leftOnly) {\n      buttons.right.classList.add(selector);\n    }\n  }\n\n  if (!(caseA || caseB)) {\n    buttons.left.classList.remove(selector);\n    buttons.right.classList.remove(selector);\n  }\n}; //controllers actions\n\n\nvar resetCounters = function resetCounterValueOnButtonClick(controllers, counters, buttonGroups) {\n  counters.forEach(function (counter) {\n    return counter.textContent = 0;\n  });\n  buttonGroups.forEach(function (group) {\n    var buttons = defineButtons(group);\n    buttons.left.classList.add('circle-button_frozen');\n    buttons.right.classList.remove('circle-button_frozen');\n  });\n  defineResetControllerState(counters, controllers);\n  updateDropdownValue(_toConsumableArray(counters)[0], counters);\n};\n\nvar defineCountersSum = function defineCountersSum(counters) {\n  var result = Array.from(counters).map(function (counter) {\n    return Number(counter.textContent);\n  }).reduce(function (acc, curr) {\n    return acc + curr;\n  });\n  return result;\n};\n\nvar acceptForm = function acceptFormOnButtonClick(controller) {\n  var frame = controller.closest('.input__element').querySelector('.input__frame');\n  frame.dispatchEvent(new Event('click'));\n};\n\nfind();\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/input/__dropdown/input__dropdown.js?");
 
 /***/ }),
 
@@ -326,7 +304,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _navigation_bar_link_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./navigation-bar__link.scss */ \"./src/components/navigation-bar/__link/navigation-bar__link.scss\");\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/navigation-bar/__link/navigation-bar__link.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _navigation_bar_link_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./navigation-bar__link.scss */ \"./src/components/navigation-bar/__link/navigation-bar__link.scss\");\n/* harmony import */ var _components_material_icon_cell_material_icon_cell__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @components/material-icon-cell/material-icon-cell */ \"./src/components/material-icon-cell/material-icon-cell.js\");\n\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/navigation-bar/__link/navigation-bar__link.js?");
 
 /***/ }),
 
@@ -348,7 +326,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nav
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _pagination_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pagination.scss */ \"./src/components/pagination/pagination.scss\");\n/* harmony import */ var paginationjs_dist_pagination_min__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! paginationjs/dist/pagination.min */ \"./node_modules/paginationjs/dist/pagination.min.js\");\n/* harmony import */ var paginationjs_dist_pagination_min__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(paginationjs_dist_pagination_min__WEBPACK_IMPORTED_MODULE_1__);\n/* provided dependency */ var $ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n\n\n\nfunction findPaginationContainer() {\n  var paginationElem = document.querySelector('#pagination');\n\n  if (paginationElem) {\n    initPaginationModule();\n  }\n}\n\nfunction initPaginationModule() {\n  $('#pagination').pagination({\n    className: 'custom-paginationjs',\n    dataSource: generateDataByCount,\n    pageRange: 1,\n    pageSize: 12,\n    autoHidePrevious: true,\n    autoHideNext: true,\n    prevText: 'arrow_forward',\n    nextText: 'arrow_forward',\n    showNavigator: true,\n    formatNavigator: defineNavigatorText\n    /*,\r\n    callback: activateTemplating*/\n\n  });\n}\n\nfunction generateDataByCount(done) {\n  var result = [];\n\n  for (var i = 0; i < 180; ++i) {\n    result.push(i);\n  }\n\n  done(result);\n}\n\nfunction defineNavigatorText(currentPage, undefined, totalNumber) {\n  var numberStart = 11 * (currentPage - 1) + currentPage;\n  var numberEnd = 12 * currentPage;\n  var numberTotalFloored = Math.floor(totalNumber / 100, 2) * 100;\n  var result = \"\".concat(numberStart, \" - \").concat(numberEnd, \" \\u0438\\u0437 \").concat(numberTotalFloored, \"+ \\u0432\\u0430\\u0440\\u0438\\u0430\\u043D\\u0442\\u043E\\u0432 \\u0430\\u0440\\u0435\\u043D\\u0434\\u044B\");\n  return result;\n}\n/*function activateTemplating( data, paginationElem ) {\r\n  let html = simpleTemplating(data);\r\n  $('#data-container').html(html);\r\n}\r\n\r\nfunction simpleTemplating(data) {\r\n  let html = '<ul>';\r\n  $.each(data, function(index, item){\r\n      html += '<li>'+ item +'</li>';\r\n  });\r\n  html += '</ul>';\r\n  return html;\r\n}*/\n\n\nfindPaginationContainer();\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/pagination/pagination.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _pagination_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pagination.scss */ \"./src/components/pagination/pagination.scss\");\n/* harmony import */ var paginationjs_dist_pagination_min__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! paginationjs/dist/pagination.min */ \"./node_modules/paginationjs/dist/pagination.min.js\");\n/* harmony import */ var paginationjs_dist_pagination_min__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(paginationjs_dist_pagination_min__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _components_material_icon_cell_material_icon_cell__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @components/material-icon-cell/material-icon-cell */ \"./src/components/material-icon-cell/material-icon-cell.js\");\n/* provided dependency */ var $ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n\n\n\n\nfunction findPaginationContainer() {\n  var paginationElem = document.querySelector('#pagination');\n\n  if (paginationElem) {\n    initPaginationModule();\n  }\n}\n\nfunction initPaginationModule() {\n  $('#pagination').pagination({\n    className: 'custom-paginationjs',\n    dataSource: generateDataByCount,\n    pageRange: 1,\n    pageSize: 12,\n    autoHidePrevious: true,\n    autoHideNext: true,\n    prevText: 'arrow_forward',\n    nextText: 'arrow_forward',\n    showNavigator: true,\n    formatNavigator: defineNavigatorText\n    /*,\r\n    callback: activateTemplating*/\n\n  });\n}\n\nfunction generateDataByCount(done) {\n  var result = [];\n\n  for (var i = 0; i < 180; ++i) {\n    result.push(i);\n  }\n\n  done(result);\n}\n\nfunction defineNavigatorText(currentPage, undefined, totalNumber) {\n  var numberStart = 11 * (currentPage - 1) + currentPage;\n  var numberEnd = 12 * currentPage;\n  var numberTotalFloored = Math.floor(totalNumber / 100, 2) * 100;\n  var result = \"\".concat(numberStart, \" - \").concat(numberEnd, \" \\u0438\\u0437 \").concat(numberTotalFloored, \"+ \\u0432\\u0430\\u0440\\u0438\\u0430\\u043D\\u0442\\u043E\\u0432 \\u0430\\u0440\\u0435\\u043D\\u0434\\u044B\");\n  return result;\n}\n/*function activateTemplating( data, paginationElem ) {\r\n  let html = simpleTemplating(data);\r\n  $('#data-container').html(html);\r\n}\r\n\r\nfunction simpleTemplating(data) {\r\n  let html = '<ul>';\r\n  $.each(data, function(index, item){\r\n      html += '<li>'+ item +'</li>';\r\n  });\r\n  html += '</ul>';\r\n  return html;\r\n}*/\n\n\nfindPaginationContainer();\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/pagination/pagination.js?");
 
 /***/ }),
 
@@ -359,7 +337,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _pag
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _range_slider_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./range-slider.scss */ \"./src/components/range-slider/range-slider.scss\");\n/* harmony import */ var jquery_ui_ui_widgets_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery-ui/ui/widgets/slider */ \"./node_modules/jquery-ui/ui/widgets/slider.js\");\n/* harmony import */ var jquery_ui_ui_widgets_slider__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery_ui_ui_widgets_slider__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _components_title_bar_title_bar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @components/title-bar/title-bar */ \"./src/components/title-bar/title-bar.js\");\n/* provided dependency */ var $ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n\n\n\n\nvar init = function findRangeSliderContainer() {\n  var sliders = document.querySelectorAll(\".range-slider__elem\");\n\n  if (sliders) {\n    sliders.forEach(function (slider) {\n      return renderSlider(slider);\n    });\n  }\n};\n\nvar renderSlider = function renderRangeSlider(slider) {\n  var sliderId = \"#\" + slider.id;\n  var sliderMarkerId = sliderId + \"_state\";\n\n  var defineValues = function defineNewSliderChosenValues() {\n    $(sliderMarkerId).text($(sliderId).slider(\"values\", 0).toLocaleString(\"ru-RU\") + \"₽ - \" + $(sliderId).slider(\"values\", 1).toLocaleString(\"ru-RU\") + \"₽\");\n  };\n\n  $(function () {\n    $(sliderId).slider({\n      animate: \"fast\",\n      range: true,\n      min: 100,\n      max: 15500,\n      step: 50,\n      values: [5000, 10000],\n      stop: defineValues\n    });\n    defineValues();\n  });\n};\n\ninit();\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/range-slider/range-slider.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery_ui_ui_widgets_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery-ui/ui/widgets/slider */ \"./node_modules/jquery-ui/ui/widgets/slider.js\");\n/* harmony import */ var jquery_ui_ui_widgets_slider__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery_ui_ui_widgets_slider__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _range_slider_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./range-slider.scss */ \"./src/components/range-slider/range-slider.scss\");\n/* harmony import */ var _components_title_bar_title_bar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @components/title-bar/title-bar */ \"./src/components/title-bar/title-bar.js\");\n/* provided dependency */ var $ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n\n\n\n\nvar init = function findRangeSliderContainer() {\n  var sliders = document.querySelectorAll(\".range-slider__elem\");\n\n  if (sliders) {\n    sliders.forEach(function (slider) {\n      return renderSlider(slider);\n    });\n  }\n};\n\nvar renderSlider = function renderRangeSlider(slider) {\n  var sliderId = \"#\" + slider.id;\n  var sliderMarkerId = sliderId + \"_state\";\n\n  var defineValues = function defineNewSliderChosenValues() {\n    $(sliderMarkerId).text($(sliderId).slider(\"values\", 0).toLocaleString(\"ru-RU\") + \"₽ - \" + $(sliderId).slider(\"values\", 1).toLocaleString(\"ru-RU\") + \"₽\");\n  };\n\n  $(function () {\n    $(sliderId).slider({\n      animate: \"fast\",\n      range: true,\n      min: 100,\n      max: 15500,\n      step: 50,\n      values: [5000, 10000],\n      stop: defineValues\n    });\n    defineValues();\n  });\n};\n\ninit();\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/range-slider/range-slider.js?");
 
 /***/ }),
 
@@ -411,10 +389,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _pag
 /*!****************************************************************!*\
   !*** ./src/components/button/__checkbox/button__checkbox.scss ***!
   \****************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682569\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__checkbox/button__checkbox.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__checkbox/button__checkbox.scss?");
 
 /***/ }),
 
@@ -422,10 +400,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!************************************************************!*\
   !*** ./src/components/button/__circle/button__circle.scss ***!
   \************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682745\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__circle/button__circle.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__circle/button__circle.scss?");
 
 /***/ }),
 
@@ -433,10 +411,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!******************************************************************!*\
   !*** ./src/components/button/__mean-oval/button__mean-oval.scss ***!
   \******************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682531\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__mean-oval/button__mean-oval.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__mean-oval/button__mean-oval.scss?");
 
 /***/ }),
 
@@ -444,10 +422,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!**********************************************************!*\
   !*** ./src/components/button/__radio/button__radio.scss ***!
   \**********************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682418\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__radio/button__radio.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__radio/button__radio.scss?");
 
 /***/ }),
 
@@ -455,10 +433,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!******************************************************************!*\
   !*** ./src/components/button/__star-rate/button__star-rate.scss ***!
   \******************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682548\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__star-rate/button__star-rate.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__star-rate/button__star-rate.scss?");
 
 /***/ }),
 
@@ -466,10 +444,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!************************************************************!*\
   !*** ./src/components/button/__toggle/button__toggle.scss ***!
   \************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682445\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__toggle/button__toggle.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/__toggle/button__toggle.scss?");
 
 /***/ }),
 
@@ -477,10 +455,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!*******************************************!*\
   !*** ./src/components/button/button.scss ***!
   \*******************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682367\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/button.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/button/button.scss?");
 
 /***/ }),
 
@@ -488,10 +466,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!********************************************************!*\
   !*** ./src/components/card/__filter/card__filter.scss ***!
   \********************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682564\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/card/__filter/card__filter.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/card/__filter/card__filter.scss?");
 
 /***/ }),
 
@@ -499,10 +477,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!******************************************************************!*\
   !*** ./src/components/card/__room-sample/card__room-sample.scss ***!
   \******************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682677\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/card/__room-sample/card__room-sample.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/card/__room-sample/card__room-sample.scss?");
 
 /***/ }),
 
@@ -510,10 +488,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!***************************************!*\
   !*** ./src/components/card/card.scss ***!
   \***************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682582\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/card/card.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/card/card.scss?");
 
 /***/ }),
 
@@ -521,10 +499,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!*********************************************************!*\
   !*** ./src/components/checkbox-list/checkbox-list.scss ***!
   \*********************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682213\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/checkbox-list/checkbox-list.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/checkbox-list/checkbox-list.scss?");
 
 /***/ }),
 
@@ -532,10 +510,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!*******************************************!*\
   !*** ./src/components/footer/footer.scss ***!
   \*******************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682364\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/footer/footer.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/footer/footer.scss?");
 
 /***/ }),
 
@@ -543,10 +521,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!*******************************************!*\
   !*** ./src/components/header/header.scss ***!
   \*******************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682312\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/header/header.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/header/header.scss?");
 
 /***/ }),
 
@@ -554,10 +532,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!********************************************************************!*\
   !*** ./src/components/input/__date-picker/input__date-picker.scss ***!
   \********************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682728\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/input/__date-picker/input__date-picker.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/input/__date-picker/input__date-picker.scss?");
 
 /***/ }),
 
@@ -565,10 +543,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!**************************************************************!*\
   !*** ./src/components/input/__dropdown/input__dropdown.scss ***!
   \**************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682731\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/input/__dropdown/input__dropdown.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/input/__dropdown/input__dropdown.scss?");
 
 /***/ }),
 
@@ -576,10 +554,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!*****************************************!*\
   !*** ./src/components/input/input.scss ***!
   \*****************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682216\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/input/input.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/input/input.scss?");
 
 /***/ }),
 
@@ -587,10 +565,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!***************************************!*\
   !*** ./src/components/logo/logo.scss ***!
   \***************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878681862\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/logo/logo.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/logo/logo.scss?");
 
 /***/ }),
 
@@ -598,10 +576,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!*******************************************************************!*\
   !*** ./src/components/material-icon-cell/material-icon-cell.scss ***!
   \*******************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682611\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/material-icon-cell/material-icon-cell.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/material-icon-cell/material-icon-cell.scss?");
 
 /***/ }),
 
@@ -609,10 +587,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!*******************************************************!*\
   !*** ./src/components/modal-window/modal-window.scss ***!
   \*******************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682643\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/modal-window/modal-window.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/modal-window/modal-window.scss?");
 
 /***/ }),
 
@@ -620,10 +598,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!************************************************************************!*\
   !*** ./src/components/navigation-bar/__link/navigation-bar__link.scss ***!
   \************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682696\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/navigation-bar/__link/navigation-bar__link.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/navigation-bar/__link/navigation-bar__link.scss?");
 
 /***/ }),
 
@@ -631,10 +609,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!***********************************************************!*\
   !*** ./src/components/navigation-bar/navigation-bar.scss ***!
   \***********************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878681893\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/navigation-bar/navigation-bar.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/navigation-bar/navigation-bar.scss?");
 
 /***/ }),
 
@@ -642,10 +620,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!***************************************************!*\
   !*** ./src/components/pagination/pagination.scss ***!
   \***************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682110\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/pagination/pagination.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/pagination/pagination.scss?");
 
 /***/ }),
 
@@ -653,10 +631,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!*******************************************************!*\
   !*** ./src/components/range-slider/range-slider.scss ***!
   \*******************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682239\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/range-slider/range-slider.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/range-slider/range-slider.scss?");
 
 /***/ }),
 
@@ -664,10 +642,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!*************************************************!*\
   !*** ./src/components/title-bar/title-bar.scss ***!
   \*************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682057\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/title-bar/title-bar.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/title-bar/title-bar.scss?");
 
 /***/ }),
 
@@ -675,10 +653,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!*************************************************************!*\
   !*** ./src/entities/__expandable/entities__expandable.scss ***!
   \*************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682626\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/entities/__expandable/entities__expandable.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/entities/__expandable/entities__expandable.scss?");
 
 /***/ }),
 
@@ -686,10 +664,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!******************************!*\
   !*** ./src/pages/pages.scss ***!
   \******************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878681952\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/pages/pages.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/pages/pages.scss?");
 
 /***/ }),
 
@@ -697,10 +675,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!*********************************************************************!*\
   !*** ./src/pages/website/__registration/website__registration.scss ***!
   \*********************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878681231\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/pages/website/__registration/website__registration.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/pages/website/__registration/website__registration.scss?");
 
 /***/ }),
 
@@ -708,10 +686,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!****************************************!*\
   !*** ./src/pages/website/website.scss ***!
   \****************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n    if(true) {\n      // 1638878682002\n      var cssReload = __webpack_require__(/*! ./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {\"locals\":false});\n      module.hot.dispose(cssReload);\n      module.hot.accept(undefined, cssReload);\n    }\n  \n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/pages/website/website.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/pages/website/website.scss?");
 
 /***/ })
 
