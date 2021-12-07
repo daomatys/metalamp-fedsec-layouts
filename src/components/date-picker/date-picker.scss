@@ -79,7 +79,7 @@ $font-size: 12px;
     }
 
     &--title {
-      @extend .custom-font-style_h2;
+      @extend %custom-font-style_h2;
     }
   }
 

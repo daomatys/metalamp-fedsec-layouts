@@ -8,7 +8,7 @@ const HtmlSWebpackPlugin = require('htmls-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
-const defineTemplate = ext => ext + '/[name].' + ext;
+const defineDistSection = ext => ext + '/[name].' + ext;
 const defineFileName = filepath => filepath.match(/[^\\/]+$/)[0].replace(/\.js$/,'');
 
 const definePagesPaths = function definePagesPathsByRootFolder( folder ) {
@@ -52,7 +52,7 @@ module.exports = {
   entry: PAGES__ENTRIES,
 
   output: {
-    filename: defineTemplate('js'),
+    filename: defineDistSection('js'),
     path: PATHS.dist,
     clean: true
   },
@@ -138,8 +138,7 @@ module.exports = {
       })
     }),*/
     new MiniCssExtractPlugin({
-      //filename: 'index.css',
-      filename: defineTemplate('css'),
+      filename: defineDistSection('css'),
       ignoreOrder: true
     }),
     new CssMinimizerPlugin(),
