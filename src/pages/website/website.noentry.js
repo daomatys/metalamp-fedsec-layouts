@@ -1,3 +1,4 @@
+import '../pages.scss';
 import './website.scss';
 
 import '@components/header/header';

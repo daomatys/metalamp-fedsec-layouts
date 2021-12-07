@@ -1,3 +1,4 @@
+import '../pages.scss';
 import './ui-kit.scss';
 
 import '@components/favicons-bulk/favicons-bulk';

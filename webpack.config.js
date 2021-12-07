@@ -44,8 +44,7 @@ module.exports = {
       directory: PATHS.dist
     },
     compress: true,
-    port: 9000,
-    watchContentBase: true
+    port: 9000
   },
 
   mode: 'development',
@@ -89,7 +88,13 @@ module.exports = {
             loader: 'postcss-loader',
           },
           {
+            loader: 'resolve-url-loader',
+          },
+          {
             loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            }
           }
         ]
       },
@@ -127,7 +132,7 @@ module.exports = {
         return {
           src: srcPath,
           filename: `./${pageName}.html`,
-          chunks: [ `${pageName}.js` ],
+          chunks: [ pageName ],
           //render: () => pug.renderFile( srcPath, { basedir: PATHS.src } )
         }
       })
