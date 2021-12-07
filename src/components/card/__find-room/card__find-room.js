@@ -1,5 +1,5 @@
 import '../card.scss';
 import './card__find-room.scss';
 
-import '../../input/input.pug';
-import '../../button/__mean-oval/button__mean-oval.pug';
+import '@components/input/input.pug';
+import '@components/button/__mean-oval/button__mean-oval.pug';

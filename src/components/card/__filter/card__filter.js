@@ -1,10 +1,10 @@
 import '../card.scss';
 import './card__filter.scss';
 
-import '../../card/__room-sample/card__room-sample';
-import '../../button/__checkbox/button__checkbox';
-import '../../checkbox-list/checkbox-list';
-import '../../range-slider/range-slider';
-import '../../pagination/pagination';
-import '../../title-bar/title-bar';
-import '../../input/input';
+import '@components/card/__room-sample/card__room-sample';
+import '@components/button/__checkbox/button__checkbox';
+import '@components/checkbox-list/checkbox-list';
+import '@components/range-slider/range-slider';
+import '@components/pagination/pagination';
+import '@components/title-bar/title-bar';
+import '@components/input/input';

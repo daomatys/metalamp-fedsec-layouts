@@ -1,3 +1,3 @@
 import '../card.scss';
 
-import '../../date-picker/date-picker';
+import '@components/date-picker/date-picker';
