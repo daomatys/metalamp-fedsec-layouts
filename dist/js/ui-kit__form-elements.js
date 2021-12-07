@@ -654,7 +654,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ui_
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/pages/ui-kit/__form-elements/ui-kit__form-elements.js");
+/******/ 	__webpack_require__("./src/pages/ui-kit/__form-elements/ui-kit__form-elements.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/pages/ui-kit/__form-elements/ui-kit__form-elements.scss");
 /******/ 	
 /******/ })()
 ;

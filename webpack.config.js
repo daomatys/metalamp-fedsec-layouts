@@ -21,9 +21,9 @@ const definePagesPaths = function definePagesPathsByRootFolder( folder ) {
   return recursiveSearch( folder ).filter( filepath => /(?<!\.noentry)\.js$/.exec( filepath ) );
 }
 
-const defineEnrties = function convertArrayOfPathsToEntriesObject( pagesArray ) {
+const defineEntryPoints = function convertArrayOfPathsIntoEntriesObject( pagesArray ) {
   const preparedArray = pagesArray
-    .map( page => [ defineFileName( page ), page ] );
+    .map( page => [ defineFileName( page ), [ page, page.replace(/\.js$/,'.scss') ] ] );
 
   return Object.fromEntries( preparedArray );
 }
@@ -37,7 +37,7 @@ const PATHS = {
 const PAGES__ROOT = path.join(PATHS.src, 'pages');
 const PAGES__FULLPATHS = definePagesPaths( PAGES__ROOT );
 const PAGES__NAMES = PAGES__FULLPATHS.map( filepath => defineFileName( filepath ) );
-const PAGES__ENTRIES = defineEnrties( PAGES__FULLPATHS );
+const PAGES__ENTRIES = defineEntryPoints( PAGES__FULLPATHS );
 
 module.exports = {
   devServer: {
@@ -51,8 +51,10 @@ module.exports = {
   mode: 'development',
 
   entry: PAGES__ENTRIES,
+  //entry: path.join(PATHS.src, 'index.js'),
 
   output: {
+    //filename: 'index.js',
     filename: defineTemplate('js'),
     path: PATHS.dist,
     clean: true
@@ -138,6 +140,7 @@ module.exports = {
       ]
     }),*/
     new MiniCssExtractPlugin({
+      //filename: 'index.css',
       filename: defineTemplate('css'),
       chunkFilename: defineTemplate('css'),
       ignoreOrder: true

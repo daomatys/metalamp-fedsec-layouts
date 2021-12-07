@@ -754,7 +754,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _web
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/pages/website/__registration/website__registration.js");
+/******/ 	__webpack_require__("./src/pages/website/__registration/website__registration.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/pages/website/__registration/website__registration.scss");
 /******/ 	
 /******/ })()
 ;

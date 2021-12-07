@@ -20,6 +20,39 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
+/***/ "./src/components/navigation-bar/__link/navigation-bar__link.scss":
+/*!************************************************************************!*\
+  !*** ./src/components/navigation-bar/__link/navigation-bar__link.scss ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/navigation-bar/__link/navigation-bar__link.scss?");
+
+/***/ }),
+
+/***/ "./src/components/navigation-bar/navigation-bar.scss":
+/*!***********************************************************!*\
+  !*** ./src/components/navigation-bar/navigation-bar.scss ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/navigation-bar/navigation-bar.scss?");
+
+/***/ }),
+
+/***/ "./src/components/title-bar/title-bar.scss":
+/*!*************************************************!*\
+  !*** ./src/components/title-bar/title-bar.scss ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/title-bar/title-bar.scss?");
+
+/***/ }),
+
 /***/ "./src/pages/index/index.scss":
 /*!************************************!*\
   !*** ./src/pages/index/index.scss ***!
@@ -39,37 +72,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/pages/ui-kit/ui-kit.scss?");
-
-/***/ }),
-
-/***/ "./node_modules/pug-runtime/index.js":
-/*!*******************************************!*\
-  !*** ./node_modules/pug-runtime/index.js ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-eval("\n\nvar pug_has_own_property = Object.prototype.hasOwnProperty;\n\n/**\n * Merge two attribute objects giving precedence\n * to values in object `b`. Classes are special-cased\n * allowing for arrays and merging/joining appropriately\n * resulting in a string.\n *\n * @param {Object} a\n * @param {Object} b\n * @return {Object} a\n * @api private\n */\n\nexports.merge = pug_merge;\nfunction pug_merge(a, b) {\n  if (arguments.length === 1) {\n    var attrs = a[0];\n    for (var i = 1; i < a.length; i++) {\n      attrs = pug_merge(attrs, a[i]);\n    }\n    return attrs;\n  }\n\n  for (var key in b) {\n    if (key === 'class') {\n      var valA = a[key] || [];\n      a[key] = (Array.isArray(valA) ? valA : [valA]).concat(b[key] || []);\n    } else if (key === 'style') {\n      var valA = pug_style(a[key]);\n      valA = valA && valA[valA.length - 1] !== ';' ? valA + ';' : valA;\n      var valB = pug_style(b[key]);\n      valB = valB && valB[valB.length - 1] !== ';' ? valB + ';' : valB;\n      a[key] = valA + valB;\n    } else {\n      a[key] = b[key];\n    }\n  }\n\n  return a;\n}\n\n/**\n * Process array, object, or string as a string of classes delimited by a space.\n *\n * If `val` is an array, all members of it and its subarrays are counted as\n * classes. If `escaping` is an array, then whether or not the item in `val` is\n * escaped depends on the corresponding item in `escaping`. If `escaping` is\n * not an array, no escaping is done.\n *\n * If `val` is an object, all the keys whose value is truthy are counted as\n * classes. No escaping is done.\n *\n * If `val` is a string, it is counted as a class. No escaping is done.\n *\n * @param {(Array.<string>|Object.<string, boolean>|string)} val\n * @param {?Array.<string>} escaping\n * @return {String}\n */\nexports.classes = pug_classes;\nfunction pug_classes_array(val, escaping) {\n  var classString = '',\n    className,\n    padding = '',\n    escapeEnabled = Array.isArray(escaping);\n  for (var i = 0; i < val.length; i++) {\n    className = pug_classes(val[i]);\n    if (!className) continue;\n    escapeEnabled && escaping[i] && (className = pug_escape(className));\n    classString = classString + padding + className;\n    padding = ' ';\n  }\n  return classString;\n}\nfunction pug_classes_object(val) {\n  var classString = '',\n    padding = '';\n  for (var key in val) {\n    if (key && val[key] && pug_has_own_property.call(val, key)) {\n      classString = classString + padding + key;\n      padding = ' ';\n    }\n  }\n  return classString;\n}\nfunction pug_classes(val, escaping) {\n  if (Array.isArray(val)) {\n    return pug_classes_array(val, escaping);\n  } else if (val && typeof val === 'object') {\n    return pug_classes_object(val);\n  } else {\n    return val || '';\n  }\n}\n\n/**\n * Convert object or string to a string of CSS styles delimited by a semicolon.\n *\n * @param {(Object.<string, string>|string)} val\n * @return {String}\n */\n\nexports.style = pug_style;\nfunction pug_style(val) {\n  if (!val) return '';\n  if (typeof val === 'object') {\n    var out = '';\n    for (var style in val) {\n      /* istanbul ignore else */\n      if (pug_has_own_property.call(val, style)) {\n        out = out + style + ':' + val[style] + ';';\n      }\n    }\n    return out;\n  } else {\n    return val + '';\n  }\n}\n\n/**\n * Render the given attribute.\n *\n * @param {String} key\n * @param {String} val\n * @param {Boolean} escaped\n * @param {Boolean} terse\n * @return {String}\n */\nexports.attr = pug_attr;\nfunction pug_attr(key, val, escaped, terse) {\n  if (\n    val === false ||\n    val == null ||\n    (!val && (key === 'class' || key === 'style'))\n  ) {\n    return '';\n  }\n  if (val === true) {\n    return ' ' + (terse ? key : key + '=\"' + key + '\"');\n  }\n  var type = typeof val;\n  if (\n    (type === 'object' || type === 'function') &&\n    typeof val.toJSON === 'function'\n  ) {\n    val = val.toJSON();\n  }\n  if (typeof val !== 'string') {\n    val = JSON.stringify(val);\n    if (!escaped && val.indexOf('\"') !== -1) {\n      return ' ' + key + \"='\" + val.replace(/'/g, '&#39;') + \"'\";\n    }\n  }\n  if (escaped) val = pug_escape(val);\n  return ' ' + key + '=\"' + val + '\"';\n}\n\n/**\n * Render the given attributes object.\n *\n * @param {Object} obj\n * @param {Object} terse whether to use HTML5 terse boolean attributes\n * @return {String}\n */\nexports.attrs = pug_attrs;\nfunction pug_attrs(obj, terse) {\n  var attrs = '';\n\n  for (var key in obj) {\n    if (pug_has_own_property.call(obj, key)) {\n      var val = obj[key];\n\n      if ('class' === key) {\n        val = pug_classes(val);\n        attrs = pug_attr(key, val, false, terse) + attrs;\n        continue;\n      }\n      if ('style' === key) {\n        val = pug_style(val);\n      }\n      attrs += pug_attr(key, val, false, terse);\n    }\n  }\n\n  return attrs;\n}\n\n/**\n * Escape the given string of `html`.\n *\n * @param {String} html\n * @return {String}\n * @api private\n */\n\nvar pug_match_html = /[\"&<>]/;\nexports.escape = pug_escape;\nfunction pug_escape(_html) {\n  var html = '' + _html;\n  var regexResult = pug_match_html.exec(html);\n  if (!regexResult) return _html;\n\n  var result = '';\n  var i, lastIndex, escape;\n  for (i = regexResult.index, lastIndex = 0; i < html.length; i++) {\n    switch (html.charCodeAt(i)) {\n      case 34:\n        escape = '&quot;';\n        break;\n      case 38:\n        escape = '&amp;';\n        break;\n      case 60:\n        escape = '&lt;';\n        break;\n      case 62:\n        escape = '&gt;';\n        break;\n      default:\n        continue;\n    }\n    if (lastIndex !== i) result += html.substring(lastIndex, i);\n    lastIndex = i + 1;\n    result += escape;\n  }\n  if (lastIndex !== i) return result + html.substring(lastIndex, i);\n  else return result;\n}\n\n/**\n * Re-throw the given `err` in context to the\n * the pug in `filename` at the given `lineno`.\n *\n * @param {Error} err\n * @param {String} filename\n * @param {String} lineno\n * @param {String} str original source\n * @api private\n */\n\nexports.rethrow = pug_rethrow;\nfunction pug_rethrow(err, filename, lineno, str) {\n  if (!(err instanceof Error)) throw err;\n  if ((typeof window != 'undefined' || !filename) && !str) {\n    err.message += ' on line ' + lineno;\n    throw err;\n  }\n  var context, lines, start, end;\n  try {\n    str = str || (__webpack_require__(/*! fs */ \"?8f63\").readFileSync)(filename, {encoding: 'utf8'});\n    context = 3;\n    lines = str.split('\\n');\n    start = Math.max(lineno - context, 0);\n    end = Math.min(lines.length, lineno + context);\n  } catch (ex) {\n    err.message +=\n      ' - could not read from ' + filename + ' (' + ex.message + ')';\n    pug_rethrow(err, null, lineno);\n    return;\n  }\n\n  // Error context\n  context = lines\n    .slice(start, end)\n    .map(function(line, i) {\n      var curr = i + start + 1;\n      return (curr == lineno ? '  > ' : '    ') + curr + '| ' + line;\n    })\n    .join('\\n');\n\n  // Alter exception message\n  err.path = filename;\n  try {\n    err.message =\n      (filename || 'Pug') +\n      ':' +\n      lineno +\n      '\\n' +\n      context +\n      '\\n\\n' +\n      err.message;\n  } catch (e) {}\n  throw err;\n}\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./node_modules/pug-runtime/index.js?");
-
-/***/ }),
-
-/***/ "./src/components/logo/logo.pug":
-/*!**************************************!*\
-  !*** ./src/components/logo/logo.pug ***!
-  \**************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("var pug = __webpack_require__(/*! !../../../node_modules/pug-runtime/index.js */ \"./node_modules/pug-runtime/index.js\");\n\nfunction template(locals) {var pug_html = \"\", pug_mixins = {}, pug_interp;var pug_indent = [];\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n;return pug_html;}\n\nmodule.exports = template\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/logo/logo.pug?");
-
-/***/ }),
-
-/***/ "./src/components/navigation-bar/navigation-bar.pug":
-/*!**********************************************************!*\
-  !*** ./src/components/navigation-bar/navigation-bar.pug ***!
-  \**********************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("var pug = __webpack_require__(/*! !../../../node_modules/pug-runtime/index.js */ \"./node_modules/pug-runtime/index.js\");\n\nfunction template(locals) {var pug_html = \"\", pug_mixins = {}, pug_interp;;\n    var locals_for_with = (locals || {});\n    \n    (function (pug_indent) {\n      var pug_indent = [];\npug_mixins[\"titleBar\"] = pug_interp = function( text, state, id ){\nvar block = (this && this.block), attributes = (this && this.attributes) || {};\nconst itemId = id ? id : ''\nconst stateText = id ? '' : state\npug_html = pug_html + \"\\n\";\npug_html = pug_html + pug_indent.join(\"\");\npug_html = pug_html + \"\\u003Cdiv class=\\\"title-bar custom-font-style_h3\\\"\\u003E\\u003Cspan class=\\\"title-bar__title\\\"\\u003E\" + (pug.escape(null == (pug_interp = text) ? \"\" : pug_interp)) + \"\\u003C\\u002Fspan\\u003E\";\nif (state) {\npug_html = pug_html + \"\\u003Cspan\" + (\" class=\\\"title-bar__state\\\"\"+pug.attr(\"id\", itemId, true, true)) + \"\\u003E\" + (pug.escape(null == (pug_interp = stateText) ? \"\" : pug_interp)) + \"\\u003C\\u002Fspan\\u003E\";\n}\npug_html = pug_html + \"\\n\";\npug_html = pug_html + pug_indent.join(\"\");\npug_html = pug_html + \"\\u003C\\u002Fdiv\\u003E\";\n};\npug_mixins[\"materialIcon\"] = pug_interp = function( code, id ){\nvar block = (this && this.block), attributes = (this && this.attributes) || {};\nif (id) {\npug_html = pug_html + \"\\n\";\npug_html = pug_html + pug_indent.join(\"\");\npug_html = pug_html + \"\\u003Clabel\" + (\" class=\\\"material-icons\\\"\"+pug.attr(\"for\", id, true, true)) + \"\\u003E\" + (pug.escape(null == (pug_interp = code) ? \"\" : pug_interp)) + \"\\u003C\\u002Flabel\\u003E\";\n}\nelse {\npug_html = pug_html + \"\\u003Cspan class=\\\"material-icons\\\"\\u003E\" + (pug.escape(null == (pug_interp = code) ? \"\" : pug_interp)) + \"\\u003C\\u002Fspan\\u003E\";\n}\n};\npug_mixins[\"link\"] = pug_interp = function( item ){\nvar block = (this && this.block), attributes = (this && this.attributes) || {};\nconst styleClass = item.bold ? 'link__elem_bold' : ''\nconst linkHref = item.href ? item.href : 'website__no-page.html'\npug_html = pug_html + \"\\n\";\npug_html = pug_html + pug_indent.join(\"\");\npug_html = pug_html + \"\\u003Cdiv class=\\\"link\\\"\\u003E\\u003Ca\" + (pug.attr(\"class\", pug.classes([\"link__elem\",styleClass], [false,true]), false, true)+pug.attr(\"href\", linkHref, true, true)) + \"\\u003E\" + (pug.escape(null == (pug_interp = item.name) ? \"\" : pug_interp)) + \"\\u003C\\u002Fa\\u003E\";\nif (item.icon) {\npug_html = pug_html + \"\\n  \";\npug_html = pug_html + pug_indent.join(\"\");\npug_html = pug_html + \"\\u003Cdiv class=\\\"link__icon\\\"\\u003E\";\npug_indent.push(\"    \");\npug_mixins[\"materialIcon\"]('expand_more');\npug_indent.pop();\npug_html = pug_html + \"\\n  \";\npug_html = pug_html + pug_indent.join(\"\");\npug_html = pug_html + \"\\u003C\\u002Fdiv\\u003E\";\n}\npug_html = pug_html + \"\\n\";\npug_html = pug_html + pug_indent.join(\"\");\npug_html = pug_html + \"\\u003C\\u002Fdiv\\u003E\";\n};\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    }.call(this, \"pug_indent\" in locals_for_with ?\n        locals_for_with.pug_indent :\n        typeof pug_indent !== 'undefined' ? pug_indent : undefined));\n    ;;return pug_html;}\n\nmodule.exports = template\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/navigation-bar/navigation-bar.pug?");
 
 /***/ }),
 
@@ -94,6 +96,39 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _log
 
 /***/ }),
 
+/***/ "./src/components/navigation-bar/__link/navigation-bar__link.js":
+/*!**********************************************************************!*\
+  !*** ./src/components/navigation-bar/__link/navigation-bar__link.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _navigation_bar_link_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./navigation-bar__link.scss */ \"./src/components/navigation-bar/__link/navigation-bar__link.scss\");\n\r\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/navigation-bar/__link/navigation-bar__link.js?");
+
+/***/ }),
+
+/***/ "./src/components/navigation-bar/navigation-bar.js":
+/*!*********************************************************!*\
+  !*** ./src/components/navigation-bar/navigation-bar.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _navigation_bar_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./navigation-bar.scss */ \"./src/components/navigation-bar/navigation-bar.scss\");\n/* harmony import */ var _link_navigation_bar_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./__link/navigation-bar__link */ \"./src/components/navigation-bar/__link/navigation-bar__link.js\");\n/* harmony import */ var _components_title_bar_title_bar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @components/title-bar/title-bar */ \"./src/components/title-bar/title-bar.js\");\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/navigation-bar/navigation-bar.js?");
+
+/***/ }),
+
+/***/ "./src/components/title-bar/title-bar.js":
+/*!***********************************************!*\
+  !*** ./src/components/title-bar/title-bar.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _title_bar_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./title-bar.scss */ \"./src/components/title-bar/title-bar.scss\");\n\r\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/title-bar/title-bar.js?");
+
+/***/ }),
+
 /***/ "./src/pages/index/index.js":
 /*!**********************************!*\
   !*** ./src/pages/index/index.js ***!
@@ -101,7 +136,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _log
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ui_kit_ui_kit_noentry__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ui-kit/ui-kit.noentry */ \"./src/pages/ui-kit/ui-kit.noentry.js\");\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.scss */ \"./src/pages/index/index.scss\");\n/* harmony import */ var _components_logo_logo_pug__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/logo/logo.pug */ \"./src/components/logo/logo.pug\");\n/* harmony import */ var _components_logo_logo_pug__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_logo_logo_pug__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _components_navigation_bar_navigation_bar_pug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/navigation-bar/navigation-bar.pug */ \"./src/components/navigation-bar/navigation-bar.pug\");\n/* harmony import */ var _components_navigation_bar_navigation_bar_pug__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_navigation_bar_navigation_bar_pug__WEBPACK_IMPORTED_MODULE_3__);\n\r\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/pages/index/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ui_kit_ui_kit_noentry__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ui-kit/ui-kit.noentry */ \"./src/pages/ui-kit/ui-kit.noentry.js\");\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.scss */ \"./src/pages/index/index.scss\");\n/* harmony import */ var _components_logo_logo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @components/logo/logo */ \"./src/components/logo/logo.js\");\n/* harmony import */ var _components_navigation_bar_navigation_bar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @components/navigation-bar/navigation-bar */ \"./src/components/navigation-bar/navigation-bar.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/pages/index/index.js?");
 
 /***/ }),
 
@@ -113,16 +148,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ui_
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ui_kit_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ui-kit.scss */ \"./src/pages/ui-kit/ui-kit.scss\");\n/* harmony import */ var _components_favicons_bulk_favicons_bulk__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @components/favicons-bulk/favicons-bulk */ \"./src/components/favicons-bulk/favicons-bulk.js\");\n/* harmony import */ var _components_favicons_bulk_favicons_bulk__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_favicons_bulk_favicons_bulk__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _components_logo_logo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @components/logo/logo */ \"./src/components/logo/logo.js\");\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/pages/ui-kit/ui-kit.noentry.js?");
-
-/***/ }),
-
-/***/ "?8f63":
-/*!********************!*\
-  !*** fs (ignored) ***!
-  \********************/
-/***/ (() => {
-
-eval("/* (ignored) */\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/fs_(ignored)?");
 
 /***/ })
 
@@ -198,7 +223,8 @@ eval("/* (ignored) */\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/fs_(ign
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/pages/index/index.js");
+/******/ 	__webpack_require__("./src/pages/index/index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/pages/index/index.scss");
 /******/ 	
 /******/ })()
 ;
