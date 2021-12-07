@@ -9,7 +9,6 @@
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
-    "@principalstudio/html-webpack-inject-preload": "^1.2.7",
     "@webdiscus/pug-loader": "^1.4.6",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
@@ -18,7 +17,6 @@
     "cssnano": "^5.0.12",
     "eslint": "^8.4.0",
     "eslint-plugin-fsd": "^1.0.1",
-    "html-webpack-injector": "^1.1.4",
     "html-webpack-plugin": "^5.5.0",
     "htmls-webpack-plugin": "^2.0.2",
     "jquery": "^3.6.0",

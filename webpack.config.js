@@ -4,11 +4,9 @@ const path = require('path');
 const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackInjector = require('html-webpack-injector');
 const HtmlSWebpackPlugin = require('htmls-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const HtmlWebpackInjectPreload = require('@principalstudio/html-webpack-inject-preload');
 
 const defineTemplate = ext => ext + '/[name].' + ext;
 const defineFileName = filepath => filepath.match(/[^\\/]+$/)[0].replace(/\.js$/,'');
@@ -53,10 +51,8 @@ module.exports = {
   mode: 'development',
 
   entry: PAGES__ENTRIES,
-  //entry: path.join(PATHS.src, 'index.js'),
 
   output: {
-    //filename: 'index.js',
     filename: defineTemplate('js'),
     path: PATHS.dist,
     clean: true
@@ -117,7 +113,6 @@ module.exports = {
   },
 
   plugins: [
-    //new HtmlWebpackInjector(),
     /* html-w-p */
     ...PAGES__NAMES.map( (pageName, index) => new HtmlWebpackPlugin({
       template: PAGES__FULLPATHS[index].replace(/\.js$/,'.pug'),
@@ -136,16 +131,6 @@ module.exports = {
           //render: () => pug.renderFile( srcPath, { basedir: PATHS.src } )
         }
       })
-    }),*/
-    /*new HtmlWebpackInjectPreload({
-      files: [
-        {
-          match: /\.(s*)css$/i,
-          attributes: {
-            as: 'style',
-          },
-        }
-      ]
     }),*/
     new MiniCssExtractPlugin({
       //filename: 'index.css',
