@@ -1,4 +1,6 @@
 @import "@variables";
+@import "@styles/__form/styles__form.scss";
+@import "@styles/__text/styles__text.scss";
 
 .radio-button {
   display: grid;
@@ -7,6 +9,7 @@
   align-items: center;
 
   &__line-array {
+    @extend %styles__form_twins-gridline;
     grid-gap: 20px;
   }
 
@@ -49,6 +52,7 @@
   }
 
   &__label {
+    @extend %styles__text_body-plain;
     opacity: .5;
   }
 }

@@ -22,12 +22,14 @@
   }
 }
 
-%twins-grid-line {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  justify-content: start;
-}
-
-%fullscreen-bottom-border {
-  border-bottom: 1px solid rgba($valhalla, .25);
+%styles__form {
+  &_twins-gridline {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: start;
+  }
+  
+  &_fullscreen-bottom-border {
+    border-bottom: 1px solid rgba($valhalla, .25);
+  }
 }

@@ -10,7 +10,7 @@ mixin checkboxButtons( item )
         input.checkbox-button__elem( type='checkbox' id=buttonId checked=buttonChecked )
         if item.richmode
           .checkbox-button__rich-label
-            label.checkbox-button__rich-label_title.custom-font-style_body( for=buttonId ) #{checkbox.title}
-            label.checkbox-button__rich-label_info.custom-font-style_micro-note( for=buttonId ) #{checkbox.info}
+            label.checkbox-button__rich-label_title( for=buttonId ) #{checkbox.title}
+            label.checkbox-button__rich-label_info( for=buttonId ) #{checkbox.info}
         else
-          label.checkbox-button__common-label.custom-font-style_body-plain( for=buttonId ) #{checkbox.label}
+          label.checkbox-button__common-label( for=buttonId ) #{checkbox.label}

@@ -1,8 +1,8 @@
 mixin radioButtons( items=[] )
-  .radio-button__line-array.twins-grid-line
+  .radio-button__line-array
     each item in items
       - const buttonChecked = item.pressed ? true : false
 
       label.radio-button( for=item.id )
         input.radio-button__elem( type='radio' name='sex' id=item.id checked=buttonChecked )
-        label.radio-button__label.custom-font-style_body-plain( for=item.id ) #{item.label}
+        label.radio-button__label( for=item.id ) #{item.label}

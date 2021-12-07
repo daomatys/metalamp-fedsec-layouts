@@ -1,4 +1,5 @@
 @import "@variables";
+@import "@styles/__text/styles__text.scss";
 
 .bullet-list {
   position: relative;
@@ -7,6 +8,7 @@
   padding: 0;
 
   &__row {
+    @extend %styles__text_body;
     position: relative;
     left: 20px;
     width: 240px;

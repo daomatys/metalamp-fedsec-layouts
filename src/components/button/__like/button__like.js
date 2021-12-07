@@ -1,6 +1,8 @@
 import './button__like.scss';
 import '../button.scss';
+
 import '@components/material-icon-cell/material-icon-cell';
+
 
 function likeButtonEventListeners() {
   const items = document.querySelectorAll('.like-button__elem');

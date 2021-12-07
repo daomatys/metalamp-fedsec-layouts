@@ -1,4 +1,5 @@
 @import "@variables";
+@import "@styles/__text/styles__text.scss";
 
 .checkbox-button {
   display: grid;
@@ -46,6 +47,7 @@
   }
 
   &__common-label {
+    @extend %styles__text_body-plain;
     width: 195px;
     opacity: .5;
   }
@@ -56,11 +58,13 @@
     width: 230px;
     
     &_title {
+      @extend %styles__text_body;
       margin-block: 1px 7px;
       font-weight: bold;
     }
 
     &_info {
+      @extend %styles__text_micro-note;
       white-space: pre-wrap;
     }
   }
