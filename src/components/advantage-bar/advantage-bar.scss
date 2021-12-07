@@ -1,5 +1,6 @@
 @import "@variables";
-@import "/src/entities/__gradient-filled/entities__gradient-filled.scss";
+@import "@entities/__gradient-filled/entities__gradient-filled.scss";
+@import "@styles/__text/styles__text.scss";
 
 .advantages-bar {
   width: 280px;
@@ -22,6 +23,7 @@
   }
 
   &__text {
+    @extend %styles__text_body;
     display: inherit;
     flex-direction: column;
   }
