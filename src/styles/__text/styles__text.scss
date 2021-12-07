@@ -1,30 +1,6 @@
 @import "@variables";
 
-%elem__width {
-  &_100 {
-    width: 320px
-  }
-  &_83 {
-    width: 266px;
-  }
-  &_81 {
-    width: 260px;
-  }
-  &_61 {
-    width: 196px;
-  }
-  &_47 { 
-    width: 150px
-  }
-  &_30 {
-    width: 99px;
-  }
-  &_27 {
-    width: 87px;
-  }
-}
-
-%custom-font-style {
+%styles__text {
   &_h1,
   &_h2,
   &_h3 {
@@ -64,14 +40,4 @@
     font-size: calcRelativeFontSize( 12 );
     line-height: calcRelativeFontSize( 14 );
   }
-}
-
-%twins-grid-line {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  justify-content: start;
-}
-
-%fullscreen-bottom-border {
-  border-bottom: 1px solid rgba($valhalla, .25);
 }

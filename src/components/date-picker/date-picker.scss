@@ -1,5 +1,5 @@
 @import "/node_modules/air-datepicker/air-datepicker.css";
-@import "/src/components/components.scss";
+@import "@styles/__text/styles__text.scss";
 @import "@variables";
 
 $cell-size: 40px;
@@ -79,7 +79,7 @@ $font-size: 12px;
     }
 
     &--title {
-      @extend %custom-font-style_h2;
+      @extend %styles__text_h2;
     }
   }
 

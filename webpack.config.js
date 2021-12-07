@@ -103,7 +103,7 @@ module.exports = {
         type: 'asset/resource',
         exclude: [/images/],
         generator: {
-          filename: 'static/fonts/[name][ext][query]'
+          filename: 'static/styles/[name][ext][query]'
         }
       },
       {
@@ -170,7 +170,8 @@ module.exports = {
       '@components': path.join( PATHS.src, '/components/' ),
       '@entities': path.join( PATHS.src, '/entities/' ),
       '@images': path.join( PATHS.src, '/assets/images/' ),
-      '@fonts': path.join( PATHS.src, '/assets/fonts/' )
+      '@fonts': path.join( PATHS.src, '/assets/fonts/' ),
+      '@styles': path.join( PATHS.src, '/styles/' )
     }
   },
 
