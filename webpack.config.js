@@ -4,6 +4,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackInjector = require('html-webpack-injector');
 const HtmlSWebpackPlugin = require('htmls-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
@@ -29,9 +30,9 @@ const defineEntryPoints = function convertArrayOfPathsIntoEntriesObject( pagesAr
 }
 
 const PATHS = {
-  src: path.join(__dirname, '/src'),
-  dist: path.join(__dirname, '/dist'),
-  cache: path.resolve(__dirname, '/.temp_cache')
+  src: path.resolve(__dirname, './src'),
+  dist: path.resolve(__dirname, './dist'),
+  cache: path.resolve(__dirname, './.temp_cache')
 };
 
 const PAGES__ROOT = path.join(PATHS.src, 'pages');
@@ -46,6 +47,7 @@ module.exports = {
     },
     compress: true,
     port: 9000,
+    watchContentBase: true
   },
 
   mode: 'development',
@@ -63,6 +65,14 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/i,
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env'],
+          plugins: ['@babel/plugin-proposal-class-properties'],
+        },
+      },
+      {
         test: /\.pug$/i,
         loader: 'aliased-pug-loader',
         options: {
@@ -78,9 +88,6 @@ module.exports = {
           },
           {
             loader: "css-loader",
-            options: {
-              sourceMap: true,
-            }
           },
           {
             loader: 'postcss-loader',
@@ -110,11 +117,12 @@ module.exports = {
   },
 
   plugins: [
+    new HtmlWebpackInjector(),
     /* html-w-p */
     ...PAGES__NAMES.map( (pageName, index) => new HtmlWebpackPlugin({
       template: PAGES__FULLPATHS[index].replace(/\.js$/,'.pug'),
       filename: `./${pageName}.html`,
-      chunks: [ `${pageName}.js` ],
+      chunks: [ `${pageName}.js` , `${pageName}.scss` ],
     })),
     /* htmls-w-p 
     new HtmlSWebpackPlugin({
@@ -156,7 +164,9 @@ module.exports = {
 
   optimization: {
     minimizer: [
-      new CssMinimizerPlugin(),
+      new CssMinimizerPlugin({
+        exclude: /node_modules/,
+      }),
     ]
   },
 

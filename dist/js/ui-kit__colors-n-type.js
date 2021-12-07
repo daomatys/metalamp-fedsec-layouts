@@ -9,6 +9,71 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/components/color-sample/color-sample.js":
+/*!*****************************************************!*\
+  !*** ./src/components/color-sample/color-sample.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _color_sample_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./color-sample.scss */ \"./src/components/color-sample/color-sample.scss\");\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/color-sample/color-sample.js?");
+
+/***/ }),
+
+/***/ "./src/components/favicons-bulk/favicons-bulk.js":
+/*!*******************************************************!*\
+  !*** ./src/components/favicons-bulk/favicons-bulk.js ***!
+  \*******************************************************/
+/***/ (() => {
+
+eval("\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/favicons-bulk/favicons-bulk.js?");
+
+/***/ }),
+
+/***/ "./src/components/logo/logo.js":
+/*!*************************************!*\
+  !*** ./src/components/logo/logo.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _logo_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./logo.scss */ \"./src/components/logo/logo.scss\");\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/logo/logo.js?");
+
+/***/ }),
+
+/***/ "./src/components/type-sample/type-sample.js":
+/*!***************************************************!*\
+  !*** ./src/components/type-sample/type-sample.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _type_sample_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./type-sample.scss */ \"./src/components/type-sample/type-sample.scss\");\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/type-sample/type-sample.js?");
+
+/***/ }),
+
+/***/ "./src/pages/ui-kit/__colors-n-type/ui-kit__colors-n-type.js":
+/*!*******************************************************************!*\
+  !*** ./src/pages/ui-kit/__colors-n-type/ui-kit__colors-n-type.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ui_kit_noentry__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ui-kit.noentry */ \"./src/pages/ui-kit/ui-kit.noentry.js\");\n/* harmony import */ var _ui_kit_colors_n_type_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ui-kit__colors-n-type.scss */ \"./src/pages/ui-kit/__colors-n-type/ui-kit__colors-n-type.scss\");\n/* harmony import */ var _components_color_sample_color_sample__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @components/color-sample/color-sample */ \"./src/components/color-sample/color-sample.js\");\n/* harmony import */ var _components_type_sample_type_sample__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @components/type-sample/type-sample */ \"./src/components/type-sample/type-sample.js\");\n\n\n\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/pages/ui-kit/__colors-n-type/ui-kit__colors-n-type.js?");
+
+/***/ }),
+
+/***/ "./src/pages/ui-kit/ui-kit.noentry.js":
+/*!********************************************!*\
+  !*** ./src/pages/ui-kit/ui-kit.noentry.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ui_kit_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ui-kit.scss */ \"./src/pages/ui-kit/ui-kit.scss\");\n/* harmony import */ var _components_favicons_bulk_favicons_bulk__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @components/favicons-bulk/favicons-bulk */ \"./src/components/favicons-bulk/favicons-bulk.js\");\n/* harmony import */ var _components_favicons_bulk_favicons_bulk__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_favicons_bulk_favicons_bulk__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _components_logo_logo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @components/logo/logo */ \"./src/components/logo/logo.js\");\n\n\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/pages/ui-kit/ui-kit.noentry.js?");
+
+/***/ }),
+
 /***/ "./src/components/color-sample/color-sample.scss":
 /*!*******************************************************!*\
   !*** ./src/components/color-sample/color-sample.scss ***!
@@ -61,71 +126,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/pages/ui-kit/ui-kit.scss?");
-
-/***/ }),
-
-/***/ "./src/components/color-sample/color-sample.js":
-/*!*****************************************************!*\
-  !*** ./src/components/color-sample/color-sample.js ***!
-  \*****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _color_sample_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./color-sample.scss */ \"./src/components/color-sample/color-sample.scss\");\n\r\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/color-sample/color-sample.js?");
-
-/***/ }),
-
-/***/ "./src/components/favicons-bulk/favicons-bulk.js":
-/*!*******************************************************!*\
-  !*** ./src/components/favicons-bulk/favicons-bulk.js ***!
-  \*******************************************************/
-/***/ (() => {
-
-eval("\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/favicons-bulk/favicons-bulk.js?");
-
-/***/ }),
-
-/***/ "./src/components/logo/logo.js":
-/*!*************************************!*\
-  !*** ./src/components/logo/logo.js ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _logo_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./logo.scss */ \"./src/components/logo/logo.scss\");\n\r\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/logo/logo.js?");
-
-/***/ }),
-
-/***/ "./src/components/type-sample/type-sample.js":
-/*!***************************************************!*\
-  !*** ./src/components/type-sample/type-sample.js ***!
-  \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _type_sample_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./type-sample.scss */ \"./src/components/type-sample/type-sample.scss\");\n\r\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/components/type-sample/type-sample.js?");
-
-/***/ }),
-
-/***/ "./src/pages/ui-kit/__colors-n-type/ui-kit__colors-n-type.js":
-/*!*******************************************************************!*\
-  !*** ./src/pages/ui-kit/__colors-n-type/ui-kit__colors-n-type.js ***!
-  \*******************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ui_kit_noentry__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ui-kit.noentry */ \"./src/pages/ui-kit/ui-kit.noentry.js\");\n/* harmony import */ var _ui_kit_colors_n_type_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ui-kit__colors-n-type.scss */ \"./src/pages/ui-kit/__colors-n-type/ui-kit__colors-n-type.scss\");\n/* harmony import */ var _components_color_sample_color_sample__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @components/color-sample/color-sample */ \"./src/components/color-sample/color-sample.js\");\n/* harmony import */ var _components_type_sample_type_sample__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @components/type-sample/type-sample */ \"./src/components/type-sample/type-sample.js\");\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/pages/ui-kit/__colors-n-type/ui-kit__colors-n-type.js?");
-
-/***/ }),
-
-/***/ "./src/pages/ui-kit/ui-kit.noentry.js":
-/*!********************************************!*\
-  !*** ./src/pages/ui-kit/ui-kit.noentry.js ***!
-  \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ui_kit_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ui-kit.scss */ \"./src/pages/ui-kit/ui-kit.scss\");\n/* harmony import */ var _components_favicons_bulk_favicons_bulk__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @components/favicons-bulk/favicons-bulk */ \"./src/components/favicons-bulk/favicons-bulk.js\");\n/* harmony import */ var _components_favicons_bulk_favicons_bulk__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_favicons_bulk_favicons_bulk__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _components_logo_logo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @components/logo/logo */ \"./src/components/logo/logo.js\");\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://metalamp-fedsec-layouts/./src/pages/ui-kit/ui-kit.noentry.js?");
 
 /***/ })
 
