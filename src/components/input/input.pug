@@ -40,15 +40,13 @@ mixin input( item )
   - const readonly = archetype === 'dropdown' || archetype === 'date-picker'
   - const placeholder = definePlaceholder( archetype, dropdown.type, item.placeholder )
 
-  - const widthByPercentClass = item.widthbypercent ? 'elem__width_' + item.widthbypercent : 'elem__width_100'
   - const expanderParentClass = readonly ? 'expander__parent' : ''
   - const datePickerClasses = archetype === 'date-picker' ? 'expander adp-frame' : ''
   - const dropdownClasses =   archetype === 'dropdown' ? 'expander dropdown' : ''
 
   - const frameClasses =  [ datePickerClasses, dropdownClasses ]
-  - const parentClasses = [ widthByPercentClass, expanderParentClass ]
 
-  .input( class=parentClasses )
+  .input( class=expanderParentClass )
     if title
       .input__title
         +titleBar( title, item.state )
