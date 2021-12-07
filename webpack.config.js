@@ -40,8 +40,6 @@ const PAGES__NAMES = PAGES__FULLPATHS.map( filepath => defineFileName( filepath 
 const PAGES__ENTRIES = defineEnrties( PAGES__FULLPATHS );
 
 module.exports = {
-  mode: 'development',
-
   devServer: {
     static: {
       directory: PATHS.dist
@@ -50,9 +48,7 @@ module.exports = {
     port: 9000,
   },
 
-  externals: {
-    paths: PATHS
-  },
+  mode: 'development',
 
   entry: PAGES__ENTRIES,
 
@@ -69,17 +65,27 @@ module.exports = {
         loader: 'aliased-pug-loader',
         options: {
           root: PATHS.src,
-          esModule: false,
           pretty: true
         }
       },
       {
-        test:/\.(s*)css$/i,
+        test:/\.scss$/i,
         use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          'sass-loader'
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+            }
+          },
+          {
+            loader: 'postcss-loader',
+          },
+          {
+            loader: 'sass-loader',
+          }
         ]
       },
       {
@@ -110,29 +116,30 @@ module.exports = {
     })),
     /* htmls-w-p 
     new HtmlSWebpackPlugin({
-      htmls: PAGES.map( (pageName, index) => {
-        const srcPath = PAGES_PATHS[index] + pageName;
+      htmls: PAGES__NAMES.map( (pageName, index) => {
+        const srcPath = PAGES__FULLPATHS[index].replace(/\.js$/,'.pug');
 
         return {
           src: srcPath,
-          filename: './' + pageName.replace(/\.pug/,'.html'),
+          filename: `./${pageName}.html`,
+          chunks: [ `${pageName}.js` ],
           //render: () => pug.renderFile( srcPath, { basedir: PATHS.src } )
         }
       })
     }),*/
-    new HtmlWebpackInjectPreload({
+    /*new HtmlWebpackInjectPreload({
       files: [
         {
           match: /\.(s*)css$/i,
           attributes: {
             as: 'style',
-            rel: 'stylesheet'
           },
         }
       ]
-    }),
+    }),*/
     new MiniCssExtractPlugin({
       filename: defineTemplate('css'),
+      chunkFilename: defineTemplate('css'),
       ignoreOrder: true
     }),
     new CssMinimizerPlugin(),
@@ -145,9 +152,6 @@ module.exports = {
   ],
 
   optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
     minimizer: [
       new CssMinimizerPlugin(),
     ]
@@ -161,16 +165,16 @@ module.exports = {
 
   resolve: {
     alias: {
-      '@variables': path.join( PATHS.src, '/variables/variables.scss' ),
-      '@images': path.join( PATHS.src, '/assets/images/' ),
-      '@components': path.join( PATHS.src, '/components/' )
+      '@variables':  path.join( PATHS.src, '/variables/variables.scss' ),
+      '@components': path.join( PATHS.src, '/components/' ),
+      '@images': path.join( PATHS.src, '/assets/images/' )
     }
   },
 
   resolveLoader: {
     alias: {
       'aliased-pug-loader': 'simple-pug-loader'
-      //'aliased-pug-loader': '@webdiscus/pug-loader'
+      //'aliased-pug-loader': '@webdiscus/pug-loader',
     }
   }
 }
