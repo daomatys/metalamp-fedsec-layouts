@@ -1,6 +1,9 @@
 import './pagination.scss';
 import 'paginationjs/dist/pagination.min';
 
+import '@components/material-icon-cell/material-icon-cell';
+
+
 function findPaginationContainer() {
   const paginationElem = document.querySelector('#pagination');
 
