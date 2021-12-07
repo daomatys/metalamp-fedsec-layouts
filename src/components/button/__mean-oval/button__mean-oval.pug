@@ -9,13 +9,11 @@ mixin meanOvalButtons( item )
     - const buttonId = item.groupname + '-' + buttonCount
     - const buttonText = button.text || 'click me'
     - const buttonType = button.type || 'button'
-    - const widthByPercent = button.widthbypercent || '30'
     - const isTextMode = button.mode === 'text'
     - const textButtonClass = isTextMode ? 'mob_non-absolute' : ''
 
     - let buttonClasses = ''
 
-    - buttonClasses += isTextMode ? '' : `elem__width_${widthByPercent}`
     - buttonClasses += button.disabled ? ' frozen' : ''
     - buttonClasses += ` button-style_${button.mode}`
 

@@ -22,14 +22,12 @@ mixin cardRoomBooking()
           type: "date-picker",
           title: "прибытие",
           hierarchy: "master",
-          widthbypercent: 47,
         })
         +input({
           id: "room-booking__date-picker_departure",
           type: "date-picker",
           title: "выезд",
           hierarchy: "slave",
-          widthbypercent: 47,
           dates: "2019-08-19, 2019-08-23"
         })
 
@@ -79,8 +77,7 @@ mixin cardRoomBooking()
             type: "submit",
             mode: "contained",
             text: "Забронировать",
-            iconname: "arrow_forward",
-            widthbypercent: 100
+            iconname: "arrow_forward"
           }
         ]
       })
