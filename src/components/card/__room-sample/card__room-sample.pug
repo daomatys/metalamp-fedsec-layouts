@@ -34,11 +34,11 @@ mixin cardRoomSample( item )
     .card-room-sample__container_bottom
       .card-room-sample__title-container 
         .card-room-booking__title
-          span.card-room-booking__title_prefix.custom-font-style_body-plain № 
+          span.card-room-booking__title_prefix № 
           span.custom-font-style_h2 #{ item.room }
           if ( item.luxe )
             span.card-room-booking__title_luxe-mark ЛЮКС
-        .card-room-booking__price.custom-font-style_body-plain
+        .card-room-booking__price
           span.card-room-booking__price_value #{ item.price.toLocaleString("ru-RU") }
           span.card-room-booking__price_symbol ₽ 
           span.card-room-booking__price_addition в сутки

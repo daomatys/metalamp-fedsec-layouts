@@ -5,8 +5,7 @@ include /components/button/__toggle/button__toggle.pug
 
 mixin cardRegistration()
   .card-registration.card-style_default
-    .card-registration__title
-      span.custom-font-style_h1 Регистрация аккаунта
+    .card-registration__title Регистрация аккаунта
     .card-registration__input_basic-data
       +input({ placeholder: "Имя" })
       +input({ placeholder: "Фамилия" })
@@ -33,7 +32,7 @@ mixin cardRegistration()
       })
     form.card-registration__login-section( action="website__login.html" )
       .card-registration__login-section-container.card-footer
-        span.custom-font-style_body Уже есть аккаунт на Toxin?
+        span.card-registration__login-question Уже есть аккаунт на Toxin?
         +meanOvalButtons({
           groupname: "registration__button_login",
           buttons: [{

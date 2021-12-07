@@ -1,4 +1,6 @@
 @import "@variables";
+@import "@styles/__text/styles__text.scss";
+@import "@styles/__form/styles__form.scss";
 
 .card-room-booking {
   &__price,
@@ -11,6 +13,11 @@
 
   &__title-complex {
     justify-content: space-between;
+  }
+
+  &__title_prefix,
+  &__price {
+    @extend %styles__text_body-plain;
   }
 
   &__title {
@@ -27,6 +34,7 @@
     }
 
     &_room-number {
+      @extend %styles__text_h1;
       margin-right: 7px;
     }
   }
@@ -45,10 +53,12 @@
   }
 
   &__date-pickers-row {
+    @extend %styles__form_twins-gridline;
     grid-gap: 20px;
   }
 
   &__container_calc {
+    @extend %styles__text_body;
     box-sizing: border-box;
   }
 
@@ -87,6 +97,7 @@
     }
 
     &-summary {
+      @extend %styles__text_h2;
       white-space: nowrap;
       margin-top: 20px;
 

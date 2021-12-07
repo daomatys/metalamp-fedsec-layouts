@@ -2,7 +2,7 @@ import './entities__expandable.scss';
 
 
 const init = function expanderInitEventListeners() {
-  const expanders = document.querySelectorAll('.expander');
+  const expanders = document.querySelectorAll('.js-expander');
 
   if ( expanders ) {
     expanders.forEach( expander => expander.addEventListener('click', () => activate( expander )) );
@@ -10,8 +10,8 @@ const init = function expanderInitEventListeners() {
 }
 
 const activate = function expanderActivation( expander ) {
-  const parent = expander.closest('.expander__parent');
-  const aim = parent.querySelector('.expander__aim');
+  const parent = expander.closest('.js-expander__parent');
+  const aim = parent.querySelector('.js-expander__aim');
   const icon = parent.querySelector('.material-icons');
   const caseExpanderIsDisabled = expander.hasAttribute('checked');
 
@@ -24,7 +24,7 @@ const activate = function expanderActivation( expander ) {
   animate( icon );
   
   if ( aim ) {
-    aim.classList.toggle('expander_active');
+    aim.classList.toggle('js-expander_active');
   }
 }
 

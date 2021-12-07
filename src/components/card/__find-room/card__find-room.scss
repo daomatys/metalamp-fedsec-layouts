@@ -1,15 +1,22 @@
 @import "@variables";
+@import "@styles/__text/styles__text.scss";
+@import "@styles/__form/styles__form.scss";
 
 .card-find-room {
   &__container {
-    &_title,
-    &_date-pickers,
-    &_guests-dropdown {
+    &-title,
+    &-date-pickers,
+    &-guests-dropdown {
       margin-bottom: 1px;
+    }
+
+    &-title {
+      @extend %styles__text_h1;
     }
   }
 
   &__date-pickers-row {
+    @extend %styles__form_twins-gridline;
     grid-gap: 20px;
   }
 }

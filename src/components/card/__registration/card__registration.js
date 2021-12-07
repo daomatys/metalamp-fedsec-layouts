@@ -1,4 +1,5 @@
 import '../card.scss';
+import './card__registration.scss';
 
 import '@components/input/input';
 import '@components/button/__mean-oval/button__mean-oval';
