@@ -168,6 +168,7 @@ module.exports = {
     alias: {
       '@variables':  path.join( PATHS.src, '/variables/variables.scss' ),
       '@components': path.join( PATHS.src, '/components/' ),
+      '@entities': path.join( PATHS.src, '/entities/' ),
       '@images': path.join( PATHS.src, '/assets/images/' )
     }
   },

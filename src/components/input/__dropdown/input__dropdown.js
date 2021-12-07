@@ -1,5 +1,7 @@
 import './input__dropdown.scss';
-import '../../../entities/__expandable/entities__expandable';
+
+import '@entities/__expandable/entities__expandable';
+
 
 const find = function findDropdownContainers() {
   const dropdowns = document.querySelectorAll('.input__dropdown');
