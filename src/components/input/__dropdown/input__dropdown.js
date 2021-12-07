@@ -1,6 +1,9 @@
 import './input__dropdown.scss';
 
 import '@entities/__expandable/entities__expandable';
+import '@components/material-icon-cell/material-icon-cell';
+import '@components/button/__mean-oval/button__mean-oval';
+import '@components/button/__circle/button__circle';
 
 
 const find = function findDropdownContainers() {
