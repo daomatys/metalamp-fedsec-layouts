@@ -117,12 +117,12 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackInjector(),
+    //new HtmlWebpackInjector(),
     /* html-w-p */
     ...PAGES__NAMES.map( (pageName, index) => new HtmlWebpackPlugin({
       template: PAGES__FULLPATHS[index].replace(/\.js$/,'.pug'),
       filename: `./${pageName}.html`,
-      chunks: [ `${pageName}.js` , `${pageName}.scss` ],
+      chunks: [ pageName ],
     })),
     /* htmls-w-p 
     new HtmlSWebpackPlugin({
@@ -150,7 +150,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       //filename: 'index.css',
       filename: defineTemplate('css'),
-      chunkFilename: defineTemplate('css'),
       ignoreOrder: true
     }),
     new CssMinimizerPlugin(),
