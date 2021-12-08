@@ -1,3 +1,6 @@
+@import "@variables";
+@import "@styles/__form/styles__form.scss";
+
 .wrap_top {
   margin-top: 3px;
 }
@@ -49,4 +52,32 @@
   &_center {
     margin-right: 72px;
   }
+}
+
+.element__width {
+  &_100 {
+    width: 320px;
+  }
+  &_83 {
+    width: 266px;
+  }
+  &_81 {
+    width: 260px;
+  }
+  &_61 {
+    width: 196px;
+  }
+  &_47 { 
+    width: 150px;
+  }
+  &_30 {
+    width: 99px;
+  }
+  &_27 {
+    width: 87px;
+  }
+}
+
+.twins-grid-line {
+  @extend %styles__form_twins-gridline;
 }
