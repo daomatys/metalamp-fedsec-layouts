@@ -21,4 +21,8 @@
   &__filters {
     height: 1100px;
   }
+
+  &_invisible {
+    display: none !important;
+  }
 }

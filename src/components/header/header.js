@@ -30,7 +30,7 @@ const initButtons = function initButtons() {
     const footer = document.querySelector('.website__footer');
 
     const elementClassListToggle = element => {
-      element.classList.toggle('window_invisible');
+      element.classList.toggle('modal-window_invisible');
     }
 
     const windowsClassListToggle = window => {
@@ -46,9 +46,9 @@ const initButtons = function initButtons() {
     const buttonNavigation = defineButon('navigation');
     const buttonAuthorization = defineButon('authorization');
 
-    const modalWindowFilter = document.querySelector('.modal-window_filtration');
-    const modalWindowNavigation = document.querySelector('.modal-window_navigation');
-    const modalWindowAuthorization = document.querySelector('.modal-window_authorization');
+    const modalWindowFilter = document.querySelector('.modal-window__filtration');
+    const modalWindowNavigation = document.querySelector('.modal-window__navigation');
+    const modalWindowAuthorization = document.querySelector('.modal-window__authorization');
 
     if ( modalWindowFilter ) defineButtonAction( buttonFilter, modalWindowFilter );
     defineButtonAction( buttonNavigation,    modalWindowNavigation );

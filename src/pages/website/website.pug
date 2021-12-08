@@ -13,7 +13,7 @@ body.website__body
   header.website__header
     +header({ authorized: false })
     block modal
-    .modal-window_navigation.window_invisible
+    .modal-window__navigation.modal-window_invisible
       +modalWindow({
         id: "ejectable-button_navigation-1",
         title: "Навигация",
@@ -25,7 +25,7 @@ body.website__body
           { name: "Соглашения" },
         ]
       })
-    .modal-window_authorization.window_invisible
+    .modal-window__authorization.modal-window_invisible
       +modalWindow({
         id: "ejectable-button_authorization-1",
         title: "Авторизация",
