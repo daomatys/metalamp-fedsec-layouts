@@ -43,7 +43,6 @@ const PAGES__ENTRIES = defineEntryPoints( PAGES__FULLPATHS );
 const PAGES__NAMES = PAGES__FULLPATHS.map( filepath => defineFileName( filepath ) );
 
 
-
 module.exports = {
   devServer: {
     static: {
