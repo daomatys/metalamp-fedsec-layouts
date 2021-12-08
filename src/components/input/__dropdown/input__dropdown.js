@@ -46,7 +46,7 @@ const initControllers = function initControllersEventListeners( counters, contro
 const defineResetControllerState = function( counters, controllers ) {
   const countersSum = defineCountersSum( counters );
 
-  adjustButtonsState( controllers, countersSum, '.js-mean-oval-button_hidden', true )
+  adjustButtonsState( controllers, countersSum, 'js-mean-oval-button_hidden', true )
 }
 
 //init buttons section
