@@ -8,7 +8,9 @@ const HtmlSWebpackPlugin = require('htmls-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
+
 const defineDistSection = ext => ext + '/[name].' + ext;
+
 const defineFileName = filepath => filepath.match(/[^\\/]+$/)[0].replace(/\.js$/,'');
 
 const definePagesPaths = function definePagesPathsByRootFolder( folder ) {
@@ -22,21 +24,24 @@ const definePagesPaths = function definePagesPathsByRootFolder( folder ) {
 
 const defineEntryPoints = function convertArrayOfPathsIntoEntriesObject( pagesArray ) {
   const preparedArray = pagesArray
-    .map( page => [ defineFileName( page ), [ page, page.replace(/\.js$/,'.scss') ] ] );
+    .map( page => [ defineFileName( page ), page ] );
 
   return Object.fromEntries( preparedArray );
 }
 
+
 const PATHS = {
-  src: path.resolve(__dirname, './src'),
-  dist: path.resolve(__dirname, './dist'),
-  cache: path.resolve(__dirname, './.temp_cache')
+  src: path.join(__dirname, '/src'),
+  dist: path.join(__dirname, '/dist'),
+  cache: path.join(__dirname, '/.temp_cache')
 };
 
-const PAGES__ROOT = path.join(PATHS.src, 'pages');
+const PAGES__ROOT = path.join( PATHS.src, 'pages' );
+
 const PAGES__FULLPATHS = definePagesPaths( PAGES__ROOT );
-const PAGES__NAMES = PAGES__FULLPATHS.map( filepath => defineFileName( filepath ) );
 const PAGES__ENTRIES = defineEntryPoints( PAGES__FULLPATHS );
+const PAGES__NAMES = PAGES__FULLPATHS.map( filepath => defineFileName( filepath ) );
+
 
 module.exports = {
   devServer: {
@@ -71,7 +76,7 @@ module.exports = {
         test: /\.pug$/i,
         loader: 'aliased-pug-loader',
         options: {
-          root: PATHS.src,
+          basedir: PATHS.src,
           pretty: true
         }
       },
@@ -103,7 +108,7 @@ module.exports = {
         type: 'asset/resource',
         exclude: [/images/],
         generator: {
-          filename: 'static/styles/[name][ext][query]'
+          filename: 'static/fonts/[name][ext][query]'
         }
       },
       {
@@ -177,7 +182,7 @@ module.exports = {
 
   resolveLoader: {
     alias: {
-      'aliased-pug-loader': 'simple-pug-loader'
+      'aliased-pug-loader': 'simple-pug-loader',
       //'aliased-pug-loader': '@webdiscus/pug-loader',
     }
   }
