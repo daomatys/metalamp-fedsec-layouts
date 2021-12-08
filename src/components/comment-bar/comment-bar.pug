@@ -12,7 +12,7 @@ mixin commentBar( items=[] )
             pressed: item.likebtn.pressed,
             likecount: item.likebtn.likecount
           }])
-      .comment-bar__text-section.custom-font-style_body
+      .comment-bar__text-section
         .comment-bar__title
           .comment-bar__title_username #{ item.name }
           .comment-bar__title_days-ago #{ item.daysago }

@@ -40,19 +40,18 @@ mixin footer( item )
   case item.type
     when 'default'
       .footer_default.footer
-        .footer__default-sections_upper.fullscreen-bottom-border
+        .footer__default-sections_upper
           .footer__content
             .footer__content_shell
               .footer__logotype
                 +logo({ type: "colorful" })
-              .footer__awards-text
-                span.custom-font-style_body Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+              .footer__awards-text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
             each unit in navBarUnits
               .footer__content_core
                 +navigationBar( unit )
             .footer__content_shell
               +titleBar("подписка")
-              span.custom-font-style_body Получайте специальные предложения и новости сервиса
+              span.footer__subscription-text Получайте специальные предложения и новости сервиса
               +input({
                 placeholder: "Email",
                 type: "subscription",
@@ -61,12 +60,12 @@ mixin footer( item )
         .footer__default-sections_lower
           .footer__content
             .footer__content_copyright
-              span.footer__remark.custom-font-style_body Copyright © 2018 Toxin отель. Все права защищены.
+              span.footer__remark Copyright © 2018 Toxin отель. Все права защищены.
             .footer__content_icons
     when 'mobile'
       .footer_mobile.footer
         +logo({ type: "colorful" })
-        span.footer__remark.custom-font-style_body Copyright © 2018 Toxin отель. Все права защищены.
+        span.footer__remark Copyright © 2018 Toxin отель. Все права защищены.
         .footer__content_icons
           a(href="/address/change-me" target="_blank" rel="noopener noreferrer")
             i.fa.fa-twitter( aria-hidden="true" )

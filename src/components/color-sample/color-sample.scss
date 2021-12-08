@@ -1,4 +1,5 @@
 @import "@variables";
+@import "@styles/__text/styles__text.scss";
 
 .color-sample {
   display: flex;
@@ -18,6 +19,7 @@
   }
 
   &__description {
+    @extend %styles__text_h2;
     display: flex;
     margin-left: 40px;
     line-height: 28px;

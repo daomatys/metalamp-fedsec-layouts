@@ -1,4 +1,6 @@
 @import "@variables";
+@import "@styles/__text/styles__text.scss";
+@import "@styles/__form/styles__form.scss";
 
 @media only screen and (max-width: $piquetHeaderNavbarOps) {
   .website__footer_default {
@@ -29,6 +31,7 @@
     }
 
     &_upper {
+      @extend %styles__form_fullscreen-bottom-border;
       align-items: start;
       padding-block: 111px;
     }
@@ -72,5 +75,11 @@
     &_core {
       width: 150px;
     }
+  }
+
+  &__awards-text,
+  &__subscription-text,
+  &__remark {
+    @extend %styles__text_body;
   }
 }

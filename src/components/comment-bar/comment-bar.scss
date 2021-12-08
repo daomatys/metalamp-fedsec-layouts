@@ -1,4 +1,5 @@
 @import "@variables";
+@import "@styles/__text/styles__text.scss";
 
 .comment-bar {
   grid-template-columns: repeat(2, auto);
@@ -24,6 +25,7 @@
   }
 
   &__text-section {
+    @extend %styles__text_body;
     width: 653px;
   }
 

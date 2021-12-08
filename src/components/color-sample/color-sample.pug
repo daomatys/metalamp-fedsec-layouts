@@ -3,6 +3,6 @@ mixin colorSamples( items=[] )
     each item in items
       .color-sample
         .color-sample__element( style=`background-color: ${item.hexcolor}; opacity: ${item.opacity}%;` )
-        .color-sample__description.custom-font-style_h2
+        .color-sample__description
           span.color-sample__title #{item.title}
           span.color-sample__color-hexcode #{item.hexcolor}
