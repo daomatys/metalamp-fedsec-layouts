@@ -135,9 +135,9 @@ const defineClearButtonState = function defineClearButtonState( masterFrame, cle
   const caseValuesExists = masterFrame.value;
 
   if ( caseValuesExists ) {
-    clearButton.classList.remove('js-mob_hidden');
+    clearButton.classList.remove('js-mean-oval-button_hidden');
   } else {
-    clearButton.classList.add('js-mob_hidden');
+    clearButton.classList.add('js-mean-oval-button_hidden');
   }
 }
 
