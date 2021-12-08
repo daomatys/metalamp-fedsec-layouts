@@ -2,8 +2,10 @@ include /components/material-icon-cell/material-icon-cell.pug
 include /components/date-picker/date-picker.pug
 
 mixin inputDatePicker( item )
+  - const hierarchyClass = 'js-' + item.hierarchy 
+
   label.input__icon_expand( for=item.id)
     +materialIcon('expand_more', item.id)
-  .input__date-picker.js-expander__aim( class=item.hierarchy data-dates=item.dates )
-    if ( item.hierarchy !== 'slave' )
+  .input__date-picker.js-expander__aim( class=hierarchyClass data-dates=item.dates )
+    if ( hierarchyClass !== 'js-slave' )
       +datePicker( item.id )
