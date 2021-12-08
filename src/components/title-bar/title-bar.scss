@@ -1,6 +1,8 @@
 @import "@variables";
+@import "@styles/__text/styles__text.scss";
 
 .title-bar {
+  @extend %styles__text_h3;
   display: flex;
   justify-content: space-between;
   text-transform: uppercase;

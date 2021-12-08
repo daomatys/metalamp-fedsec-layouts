@@ -3,6 +3,6 @@ mixin typeSamples( items=[] )
     each item in items
       - const tagName = item.tagname.toLowerCase();
 
-      .type-sample( class=`custom-font-style_${tagName}` )
+      .type-sample( class=`type-sample__text_${tagName}` )
         span.type-sample__associative-tag #{item.tagname}
         span.type-sample__usage-instruction #{item.note}

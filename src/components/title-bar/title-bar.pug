@@ -2,7 +2,7 @@ mixin titleBar( text, state, id )
   - const itemId = id ? id : ''
   - const stateText = id ? '' : state
 
-  .title-bar.custom-font-style_h3
+  .title-bar
     span.title-bar__title #{text}
     if state 
       span.title-bar__state( id=itemId ) #{stateText}

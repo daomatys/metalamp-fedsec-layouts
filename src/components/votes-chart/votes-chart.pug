@@ -16,14 +16,14 @@ mixin votesChart( item={} )
             data-votes=unit.votes
           )
       .votes-chart__diagram-text
-        span.votes-chart__diagram-text_votes.custom-font-style_h1
-        span.votes-chart__diagram-text_word.custom-font-style_h3
+        span.votes-chart__diagram-text_votes
+        span.votes-chart__diagram-text_word
     .votes-chart__legend
       - const sortedUnits = sortArray( item.units )
       each unit in sortedUnits
         .votes-chart__legend-item( data-link=`${item.id}-${unit.gradient}` )
           .votes-chart__legend-item_marker( class=`marker_${unit.gradient}` )
-          .votes-chart__legend-item_text.custom-font-style_body #{unit.legend}
+          .votes-chart__legend-item_text #{unit.legend}
 -
   function sortArray( arr ) {
     arr.reverse();

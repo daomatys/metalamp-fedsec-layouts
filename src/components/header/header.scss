@@ -1,4 +1,5 @@
 @import "@variables";
+@import "@styles/__text/styles__text.scss";
 
 $piquetHeaderButtonBarOps: 832px;
 
@@ -138,7 +139,8 @@ $piquetHeaderButtonBarOps: 832px;
     border-left: 1px solid rgba($valhalla, .1);
     padding-left: 20px;
 
-    &_username {
+    &-username {
+      @extend %styles__text_body-plain;
       opacity: .5;
     }
   }

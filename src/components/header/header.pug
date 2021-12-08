@@ -53,7 +53,7 @@ mixin header( item )
           case item.authorized
             when true
               .header__user-bar
-                span.header__user-bar_username.custom-font-style_body-plain Юлий Цезарь
+                span.header__user-bar-username Юлий Цезарь
             when false 
               .header__authorization-buttons
                 form.header__authorization-buttons-login( action="website__login.html" )
