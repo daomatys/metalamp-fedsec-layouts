@@ -31,9 +31,9 @@ const defineEntryPoints = function convertArrayOfPathsIntoEntriesObject( pagesAr
 
 
 const PATHS = {
-  src: path.join(__dirname, './src'),
-  dist: path.join(__dirname, './dist'),
-  cache: path.join(__dirname, './.temp_cache')
+  src: path.join(__dirname, '/src'),
+  dist: path.join(__dirname, '/dist'),
+  cache: path.join(__dirname, '/.temp_cache')
 };
 
 const PAGES__ROOT = path.join( PATHS.src, 'pages' );
