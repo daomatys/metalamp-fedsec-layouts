@@ -40,9 +40,9 @@ mixin input( item )
   - const readonly = archetype === 'dropdown' || archetype === 'date-picker'
   - const placeholder = definePlaceholder( archetype, dropdown.type, item.placeholder )
 
-  - const expanderParentClass = readonly ? 'expander__parent' : ''
-  - const datePickerClasses = archetype === 'date-picker' ? 'expander adp-frame' : ''
-  - const dropdownClasses =   archetype === 'dropdown' ? 'expander dropdown' : ''
+  - const expanderParentClass = readonly ? 'js-expander__parent' : ''
+  - const datePickerClasses = archetype === 'date-picker' ? 'js-expander js-adp-frame' : ''
+  - const dropdownClasses =   archetype === 'dropdown' ? 'js-expander dropdown' : ''
 
   - const frameClasses =  [ datePickerClasses, dropdownClasses ]
 

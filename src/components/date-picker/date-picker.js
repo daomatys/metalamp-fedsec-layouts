@@ -5,9 +5,13 @@ import './date-picker.scss';
 
 import '@components/button/__mean-oval/button__mean-oval';
 
+const SELECTOR__FRAME = 'js-adp-frame';
+const SELECTOR__AIM = 'js-expander__aim';
+const SELECTOR__PARENT = 'js-expander__parent';
+const SELECTOR__ACTIVE = 'js-expander_active';
 
 const init = function initDatePicker() {
-  const inputFrames = document.querySelectorAll('.adp-frame');
+  const inputFrames = document.querySelectorAll('.' + SELECTOR__FRAME);
 
   if ( inputFrames ) {
     inputFrames.forEach( frame => sortTasks( frame ) );
@@ -17,10 +21,10 @@ const init = function initDatePicker() {
 const sortTasks = function sortDatePickerElementsTasks( frame ) {
   const elements = defineElements( frame );
 
-  const currentAim = frame.parentNode.querySelector('.expander__aim');
+  const currentAim = frame.parentNode.querySelector('.' + SELECTOR__AIM);
   const rawDates = currentAim.getAttribute('data-dates');
-  const caseSlaveAim = currentAim.classList.contains('slave');
-  const caseMasterAim = currentAim.classList.contains('master');
+  const caseSlaveAim = currentAim.classList.contains('js-slave');
+  const caseMasterAim = currentAim.classList.contains('js-master');
 
   if ( caseSlaveAim ) {
     sendDates( rawDates, elements.holder );
@@ -31,9 +35,9 @@ const sortTasks = function sortDatePickerElementsTasks( frame ) {
 }
 
 const defineElements = function( frame ) {
-  const holder = frame.closest('.expander__parent').parentNode;
+  const holder = frame.closest('.' + SELECTOR__PARENT).parentNode;
   
-  const caseRelations = holder.querySelector('.master');
+  const caseRelations = holder.querySelector('.js-master');
   const master = caseRelations ? holder.firstElementChild : frame.parentNode ;
   const slave = caseRelations ? holder.lastElementChild : master ;
 
@@ -41,12 +45,12 @@ const defineElements = function( frame ) {
     relations: caseRelations ? true : false,
     holder: holder,
     frames: {
-      master: master.querySelector('.adp-frame'),
-      slave:  slave.querySelector('.adp-frame')
+      master: master.querySelector('.' + SELECTOR__FRAME),
+      slave:  slave.querySelector('.' + SELECTOR__FRAME)
     },
     aims: {
-      master: master.querySelector('.expander__aim'),
-      slave:  slave.querySelector('.expander__aim')
+      master: master.querySelector('.' + SELECTOR__AIM),
+      slave:  slave.querySelector('.' + SELECTOR__AIM)
     }
   }
 }
@@ -59,7 +63,7 @@ const sendDates = function sendDatesUsingDispatchCustomEvent( rawDates, holder )
 }
 
 const triggerClick = function triggerClickRelativeElementClick( slaveFrame, masterAim ) {
-  slaveFrame.onclick = () => masterAim.classList.toggle('expander_active');
+  slaveFrame.onclick = () => masterAim.classList.toggle(SELECTOR__ACTIVE);
 }
 
 const renderDatePicker = function renderDatePickerUnderTheMasterFrame( elements, rawDates, caseMasterAim ) {
@@ -131,9 +135,9 @@ const defineClearButtonState = function defineClearButtonState( masterFrame, cle
   const caseValuesExists = masterFrame.value;
 
   if ( caseValuesExists ) {
-    clearButton.classList.remove('mob_hidden');
+    clearButton.classList.remove('js-mob_hidden');
   } else {
-    clearButton.classList.add('mob_hidden');
+    clearButton.classList.add('js-mob_hidden');
   }
 }
 

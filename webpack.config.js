@@ -31,9 +31,9 @@ const defineEntryPoints = function convertArrayOfPathsIntoEntriesObject( pagesAr
 
 
 const PATHS = {
-  src: path.join(__dirname, '/src'),
-  dist: path.join(__dirname, '/dist'),
-  cache: path.join(__dirname, '/.temp_cache')
+  src: path.join(__dirname, './src'),
+  dist: path.join(__dirname, './dist'),
+  cache: path.join(__dirname, './.temp_cache')
 };
 
 const PAGES__ROOT = path.join( PATHS.src, 'pages' );
@@ -41,6 +41,7 @@ const PAGES__ROOT = path.join( PATHS.src, 'pages' );
 const PAGES__FULLPATHS = definePagesPaths( PAGES__ROOT );
 const PAGES__ENTRIES = defineEntryPoints( PAGES__FULLPATHS );
 const PAGES__NAMES = PAGES__FULLPATHS.map( filepath => defineFileName( filepath ) );
+
 
 
 module.exports = {
@@ -171,7 +172,7 @@ module.exports = {
 
   resolve: {
     alias: {
-      '@variables':  path.join( PATHS.src, '/variables/variables.scss' ),
+      '@variables': path.join( PATHS.src, '/variables/variables.scss' ),
       '@components': path.join( PATHS.src, '/components/' ),
       '@entities': path.join( PATHS.src, '/entities/' ),
       '@images': path.join( PATHS.src, '/assets/images/' ),

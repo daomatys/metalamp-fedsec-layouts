@@ -10,12 +10,12 @@ mixin inputDropdown( item )
   - const values = dropdown.values || [ 0, 0, 0 ]
   - const options = dropdown.type === 'guests' ? guestsOptionNames : facilitiesOptionNames
 
-  - const iconFlippedClass = dropdown.expanded ? 'icon_flipped' : ''
-  - const expanderActiveClass = dropdown.expanded ? 'expander_active' : ''
+  - const iconFlippedClass = dropdown.expanded ? 'js-icon_flipped' : ''
+  - const expanderActiveClass = dropdown.expanded ? 'js-expander_active' : ''
 
   label.input__icon_expand( for=item.id )
     +materialIcon('expand_more', item.id)
-  .input__dropdown.expander__aim( class=expanderActiveClass data-options-type=dropdown.type )
+  .input__dropdown.js-expander__aim( class=expanderActiveClass data-options-type=dropdown.type )
     each option, index in options
       .input__option.custom-font-style_h3
         span.input__option-name #{option}
