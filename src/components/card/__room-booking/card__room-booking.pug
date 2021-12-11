@@ -72,12 +72,11 @@ mixin cardRoomBooking()
     .card-room-booking__button_submit
       +meanOvalButtons({
         groupname: "card-room-booking__button_submit",
-        buttons: [
-          {
-            type: "submit",
-            mode: "contained",
-            text: "Забронировать",
-            iconname: "arrow_forward"
-          }
-        ]
+        buttons: [{
+          type: "submit",
+          mode: "contained",
+          text: "Забронировать",
+          iconname: "arrow_forward",
+          widthpx: 320
+        }]
       })
