@@ -18,13 +18,12 @@ mixin meanOvalButtons( item )
     - buttonClasses += button.disabled ? ' frozen' : ''
     - buttonClasses += ` button-style_${button.mode}`
 
-    .mean-oval-button( class=buttonClasses )
+    .mean-oval-button( class=buttonClasses style=buttonWidth )
       button.mean-oval-button__elem(
         class=textButtonClass
         id=buttonId
         disabled=button.disabled
         type=buttonType
-        style=buttonWidth
       ) #{buttonText}
 
       case button.mode
