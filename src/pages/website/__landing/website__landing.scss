@@ -1,4 +1,5 @@
 @import "@variables";
+@import "@styles/__text/styles__text.scss";
 
 $smoothTransformWidth: 660px;
 
@@ -45,11 +46,12 @@ $smoothTransformWidth: 660px;
   }
 
   &__note {
+    @extend %styles__text_body;
     width: 100%;
     height: 388px;
     align-items: flex-end;
 
-    & > .custom-font-style_body {
+    &-text {
       width: 273px;
     }
   }
