@@ -1,6 +1,5 @@
 @import "@variables";
 @import "@styles/__form/styles__form.scss";
-@import "@styles/__width/styles__width.scss";
 
 .wrap_top {
   margin-top: 3px;
@@ -31,30 +30,6 @@
 
   &__element {
     grid-gap: 16px;
-
-    &-width {
-      &_100 {
-        @extend %styles__width_100;
-      }
-      &_83 {
-        @extend %styles__width_83;
-      }
-      &_81 {
-        @extend %styles__width_81;
-      }
-      &_61 {
-        @extend %styles__width_61;
-      }
-      &_47 { 
-        @extend %styles__width_47;
-      }
-      &_30 {
-        @extend %styles__width_30;
-      }
-      &_27 {
-        @extend %styles__width_27;
-      }
-    }
   }
 }
 
