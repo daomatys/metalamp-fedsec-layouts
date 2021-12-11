@@ -22,13 +22,15 @@ mixin cardRoomBooking()
           type: "date-picker",
           title: "прибытие",
           hierarchy: "master",
+          widthpx: 150
         })
         +input({
           id: "room-booking__date-picker_departure",
           type: "date-picker",
           title: "выезд",
           hierarchy: "slave",
-          dates: "2019-08-19, 2019-08-23"
+          dates: "2019-08-19, 2019-08-23",
+          widthpx: 150
         })
 
     .card-room-booking__container_guests-input
