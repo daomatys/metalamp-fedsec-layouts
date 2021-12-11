@@ -17,7 +17,7 @@ mixin inputDropdown( item )
     +materialIcon('expand_more', item.id)
   .input__dropdown.js-expander__aim( class=expanderActiveClass data-options-type=dropdown.type )
     each option, index in options
-      .input__option.custom-font-style_h3
+      .input__option
         span.input__option-name #{option}
         .input__option-button-block
           .input__option-button_decrease
