@@ -59,11 +59,13 @@ block main
               id: "uik-fe__date-twins_arrival",
               type: "date-picker",
               title: "date dropdown",
+              widthpx: 150,
             })
             +input({
               id: "uik-fe__date-twins_departure",
               type: "date-picker",
               title: "date dropdown",
+              widthpx: 150,
               dates: "2019-08-23"
             })
       .form-elements__block.block__dropdowns_date-semi-wide
@@ -71,6 +73,7 @@ block main
           id: "uik-fe__semi-wide_01",
           type: "date-picker",
           title: "filter date dropdown",
+          width: "266",
           dates: "2019-08-19, 2019-08-23"
         })
       .form-elements__block.block__inputs_subscribe
@@ -78,6 +81,7 @@ block main
           type: "subscription",
           title: "subscription text field",
           placeholder: "Email",
+          widthpx: 266,
         })
     .form-elements__column.column_center
       .form-elements__block.block__checkbox-buttons
@@ -124,6 +128,7 @@ block main
         +rangeSlider({
           title: "range slider",
           id: "uik-fe-range-slider",
+          widthpx: 266,
         })
       .form-elements__block.block__mean-oval-buttons
         .form-elements__element
@@ -155,6 +160,7 @@ block main
                     mode: "contained",
                     text: "перейти к оплате",
                     iconname: "arrow_forward",
+                    widthpx: 320
                   }
                 ]
               })
@@ -171,6 +177,7 @@ block main
           type: "dropdown",
           title: "dropdown",
           state: "default",
+          width: "266",
           dropdown: {
             type: "facilities",
             values: [ 2, 2, 0 ],
@@ -181,6 +188,7 @@ block main
           type: "dropdown",
           title: "dropdown",
           state: "expanded",
+          width: "266",
           dropdown: {
             type: "facilities",
             values: [ 2, 2, 0 ],

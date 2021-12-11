@@ -39,6 +39,7 @@ mixin input( item )
   - const type = archetype === 'subscription' ? 'email' : 'text'
   - const readonly = archetype === 'dropdown' || archetype === 'date-picker'
   - const placeholder = definePlaceholder( archetype, dropdown.type, item.placeholder )
+  - const inputWidth = `width:${ item.widthpx || 320 }px`
 
   - const expanderParentClass = readonly ? 'js-expander__parent' : ''
   - const datePickerClasses = archetype === 'date-picker' ? 'js-expander js-adp-frame' : ''
@@ -46,7 +47,7 @@ mixin input( item )
 
   - const frameClasses =  [ datePickerClasses, dropdownClasses ]
 
-  .input( class=expanderParentClass )
+  .input( class=expanderParentClass, style=inputWidth )
     if title
       .input__title
         +titleBar( title, item.state )

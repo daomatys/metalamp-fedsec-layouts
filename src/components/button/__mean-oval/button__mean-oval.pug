@@ -9,6 +9,7 @@ mixin meanOvalButtons( item )
     - const buttonId = item.groupname + '-' + buttonCount
     - const buttonText = button.text || 'click me'
     - const buttonType = button.type || 'button'
+    - const buttonWidth = `width:${ button.widthpx || 99 }px`
     - const isTextMode = button.mode === 'text'
     - const textButtonClass = isTextMode ? '.js-mean-oval-button_pos-relative' : ''
 
@@ -18,7 +19,13 @@ mixin meanOvalButtons( item )
     - buttonClasses += ` button-style_${button.mode}`
 
     .mean-oval-button( class=buttonClasses )
-      button.mean-oval-button__elem( class=textButtonClass id=buttonId disabled=button.disabled type=buttonType ) #{buttonText}
+      button.mean-oval-button__elem(
+        class=textButtonClass
+        id=buttonId
+        disabled=button.disabled
+        type=buttonType
+        style=buttonWidth
+      ) #{buttonText}
 
       case button.mode
         when 'contained'
