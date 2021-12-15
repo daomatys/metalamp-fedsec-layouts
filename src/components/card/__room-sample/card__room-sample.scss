@@ -1,4 +1,5 @@
 @import "@variables";
+@import "@styles/__text/styles__text.scss";
 
 $cardWidth: 270px;
 $borderRadius: 4px;
@@ -107,5 +108,17 @@ $borderRadius: 4px;
   &__reviews {
     color: rgba($valhalla, .5);
     font-size: 14px;
+  }
+
+  &__title_prefix,
+  &__price {
+    @extend %styles__text_body-plain;
+  }
+
+  &__title {
+    &_room-number {
+      @extend %styles__text_h2;
+      margin-right: 7px;
+    }
   }
 }

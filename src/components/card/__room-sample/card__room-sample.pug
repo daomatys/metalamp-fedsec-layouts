@@ -33,18 +33,18 @@ mixin cardRoomSample( item )
           +materialIcon("chevron_left", itemRightID)
     .card-room-sample__container_bottom
       .card-room-sample__title-container 
-        .card-room-booking__title
-          span.card-room-booking__title_prefix № 
-          span.custom-font-style_h2 #{ item.room }
+        .card-room-sample__title
+          span.card-room-sample__title_prefix № 
+          span.card-room-sample__title_room-number #{ item.room }
           if ( item.luxe )
-            span.card-room-booking__title_luxe-mark ЛЮКС
-        .card-room-booking__price
-          span.card-room-booking__price_value #{ item.price.toLocaleString("ru-RU") }
-          span.card-room-booking__price_symbol ₽ 
-          span.card-room-booking__price_addition в сутки
+            span.card-room-sample__title_luxe-mark ЛЮКС
+        .card-room-sample__price
+          span.card-room-sample__price_value #{ item.price.toLocaleString("ru-RU") }
+          span.card-room-sample__price_symbol ₽ 
+          span.card-room-sample__price_addition в сутки
       .card-room-sample__rate-n-reviews
         .card-room-sample__rate
           +starRateButton( item.count.rate )
         .card-room-sample__reviews
-          span.card-room-booking__price_value #{ item.count.reviews }
-          span.card-room-booking__price_addition  Отзывов
+          span.card-room-sample__price_value #{ item.count.reviews }
+          span.card-room-sample__price_addition  Отзывов
