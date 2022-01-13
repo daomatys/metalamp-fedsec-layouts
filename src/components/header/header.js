@@ -40,7 +40,7 @@ const initButtons = function initButtons() {
     }
 
     const defineButon = suffix => document.querySelector(`#ejectable-button_${suffix}-1`);
-    const defineButtonAction = ( button, window ) => button.addEventListener('click', () => windowsClassListToggle( window ) );
+    const defineButtonAction = ( button, window ) => button.onclick = () => windowsClassListToggle( window );
 
     const buttonFilter = defineButon('filtration');
     const buttonNavigation = defineButon('navigation');
