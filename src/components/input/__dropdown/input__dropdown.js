@@ -127,9 +127,9 @@ const defineFacilitiesInputValue = function defineFacilitiesInputValue( values )
   const secondText = defineText( values[1], values[0], 'кроват', [ 'ь', 'ей', 'и' ]      );
   const thirdText =  defineText( values[2], values[0] + values[1], 'ванн',   [ 'ая комната', 'ых комнат', 'ые комнаты' ] );
 
-  const result = firstText + secondText + thirdText + '…'
+  const result = firstText + secondText + thirdText + '…';
 
-  return result;
+  return result.length < 2 ? '' : result ;
 }
 
 const defineText= function defineTextAccordingToNumber( currentValue, lastValue, word, endings=[] ) {
