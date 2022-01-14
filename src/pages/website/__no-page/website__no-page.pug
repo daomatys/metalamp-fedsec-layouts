@@ -5,6 +5,10 @@ block head
   title 404 / NOT FOUND
 
 
+block header
+  +header({ authorized: false })
+
+
 block main
   - const titleText = 'ошибка 404'
   - const noteText = 'страница не найдена'

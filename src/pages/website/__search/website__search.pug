@@ -5,9 +5,10 @@ block head
   title TOXIN HOTEL / SEARCH
 
 
-block modal
+block header
   include /components/modal-window/modal-window.pug
 
+  +header({ authorized: false, filtering: true })
   .modal-window__filtration.modal-window_invisible
     +modalWindow({
       id: "ejectable-button_filtration-1",
