@@ -5,10 +5,9 @@
   grid-gap: 30px;
 
   &__array {
-    display: inherit;
+    display: grid;
     grid-template-columns: repeat(2, auto);
     grid-gap: 30px 20px;
-    justify-content: start;
   }
 }
 
@@ -20,7 +19,6 @@
   min-height: 15px;
   margin: 0;
   box-sizing: border-box;
-  width: 100%;
 
   & > * {
     cursor: pointer;
@@ -52,7 +50,6 @@
   }
 
   &__elem {
-    position: absolute;
     appearance: none;
     border: none;
     background: transparent;
@@ -91,6 +88,7 @@
 
   &_outlined > button {
     color: $perfume;
+    position: absolute;
   }
 
   &_text {
@@ -112,10 +110,6 @@
 }
 
 .js-mean-oval-button {
-  &_pos-relative {
-    position: relative;
-  }
-
   &_hidden {
     opacity: 0;
     pointer-events: none;
