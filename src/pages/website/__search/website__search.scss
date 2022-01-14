@@ -1,13 +1,14 @@
 @import "@variables";
 
-$sideWindowWidth: 306px;
+
+$sideWindowWidth: 360px;
 
 $piquetRoomGridColumnsThree: 1116px;
 $piquetRoomGridColumnsFour: 1694px;
-
 $piquetSearchPageInputParameters: 1412px;
 
 $inputParametersPadding: 20px;
+
 
 @media only screen and (max-width: $piquetRoomGridColumnsTwo) {
   .search-page {
