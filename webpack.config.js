@@ -182,8 +182,8 @@ module.exports = {
 
   resolveLoader: {
     alias: {
-      //'aliased-pug-loader': 'simple-pug-loader',
-      'aliased-pug-loader': '@webdiscus/pug-loader',
+      'aliased-pug-loader': 'simple-pug-loader',
+      //'aliased-pug-loader': '@webdiscus/pug-loader',
     }
   }
 }

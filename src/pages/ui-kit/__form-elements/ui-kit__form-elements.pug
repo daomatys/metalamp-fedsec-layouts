@@ -132,21 +132,21 @@ block main
         .form-elements__element
           +titleBar("buttons")
           .mean-oval-buttons
-            .mean-oval-buttons__array
+            .mean-oval-buttons__array( style="width:217px" )
               +meanOvalButtons({
                 groupname: "uik-fe__mob-mid",
                 buttons: [
                   { mode: "contained" },
                   { mode: "contained", disabled: true },
-                  { mode: "outlined"  },
+                  { mode: "outlined" },
                   { mode: "outlined", disabled: true }
                 ]
               })
-            .mean-oval-buttons__array
+            .mean-oval-buttons__array( style="width:142px" )
               +meanOvalButtons({
                 groupname: "uik-fe__mob-small",
                 buttons: [
-                  { mode: "text" },
+                  { mode: "text", },
                   { mode: "text", disabled: true }
                 ]
               })
@@ -158,7 +158,6 @@ block main
                     mode: "contained",
                     text: "перейти к оплате",
                     iconname: "arrow_forward",
-                    widthpx: 320
                   }
                 ]
               })
