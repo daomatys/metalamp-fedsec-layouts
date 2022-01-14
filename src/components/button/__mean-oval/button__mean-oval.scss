@@ -86,9 +86,11 @@
     height: 44px;
   }
 
-  &_outlined > button {
-    color: $perfume;
-    position: absolute;
+  &_outlined {
+    .mean-oval-button__elem {
+      color: $perfume;
+      position: absolute;
+    }
   }
 
   &_text {
@@ -96,7 +98,7 @@
     white-space: nowrap;
     transition: opacity .5s ease;
 
-    & > button {
+    & .mean-oval-button__elem {
       color: $perfume;
       padding: 0;
 
