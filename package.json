@@ -47,7 +47,7 @@
     "try": "webpack --mode=development --progress",
     "host": "webpack serve --history-api-fallback --progress",
     "lint": "eslint ./src/components/header/header.js",
-    "lint:fix": "eslint --fix ./src/**"
+    "lint:fix": "eslint --fix ./src/components/header/header.js"
   },
   "repository": {
     "type": "git",
