@@ -22,18 +22,15 @@ mixin input( item )
         }
       }
     }
-
   - const dropdown =  item.dropdown || {}
   - const archetype = item.type
   - const title =     item.title
 
-  - const id = item.id
-  - const disabled = item.disabled
   - const checked = dropdown.expanded
   - const type = archetype === 'subscription' ? 'email' : 'text'
   - const readonly = archetype === 'dropdown' || archetype === 'date-picker'
   - const placeholder = definePlaceholder( archetype, dropdown.type, item.placeholder )
-  - const inputWidth = `width:${ item.widthpx || 320 }px`
+  - const currentWidth = `width:${ item.widthpx || '100%' }`
 
   - const expanderParentClass = readonly ? 'js-expander__parent' : ''
   - const datePickerClasses = archetype === 'date-picker' ? 'js-expander js-adp-frame' : ''
@@ -41,17 +38,17 @@ mixin input( item )
 
   - const frameClasses =  [ datePickerClasses, dropdownClasses ]
 
-  .input( class=expanderParentClass, style=inputWidth )
+  .input( class=expanderParentClass, style=currentWidth )
     if title
       .input__title
         +titleBar( title, item.state )
     .input__element
       input.input__frame(
         class=       frameClasses
-        id=          id
+        id=          item.id
         type=        type
         placeholder= placeholder
-        disabled=    disabled
+        disabled=    item.disabled
         checked=     checked
         readonly=    readonly
       )
