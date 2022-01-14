@@ -5,18 +5,19 @@ import '@components/material-icon-cell/material-icon-cell';
 import '@components/navigation-bar/navigation-bar';
 import '@components/button/__mean-oval/button__mean-oval';
 
-const initEjector = function () {
-  const ejectors = document.querySelectorAll('.header__ejector');
-
-  ejectors.forEach((ejector) => ejector.addEventListener('click', ({ target }) => onEjectorClick(target)));
-};
-
 const onEjectorClick = function onEjectorClickEvent(target) {
   const aim = target.closest('.header__ejector');
 
   if (aim) {
     aim.closest('.header__container_ejectable').classList.toggle('container-ejected');
   }
+};
+
+const initEjector = function initEjector() {
+  const ejectors = document.querySelectorAll('.header__ejector');
+  const clickEventHandler = ({ target }) => onEjectorClick(target);
+
+  ejectors.forEach((ejector) => ejector.addEventListener('click', clickEventHandler));
 };
 
 initEjector();
@@ -36,7 +37,8 @@ const initButtons = function initButtons() {
       elementClassListToggle(footer);
     };
     const defineButtonAction = function defineButtonActionForCertainModalWindow(button, window) {
-      button.onclick = () => windowsClassListToggle(window);
+      const clickEventHandler = () => windowsClassListToggle(window);
+      button.addEventListener('click', clickEventHandler);
     };
     const defineButon = (suffix) => document.querySelector(`#ejectable-button_${suffix}-1`);
     const defineModalWindow = (suffix) => document.querySelector(`.modal-window__${suffix}`);
