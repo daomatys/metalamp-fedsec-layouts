@@ -10,14 +10,14 @@ mixin cardFilter( item )
   form.card-filter
     .card-filter__date-picker
       +input({
-        id: item.id + "_date",
+        id: item.id + "-date",
         type: "date-picker",
         title: "дата пребывания в отеле",
         dates: "2019-08-19, 2019-08-23"
       })
     .card-filter__guests-dropdown
       +input({
-        id: item.id + "_guests",
+        id: item.id + "-guests",
         type: "dropdown",
         title: "гости",
         dropdown: {
@@ -37,7 +37,7 @@ mixin cardFilter( item )
       +titleBar("правила дома")
       .checkbox-button__array
         +checkboxButtons({
-          groupname: "search-by__checkbox-allows", 
+          groupname: item.id + "-checkboxes", 
           checkboxes: [
             { pressed: false, label: "Можно курить" },
             { pressed: true,  label: "Можно с питомцами" },
@@ -49,7 +49,7 @@ mixin cardFilter( item )
       .checkbox-buttons__array
         +checkboxButtons({
           richmode: true,
-          groupname: "search-by__accessibility",
+          groupname: item.id + "-rich-checkboxes",
           checkboxes: [
             {
               title: "Широкий коридор",
@@ -63,7 +63,7 @@ mixin cardFilter( item )
         })
     .card-filter__facilities-dropdown
       +input({
-        id: item.id + "_facilities",
+        id: item.id + "-facilities",
         type: "dropdown",
         title: "удобства номера",
         dropdown: {
