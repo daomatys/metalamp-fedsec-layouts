@@ -1,5 +1,5 @@
 mixin materialIcon( code, id )
   if id
-    label.material-icons( for=id ) #{ code }
+    label.material-icons.material-icons_clickable( for=id ) #{ code }
   else
     span.material-icons #{ code }

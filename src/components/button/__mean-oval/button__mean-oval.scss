@@ -20,11 +20,13 @@
   margin: 0;
   box-sizing: border-box;
 
-  & > * {
+  &__elem,
+  &__thumb,
+  &__background {
     cursor: pointer;
   }
 
-  &:hover > .mean-oval-button__background {
+  &:hover .mean-oval-button__background {
     opacity: .5;
   }
 
