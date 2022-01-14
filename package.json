@@ -7,16 +7,16 @@
     "air-datepicker": "^3.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.7",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
     "@babel/preset-env": "^7.16.8",
     "@webdiscus/pug-loader": "^1.6.0",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
     "css-minimizer-webpack-plugin": "^3.3.1",
-    "css-mqpacker": "^7.0.0",
     "cssnano": "^5.0.15",
     "eslint": "6.8.0",
-    "eslint-config-airbnb-base": "14.1.0",
+    "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-fsd": "^1.0.1",
     "eslint-plugin-import": "^2.25.4",
     "html-webpack-plugin": "^5.5.0",
