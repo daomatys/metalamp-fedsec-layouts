@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
+    es6: true,
   },
   plugins: [
     'fsd'
@@ -10,8 +10,12 @@ module.exports = {
     'airbnb-base',
     'plugin:fsd/all'
   ],
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
   parserOptions: {
-    ecmaVersion: 13,
+    ecmaVersion: 2018,
     sourceType: 'module',
   },
   rules: {
