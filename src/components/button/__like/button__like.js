@@ -3,29 +3,28 @@ import '../button.scss';
 
 import '@components/material-icon-cell/material-icon-cell';
 
-
 function likeButtonEventListeners() {
   const items = document.querySelectorAll('.like-button__elem');
 
-  for (let item of items) {
+  for (const item of items) {
     item.addEventListener('click', likeButtonPressing);
   }
 }
 
-function likeButtonPressing({target}) {
+function likeButtonPressing({ target }) {
   const aim = target.closest('.like-button');
   const input = aim.firstElementChild;
   const icon = aim.querySelector('.material-icons');
   const counter = aim.querySelector('.counter-elem');
 
-  if ( input.hasAttribute('checked') ) {
+  if (input.hasAttribute('checked')) {
     icon.textContent = 'favorite_border';
     --counter.textContent;
-    input.removeAttribute('checked')
+    input.removeAttribute('checked');
   } else {
-    icon.textContent = 'favorite'
+    icon.textContent = 'favorite';
     ++counter.textContent;
-    input.setAttribute('checked', true)
+    input.setAttribute('checked', true);
   }
 }
 

@@ -11,69 +11,69 @@ const SELECTOR__PARENT = 'js-expander__parent';
 const SELECTOR__ACTIVE = 'js-expander_active';
 
 const init = function initDatePicker() {
-  const inputFrames = document.querySelectorAll('.' + SELECTOR__FRAME);
+  const inputFrames = document.querySelectorAll(`.${SELECTOR__FRAME}`);
 
-  if ( inputFrames ) {
-    inputFrames.forEach( frame => sortTasks( frame ) );
+  if (inputFrames) {
+    inputFrames.forEach((frame) => sortTasks(frame));
   }
-}
+};
 
-const sortTasks = function sortDatePickerElementsTasks( frame ) {
-  const elements = defineElements( frame );
+const sortTasks = function sortDatePickerElementsTasks(frame) {
+  const elements = defineElements(frame);
 
-  const currentAim = frame.parentNode.querySelector('.' + SELECTOR__AIM);
+  const currentAim = frame.parentNode.querySelector(`.${SELECTOR__AIM}`);
   const rawDates = currentAim.getAttribute('data-dates');
   const caseSlaveAim = currentAim.classList.contains('js-slave');
   const caseMasterAim = currentAim.classList.contains('js-master');
 
-  if ( caseSlaveAim ) {
-    sendDates( rawDates, elements.holder );
-    triggerClick( elements.frames.slave, elements.aims.master );
+  if (caseSlaveAim) {
+    sendDates(rawDates, elements.holder);
+    triggerClick(elements.frames.slave, elements.aims.master);
   } else {
-    renderDatePicker( elements, rawDates, caseMasterAim );
+    renderDatePicker(elements, rawDates, caseMasterAim);
   }
-}
+};
 
-const defineElements = function( frame ) {
-  const holder = frame.closest('.' + SELECTOR__PARENT).parentNode;
-  
+const defineElements = function (frame) {
+  const holder = frame.closest(`.${SELECTOR__PARENT}`).parentNode;
+
   const caseRelations = holder.querySelector('.js-master');
-  const master = caseRelations ? holder.firstElementChild : frame.parentNode ;
-  const slave = caseRelations ? holder.lastElementChild : master ;
+  const master = caseRelations ? holder.firstElementChild : frame.parentNode;
+  const slave = caseRelations ? holder.lastElementChild : master;
 
   return {
-    relations: caseRelations ? true : false,
-    holder: holder,
+    relations: !!caseRelations,
+    holder,
     frames: {
-      master: master.querySelector('.' + SELECTOR__FRAME),
-      slave:  slave.querySelector('.' + SELECTOR__FRAME)
+      master: master.querySelector(`.${SELECTOR__FRAME}`),
+      slave: slave.querySelector(`.${SELECTOR__FRAME}`),
     },
     aims: {
-      master: master.querySelector('.' + SELECTOR__AIM),
-      slave:  slave.querySelector('.' + SELECTOR__AIM)
-    }
-  }
-}
+      master: master.querySelector(`.${SELECTOR__AIM}`),
+      slave: slave.querySelector(`.${SELECTOR__AIM}`),
+    },
+  };
+};
 
-const sendDates = function sendDatesUsingDispatchCustomEvent( rawDates, holder ) {
-  const fixedDatesArray = rawDates ? rawDates.split(', ') : [] ;
-  const fixedDates = fixedDatesArray.map( fixedDate => new Date( fixedDate ) );
+const sendDates = function sendDatesUsingDispatchCustomEvent(rawDates, holder) {
+  const fixedDatesArray = rawDates ? rawDates.split(', ') : [];
+  const fixedDates = fixedDatesArray.map((fixedDate) => new Date(fixedDate));
 
-  holder.dispatchEvent( new CustomEvent('incoming-dates', { detail: fixedDates }) );
-}
+  holder.dispatchEvent(new CustomEvent('incoming-dates', { detail: fixedDates }));
+};
 
-const triggerClick = function triggerClickRelativeElementClick( slaveFrame, masterAim ) {
+const triggerClick = function triggerClickRelativeElementClick(slaveFrame, masterAim) {
   slaveFrame.onclick = () => masterAim.classList.toggle(SELECTOR__ACTIVE);
-}
+};
 
-const renderDatePicker = function renderDatePickerUnderTheMasterFrame( elements, rawDates, caseMasterAim ) {
-  const icon = name => '<span class="material-icons">' + name + '</span>';
+const renderDatePicker = function renderDatePickerUnderTheMasterFrame(elements, rawDates, caseMasterAim) {
+  const icon = (name) => `<span class="material-icons">${name}</span>`;
   const currentDate = new Date('2019-08-08');
-  const dateFormat = elements.relations ? 'dd.MM.yyyy' : 'd MMM' ;
+  const dateFormat = elements.relations ? 'dd.MM.yyyy' : 'd MMM';
 
   const container = elements.aims.master.querySelector('.date-picker__container');
 
-  const frames = elements.frames;
+  const { frames } = elements;
   const slaveFrame = frames.slave;
   const masterFrame = frames.master;
 
@@ -81,7 +81,7 @@ const renderDatePicker = function renderDatePickerUnderTheMasterFrame( elements,
   const clearButton = buttons.firstElementChild.querySelector('button');
   const acceptButton = buttons.lastElementChild.querySelector('button');
 
-  const datePicker = new AirDatepicker( container, {
+  const datePicker = new AirDatepicker(container, {
     navTitles: {
       days: 'MMMM yyyy',
     },
@@ -93,34 +93,34 @@ const renderDatePicker = function renderDatePickerUnderTheMasterFrame( elements,
     multipleDatesSeparator: ' - ',
     prevHtml: icon('arrow_back'),
     nextHtml: icon('arrow_forward'),
-    minDate:   currentDate,
+    minDate: currentDate,
     startDate: currentDate,
-    onSelect: () => routeValues( slaveFrame, masterFrame, clearButton )
+    onSelect: () => routeValues(slaveFrame, masterFrame, clearButton),
   });
 
-  defineClearButtonState( masterFrame, clearButton );
+  defineClearButtonState(masterFrame, clearButton);
 
   clearButton.onclick = () => datePicker.clear();
   acceptButton.onclick = () => frames.master.click();
 
-  renderDateValues( datePicker, elements.holder, rawDates, caseMasterAim );
-}
+  renderDateValues(datePicker, elements.holder, rawDates, caseMasterAim);
+};
 
-const renderDateValues = function Dates( datePicker, holder, rawDates, caseMasterAim ) {
-  holder.addEventListener('incoming-dates', ({detail}) => datePicker.selectDate( detail ), { once: true });
+const renderDateValues = function Dates(datePicker, holder, rawDates, caseMasterAim) {
+  holder.addEventListener('incoming-dates', ({ detail }) => datePicker.selectDate(detail), { once: true });
 
-  if ( !caseMasterAim ) {
-    sendDates( rawDates, holder );
+  if (!caseMasterAim) {
+    sendDates(rawDates, holder);
   }
-}
+};
 
-const routeValues = function routeIncomingDateValues( slaveFrame, masterFrame, clearButton ) {
-  const caseEquivalence = slaveFrame.isEqualNode( masterFrame );
+const routeValues = function routeIncomingDateValues(slaveFrame, masterFrame, clearButton) {
+  const caseEquivalence = slaveFrame.isEqualNode(masterFrame);
 
-  if ( !caseEquivalence ) {
+  if (!caseEquivalence) {
     const initialValue = masterFrame.value.split(' - ');
 
-    if ( initialValue.length > 1 ) {
+    if (initialValue.length > 1) {
       masterFrame.value = initialValue[0];
       slaveFrame.value = initialValue[1];
     } else {
@@ -128,17 +128,17 @@ const routeValues = function routeIncomingDateValues( slaveFrame, masterFrame, c
       masterFrame.value = initialValue[0];
     }
   }
-  defineClearButtonState( masterFrame, clearButton );
-}
+  defineClearButtonState(masterFrame, clearButton);
+};
 
-const defineClearButtonState = function defineClearButtonState( masterFrame, clearButton ) { 
+const defineClearButtonState = function defineClearButtonState(masterFrame, clearButton) {
   const caseValuesExists = masterFrame.value;
 
-  if ( caseValuesExists ) {
+  if (caseValuesExists) {
     clearButton.classList.remove('js-mean-oval-button_hidden');
   } else {
     clearButton.classList.add('js-mean-oval-button_hidden');
   }
-}
+};
 
 init();
