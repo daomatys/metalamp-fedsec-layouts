@@ -6,27 +6,21 @@ include __dropdown/input__dropdown.pug
 
 mixin input( item )
   -
-    const definePlaceholder = function definePlaceholdersByValue( type, dropdownType, placeholder ) {
-      let placeholderValue = '';
-
-      switch ( type ) {
+    const definePlaceholder = function definePlaceholdersByValue( archetype, dropdownType, placeholder ) {
+      switch ( archetype ) {
         case 'date-picker': {
-          placeholderValue = 'ДД.ММ.ГГГГ';
-          break;
+          return 'ДД.ММ.ГГГГ';
         }
         case 'subscription': {
-          placeholderValue = 'Email';
-          break;
+          return 'Email';
         }
         case 'dropdown': {
-          placeholderValue = dropdownType === 'guests' ? 'Cколько гостей' : 'Cколько ванных и спален' ;
-          break;
+          return dropdownType === 'guests' ? 'Cколько гостей' : 'Cколько ванных и спален' ;
         }
         default: {
-          placeholderValue = placeholder;
+          return placeholder;
         }
       }
-      return placeholderValue;
     }
 
   - const dropdown =  item.dropdown || {}
