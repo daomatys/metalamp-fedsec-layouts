@@ -32,25 +32,20 @@ const initButtons = function initButtons() {
     const elementClassListToggle = element => {
       element.classList.toggle('modal-window_invisible');
     }
-
-    const windowsClassListToggle = window => {
+    const windowsClassListToggle = function windowsClassListToggle( window ) {
       elementClassListToggle( main );
       elementClassListToggle( window );
       elementClassListToggle( footer );
     }
-
-    const defineButon = suffix => document.querySelector(`#ejectable-button_${suffix}-1`);
-    const defineModalWindow = suffix => document.querySelector(`.modal-window__${suffix}`);
-
     const defineButtonAction = function defineButtonActionForCertainModalWindow( button, window ) {
       button.onclick = () => windowsClassListToggle( window );
     }
+    const defineButon = suffix => document.querySelector(`#ejectable-button_${suffix}-1`);
+    const defineModalWindow = suffix => document.querySelector(`.modal-window__${suffix}`);
 
     const buttonFiltration = defineButon('filtration');
     const buttonNavigation = defineButon('navigation');
     const buttonAuthorization = defineButon('authorization');
-
-    console.log( buttonFiltration, buttonNavigation, buttonAuthorization )
 
     const modalWindowFiltration = defineModalWindow('filtration');
     const modalWindowNavigation = defineModalWindow('navigation');
