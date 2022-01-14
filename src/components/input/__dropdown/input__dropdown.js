@@ -17,7 +17,7 @@ const initListeners = function initElementsEventListeners( dropdown ) {
   const buttonGroups = dropdown.querySelectorAll('.input__option-button-block');
   const controllersBar = dropdown.querySelector('.input__state-controllers');
 
-  updateDropdownValue( [...counters][0], counters );
+  updateDropdownValue( Array.from(counters)[0], counters );
 
   if ( controllersBar ) {
     const controllers = defineButtons( controllersBar );
@@ -59,9 +59,8 @@ const initButtons = function initOptionButtonsEventListeners( buttons, counters,
   adjustButtonsState( optionButtons, optionCounterValue, 'circle-button_frozen' );
 
   const update = function( elem, shift ){
-    elem.addEventListener('click', () => updateDropdown( optionButtons, optionCounter, shift, controllers, counters ));
+    elem.onclick = () => updateDropdown( optionButtons, optionCounter, shift, controllers, counters );
   }
-
   update( optionButtons.left, -1);
   update( optionButtons.right, 1);
 }
@@ -74,7 +73,6 @@ const defineButtons = function defineFirstAndLastChildByItsParent( parent ) {
     left: firstElement,
     right: lastElement
   };
-
   return result;
 }
 
@@ -95,7 +93,7 @@ const updateDropdown = function updateCalcsAndControllersToCurrentState( buttons
 const updateDropdownValue = function updateDropdownValue( anychild, counters ) {
   const dropdown = anychild.closest('.input__dropdown');
   const frame = dropdown.parentNode.querySelector('.input__frame');
-  const values = [...counters].map( item => Number( item.textContent ) );
+  const values = Array.from( counters, item => Number( item.textContent ) );
   const dropdownType = dropdown.getAttribute('data-options-type');
 
   let dropdownValue = '';
@@ -144,14 +142,12 @@ const defineText= function defineTextAccordingToNumber( currentValue, lastValue,
         ending = endings[2];
       }
     }
-
     const textParts = [
       lastValue > 0 ? ', ' : '' ,
       currentValue + ' ',
       word,
       ending,
     ];
-
     result = textParts.reduce( (acc, curr) => acc + curr );
   }
 
@@ -189,7 +185,6 @@ const resetCounters = function resetCounterValueOnButtonClick( controllers, coun
     buttons.left.classList.add('circle-button_frozen');
     buttons.right.classList.remove('circle-button_frozen');
   });
-
   defineResetControllerState( counters, controllers );
   updateDropdownValue( [...counters][0], counters );
 }
