@@ -111,28 +111,24 @@ function defineFacilitiesInputValue(values) {
   return result.length < 2 ? '' : result;
 }
 
-function updateDropdownValue(anychild, counters) {
-  const dropdown = anychild.closest('.input__dropdown');
+function defineDropdownValue(dropdownType, values) {
+  switch (dropdownType) {
+    case 'guests': {
+      return defineGuestInputValue(values);
+    }
+    default: {
+      return defineFacilitiesInputValue(values);
+    }
+  }
+}
+
+function updateDropdownValue(anyChildElement, counters) {
+  const dropdown = anyChildElement.closest('.input__dropdown');
   const frame = dropdown.parentNode.querySelector('.input__frame');
   const values = Array.from(counters, (item) => Number(item.textContent));
   const dropdownType = dropdown.getAttribute('data-options-type');
 
-  let dropdownValue = '';
-
-  switch (dropdownType) {
-    case 'guests': {
-      dropdownValue = defineGuestInputValue(values);
-      break;
-    }
-    case 'facilities': {
-      dropdownValue = defineFacilitiesInputValue(values);
-      break;
-    }
-    default: {
-      break;
-    }
-  }
-  frame.value = dropdownValue;
+  frame.value = defineDropdownValue(dropdownType, values);
 }
 
 function resetCounters(controllers, counters, buttonGroups) {
@@ -206,9 +202,7 @@ function initEventListeners(dropdown) {
 
     initControllers(counters, controllers, buttonGroups);
     buttonGroups.forEach((buttons) => initButtons(buttons, counters, controllers));
-  }
-
-  if (!controllersBar) {
+  } else {
     buttonGroups.forEach((buttons) => initButtons(buttons, counters, undefined));
   }
 }
