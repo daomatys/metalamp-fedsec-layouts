@@ -22,8 +22,8 @@ function initPaginationModule() {
     prevText: 'arrow_forward',
     nextText: 'arrow_forward',
     showNavigator: true,
-    formatNavigator: defineNavigatorText, /* ,
-    callback: activateTemplating */
+    formatNavigator: defineNavigatorText,
+    //callback: activateTemplating
   });
 }
 
