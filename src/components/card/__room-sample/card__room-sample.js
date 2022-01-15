@@ -49,10 +49,9 @@ function filterAnimation(click) {
     };
     adjustIndicator('panorama_fish_eye');
 
-    if (!indicator.case) {
+    if (!indicator.case()) {
       scrollAnimation({ aim, side });
-    }
-    if (indicator.case) {
+    } else {
       scrollAnimation({ aim, side, borderjump: true });
       indicator.jump();
     }
