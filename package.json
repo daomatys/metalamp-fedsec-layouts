@@ -46,8 +46,8 @@
     "prod": "webpack --mode=production",
     "try": "webpack --mode=development --progress",
     "host": "webpack serve --history-api-fallback --progress",
-    "lint": "eslint ./src/components/date-picker",
-    "lint:fix": "eslint --fix ./src/pages"
+    "lint": "eslint ./src/components/input",
+    "lint:fix": "eslint --fix ./src/components/input"
   },
   "repository": {
     "type": "git",
