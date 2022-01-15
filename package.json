@@ -46,7 +46,7 @@
     "prod": "webpack --mode=production",
     "try": "webpack --mode=development --progress",
     "host": "webpack serve --history-api-fallback --progress",
-    "lint": "eslint ./src/components/card",
+    "lint": "eslint ./src/components/date-picker",
     "lint:fix": "eslint --fix ./src/pages"
   },
   "repository": {
