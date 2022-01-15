@@ -13,7 +13,6 @@ function borderJumpAnimation(aim, modifier) {
     fill: 'both',
     composite: 'add',
   });
-
   jumpAnimation.persist();
 }
 
@@ -24,7 +23,6 @@ function scrollAnimation(click) {
   if (click.borderjump) {
     borderJumpAnimation(click.aim, shiftModifier);
   }
-
   const shiftAnimation = click.aim.animate({
     transform: `translateX(${shiftValue})`,
   }, {
@@ -33,7 +31,6 @@ function scrollAnimation(click) {
     fill: 'forwards',
     composite: 'add',
   });
-
   shiftAnimation.persist();
 }
 
@@ -50,7 +47,6 @@ function filterAnimation(click) {
     const adjustIndicator = function adjustIndicatorByIndex(text) {
       listingIndicator[defineIndex()].textContent = text;
     };
-
     adjustIndicator('panorama_fish_eye');
 
     if (!indicator.case) {
@@ -60,7 +56,6 @@ function filterAnimation(click) {
       scrollAnimation({ aim, side, borderjump: true });
       indicator.jump();
     }
-
     adjustIndicator('circle');
   }
 }
