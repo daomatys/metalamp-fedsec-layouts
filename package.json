@@ -45,7 +45,7 @@
     "dev": "webpack --mode=development --watch",
     "prod": "webpack --mode=production",
     "try": "webpack --mode=development --progress",
-    "host": "webpack serve --history-api-fallback --progress",
+    "host": "webpack serve --progress",
     "lint": "eslint ./src/components",
     "lint:fix": "eslint --fix ./src/components"
   },

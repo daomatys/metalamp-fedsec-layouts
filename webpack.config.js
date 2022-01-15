@@ -59,7 +59,6 @@ module.exports = {
   output: {
     filename: defineDistSection('js'),
     path: PATHS.dist,
-    clean: true
   },
 
   module: {
@@ -68,8 +67,12 @@ module.exports = {
         test: /\.js$/i,
         loader: 'babel-loader',
         options: {
-          presets: ['@babel/preset-env'],
-          plugins: ['@babel/plugin-proposal-class-properties'],
+          presets: [
+            '@babel/preset-env'
+          ],
+          plugins: [
+            '@babel/plugin-proposal-class-properties'
+          ],
         },
       },
       {
@@ -182,8 +185,8 @@ module.exports = {
 
   resolveLoader: {
     alias: {
-      'aliased-pug-loader': 'simple-pug-loader',
-      //'aliased-pug-loader': '@webdiscus/pug-loader',
+      //'aliased-pug-loader': 'simple-pug-loader',
+      'aliased-pug-loader': '@webdiscus/pug-loader',
     }
   }
 }
