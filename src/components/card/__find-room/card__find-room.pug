@@ -11,15 +11,13 @@ mixin cardFindRoom()
           id: "card-find-room__date-picker_arrival",
           type: "date-picker",
           title: "прибытие",
-          hierarchy: "master",
-          widthpx: 150
+          hierarchy: "master"
         })
         +input({
           id: "card-find-room__date-picker_departure",
           type: "date-picker",
           title: "выезд",
-          hierarchy: "slave",
-          widthpx: 150
+          hierarchy: "slave"
         })
 
     .card-find-room__container-guests-dropdown
@@ -40,7 +38,6 @@ mixin cardFindRoom()
           type: "submit",
           mode: "contained",
           text: "подобрать номер",
-          iconname: "arrow_forward",
-          widthpx: 320
+          iconname: "arrow_forward"
         }]
       })
