@@ -1,53 +1,86 @@
 import './votes-chart.scss';
 
-const init = function () {
-  const charts = document.querySelectorAll('.votes-chart');
+function calcSum(arcs, extractedNumbers) {
+  return [...arcs].map(extractedNumbers).reduce((prev, curr) => prev + curr);
+}
 
-  if (charts) {
-    charts.forEach((chart) => initListeners(chart));
+function defineWord(num) {
+  const caseFirstRange = Math.floor(num / 10) === 1 || num % 10 < 1 || num % 10 > 4;
+  const caseLastRange = num % 10 > 1;
+
+  if (caseFirstRange) {
+    return 'голосов';
   }
-};
+  if (caseLastRange) {
+    return 'голосa';
+  }
+  return 'голос';
+}
 
-const calcSum = function calcSumOfNeededParametersOfArcsCollectionItems(arcs, extractNeededNumbers) {
-  return [...arcs].map(extractNeededNumbers).reduce((prev, curr) => prev + curr);
-};
+function renderTexts(counter, worder, num) {
+  const isolatedCounter = counter;
+  const isolatedWorder = worder;
 
-const initListeners = function initEverythingForRenderAndListen(chart) {
-  const arcs = chart.querySelectorAll('.votes-chart__diagram-element_unit');
-  const legendItems = chart.querySelectorAll('.votes-chart__legend-item');
+  isolatedCounter.textContent = num;
+  isolatedWorder.textContent = defineWord(num);
+}
 
-  const diagramText = chart.querySelector('.votes-chart__diagram-text');
-  const diagramTextCounter = diagramText.firstElementChild;
-  const diagramTextWorder = diagramText.lastElementChild;
+function onLegendClick(event, item) {
+  event.preventDefault();
 
-  const votesTotal = calcSum(arcs, ((arc) => Number(arc.getAttribute('data-votes'))));
+  const relatedID = `#${item.getAttribute('data-link')}`;
+  const aim = document.querySelector(relatedID);
 
-  renderArcs(arcs, votesTotal);
-  renderTexts(diagramTextCounter, diagramTextWorder, votesTotal);
+  aim.focus();
+}
 
-  arcs.forEach((arc) => arc.addEventListener('focus', () => onFocus(arc, diagramTextCounter, diagramTextWorder)));
-  legendItems.forEach((item) => item.addEventListener('pointerdown', (event) => onLegendClick(event, item)));
-};
+function onFocus(arc, counter, worder) {
+  const votesTotal = counter.textContent;
+  const votes = arc.getAttribute('data-votes');
+
+  const wordOriginal = worder.textContent;
+  const word = defineWord(votes);
+
+  const lastWidthValue = arc.getAttribute('stroke-width');
+  const newWidthValue = 32;
+
+  const apply = function applyProperties(vvalue, vvote, wword) {
+    const switchState = function switchElementsContentAndClasses(elem, text) {
+      const isolatedElem = elem;
+      isolatedElem.textContent = text;
+      isolatedElem.classList.toggle(`gradient__${arc.id.slice(14)}_start`);
+    };
+    switchState(counter, vvote);
+    switchState(worder, wword);
+
+    arc.setAttribute('stroke-width', vvalue);
+  };
+  apply(newWidthValue, votes, word);
+
+  const arcBlurEventHandler = () => apply(lastWidthValue, votesTotal, wordOriginal);
+  arc.addEventListener('blur', arcBlurEventHandler, { once: true });
+}
+
+function calcVotesTotalFixed(arc, votesTotal) {
+  const minimalPercent = 0.01;
+  const votes = arc.getAttribute('data-votes');
+  const votesPercentage = votes / votesTotal;
+  const caseVotesFiltration = votesPercentage > minimalPercent || votesPercentage === 0;
+  const votesFiltrator = caseVotesFiltration ? votes : votesTotal * minimalPercent;
+  const result = Number(votesFiltrator).toFixed();
+
+  arc.setAttribute('data-votes-fixed', result);
+
+  return Number(result);
+}
 
 const renderArcs = function renderArcsSVGFigures(arcs, votesTotal) {
-  const calcVotesTotalFixed = function calcVotesTotalFixedValueToPreventRenderBugs(arc) {
-    const minimalPercent = 0.01;
-    const votes = arc.getAttribute('data-votes');
-    const votesPercentage = votes / votesTotal;
-    const votesFiltrator = (votesPercentage > minimalPercent || votesPercentage === 0) ? votes : votesTotal * minimalPercent;
-    const result = Number(votesFiltrator).toFixed();
-
-    arc.setAttribute('data-votes-fixed', result);
-
-    return Number(result);
-  };
-
   const strokeWidth = 4;
   const figureOuterRadius = 60;
   const figureInnerRadius = figureOuterRadius - strokeWidth / 2;
   const strokeLength = 2 * Math.PI.toFixed(3) * figureInnerRadius;
   const strokeGap = 2;
-  const votesTotalFixed = calcSum(arcs, ((arc) => calcVotesTotalFixed(arc)));
+  const votesTotalFixed = calcSum(arcs, ((arc) => calcVotesTotalFixed(arc, votesTotal)));
 
   let strokeOffset = 0;
 
@@ -68,55 +101,32 @@ const renderArcs = function renderArcsSVGFigures(arcs, votesTotal) {
   });
 };
 
-const renderTexts = function renderDiagramBlockInnerTextSpans(counter, worder, num) {
-  counter.textContent = num;
-  worder.textContent = defineWord(num);
-};
+function initListeners(chart) {
+  const arcs = chart.querySelectorAll('.votes-chart__diagram-element_unit');
+  const legendItems = chart.querySelectorAll('.votes-chart__legend-item');
 
-const onLegendClick = function onLegendClickEvent(event, item) {
-  event.preventDefault();
+  const diagramText = chart.querySelector('.votes-chart__diagram-text');
+  const diagramTextCounter = diagramText.firstElementChild;
+  const diagramTextWorder = diagramText.lastElementChild;
 
-  const relatedID = `#${item.getAttribute('data-link')}`;
-  const aim = document.querySelector(relatedID);
+  const votesTotal = calcSum(arcs, ((arc) => Number(arc.getAttribute('data-votes'))));
 
-  aim.focus();
-};
+  renderArcs(arcs, votesTotal);
+  renderTexts(diagramTextCounter, diagramTextWorder, votesTotal);
 
-const onFocus = function onFocusEvent(arc, counter, worder) {
-  const votesTotal = counter.textContent;
-  const votes = arc.getAttribute('data-votes');
+  const arcFocusEventHandler = (arc) => onFocus(arc, diagramTextCounter, diagramTextWorder);
+  arcs.forEach((arc) => arc.addEventListener('focus', arcFocusEventHandler));
 
-  const wordOriginal = worder.textContent;
-  const word = defineWord(votes);
+  const legendPointerDownEventHandler = (event, item) => onLegendClick(event, item);
+  legendItems.forEach((item) => item.addEventListener('pointerdown', legendPointerDownEventHandler));
+}
 
-  const lastWidthValue = arc.getAttribute('stroke-width');
-  const newWidthValue = 32;
+function initCharts() {
+  const charts = document.querySelectorAll('.votes-chart');
 
-  const apply = function applyProperties(vvalue, vvote, wword) {
-    const switchState = function switchElementsContentAndClasses(elem, text) {
-      elem.textContent = text;
-      elem.classList.toggle(`gradient__${arc.id.slice(14)}_start`);
-    };
-    switchState(counter, vvote);
-    switchState(worder, wword);
-
-    arc.setAttribute('stroke-width', vvalue);
-  };
-
-  apply(newWidthValue, votes, word);
-
-  arc.addEventListener('blur', () => apply(lastWidthValue, votesTotal, wordOriginal), { once: true });
-};
-
-const defineWord = function defineWordEndingAccordingToNumber(num) {
-  let result = 'голос';
-
-  if (Math.floor(num / 10) === 1 || num % 10 < 1 || num % 10 > 4) {
-    result += 'ов';
-  } else if (num % 10 > 1) {
-    result += 'a';
+  if (charts) {
+    charts.forEach((chart) => initListeners(chart));
   }
-  return result;
-};
+}
 
-init();
+initCharts();
