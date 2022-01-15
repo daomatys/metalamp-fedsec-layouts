@@ -23,7 +23,7 @@ function initPaginationModule() {
     nextText: 'arrow_forward',
     showNavigator: true,
     formatNavigator: defineNavigatorText,
-    //callback: activateTemplating
+    // callback: activateTemplating
   });
 }
 

@@ -19,6 +19,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'import/no-unresolved': 'off'
+    'import/no-unresolved': 'off',
+    'linebreak-style': ["error", "windows"]
   },
 };
