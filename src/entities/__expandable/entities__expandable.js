@@ -1,14 +1,18 @@
 import './entities__expandable.scss';
 
-const init = function expanderInitEventListeners() {
-  const expanders = document.querySelectorAll('.js-expander');
-
-  expanders.forEach((expander) => {
-    expander.addEventListener('click', () => activate(expander));
+function animateIcon(icon) {
+  const animation = icon.animate({
+    transform: 'rotateX(0.5turn)',
+  }, {
+    easing: 'ease',
+    duration: 400,
+    fill: 'both',
+    composite: 'add',
   });
-};
+  animation.persist();
+}
 
-const activate = function expanderActivation(expander) {
+function changeExpanderDisplayState(expander) {
   const parent = expander.closest('.js-expander__parent');
   const aim = parent.querySelector('.js-expander__aim');
   const icon = parent.querySelector('.material-icons');
@@ -25,18 +29,15 @@ const activate = function expanderActivation(expander) {
   if (aim) {
     aim.classList.toggle('js-expander_active');
   }
-};
+}
 
-const animateIcon = function iconAnimation(icon) {
-  const animation = icon.animate({
-    transform: 'rotateX(0.5turn)',
-  }, {
-    easing: 'ease',
-    duration: 400,
-    fill: 'both',
-    composite: 'add',
+function initEventListeners() {
+  const expanders = document.querySelectorAll('.js-expander');
+  const clickEventHandler = (expander) => changeExpanderDisplayState(expander);
+
+  expanders.forEach((expander) => {
+    expander.addEventListener('click', clickEventHandler);
   });
-  animation.persist();
-};
+}
 
-init();
+initEventListeners();
