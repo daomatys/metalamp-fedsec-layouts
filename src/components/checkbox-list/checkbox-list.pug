@@ -7,7 +7,7 @@ mixin checkboxList( item )
   - const expanderActiveClass = item.expanded ? 'js-expander_active' : ''
 
   .checkbox-list.js-expander__parent
-    .checkbox-list__title
+    label.checkbox-list__title( for=item.groupname )
       input.checkbox-list__title_button.js-expander( type='checkbox' id=item.groupname checked=item.expanded )
       .checkbox-list__title_text
         +titleBar( item.title )

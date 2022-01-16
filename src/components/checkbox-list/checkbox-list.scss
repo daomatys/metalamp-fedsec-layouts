@@ -1,28 +1,23 @@
 .checkbox-list {
+  &,
+  &__items {
+    width: 266px;
+  }
+
   &__title {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    cursor: pointer;
 
     &_button {
-      position: absolute;
-      left: -6px;
-      bottom: -5px;
-      appearance: none;
-      width: 256px;
-      height: 28px;
-      cursor: pointer;
+      display: none;
     }
 
     &_icon {
-      position: relative;
       margin-left: 40px;
       opacity: .5;
-
-      & > label {
-        cursor: pointer;
-      }
+      z-index: 10;
     }
   }
 
@@ -30,5 +25,7 @@
     position: absolute;
     visibility: hidden;
     margin-top: 18px;
+    background-color: #FFF;
+    z-index: 11;
   }
 }
