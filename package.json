@@ -46,8 +46,8 @@
     "prod": "webpack --mode=production",
     "try": "webpack --mode=development --progress",
     "host": "webpack serve --progress",
-    "lint": "eslint ./src/components",
-    "lint:fix": "eslint --fix ./src/components"
+    "lint": "eslint ./src/pages",
+    "lint:fix": "eslint --fix ./src/pages"
   },
   "repository": {
     "type": "git",
