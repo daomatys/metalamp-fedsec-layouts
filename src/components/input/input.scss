@@ -103,3 +103,9 @@ $focused-color_border-n-icon: rgba($valhalla, .5);
     }
   }
 }
+
+.dropdown,
+.js-adp-frame {
+  cursor: pointer;
+  user-select: none;
+}

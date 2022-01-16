@@ -35,8 +35,7 @@ mixin input( item )
   - const expanderParentClass = readonly ? 'js-expander__parent' : ''
   - const datePickerClasses = archetype === 'date-picker' ? 'js-expander js-adp-frame' : ''
   - const dropdownClasses =   archetype === 'dropdown' ? 'js-expander dropdown' : ''
-
-  - const frameClasses =  [ datePickerClasses, dropdownClasses ]
+  - const frameClasses = datePickerClasses + dropdownClasses
 
   .input( class=expanderParentClass, style=currentWidth )
     if title
