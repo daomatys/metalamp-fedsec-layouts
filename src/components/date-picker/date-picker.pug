@@ -7,10 +7,16 @@ mixin datePicker( id )
       .date-picker__buttons_clear
         +meanOvalButtons({
           groupname: `${id}-clear`,
-          buttons: [{ type: "text", text: "очистить" }]
+          buttons: [{
+            mode: "text",
+            text: "очистить"
+          }]
         })
       .date-picker__buttons_submit
         +meanOvalButtons({
           groupname: `${id}-submit`,
-          buttons: [{ type: "text", text: "применить" }]
+          buttons: [{
+            mode: "text",
+            text: "применить"
+          }]
         })

@@ -7,29 +7,8 @@ import '@components/button/__mean-oval/button__mean-oval';
 
 const SELECTOR__FRAME = 'js-adp-frame';
 const SELECTOR__AIM = 'js-expander__aim';
-const SELECTOR__PARENT = 'js-expander__parent';
+const SELECTOR__CONTAINER = 'js-expander__container';
 const SELECTOR__ACTIVE = 'js-expander_active';
-
-const defineElements = function defineElements(frame) {
-  const holder = frame.closest(`.${SELECTOR__PARENT}`).parentNode;
-
-  const caseRelations = holder.querySelector('.js-master');
-  const master = caseRelations ? holder.firstElementChild : frame.parentNode;
-  const slave = caseRelations ? holder.lastElementChild : master;
-
-  return {
-    relations: !!caseRelations,
-    holder,
-    frames: {
-      master: master.querySelector(`.${SELECTOR__FRAME}`),
-      slave: slave.querySelector(`.${SELECTOR__FRAME}`),
-    },
-    aims: {
-      master: master.querySelector(`.${SELECTOR__AIM}`),
-      slave: slave.querySelector(`.${SELECTOR__AIM}`),
-    },
-  };
-};
 
 const sendDates = function sendDates(rawDates, holder) {
   const fixedDatesArray = rawDates ? rawDates.split(', ') : [];
@@ -38,9 +17,8 @@ const sendDates = function sendDates(rawDates, holder) {
   holder.dispatchEvent(new CustomEvent('incoming-dates', { detail: fixedDates }));
 };
 
-const triggerClick = function triggerClick(slaveFrame, masterAim) {
-  const clickEventHandler = () => masterAim.classList.toggle(SELECTOR__ACTIVE);
-
+const triggerClick = function triggerClick(slaveFrame, masterContainer) {
+  const clickEventHandler = () => masterContainer.classList.toggle(SELECTOR__ACTIVE);
   slaveFrame.addEventListener('click', clickEventHandler);
 };
 
@@ -64,40 +42,43 @@ const defineClearButtonState = function defineClearButtonState(masterFrame, clea
   }
 };
 
+const routeValues = function routeValues(frames, clearButton) {
+  const slaveFrame = frames.slave;
+  const masterFrame = frames.master;
+  const caseEquivalence = slaveFrame.isEqualNode(masterFrame);
+
+  if (!caseEquivalence) {
+    const initialValue = masterFrame.value.split(' - ');
+    const caseBothValuesExists = initialValue.length > 1;
+    const startIndex = 0;
+    const endIndex = 1;
+
+    if (caseBothValuesExists) {
+      masterFrame.value = initialValue[startIndex];
+      slaveFrame.value = initialValue[endIndex];
+    } else {
+      slaveFrame.value = '';
+      masterFrame.value = initialValue[startIndex];
+    }
+  }
+  defineClearButtonState(masterFrame, clearButton);
+};
+
 const renderDatePicker = function renderDatePicker(elements, rawDates, caseMasterAim) {
   const icon = (name) => `<span class="material-icons">${name}</span>`;
   const currentDate = new Date('2019-08-08');
   const dateFormat = elements.relations ? 'dd.MM.yyyy' : 'd MMM';
-
-  const container = elements.aims.master.querySelector('.date-picker__container');
+  console.log(elements.containers)
+  const container = elements.containers.master.querySelector('.date-picker__container');
+  
 
   const { frames } = elements;
-  const slaveFrame = frames.slave;
   const masterFrame = frames.master;
 
   const buttons = container.nextElementSibling;
   const clearButton = buttons.firstElementChild.querySelector('button');
   const acceptButton = buttons.lastElementChild.querySelector('button');
 
-  const routeValues = function routeValues() {
-    const caseEquivalence = slaveFrame.isEqualNode(masterFrame);
-
-    if (!caseEquivalence) {
-      const initialValue = masterFrame.value.split(' - ');
-      const caseBothValuesExists = initialValue.length > 1;
-      const startIndex = 0;
-      const endIndex = 1;
-
-      if (caseBothValuesExists) {
-        masterFrame.value = initialValue[startIndex];
-        slaveFrame.value = initialValue[endIndex];
-      } else {
-        slaveFrame.value = '';
-        masterFrame.value = initialValue[startIndex];
-      }
-    }
-    defineClearButtonState(masterFrame, clearButton);
-  };
   const datePicker = new AirDatepicker(container, {
     navTitles: {
       days: 'MMMM yyyy',
@@ -105,14 +86,14 @@ const renderDatePicker = function renderDatePicker(elements, rawDates, caseMaste
     locale: customLocale,
     range: true,
     keyboardNav: false,
-    altField: frames.master,
+    altField: masterFrame,
     altFieldDateFormat: dateFormat,
     multipleDatesSeparator: ' - ',
     prevHtml: icon('arrow_back'),
     nextHtml: icon('arrow_forward'),
     minDate: currentDate,
     startDate: currentDate,
-    onSelect: () => routeValues(),
+    onSelect: () => routeValues(frames, clearButton),
   });
   defineClearButtonState(masterFrame, clearButton);
 
@@ -120,6 +101,31 @@ const renderDatePicker = function renderDatePicker(elements, rawDates, caseMaste
   acceptButton.onclick = () => frames.master.click();
 
   renderDateValues(datePicker, elements.holder, rawDates, caseMasterAim);
+};
+
+const defineElements = function defineElements(frame) {
+  const holder = frame.closest(`.${SELECTOR__CONTAINER}`).parentNode;
+
+  const caseRelations = !!holder.querySelector('.js-master');
+  const master = caseRelations ? holder.firstElementChild : frame.parentNode;
+  const slave = caseRelations ? holder.lastElementChild : master;
+
+  return {
+    relations: caseRelations,
+    holder,
+    frames: {
+      master: master.querySelector(`.${SELECTOR__FRAME}`),
+      slave: slave.querySelector(`.${SELECTOR__FRAME}`),
+    },
+    aims: {
+      master: master.querySelector(`.${SELECTOR__AIM}`),
+      slave: slave.querySelector(`.${SELECTOR__AIM}`),
+    },
+    containers: {
+      master: master.closest(`.${SELECTOR__CONTAINER}`),
+      slave: slave.closest(`.${SELECTOR__CONTAINER}`),
+    }
+  };
 };
 
 const sortTasks = function sortDatePickerElementsTasks(frame) {
@@ -132,7 +138,7 @@ const sortTasks = function sortDatePickerElementsTasks(frame) {
 
   if (caseSlaveAim) {
     sendDates(rawDates, elements.holder);
-    triggerClick(elements.frames.slave, elements.aims.master);
+    triggerClick(elements.frames.slave, elements.containers.master);
   } else {
     renderDatePicker(elements, rawDates, caseMasterAim);
   }

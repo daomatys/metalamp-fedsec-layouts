@@ -36,7 +36,7 @@ mixin input( item )
 
   - const datePickerClass = archetype === 'date-picker' ? 'js-expander js-adp-frame' : null
   - const dropdownClass = archetype === 'dropdown' ? 'js-expander dropdown' : null
-  - const frameClasses = datePickerClass || dropdownClass
+  - const frameClass = datePickerClass || dropdownClass
 
   .input( style=currentWidth )
     if item.title
@@ -44,7 +44,7 @@ mixin input( item )
         +titleBar( item.title, item.state )
     .input__container( class=containerClasses )
       input.input__frame(
-        class=       frameClasses
+        class=       frameClass
         id=          item.id
         type=        type
         placeholder= placeholder
