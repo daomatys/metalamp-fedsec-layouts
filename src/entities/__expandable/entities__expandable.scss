@@ -1,9 +1,16 @@
-.js-expander_active {
-  .js-expander__aim {
-    visibility: visible !important;
-  }
-  .js-expander__icon {
+.js-expander {
+  &__icon {
     transition: transform .4s ease;
-    transform: rotateX(0.5turn);
+  }
+
+  &_active {
+    .js-expander {
+      &__aim {
+        visibility: visible !important;
+      }
+      &__icon {
+        transform: rotateX(0.5turn);
+      }
+    }
   }
 }
