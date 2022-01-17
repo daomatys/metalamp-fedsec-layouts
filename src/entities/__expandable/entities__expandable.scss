@@ -1,11 +1,8 @@
 .js-expander_active {
-  visibility: visible !important;
-}
-
-.js-icon_flipped {
-  transform: scaleY(-1);
-}
-
-.js-icon-rotated {
-  transform: rotateX(0.5turn);
+  .js-expander__aim {
+    visibility: visible !important;
+  }
+  .material-icons {
+    transform: rotateX(0.5turn);
+  }
 }

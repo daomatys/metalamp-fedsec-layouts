@@ -1,28 +1,43 @@
 import './entities__expandable.scss';
 
-function changeExpanderDisplayState(expander) {
-  const parent = expander.closest('.js-expander__parent');
-  const aim = parent.querySelector('.js-expander__aim');
-  const icon = parent.querySelector('.material-icons');
+function defineNeededInnerElements(parent) {
+  return {
+    expander: parent.querySelector('.js-expander'),
+    aim: parent.querySelector('.js-expander__aim'),
+    icon: parent.querySelector('.material-icons'),
+  };
+}
 
-  const caseExpanderIsDisabled = expander.hasAttribute('checked');
+function changeExpanderDisplayState(parent) {
+  const parentsMarkedActive = document.querySelectorAll('.js-expander_active')
+  const that = defineNeededInnerElements( parent );
 
-  if (caseExpanderIsDisabled) {
+  aim.classList.add('js-expander_pending');
+
+  parentsMarkedActive.forEach( item => {
+    if (!item.classList.contains('js-expander_pending')) {
+      item.classList.remove('js-expander_active');
+      item.parentElement.firstChild.removeAttribute('checked');
+      item.parentElement.querySelector('.material-icons').classList.toggle('js-icon-rotated');
+    }
+  });
+  if (expander.hasAttribute('checked')) {
     expander.removeAttribute('checked');
   } else {
     expander.setAttribute('checked', '');
   }
-  if (aim) {
-    aim.classList.toggle('js-expander_active');
+  if (that.aim) {
+    that.aim.classList.remove('js-expander_pending');
+    that.aim.classList.toggle('js-expander_active');
   }
-  icon.classList.toggle('js-icon-rotated');
+  that.icon.classList.toggle('js-icon-rotated');
 }
 
 function initEventListeners() {
-  const expanders = document.querySelectorAll('.js-expander');
+  const parents = document.querySelectorAll('.js-expander__parent');
   
-  expanders.forEach((expander) => {
-    const clickEventHandler = () => changeExpanderDisplayState(expander);
+  parents.forEach((parent) => {
+    const clickEventHandler = () => changeExpanderDisplayState(parent);
     expander.addEventListener('click', clickEventHandler);
   });
 }
