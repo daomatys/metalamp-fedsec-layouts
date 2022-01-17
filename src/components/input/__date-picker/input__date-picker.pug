@@ -4,7 +4,7 @@ include /components/date-picker/date-picker.pug
 mixin inputDatePicker( item )
   - const hierarchyClass = 'js-' + item.hierarchy 
 
-  label.input__icon_expand( for=item.id)
+  label.input__icon_expand.js-expander__icon( for=item.id)
     +materialIcon('expand_more', item.id)
   .input__date-picker.js-expander__aim( class=hierarchyClass data-dates=item.dates )
     if ( hierarchyClass !== 'js-slave' )

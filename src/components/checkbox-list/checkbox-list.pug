@@ -3,17 +3,16 @@ include /components/button/__checkbox/button__checkbox.pug
 include /components/material-icon-cell/material-icon-cell.pug
 
 mixin checkboxList( item )
-  - const iconFlippedClass = item.expanded ? 'js-icon_flipped' : ''
   - const expanderActiveClass = item.expanded ? 'js-expander_active' : ''
 
-  .checkbox-list.js-expander__parent
+  .checkbox-list.js-expander__container( class=expanderActiveClass )
     label.checkbox-list__title( for=item.groupname )
       input.checkbox-list__title_button.js-expander( type='checkbox' id=item.groupname checked=item.expanded )
       .checkbox-list__title_text
         +titleBar( item.title )
-      .checkbox-list__title_icon( class=iconFlippedClass )
+      .checkbox-list__title_icon.js-expander__icon
         +materialIcon('expand_more', item.groupname)
-    .checkbox-list__items.js-expander__aim( class=expanderActiveClass )
+    .checkbox-list__items.js-expander__aim
       +checkboxButtons({
         groupname: item.groupname,
         checkboxes: item.checkboxes
