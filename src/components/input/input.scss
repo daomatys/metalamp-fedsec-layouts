@@ -39,10 +39,6 @@ $focused-color_border-n-icon: rgba($valhalla, .5);
     color: $focused-color_text;
     background-color: $white;
     appearance: none;
-    
-    &.expander {
-      cursor: pointer;
-    }
 
     &.dropdown[checked] {
       border-radius: 4px 4px 0px 0px;
@@ -102,10 +98,4 @@ $focused-color_border-n-icon: rgba($valhalla, .5);
       @extend %gradient-fill;
     }
   }
-}
-
-.dropdown,
-.js-adp-frame {
-  cursor: pointer;
-  user-select: none;
 }

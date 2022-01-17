@@ -1,4 +1,7 @@
 .js-expander {
+  cursor: pointer;
+  user-select: none;
+
   &__icon {
     transition: transform .4s ease;
   }
