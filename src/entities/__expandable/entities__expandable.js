@@ -1,43 +1,20 @@
 import './entities__expandable.scss';
 
-function defineNeededInnerElements(parent) {
-  return {
-    expander: parent.querySelector('.js-expander'),
-    aim: parent.querySelector('.js-expander__aim'),
-    icon: parent.querySelector('.material-icons'),
-  };
-}
-
-function changeExpanderDisplayState(parent) {
-  const parentsMarkedActive = document.querySelectorAll('.js-expander_active')
-  const that = defineNeededInnerElements( parent );
-
-  aim.classList.add('js-expander_pending');
-
-  parentsMarkedActive.forEach( item => {
-    if (!item.classList.contains('js-expander_pending')) {
-      item.classList.remove('js-expander_active');
-      item.parentElement.firstChild.removeAttribute('checked');
-      item.parentElement.querySelector('.material-icons').classList.toggle('js-icon-rotated');
-    }
-  });
+function changeExpanderDisplayState(container, expander) {
   if (expander.hasAttribute('checked')) {
     expander.removeAttribute('checked');
   } else {
     expander.setAttribute('checked', '');
   }
-  if (that.aim) {
-    that.aim.classList.remove('js-expander_pending');
-    that.aim.classList.toggle('js-expander_active');
-  }
-  that.icon.classList.toggle('js-icon-rotated');
+  container.classList.toggle('js-expander_active');
 }
 
 function initEventListeners() {
-  const parents = document.querySelectorAll('.js-expander__parent');
+  const containers = document.querySelectorAll('.js-expander__container');
   
-  parents.forEach((parent) => {
-    const clickEventHandler = () => changeExpanderDisplayState(parent);
+  containers.forEach((container) => {
+    const expander = container.querySelector('.js-expander');
+    const clickEventHandler = () => changeExpanderDisplayState(container, expander);
     expander.addEventListener('click', clickEventHandler);
   });
 }

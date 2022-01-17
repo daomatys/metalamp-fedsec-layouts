@@ -9,7 +9,7 @@ mixin inputDropdown( item )
   - const values = dropdown.values || [ 0, 0, 0 ]
   - const options = dropdown.type === 'guests' ? guestsOptionNames : facilitiesOptionNames
 
-  label.input__icon_expand( for=item.id )
+  label.input__icon_expand.js-expander__icon( for=item.id )
     +materialIcon('expand_more', item.id)
   .input__dropdown.js-expander__aim( data-options-type=dropdown.type )
     each option, index in options

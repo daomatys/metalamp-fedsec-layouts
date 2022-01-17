@@ -2,7 +2,8 @@
   .js-expander__aim {
     visibility: visible !important;
   }
-  .material-icons {
+  .js-expander__icon {
+    transition: transform .4s ease;
     transform: rotateX(0.5turn);
   }
 }

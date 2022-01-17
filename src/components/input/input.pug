@@ -30,9 +30,9 @@ mixin input( item )
   - const placeholder = definePlaceholder( archetype, dropdown.type, item.placeholder )
   - const currentWidth = `width:${ item.widthpx || '100%' }`
 
-  - const parentMarkClass = readonly ? 'js-expander__parent' : ''
-  - const parentActiveClass = checked ? 'js-expander_active' : ''
-  - const parentClasses = parentMarkClass + parentActiveClass
+  - const containerMarkClass = readonly ? 'js-expander__container' : ''
+  - const containerActiveClass = checked ? ' js-expander_active' : ''
+  - const containerClasses = [ containerMarkClass, containerActiveClass ]
 
   - const datePickerClass = archetype === 'date-picker' ? 'js-expander js-adp-frame' : null
   - const dropdownClass = archetype === 'dropdown' ? 'js-expander dropdown' : null
@@ -42,7 +42,7 @@ mixin input( item )
     if item.title
       .input__title
         +titleBar( item.title, item.state )
-    .input__container( class=parentClasses )
+    .input__container( class=containerClasses )
       input.input__frame(
         class=       frameClasses
         id=          item.id
