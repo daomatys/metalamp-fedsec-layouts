@@ -68,9 +68,8 @@ const renderDatePicker = function renderDatePicker(elements, rawDates, caseMaste
   const icon = (name) => `<span class="material-icons">${name}</span>`;
   const currentDate = new Date('2019-08-08');
   const dateFormat = elements.relations ? 'dd.MM.yyyy' : 'd MMM';
-  console.log(elements.containers)
+
   const container = elements.containers.master.querySelector('.date-picker__container');
-  
 
   const { frames } = elements;
   const masterFrame = frames.master;
@@ -116,10 +115,6 @@ const defineElements = function defineElements(frame) {
     frames: {
       master: master.querySelector(`.${SELECTOR__FRAME}`),
       slave: slave.querySelector(`.${SELECTOR__FRAME}`),
-    },
-    aims: {
-      master: master.querySelector(`.${SELECTOR__AIM}`),
-      slave: slave.querySelector(`.${SELECTOR__AIM}`),
     },
     containers: {
       master: master.closest(`.${SELECTOR__CONTAINER}`),

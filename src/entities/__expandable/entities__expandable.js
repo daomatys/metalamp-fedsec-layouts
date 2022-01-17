@@ -14,7 +14,10 @@ function initEventListeners() {
   
   containers.forEach((container) => {
     const expander = container.querySelector('.js-expander');
-    const clickEventHandler = () => changeExpanderDisplayState(container, expander);
+
+    const clickEventHandler = () => {
+      changeExpanderDisplayState(container, expander);
+    };
     expander.addEventListener('click', clickEventHandler);
   });
 }
