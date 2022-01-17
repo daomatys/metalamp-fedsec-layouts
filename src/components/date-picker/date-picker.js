@@ -2,7 +2,6 @@ import AirDatepicker from 'air-datepicker';
 import customLocale from './_custom-locale/date-picker_custom-locale';
 
 import './date-picker.scss';
-
 import '@components/button/__mean-oval/button__mean-oval';
 
 const SELECTOR__FRAME = 'js-adp-frame';
@@ -10,11 +9,11 @@ const SELECTOR__AIM = 'js-expander__aim';
 const SELECTOR__CONTAINER = 'js-expander__container';
 const SELECTOR__ACTIVE = 'js-expander_active';
 
-const sendDates = function sendDates(rawDates, holder) {
+const sendDates = function sendDates(rawDates, twinwrap) {
   const fixedDatesArray = rawDates ? rawDates.split(', ') : [];
   const fixedDates = fixedDatesArray.map((fixedDate) => new Date(fixedDate));
 
-  holder.dispatchEvent(new CustomEvent('incoming-dates', { detail: fixedDates }));
+  twinwrap.dispatchEvent(new CustomEvent('incoming-dates', { detail: fixedDates }));
 };
 
 const triggerClick = function triggerClick(slaveFrame, masterContainer) {
@@ -22,13 +21,13 @@ const triggerClick = function triggerClick(slaveFrame, masterContainer) {
   slaveFrame.addEventListener('click', clickEventHandler);
 };
 
-const renderDateValues = function renderDates(datePicker, holder, rawDates, caseMasterAim) {
+const renderDateValues = function renderDates(datePicker, twinwrap, rawDates, caseMasterAim) {
   const incomingDatesEventHandler = ({ detail }) => datePicker.selectDate(detail);
 
-  holder.addEventListener('incoming-dates', incomingDatesEventHandler, { once: true });
+  twinwrap.addEventListener('incoming-dates', incomingDatesEventHandler, { once: true });
 
   if (!caseMasterAim) {
-    sendDates(rawDates, holder);
+    sendDates(rawDates, twinwrap);
   }
 };
 
@@ -99,19 +98,21 @@ const renderDatePicker = function renderDatePicker(elements, rawDates, caseMaste
   clearButton.onclick = () => datePicker.clear();
   acceptButton.onclick = () => frames.master.click();
 
-  renderDateValues(datePicker, elements.holder, rawDates, caseMasterAim);
+  renderDateValues(datePicker, elements.twinwrap, rawDates, caseMasterAim);
 };
 
 const defineElements = function defineElements(frame) {
-  const holder = frame.closest(`.${SELECTOR__CONTAINER}`).parentNode;
+  const twinwrap = frame.closest(`.${SELECTOR__CONTAINER}`).parentNode.parentNode;
 
-  const caseRelations = !!holder.querySelector('.js-master');
-  const master = caseRelations ? holder.firstElementChild : frame.parentNode;
-  const slave = caseRelations ? holder.lastElementChild : master;
+  console.log(twinwrap)
+
+  const caseRelations = !!twinwrap.querySelector('.js-master');
+  const master = caseRelations ? twinwrap.firstElementChild : frame.parentNode;
+  const slave = caseRelations ? twinwrap.lastElementChild : master;
 
   return {
     relations: caseRelations,
-    holder,
+    twinwrap,
     frames: {
       master: master.querySelector(`.${SELECTOR__FRAME}`),
       slave: slave.querySelector(`.${SELECTOR__FRAME}`),
@@ -131,8 +132,10 @@ const sortTasks = function sortDatePickerElementsTasks(frame) {
   const caseSlaveAim = currentAim.classList.contains('js-slave');
   const caseMasterAim = currentAim.classList.contains('js-master');
 
+  console.log(currentAim)
+
   if (caseSlaveAim) {
-    sendDates(rawDates, elements.holder);
+    sendDates(rawDates, elements.twinwrap);
     triggerClick(elements.frames.slave, elements.containers.master);
   } else {
     renderDatePicker(elements, rawDates, caseMasterAim);
