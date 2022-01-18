@@ -29,7 +29,7 @@
     border-width: 1px;
     border-style: solid;
     border-radius: 4px;
-    border-color: rgba($valhalla, .25);
+    border-color: $valhalla-a;
 
     &:checked {
       align-items: center;

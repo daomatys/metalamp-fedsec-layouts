@@ -28,8 +28,6 @@ function renderTexts(counter, worder, num) {
 function onLegendClick(event, item) {
   event.preventDefault();
 
-  console.log(event)
-
   const relatedID = `#${item.getAttribute('data-link')}`;
   const aim = document.querySelector(relatedID);
 

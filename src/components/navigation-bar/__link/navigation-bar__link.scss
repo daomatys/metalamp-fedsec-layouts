@@ -2,7 +2,7 @@
 
 .link {
   display: flex;
-  color: rgba($valhalla, .5);
+  color: $valhalla-b;
 
   &__elem {
     text-decoration: none;
@@ -10,7 +10,7 @@
 
     &_bold {
       font-weight: bold;
-      color: rgba($valhalla, .75);
+      color: $valhalla-c;
     }
   }
 }

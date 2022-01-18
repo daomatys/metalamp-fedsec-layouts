@@ -28,7 +28,7 @@
   }
 
   &_body {
-    color: rgba($valhalla, .75);
+    color: $valhalla-c;
 
     &-plain {
       color: $valhalla;
@@ -36,7 +36,7 @@
   }
 
   &_micro-note {
-    color: rgba($valhalla, .5);
+    color: $valhalla-b;
     font-size: calcRelativeFontSize( 12 );
     line-height: calcRelativeFontSize( 14 );
   }

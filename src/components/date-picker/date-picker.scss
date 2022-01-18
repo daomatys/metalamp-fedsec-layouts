@@ -7,7 +7,7 @@ $font-size: 12px;
 
 .date-picker {
   padding: 19px;
-  border: 1px solid rgba($valhalla, .5);
+  border: 1px solid $valhalla-b;
   border-radius: 4px;
   box-shadow: 0px 10px 20px rgba($valhalla, 0.05);
   box-sizing: border-box;
@@ -37,13 +37,13 @@ $font-size: 12px;
 
   --adp-border-color: none;
   --adp-border-color-inner: none;
-  --adp-color: #{rgba($valhalla, .5)};
-  --adp-color-other-month: #{rgba($valhalla, .25)};
-  --adp-color-disabled:    #{rgba($valhalla, .25)};
+  --adp-color: #{$valhalla-b};
+  --adp-color-other-month: #{$valhalla-a};
+  --adp-color-disabled:    #{$valhalla-a};
   --adp-accent-color: #{$perfume};
   
   --adp-background-color: none;
-  --adp-background-color-hover: #{rgba($perfume, .25)};
+  --adp-background-color-hover: #{$valhalla-a};
   --adp-background-color-in-range: #{$primary-gradient-a};
   --adp-background-color-selected-other-month: #{$primary-gradient-a};
   --adp-background-color-selected-other-month-focused: #{$primary-gradient-b};

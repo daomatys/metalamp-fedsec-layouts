@@ -4,9 +4,9 @@
 $bgGrad_active: $primary-gradient;
 $bgGrad_arrows: $secondary-gradient;
 
-$fontColor_default: rgba($valhalla, .5);
-$fontColor_nav: rgba($valhalla, .75);
-$bgColor_onHover: rgba($perfume, .25);
+$fontColor_default: $valhalla-b;
+$fontColor_nav: $valhalla-c;
+$bgColor_onHover: $valhalla-a;
 
 $circleboxSize: 40px;
 

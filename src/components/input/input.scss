@@ -1,9 +1,9 @@
 @import "@variables";
 @import "/src/entities/__gradient-filled/entities__gradient-filled.scss";
 
-$default-color: rgba($valhalla, .25);
-$focused-color_text: rgba($valhalla, .75);
-$focused-color_border-n-icon: rgba($valhalla, .5);
+$default-color: $valhalla-a;
+$focused-color_text: $valhalla-c;
+$focused-color_border-n-icon: $valhalla-b;
 
 .input {
   &__line-array {
