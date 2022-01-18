@@ -148,7 +148,7 @@ $piquetHeaderButtonBarOps: 832px;
   &__ejectable-button-panel {
     display: flex;
     gap: 5vw;
-    background-color: $valhalla-c;
+    background-color: rgba($whisper, .75);
     height: 36px;
     box-shadow: inset 0px 10px 20px rgba($valhalla, 0.05);
   }
