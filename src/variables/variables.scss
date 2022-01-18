@@ -5,14 +5,14 @@ $perfume: #BC9CFF;
 $portage: #8BA4F9;
 
 $valhalla-a: rgba($valhalla, .25);
-$perfume-a: rgba($perfume, .25);
-$portage-a: rgba($portage, .25);
-
 $valhalla-b: rgba($valhalla, .5);
-$perfume-b: rgba($perfume, .5);
-$portage-b: rgba($portage, .5);
-
 $valhalla-c: rgba($valhalla, .75);
+
+$perfume-a: rgba($perfume, .25);
+$perfume-b: rgba($perfume, .5);
+
+$portage-a: rgba($portage, .25);
+$portage-b: rgba($portage, .5);
 
 $silver-tree:    #6FCF97;
 $turquoise-blue: #66D2EA;
@@ -49,4 +49,4 @@ $piquetMinimalZoom: 380px;
 }
 
 $boxShadowDefault: 0 0 25px rgba($black, .2);
-$boxShadowAlternative: 0 10px 20px rgba($valhalla, .05)
+$boxShadowAlternate: 0 10px 20px rgba($valhalla, .05)
