@@ -27,7 +27,7 @@ function initEventListeners() {
     const expander = container.querySelector('.js-expander');
 
     const clickEventHandler = function clickEventHandler() {
-      closeEachActiveContainer(container)
+      //closeEachActiveContainer(container)
       changeExpanderDisplayState(container);
     };
     expander.addEventListener('click', clickEventHandler);

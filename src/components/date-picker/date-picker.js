@@ -98,11 +98,11 @@ function renderDatePicker(elements, rawDates, caseCurrentAimMaster) {
   renderDatePickerValues(datePicker, rawDates, caseCurrentAimMaster);
 }
 
-function triggerClick(slaveFrame, masterContainer) {
+function triggerClick(frame, container) {
   const eventHandler = function clickEventHandler() {
-    changeExpanderDisplayState( masterContainer );
+    changeExpanderDisplayState( container );
   };
-  slaveFrame.addEventListener('click', eventHandler);
+  frame.addEventListener('click', eventHandler);
 }
 
 function defineElements(currentFrame) {
@@ -138,6 +138,7 @@ function sortTasks(frame) {
   if (caseCurrentAimSlave) {
     sendDates(rawDates);
     triggerClick(elements.frames.slave, elements.containers.master);
+    triggerClick(elements.frames.master, elements.containers.slave);
   } else {
     renderDatePicker(elements, rawDates, caseCurrentAimMaster);
   }
