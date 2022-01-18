@@ -1,6 +1,6 @@
 import './entities__expandable.scss';
 
-function changeExpanderDisplayState(container) {
+export function changeExpanderDisplayState(container) {
   const expander = container.querySelector('.js-expander');
   if (expander.hasAttribute('checked')) {
     expander.removeAttribute('checked');
