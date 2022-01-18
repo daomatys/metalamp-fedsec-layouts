@@ -28,7 +28,9 @@ function renderTexts(counter, worder, num) {
 function onLegendClick(event, item) {
   event.preventDefault();
 
-  const relatedID = '#' + item.getAttribute('data-link');
+  console.log(event)
+
+  const relatedID = `#${item.getAttribute('data-link')}`;
   const aim = document.querySelector(relatedID);
 
   aim.focus();
@@ -120,7 +122,7 @@ function initListeners(chart) {
   });
 
   legendItems.forEach((item) => {
-    const legendPointerDownEventHandler = () => onLegendClick(event, item);
+    const legendPointerDownEventHandler = (event) => onLegendClick(event, item);
     item.addEventListener('pointerdown', legendPointerDownEventHandler);
   });
 }
