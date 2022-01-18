@@ -31,7 +31,7 @@
     }
 
     &_upper {
-      @extend %styles__form_fullscreen-bottom-border;
+      border-bottom: 1px solid $valhalla-a;
       align-items: start;
       padding-block: 111px;
     }
