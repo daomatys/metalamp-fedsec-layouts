@@ -4,8 +4,8 @@ import customLocale from './_custom-locale/date-picker_custom-locale';
 import './date-picker.scss';
 import '@components/button/__mean-oval/button__mean-oval';
 
-const SELECTOR__FRAME = '.js-adp-frame';
 const SELECTOR__AIM = '.js-expander__aim';
+const SELECTOR__FRAME = '.js-adp-frame';
 const SELECTOR__PARENT = '.js-expander__parent';
 const SELECTOR__CONTAINER = '.js-expander__container';
 const SELECTOR__BUTTON_HIDDEN = 'js-mean-oval-button_hidden';
@@ -63,7 +63,7 @@ function routeValues(frames, clearButton) {
 function renderDatePicker(elements, rawDates, caseCurrentAimMaster) {
   const insertIconMarkup = (name) => `<span class="material-icons">${name}</span>`;
   const currentDate = new Date('2019-08-08');
-  const dateFormat = elements.relations ? 'dd.MM.yyyy' : 'd MMM' ;
+  const dateFormat = elements.hierarchy ? 'dd.MM.yyyy' : 'd MMM' ;
 
   const socket = elements.containers.master.querySelector('.date-picker__socket');
   const { frames } = elements;
@@ -104,10 +104,14 @@ function triggerClick(slaveFrame, masterContainer) {
   slaveFrame.addEventListener('click', clickEventHandler);
 }
 
-function sortTasks(elements) {
-  const currentAim = elements.containers.master.querySelector(SELECTOR__AIM);
+function sortTasks(frame) {
+  const elements = defineElements(frame);
+
+  const currentAim = frame.parentNode.querySelector(SELECTOR__AIM);
   const caseCurrentAimSlave = currentAim.classList.contains('js-slave');
   const caseCurrentAimMaster = currentAim.classList.contains('js-master');
+  
+  console.log(currentAim, caseCurrentAimSlave)
 
   const rawDates = currentAim.getAttribute('data-dates');
 
@@ -123,9 +127,9 @@ function defineElements(currentFrame) {
   const currentFrameParent = currentFrame.closest(SELECTOR__PARENT);
   const twinwrap = currentFrameParent.parentNode;
   
-  const caseRelations = !!twinwrap.querySelector('.js-master');
-  const masterInput = caseRelations ? twinwrap.firstElementChild : currentFrameParent ;
-  const slaveInput = caseRelations ? twinwrap.lastElementChild : masterInput ;
+  const hierarchy = !!twinwrap.querySelector('.js-master');
+  const masterInput = hierarchy ? twinwrap.firstElementChild : currentFrameParent ;
+  const slaveInput = hierarchy ? twinwrap.lastElementChild : masterInput ;
 
   return {
     containers: {
@@ -136,7 +140,7 @@ function defineElements(currentFrame) {
       master: masterInput.querySelector(SELECTOR__FRAME),
       slave: slaveInput.querySelector(SELECTOR__FRAME),
     },
-    relations: caseRelations,
+    hierarchy,
   };
 }
 
@@ -144,9 +148,7 @@ function initDatePickerFrames() {
   const frames = document.querySelectorAll(SELECTOR__FRAME);
 
   frames.forEach((frame) => {
-    const elements = defineElements(frame);
-
-    sortTasks(elements);
+    sortTasks(frame);
   });
 }
 
