@@ -28,7 +28,7 @@ function renderTexts(counter, worder, num) {
 function onLegendClick(event, item) {
   event.preventDefault();
 
-  const relatedID = `#${item.getAttribute('data-link')}`;
+  const relatedID = '#' + item.getAttribute('data-link');
   const aim = document.querySelector(relatedID);
 
   aim.focus();
@@ -114,11 +114,15 @@ function initListeners(chart) {
   renderArcs(arcs, votesTotal);
   renderTexts(diagramTextCounter, diagramTextWorder, votesTotal);
 
-  const arcFocusEventHandler = (arc) => onFocus(arc, diagramTextCounter, diagramTextWorder);
-  arcs.forEach((arc) => arc.addEventListener('focus', arcFocusEventHandler));
+  arcs.forEach((arc) => {
+    const arcFocusEventHandler = () => onFocus(arc, diagramTextCounter, diagramTextWorder);
+    arc.addEventListener('focus', arcFocusEventHandler);
+  });
 
-  const legendPointerDownEventHandler = (event, item) => onLegendClick(event, item);
-  legendItems.forEach((item) => item.addEventListener('pointerdown', legendPointerDownEventHandler));
+  legendItems.forEach((item) => {
+    const legendPointerDownEventHandler = () => onLegendClick(event, item);
+    item.addEventListener('pointerdown', legendPointerDownEventHandler);
+  });
 }
 
 function initCharts() {
