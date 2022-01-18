@@ -7,7 +7,7 @@
   &__title {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     cursor: pointer;
 
     &_button {
@@ -15,9 +15,9 @@
     }
 
     &_icon {
-      margin-left: 40px;
       opacity: .5;
       z-index: 10;
+      margin-right: 10px;
     }
   }
 
