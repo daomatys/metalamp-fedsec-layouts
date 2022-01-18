@@ -1,6 +1,6 @@
+import { changeExpanderDisplayState } from '@entities/__expandable/entities__expandable';
 import AirDatepicker from 'air-datepicker';
 import customLocale from './_custom-locale/date-picker_custom-locale';
-import { changeExpanderDisplayState } from '@entities/__expandable/entities__expandable';
 
 import './date-picker.scss';
 import '@components/button/__mean-oval/button__mean-oval';
@@ -100,7 +100,7 @@ function renderDatePicker(elements, rawDates, caseCurrentAimMaster) {
 
 function triggerClick(frame, container) {
   const eventHandler = function clickEventHandler() {
-    changeExpanderDisplayState( container );
+    changeExpanderDisplayState(container);
   };
   frame.addEventListener('click', eventHandler);
 }
