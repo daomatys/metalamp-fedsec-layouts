@@ -29,29 +29,6 @@ block main
         id: "uik-cards__date-picker",
         dates: "2019-08-19, 2019-08-23"
       })
-      
-      -
-        const samples = [
-          {
-            room: 888,
-            luxe: true,
-            price: 9990,
-            count: {
-              rate: 5,
-              reviews: 145,
-              pictures: 3
-            }
-          },
-          {
-            room: 840,
-            luxe: false,
-            price: 9990,
-            count: {
-              rate: 4,
-              reviews: 65
-            }
-          }
-        ]
-
+      include ./ui-kit__cards-samples
       each sample in samples
         +cardRoomSample( sample )
