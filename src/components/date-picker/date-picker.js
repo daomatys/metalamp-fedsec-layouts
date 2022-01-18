@@ -9,18 +9,21 @@ const SELECTOR__AIM = 'js-expander__aim';
 const SELECTOR__CONTAINER = 'js-expander__container';
 const SELECTOR__ACTIVE = 'js-expander_active';
 
+function defineClearButtonState(masterFrame, clearButton) {
+  const caseValuesExists = masterFrame.value;
+
+  if (caseValuesExists) {
+    clearButton.classList.remove('js-mean-oval-button_hidden');
+  } else {
+    clearButton.classList.add('js-mean-oval-button_hidden');
+  }
+}
+
 function sendDates(rawDates, twinwrap) {
   const fixedDatesArray = rawDates ? rawDates.split(', ') : [];
   const fixedDates = fixedDatesArray.map((fixedDate) => new Date(fixedDate));
 
   twinwrap.dispatchEvent(new CustomEvent('incoming-dates', { detail: fixedDates }));
-}
-
-function triggerClick(slaveFrame, masterContainer) {
-  const clickEventHandler = function clickEventHandler() {
-    masterContainer.classList.toggle(SELECTOR__ACTIVE);
-  };
-  slaveFrame.addEventListener('click', clickEventHandler);
 }
 
 function renderDateValues(datePicker, twinwrap, rawDates, caseCurrentAimMaster) {
@@ -34,24 +37,14 @@ function renderDateValues(datePicker, twinwrap, rawDates, caseCurrentAimMaster) 
   }
 }
 
-function defineClearButtonState(masterFrame, clearButton) {
-  const caseValuesExists = masterFrame.value;
-
-  if (caseValuesExists) {
-    clearButton.classList.remove('js-mean-oval-button_hidden');
-  } else {
-    clearButton.classList.add('js-mean-oval-button_hidden');
-  }
-}
-
 function routeValues(frames, clearButton) {
   const startIndex = 0;
   const endIndex = 1;
+
   const slaveFrame = frames.slave;
   const masterFrame = frames.master;
-  const caseEquivalence = slaveFrame.isEqualNode(masterFrame);
 
-  if (!caseEquivalence) {
+  if (!slaveFrame.isEqualNode(masterFrame)) {
     const initialValue = masterFrame.value.split(' - ');
     const caseBothValuesExists = initialValue.length > 1;
 
@@ -103,8 +96,15 @@ function renderDatePicker(elements, rawDates, caseCurrentAimMaster) {
   renderDateValues(datePicker, elements.twinwrap, rawDates, caseCurrentAimMaster);
 }
 
+function triggerClick(slaveFrame, masterContainer) {
+  const clickEventHandler = function clickEventHandler() {
+    masterContainer.classList.toggle(SELECTOR__ACTIVE);
+  };
+  slaveFrame.addEventListener('click', clickEventHandler);
+}
+
 function sortTasks(elements) {
-  const currentAim = frame.parentNode.querySelector(`.${SELECTOR__AIM}`);
+  const currentAim = elements.containers.master.querySelector(`.${SELECTOR__AIM}`);
   const caseCurrentAimSlave = currentAim.classList.contains('js-slave');
   const caseCurrentAimMaster = currentAim.classList.contains('js-master');
 
@@ -122,30 +122,31 @@ function defineElements(frame) {
   const twinwrap = frame.closest(`.${SELECTOR__CONTAINER}`).parentNode.parentNode;
   
   const caseRelations = !!twinwrap.querySelector('.js-master');
-  const master = caseRelations ? twinwrap.firstElementChild : frame.parentNode;
-  const slave = caseRelations ? twinwrap.lastElementChild : master;
+  const masterInput = caseRelations ? twinwrap.firstElementChild : frame.parentNode;
+  const slaveInput = caseRelations ? twinwrap.lastElementChild : master;
 
   return {
-    relations: caseRelations,
     twinwrap,
-    frames: {
-      master: master.querySelector(`.${SELECTOR__FRAME}`),
-      slave: slave.querySelector(`.${SELECTOR__FRAME}`),
-    },
     containers: {
-      master: master.closest(`.${SELECTOR__CONTAINER}`),
-      slave: slave.closest(`.${SELECTOR__CONTAINER}`),
-    }
+      master: masterInput.querySelector(`.${SELECTOR__CONTAINER}`),
+      slave: slaveInput.querySelector(`.${SELECTOR__CONTAINER}`),
+    },
+    frames: {
+      master: masterInput.querySelector(`.${SELECTOR__FRAME}`),
+      slave: slaveInput.querySelector(`.${SELECTOR__FRAME}`),
+    },
+    relations: caseRelations,
   };
 }
 
 function initDatePickerFrames() {
-  const inputFrames = document.querySelectorAll(`.${SELECTOR__FRAME}`);
+  const frames = document.querySelectorAll(`.${SELECTOR__FRAME}`);
 
-  if (inputFrames) {
+  frames.forEach((frame) => {
     const elements = defineElements(frame);
-    inputFrames.forEach(() => sortTasks(elements));
-  }
+
+    sortTasks(elements);
+  });
 }
 
 initDatePickerFrames();
