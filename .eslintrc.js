@@ -3,7 +3,6 @@ module.exports = {
     browser: true,
     es6: true,
     jquery: true,
-
   },
   plugins: [
     'fsd'
