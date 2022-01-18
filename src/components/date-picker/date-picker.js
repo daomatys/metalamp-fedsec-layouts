@@ -17,13 +17,16 @@ const sendDates = function sendDates(rawDates, twinwrap) {
 };
 
 const triggerClick = function triggerClick(slaveFrame, masterContainer) {
-  const clickEventHandler = () => masterContainer.classList.toggle(SELECTOR__ACTIVE);
+  const clickEventHandler = function clickEventHandler() {
+    masterContainer.classList.toggle(SELECTOR__ACTIVE);
+  };
   slaveFrame.addEventListener('click', clickEventHandler);
 };
 
 const renderDateValues = function renderDates(datePicker, twinwrap, rawDates, caseMasterAim) {
-  const incomingDatesEventHandler = ({ detail }) => datePicker.selectDate(detail);
-
+  const incomingDatesEventHandler = function incomingDatesEventHandler({ detail }) {
+    datePicker.selectDate(detail)
+  };
   twinwrap.addEventListener('incoming-dates', incomingDatesEventHandler, { once: true });
 
   if (!caseMasterAim) {
@@ -42,6 +45,8 @@ const defineClearButtonState = function defineClearButtonState(masterFrame, clea
 };
 
 const routeValues = function routeValues(frames, clearButton) {
+  const startIndex = 0;
+  const endIndex = 1;
   const slaveFrame = frames.slave;
   const masterFrame = frames.master;
   const caseEquivalence = slaveFrame.isEqualNode(masterFrame);
@@ -49,8 +54,6 @@ const routeValues = function routeValues(frames, clearButton) {
   if (!caseEquivalence) {
     const initialValue = masterFrame.value.split(' - ');
     const caseBothValuesExists = initialValue.length > 1;
-    const startIndex = 0;
-    const endIndex = 1;
 
     if (caseBothValuesExists) {
       masterFrame.value = initialValue[startIndex];
@@ -101,11 +104,23 @@ const renderDatePicker = function renderDatePicker(elements, rawDates, caseMaste
   renderDateValues(datePicker, elements.twinwrap, rawDates, caseMasterAim);
 };
 
+const sortTasks = function sortDatePickerElementsTasks(elements) {
+  const currentAim = frame.parentNode.querySelector(`.${SELECTOR__AIM}`);
+  const rawDates = currentAim.getAttribute('data-dates');
+  const caseSlaveAim = currentAim.classList.contains('js-slave');
+  const caseMasterAim = currentAim.classList.contains('js-master');
+
+  if (caseSlaveAim) {
+    sendDates(rawDates, elements.twinwrap);
+    triggerClick(elements.frames.slave, elements.containers.master);
+  } else {
+    renderDatePicker(elements, rawDates, caseMasterAim);
+  }
+};
+
 const defineElements = function defineElements(frame) {
   const twinwrap = frame.closest(`.${SELECTOR__CONTAINER}`).parentNode.parentNode;
-
-  console.log(twinwrap)
-
+  
   const caseRelations = !!twinwrap.querySelector('.js-master');
   const master = caseRelations ? twinwrap.firstElementChild : frame.parentNode;
   const slave = caseRelations ? twinwrap.lastElementChild : master;
@@ -124,29 +139,12 @@ const defineElements = function defineElements(frame) {
   };
 };
 
-const sortTasks = function sortDatePickerElementsTasks(frame) {
-  const elements = defineElements(frame);
-
-  const currentAim = frame.parentNode.querySelector(`.${SELECTOR__AIM}`);
-  const rawDates = currentAim.getAttribute('data-dates');
-  const caseSlaveAim = currentAim.classList.contains('js-slave');
-  const caseMasterAim = currentAim.classList.contains('js-master');
-
-  console.log(currentAim)
-
-  if (caseSlaveAim) {
-    sendDates(rawDates, elements.twinwrap);
-    triggerClick(elements.frames.slave, elements.containers.master);
-  } else {
-    renderDatePicker(elements, rawDates, caseMasterAim);
-  }
-};
-
 const init = function initDatePicker() {
   const inputFrames = document.querySelectorAll(`.${SELECTOR__FRAME}`);
 
   if (inputFrames) {
-    inputFrames.forEach((frame) => sortTasks(frame));
+    const elements = defineElements(frame);
+    inputFrames.forEach(() => sortTasks(elements));
   }
 };
 
