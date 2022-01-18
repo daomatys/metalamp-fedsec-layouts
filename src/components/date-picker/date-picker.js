@@ -8,15 +8,15 @@ const SELECTOR__FRAME = '.js-adp-frame';
 const SELECTOR__AIM = '.js-expander__aim';
 const SELECTOR__PARENT = '.js-expander__parent';
 const SELECTOR__CONTAINER = '.js-expander__container';
-const SELECTOR__BUTTON = 'js-mean-oval-button_hidden';
+const SELECTOR__BUTTON_HIDDEN = 'js-mean-oval-button_hidden';
 
 function defineClearButtonState(masterFrame, clearButton) {
   const caseValuesExists = masterFrame.value;
 
   if (caseValuesExists) {
-    clearButton.classList.remove(SELECTOR__BUTTON);
+    clearButton.classList.remove(SELECTOR__BUTTON_HIDDEN);
   } else {
-    clearButton.classList.add(SELECTOR__BUTTON);
+    clearButton.classList.add(SELECTOR__BUTTON_HIDDEN);
   }
 }
 
@@ -27,7 +27,7 @@ function sendDates(rawDates) {
   document.dispatchEvent(new CustomEvent('incoming-dates', { detail: fixedDates }));
 }
 
-function renderDateValues(datePicker, rawDates, caseCurrentAimMaster) {
+function renderDatePickerValues(datePicker, rawDates, caseCurrentAimMaster) {
   const eventHandler = function incomingDatesEventHandler({ detail }) {
     datePicker.selectDate(detail)
   };
@@ -94,7 +94,7 @@ function renderDatePicker(elements, rawDates, caseCurrentAimMaster) {
   clearButton.onclick = () => datePicker.clear();
   acceptButton.onclick = () => frames.master.click();
 
-  renderDateValues(datePicker, rawDates, caseCurrentAimMaster);
+  renderDatePickerValues(datePicker, rawDates, caseCurrentAimMaster);
 }
 
 function triggerClick(slaveFrame, masterContainer) {
@@ -128,7 +128,6 @@ function defineElements(currentFrame) {
   const slaveInput = caseRelations ? twinwrap.lastElementChild : masterInput ;
 
   return {
-    twinwrap,
     containers: {
       master: masterInput.querySelector(SELECTOR__CONTAINER),
       slave: slaveInput.querySelector(SELECTOR__CONTAINER),

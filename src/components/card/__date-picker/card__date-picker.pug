@@ -1,7 +1,8 @@
 include /components/date-picker/date-picker.pug
 
 mixin cardDatePicker( item )
-  .card-date-picker.js-expander__container.js-expander__active
-    .card-date-picker__frame.js-adp-frame.js-expander
-    .card-date-picker__aim.js-expander__aim( data-dates=item.dates )
-      +datePicker( item.id )
+  .card-date-picker.js-expander__parent
+    .card-date-picker.js-expander__container.js-expander__active
+      .card-date-picker__frame.js-adp-frame.js-expander
+      .card-date-picker__aim.js-expander__aim( data-dates=item.dates )
+        +datePicker( item.id )
