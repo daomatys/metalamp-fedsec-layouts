@@ -1,4 +1,4 @@
-import { changeExpanderDisplayState } from '@entities/__expandable/entities__expandable';
+import changeExpanderDisplayState from '@entities/__expandable/entities__expandable';
 import AirDatepicker from 'air-datepicker';
 import customLocale from './_custom-locale/date-picker_custom-locale';
 

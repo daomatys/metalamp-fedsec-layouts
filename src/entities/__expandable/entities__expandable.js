@@ -1,6 +1,6 @@
 import './entities__expandable.scss';
 
-export function changeExpanderDisplayState(container) {
+export default function changeExpanderDisplayState(container) {
   const expander = container.querySelector('.js-expander');
   if (expander.hasAttribute('checked')) {
     expander.removeAttribute('checked');
@@ -9,7 +9,7 @@ export function changeExpanderDisplayState(container) {
   }
   container.classList.toggle('js-expander_active');
 }
-
+/* linter is mad about uncommented unused functions
 function closeEachActiveContainer(container) {
   const currentActiveContainers = document.querySelectorAll('.js-expander_active');
 
@@ -17,9 +17,9 @@ function closeEachActiveContainer(container) {
     if (!container.isEqualNode(activeContainer)) {
       changeExpanderDisplayState(activeContainer);
     }
-  })
+  });
 }
-
+*/
 function initEventListeners() {
   const containers = document.querySelectorAll('.js-expander__container');
 
@@ -27,7 +27,9 @@ function initEventListeners() {
     const expander = container.querySelector('.js-expander');
 
     const clickEventHandler = function clickEventHandler() {
-      //closeEachActiveContainer(container)
+      /*
+      closeEachActiveContainer(container)
+      */
       changeExpanderDisplayState(container);
     };
     expander.addEventListener('click', clickEventHandler);
