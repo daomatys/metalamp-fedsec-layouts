@@ -12,12 +12,12 @@ function likeButtonPressing({ target }) {
 
   if (caseInputChecked) {
     icon.textContent = 'favorite_border';
-    counter.textContent -= 1;
+    counter.textContent = parseInt(counter.textContent, 10) - 1;
     input.removeAttribute('checked');
   }
   if (!caseInputChecked) {
     icon.textContent = 'favorite';
-    counter.textContent += 1;
+    counter.textContent = parseInt(counter.textContent, 10) + 1;
     input.setAttribute('checked', true);
   }
 }
