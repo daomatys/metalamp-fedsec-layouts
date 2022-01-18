@@ -11,7 +11,7 @@ function changeExpanderDisplayState(container, expander) {
 
 function initEventListeners() {
   const containers = document.querySelectorAll('.js-expander__container');
-  
+
   containers.forEach((container) => {
     const expander = container.querySelector('.js-expander');
 

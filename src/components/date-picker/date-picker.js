@@ -29,7 +29,7 @@ function sendDates(rawDates) {
 
 function renderDatePickerValues(datePicker, rawDates, caseCurrentAimMaster) {
   const eventHandler = function incomingDatesEventHandler({ detail }) {
-    datePicker.selectDate(detail)
+    datePicker.selectDate(detail);
   };
   document.addEventListener('incoming-dates', eventHandler, { once: true });
 
@@ -63,7 +63,7 @@ function routeValues(frames, clearButton) {
 function renderDatePicker(elements, rawDates, caseCurrentAimMaster) {
   const insertIconMarkup = (name) => `<span class="material-icons">${name}</span>`;
   const currentDate = new Date('2019-08-08');
-  const dateFormat = elements.hierarchy ? 'dd.MM.yyyy' : 'd MMM' ;
+  const dateFormat = elements.hierarchy ? 'dd.MM.yyyy' : 'd MMM';
 
   const socket = elements.containers.master.querySelector('.date-picker__socket');
   const { frames } = elements;
@@ -104,32 +104,13 @@ function triggerClick(slaveFrame, masterContainer) {
   slaveFrame.addEventListener('click', clickEventHandler);
 }
 
-function sortTasks(frame) {
-  const elements = defineElements(frame);
-
-  const currentAim = frame.parentNode.querySelector(SELECTOR__AIM);
-  const caseCurrentAimSlave = currentAim.classList.contains('js-slave');
-  const caseCurrentAimMaster = currentAim.classList.contains('js-master');
-  
-  console.log(currentAim, caseCurrentAimSlave)
-
-  const rawDates = currentAim.getAttribute('data-dates');
-
-  if (caseCurrentAimSlave) {
-    sendDates(rawDates);
-    triggerClick(elements.frames.slave, elements.containers.master);
-  } else {
-    renderDatePicker(elements, rawDates, caseCurrentAimMaster);
-  }
-}
-
 function defineElements(currentFrame) {
   const currentFrameParent = currentFrame.closest(SELECTOR__PARENT);
   const twinwrap = currentFrameParent.parentNode;
-  
+
   const hierarchy = !!twinwrap.querySelector('.js-master');
-  const masterInput = hierarchy ? twinwrap.firstElementChild : currentFrameParent ;
-  const slaveInput = hierarchy ? twinwrap.lastElementChild : masterInput ;
+  const masterInput = hierarchy ? twinwrap.firstElementChild : currentFrameParent;
+  const slaveInput = hierarchy ? twinwrap.lastElementChild : masterInput;
 
   return {
     containers: {
@@ -142,6 +123,23 @@ function defineElements(currentFrame) {
     },
     hierarchy,
   };
+}
+
+function sortTasks(frame) {
+  const elements = defineElements(frame);
+
+  const currentAim = frame.parentNode.querySelector(SELECTOR__AIM);
+  const caseCurrentAimSlave = currentAim.classList.contains('js-slave');
+  const caseCurrentAimMaster = currentAim.classList.contains('js-master');
+
+  const rawDates = currentAim.getAttribute('data-dates');
+
+  if (caseCurrentAimSlave) {
+    sendDates(rawDates);
+    triggerClick(elements.frames.slave, elements.containers.master);
+  } else {
+    renderDatePicker(elements, rawDates, caseCurrentAimMaster);
+  }
 }
 
 function initDatePickerFrames() {
