@@ -4,18 +4,19 @@ import customLocale from './_custom-locale/date-picker_custom-locale';
 import './date-picker.scss';
 import '@components/button/__mean-oval/button__mean-oval';
 
-const SELECTOR__FRAME = 'js-adp-frame';
-const SELECTOR__AIM = 'js-expander__aim';
-const SELECTOR__CONTAINER = 'js-expander__container';
-const SELECTOR__ACTIVE = 'js-expander_active';
+const SELECTOR__FRAME = '.js-adp-frame';
+const SELECTOR__AIM = '.js-expander__aim';
+const SELECTOR__PARENT = '.js-expander__parent';
+const SELECTOR__CONTAINER = '.js-expander__container';
+const SELECTOR__BUTTON = 'js-mean-oval-button_hidden';
 
 function defineClearButtonState(masterFrame, clearButton) {
   const caseValuesExists = masterFrame.value;
 
   if (caseValuesExists) {
-    clearButton.classList.remove('js-mean-oval-button_hidden');
+    clearButton.classList.remove(SELECTOR__BUTTON);
   } else {
-    clearButton.classList.add('js-mean-oval-button_hidden');
+    clearButton.classList.add(SELECTOR__BUTTON);
   }
 }
 
@@ -98,13 +99,13 @@ function renderDatePicker(elements, rawDates, caseCurrentAimMaster) {
 
 function triggerClick(slaveFrame, masterContainer) {
   const clickEventHandler = function clickEventHandler() {
-    masterContainer.classList.toggle(SELECTOR__ACTIVE);
+    masterContainer.classList.toggle('js-expander_active');
   };
   slaveFrame.addEventListener('click', clickEventHandler);
 }
 
 function sortTasks(elements) {
-  const currentAim = elements.containers.master.querySelector(`.${SELECTOR__AIM}`);
+  const currentAim = elements.containers.master.querySelector(SELECTOR__AIM);
   const caseCurrentAimSlave = currentAim.classList.contains('js-slave');
   const caseCurrentAimMaster = currentAim.classList.contains('js-master');
 
@@ -118,29 +119,30 @@ function sortTasks(elements) {
   }
 }
 
-function defineElements(frame) {
-  const twinwrap = frame.closest(`.${SELECTOR__CONTAINER}`).parentNode.parentNode;
+function defineElements(currentFrame) {
+  const currentFrameParent = currentFrame.closest(SELECTOR__PARENT);
+  const twinwrap = currentFrameParent.parentNode;
   
   const caseRelations = !!twinwrap.querySelector('.js-master');
-  const masterInput = caseRelations ? twinwrap.firstElementChild : frame.parentNode ;
+  const masterInput = caseRelations ? twinwrap.firstElementChild : currentFrameParent ;
   const slaveInput = caseRelations ? twinwrap.lastElementChild : masterInput ;
 
   return {
     twinwrap,
     containers: {
-      master: masterInput.querySelector(`.${SELECTOR__CONTAINER}`),
-      slave: slaveInput.querySelector(`.${SELECTOR__CONTAINER}`),
+      master: masterInput.querySelector(SELECTOR__CONTAINER),
+      slave: slaveInput.querySelector(SELECTOR__CONTAINER),
     },
     frames: {
-      master: masterInput.querySelector(`.${SELECTOR__FRAME}`),
-      slave: slaveInput.querySelector(`.${SELECTOR__FRAME}`),
+      master: masterInput.querySelector(SELECTOR__FRAME),
+      slave: slaveInput.querySelector(SELECTOR__FRAME),
     },
     relations: caseRelations,
   };
 }
 
 function initDatePickerFrames() {
-  const frames = document.querySelectorAll(`.${SELECTOR__FRAME}`);
+  const frames = document.querySelectorAll(SELECTOR__FRAME);
 
   frames.forEach((frame) => {
     const elements = defineElements(frame);

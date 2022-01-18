@@ -34,11 +34,12 @@ mixin input( item )
   - const containerActiveClass = checked ? ' js-expander_active' : ''
   - const containerClasses = [ containerMarkClass, containerActiveClass ]
 
+  - const datePickerParentClass = archetype === 'date-picker' ? 'js-expander__parent' : ''
   - const datePickerClass = archetype === 'date-picker' ? 'js-expander js-adp-frame' : null
   - const dropdownClass = archetype === 'dropdown' ? 'js-expander dropdown' : null
   - const frameClass = datePickerClass || dropdownClass
 
-  .input( style=currentWidth )
+  .input( class=datePickerParentClass style=currentWidth )
     if item.title
       .input__title
         +titleBar( item.title, item.state )

@@ -2,7 +2,7 @@ include /components/material-icon-cell/material-icon-cell.pug
 include /components/date-picker/date-picker.pug
 
 mixin inputDatePicker( item )
-  - const hierarchyClass = 'js-' + item.hierarchy 
+  - const hierarchyClass = item.hierarchy ? 'js-' + item.hierarchy : ''
 
   label.input__icon_expand.js-expander__icon( for=item.id)
     +materialIcon('expand_more', item.id)
