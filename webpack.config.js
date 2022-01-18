@@ -77,7 +77,7 @@ module.exports = {
       },
       {
         test: /\.pug$/i,
-        loader: 'aliased-pug-loader',
+        loader: '@webdiscus/pug-loader',
         options: {
           basedir: PATHS.src,
           pretty: true
@@ -180,13 +180,6 @@ module.exports = {
       '@images': path.join( PATHS.src, '/assets/images/' ),
       '@fonts': path.join( PATHS.src, '/assets/fonts/' ),
       '@styles': path.join( PATHS.src, '/styles/' )
-    }
-  },
-
-  resolveLoader: {
-    alias: {
-      //'aliased-pug-loader': 'simple-pug-loader',
-      'aliased-pug-loader': '@webdiscus/pug-loader',
     }
   }
 }
