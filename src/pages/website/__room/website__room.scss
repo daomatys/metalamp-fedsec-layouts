@@ -1,17 +1,5 @@
 @import "@variables";
-
-@media only screen and (min-width: 380px) {
-  .room-page {
-    &__sub-section_left {
-      grid-template-areas:
-        "a"
-        "b"
-        "d"
-        "f"
-        "e";
-    }
-  }
-}
+@import "@styles/__text/styles__text.scss";
 
 @media only screen and (max-width: 860px) {
   .room-page {
@@ -25,6 +13,15 @@
     &__cancellation-policy,
     &__visitors-impression-chart {
       padding-left: 29px;
+    }
+
+    &__sub-section_left {
+      grid-template-areas:
+        "a"
+        "b"
+        "d"
+        "f"
+        "e";
     }
   }
 }
@@ -108,6 +105,16 @@ $documentHeigth: 1937px;
 
   &__title {
     margin-bottom: 20px;
+
+    &-text {
+      @extend %styles__text_h2;
+    }
+  }
+
+  &__infoblock {
+    &-text {
+      @extend %styles__text_body;
+    }
   }
 
   &__sub-section_left {

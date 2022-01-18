@@ -30,7 +30,7 @@ block main
         .room-page__sub-section_left
           .room-page__room-advantages
             .room-page__title
-              span.custom-font-style_h2 Сведения о номере
+              span.room-page__title-text Сведения о номере
             .block__advantage-bars
               +advantageBars([
                 {
@@ -51,7 +51,7 @@ block main
               ])
           .room-page__visitors-impression-chart
             .room-page__title
-              span.custom-font-style_h2 Впечатления от номера
+              span.room-page__title-text Впечатления от номера
             +votesChart({
               id: 'room-page-888',
               units: [
@@ -63,7 +63,7 @@ block main
             })
           .room-page__reviews
             .room-page__title
-              span.custom-font-style_h2 Отзывы посетителей номера
+              span.room-page__title-text Отзывы посетителей номера
             .block__advantage-bars
               +commentBar([
                 {
@@ -91,7 +91,7 @@ block main
             ])
           .room-page__rules-list
             .room-page__title
-              span.custom-font-style_h2 Правила
+              span.room-page__title-text Правила
             +bulletList([
               "Нельзя с питомцами",
               "Без вечеринок и мероприятий",
@@ -99,7 +99,8 @@ block main
             ])
           .room-page__cancellation-policy
             .room-page__title
-              span.custom-font-style_h2 Отмена
-            span.custom-font-style_body Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+              span.room-page__title-text Отмена
+            .room-page__infoblock
+              span.room-page__infoblock-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
           .room-page__booking-card
             +cardRoomBooking()
