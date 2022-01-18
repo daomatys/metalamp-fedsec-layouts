@@ -19,21 +19,21 @@ function defineClearButtonState(masterFrame, clearButton) {
   }
 }
 
-function sendDates(rawDates, twinwrap) {
+function sendDates(rawDates) {
   const fixedDatesArray = rawDates ? rawDates.split(', ') : [];
   const fixedDates = fixedDatesArray.map((fixedDate) => new Date(fixedDate));
 
-  twinwrap.dispatchEvent(new CustomEvent('incoming-dates', { detail: fixedDates }));
+  document.dispatchEvent(new CustomEvent('incoming-dates', { detail: fixedDates }));
 }
 
-function renderDateValues(datePicker, twinwrap, rawDates, caseCurrentAimMaster) {
+function renderDateValues(datePicker, rawDates, caseCurrentAimMaster) {
   const eventHandler = function incomingDatesEventHandler({ detail }) {
     datePicker.selectDate(detail)
   };
-  twinwrap.addEventListener('incoming-dates', eventHandler, { once: true });
+  document.addEventListener('incoming-dates', eventHandler, { once: true });
 
   if (!caseCurrentAimMaster) {
-    sendDates(rawDates, twinwrap);
+    sendDates(rawDates);
   }
 }
 
@@ -93,7 +93,7 @@ function renderDatePicker(elements, rawDates, caseCurrentAimMaster) {
   clearButton.onclick = () => datePicker.clear();
   acceptButton.onclick = () => frames.master.click();
 
-  renderDateValues(datePicker, elements.twinwrap, rawDates, caseCurrentAimMaster);
+  renderDateValues(datePicker, rawDates, caseCurrentAimMaster);
 }
 
 function triggerClick(slaveFrame, masterContainer) {
@@ -111,7 +111,7 @@ function sortTasks(elements) {
   const rawDates = currentAim.getAttribute('data-dates');
 
   if (caseCurrentAimSlave) {
-    sendDates(rawDates, elements.twinwrap);
+    sendDates(rawDates);
     triggerClick(elements.frames.slave, elements.containers.master);
   } else {
     renderDatePicker(elements, rawDates, caseCurrentAimMaster);
@@ -122,8 +122,8 @@ function defineElements(frame) {
   const twinwrap = frame.closest(`.${SELECTOR__CONTAINER}`).parentNode.parentNode;
   
   const caseRelations = !!twinwrap.querySelector('.js-master');
-  const masterInput = caseRelations ? twinwrap.firstElementChild : frame.parentNode;
-  const slaveInput = caseRelations ? twinwrap.lastElementChild : master;
+  const masterInput = caseRelations ? twinwrap.firstElementChild : frame.parentNode ;
+  const slaveInput = caseRelations ? twinwrap.lastElementChild : masterInput ;
 
   return {
     twinwrap,
