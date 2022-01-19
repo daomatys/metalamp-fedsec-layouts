@@ -106,7 +106,7 @@ $borderRadius: 4px;
   }
 
   &__reviews {
-    color: rgba($valhalla, .5);
+    color: $valhalla-b;
     font-size: 14px;
   }
 
@@ -116,6 +116,18 @@ $borderRadius: 4px;
   }
 
   &__title {
+    &_prefix,
+    &_luxe-mark {
+      font-weight: bold;
+    }
+
+    &_luxe-mark {
+      font-size: 12px;
+      line-height: 15px;
+      color: $perfume;
+      margin-left: 1px;
+    }
+
     &_room-number {
       @extend %styles__text_h2;
       margin-right: 7px;
