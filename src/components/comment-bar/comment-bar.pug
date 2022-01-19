@@ -3,16 +3,15 @@ include /components/button/__like/button__like.pug
 mixin commentBar( items=[] )
   each item in items
     .comment-bar
-      .comment-bar__avatar-section
-        .comment-bar__avatar
-          img( src=require(`@components/comment-bar/__avatars/comment-bar__avatar-${ item.avatarname }.jpg`) )
+      .comment-bar__section_left
+        img.comment-bar__avatar( src=require(`@components/comment-bar/__avatars/comment-bar__avatar-${ item.avatarname }.jpg`) )
         .comment-bar__like-button
           +likeButtons([{
             groupname: item.likebtn.groupname,
             pressed: item.likebtn.pressed,
             likecount: item.likebtn.likecount
           }])
-      .comment-bar__text-section
+      .comment-bar__section_right
         .comment-bar__title
           .comment-bar__title_username #{ item.name }
           .comment-bar__title_days-ago #{ item.daysago }

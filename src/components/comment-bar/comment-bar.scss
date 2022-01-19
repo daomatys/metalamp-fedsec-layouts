@@ -3,10 +3,11 @@
 
 .comment-bar {
   grid-template-columns: repeat(2, auto);
+  max-width: 710px;
 
   &,
-  &__avatar-section,
-  &__text-section,
+  &__section_left,
+  &__section_right,
   &__like-button,
   &__title {
     display: grid;
@@ -14,22 +15,30 @@
   }
 
   &,
-  &__avatar-section,
-  &__text-section {
+  &__section_left,
+  &__section_right {
     grid-gap: 10px;
   }
   
-  &__avatar-section,
-  &__text-section {
+  &__section_left,
+  &__section_right {
     grid-template-rows: repeat(2, auto);
   }
 
-  &__text-section {
+  &__section_right {
     @extend %styles__text_body;
-    width: 653px;
   }
 
-  &__avatar > img {
+  &__section_left {
+    width: 48px;
+  }
+
+  &__avatar {
+    box-sizing: border-box;
+    border-width: 2px;
+    border-style: solid;
+    border-color: $white;
+    border-radius: 50%;
     filter: drop-shadow(0px 10px 20px rgba($valhalla, 0.1));
   }
 
