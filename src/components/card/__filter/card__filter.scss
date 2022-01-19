@@ -1,3 +1,4 @@
+@import "@variables";
 @import "@styles/__text/styles__text.scss";
 
 .card-filter {
@@ -15,6 +16,6 @@
   }
 
   &__title {
-    margin-bottom: 16px;
+    margin-bottom: $titleGapExtended;
   }
 }
