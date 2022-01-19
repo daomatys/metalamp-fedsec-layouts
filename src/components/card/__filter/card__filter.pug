@@ -33,8 +33,9 @@ mixin cardFilter( item )
           title: "диапазон цен",
         })
       span.card-filter__slider-note Стоимость за сутки пребывания в номере
-    .card-filter__checkboxes.form-elements__element
-      +titleBar("правила дома")
+    .card-filter__checkboxes
+      .card-filter__title
+        +titleBar("правила дома")
       .checkbox-button__array
         +checkboxButtons({
           groupname: item.id + "-checkboxes", 
@@ -44,8 +45,9 @@ mixin cardFilter( item )
             { pressed: true,  label: "Можно пригласить гостей (до 10 человек)" }
           ]
         })
-    .card-filter__rich-checkboxes.form-elements__element
-      +titleBar("доступность")
+    .card-filter__rich-checkboxes
+      .card-filter__title
+        +titleBar("доступность")
       .checkbox-buttons__array
         +checkboxButtons({
           richmode: true,

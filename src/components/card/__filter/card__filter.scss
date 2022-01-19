@@ -13,4 +13,8 @@
       @extend %styles__text_micro-note;
     }
   }
+
+  &__title {
+    margin-bottom: 16px;
+  }
 }
