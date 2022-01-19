@@ -20,17 +20,19 @@
     grid-gap: 10px;
   }
   
-  &__section_left,
-  &__section_right {
-    grid-template-rows: repeat(2, auto);
-  }
+  &__section {
+    &_left,
+    &_right {
+      grid-template-rows: repeat(2, auto);
+    }
 
-  &__section_right {
-    @extend %styles__text_body;
-  }
+    &_right {
+      @extend %styles__text_body;
+    }
 
-  &__section_left {
-    width: 48px;
+    &_left {
+      width: 48px;
+    }
   }
 
   &__avatar {
