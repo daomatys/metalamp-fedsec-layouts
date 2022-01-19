@@ -11,7 +11,6 @@ mixin likeButtons( items=[] )
     .like-button
       input.like-button__elem( type='checkbox' checked=buttonChecked id=itemId )
       .like-button__text
-        .like-button__text-icon
+        label.like-button__text-icon( for=itemId )
           +materialIcon( iconCode, itemId )
-        .like-button__text-counter
-          label.like-button__text-counter-elem( for=itemId ) #{item.likecount}
+        label.like-button__text-counter( for=itemId ) #{item.likecount}

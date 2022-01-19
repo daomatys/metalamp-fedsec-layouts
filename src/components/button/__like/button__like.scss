@@ -14,11 +14,11 @@
     &:checked + .like-button__text {
       opacity: 1;
 
-      & > .like-button__text-icon > label {
+      & .like-button__text-icon .material-icons {
         @extend %gradient-fill;
       }
 
-      & > .like-button__text-counter > label {
+      & .like-button__text-counter {
         color: $perfume;
       }
     }
@@ -29,16 +29,14 @@
     display: flex;
     opacity: .25;
 
-    &-icon,
+    &-icon .material-icons,
     &-counter {
-      & > label {
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 10px;
         line-height: 12px;
         cursor: pointer;
-      }
     }
 
     &-icon {
