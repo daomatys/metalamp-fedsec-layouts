@@ -6,9 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
-
 const defineDistSection = ext => ext + '/[name].' + ext;
-
 const defineFileName = filepath => filepath.match(/[^\\/]+$/)[0].replace(/\.js$/,'');
 
 const definePagesPaths = function definePagesPathsByRootFolder( folder ) {
@@ -27,7 +25,6 @@ const defineEntryPoints = function convertArrayOfPathsIntoEntriesObject( pagesAr
   return Object.fromEntries( preparedArray );
 }
 
-
 const PATHS = {
   src: path.join(__dirname, '/src'),
   dist: path.join(__dirname, '/dist'),
@@ -35,11 +32,9 @@ const PATHS = {
 };
 
 const PAGES__ROOT = path.join( PATHS.src, 'pages' );
-
 const PAGES__FULLPATHS = definePagesPaths( PAGES__ROOT );
 const PAGES__ENTRIES = defineEntryPoints( PAGES__FULLPATHS );
 const PAGES__NAMES = PAGES__FULLPATHS.map( filepath => defineFileName( filepath ) );
-
 
 module.exports = {
   devServer: {
@@ -49,16 +44,12 @@ module.exports = {
     compress: true,
     port: 9000
   },
-
   mode: 'development',
-
   entry: PAGES__ENTRIES,
-
   output: {
     filename: defineDistSection('js'),
     path: PATHS.dist,
   },
-
   module: {
     rules: [
       {
@@ -122,7 +113,6 @@ module.exports = {
       }
     ]
   },
-
   plugins: [
     ...PAGES__NAMES.map( (pageName, index) => new HtmlWebpackPlugin({
       template: PAGES__FULLPATHS[index].replace(/\.js$/,'.pug'),
@@ -141,7 +131,6 @@ module.exports = {
       'window.jQuery': 'jquery'
     }),
   ],
-
   optimization: {
     minimizer: [
       new CssMinimizerPlugin({
@@ -149,13 +138,11 @@ module.exports = {
       }),
     ]
   },
-
   cache: {
     type: 'filesystem',
     allowCollectingMemory: true,
     cacheDirectory: PATHS.cache,
   },
-
   resolve: {
     alias: {
       '@variables': path.join( PATHS.src, '/variables/variables.scss' ),
