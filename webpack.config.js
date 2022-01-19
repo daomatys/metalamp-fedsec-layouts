@@ -97,7 +97,9 @@ module.exports = {
       {
         test: /\.(ttf|woff|svg)$/i,
         type: 'asset/resource',
-        exclude: [/images/],
+        include: [
+          /fonts/
+        ],
         generator: {
           filename: 'static/fonts/[name][ext][query]'
         }
@@ -105,7 +107,9 @@ module.exports = {
       {
         test: /\.(png|svg|gif|jpe?g)$/i,
         type: 'asset/resource',
-        include: [/images/],
+        exclude: [
+          /fonts/
+        ],
         generator: {
           filename: 'static/images/[name][ext][query]'
         }

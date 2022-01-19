@@ -5,7 +5,7 @@ mixin commentBar( items=[] )
     .comment-bar
       .comment-bar__avatar-section
         .comment-bar__avatar
-          img( src=require(`@images/raster/avatar/__thumbnail/avatar__thumbnail_${ item.avatarname }.png`) )
+          img( src=require(`@components/comment-bar/__avatars/comment-bar__avatar-${ item.avatarname }.jpg`) )
         .comment-bar__like-button
           +likeButtons([{
             groupname: item.likebtn.groupname,
