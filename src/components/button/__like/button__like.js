@@ -7,7 +7,7 @@ function likeButtonPressing({ target }) {
   const aim = target.closest('.like-button');
   const input = aim.firstElementChild;
   const icon = aim.querySelector('.material-icons');
-  const counter = aim.querySelector('.counter-elem');
+  const counter = aim.querySelector('.like-button__text-counter-elem');
   const caseInputChecked = input.hasAttribute('checked');
 
   if (caseInputChecked) {
