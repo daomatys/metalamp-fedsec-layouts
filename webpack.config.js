@@ -6,32 +6,31 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
-const defineDistSection = ext => ext + '/[name].' + ext;
-const defineFileName = filepath => filepath.match(/[^\\/]+$/)[0].replace(/\.js$/,'');
+const defineDistSection = (ext) => ext + '/[name].' + ext;
+const defineFileName = (filepath) => filepath.match(/[^\\/]+$/)[0].replace(/\.js$/,'');
 
 const definePagesPaths = function definePagesPathsByRootFolder( folder ) {
-  const recursiveSearch = volumePath => fs
+  const recursiveSearch = (volumePath) => fs
     .readdirSync( volumePath )
-    .map( chapterName => path.join( volumePath, chapterName ) )
+    .map( chapterName => path.join(volumePath, chapterName ) )
     .flatMap( chapterPath => /\..+$/.exec( chapterPath ) ? chapterPath : recursiveSearch( chapterPath ) );
 
   return recursiveSearch( folder ).filter( filepath => /(?<!\.noentry)\.js$/.exec( filepath ) );
 }
 
 const defineEntryPoints = function convertArrayOfPathsIntoEntriesObject( pagesArray ) {
-  const preparedArray = pagesArray
-    .map( page => [ defineFileName( page ), page ] );
+  const preparedArray = pagesArray.map( page => [ defineFileName( page ), page ] );
 
   return Object.fromEntries( preparedArray );
 }
 
 const PATHS = {
-  src: path.join(__dirname, '/src'),
-  dist: path.join(__dirname, '/dist'),
+  src:   path.join(__dirname, '/src'),
+  dist:  path.join(__dirname, '/dist'),
   cache: path.join(__dirname, '/.temp_cache')
 };
 
-const PAGES__ROOT = path.join( PATHS.src, 'pages' );
+const PAGES__ROOT = path.join(PATHS.src, 'pages');
 const PAGES__FULLPATHS = definePagesPaths( PAGES__ROOT );
 const PAGES__ENTRIES = defineEntryPoints( PAGES__FULLPATHS );
 const PAGES__NAMES = PAGES__FULLPATHS.map( filepath => defineFileName( filepath ) );
@@ -145,12 +144,12 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@variables': path.join( PATHS.src, '/variables/variables.scss' ),
-      '@components': path.join( PATHS.src, '/components/' ),
-      '@entities': path.join( PATHS.src, '/entities/' ),
-      '@images': path.join( PATHS.src, '/assets/images/' ),
-      '@fonts': path.join( PATHS.src, '/assets/fonts/' ),
-      '@styles': path.join( PATHS.src, '/styles/' )
+      '@variables':  path.join(PATHS.src, '/variables/variables.scss'),
+      '@components': path.join(PATHS.src, '/components/'),
+      '@entities':   path.join(PATHS.src, '/entities/'),
+      '@images':     path.join(PATHS.src, '/assets/images/'),
+      '@fonts':      path.join(PATHS.src, '/assets/fonts/'),
+      '@styles':     path.join(PATHS.src, '/styles/')
     }
   }
 }
