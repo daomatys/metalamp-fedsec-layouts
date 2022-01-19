@@ -4,12 +4,12 @@
 
 
 .like-button {
+  position: relative;
   display: flex;
   align-items: center;
-  @extend %oval-button_frame;
 
   &__elem {
-    
+    @extend %oval-button_frame;
 
     &:checked + .like-button__text {
       opacity: 1;
@@ -25,6 +25,7 @@
   }
 
   &__text {
+    position: absolute;
     display: flex;
     opacity: .25;
 
