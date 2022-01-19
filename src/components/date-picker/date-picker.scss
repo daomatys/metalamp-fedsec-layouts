@@ -25,6 +25,8 @@ $font-size: 12px;
 }
 
 .air-datepicker {
+  box-sizing: border-box;
+
   --adp-font-family: inherit;
   --adp-font-size: #{$font-size};
 
@@ -53,8 +55,6 @@ $font-size: 12px;
   --adp-cell-background-color-in-range: #{$primary-gradient-a};
   --adp-cell-background-color-selected-hover: #{$primary-gradient-b};
   --adp-cell-background-color-in-range-hover: #{$primary-gradient-b};
-
-  box-sizing: border-box;
 
   &-body {
     transition: none;
@@ -131,6 +131,10 @@ $font-size: 12px;
     &.-focus-.-range-to-,
     &.-focus-.-range-from- {
       background-image: $primary-gradient-a;
+
+      &:hover {
+        background-image: $primary-gradient-b;;
+      }
     }
   }
 }
