@@ -116,7 +116,9 @@ module.exports = {
     ...PAGES__NAMES.map( (pageName, index) => new HtmlWebpackPlugin({
       template: PAGES__FULLPATHS[index].replace(/\.js$/,'.pug'),
       filename: `./${pageName}.html`,
-      chunks: [ pageName ],
+      chunks: [
+        pageName
+      ],
     })),
     new MiniCssExtractPlugin({
       filename: defineDistSection('css'),
