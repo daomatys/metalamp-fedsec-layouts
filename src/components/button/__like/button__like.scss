@@ -5,35 +5,33 @@
 
 .like-button {
   display: flex;
-  position: relative;
   align-items: center;
+  @extend %oval-button_frame;
 
   &__elem {
-    @extend %oval-button_frame;
+    
 
     &:checked + .like-button__text {
       opacity: 1;
 
-      & > .like-button__text_icon > label {
+      & > .like-button__text-icon > label {
         @extend %gradient-fill;
       }
 
-      & > .like-button__text_counter > label {
+      & > .like-button__text-counter > label {
         color: $perfume;
       }
     }
   }
 
   &__text {
-    display: inherit;
-    position: absolute;
+    display: flex;
     opacity: .25;
-    left: 1px;
 
-    &_icon,
-    &_counter {
+    &-icon,
+    &-counter {
       & > label {
-        display: inherit;
+        display: flex;
         justify-content: center;
         align-items: center;
         font-size: 10px;
@@ -42,13 +40,10 @@
       }
     }
 
-    &_icon {
+    &-icon {
       display: inherit;
       justify-content: center;
-      
-      & > label {
-        width: 20px;
-      }
+      width: 20px;
     }
   }
 

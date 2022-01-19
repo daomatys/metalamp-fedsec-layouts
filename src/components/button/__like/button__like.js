@@ -18,7 +18,7 @@ function likeButtonPressing({ target }) {
   if (!caseInputChecked) {
     icon.textContent = 'favorite';
     counter.textContent = parseInt(counter.textContent, 10) + 1;
-    input.setAttribute('checked', true);
+    input.setAttribute('checked', '');
   }
 }
 
